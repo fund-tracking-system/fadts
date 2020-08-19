@@ -1,7 +1,7 @@
 <?php include_once('header.php');?>
-
-
-
+<br>
+<div  class="container">	
+<link rel="stylesheet" href="../css/login.css">
 	<h2> FADTS | User Login</h2>
 		<div class="box">		
 			<form class="box" method="post">
@@ -24,7 +24,7 @@
 			</form>
 		</div>
 
-
+</div>
 
 <form>
     
