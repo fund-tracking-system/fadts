@@ -38,20 +38,20 @@
  
          // Check if controller exists. NB: 
          // You have to do that for the model and the view too
-         $ctrlPath = __DIR__.'/Controllers/'.$requestedController.'_controller.php';
+         $ctrlPath = __DIR__.'/controllers/'.$requestedController.'_controller.php';
  
  
  
          if (file_exists($ctrlPath))
          {
  
-             require_once __DIR__.'/Models/'.$requestedController.'_model.php';
-             require_once __DIR__.'/Controllers/'.$requestedController.'_controller.php';
-             require_once __DIR__.'/Views/'.$requestedController.'_view.php';
+             require_once __DIR__.'/models/'.$requestedController.'_model.php';
+             require_once __DIR__.'/controllers/'.$requestedController.'_controller.php';
+             require_once __DIR__.'/views/'.$requestedController.'_view.php';
  
-             $modelName      = ucfirst($requestedController).'Model';
-             $controllerName = ucfirst($requestedController).'Controller';
-             $viewName       = ucfirst($requestedController).'View';
+             $modelName      = ucfirst($requestedController).'model';
+             $controllerName = ucfirst($requestedController).'controller';
+             $viewName       = ucfirst($requestedController).'view';
  
              $controllerObj  = new $controllerName( new $modelName );
              $viewObj        = new $viewName( $controllerObj, new $modelName );
