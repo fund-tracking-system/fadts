@@ -8,9 +8,9 @@
          // Initiate the home controller
          // and render the home view
  
-         require_once __DIR__.'/Models/index_model.php';
-         require_once __DIR__.'/Controllers/index_controller.php';
-         require_once __DIR__.'/Views/index_view.php';
+         require_once __DIR__.'/models/index_model.php';
+         require_once __DIR__.'/controllers/index_controller.php';
+         require_once __DIR__.'/views/index_view.php';
  
          $indexModel = New IndexModel();
          $indexController = New IndexController($indexModel);
