@@ -8,17 +8,19 @@
          // Initiate the home controller
          // and render the home view
  
-         require_once __DIR__.'/models/index_model.php';
-         require_once __DIR__.'/controllers/index_controller.php';
-         require_once __DIR__.'/views/index_view.php';
+         require_once __DIR__.'/models/login_model.php';
+         require_once __DIR__.'/controllers/login_controller.php';
+         //require_once __DIR__.'/css/logFog.css';
+         //require_once __DIR__.'/views/loginView.php';
  
-         $indexModel = New IndexModel();
-         $indexController = New IndexController($indexModel);
-         $indexView = New IndexView($indexController, $indexModel);
+         $indexModel = New LoginModel();
+         $indexController = New LoginController($indexModel);
+         //$indexView = New IndexView($indexController, $indexModel);
  
-         print $indexView->index();
+         $indexController->setLogin();
  
-     }else{
+     }
+     else{
  
  
          // This is not home page
@@ -70,8 +72,8 @@
  
              header('HTTP/1.1 404 Not Found');
              die('404 - The file - '.$ctrlPath.' - not found');
-             //require the 404 controller and initiate it
-             //Display its view
+            //  //require the 404 controller and initiate it
+            //  //Display its view
          }
      }
 ?>

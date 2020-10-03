@@ -7,27 +7,27 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body >
-	<h2> FADTS | User Login</h2>
+	<h2> FADTS | Forgot Password</h2>
 		<div class="box">		
 			<form class="box" method="post">
 			<fieldset style="padding: 35px 50px">
-			<legend style="color: #218BDB"><B>Sign in to your account</B> </legend>	
+			<legend style="color: #218BDB"><B>Sign in to your account</B></legend>	
 				<div class="form-group">
     				<label for="username"><B>User name</B></label>
     				<input type="text" class="form-control" name="username" placeholder="Enter Username">
   				</div>
   			<div class="form-group">
-    			<label for="password"><B>Password</B></label>
-    			<input type="password" class="form-control" name="password" placeholder="Enter Password">
-  			</div>
-  			<button type="submit" class="btn btn-primary">Login</button><br><br>
-  			<div class="new-account">
-				<label style="font-size: 13px"><B>Don't remember password?</B></label>
-				<a href="forgotPassword.php" ><B>Click here</B></a>	
-			</div>	
+    			<label for="email"><B>Email</B></label>
+    			<input type="email" class="form-control" name="email" id="inputEmail"  placeholder="Enter Email">
+			  </div>
+			  <button type="submit" class="btn btn-primary"><B>Submit</B></button><br><br>
+			  <div class="new-account">
+				<label style="font-size: 13px"><B>Go back to login:</B></label>
+				<a href="view/login_view.php" ><B>Click here</B></a>	
+			</div>
 			</fieldset>
 			</form>
 		</div>
+		
 </body>
-
 </html>

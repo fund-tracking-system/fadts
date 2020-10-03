@@ -12,7 +12,7 @@
 <body>
 	<div>
 	<nav>
-		<label class="logo">Brand</label>
+		<label class="logo">FADTS</label>
 		<ul>
 			<li><a href="#"><B>Home</B></li>
 			<li><a href="#"><B>About</B></li>
