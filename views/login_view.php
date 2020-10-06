@@ -3,15 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>login</title>
-	<link rel="stylesheet" type="text/css" href="css/logFog.css">
+	<link rel="stylesheet" type="text/css" href="/FADTS/fadts/css/logFog.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 	
 </head>
 <body >
 	<h2> FADTS | User Login</h2>
-		<?php echo "$this->$name" ?>
+	
 		<div class="box">		
-			<form class="box" method="post">
+			<form class="box" method="post" action="../controllers/login_controller.php">
 			<fieldset style="padding: 35px 50px">
 			<legend style="color: #218BDB"><B>Sign in to your account</B> </legend>	
 				<div class="form-group">
@@ -25,7 +25,7 @@
   			<button type="submit" class="btn btn-primary">Login</button><br><br>
   			<div class="new-account">
 				<label style="font-size: 13px"><B>Don't remember password?</B></label>
-				<a href="<?php echo "";?>" ><B>Click here</B></a>	
+				<a href="/FADTS/fadts/forgot/setForgot"><B>Click here</B></a>	
 			</div>	
 			</fieldset>
 			</form>

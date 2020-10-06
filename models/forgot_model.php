@@ -3,7 +3,7 @@
     /**
     * The home page model
     */
-    class IndexModel
+    class ForgotModel
     {
 
         private $message = 'Welcome to Home page.';
