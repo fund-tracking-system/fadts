@@ -10,12 +10,27 @@
 
 <body>
    <h2> FADTS | Reset Password</h2>
+   <?php
+   
+      $selector = $_GET["selector"];
+      $validator = $_GET["validator"];
+
+      if(empty($selector) || empty($validator)){
+         echo '<div class="alert alert-warning">Could not validate your request</div>';
+      }
+      else{
+         if((ctype_xdigit($selector) !==false) && (ctype_xdigit($validator) !==false)){
+
+   ?>
    <div class="box">
-      <form class="box" method="post" action="/fadts/app/model/home/loginModel.php">
+      <form class="box" method="post" action="/fadts/home/resetModel">
 
          <fieldset style="padding: 35px 50px">
 
             <legend style="color: #218BDB"><B>Reset your account password</B></legend>
+
+            <input type="hidden" name="selector" value="<?php echo $selector?>">
+            <input type="hidden"  name="validator" value="<?php echo $validator?>">
 
             <div class="form-group">
                <label for="password"><B>New Password</B></label>
@@ -28,17 +43,20 @@
             </div>
             </br>
 
-            <button type="submit" name="fogsubmit" class="btn btn-primary"><B>Submit</B></button><br><br>
-
-            <div class="new-account">
-
-            </div>
+            <button type="submit" name="resetsubmit" class="btn btn-primary"><B>Reset</B></button><br><br>
 
          </fieldset>
 
       </form>
 
    </div>
+
+   <?php 
+         }
+      }
+
+   ?>
+
 
 </body>
 

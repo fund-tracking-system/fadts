@@ -18,13 +18,29 @@
 <body>
    <h2> FADTS | User Login</h2>
 
-   <div class="box">
-
-      <form class="box" method="post" action="/fadts/app/model/home/loginModel.php">
-
+      <form class="box"  method="post" action="/fadts/home/indexModel">
+      <!-- action="/fadts/home/indexModel" -->
+      <!-- action="/fadts/app/model/home/loginModel.php" -->
          <fieldset style="padding: 35px 50px">
 
             <legend style="color: #218BDB"><B>Sign in to your account</B> </legend>
+
+            <?php
+               
+               if(isset($_GET['error'])){
+         
+                  $error = $_GET['error'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error!</div>';
+                  }
+                  if($error == "wrong_user_or_pass"){
+                     echo '<div class="alert alert-danger" role="alert">Wrong username or password!</div>';
+                  }
+                  if($error == "direct_access"){
+                     echo '<div class="alert alert-danger" role="alert"">Direct access not allowed!</div>';
+                  }
+               }
+            ?>
 
             <div class="form-group">
                <label for="username"><B>User name</B></label>
@@ -47,7 +63,6 @@
 
       </form>
 
-   </div>
 
 </body>
 

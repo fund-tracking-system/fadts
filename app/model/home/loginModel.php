@@ -1,24 +1,20 @@
 <?php 
 
-function function_alert($message) { 
-   echo '<script type="text/javascript">alert("' . $message . '")</script>';
-} 
-
 if(isset($_POST['logsubmit'])){
 
-   require ('../../conn/connection.php');   // database connection file calling
+   require 'connection.php';   // database connection file calling
+
+   //include CONN."connection.php";
 
    $username = $_POST['username'];
-   $password    = $_POST['password'];
+   $password = $_POST['password'];
 
-   echo '<script type="text/javascript">alert("' . $message . '")</script>';
 
    $sql = "SELECT * FROM user WHERE username=?";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
-      function_alert("Database Connection Error! \n Please Try Again.");
-      header('Location:/fadts/home/index');
+      header("Location:/fadts/home/index?error=db_conn_err");
       exit();     
    }
    else{
@@ -29,8 +25,7 @@ if(isset($_POST['logsubmit'])){
       if($row = mysqli_fetch_assoc($result)){
 
          if($password != $row['password']){
-            function_alert("Wrong User name or Password! \n Please Try Again.");
-            header('Location:/fadts/home/index');
+            header("Location:/fadts/home/index?error=wrong_user_or_pass");
             exit();  
          }
          else{
@@ -52,8 +47,7 @@ if(isset($_POST['logsubmit'])){
 
       }
       else{
-         function_alert("Wrong User name or Password! \n Please Try Again.");
-         header('Location:/fadts/home/index');
+         header("Location:/fadts/home/index?error=wrong_user_or_pass");
          exit();
       }
    }
@@ -61,7 +55,6 @@ if(isset($_POST['logsubmit'])){
    mysqli_close($con);
 }
 else{
-   function_alert("Direct Access Not Aallowed!");
-   header('Location:/fadts/home/index');
+   header("Location:/fadts/home/index?error=direct_access");
    exit();
 }

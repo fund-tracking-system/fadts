@@ -9,8 +9,9 @@ class homeController extends Controller{
    }
 
    public function indexModel(){     // This is how load the model for login
-      $this->model('home/loginModel');
+
       
+      $this->model('home/loginModel');
       $this->model->load(); 
    }
 
