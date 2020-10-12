@@ -11,7 +11,7 @@
                 <h2 style="color:black ; margin-bottom:25px;padding-top:10px;text-align: center;">Add Officer Form
                 </h2>
                 <div class="form-row">
-                    <label for="officer_id" style="margin-left:70px;margin-bottom:18px;"><b>Officer ID: *</b></label>
+                    <label for="officer_id" style="margin-left:70px;margin-bottom:18px;"><b>Officer ID: <span style="color:red">*</span></b></label>
                     <input class="form-control" id="officer_id" name="officer_id" type="number" 
                         style="margin-left:180px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%"
                         aria-describedby="validationServer03Feedback"></input>
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-row">
 
-                    <label for="nid" style="margin-left:70px;margin-bottom:18px;"><b>NID:</b></label>
+                    <label for="nid" style="margin-left:70px;margin-bottom:18px;"><b>NID:<span style="color:red">*</span></b></label>
                     <input class="form-control" name="nid" id='nid'
                         style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"
                         aria-describedby="validationServer03Feedback" ></input>
@@ -29,21 +29,21 @@
 
 
                 <div class="form-row">
-                    <label for="name" style="margin-left:70px;margin-bottom:18px;"><b>Name:</b></label>
+                    <label for="name" style="margin-left:70px;margin-bottom:18px;"><b>Name:<span style="color:red">*</span></b></label>
                     <input class="form-control" id="name" name="name" 
                         style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"
                         aria-describedby="validationServer03Feedback" ></input>
                 </div>
 
                 <div class="form-row">
-                    <label for="birth_date" style="margin-left:70px;margin-bottom:18px;"><b>Birth Date:</b></label>
+                    <label for="birth_date" style="margin-left:70px;margin-bottom:18px;"><b>Birth Date:<span style="color:red">*</span></b></label>
                     <input class="form-control" id='birth_date' name="birth_date" type="date" 
                         style="margin-left:180px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%"
                         aria-describedby="validationServer03Feedback" ></input>
                 </div>
 
                 <div class="form-row">
-                    <label for="region" style="margin-left:70px;margin-bottom:18px;"><b>Region:</b></label>
+                    <label for="region" style="margin-left:70px;margin-bottom:18px;"><b>Region:<span style="color:red">*</span></b></label>
                     <select class="form-control" name="region"
                         style="margin-left:180px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%" id="region">
                         <option value="">--SELECT--</option>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class='buttons' style="margin-left:900px;">
-
+                    <label style="float:left; color: red">* required</label>
                     <button class='confirm-button btn btn-primary '>Confirm</button>
                     <button class='view-list-button btn btn-primary'>View List</button>
                 </div>
