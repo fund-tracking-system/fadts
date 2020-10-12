@@ -12,18 +12,18 @@
    <h2> FADTS | Reset Password</h2>
    <?php
    
-      $selector = $_GET["selector"];
-      $validator = $_GET["validator"];
+      // $selector = $_GET["selector"];
+      // $validator = $_GET["validator"];
 
-      if(empty($selector) || empty($validator)){
-         echo '<div class="alert alert-warning">Could not validate your request</div>';
-      }
-      else{
-         if((ctype_xdigit($selector) !==false) && (ctype_xdigit($validator) !==false)){
+      // if(empty($selector) || empty($validator)){
+      //    echo '<div class="alert alert-warning">Could not validate your request</div>';
+      // }
+      // else{
+      //    if((ctype_xdigit($selector) !==false) && (ctype_xdigit($validator) !==false)){
 
    ?>
    <div class="box">
-      <form class="box" method="post" action="/fadts/home/resetModel">
+      <form class="box" method="post" id="form" action="/fadts/home/resetModel">
 
          <fieldset style="padding: 35px 50px">
 
@@ -34,12 +34,14 @@
 
             <div class="form-group">
                <label for="password"><B>New Password</B></label>
-               <input type="password" class="form-control" name="newpassword" placeholder="Enter Password">
+               <input type="password" class="form-control" name="newpassword" id="newpassword" placeholder="Enter Password">
+               <small>Error message</small>
             </div>
 
             <div class="form-group">
                <label for="password"><B>Re-Enter Password</B></label>
-               <input type="password" class="form-control" name="againpassword" placeholder="Again Enter New Password">
+               <input type="password" class="form-control" name="againpassword" id="reEnter" placeholder="Again Enter New Password">
+               <small>Error message</small>
             </div>
             </br>
 
@@ -52,12 +54,12 @@
    </div>
 
    <?php 
-         }
-      }
+     
 
    ?>
 
 
 </body>
+<!-- <script src="/fadts/app/js/home.js"></script> -->
 
 </html>

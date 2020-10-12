@@ -15,12 +15,11 @@
 
 </head>
 
-<body>
+<body  >  
    <h2> FADTS | User Login</h2>
 
-      <form class="box"  method="post" action="/fadts/home/indexModel">
-      <!-- action="/fadts/home/indexModel" -->
-      <!-- action="/fadts/app/model/home/loginModel.php" -->
+      <form id="form" class="box"  method="post" action="/fadts/home/indexModel">
+      
          <fieldset style="padding: 35px 50px">
 
             <legend style="color: #218BDB"><B>Sign in to your account</B> </legend>
@@ -44,12 +43,14 @@
 
             <div class="form-group">
                <label for="username"><B>User name</B></label>
-               <input type="text" class="form-control" name="username" placeholder="Enter Username">
+               <input type="text" id="username" class="form-control" name="username" placeholder="Enter Username">
+               <small></small>
             </div>
 
             <div class="form-group">
                <label for="password"><B>Password</B></label>
-               <input type="password" class="form-control" name="password" placeholder="Enter Password">
+               <input type="password" id="password" class="form-control" name="password" placeholder="Enter Password">
+               <small>error message</small>
             </div>
 
             <button type="submit" name="logsubmit" class="btn btn-primary">Login</button><br><br>
@@ -65,5 +66,6 @@
 
 
 </body>
+<!-- <script src="/fadts/app/js/home.js"></script> -->
 
 </html>
