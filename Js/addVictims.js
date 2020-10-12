@@ -3,9 +3,9 @@ return this.optional(element) || /^[a-z\s]+$/i.test(value);
 }, "Only alphabetical characters");
 
 $(function(){
-    var $formElement = $("#formAddVictims");
-    if($formElement.length){
-        $formElement.validate({
+    var $formAddVictims = $("#formAddVictims");
+    if($formAddVictims.length){
+        $formAddVictimst.validate({
             rules: {
                 disaster:"required",
                 name:{

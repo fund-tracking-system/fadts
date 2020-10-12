@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formsearchCriteria");
-    if($formElement.length){
-        $formElement.validate({
+    var $formCriteria = $("#formsearchCriteria");
+    if($formCriteria.length){
+        $formCriteria.validate({
             rules: {
                 nid: {
                     required: true,

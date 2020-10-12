@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formUpdateOfficer");
-    if($formElement.length){
-        $formElement.validate({
+    var $formupdateOfficer = $("#formUpdateOfficer");
+    if($formupdateOfficer.length){
+        $formupdateOfficer.validate({
             rules: {
                 id: {
                     required: true,
@@ -20,9 +20,9 @@ $(function(){
 
 
 $(function(){
-    var $formUpdate = $("#formUpdateOffice1");
-    if($formUpdate.length){
-        $formUpdate.validate({
+    var $formupdateOfficer1 = $("#formUpdateOfficer1");
+    if($formupdateOfficer1.length){
+        $formupdateOfficer1.validate({
             rules: {
                 region: "required",
                 position: "required",   

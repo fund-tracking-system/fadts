@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +25,7 @@
 					<input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
 					<small>Error Message</small>
 				</div>
-				<button type="submit" class="btn btn-primary"><B>Submit</B></button><br><br>
+				<button type="submit" class="btn btn-primary" onclick="forgot()"><B>Submit</B></button><br><br>
 				<div class="new-account">
 					<label style="font-size: 13px"><B>Go back to login:</B></label>
 					<a href="login.php"><B>Click here</B></a>
@@ -34,6 +35,8 @@
 	</div>
 
 </body>
-<script src="../Js/forgotPassword.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+<script src="../Js/main.js"></script>
 
 </html>

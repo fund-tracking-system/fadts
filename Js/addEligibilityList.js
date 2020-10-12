@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formAddEligibilityList");
-    if($formElement.length){
-        $formElement.validate({
+    var $formElgibilityList= $("#formAddEligibilityList");
+    if($formElgibilityList.length){
+        $formElgibilityList.validate({
             rules: {
                 select_region: "required",    
             },

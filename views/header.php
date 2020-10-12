@@ -12,17 +12,20 @@
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="../Js/addNewDisaster.js"></script>
-    <script type="text/javascript" src="../Js/addOfficer.js"></script>
-    <script type="text/javascript" src="../Js/addPeople.js"></script>
-    <script type="text/javascript" src="../Js/addVictims.js"></script>
-    <script type="text/javascript" src="../Js/addEligibilityList.js"></script>
-    <script type="text/javascript" src="../Js/createFund.js"></script>
-    <script type="text/javascript" src="../Js/disasterDetail.js"></script>
-    <script type="text/javascript" src="../Js/fundDetail.js"></script>
-    <script type="text/javascript" src="../Js/searchCriteria.js"></script>
-    <script type="text/javascript" src="../Js/updateOfficer.js"></script>
-    <script type="text/javascript" src="../Js/updatePeople.js"></script>
+    <script type="text/javascript" src="../Js/main.js"></script>
+    
+    <!--<script type="text/javascript" src="../Js/addNewDisaster.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/addOfficer.js"></script>-->
+    <!-- <script type="text/javascript" src="../Js/addPeople.js"></script>-->
+    <!-- <script type="text/javascript" src="../Js/addVictims.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/addEligibilityList.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/createFund.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/disasterDetail.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/fundDetail.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/logIn.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/searchCriteria.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/updateOfficer.js"></script>-->
+    <!--<script type="text/javascript" src="../Js/updatePeople.js"></script>-->
 
     <style type="text/css">
         .error {

@@ -30,7 +30,7 @@
 						<input id="password" type="password" class="form-control" name="password" placeholder="Enter Password">
 						<small>Error Message</small>
 					</div>
-					<button type="submit" class="btn btn-primary">Login</button><br><br>
+					<button type="submit" id="submit" class="btn btn-primary">Login</button><br><br>
 				</form>
 				<div class="new-account">
 					<label style="font-size: 13px"><B>Don't remember password?</B></label>
@@ -40,7 +40,9 @@
 		</div>
 
 </body>
-<script src="../Js/logInForm.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+<script src="../Js/main.js"></script>
 
 
 </html>

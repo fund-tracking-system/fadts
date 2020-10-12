@@ -22,7 +22,7 @@
                     <label for="nid" style="margin-left:70px;margin-bottom:18px;"><b>NID:</b></label>
                     <input class="form-control" name="nid" id='nid'
                         style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"
-                        aria-describedby="validationServer03Feedback" required></input>
+                        aria-describedby="validationServer03Feedback" ></input>
                 </div>
 
 
@@ -32,7 +32,7 @@
                     <label for="name" style="margin-left:70px;margin-bottom:18px;"><b>Name:</b></label>
                     <input class="form-control" id="name" name="name" 
                         style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"
-                        aria-describedby="validationServer03Feedback" required></input>
+                        aria-describedby="validationServer03Feedback" ></input>
                 </div>
 
                 <div class="form-row">

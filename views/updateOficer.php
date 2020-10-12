@@ -29,7 +29,7 @@
                 </fieldset>
         </form>
 <hr>
-        <form id="formUpdateOffice1">
+        <form id="formUpdateOfficer1">
             <fieldset
                 style="background-color:#fffef4;margin-left:20px  border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
                 <h2 style="margin-bottom:50px;">UPDATE OFFICER DETAIL</h2>

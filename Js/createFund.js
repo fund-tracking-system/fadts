@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formCreateFund");
-    if($formElement.length){
-        $formElement.validate({
+    var $formFundCreate = $("#formCreateFund");
+    if($formFundCreate.length){
+        $formFundCreate.validate({
             rules: {
                 fund_name: "required",
                 fund_size: "required"

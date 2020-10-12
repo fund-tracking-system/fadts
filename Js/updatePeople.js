@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formUpdatePeople");
-    if($formElement.length){
-        $formElement.validate({
+    var $formUpdatePeople = $("#formUpdatePeople");
+    if($formUpdatePeople.length){
+        $formUpdatePeople.validate({
             rules: {
                 nid: {
                     required: true,

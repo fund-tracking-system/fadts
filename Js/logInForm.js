@@ -9,16 +9,12 @@ e.preventDefault();
 checkInputs();
 });
 
-
-
 function checkInputs(){
   const usernameValue = username.value.trim();
   const passwordValue = password.value.trim();
   
   var matches = usernameValue.match(/\d+/g); //CHECK USERNAME HAVE NUMBERS
-
-  
-  //Check Username is Valid
+    //Check Username is Valid
 
   if (usernameValue === "") {
     setErrorFor(username, "Username cannot be blank");
@@ -27,12 +23,9 @@ function checkInputs(){
   }else if (matches != null){
 setErrorFor(username, "Username cannot contain numbers");
   } 
-  
   else {
     setSuccessFor(username);
   }
-
-
 
   //Check Password is Valid
 
@@ -45,17 +38,12 @@ setErrorFor(username, "Username cannot contain numbers");
   }
 }
 
-
-
-
 function setErrorFor(input, message){
 const formGroup = input.parentElement;
 const small = formGroup.querySelector("small");
 small.innerText = message;
 formGroup.className = "form-group error";
 }
-
-
 
 function setSuccessFor(input){
   const formGroup = input.parentElement;

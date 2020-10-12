@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formAddDisaster");
-    if($formElement.length){
-        $formElement.validate({
+    var $formDisasterAdd = $("#formAddDisaster");
+    if($formDisasterAdd.length){
+        $formDisasterAdd.validate({
             rules: {
                 disaster: "required",
                 disaster_name: "required",

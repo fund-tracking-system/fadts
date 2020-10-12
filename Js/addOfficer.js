@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formAddOfficer");
-    if($formElement.length){
-        $formElement.validate({
+    var $formAddOfficer = $("#formAddOfficer");
+    if($formAddOfficer.length){
+        $formAddOfficer.validate({
             rules: {
                 officer_id: "required",
                 nid: {

@@ -1,7 +1,7 @@
 $(function(){
-    var $formElement = $("#formDisasterDetails");
-    if($formElement.length){
-        $formElement.validate({
+    var $formDisasterDetails = $("#formDisasterDetails");
+    if($formDisasterDetails.length){
+        $formDisasterDetails.validate({
             rules: {
                 select_disaster: "required",
                 select_region: "required"
