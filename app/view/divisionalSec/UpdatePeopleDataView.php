@@ -47,7 +47,7 @@
                 <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>Name:</b></label>
                 <input class="form-control" id="name"
                     style="margin-left:150px;margin-bottom:20px;margin-right:150px; margin-top:-40px;"
-                    value="name display only" readonly></input>
+                    value="name display only" ></input>
             </div>
 
             <div class="form-row">
