@@ -1,36 +1,5 @@
 <?php include VIEW.'header.php' ?>
-
-<div class="sidebar">
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">home</span>Home
-   </a>
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add People Data
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">corporate_fare</span>Alternate Fund Release
-   </a>
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">corporate_fare</span>Update Registration Data
-   </a>
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add New Disaster
-   </a>
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">corporate_fare</span>Search People Data
-   </a>
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Disaster Details
-   </a>
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Fund
-   </a>
-   <a href="#" class="sidebar_link">
-      <span class="material-icons">help_center</span>Help
-   </a>
-   <a href="/fadts/home/index" class="sidebar_link">
-      <span class="material-icons">exit_to_app</span>Logout
-   </a>
-</div>
+<?php include VIEW.'divisionalSec/sidebar.php' ?>
 
 
 <?php include VIEW.'footer.php' ?>

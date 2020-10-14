@@ -10,7 +10,8 @@ body{
 	font-family: 'Montserrat', sans-serif;
 }
 nav{
-	background: #000040;
+	background: #117A65;
+	/* background:#2E4053;  */
 	height: 70px;
 	width: 100%;
 	box-shadow: 5px 6px 6px #888888;
@@ -62,15 +63,18 @@ a:active,a:hover{
 	left: 10px;
 	width: 280px;
 	height: 76%;
-	background: #000040;
-	border-right: 2px solid #000060;
+	/* background:#0f6655; */
+	/* border-right: 2px solid #0f6655; */
+	background: #2C3E50;
+	border-right: 2px solid #2C3E50;
 	box-shadow: 5px 6px 6px #888888;
 }
 
 .sidebar_link {
 	display: flex;
 	align-items: center;
-	background: #000060;
+	/* background:#17a286; */
+	background: #616A6B;
 	color: #ffffff;
 	padding: 12px;
 	text-decoration: none;
@@ -82,14 +86,16 @@ a:active,a:hover{
 	margin-right: 12px;
 }
 
-footer{
+footer{    
 	position: fixed;
 	padding-top: 2px;
 	bottom: 0px;
 	width: 100%;
 	color: #ffffff;
 	text-align: justify;
-	background:#000040;
+
+	background:#117A65;
+	/* background:#2E4053; */
 }
 footer h4{
 	padding-top: 20px;
@@ -106,6 +112,10 @@ footer h4{
 }
 
 .log_button{
-	color:#ff2222;
+	color:#fff4f4;
 }
 
+.log_button:active,.log_button:hover{
+	background:#ff2222;
+	transition: .5s;
+}
