@@ -1,7 +1,9 @@
 <?php include VIEW.'header.php' ?>
 <?php include VIEW.'villageOfficer/sidebar.php' ?>
+
 <div>
    <div class='SearchByCriteriaform1'>
+
       <form class="form">
 
          <fieldset style="background-color:#fffef4;">
@@ -38,6 +40,8 @@
 
 
       </form>
+
+      
       <form method="post" action="" id="form">
 
          <fieldset style="background-color:#fffef4; margin-top:50px;">

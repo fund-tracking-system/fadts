@@ -32,6 +32,12 @@
             </div>
  
             <button type="submit" name="fogsubmit" class="btn btn-primary">Submit</button><br><br>
+
+            <div class="new-account">
+               <label style="font-size: 13px"><B>Back to login :</B></label>
+               <a href="/fadts/home/login"><B>Click here</B></a>
+            </div>
+
          </fieldset>
       </form>
    </div>

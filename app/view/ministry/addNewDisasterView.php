@@ -4,7 +4,7 @@
 <form class="form" >
     <div class='SearchByCriteriaform1'>
     <fieldset  style="background-color:#fffef4; ">
-            <h2 style="color:black ; margin-bottom:100px;padding-top:10px;"> ADD NEW DISASTERS</h2>
+            <h2 style="color:black ; margin-bottom:100px;padding-top:10px;"> ADD NEW DISASTER</h2>
             
                 <div class="form-row " style="margin-bottom:30px;">
                     <label for="disaster" style="margin-left:70px;margin-bottom:18px;"><b>Disaster Type:</b></label>
