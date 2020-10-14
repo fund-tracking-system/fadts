@@ -1,7 +1,6 @@
 body{
 	margin: 0;
 	padding: 0;
-	/*background: url("log2.jpg");*/
 	background-color:#F7F7FC;
 	background-size:cover;
 	background-position: center;
@@ -11,22 +10,21 @@ label{
 	color: #8F8E91;
 }
 
-h2{
-	margin: 0;
-	padding: 68px 14% 0 0px;
-	text-align: center;
+ h2{
+   text-align: center;
+   font-size: 28px;
+   padding-top: 2%;
+	/* margin: 0;
+	padding: 68px 100% 0 0px;
+	text-align: match-parent;
 	font-size: 28px;
-	font-weight: normal;
-}
+	font-weight: normal; */
+} 
 a{
 	text-decoration:none;
 	font-size: 13px;
 	line-height: 20px;
 	color: #218BDB;
-}
-
-.box a:hover{
-	text-decoration:underline;
 }
 
 .box{
@@ -40,8 +38,7 @@ a{
 	transform: translate(-50%,-50%);
 	box-sizing: border-box;
 	padding: 45px 30px;
-    border-radius: 10px;
-    /* box-shadow: black; */
+	border-radius: 10px;
 
 }
 
@@ -120,7 +117,7 @@ fieldset:disabled a.btn {
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+  box-shadow: 5px 5px 5px 0.2rem rgba(38, 143, 255, 0.5);
 }
 
 .form-control {
