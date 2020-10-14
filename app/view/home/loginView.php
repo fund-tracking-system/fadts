@@ -13,10 +13,12 @@
    <link rel="stylesheet" type="text/css" href="<?php echo CSS.'logFog.css'?>">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
+
+
 </head>
 
 <body  >  
-   <h2> FADTS | User Login</h2>
+   <h2 style="margin-top:-10px;"> FADTS | User Login</h2>
 
       <form id="form" class="box"  method="post" action="/fadts/home/indexModel">
       
@@ -24,7 +26,7 @@
 
             <legend style="color: #218BDB"><B>Sign in to your account</B> </legend>
 
-            <?php
+          <?php
                
                if(isset($_GET['error'])){
          
@@ -39,7 +41,7 @@
                      echo '<div class="alert alert-danger" role="alert"">Direct access not allowed!</div>';
                   }
                }
-            ?>
+            ?> 
 
             <div class="form-group">
                <label for="username"><B>User name</B></label>
@@ -53,7 +55,7 @@
                <small>error message</small>
             </div>
 
-            <button type="submit" name="logsubmit" class="btn btn-primary">Login</button><br><br>
+            <button type="submit" name="logsubmit" class="btn btn-primary" onclick="validate()">Login</button><br><br>
 
             <div class="new-account">
                <label style="font-size: 13px"><B>Don't remember password?</B></label>
@@ -65,7 +67,8 @@
       </form>
 
 
+
 </body>
-<!-- <script src="/fadts/app/js/home.js"></script> -->
+ <script src="/fadts/app/js/home.js"></script>
 
 </html>
