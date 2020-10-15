@@ -60,6 +60,6 @@
 
 
 </body>
-<!-- <script src="/fadts/app/js/home.js"></script> -->
+<script src="/fadts/app/js/home.js"></script> 
 
 </html>
