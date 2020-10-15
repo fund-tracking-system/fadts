@@ -2,15 +2,15 @@
 <?php include VIEW.'villageOfficer/sidebar.php' ?>
 <div>
    <div class='SearchByCriteriaform1'>
-      <form class="form">
+      <form class="form" method="post"action="" id="form">
 
          <fieldset style="background-color:#fffef4;">
             <h2 style="color:black ; margin-bottom:100px;padding-top:10px; margin-top:50px;">View Fund Details
             </h2>
             <div class="form-row " style="margin-bottom:30px;">
-               <label for="disaster" style="margin-left:70px;margin-bottom:18px;"><b>Fund Type:</b></label>
+               <label for="disaster" style="margin-left:150px;margin-bottom:18px;"><b>Fund Type:</b></label>
                <select class="form-control" name="disaster" id="disaster"
-                  style="margin-left:200px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%" ;>
+                  style="margin-left:300px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%" ;>
                   <option value="Fire">Fire </option>
                   <option value="Flood">Flood </option>
                   <option value="lewgini">Tsunami </option>
@@ -20,15 +20,15 @@
                </select>
             </div>
             <div class="form-row">
-               <label for="disaster-name" style="margin-left:70px;margin-bottom:18px;"><b>Fund Name:</b></label>
+               <label for="disaster-name" style="margin-left:150px;margin-bottom:18px;"><b>Fund Name:</b></label>
                <input class="form-control" id="disaster-name"
-                  style="margin-left:200px;margin-bottom:60px;margin-right:150px; margin-top:-3.5%;"
+                  style="margin-left:300px;margin-bottom:60px;margin-right:150px; margin-top:-3.5%;"
                   aria-describedby="validationServer03Feedback" required></input>
             </div>
             <div class="form-row">
-               <label for="date" style="margin-left:70px;margin-bottom:18px;"><b>Created Date:</b></label>
+               <label for="date" style="margin-left:150px;margin-bottom:18px;"><b>Created Date:</b></label>
                <input placeholder="YYYY/MM/DD" class="form-control" id='date'
-                  style="margin-left:200px;margin-bottom:60px;margin-right:150px; margin-top:-3.5%; "
+                  style="margin-left:300px;margin-bottom:60px;margin-right:150px; margin-top:-3.5%; "
                   aria-describedby="validationServer03Feedback" required></input>
                <small></small>
             </div>
