@@ -4,36 +4,31 @@
 
 <div class="all_bacground_clor">
 
-    <div>
+    <div class="SearchByCriteriaform1">
 
         <form method="post" action="" id="form">
-            <div class="SearchByCriteriaform1">
 
-                <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-                    <h2 style="margin-bottom:50px;">Search By NID</h2>
-                    <fieldset style="padding-top:15px; margin-right:50px; margin-left:20px;border-radius:10px; ">
-                    <div class="form-row " style="display: flex;">
-                  <div style="display: flex; ">
-                     <label for="NID-number" style="margin-left:150px; margin-top:10px;margin-bottom:-25px;"><b>
-                           NID:</b></label>
-                     <input class="form-control " id='NID-number'
-                        style="margin-left:100px;margin-bottom:20px;margin-right:600px; margin-top:5px;padding-right:30px;"
-                        placeholder="972810177v"></input>
 
-                            <div class='button '>
+            <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;">
+                <h2 style="margin-bottom:50px;">Search By NID</h2>
+                <fieldset
+                    style="padding-top:15px; margin-right:50px; margin-left:20px;border-radius:10px; padding:3%; ">
+                    <div class="form-row ">
 
-                                <button type="submit" class='submit-button btn btn-primary btn btn-primary'
-                                    style="margin-left:-550px;margin-top:0px; padding-bottom:10px;">Search</button>
-                            </div>
-                        </div>
+                        <label for="NID-number" style="margin-left:150px; margin-top:5px;margin-bottom:-25px; "><b>
+                                NID Number:</b></label>
+                        <input class="form-control " id='NID-number'
+                            style="position: relative;margin-left:50px; margin-bottom:10px;width: 400px;height: 30px;border-radius: 5px;outline: none;border-width: 1.5px; padding:20px;;"
+                            placeholder="9 7 2 8 1 0 1 7 7 v" name="NID"></input>
+
+                        <button style="margin-left: 70%; margin-top:-50px; width:13%; margin-bottom:20px;" type="submit"
+                            class="btn btn-primary">Search</button>
                     </div>
-
-                </fieldset>
                 </fieldset>
         </form>
-        <hr>
-        <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-            <form>
+        <form method="post" id="form">
+            <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; margin-top:30px;">
+
                 <h2 style="margin-bottom:50px;">Search By Criteria</h2>
 
                 <div class='form-row '>
@@ -41,9 +36,9 @@
                         <label class='age-label '
                             style="margin-left:70px;margin-bottom:18px;margin-top:10px;"><b>Age:</b></label>
                         <input class='first form-control'
-                            style="margin-left:150px;margin-bottom:20px;margin-right:150px;"></input><span class='to'
+                            style="margin-left:150px;margin-bottom:20px;margin-right:150px;" name="age1"></input><span class='to'
                             style=" margin-right:170px;"> <b> to</b></span>
-                        <input class='second form-control'></input>
+                        <input class='second form-control' name="age2"></input>
                     </div>
                 </div>
 
@@ -82,12 +77,12 @@
                 <div class='form-row ' style="margin-top:50px;">
                     <div style="display: flex;">
                         <label class='income-label'
-                            style="margin-left:70px;margin-bottom:18px;margin-top:10px;"><b>Gross
+                            style="margin-left:70px;margin-bottom:18px;margin-top:10px;" ><b>Gross
                                 Income:</b></label>
                         <input class='first form-control'
-                            style="margin-left:110px;margin-bottom:20px;margin-right:150px;"></input><span class='to'
+                            style="margin-left:110px;margin-bottom:20px;margin-right:150px;" name="income1"></input><span class='to'
                             style=" margin-right:150px;"> <b> to</b></span>
-                        <input class='second form-control'></input>
+                        <input class='second form-control' name="income2 "></input>
                     </div>
                 </div>
 
@@ -106,15 +101,15 @@
                         <div class="overSelect"></div>
                     </div>
                     <div id="checkboxes"
-                        style="margin-left:20.5%; margin-top:-1.5%; background-color:white; border:none ">
+                        style="margin-left:20.5%; margin-top:-1.5%; background-color:white; border:none " name="checkbox">
                         <label for="one">
-                            <input type="checkbox" id="one" /><b>&nbsp; &nbsp;Samurdhi</label>
+                            <input type="checkbox" id="one" name="checkBox1" /><b>&nbsp; &nbsp;Samurdhi</label>
                         <label for="two">
-                            <input type="checkbox" id="two" /> &nbsp; &nbsp;Retire</label>
+                            <input type="checkbox" id="two"  name="checkBox2"/> &nbsp; &nbsp;Retire</label>
                         <label for="three">
-                            <input type="checkbox" id="three" /> &nbsp; &nbsp;Govi wishrama</label>
+                            <input type="checkbox" id="three" name="checkBox3" /> &nbsp; &nbsp;Govi wishrama</label>
                         <label for="four">
-                            <input type="checkbox" id="four" /> &nbsp; &nbsp;Wadihiti</b></label>
+                            <input type="checkbox" id="four"  name="chekbox4"/> &nbsp; &nbsp;Wadihiti</b></label>
                     </div>
                 </div>
 
@@ -128,36 +123,13 @@
 
 
 
-              
 
 
-        </fieldset>
+
+            </fieldset>
+        </form>
     </div>
-    </form>
-</div>
 
-<script type="text/javascript">
-function validateNID() {
-
-   alert("");
-}
-var form = getElementById("form");
-var nid = getElementById("NID-number");
-var text = getElementById("text");
-
-var expanded = false;
-
-function showCheckboxes() {
-   var checkboxes = document.getElementById("checkboxes");
-   if (!expanded) {
-      checkboxes.style.display = "block";
-      expanded = true;
-   } else {
-      checkboxes.style.display = "none";
-      expanded = false;
-   }
-}
-</script>
 
 </div>
 <?php include VIEW.'footer.php' ?>
