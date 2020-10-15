@@ -52,7 +52,17 @@ class ministryController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
-  
+   // load the userProfile view of ministry
+   public function userProfile(){
+      $this->view('ministry/userProfileView');
+   
+      $this->view->render();      
+   }
+   public function userProfileModel(){       // load the model for userProfile view of ministry
+      $this->model('ministry/userProfileView');
+      
+      $this->model->load();      
+   }
 
   
 }

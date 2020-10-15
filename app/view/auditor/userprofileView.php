@@ -1,24 +1,26 @@
 <?php include VIEW.'header.php' ?>
 <?php include VIEW.'auditor/sidebar.php' ?>
+
+
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
         <form>
             <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
 
-                <h2 style="margin-bottom:50px;">USER PROFILE </h2>
+                <h2 style="margin-bottom:50px; font-size:40px">User Profile </h2>
 
                 <fieldset style="margin:50px;;">
                     <div class="form-row" style="margin-left:200px; margin-top:50px;">
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b> Name:</b></label>
                         <input class="form-control" id="name" name="name"
                             style="margin-left:150px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
-                            value="Opatha kankanamge Don  Yasiru Padmasiri" readonly></input>
+                            value="<?php echo $_SESSION['username']?>" readonly></input>
                     </div>
                     <div class="form-row" style="margin-left:200px;">
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>NID:</b></label>
                         <input class="form-control" id="name" name="NId"
                             style="margin-left:150px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
-                            value="9 7 2 8 1 0 1 7 7 v" readonly></input>
+                            value="<?php echo $_SESSION['usernid']?>" readonly></input>
                     </div>
                     <div class="form-row" style="margin-left:200px;">
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>Region:</b></label>
@@ -30,7 +32,7 @@
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>Position:</b></label>
                         <input class="form-control" id="name" name="name"
                             style="margin-left:150px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
-                            value="Divisional Secretory" readonly></input>
+                            value="<?php echo $_SESSION['roleName']?>" readonly></input>
                     </div>
                 </fieldset>
             </fieldset>
@@ -38,9 +40,9 @@
         </form>
         <form>
             <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-
+            <h2 style="margin-bottom:50px;">Reset Password</h2>
                 <fieldset style="margin:50px;">
-                <h2 style="margin-bottom:50px; margin-left:80px; font-size:20px;" >Reset your account password</h2>
+                
 
                     <div class="form-row" style="margin-left:200px;margin-top:50px;">
                         <label for="password" style="margin-bottom:18px; margin-left:-10px;"><B>Current

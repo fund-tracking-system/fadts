@@ -32,13 +32,14 @@ if(isset($_POST['logsubmit'])){
             session_start();
             $_SESSION['userid'] = $row['userid'];
             $_SESSION['username'] = $row['username'];
+            $_SESSION['usernid'] = $row['usernid'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['userrole'] = $row['userrole'];
 
-            if($_SESSION['userrole']=='villageofficer'){ $controller ='village'; }
-            if($_SESSION['userrole']=='divisionalsec'){ $controller ='divisional'; }
-            if($_SESSION['userrole']=='ministry'){ $controller ='ministry'; }
-            if($_SESSION['userrole']=='auditor'){ $controller ='audit'; }
+            if($_SESSION['userrole']=='villageofficer'){ $controller ='village'; $_SESSION['roleName'] = 'Village Officer'; }
+            if($_SESSION['userrole']=='divisionalsec'){ $controller ='divisional'; $_SESSION['roleName'] = 'Divisional Secretary'; }
+            if($_SESSION['userrole']=='ministry'){ $controller ='ministry'; $_SESSION['roleName'] = 'The Ministry';}
+            if($_SESSION['userrole']=='auditor'){ $controller ='audit'; $_SESSION['roleName'] = 'Auditor'; }
             
             header("Location:/fadts/$controller/index");
             exit();

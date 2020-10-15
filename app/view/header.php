@@ -6,6 +6,11 @@
    }
    $action = $this->getAction(); // in here $action is, view file name without .php
 
+   if($_SESSION['userrole']=='villageofficer'){ $user ='village'; }
+   if($_SESSION['userrole']=='divisionalsec'){ $user ='divisional'; }
+   if($_SESSION['userrole']=='ministry'){ $user ='ministry'; }
+   if($_SESSION['userrole']=='auditor'){ $user ='audit'; }
+
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +32,11 @@
       <nav>
          <label class="logo">FADTS</label>
          <ul>
-            <li><a href="#" ><B>Home</B></li>
-
-            <li><a href="#"><B>About</B></li>
+            <li><a href="/fadts/<?php echo $user ?>/index" ><B>Home</B></li>
 
             <li><a href="#"><B>Notifications</B></li>
+
+            <li><a href="/fadts/<?php echo $user ?>/userProfile"><B>Profile</B></li>
             
             <li><a class="log_button" href="/fadts/home/index">
                   <B>LOGOUT</B>

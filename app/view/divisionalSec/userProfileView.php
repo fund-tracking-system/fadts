@@ -12,13 +12,13 @@
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b> Name:</b></label>
                         <input class="form-control" id="name" name="name"
                             style="margin-left:150px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
-                            value="Opatha kankanamge Don  Yasiru Padmasiri" readonly></input>
+                            value="<?php echo $_SESSION['username']?>" readonly></input>
                     </div>
                     <div class="form-row" style="margin-left:200px;">
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>NID:</b></label>
                         <input class="form-control" id="name" name="NId"
                             style="margin-left:150px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
-                            value="9 7 2 8 1 0 1 7 7 v" readonly></input>
+                            value="<?php echo $_SESSION['usernid']?>" readonly></input>
                     </div>
                     <div class="form-row" style="margin-left:200px;">
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>Region:</b></label>
@@ -30,7 +30,7 @@
                         <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>Position:</b></label>
                         <input class="form-control" id="name" name="name"
                             style="margin-left:150px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
-                            value="Divisional Secretory" readonly></input>
+                            value="<?php echo $_SESSION['roleName']?>" readonly></input>
                     </div>
                 </fieldset>
             </fieldset>

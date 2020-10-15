@@ -40,6 +40,8 @@ class homeController extends Controller{
    }
 
    
+
+   
    // public function index($id='',$name=''){  Example for send data to a view
    //    $this->view('home/loginView',[  
    //       'name' => $name,                    
