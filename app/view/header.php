@@ -28,8 +28,11 @@
          <label class="logo">FADTS</label>
          <ul>
             <li><a href="#" ><B>Home</B></li>
+
             <li><a href="#"><B>About</B></li>
+
             <li><a href="#"><B>Notifications</B></li>
+            
             <li><a class="log_button" href="/fadts/home/index">
                   <B>LOGOUT</B>
             </li>
