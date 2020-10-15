@@ -4,7 +4,6 @@
 <div class="all_bacground_clor">
 
 
-
    <form method="post" action="">
       <div class="SearchByCriteriaform1">
 
@@ -137,9 +136,6 @@
             <button type="submit" class='confirm-button btn btn-primary '>Confirm</button>
             <button class='confirm-button btn btn-primary '>View List</button>
          </div>
-
-
-
 
       </fieldset>
 
