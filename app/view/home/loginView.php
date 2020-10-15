@@ -55,7 +55,7 @@
                <small>error message</small>
             </div>
 
-            <button type="submit" name="logsubmit" class="btn btn-primary" onclick="validate()">Login</button><br><br>
+            <button type="submit" name="logsubmit" class="btn btn-primary" >Login</button><br><br>
 
             <div class="new-account">
                <label style="font-size: 13px"><B>Don't remember password?</B></label>
