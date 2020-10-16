@@ -6,8 +6,73 @@ body{
 	background-position: center;
   font-family: 'Montserrat', sans-serif; 
  
+}
 
- 
+.searchBar{
+  padding-top:15px;
+  margin-right:50px; 
+  margin-left:20px;
+  border-radius:10px; 
+  padding:3%;
+}
+.searchBarLable{
+  margin-left:150px; 
+  margin-top:5px;
+  margin-bottom:-25px; 
+}
+.searchBackgroundFS{
+  background-color:#fffef4; 
+  border-bottom:10px; 
+  padding-bottom:20px;
+}
+.form-control.searchInput{
+  position: relative;
+  margin-left:50px;
+   margin-bottom:10px;
+   width: 400px;
+   height: 30px;
+   border-radius: 5px;
+   outline: none;
+   border-width: 1.5px; 
+   padding:20px;
+   
+}
+.form-control.InputTwo{
+  margin-left:810px; 
+  width:150px;
+  margin-top:-30px; 
+  margin-bottom:50px;
+}
+.Twobtn{
+  margin-left:790px;
+}
+.inputLable.LableTwo{
+  margin-left:580px;
+  margin-top:-80px;
+}
+.inputLable{
+  margin-left:200px;
+  margin-bottom:23px;
+}
+
+.form-control.Input{
+  margin-left:350px;
+  margin-bottom:50px;
+  margin-right:250px; 
+  margin-top:-4%;
+}
+.form-control.InputOne{
+  width:150px; 
+  margin-top:-30px; 
+  margin-left:345px; 
+  margin-bottom:-30px;
+}
+
+.btn.btn-primary.btnNav{
+  margin-left: 70%; 
+  margin-top:-50px; 
+  width:13%; 
+  margin-bottom:20px;
 }
 table {
   font-family: arial, sans-serif;
@@ -80,6 +145,7 @@ label{
    font-size: 28px;
    padding-top: 2%;
    color: black;
+   margin-bottom:50px;
 	/* margin: 0;
 	padding: 68px 100% 0 0px;
 	text-align: match-parent;
