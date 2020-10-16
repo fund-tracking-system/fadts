@@ -12,9 +12,9 @@
                 <fieldset style="padding-top:15px; margin-right:50px; margin-left:20px;border-radius:10px; ">
 
                     <div class="form-row" style="margin-top:5%;">
-                        <label for="select-region" style="margin-left:200px;margin-bottom:18px;"><b>Select Predefined
+                        <label for="select-fund" style="margin-left:200px;margin-bottom:18px;"><b>Select Predefined
                                 Fund:</b></label>
-                        <select name="select-region" id="select-region" name="region" class="form-control"
+                        <select name="select-fund" id="select-fund" name="fund" class="form-control"
                             style="position: relative;margin-left:50px; margin-bottom:10px;width: 400px;height: 30px;border-radius: 5px;outline: none;border-width: 1.5px;">
                             <option value="Samurdhi">Samurdhi</option>
                             <option value="Disabled">Disabled</option>
@@ -39,7 +39,7 @@
                 <h2 style="margin-bottom:50px; margin-top:10px;"> Manually Created Fund</h2>
 
                 <div style="margin:50px;">
-                    <table style="margin-bottom:20px;">
+                    <table style="margin-bottom:20px;" name="table" id="table">
                         <tr>
                             <th><b>Name Of Fund</b></th>
                             <th><b>Created Date</b></th>
