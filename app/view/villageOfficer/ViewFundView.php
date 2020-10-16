@@ -72,8 +72,6 @@
                      readonly></input>
 
 
-
-
                   <label class='phone-number-label' for="number"
                      style="margin-left:70px;margin-bottom:18px;"><b>Distributed amount:</b></label>
                   <input class="form-control" id='D-amount'
@@ -83,12 +81,8 @@
 
          </fieldset>
 
-
-
-
-
-
-
+</form>
+<form>
 
          <h3 style="margin-bottom:30px; margin-top:10px; margin-left:30px;"><b> Dilivered person List</b></h2>
             <div style="margin-left:30px; margin-right:30px;">
