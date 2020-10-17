@@ -206,9 +206,41 @@ body{
 
 
 
+.detailsLable{
+margin-top:10px;
+  margin-left:300px;
+  margin-bottom:38px; 
+}
+.form-control.inputDetails{
+  position: relative;
+  margin-left:50px; 
+  margin-bottom:10px;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border-width: 1.5px;
+}
+.form-control.inputDetailsInput{
+  position: relative;
+  margin-left:60px; 
+  margin-bottom:10px;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border-width: 1.5px;
+}
 
-
-
+.btn.location{
+  margin-left: 43%;
+  height: 30px; 
+  border-radius: 5px; 
+  padding-bottom:40px;
+  padding-top:10px; 
+  margin-bottom:5%; 
+  margin-top:5%;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
