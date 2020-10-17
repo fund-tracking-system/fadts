@@ -18,7 +18,12 @@
                     </div>
                 </fieldset>
             </fieldset>
+<<<<<<< HEAD
         </form>  
+=======
+         </fieldset>
+      </form>
+>>>>>>> d60b67e8354eb99b7689c85f6677a68c5d3aea6a
 
 
 
@@ -29,10 +34,10 @@
 
 
 
-                <div class="form-row">
-                    <label for="name " class="inputLable"><b>Full Name:</b></label>
-                    <input class="form-control Input" id="name" name="name" value="name display only" readonly></input>
-                </div>
+            <div class="form-row">
+               <label for="name " class="inputLable"><b>Full Name:</b></label>
+               <input class="form-control Input" id="name" name="name" value="name display only" readonly></input>
+            </div>
 
 
 
@@ -68,11 +73,11 @@
 
 
 
-                <div class="form-row">
-                    <label for="trustee" class="inputLable"><b>Trustee
-                        </b></label>
-                    <input id="trustee" class="form-control Input" readonly></input>
-                </div>
+            <div class="form-row">
+               <label for="trustee" class="inputLable"><b>Trustee
+                  </b></label>
+               <input id="trustee" class="form-control Input" readonly></input>
+            </div>
 
 
 
@@ -89,8 +94,8 @@
                 <div class="form-row">
                     <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
                     <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
-                        <option value="UnMarrried">Married</option>
-                        <option value="Married">Maried</option>
+                        <option value="unmarried">Unmarried</option>
+                        <option value="married">Married</option>
                     </select>
                 </div>
 
@@ -121,19 +126,19 @@
                 </div>
 
 
-                <div class="Twobtn">
+            <div class="Twobtn">
 
-                    <button type="submit" class='confirm-button btn btn-primary '>Confirm</button>
-                    <button class='confirm-button btn btn-primary '>View List</button>
-                </div>
-
-
+               <button type="submit" class='confirm-button btn btn-primary '>Confirm</button>
+               <button class='confirm-button btn btn-primary '>View List</button>
+            </div>
 
 
-            </fieldset>
 
-        </form>
-    </div>
+
+         </fieldset>
+
+      </form>
+   </div>
 </div>
 <script type="text/javascript">
 var expanded = false;
