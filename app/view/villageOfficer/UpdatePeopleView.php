@@ -95,7 +95,7 @@
                 </div>
 
                 <div class='form-row'>
-                    <label class="inputLable"><b>Curents </br></label>
+                    <label class="inputLable"><b>Job type </br></label>
                     <label class="inputLable"></b></label>
 
                     <select class="form-control Input" onclick="showCheckboxes() ">
