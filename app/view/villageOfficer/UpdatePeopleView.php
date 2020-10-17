@@ -18,8 +18,7 @@
                     </div>
                 </fieldset>
             </fieldset>
-         </fieldset>
-      </form>
+        </form>  
 
 
 
@@ -124,8 +123,8 @@
 
             <div class="Twobtn">
 
-               <button type="submit" class='confirm-button btn btn-primary '>Confirm</button>
-               <button class='confirm-button btn btn-primary '>View List</button>
+               <button type="submit" class=' btn btn-primary '>Confirm</button>
+               <button class=' btn btn-primary '>View List</button>
             </div>
 
 

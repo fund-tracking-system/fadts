@@ -10,6 +10,15 @@ body{
 .To{
   margin-right:170px;
 }
+.btn.confirm-button{
+  color:#e5e4e2; 
+  background-color:#aaa; 
+  border-color:#aaa;
+}
+.user2btn{
+  margin-left:650px; 
+  margin-bottom:30px;
+}
 .signlebtn{
   float: right;
   margin-top: 0px; 
@@ -36,6 +45,9 @@ body{
   background-color:#fffef4; 
   border-bottom:10px; 
   padding-bottom:20px;
+}
+.radioLbl2{
+  margin-left:10px;
 }
 .form-control.searchInput{
   position: relative;
@@ -78,6 +90,13 @@ body{
   margin-top:-4%;
   
 }
+.btn.siz{
+  margin-left: 66%; 
+  width:13%;
+}
+.form-control.Input.txtWidth{
+  min-height: 50px;;
+}
 .selectBox.input{
   margin-left:350px;
   margin-bottom:50px;
@@ -92,10 +111,13 @@ body{
 }
 
 .btn.btn-primary.btnNav{
-  margin-left: 70%; 
+  margin-left: 72%; 
   margin-top:-50px; 
   width:13%; 
   margin-bottom:20px;
+}
+.userpro{
+  margin:80px;
 }
 .radioHaveInput{
   margin-left:20px
@@ -108,6 +130,13 @@ body{
 }
 .margn{
   margin-top:50px;
+}
+.form-control.InputPro{
+  margin-left:350px;
+  margin-bottom:50px;
+  margin-right:250px; 
+  margin-top:-5%;
+  
 }
 
 .checkLable{
@@ -206,9 +235,86 @@ body{
 
 
 
+.detailsLable{
+margin-top:10px;
+  margin-left:300px;
+  margin-bottom:38px; 
+}
+.form-control.inputDetails{
+  position: relative;
+  margin-left:40px; 
+  margin-bottom:10px;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border-width: 1.5px;
+}
+
+.form-control.inputDetailsInput{
+  position: relative;
+  margin-left:45px; 
+  margin-bottom:10px;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border-width: 1.5px;
+}
+.flx{
+  display:flex;
+}
+.LblflxOne{
+  margin-left:70px;
+  margin-bottom:18px;
+}
+.form-control.flxInputOne{
+  margin-left:35px;
+  margin-bottom:20px;
+  margin-right:150px;
+}
+.LblflxTwo{
+  margin-left:70px;
+  margin-bottom:18px;
+}
+.form-control.flxInputTwo{
+  margin-left:50px;
+  margin-bottom:20px;
+  margin-right:150px;
+}
+.fntStyle{
+  margin-bottom:30px; 
+  margin-top:10px; 
+  margin-left:30px;
+}
+.tbleMargin{
+  margin-left:50px; 
+  margin-right:50px;
+  margin-bottom:50px;
+  margin-top:30px;
+}
 
 
+.form-control.inputDetailsFunfInput{
+  position: relative;
+  margin-left:30px; 
+  margin-bottom:10px;
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border-width: 1.5px;
+}
 
+.btn.location{
+  margin-left: 43%;
+  height: 30px; 
+  border-radius: 5px; 
+  padding-bottom:40px;
+  padding-top:10px; 
+  margin-bottom:5%; 
+  margin-top:5%;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

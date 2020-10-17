@@ -1,44 +1,54 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
+<div>
+    <div class='SearchByCriteriaform1'>
 
-<form class="form">
-   <div class='SearchByCriteriaform1'>
-      <fieldset style="background-color:#fffef4;height:600px;">
-         <h2 style="color:black ; margin-bottom:100px;padding-top:10px; margin-top:50px;"> Add to  VictimsDisaster</h2>
 
-         <div class="form-row " style="margin-bottom:30px;">
-            <label for="disaster" style="margin-left:70px;margin-bottom:18px;"><b>Disaster Type:</b></label>
-            <select class="form-control" name="disaster" id="disaster"
-               style="margin-left:200px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%" ;>
-               <option value="Fire">Fire </option>
-               <option value="Flood">Flood </option>
-               <option value="lewgini">Tsunami </option>
-               <option value="Nayayeem">Nayayeem </option>
-               <option value="Sulisulan">Sulisulan </option>
-               <option value="Lewgini">Lewgini </option>
-            </select>
-         </div>
-         <div class="form-row">
-            <label for="disaster-name" style="margin-left:70px;margin-bottom:18px;"><b>Disaster Name:</b></label>
-            <input class="form-control" id="disaster-name"
-               style="margin-left:200px;margin-bottom:60px;margin-right:150px; margin-top:-3.5%;"
-               aria-describedby="validationServer03Feedback" required></input>
-         </div>
-         <div class="form-row">
-            <label for="date" style="margin-left:70px;margin-bottom:18px;"><b>Disaster Date:</b></label>
-            <input placeholder="YYYY/MM/DD" class="form-control" id='date'
-               style="margin-left:200px;margin-bottom:60px;margin-right:150px; margin-top:-3.5%; "
-               aria-describedby="validationServer03Feedback" required></input>
-            <small></small>
-         </div>
 
-         <button style="margin-left: 75%; width:13%" type="submit" class="btn btn-primary">Select</button>
+        <form class="form" method="post" action="" id="form">
 
-      </fieldset>
-   </div>
-</form>
+            <fieldset class="BackgroundFS">
 
+                <h2>ADD VICTIMS TO DISASTER
+                </h2>
+
+                </br>
+                </br>
+                <div class="form-row">
+                    <label for="select-disaster" class="detailsLable"><b>Disaster
+                            Type:</b></label>
+                    <select name="select-disaster" id="select-disaster" class="form-control inputDetails"
+                        name="disaster">
+                        <option value="Flood" name="Flood">Flood</option>
+                        <option value="Landslide" name="Landslide">Landslide</option>
+                        <option value="Hurricanes" name="Hurricanes">Hurricanes</option>
+                        <option value="Tsunami" name="Tsunamiable">Tsunami</option>
+                        <option value="Fire" name="Fire">Fire</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-row">
+                    <label for="select-disasterName" class="detailsLable"><b>Disaster
+                            Name:</b></label>
+                    <input class="form-control inputDetailsFunfInput" id="neame" name="name"></input>
+                </div>
+
+
+
+                <div class="form-row">
+                    <label for="select-disaster" class="detailsLable"><b>Disaster
+                            Date:</b></label>
+                    <input class="form-control inputDetails" placeholder="YYYY/MM/DD" id="Date" name="Date"></input>
+                </div>
+
+                <button class='btn btn-primary location'>Select Fund</button>
+            </fieldset>
+
+        </form>
+    </div>
 </div>
 
 <?php include VIEW.'includes/footer.php' ?>
