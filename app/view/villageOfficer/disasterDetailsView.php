@@ -7,7 +7,9 @@
             <fieldset class="BackgroundFS">
                 <h2> Disaster details</h2>
 
-
+</br>
+</br>
+</br>
                 <div class="form-row">
                     <label for="select-disaster" class="detailsLable"><b>Select
                             Disaster:</b></label>

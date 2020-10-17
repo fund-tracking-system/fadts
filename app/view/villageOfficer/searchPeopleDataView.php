@@ -76,7 +76,7 @@
                     </div>
                     <div class='radio2'>
                         <input type="radio" id="no-pro" name="prolonged" value="no">
-                        <label for="no-pro" style="margin-left:10px;"></label><span><b>No</b></span>
+                        <label for="no-pro"class="radioLbl2"></label><span><b>No</b></span>
                     </div>
                 </div>
 
