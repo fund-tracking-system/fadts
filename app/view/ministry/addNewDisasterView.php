@@ -1,6 +1,6 @@
-<?php include VIEW.'header.php' ?>
+<?php include VIEW.'includes/header.php' ?>
 
-<?php include VIEW.'ministry/sidebar.php' ?>
+<?php include VIEW.'includes/sidebar.php' ?>
 <form class="form" >
     <div class='SearchByCriteriaform1'>
     <fieldset  style="background-color:#fffef4; ">
@@ -38,7 +38,7 @@
     </form>
 
     </div>
-    <?php include VIEW.'footer.php'?>
+    <?php include VIEW.'includes/footer.php'?>
 
 
 

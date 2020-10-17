@@ -1,5 +1,5 @@
-<?php include VIEW.'header.php' ?>
-<?php include VIEW.'villageOfficer/sidebar.php' ?>
+<?php include VIEW.'includes/header.php' ?>
+<?php include VIEW.'includes/sidebar.php' ?>
 
 
 <form class="form">
@@ -41,4 +41,4 @@
 
 </div>
 
-<?php include VIEW.'footer.php' ?>
+<?php include VIEW.'includes/footer.php' ?>

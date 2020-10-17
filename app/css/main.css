@@ -120,3 +120,29 @@ footer h4{
 	background:#ff2222;
 	transition: .5s;
 }
+
+.alert {
+	padding: 15px;
+	padding-left: 70px;
+	margin-bottom: 20px;
+	margin-left: 120px;
+	margin-right: 120px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+ 
+ }
+ .alert-success {
+	background-color: #a6ffbc;
+	border-color: #d6e9c6;
+	color: #3c763d;
+ }
+ .alert-warning {
+	background-color: #ffff9b;
+	border-color: #faebcc;
+	color: #8a6d3b;
+ }
+ .alert-danger {
+	color: #7f3f00;
+	background-color: #fde4cc;
+	border-color: #fcdab8;
+ }

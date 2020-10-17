@@ -1,6 +1,6 @@
-<?php include VIEW.'header.php' ?>
+<?php include VIEW.'includes/header.php' ?>
 
-<?php include VIEW.'ministry/sidebar.php' ?>
+<?php include VIEW.'includes/sidebar.php' ?>
 
 
 <div class="all_bacground_clor">
@@ -93,4 +93,4 @@
         </form>
     </div>
 </div>
-<?php include VIEW.'footer.php'?>
+<?php include VIEW.'includes/footer.php'?>

@@ -1,5 +1,5 @@
-<?php include VIEW.'header.php' ?>
-<?php include VIEW.'villageOfficer/sidebar.php' ?>
+<?php include VIEW.'includes/header.php' ?>
+<?php include VIEW.'includes/sidebar.php' ?>
 
 
 <div class="all_bacground_clor">
@@ -167,4 +167,4 @@ function showCheckboxesTwo() {
 </script>
 
 
-<?php include VIEW.'footer.php' ?>
+<?php include VIEW.'includes/footer.php' ?>

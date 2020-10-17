@@ -1,7 +1,7 @@
 <?php 
    session_start();
    if(!isset($_SESSION['userid'])){
-      header("Location:/test/home/index");
+      header("Location:/fadts/home/index");
       exit(); 
    }
    $action = $this->getAction(); // in here $action is, view file name without .php
@@ -32,11 +32,11 @@
       <nav>
          <label class="logo">FADTS</label>
          <ul>
-            <li><a href="/fadts/<?php echo $user ?>/index" ><B>Home</B></li>
+            <li><a href="/fadts/includes/index" ><B>Home</B></li>
 
             <li><a href="#"><B>Notifications</B></li>
 
-            <li><a href="/fadts/<?php echo $user ?>/userProfile"><B>Profile</B></li>
+            <li><a href="/fadts/includes/userProfile"><B>Profile</B></li>
             
             <li><a class="log_button" href="/fadts/home/index">
                   <B>LOGOUT</B>

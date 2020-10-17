@@ -1,5 +1,5 @@
-<?php include VIEW.'header.php' ?>
-<?php include VIEW.'villageOfficer/sidebar.php' ?>
+<?php include VIEW.'includes/header.php' ?>
+<?php include VIEW.'includes/sidebar.php' ?>
 
 <div style="background-color:#ced4da">
 
@@ -47,4 +47,4 @@
 
 </div>
 
-<?php include VIEW.'footer.php' ?>
+<?php include VIEW.'includes/footer.php' ?>

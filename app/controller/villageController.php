@@ -2,11 +2,6 @@
 
 class villageController extends Controller{
 
-   public function index(){
-      $this->view('villageOfficer/indexView');
-      
-      $this->view->render(); // This is how load the view
-   }
    public function ViewUpdatePeople(){
       $this->view('villageOfficer/UpdatePeopleView');
       
@@ -40,16 +35,6 @@ class villageController extends Controller{
       $this->view->render(); // This is how load the view
    }
    
-   // load the userProfile view of village Officer
-   public function userProfile(){
-      $this->view('villageOfficer/userProfileView');
-      
-      $this->view->render();      
-   }
-   public function userProfileModel(){       // load the model for userProfile view of village Officer
-      $this->model('villageOfficer/userProfileView');
-         
-      $this->model->load();      
-   }
+   
   
 }

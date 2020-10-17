@@ -36,12 +36,14 @@ if(isset($_POST['logsubmit'])){
             $_SESSION['email'] = $row['email'];
             $_SESSION['userrole'] = $row['userrole'];
 
-            if($_SESSION['userrole']=='villageofficer'){ $controller ='village'; $_SESSION['roleName'] = 'Village Officer'; }
-            if($_SESSION['userrole']=='divisionalsec'){ $controller ='divisional'; $_SESSION['roleName'] = 'Divisional Secretary'; }
-            if($_SESSION['userrole']=='ministry'){ $controller ='ministry'; $_SESSION['roleName'] = 'The Ministry';}
-            if($_SESSION['userrole']=='auditor'){ $controller ='audit'; $_SESSION['roleName'] = 'Auditor'; }
+            if($_SESSION['userrole']=='villageofficer'){ $_SESSION['controller'] ='village'; $_SESSION['roleName'] = 'Village Officer'; }
+            if($_SESSION['userrole']=='divisionalsec'){ $_SESSION['controller'] ='divisional'; $_SESSION['roleName'] = 'Divisional Secretary'; }
+            if($_SESSION['userrole']=='ministry'){ $_SESSION['controller'] ='ministry'; $_SESSION['roleName'] = 'The Ministry';}
+            if($_SESSION['userrole']=='auditor'){ $_SESSION['controller'] ='audit'; $_SESSION['roleName'] = 'Auditor'; }
             
-            header("Location:/fadts/$controller/index");
+            $controller = $_SESSION['controller'];
+
+            header("Location:/fadts/includes/index");  //#########
             exit();
 
          }
