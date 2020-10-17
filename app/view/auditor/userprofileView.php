@@ -40,7 +40,7 @@
         </form>
         <form>
             <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-            <h2 style="margin-bottom:50px;">Reset Password</h2>
+            <h2 style="margin-bottom:50px; font-size:25px;">Reset Password</h2>
                 <fieldset style="margin:50px;">
                 
 
@@ -73,7 +73,7 @@
                     </br>
 
                     <div class='buttons' style="margin-left:700px; margin-bottom:30px;">
-                    <button type="reset" class='confirm-button btn' style="color:#222; background-color:#aaa; border-color:#aaa;">Reset</button>
+                    <button type="reset" class='confirm-button btn' style="color:#e5e4e2; background-color:#aaa; border-color:#aaa;">Reset</button>
 
                         <button type="submit" class='confirm-button btn btn-primary '>Confirm</button>
                     </div>

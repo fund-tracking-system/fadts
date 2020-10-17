@@ -90,8 +90,8 @@
                 <div class="form-row">
                     <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
                     <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
-                        <option value="UnMarrried">Married</option>
-                        <option value="Married">Maried</option>
+                        <option value="unmarried">Unmarried</option>
+                        <option value="married">Married</option>
                     </select>
                 </div>
 

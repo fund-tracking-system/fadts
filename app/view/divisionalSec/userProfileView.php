@@ -40,11 +40,11 @@
             <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
 
                 <fieldset style="margin:50px;">
-                <h2 style="margin-bottom:50px; margin-left:80px; font-size:20px;" >Reset your account password</h2>
+                <h2 style="margin-bottom:50px; font-size:25px;" >Reset Password</h2>
 
                     <div class="form-row" style="margin-left:200px;margin-top:50px;">
                         <label for="password" style="margin-bottom:18px; margin-left:-10px;"><B>Current
-                                Password</B></label>
+                                Password:</B></label>
                         <input type="password" class="form-control"
                             style="margin-left:180px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
                             name="newpassword" id="CurrentPassword" placeholder="Enter Current Password">
@@ -53,7 +53,7 @@
 
 
                     <div class="form-row" style="margin-left:200px;">
-                        <label for="password" style="margin-bottom:18px; margin-left:-10px;"><B>New Password</B></label>
+                        <label for="password" style="margin-bottom:18px; margin-left:-10px;"><B>New Password:</B></label>
                         <input type="password" class="form-control"
                             style="margin-left:180px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
                             name="newpassword" id="newpassword" placeholder="Enter Password">
@@ -62,7 +62,7 @@
 
                     <div class="form-row" style="margin-left:200px;">
                         <label for="password" style="margin-bottom:18px; margin-left:-10px;"><B>Confirm
-                                Password</B></label>
+                                Password:</B></label>
                         <input type="password" class="form-control"
                             style="margin-left:180px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
                             name="againpassword" id="reEnter" placeholder="Again Enter New Password">
@@ -71,7 +71,7 @@
                     </br>
 
                     <div class='buttons' style="margin-left:700px; margin-bottom:30px;">
-                    <button type="reset" class='confirm-button btn' style="color:#222; background-color:#aaa; border-color:#aaa;">Reset</button>
+                    <button type="reset" class='confirm-button btn' style="color:#e5e4e2; background-color:#aaa; border-color:#aaa;">Reset</button>
 
                         <button type="submit" class='confirm-button btn btn-primary '>Confirm</button>
                     </div>
