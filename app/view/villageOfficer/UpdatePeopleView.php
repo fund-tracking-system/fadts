@@ -5,10 +5,10 @@
     <div class="SearchByCriteriaform1">
 
 
-    
+
         <form method="post" action="" id="form">
-            <fieldset class="searchBackgroundFS">
-                <h2 style="margin-bottom:50px;">Search By NID</h2>
+            <fieldset class="BackgroundFS">
+                <h2>Search By NID</h2>
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
@@ -24,13 +24,17 @@
 
 
         <form>
-            <fieldset class=" searchBackgroundFS">
-                <h2 style="">UPDATE PEOPLE DATA</h2>
+            <fieldset class=" BackgroundFS">
+                <h2>UPDATE PEOPLE DATA</h2>
+
+
 
                 <div class="form-row">
                     <label for="name " class="inputLable"><b>Full Name:</b></label>
                     <input class="form-control Input" id="name" name="name" value="name display only" readonly></input>
                 </div>
+
+
 
                 <div class="form-row">
                     <label for="Address" class="inputLable"><b>Address:</b></label>
@@ -38,8 +42,9 @@
                         placeholder="Opatha,ganegoda,Elptye,Galle"></input>
                 </div>
 
+
                 <div>
-                    <label for="birth-date" class="inputLable"><b>Birth Date:</b></label>
+                    <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
                     <input class="form-control InputOne" id='birthDate' name="birthDate" value="YYYY/MM/DD"
                         readonly></input>
                     <small> </small>
@@ -48,7 +53,6 @@
                     <input class="form-control InputTwo" id='birthvertifiacateNo' name="birthCertificateNo"
                         readonly></input>
                 </div>
-
 
 
                 <div class="form-row">
@@ -62,13 +66,6 @@
                 </div>
 
 
-                <div>
-                    <label class='inputLable' for="job"><b>Job:</b></label>
-                    <input class="form-control InputOne" id='job' name="job"></input>
-                    <label for='job-type' class="inputLable LableTwo"><b>Job Type:</b></label>
-                    <input class="form-control InputTwo" id='job-type' name="JobType"></input>
-                </div>
-
 
 
                 <div class="form-row">
@@ -80,21 +77,47 @@
 
 
                 <div>
-                    <label class='inputLable' for="phone-number"><b>Phone Number1:</b></label>
+                    <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
                     <input class="form-control InputOne" id='phone-number-1' readonly name="phoneNumber1"></input>
 
-                    <label class='inputLable LableTwo' for="phone-number"><b>Phone Number2:</b></label>
+                    <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
                     <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" readonly></input>
                 </div>
 
 
 
                 <div class="form-row">
-                    <label class="inputLable" for="CivilStatus"><b>Civil</br>status:</b></label>
+                    <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
                     <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
                         <option value="UnMarrried">Married</option>
                         <option value="Married">Maried</option>
                     </select>
+                </div>
+
+                <div class='form-row'>
+                    <label class="inputLable"><b>Curents </br></label>
+                    <label class="inputLable"></b></label>
+
+                    <select class="form-control Input" onclick="showCheckboxes() ">
+                        <!-- <option>Select an option</option>  select krapua pennanna hadann ooona-->
+                    </select>
+                    <!-- <div class="overSelect"></div> -->
+
+                    <div id="checkboxes" class="checksbox" name="checkbox">
+                    
+                        <label for="one"class="form-control">
+                            <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
+                        <label for="two" class="form-control">
+                            <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
+                        <label for="three" class="form-control">
+                            <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own Bussiness</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self Employee</label>
+                            <label for="four" class="form-control">
+                            <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
+                    </div>
                 </div>
 
 
@@ -112,4 +135,18 @@
         </form>
     </div>
 </div>
+<script type="text/javascript">
+var expanded = false;
+
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+    }
+}
+</script>
 <?php include VIEW.'footer.php' ?>

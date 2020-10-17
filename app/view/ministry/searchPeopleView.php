@@ -3,29 +3,25 @@
 <?php include VIEW.'ministry/sidebar.php' ?>
 
 <div class="all_bacground_clor">
-
     <div class="SearchByCriteriaform1">
 
+
+
         <form method="post" action="" id="form">
-
-
-            <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;">
+            <fieldset class="BackgroundFS">
                 <h2 style="margin-bottom:50px;">Search By NID</h2>
-                <fieldset
-                    style="padding-top:15px; margin-right:50px; margin-left:20px;border-radius:10px; padding:3%; ">
+                <fieldset class="searchBar">
                     <div class="form-row ">
-
-                        <label for="NID-number" style="margin-left:150px; margin-top:5px;margin-bottom:-25px; "><b>
-                                NID Number:</b></label>
-                        <input class="form-control " id='NID-number'
-                            style="position: relative;margin-left:50px; margin-bottom:10px;width: 400px;height: 30px;border-radius: 5px;outline: none;border-width: 1.5px; padding:20px;;"
-                            placeholder="9 7 2 8 1 0 1 7 7 v" name="NID"></input>
-
-                        <button style="margin-left: 70%; margin-top:-50px; width:13%; margin-bottom:20px;" type="submit"
-                            class="btn btn-primary">Search</button>
+                        <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
+                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
+                            name="NID"></input>
+                        <button type="submit" class="btn btn-primary btnNav">Search</button>
                     </div>
                 </fieldset>
+            </fieldset>
         </form>
+
+
         </br>
         </br>
 
