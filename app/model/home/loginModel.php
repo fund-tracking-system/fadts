@@ -40,10 +40,8 @@ if(isset($_POST['logsubmit'])){
             if($_SESSION['userrole']=='divisionalsec'){ $_SESSION['controller'] ='divisional'; $_SESSION['roleName'] = 'Divisional Secretary'; }
             if($_SESSION['userrole']=='ministry'){ $_SESSION['controller'] ='ministry'; $_SESSION['roleName'] = 'The Ministry';}
             if($_SESSION['userrole']=='auditor'){ $_SESSION['controller'] ='audit'; $_SESSION['roleName'] = 'Auditor'; }
-            
-            $controller = $_SESSION['controller'];
 
-            header("Location:/fadts/includes/index");  //#########
+            header("Location:/fadts/includes/index");  
             exit();
 
          }
