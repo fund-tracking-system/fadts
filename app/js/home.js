@@ -1,8 +1,9 @@
 const form = document.getElementById("form");
 
-const username = document.getElementById("username");
+// const username = document.getElementById("username");
+const email = document.getElementById("email");
 const password = document.getElementById("password");
-const email= document.getElementById("email");
+const usernid = document.getElementById("usernid");
 const newpassword=document.getElementById("newpassword");
 const reEnter =document.getElementById("reEnter");
 
@@ -14,8 +15,6 @@ form.addEventListener( 'submit', (e)=>{
  e.preventDefault();
  }
 });
-
-
 
 form.addEventListener( 'submit', (e)=>{
    var y = checkInputs();
@@ -34,6 +33,49 @@ form.addEventListener( 'submit', (e)=>{
     }
   });
 
+
+  function checkInputs()
+  {
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+    var A=0;
+    var B=0;
+    
+  //Check email is valid
+    const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  
+    if (emailValue === "") {
+        setErrorFor(email, "Email cannot be blank");
+    } else if (re.test(emailValue)) {
+        setSuccessFor(email);
+         var A=1;
+    } else {
+        setErrorFor(email, "Should enter a valid email");
+    }
+  
+    //Check Password is Valid
+  
+    if (passwordValue === "") 
+    {
+      setErrorFor(password, "Password cannot be blank");
+    } 
+    else if (passwordValue.length < 5) 
+    {
+      setErrorFor(password, "password should contain at least 5 characters");
+    } else
+     {
+      B=1;
+      setSuccessFor(password);
+      
+    }
+    if(A===1 && B==1){
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+  
 
 function checkInputsReset(){
   var e=0;
@@ -91,24 +133,29 @@ else
 
 
 function checkInputsForgot(){
-   const usernameValue=username.value.trim();
+   const usernidValue=usernid.value.trim();
    const emailValue=email.value.trim();
    var c=0;
    var d=0;
-  var matches =usernameValue.match(/\d+/g);
+  var matches =usernidValue.match(/\d+/g);
 
-  if (usernameValue === "") {
-    setErrorFor(username, "Username cannot be blank");
+  if (usernidValue === "") {
+    setErrorFor(usernid, "Usernid cannot be blank");
   }
-   else if (usernameValue.length < 3) {
-    setErrorFor(username, "Username too short");
+  else if ((usernidValue.length != 10) && (usernidValue.length != 12)) {
+    setErrorFor(usernid, "Should enter valid NID");
   }
-  else if (matches != null){
-    setErrorFor(username, "Username cannot contain numbers");
-  } 
+  else if (usernidValue.length == 10 || usernidValue.length == 12) {
+    if (usernidValue.length == 10 && (usernidValue.slice(-1) != 'v' && usernidValue.slice(-1) != 'V')) {
+      setErrorFor(usernid, "Should enter valid NID");
+    }
+    if (usernidValue.length == 12 && (/[A-Za-z!@#$%+\-\^\\*\/<>\?\/\"\'\;\:]/.test(usernidValue))){
+      setErrorFor(usernid, "Should enter valid NID");
+    }   
+  }
   else {
     c=1;
-    setSuccessFor(username); 
+    setSuccessFor(usernid); 
 
   }
 
@@ -118,7 +165,7 @@ function checkInputsForgot(){
   const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   if (emailValue === "") {
-      setErrorFor(email, "Password cannot be blank");
+      setErrorFor(email, "Email cannot be blank");
   } else if (re.test(emailValue)) {
       setSuccessFor(email);
        var d=1;
@@ -142,53 +189,6 @@ function checkInputsForgot(){
 
 
 
-function checkInputs()
-{
-  const usernameValue = username.value.trim();
-  const passwordValue = password.value.trim();
-  var A=0;
-  var B=0;
-  var matches = usernameValue.match(/\d+/g); //CHECK USERNAME HAVE NUMBERS
-  
-    //Check Username is Valid
-
-  if (usernameValue === "") {
-    setErrorFor(username, "Username cannot be blank");
-  }
-   else if (usernameValue.length < 3) {
-    setErrorFor(username, "Username too short");
-  }
-  else if (matches != null){
-    setErrorFor(username, "Username cannot contain numbers");
-  } 
-  else {
-    A=1;
-    setSuccessFor(username); 
-
-  }
-
-  //Check Password is Valid
-
-  if (passwordValue === "") 
-  {
-    setErrorFor(password, "Password cannot be blank");
-  } 
-  else if (passwordValue.length < 5) 
-  {
-    setErrorFor(password, "password should contain at least 5 characters");
-  } else
-   {
-    B=1;
-    setSuccessFor(password);
-    
-  }
-  if(A===1 && B==1){
-    return 1;
-  }
-  else {
-    return 0;
-  }
-}
 
 
 function setErrorFor(input, message){

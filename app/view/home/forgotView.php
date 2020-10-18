@@ -22,8 +22,8 @@
             <legend style="color: #218BDB"><B>Sign in to your account</B></legend>
 
             <div class="form-group">
-               <label for="username"><B>User name</B></label>
-               <input type="text"  class="form-control" name="username" id="username" placeholder="Enter User name"><small>Error message</small>
+               <label for="username"><B>User NID</B></label>
+               <input type="text"  class="form-control" name="usernid" id="usernid" placeholder="Enter NID"><small>Error message</small>
             </div>
             <div class="form-group">
                <label for="email"><B>Email</B></label>
@@ -32,15 +32,15 @@
             </div>
  
             <button type="submit" name="fogsubmit" class="btn btn-primary">Submit</button><br><br>
+            <div class="new-account">
+               <label style="font-size: 13px"><B>Back to login :</B></label>
+               <a href="/fadts/home/index"><B>Click here</B></a>
+            </div>
          </fieldset>
       </form>
    </div>
 
 </body>
-<<<<<<< HEAD
-<script src="/fadts/app/js/home.js"></script>
-=======
 <script src="/fadts/app/js/home.js"></script> 
->>>>>>> 5e3ebdec2cee8be13813f179916e258e60ead136
 
 </html>

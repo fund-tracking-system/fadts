@@ -109,9 +109,9 @@
                     </br>
 
                     <div class="user2btn">
-                        <button type="reset" class='confirm-button btn'>Reset</button>
+                        <button type="reset" name="reset" class="confirm-button btn">Reset</button>
 
-                        <button type="submit" class='btn btn-primary '>Confirm</button>
+                        <button type="submit" name="submit" class='btn btn-primary '>Confirm</button>
                     </div>
                 </fieldset>
             </fieldset>
