@@ -3,7 +3,7 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1 ">
-        <form method="post">
+        <form method="post" id="form">
             <fieldset class="BackgroundFS">
                 <h2> Disaster details</h2>
 
@@ -22,7 +22,7 @@
                     </select>
                 </div>
 
-
+ 
                 <div class="form-row">
                     <label for="select-disaster" class="detailsLable"><b>Disaster
                             Date:</b></label>

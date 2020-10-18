@@ -5,7 +5,7 @@
 
 
     
-        <form method="post" action="" id="form">
+        <form method="post" action="" id="form"> 
             <fieldset class="BackgroundFS">
                 <h2 style="margin-bottom:50px;">Search Fund Eligibility </h2>
                 <fieldset class="searchBar">

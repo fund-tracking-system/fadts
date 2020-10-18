@@ -7,80 +7,73 @@
 
     <div class="SearchByCriteriaform1">
 
-        <form method="post" action="" id="form">
 
-            <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;">
-                <h2 style="margin-bottom:50px;">VIEW FUND DETAILS</h2>
-                <fieldset Style="margin:2%;border-radius:5px; padding:2%; ">
-                    <legend style="padding-left:5px; padding-right:5px;"><b>&nbsp;Search Pre Defined Functions</b>
-                    </legend>
-                    <div class="form-row" style="margin-top:5%;">
-                        <label for="select-fund" style="margin-left:200px;margin-bottom:18px;"><b>Select Predefined
-                                Fund:</b></label>
-                        <select name="select-fund" id="select-fund" name="fund" class="form-control"
-                            style="position: relative;margin-left:50px; margin-bottom:10px;width: 400px;height: 30px;border-radius: 5px;outline: none;border-width: 1.5px;">
+
+        <form method="post" action="" id="form">
+            <fieldset class="BackgroundFS">
+                <h2 style="margin-bottom:50px;">ADD PEOPLE TO FUND ELIGIBILITY LIST </h2>
+                <fieldset class="searchBar">
+                    <div class="form-row ">
+                        <label for="NID-number" class="searchBarLable"><b>Pre Defined Fund:</b></label>
+
+                        <!-- <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
+                            name="NID"></input> -->
+                        <select class="form-control searchInput" name="select-PreFund" id="select-PreFund">
                             <option value="Samurdhi">Samurdhi</option>
                             <option value="Disabled">Disabled</option>
                             <option value="govi vishrama">govi vishrama</option>
                             <option value="Wedihity deemana">Wedihity deemana</option>
                         </select>
 
+                        <button type="submit" class="btn btn-primary btnNav">Select</button>
                     </div>
-
-                    <button style="margin-left: 78%; margin-top:-50px; width:13%; margin-bottom:20px;" type="submit"
-                        class="btn btn-primary">Select</button>
-
-
-
-                    </fieldset> 
                 </fieldset>
+            </fieldset>
         </form>
 
 
 
+
+
+
         <form>
-            <fieldset style="background-color:#fffef4;">
+            <fieldset class="BackgroundFS">
 
-                <fieldset Style="margin:2%;border-radius:5px; padding-top:2%;">
-                    <legend style="padding-left:5px; padding-right:5px;"><b>&nbsp;Search Manually Defined Funds</b>
-                    </legend>
+                <fieldset class="userpro">
+                    <h2> Search Manually Defined Funds </h2>
+                    </br>
+                    </br>
 
-                    <div class="form-row" style="margin-top:50px;">
-                        <label for="FundName" style="margin-left:200px;margin-bottom:23px;"><b>Fund
+                    
+                    <div class="form-row">
+                        <label for="FundName" class="inputLable"><b>Fund
                                 Name:</b></label>
-                        <input class="form-control" id="fundName" name="fundName"
-                            style="margin-left:350px;margin-bottom:50px;margin-right:250px; margin-top:-4%;"
-                            aria-describedby="validationServer03Feedback" required></input>
+                        <input class="form-control Input" id="fundName" name="fundName" required></input>
 
                     </div>
-                    <div class="form-row " style="margin-bottom:30px;">
-                        <label for="fundType" style="margin-left:200px;margin-bottom:18px;"><b>Fund
+
+                    <div class="form-row ">
+                        <label for="fundType" class="inputLable"><b>Fund
                                 Type:</b></label>
-                        <select class="form-control" name="Fund" id="Fund" name="fund"
-                            style="margin-left:350px;margin-bottom:20px;margin-right:250px; margin-top:-3.5%" ;>
-                            <option value="Fire">Fire </option>
-                            <option value="Flood">Flood </option>
-                            <option value="lewgini">Tsunami </option>
-                            <option value="Nayayeem">Nayayeem </option>
-                            <option value="Sulisulan">Sulisulan </option>
-                            <option value="Lewgini">Lewgini </option>
+                        <select class="form-control Input" name="Fund" id="Fund" name="fund">
+                            <option value="MdFund1">MD fund1 </option>
+                            <option value="MdFund2">MdFund2 </option>
+                            <option value="MdFund3">MdFund3 </option>>
                         </select>
                     </div>
+
                     <div class="form-row">
-                        <label for="date" style="margin-left:200px;margin-bottom:18px;"><b>Disaster
+                        <label for="date" class="inputLable"><b>Disaster
                                 Date:</b></label>
-                        <input placeholder="YYYY/MM/DD" class="form-control" id='date' name="date"
-                            style="margin-left:350px;margin-bottom:60px;margin-right:250px; margin-top:-3.5%;"
-                            aria-describedby="validationServer03Feedback" required></input>
+                        <input placeholder="YYYY/MM/DD" class="form-control Input" nameid='date' name="date"
+                            required></input>
                         <small></small>
                     </div>
 
                     <div class='button '>
 
-                        <button type="submit" class='submit-button  btn btn-primary'
-                            style=" float: right; padding-left:30px;padding-right:30px;padding-top:10px; padding-bottom:10px; margin-right:240px; margin-Bottom:30px;;">Search
-                        </button>
-                    </div>
+                        <button type="submit" class=' btn btn-primary signlebtn'>Search
+                            Here</button>
 
 
 

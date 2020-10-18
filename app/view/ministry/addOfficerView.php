@@ -2,77 +2,75 @@
 
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<div style="background-color:#ced4da">
+<div class="all_bacground_clor">
+    <div class="SearchByCriteriaform1 ">
 
-    <form class="SearchByCriteriaform1">
-    
+        <form id="form" action="post">
+            <fieldset class="BackgroundFS">
 
-            <fieldset
-                style="background-color:#fffef4;margin-left:0px;height:600px;">
-
-                <h2 style="color:black ; margin-bottom:55px;padding-top:10px; ">Add Officer Form
+                <h2>Add Officer Form
                 </h2>
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="officer-id" style="margin-left:70px;margin-bottom:18px;"><b>Officer ID:</b></label>
-                    <input class="form-control" id="officer-id"
-                        style="margin-left:180px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%"></input>
+
+                <div class="form-row">
+                    <label for="officer-id" class="inputLable"><b>Officer ID:</b></label>
+                    <input class="form-control Input" id="officer-id" required></input>
 
                 </div>
-                <div class="form-row" style="margin-bottom:20px;">
+                <div class="form-row">
 
-                    <label for="nid" style="margin-left:70px;margin-bottom:18px;"><b>NID:</b></label>
-                    <input class="form-control " id='nid'
-                        style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"></input>
+                    <label for="nid" class="inputLable"><b>NID:</b></label>
+                    <input class="form-control Input" id='nid' required></input>
                 </div>
 
 
 
 
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="region" style="margin-left:70px;margin-bottom:18px;"><b>Region:</b></label>
-                    <select class="form-control" name="region"
-                        style="margin-left:180px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%" id="region">
+                <div class="form-row">
+                    <label for="region" class="inputLable"><b>Region:</b></label>
+                    <select class="form-control Input" name="region" id="region">
                         <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
                     </select>
                 </div>
-                <div class="form-row" style="margin-bottom:20px;">
 
-                    <label for="position" style="margin-left:70px;margin-bottom:18px;"><b>Position:</b></label>
-                    <select class="form-control" name="position" id="position"
-                        style="margin-left:180px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%">
+
+                <div class="form-row">
+
+                    <label for="position" class="inputLable"><b>Position:</b></label>
+                    <select class="form-control Input" name="position" id="position">
                         <option value="volvo">Divisional Secretary</option>
                         <option value="saab">District sectrary</option>
                         <option value="mercedes">auditor</option>
                         <option value="audi">Vilage Officer</option>
                     </select>
                 </div>
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="exampleFormControlInput1" style="margin-left:70px;margin-bottom:18px;"><b>Email
-                            </b></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%" placeholder="name@example.com">
+
+                <div class="form-row">
+                    <label for="exampleFormControlInput1" class="inputLable"><b>Email
+                        </b></label>
+                    <input type="email" class="form-control Input" id="exampleFormControlInput1" required
+                        placeholder="name@example.com">
                 </div>
 
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="exampleFormControlInput1" style="margin-left:70px;margin-bottom:18px;"><b>Email again
-                            </b></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%" placeholder="name@example.com">
+                <div class="form-row">
+                    <label for="exampleFormControlInput1" class="inputLable"><b>Email again
+                        </b></label>
+                    <input type="email" class="form-control Input" id="exampleFormControlInput1" required
+                        placeholder="name@example.com">
                 </div>
-                <div class='buttons' style="margin-left:900px;">
 
-                    <button class='confirm-button btn btn-primary '>Confirm</button>
-                    <button class='view-list-button btn btn-primary'>View List</button>
+                <div class="Twobtn">
+
+                    <button type="submit" class=' btn btn-primary '>Confirm</button>
+                    <button class=' btn btn-primary '>View List</button>
                 </div>
             </fieldset>
 
 
-    </form>
-
-
+        </form>
+    </div>
 
 
 

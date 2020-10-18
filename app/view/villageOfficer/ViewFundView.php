@@ -47,6 +47,7 @@
 
         </form>
 
+        
         <form method="post" action="" id="form">
 
             <fieldset class="BackgroundFS">
@@ -92,7 +93,7 @@
 
         <form>
             <fieldset class="BackgroundFS">
-                <h3 class="fntStyle"><b> Dilivered person List</b></h2>
+                <h3 class="fntStyle"><b> Dilivered person List</b></h3>
                     <div class="tbleMargin">
                         <table>
                             <tr>

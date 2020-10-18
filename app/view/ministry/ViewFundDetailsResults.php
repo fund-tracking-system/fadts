@@ -3,47 +3,42 @@
 
 <div class="all_bacground_clor">
 
-   <div>
+<div class="SearchByCriteriaform1">
 
       <form method="post" action="" id="form">
-         <div class="SearchByCriteriaform1">
+         
 
-            <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-               <h2 style="margin-bottom:50px;">Search Results By Fund</h2>
+      <fieldset class="BackgroundFS">
+
+               <h2>Search Results By Fund</h2>
 
                <div class="form-row">
-                  <div style="display:flex;">
-                     <label class='phone-number-label' for="pnumber"
-                        style="margin-left:70px;margin-bottom:18px;"><b>Astimate Peoples:</b></label>
-                     <input class="form-control" id="astimatePeople"
-                        style="margin-left:35px;margin-bottom:20px;margin-right:150px;"
+                  <div class="flx">
+                     <label class='LblflxOne' for="Asimate-No"><b>Astimate Peoples:</b></label>
+                     <input class="form-control flxInputOne" id="astimatePeople"
                         value="amount of peoples who Nominated" readonly></input>
 
 
-
-
-                     <label class='phone-number-label' for="number"
-                        style="margin-left:70px;margin-bottom:18px;"><b>Dlivered Peoples:</b></label>
+                     <label class=' LblflxTwo' for="number"><b>Dlivered Peoples:</b></label>
                      <input class="form-control" id='deleverdPeoples'
                         style="margin-left:50px;margin-bottom:20px;margin-right:150px;"
                         value="amount of peoples who Recived" readonly></input>
                   </div>
                </div>
+
+
                <div class="form-row">
-                  <div style="display:flex;">
-                     <label class='phone-number-label' for="number" style="margin-left:70px;margin-bottom:18px;"><b>Fund
+                  <div class="flx">
+                     <label class='LblflxOne' for="number"><b>Fund
                            Amount:</b></label>
-                     <input class="form-control" id='F-amount'
-                        style="margin-left:35px;margin-bottom:20px;margin-right:150px;"
+                     <input class="form-control flxInputOne"id='F-amount'
                         value="amount of allocated money" readonly></input>
 
 
 
 
-                     <label class='phone-number-label' for="number"
-                        style="margin-left:70px;margin-bottom:18px;"><b>Distributed amount:</b></label>
-                     <input class="form-control" id='D-amount'
-                        style="margin-left:35px;margin-bottom:20px;margin-right:150px;"
+                     <label class=' LblflxTwo' for="number"><b>Distributed amount:</b></label>
+                     <input class="form-control flxInputTwo" id='D-amount'
                         value="amount of Distributed money" readonly></input>
                   </div>
                </div>
@@ -51,11 +46,17 @@
             </fieldset>
       </form>
 
-      <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px; overflow:auto;">
-         <form>
-            <h3 style="margin-bottom:30px; margin-top:10px; margin-left:30px;"><b> Fund Eligible List</b></h2>
-               <div style="margin-left:30px; margin-right:30px;">
-                  <table style="margin-bottom:20px;">
+
+
+
+      <form>
+
+      <fieldset class="BackgroundFS">
+
+        
+            <h3 class="fntStyle"><b> Fund Eligible List</b></h2>
+               <div class="tbleMargin">
+                  <table>
                      <tr>
                         <th><b>Name </b></th>
                         <th><b>NID</b></th>
@@ -76,9 +77,9 @@
                      </tr>
 
                   </table>
-
+                  </fieldset>
          </form>
-      </fieldset>
+  
 
 
 
