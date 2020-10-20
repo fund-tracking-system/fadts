@@ -1,6 +1,11 @@
 <?php
-// auditor's sidebar elements 
-if($_SESSION['controller']=='audit'){       ?>
+ 
+$controller = $_SESSION['controller'];
+
+switch($controller){
+
+   case "audit": // auditor's sidebar elements
+?>
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
@@ -26,11 +31,13 @@ if($_SESSION['controller']=='audit'){       ?>
    </a>
 </div>
 
-<?php } ?>
+<?php
 
-<?php 
-//divisional secretary's sidebar elements
-if($_SESSION['controller']=='divisional'){ ?>
+   break;
+
+   case "divisional":  // divisional ssecretary's sidebar elements 
+   
+?>
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
@@ -65,11 +72,13 @@ if($_SESSION['controller']=='divisional'){ ?>
    </a>
 </div>
 
-<?php } ?>
-
 <?php 
-//ministry sidebar elements
-if($_SESSION['controller']=='ministry'){  ?>
+
+   break; 
+
+   case "ministry":  // ministry's sidebar elements
+   
+?>
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
@@ -108,11 +117,14 @@ if($_SESSION['controller']=='ministry'){  ?>
    </a>
 </div>
 
-<?php }?>
-
 <?php 
-//village officer's sidebar elements
-if($_SESSION['controller']=='village'){  ?>
+
+   break;
+
+   case "village":   // village officer's sidebar elements
+      
+?>
+
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
@@ -144,4 +156,10 @@ if($_SESSION['controller']=='village'){  ?>
    </a>
 </div>
 
-<?php }  ?>
+<?php 
+   
+   break; 
+
+   }
+
+?>
