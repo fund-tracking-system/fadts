@@ -1,49 +1,58 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<div class="all_bacground_clor">>
+<div class="all_bacground_clor">
+    <div class="SearchByCriteriaform1 ">
 
-
-   <form method="post" style=margin-top:-15px;>
-      <div class="SearchByCriteriaform1 ">
-         <fieldset style="background-color:#fffef4;">
-            <h2 style="margin-bottom:10%; margin-bottom:130px;margin-top:60px;"> Disaster details</h2>
-            <div class="form-row" style="margin-top:-40px;">
-               <label for="select-disaster" style="margin-left:230px;margin-bottom:38px;"><b>Select
-                     Disaster:</b></label>
-               <select name="select-disaster" id="select-disaster" class="form-control"
-                  style="position: relative;margin-left:50px; margin-bottom:10px;width: 400px;height: 30px;border-radius: 5px;outline: none;border-width: 1.5px;">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-               </select>
-            </div>
-            <div class="form-row" style="margin-top:40px;">
-               <<label for="select-disaster" style="margin-left:230px;margin-bottom:25px;"><b>Disaster Date:</b></label>
-                  <input class="form-control"
-                     style="position: relative;margin-left:50px; margin-bottom:10px;width: 400px;height: 30px;border-radius: 5px;outline: none;border-width: 1.5px;"></input>
-
-
-            </div>
-            <div class="form-row" style="margin-top:5%;">
-               <label for="select-region" style="margin-left:230px;margin-bottom:18px;"><b>Select Region:</b></label>
-               <select name="select-region" id="select-region" class="form-control"
-                  style="position: relative;margin-left:50px; margin-bottom:10px;width: 400px;height: 30px;border-radius: 5px;outline: none;border-width: 1.5px;">
-                  <option value="volvo">Volvo</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-               </select>
-            </div>
-            <button class='btn btn-primary'
-               style=" margin-left: 35%;height: 30px; border-radius: 5px; padding-bottom:40px; margin-bottom:5%; margin-top:5%;">View
-               Updated Victims List</button>
-         </fieldset>
+        <form id="form" action="post">
+            <fieldset class="BackgroundFS">
+                <h2> Disaster details</h2>
+</br>
 
 
 
-   </form>
+                <div class="form-row">
+                    <label for="select-disaster" class="detailsLable"><b>Select
+                            Disaster:</b></label>
+                    <select name="select-disaster" id="select-disaster" class="form-control inputDetails"
+                        name="disaster">
+                        <option value="Flood" name="Flood">Flood</option>
+                        <option value="LandSlide" name="LandSlide">LandSlide</option>
+                        <option value="fire" name="Fire">fire</option>
+                        <option value="audi" name="disaster4">Disaster1</option>
+                    </select>
+                </div>
+
+
+                <div class="form-row">
+                    <label for="select-disaster" class="detailsLable"><b>Disaster
+                            Date:</b></label>
+                    <input class="form-control inputDetailsInput" id="Date" name="Date"></input>
+                </div>
+
+
+
+                <div class="form-row">
+                    <label for="select-region" class="detailsLable"><b>Select
+                            Region:</b></label>
+                    <select name="select-region" id="select-region" class="form-control inputDetails" name="region">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+
+                <button class='btn btn-primary location'>View Select Disaster</button>
+
+
+            </fieldset>
+        </form>
+
+    </div>
+
+
 
 </div>
 

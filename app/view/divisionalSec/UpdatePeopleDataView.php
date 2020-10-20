@@ -2,171 +2,151 @@
 <?php include VIEW.'includes/sidebar.php' ?>
 
 <div class="all_bacground_clor">
+    <div class="SearchByCriteriaform1">
 
 
 
-    <form method="post" action="">
-        <div class="SearchByCriteriaform1">
-
-            <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;">
-                <h2 style="margin-bottom:50px;">Search By NID</h2>
-                <fieldset style="padding-top:15px; margin-right:50px; margin-left:20px;border-radius:10px; ">
-                    <div class="form-row " style="display: flex;">
-                        <div style="display: flex; ">
-                            <label for="NID-number" style="margin-left:70px;margin-bottom:-35px;"><b>SearchBy
-                                    NID:</b></label>
-                            <input class="form-control " id='NID-number'
-                                style="margin-left:150px;margin-bottom:20px;margin-right:650px;"
-                                placeholder="972810177v"></input>
-
-
-                            <div class='button '>
-
-                                <button type="submit" class='submit-button btn btn-primary btn btn-primary'
-                                    style="margin-left:-600px;margin-top:0px; padding-bottom:10px;">Search</button>
-                            </div>
-                        </div>
+        <form method="post" action="" id="form">
+            <fieldset class="BackgroundFS">
+                <h2>Search By NID</h2>
+                <fieldset class="searchBar">
+                    <div class="form-row ">
+                        <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
+                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
+                            name="NID"></input>
+                        <button type="submit" class="btn btn-primary btnNav">Search</button>
                     </div>
-
                 </fieldset>
-
             </fieldset>
+        </form>  
 
-    </form>
 
-    
-        
+
 
         <form>
-        <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-
-            <h2 style="margin-bottom:50px;">UPDATE PEOPLE DATA</h2>
-
-
-            <div class="form-row">
-                <label for="name " style="margin-left:70px;margin-bottom:18px;"><b>Name:</b></label>
-                <input class="form-control" id="name"
-                    style="margin-left:150px;margin-bottom:20px;margin-right:150px; margin-top:-40px;"
-                    value="name display only" ></input>
-            </div>
-
-            <div class="form-row">
-                <label for="civil-status" style="margin-left:50px;margin-bottom:-35px;"><b> Address:</b></label>
-                <input class="form-control" id="civil-status"
-                    style="margin-left:150px;margin-bottom:20px;margin-right:150px; margin-top:-8px;"
-                    aria-describedby="validationServer03Feedback" required></input>
-            </div>
-
-            <div style="display:flex;">
-                <label for="birth-date" style="margin-left:70px;margin-bottom:18px;"><b>Birth Date:</b></label>
-                <input class="form-control" id='date' style="margin-left:30px;margin-right:150px;"
-                    value="Birth date read only" readonly></input>
-                <small> </small>
-                <label for="birth-date" style="margin-left:70px;margin-bottom:18px;"><b>Birth Certificate
-                        No:</b></label>
-                <input class="form-control" id='date' style="margin-left:150px;margin-bottom:20px;margin-right:150px;"
-                    aria-describedby="validationServer03Feedback" required></input>
-            </div>
+            <fieldset class=" BackgroundFS">
+                <h2>UPDATE PEOPLE DATA</h2>
 
 
 
             <div class="form-row">
-                <label for="region" style="margin-left:70px;margin-bottom:18px;"><b>Region:</b></label>
-                <select class="form-control" name="region"
-                    style="margin-left:150px;margin-bottom:20px;margin-right:150px;margin-top:-40px;" id="region">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
-            </div>
-
-            <div style="display:flex;">
-                <label class='phone-number-label' for="job"
-                    style="margin-left:70px;margin-bottom:18px;"><b>Job:</b></label>
-                <input class="form-control" id='job' style="margin-left:40px;margin-bottom:20px;margin-right:150px;"
-                    aria-describedby="validationServer03Feedback" required></input>
-                <label for='job-type' style="margin-left:70px;margin-bottom:18px;"><b>Job Type:</b></label>
-                <input class="form-control" id='job-type'
-                    style="margin-left:150px;margin-bottom:20px;margin-right:150px;"
-                    aria-describedby="validationServer03Feedback" required></input>
+               <label for="name " class="inputLable"><b>Full Name:</b></label>
+               <input class="form-control Input" id="name" name="name" value="name display only" readonly></input>
             </div>
 
 
 
-<fieldset style="margin-top:20px;margin-bottom:20px;margin-left:20px; margin-right:110px;padding-top:30px; border-radius:10px; ">
-            <div class="form-row">
-                <label for="civil-status" style="margin-left:70px;margin-bottom:-35px;"><b>Trustee
-                        </b></label>
-                <input class="form-control" id="civil-status"
-                    style="margin-left:150px;margin-bottom:20px;margin-right:150px; margin-top:-8px;"
-                    aria-describedby="validationServer03Feedback" required></input>
-            </div>
-
-            <div class="form-row">
-                <div style="display:flex;">
-                    <label class='phone-number-label' for="phone-number"
-                        style="margin-left:70px;margin-bottom:18px;"><b>Phone Number1:</b></label>
-                    <input class="form-control" id='phone-number'
-                        style="margin-left:10px;margin-bottom:20px;margin-right:150px;"
-                        aria-describedby="validationServer03Feedback" required></input>
-
-
-
-
-                    <label class='phone-number-label' for="phone-number"
-                        style="margin-left:70px;margin-bottom:18px;"><b>Phone Number2:</b></label>
-                    <input class="form-control" id='phone-number'
-                        style="margin-left:150px;margin-bottom:20px;margin-right:150px;"
-                        aria-describedby="validationServer03Feedback" required></input>
+                <div class="form-row">
+                    <label for="Address" class="inputLable"><b>Address:</b></label>
+                    <input class="form-control Input" id="address" name="address"
+                        placeholder="Opatha,ganegoda,Elptye,Galle"></input>
                 </div>
-            </div>
-</fieldset>
+
+
+                <div>
+                    <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
+                    <input class="form-control InputOne" id='birthDate' name="birthDate" value="YYYY/MM/DD"
+                        readonly></input>
+                    <small> </small>
+                    <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
+                            No:</b></label>
+                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="birthCertificateNo"
+                        readonly></input>
+                </div>
+
+
+                <div class="form-row">
+                    <label for="region" class="inputLable"><b>Region:</b></label>
+                    <select class="form-control Input" name="region" id="region" name="region">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+
+
+
             <div class="form-row">
-                <label class='trustee-label' for="CivilStatus"
-                    style="margin-left:70px;margin-bottom:18px; margin-top:30px;"><b>Civil</br>status:</b></label>
-                <select class="form-control" name="trustee" id="trustee"
-                    style="margin-left:150px;margin-bottom:20px;margin-right:150px; margin-top:-60px;"
-                    aria-describedby="validationServer03Feedback" required>
-                    <option value="UnMarrried">Married</option>
-                    <option value="Married">Maried</option>
-                </select>
-
+               <label for="trustee" class="inputLable"><b>Trustee
+                  </b></label>
+               <input id="trustee" class="form-control Input" ></input>
             </div>
-            <div class='buttons' style="margin-left:870px;">
 
-                <button type="submit" class='confirm-button btn btn-primary '>Confirm</button>
-                <button class='confirm-button btn btn-primary '>View List</button>
-            </div>
-            <div style="background-color:white;">
-                <hr style="margin-top:50px;">
-                <h2 style="margin-bottom:50px;">FADTS|SearchBy NID Result</h2>
 
-                <div class="form-row " style="display: flex;">
-                    <div style="display: flex; overflow:auto;">
-                        <table style="overflow:auto; margin-left:300px;">
 
-                            <tr>
-                                <th><B>FulName</B></th>
-                                <th><B>Address</B></th>
-                                <th><B>NidNumber</B></th>
-                                <th><B>GrossIncome</B></th>
-                                <th><B>jobStatus</B></th>
-                                <th><B>EligibleFunds</B></th>
+                <div>
+                    <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
+                    <input class="form-control InputOne" id='phone-number-1' name="phoneNumber1"></input>
 
-                            </tr>
-                        </table>
+                    <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
+                    <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" ></input>
+                </div>
+
+
+
+                <div class="form-row">
+                    <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
+                    <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
+                        <option value="unmarried">Unmarried</option>
+                        <option value="married">Married</option>
+                    </select>
+                </div>
+
+                <div class='form-row'>
+                    <label class="inputLable"><b>Job type </br></label>
+                    <label class="inputLable"></b></label>
+
+                    <select class="form-control Input" onclick="showCheckboxes() ">
+                        <!-- <option>Select an option</option>  select krapua pennanna hadann ooona-->
+                    </select>
+                    <!-- <div class="overSelect"></div> -->
+
+                    <div id="checkboxes" class="checksbox" name="checkbox">
+                    
+                        <label for="one"class="form-control">
+                            <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
+                        <label for="two" class="form-control">
+                            <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
+                        <label for="three" class="form-control">
+                            <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own Bussiness</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self Employee</label>
+                            <label for="four" class="form-control">
+                            <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
                     </div>
                 </div>
 
 
+            <div class="Twobtn">
 
+               <button type="submit" class=' btn btn-primary '>Confirm</button>
+               <button class=' btn btn-primary '>View List</button>
             </div>
 
 
 
-        </fieldset>
 
-    </form>
+         </fieldset>
+
+      </form>
+   </div>
 </div>
+<script type="text/javascript">
+var expanded = false;
+
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+    }
+}
+</script>
 <?php include VIEW.'includes/footer.php' ?>

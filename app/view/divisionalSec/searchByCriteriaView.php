@@ -1,179 +1,167 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-
 <div class="all_bacground_clor">
+    <div class="SearchByCriteriaform1">
 
-    <div>
+
 
         <form method="post" action="" id="form">
-            <div class="SearchByCriteriaform1">
-
-                <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-                    <h2 style="margin-bottom:50px;">Search By NID</h2>
-                    <fieldset style="padding-top:15px; margin-right:50px; margin-left:20px;border-radius:10px; ">
-                    <div class="form-row " style="display: flex;">
-                        <div style="display: flex; ">
-                            <label for="NID-number" style="margin-left:70px;margin-bottom:-35px;"><b>SearchBy
-                                    NID:</b></label>
-                            <input class="form-control " id='NID-number'
-                                style="margin-left:150px;margin-bottom:20px;margin-right:650px;"
-                                placeholder="972810177v"></input>
-
-
-                            <div class='button '>
-
-                                <button type="submit" class='submit-button btn btn-primary btn btn-primary'
-                                    style="margin-left:-600px;margin-top:0px; padding-bottom:10px;">Search</button>
-                            </div>
-                        </div>
+            <fieldset class="BackgroundFS">
+                <h2>Search By NID</h2>
+                <fieldset class="searchBar">
+                    <div class="form-row ">
+                        <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
+                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
+                            name="NID"></input>
+                        <button type="submit" class="btn btn-primary btnNav">Search</button>
                     </div>
-
                 </fieldset>
-                </fieldset>
+            </fieldset>
         </form>
-        <hr>
-        <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
-            <form>
-                <h2 style="margin-bottom:50px;">Search By Criteria</h2>
 
-                <div class='form-row '>
-                    <div style="display: flex;">
-                        <label class='age-label '
-                            style="margin-left:70px;margin-bottom:18px;margin-top:10px;"><b>Age:</b></label>
-                        <input class='first form-control'
-                            style="margin-left:150px;margin-bottom:20px;margin-right:150px;"></input><span class='to'
-                            style=" margin-right:170px;"> <b> to</b></span>
-                        <input class='second form-control'></input>
+
+        <form method="post" id="form">
+            <fieldset class="BackgroundFS">
+                <h2>Search By Criteria</h2>
+
+
+                <div>
+                    <label class="inputLable"><b>Age:</b></label>
+                    <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
+                            to</b></span>
+                    <input class="form-control InputTwo" name="age2"></input>
+                </div>
+
+                 <div class='form-row'>
+                    <label class="inputLable"><b>Job Type</br></label>
+                    <label class="inputLable"></b></label>
+
+                    <select class="form-control Input" onclick="showCheckboxes() ">
+                        <!-- <option>Select an option</option> select kree mnwada kyla pennanna onna methana -->
+                    </select>
+                    <!-- <div class="overSelect"></div> - -->
+
+                    <div id="checkboxes" class="checksbox" name="checkbox">
+                    
+                        <label for="one"class="form-control">
+                            <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
+                        <label for="two" class="form-control">
+                            <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
+                        <label for="three" class="form-control">
+                            <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own Bussiness</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self Employee</label>
+                            <label for="four" class="form-control">
+                            <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
+                    </div>
+                </div> 
+
+
+
+
+
+                <div style="  padding-top: 30px; ">
+                    <label class="inputLable"><b>Prolonged</br>
+                    </label>
+                    <label class="inputLable">
+                        Disorders/Diseases:</b></label>
+
+                    <div class='radio1'>
+                        <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
+                        <label for="have-pro" class="radioHaveLable"></label><span><b>Have</b></span>
+                    </div>
+                    <div class='radio2'>
+                        <input type="radio" id="no-pro" name="prolonged" value="no">
+                        <label for="no-pro"class="radioLbl2"></label><span><b>No</b></span>
+                    </div>
+                </div>
+
+
+
+                <div class="margn">
+                    <div>
+                        <label class="inputLable"><b>Gross
+                                Income:</b></label>
+                        <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
+                            <b> to</b></span>
+                        <input class="form-control InputTwo" name="income2 "></input>
                     </div>
                 </div>
 
 
                 <div class='form-row'>
-                    <label class='job-type-label' for="job-type" style="margin-left:70px;margin-bottom:-18px;"><b>Job
-                            Type:</b></label>
-                    <select class='job-types form-control' name="job-type" id="job-type"
-                        style="margin-left:260px;margin-bottom:20px;margin-right:150px;">
-                        <option value="Goverment">Goverment</option>
-                        <option value="Non-goverment">Non-goverment</option>
-                        <option value="Jobless">Jobless</option>
+                    <label class="inputLable"><b>Current Funds :</br></label>
+                    <label class="inputLable"></b></label>
+
+                    <select class="form-control Input" onclick="showCheckboxesTwo() ">
+                          <!-- <option>Select Option</option>  Select krapuwa peenna hadanna oona methana -->
                     </select>
-                </div>
+                    <!-- <div id="overSelect"></div>  -->
 
-                <div style="  padding-top: 30px;">
-                    <label class='prolonged-label' style="margin-left:70px;margin-bottom:18px;"><b>Prolonged</br>
-                    </label>
-                    <label class='prolonged-label' style="margin-left:70px;margin-bottom:18px;">
-                        Disorders/Diseases:</b></label>
-
-                    <div class='radio1'>
-                        <input type="radio" id="have-pro" name="prolonged" value="have"
-                            style="margin-left:20px;margin-bottom:18px;">
-                        <label for="have-pro"
-                            style="margin-left:-130px;margin-bottom:20px;margin-right:150px;"></label><span><b>Have</b></span>
-                    </div>
-                    <div class='radio2'>
-                        <input type="radio" id="no-pro" name="prolonged" value="no">
-                        <label for="no-pro" style="margin-left:10px;"></label><span><b>No</b></span>
+                    <div id="checkbox2" class="checksbox" name="checkbox">
+                    
+                        <label for="one"class="form-control">
+                            <input type="checkbox" id="Samurdhi" name="Samurdhi Fund" />&nbsp; &nbsp;Samurdhi Fund</label>
+                        <label for="two" class="form-control">
+                            <input type="checkbox" id="farmer" name="farmer" /> &nbsp; &nbsp;Farmers' pensions</label>
+                        <label for="three" class="form-control">
+                            <input type="checkbox" id="Disable" name="Disable" /> &nbsp; &nbsp; Disable Fund</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="Elder" name="Elder" /> &nbsp; &nbsp;Elder's Fund</label>
+                        <label for="four" class="form-control">
+                            <input type="checkbox" id="Pandemic" name="Pandemic" /> &nbsp; &nbsp;Covid-19 5000</label>
+                    
                     </div>
                 </div>
 
-
-
-                <div class='form-row ' style="margin-top:50px;">
-                    <div style="display: flex;">
-                        <label class='income-label'
-                            style="margin-left:70px;margin-bottom:18px;margin-top:10px;"><b>Gross
-                                Income:</b></label>
-                        <input class='first form-control'
-                            style="margin-left:110px;margin-bottom:20px;margin-right:150px;"></input><span class='to'
-                            style=" margin-right:150px;"> <b> to</b></span>
-                        <input class='second form-control'></input>
-                    </div>
-                </div>
-
-
-                <div class="multiselect">
-                    <label class='multi-select-label' for="current-funds"
-                        style="margin-left:70px;margin-bottom:18px;"><b>Current</br></label>
-                    <label class='multi-select-label' for="current-funds"
-                        style="margin-left:70px;margin-bottom:18px;">Funds/Donations:</b></label>
-
-                    <div class="selectBox" onclick="showCheckboxes() "
-                        style="margin-left:30px;margin-bottom:20px;margin-right:150px;">
-                        <select>
-                            <option>Select an option</option>
-                        </select>
-                        <div class="overSelect"></div>
-                    </div>
-                    <div id="checkboxes"
-                        style="margin-left:20.5%; margin-top:-1.5%; background-color:white; border:none ">
-                        <label for="one">
-                            <input type="checkbox" id="one" /><b>&nbsp; &nbsp;Samurdhi</label>
-                        <label for="two">
-                            <input type="checkbox" id="two" /> &nbsp; &nbsp;Retire</label>
-                        <label for="three">
-                            <input type="checkbox" id="three" /> &nbsp; &nbsp;Govi wishrama</label>
-                        <label for="four">
-                            <input type="checkbox" id="four" /> &nbsp; &nbsp;Wadihiti</b></label>
-                    </div>
-                </div>
 
                 <div class='button '>
 
-                    <button type="submit" class='submit-button  btn btn-primary'
-                        style=" float: right;margin-top: 0px; padding-left:20px;padding-right:20px;padding-top:10px; padding-bottom:10px; margin-right:100px;">Search
+                    <button type="submit" class=' btn btn-primary signlebtn' >Search
                         Here</button>
                 </div>
 
-
-
-
-                <div style="background-color:white;">
-                    <hr style="margin-top:50px;">
-                    <h2 style="margin-bottom:50px;">FADTS|SearchBy NID Result</h2>
-
-                    <div class="form-row " style="display: flex;">
-                        <div style="display: flex; overflow:auto;">
-                            <table style="overflow:auto; margin-left:300px;">
-
-                                <tr>
-                                    <th><B>FulName</B></th>
-                                    <th><B>Address</B></th>
-                                    <th><B>NidNumber</B></th>
-                                    <th><B>GrossIncome</B></th>
-                                    <th><B>jobStatus</B></th>
-                                    <th><B>EligibleFunds</B></th>
-
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-
-
-        </fieldset>
+            </fieldset>
+        </form>
     </div>
-    </form>
 </div>
+
+
+
+<!-- checkBox scriptFiles  -->
+
 
 <script type="text/javascript">
-function validateNID(){
-    
-    text.innerHtml="hello";
-    text.style.color="#fffff";
-}var form =getElementById("form");
- var nid =getElementById("NID-number");
- var text =getElementById("text");
-       
+var expanded = false;
+
+var expand=false;
 
 
-       
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkboxes");
+    if (!expand) {
+        checkboxes.style.display = "block";
+        expand = true;
+    } else {
+        checkboxes.style.display = "none";
+        expand = false;
+    }
+}
+
+
+function showCheckboxesTwo() {
+    var checkboxs = document.getElementById("checkbox2");
+    if (!expanded) {
+        checkboxs.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxs.style.display = "none";
+        expanded = false;
+    }
+
+}
 </script>
-
-</div>
 <?php include VIEW.'includes/footer.php' ?>

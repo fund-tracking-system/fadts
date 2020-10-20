@@ -9,7 +9,7 @@
 
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
-                <h2 style="margin-bottom:50px;">Search By NID</h2>
+                <h2>Search By NID</h2>
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>

@@ -11,7 +11,7 @@
 
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
-                <h2 style="margin-bottom:50px;">ADD PEOPLE TO FUND ELIGIBILITY LIST </h2>
+                <h2>ADD PEOPLE TO FUND ELIGIBILITY LIST </h2>
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="NID-number" class="searchBarLable"><b>Pre Defined Fund:</b></label>
@@ -44,7 +44,7 @@
                     </br>
                     </br>
 
-                    
+
                     <div class="form-row">
                         <label for="FundName" class="inputLable"><b>Fund
                                 Name:</b></label>
@@ -74,7 +74,7 @@
 
                         <button type="submit" class=' btn btn-primary signlebtn'>Search
                             Here</button>
-
+                    </div>
 
 
                 </fieldset>

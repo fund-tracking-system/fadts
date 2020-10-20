@@ -18,9 +18,9 @@
                     <select name="select-disaster" id="select-disaster" class="form-control inputDetails"
                         name="disaster">
                         <option value="Flood" name="Flood">Flood</option>
-                        <option value="Nayayema" name="Nayayeem">Nayayema</option>
-                        <option value="mercedes" name="disaster3">Mercedes</option>
-                        <option value="audi" name="disaster4">Audi</option>
+                        <option value="LandSlide" name="LandSlide">LandSlide</option>
+                        <option value="fire" name="Fire">fire</option>
+                        <option value="audi" name="disaster4">Disaster1</option>
                     </select>
                 </div>
 
