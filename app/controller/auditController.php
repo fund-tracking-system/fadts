@@ -10,6 +10,29 @@ class auditController extends Controller{
 
 
 
+   public function ViewSearchPeople(){
+      $this->view('auditor/searchPeopleView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function ViewDisasterDetails(){
+      $this->view('auditor/disasterDetailsView');
+
+      $this->view->render();
+
+   }
+   public function ViewFundDetails(){
+      $this->view('auditor/fundDetailsView');
+
+      $this->view->render();
+   }
+
+   public function viewHistoryRecord(){
+      $this->view('auditor/historyRecordView');
+
+      $this->view->render();
+   }
 
 
   

@@ -26,7 +26,7 @@
                 <div class="form-row">
                     <label for="select-disaster" class="detailsLable"><b>Disaster
                             Date:</b></label>
-                    <input class="form-control inputDetailsInput" id="Date" name="Date"placeholder="YYYY/MM/DD"></input>
+                    <input class="form-control inputDetailsInput" id="Date" name="Date" placeholder="YYYY/MM/DD"></input>
                 </div>
 
 

@@ -6,16 +6,16 @@ if($_SESSION['controller']=='audit'){       ?>
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Disaster Details
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ViewFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Fund
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ViewSearchPeople" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Search People Data
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/viewHistoryRecord" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View History Records
    </a>
    <a href="#" class="dashboard sidebar_link">
@@ -38,6 +38,7 @@ if($_SESSION['controller']=='divisional'){ ?>
    </a> -->
    <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Add  New Disaster
+
    <a href="/fadts/divisional/ViewAlternativeRelease" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Alternate Fund Release
    </a>
