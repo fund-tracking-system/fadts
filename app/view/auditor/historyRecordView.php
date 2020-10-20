@@ -1,7 +1,7 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<!-- <link rel="stylesheet" type="text/css" href="viewHistory.css"> -->
+<link rel="stylesheet" type="text/css" href="viewHistory.css">
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
@@ -19,7 +19,7 @@
         </form> 
         
 
-        <form>
+        
         <fieldset class='BackgroundFS'>
             <?php if (isset($_SESSION['query_results'])) { ?>
                 <h3 class = 'fntStyle'>Filtered results:</h3>
@@ -60,7 +60,7 @@
 
         </fieldset> 
         <?php unset($_SESSION['query_results']); //unset results from session variables ?>
-        </form>
+    
 
         
     </div>    
