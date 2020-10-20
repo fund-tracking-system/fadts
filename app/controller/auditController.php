@@ -7,7 +7,7 @@ class auditController extends Controller{
       
       $this->model->load(); 
    }
-
+ 
 
 
    public function ViewSearchPeople(){
