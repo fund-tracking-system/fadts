@@ -84,6 +84,12 @@ switch($controller){
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
+   <a href="/fadts/ministry/ViewAddOfficer" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Add Officer
+   </a>
+   <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Update Officer
+   </a>
    <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Create Fund
    </a>
@@ -102,13 +108,6 @@ switch($controller){
    <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Disaster Details
    </a>
-   <a href="/fadts/ministry/ViewAddOfficer" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add Officer
-   </a>
-   <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Update Officer
-   </a>
-
    <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
