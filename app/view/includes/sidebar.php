@@ -96,7 +96,7 @@ if($_SESSION['controller']=='ministry'){  ?>
    <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Disaster Details
    </a>
-   <a href="/fadts/ministry/ViewAddOfficer" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Add Officer
    </a>
    <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">

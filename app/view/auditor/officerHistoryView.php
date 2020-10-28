@@ -54,11 +54,10 @@
                         </table>
                     </fieldset>
                 </div>
-            <?php } ?>
 
+                <?php unset($_SESSION['query_results']); //unset results from session variables ?>
+            <?php } ?> 
         </fieldset> 
-        <?php unset($_SESSION['query_results']); //unset results from session variables ?>
-        
     </div>    
 </div>
 
