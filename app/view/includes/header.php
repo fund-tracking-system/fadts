@@ -30,7 +30,7 @@
 <body >
    <div>
       <nav>
-         <img class="logo" src="/fadts/app/view/includes/logo.PNG" alt="logo_icon" >
+         <img class="logo" src="/fadts/app/view/includes/FADTS.png" alt="logo_icon" >
          <!-- <label class="logo">FADTS</label> -->
          <ul>
             <li><a href="/fadts/includes/index" ><B>Home</B></li>
