@@ -25,7 +25,7 @@
                   <input class="form-control Input" id="location"></input>
                </div>
                <div class="form-row">
-                  <label for="name" class="inputLable"><b>Description:</b></label>
+                  <label for="Description" class="inputLable"><b>Description:</b></label>
                   <textarea class="form-control Input txtWidth " id="description"></textarea>
                </div>
 

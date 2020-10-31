@@ -35,7 +35,7 @@
                      echo '<div class="alert alert-danger" role="alert">Database connection error!</div>';
                   }
                   if($error == "wrong_user_or_pass"){
-                     echo '<div class="alert alert-danger" role="alert">Wrong username or password!</div>';
+                     echo '<div class="alert alert-danger" role="alert">Wrong e-mail or password!</div>';
                   }
                   if($error == "direct_access"){
                      echo '<div class="alert alert-danger" role="alert"">Direct access not allowed!</div>';
@@ -44,8 +44,8 @@
             ?> 
 
             <div class="form-group">
-               <label for="username"><B>User name</B></label>
-               <input type="text" id="username" class="form-control" name="username" placeholder="Enter Username">
+               <label for="username"><B>Email</B></label>
+               <input type="email" id="email" class="form-control" name="email" placeholder="Enter e-mail">
                <small></small>
             </div>
 

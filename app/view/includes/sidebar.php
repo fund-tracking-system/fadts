@@ -1,6 +1,11 @@
 <?php
-// auditor's sidebar elements 
-if($_SESSION['controller']=='audit'){       ?>
+ 
+$controller = $_SESSION['controller'];
+
+switch($controller){
+
+   case "audit": // auditor's sidebar elements
+?>
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
@@ -9,16 +14,16 @@ if($_SESSION['controller']=='audit'){       ?>
    <a href="/fadts/audit/officerHistoryView" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Officer History
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Disaster Details
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ViewFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Fund
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ViewSearchPeople" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Search People Data
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/viewHistoryRecord" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View History Records
    </a>
    <a href="#" class="dashboard sidebar_link">
@@ -29,19 +34,21 @@ if($_SESSION['controller']=='audit'){       ?>
    </a>
 </div>
 
-<?php } ?>
+<?php
 
-<?php 
-//divisional secretary's sidebar elements
-if($_SESSION['controller']=='divisional'){ ?>
+   break;
+
+   case "divisional":  // divisional ssecretary's sidebar elements 
+   
+?>
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
    <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add New Disaster
-   </a>
+      <span class="material-icons">corporate_fare</span>Add  New Disaster
+
    <a href="/fadts/divisional/ViewAlternativeRelease" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Alternate Fund Release
    </a>
@@ -68,16 +75,27 @@ if($_SESSION['controller']=='divisional'){ ?>
    </a>
 </div>
 
-<?php } ?>
-
 <?php 
-//ministry sidebar elements
-if($_SESSION['controller']=='ministry'){  ?>
+
+   break; 
+
+   case "ministry":  // ministry's sidebar elements
+   
+?>
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
+   </a>
+   <a href="/fadts/ministry/ViewAddOfficer" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Add Officer
    </a> -->
+   <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Add Officer
+   </a>
+   <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Update Officer
+   </a>
    <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Create Fund
    </a>
@@ -96,13 +114,6 @@ if($_SESSION['controller']=='ministry'){  ?>
    <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Disaster Details
    </a>
-   <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add Officer
-   </a>
-   <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Update Officer
-   </a>
-
    <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
@@ -111,11 +122,14 @@ if($_SESSION['controller']=='ministry'){  ?>
    </a>
 </div>
 
-<?php }?>
-
 <?php 
-//village officer's sidebar elements
-if($_SESSION['controller']=='village'){  ?>
+
+   break;
+
+   case "village":   // village officer's sidebar elements
+      
+?>
+
 
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
@@ -147,4 +161,10 @@ if($_SESSION['controller']=='village'){  ?>
    </a>
 </div>
 
-<?php }  ?>
+<?php 
+   
+   break; 
+
+   }
+
+?>

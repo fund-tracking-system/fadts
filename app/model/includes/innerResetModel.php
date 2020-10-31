@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-$username = $_SESSION['username'];
+$email = $_SESSION['email'];
 
 if(isset($_POST['submit'])){
 
@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
    $againpwd = $_POST['againpwd'];
 
 
-   $sql = "SELECT * FROM user WHERE password=? and username=?";
+   $sql = "SELECT * FROM user WHERE password=? and email=?";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
       exit();     
    }
    else{
-      mysqli_stmt_bind_param($stmt,"ss",$currentpwd,$username);
+      mysqli_stmt_bind_param($stmt,"ss",$currentpwd,$email);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
 
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
                exit();
             }
 
-            $sql = "UPDATE user SET password = ? WHERE password=? and username=?";
+            $sql = "UPDATE user SET password = ? WHERE password=? and email=?";
             $stmt = mysqli_stmt_init($con);
 
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
                exit();     
             }
             else{
-               mysqli_stmt_bind_param($stmt,"sss",$newpwd,$currentpwd,$username);
+               mysqli_stmt_bind_param($stmt,"sss",$newpwd,$currentpwd,$email);
 
                if(mysqli_stmt_execute($stmt)){
                   header("Location:/fadts/includes/userProfile?error=success");

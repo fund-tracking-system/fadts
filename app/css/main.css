@@ -14,7 +14,7 @@ nav{
 	/* background:#2E4053;  */
 	height: 70px;
 	width: 100%;
-	box-shadow: 5px 6px 6px #888888;
+	box-shadow: 2px 2px 2px #888888;
 }
 label.logo{
 	color: white;
@@ -23,6 +23,14 @@ label.logo{
 	padding: 0 100px;
 	font-weight: bold;
 
+}
+
+img.logo{
+	
+	height: 60px;
+	width: 260px;
+	padding-top: 6px;
+	padding-left: 40px;
 }
 
 nav ul{
@@ -68,7 +76,7 @@ a:active,a:hover{
 	/* border-right: 2px solid #0f6655; */
 	background: #2C3E50;
 	border-right: 2px solid #2C3E50;
-	box-shadow: 5px 6px 6px #888888;
+	box-shadow: 2px 2px 2px #888888;
 }
 
 .sidebar_link {
@@ -124,7 +132,7 @@ footer h4{
 .alert {
 	padding: 15px;
 	padding-left: 70px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	margin-left: 120px;
 	margin-right: 120px;
 	border: 1px solid transparent;

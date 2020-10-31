@@ -47,11 +47,13 @@
             </fieldset>
 
         </form>
+
         <form method="POST" action="/fadts/includes/resetModel">
-            <fieldset style="background-color:#fffef4; border-bottom:10px; padding-bottom:12px;padding-top:20px; ">
+            <fieldset class="BackgroundFS">
 
-
-                <?php 
+                <fieldset class="userpro">
+                    <h2>Reset Password</h2>
+                    <?php 
                      if(isset($_GET['error'])){
          
                         $error = $_GET['error'];
@@ -80,38 +82,36 @@
 
 
 
-                    <div class="form-row" style="margin-left:200px;margin-top:50px;">
-                        <label for="password" style="margin-bottom:18px; margin-left:-10px;"><B>Current
+                    <div class="form-row">
+                        <label for="password" class="inputLable"><B>Current
                                 Password:</B></label>
-                        <input type="password" class="form-control" 
-                            style="margin-left:180px;margin-bottom:25px;margin-right:250px; margin-top:-45px;"
-                            name="currentpwd" id="CurrentPassword" placeholder="Enter Current Password">
+                        <input type="password" class="form-control InputPro" name="currentpwd" id="CurrentPassword"
+                            placeholder="Enter Current Password">
                         <small></small>
                     </div>
 
 
-                    <div class="form-row" >
+                    <div class="form-row">
                         <label for="password" class="inputLable"><B>New
                                 Password:</B></label>
-                        <input type="password" class="form-control InputPro"
-                            name="newpassword" id="newpassword" placeholder="Enter Password">
+                        <input type="password" class="form-control InputPro" name="newpassword" id="newpassword"
+                            placeholder="Enter Password">
                         <small></small>
                     </div>
 
                     <div class="form-row">
                         <label for="password" class="inputLable"><B>Confirm
                                 Password:</B></label>
-                        <input type="password" class="form-control InputPro"
-                            name="againpassword" id="reEnter" placeholder="Again Enter New Password">
+                        <input type="password" class="form-control InputPro" name="againpassword" id="reEnter"
+                            placeholder="Again Enter New Password">
                         <small></small>
                     </div>
                     </br>
 
                     <div class="user2btn">
-                        <button type="reset" class='confirm-button btn'
-                            >Reset</button>
+                        <button type="reset" name="reset" class="confirm-button btn">Reset</button>
 
-                        <button type="submit" class='btn btn-primary '>Confirm</button>
+                        <button type="submit" name="submit" class='btn btn-primary '>Confirm</button>
                     </div>
                 </fieldset>
             </fieldset>

@@ -6,11 +6,11 @@ if(isset($_POST['logsubmit'])){
 
    //include CONN."connection.php";
 
-   $username = $_POST['username'];
+   $email = $_POST['email'];
    $password = $_POST['password'];
 
 
-   $sql = "SELECT * FROM user WHERE username=?";
+   $sql = "SELECT * FROM user WHERE email=?";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -18,7 +18,7 @@ if(isset($_POST['logsubmit'])){
       exit();     
    }
    else{
-      mysqli_stmt_bind_param($stmt,"s",$username);
+      mysqli_stmt_bind_param($stmt,"s",$email);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
 

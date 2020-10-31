@@ -50,16 +50,31 @@ body{
   margin-left:10px;
 }
 .form-control.searchInput{
+
+  position: relative;
+  margin-left:50px; 
+  margin-bottom:10px;
+  width: 400px;
+  height: 45px;
+  border-radius: 5px;
+  outline: none;border-width: 1.5px;
+
+
+/* 
+
   position: relative;
   margin-left:50px;
    margin-bottom:10px;
+   padding-bottom: 30px;;
    width: 400px;
    height: 30px;
    border-radius: 5px;
    outline: none;
    border-width: 1.5px; 
    padding:20px;
-   
+
+ */
+
 }
 .form-control.InputTwo{
   margin-left:810px; 
@@ -95,7 +110,7 @@ body{
   width:13%;
 }
 .form-control.Input.txtWidth{
-  min-height: 50px;;
+  min-height: 100px;;
 }
 .selectBox.input{
   margin-left:350px;
