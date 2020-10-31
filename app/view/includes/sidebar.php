@@ -53,7 +53,7 @@ switch($controller){
       <span class="material-icons">corporate_fare</span>Alternate Fund Release
    </a>
    <a href="/fadts/divisional/ViewUpdatePeopleData" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Update Registration Data
+      <span class="material-icons">corporate_fare</span>Update People Data
    </a>
    <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Disaster Details

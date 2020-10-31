@@ -8,11 +8,11 @@
 
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
-                <h2>Search By NID</h2>
+                <h2>UPDATE PEOPLE DATA</h2>
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
-                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
+                        <input class="form-control searchInput" id='NID-number' placeholder="972810177v"
                             name="NID"></input>
                         <button type="submit" class="btn btn-primary btnNav">Search</button>
                     </div>
@@ -24,11 +24,11 @@
 
 
         <form>
-            <fieldset class=" BackgroundFS">
-                <h2>UPDATE PEOPLE DATA</h2>
+            <fieldset class="BackgroundFS">
+                <!-- <h2>UPDATE PEOPLE DATA</h2> -->
 
 
-
+            <fieldset class="searchBar">
             <div class="form-row">
                <label for="name " class="inputLable"><b>Full Name:</b></label>
                <input class="form-control Input" id="name" name="name" value="name display only" readonly></input>
@@ -44,10 +44,12 @@
 
 
                 <div>
-                    <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
+                    <label for="birth-date" class="inputLable"><b>Birth Date:</b></label>
                     <input class="form-control InputOne" id='birthDate' name="birthDate" value="YYYY/MM/DD"
                         readonly></input>
                     <small> </small>
+                </div>
+                <div>
                     <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
                             No:</b></label>
                     <input class="form-control InputTwo" id='birthvertifiacateNo' name="birthCertificateNo"
@@ -80,7 +82,7 @@
                     <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
                     <input class="form-control InputOne" id='phone-number-1' name="phoneNumber1"></input>
 
-                    <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
+                    <label class='inputLable LableTwo' for="phone-number"><b>Contact Number 2:</b></label>
                     <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" ></input>
                 </div>
 
@@ -129,8 +131,8 @@
 
 
 
-
-         </fieldset>
+            </fieldset>
+        </fieldset>
 
       </form>
    </div>
@@ -149,4 +151,5 @@ function showCheckboxes() {
     }
 }
 </script>
+
 <?php include VIEW.'includes/footer.php' ?>
