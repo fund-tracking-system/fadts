@@ -60,10 +60,6 @@
 
 
 </body>
-<<<<<<< HEAD
-<script src="/fadts/app/js/home.js"></script>
-=======
 <script src="/fadts/app/js/home.js"></script> 
->>>>>>> 5e3ebdec2cee8be13813f179916e258e60ead136
 
 </html>
