@@ -58,7 +58,7 @@
                     <label for="exampleFormControlInput1" class="inputLable"><b>Email
                         </b></label>
                     <input type="email" class="form-control Input" id="exampleFormControlInput1" name="email" 
-                        placeholder="name@example.com">
+                        placeholder="name@example.com" type="email">
                 </div>
 
                 <div class="form-row">
@@ -115,10 +115,10 @@
 
                 <div>
                     <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
-                    <input class="form-control InputOne" id='phone-number-1' name="phoneNumber1" ></input>
+                    <input class="form-control InputOne" id='phone-number-1' name="phoneNumber1" type="number"></input>
 
                     <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
-                    <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" ></input>
+                    <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" type="number"></input>
                 </div>
 
 
