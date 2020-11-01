@@ -6,18 +6,25 @@
     //create connection
 
     
-    $query='INSERT INTO persons (name,nid,headOfFamily,address,phone,phone_two,birthdate,birthCertificateNo,civilStatus,email,trustee,jobtype) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)';
+    $query='INSERT INTO persons (name,nid,headOfFamily,address,phone,phone_two,birthdate,birthCertificateNo,civilStatus,email,trustee) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
     $stmt=$con->prepare($query);
-    $stmt->bind_param('ssssssssssss',$name,$nid,$headOfFamily,$address,$phoneNumber1,$phoneNumber2,$b_date,$b_certifi,$civilStatus,$email,$trustee,$jobType);
+    $stmt->bind_param('sssssssssss',$name,$nid,$headOfFamily,$address,$phoneNumber1,$phoneNumber2,$b_date,$b_certifi,$civilStatus,$email,$trustee);
+
+
+    // $query='INSERT INTO persons (name,nid,headOfFamily,address,phone) VALUES(?,?,?,?,?)';
+    // $stmt=$con->prepare($query);
+    // $stmt->bind_param('sssss',$name,$nid,$headOfFamily,$address,$phoneNumber1);
 
 
 
    
      $name=$_SESSION['people_name'];
+     echo $name;
      $nid=$_SESSION['people_nid'];
-     $headOfFamily=$_SESSION['people_headOfFamily'];
-     $address=$_SESSION['people_address'];
-     $phoneNumber1=$_SESSION['people_phoneNumber1'];
+     
+      $headOfFamily=$_SESSION['people_headOfFamily'];
+      $address=$_SESSION['people_address'];
+      $phoneNumber1=$_SESSION['people_phoneNumber1'];
      $phoneNumber2=$_SESSION['people_phoneNumber2'];
      $b_date=$_SESSION['people_b_date'];
      $b_certifi=$_SESSION['people_b_certifi'];
@@ -54,7 +61,7 @@
 
     
     //redirecting to view
-     header("Location:/fadts/divisional/ViewAddPeople"); 
+//  header("Location:/fadts/divisional/ViewAddPeople"); 
 
 
 ?>
