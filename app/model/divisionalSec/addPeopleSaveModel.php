@@ -12,7 +12,7 @@
 
 
 
-    
+   
      $name=$_SESSION['people_name'];
      $nid=$_SESSION['people_nid'];
      $headOfFamily=$_SESSION['people_headOfFamily'];
@@ -26,6 +26,7 @@
      $trustee=$_SESSION['people_trustee'];
      $jobType=$_SESSION['people_jobType'];
     // echo $checkbox;
+    
 
 
     
