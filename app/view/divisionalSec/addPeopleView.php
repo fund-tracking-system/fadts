@@ -115,17 +115,17 @@
 
                 <div>
                     <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
-                    <input class="form-control InputOne" id='phonenumber1' name="phonenumber1" type="number"></input>
+                    <input class="form-control InputOne" id='phonenumber1' name="phoneNumber1" type="number"></input>
 
                     <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
-                    <input class="form-control InputTwo" id='phonenumber2' name="phoneumber2" type="number"></input>
+                    <input class="form-control InputTwo" id='phonenumber2' name="phoneNumber2" type="number"></input>
                 </div>
 
 
 
                 <div class="form-row">
                     <label for="tnid" class="inputLable"><b>Trustee:</b></label>
-                    <input class="form-control Input" id='tnid' class="form-control Input" name="tnid"></input>
+                    <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
                 </div>
 
                 <div class="Twobtn">
