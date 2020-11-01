@@ -15,7 +15,7 @@
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
 
-                <fieldset class="userpro">
+                <fieldset class="userpro"> 
 
                     <h2>USER PROFILE </h2>
 

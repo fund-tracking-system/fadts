@@ -53,10 +53,30 @@ class divisionalController extends Controller{
       
       $this->view->render();      
    }
+
+
+   
    public function userProfileModel(){       // load the model for userProfile view of divisional Secratary
       $this->model('divisionalSec/userProfileView');
       
       $this->model->load();      
+   }
+
+
+
+
+   public function addPeopleModel(){ 
+      $this->model('divisionalSec/addPeopleModel');
+    
+      
+      $this->model->load();
+      // This is how load the model
+   }
+
+   public function addPeopleSaveModel(){ 
+      $this->model('divisionalSec/addPeopleSaveModel');
+      echo ("here in"); 
+      $this->model->load(); // This is how load the model
    }
 
 }
