@@ -125,7 +125,7 @@ footer h4{
 }
 
 .log_button:active,.log_button:hover{
-	background:#ff2222;
+	background:#E3213B;
 	transition: .5s;
 }
 
@@ -154,3 +154,26 @@ footer h4{
 	background-color: #fde4cc;
 	border-color: #fcdab8;
  }
+ .myButton {
+	box-shadow:inset 0px 1px 0px 0px #3dc21b;
+	background:linear-gradient(to bottom, #3ed165 5%, #5cbf2a 100%);
+	background-color:#3ed165;
+	border-radius:3px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:18px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #5cbf2a 5%, #3ed165 100%);
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

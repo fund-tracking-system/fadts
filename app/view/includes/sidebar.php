@@ -35,7 +35,7 @@ switch($controller){
 
    break;
 
-   case "divisional":  // divisional ssecretary's sidebar elements 
+   case "divisional":  // divisional secretary's sidebar elements 
    
 ?>
 
@@ -46,7 +46,7 @@ switch($controller){
    <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Add  New Disaster
 
-   <a href="/fadts/divisional/ViewAlternativeRelease" class="dashboard sidebar_link">
+   <a href="/fadts/divisional/fundRelease" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Alternate Fund Release
    </a>
    <a href="/fadts/divisional/ViewUpdatePeopleData" class="dashboard sidebar_link">
