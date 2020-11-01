@@ -36,10 +36,15 @@ class divisionalController extends Controller{
       $this->view->render(); // This is how load the view
    }
    
-   public function ViewAlternativeRelease(){
+   public function fundRelease(){
       $this->view('divisionalSec/fundReleaseView');
       
       $this->view->render(); // This is how load the view
+   }
+   public function fundReleaseModel(){
+      $this->model('divisionalSec/fundReleaseModel');
+      
+      $this->model->load();
    }
 
    // load the userProfile view of divisional Secratary

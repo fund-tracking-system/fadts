@@ -20,11 +20,27 @@
    <meta charset="utf-8">
    <title>Work Bench</title>
    <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+
+   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+   <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.flash.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+   
    <link rel="stylesheet" type="text/css" href="/fadts/app/css/main.css">
    <link rel="stylesheet" type="text/css" href="/fadts/app/css/fill.css">
+
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+
 </head>
 
 <body >
@@ -33,14 +49,14 @@
          <img class="logo" src="/fadts/app/view/includes/FADTS.png" alt="logo_icon" >
          <!-- <label class="logo">FADTS</label> -->
          <ul>
-            <li><a href="/fadts/includes/index" ><B>Home</B></li>
+            <li><a href="/fadts/includes/index" ><B>Home</B></a></li>
 
-            <li><a href="#"><B>Notifications</B></li>
+            <li><a href="#"><B>Notifications</B></a></li>
 
-            <li><a href="/fadts/includes/userProfile"><B>Profile</B></li>
+            <li><a href="/fadts/includes/userProfile"><B>Profile</B></a></li>
             
             <li><a class="log_button" href="/fadts/home/index">
-                  <B>LOGOUT</B>
+                  <B>LOGOUT</B></a>
             </li>
          </ul>
       </nav>
