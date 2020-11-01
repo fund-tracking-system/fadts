@@ -14,7 +14,7 @@
 
                 <div class="form-row">
                     <label for="Name" class="inputLable"><b>Name:</b></label>
-                    <input class="form-control Input" id="Name" name="username"
+                    <input class="form-control Input" id="Name" name="name"
                         placeholder="Name In Full" ></input>
 
                 </div>
@@ -29,8 +29,15 @@
 
 
                 <div class="form-row">
+                    <label for="nid" class="inputLable"><b>Family Head :</b></label>
+                    <input class="form-control Input" id='headOfFamily'  name="headOfFamily"></input>
+                </div>
+
+
+
+                <div class="form-row">
                     <label for="name " class="inputLable"><b>Adrress:</b></label>
-                    <input class="form-control Input" id="name"  name="address"
+                    <input class="form-control Input" id="address"  name="address"
                     ></input>
                 </div>
 
@@ -38,12 +45,12 @@
 
                 <div>
                     <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
-                    <input class="form-control InputOne" id='birthDate' name="b_Date" value="YYYY/MM/DD"></input>
+                    <input class="form-control InputOne" id='birthDate' name="b_date" value="YYYY/MM/DD"></input>
                     <small> </small>
 
                     <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
                             No:</b></label>
-                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="b-certifi"></input>
+                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="b_certifi"></input>
                 </div>
 
 
@@ -54,27 +61,29 @@
                         placeholder="name@example.com">
                 </div>
 
-                <!-- <div class="form-row">
-                    <label for="region" class="inputLable"><b>Region:</b></label>
-                    <select class="form-control Input" name="region">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                <div class="form-row">
+                    <label for="jobtype" class="inputLable"><b>Job type:</b></label>
+                    <select class="form-control Input" name="jobType">
+                        <option value="Goverment">Goverment</option>
+                        <option value="Private">Private</option>
+                        <option value="Retired">Retired</option>
+                        <option value="SelfEmployee">SelfEmployee</option>
+                        <option value="Jobless">Jobless</option>
+
                     </select>
-                </div> -->
+                </div>
 
 
-                <div class='form-row'>
+                <!-- <div class='form-row'>
                     <label class="inputLable"><b>Job type </br></label>
                     <label class="inputLable"></b></label>
 
                     <select class="form-control Input" onclick="showCheckboxes() ">
-                        <!-- <option>Select an option</option>  select krapua pennanna hadann ooona-->
-                    </select>
+                        <option>Select an option</option>  select krapua pennanna hadann ooona -->
+                    <!-- </select> -->
                     <!-- <div class="overSelect"></div> -->
 
-                    <div id="checkboxes" class="checksbox" name="checkbox">
+                    <!-- <div id="checkboxes" class="checksbox" name="checkbox">
 
                         <label for="one" class="form-control">
                             <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
@@ -90,16 +99,16 @@
                             Employee</label>
                         <label for="four" class="form-control">
                             <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
 
 
 
                 <div class="form-row">
                     <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
-                    <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
-                        <option value="unmarried">Unmarried</option>
-                        <option value="married">Married</option>
+                    <select class="form-control Input" id="civilStatus" name="civilStatus">
+                        <option value="1">Unmarried</option>
+                        <option value="0">Married</option>
                     </select>
                 </div>
 
