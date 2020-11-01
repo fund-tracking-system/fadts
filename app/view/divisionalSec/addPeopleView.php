@@ -7,14 +7,14 @@
 
 
 
-        <form method="post"  id="form" action = "/fadts/divisional/addPeopleModel">
+        <form method="post"  id="formAddPeople" action ="/fadts/divisional/addPeopleModel">
             <fieldset class="BackgroundFS">
                 <h2> ADD PEOPLE DATA </h2>
 
 
                 <div class="form-row">
                     <label for="Name" class="inputLable"><b>Name:</b></label>
-                    <input class="form-control Input" id="Name" name="username"
+                    <input class="form-control Input" id="Name" name="Name"
                         placeholder="Name In Full" ></input>
 
                 </div>
@@ -29,8 +29,8 @@
 
 
                 <div class="form-row">
-                    <label for="name " class="inputLable"><b>Adrress:</b></label>
-                    <input class="form-control Input" id="name"  name="address"
+                    <label for="address" class="inputLable"><b>Adrress:</b></label>
+                    <input class="form-control Input" id="address"  name="address"
                     ></input>
                 </div>
 
@@ -38,25 +38,25 @@
 
                 <div>
                     <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
-                    <input class="form-control InputOne" id='birthDate' name="b_Date" value="YYYY/MM/DD" type="date"></input>
+                    <input class="form-control InputOne" id='birthDate' name="birthDate" value="YYYY/MM/DD" type="date"></input>
                     <small> </small>
 
                     <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
                             No:</b></label>
-                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="b-certifi"></input>
+                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="birthvertifiacateNo"></input>
                 </div>
 
 
                 <div class="form-row">
-                    <label for="exampleFormControlInput1" class="inputLable"><b>Email
+                    <label for="email" class="inputLable"><b>Email
                         </b></label>
-                    <input type="email" class="form-control Input" id="exampleFormControlInput1" name="email" 
+                    <input type="email" class="form-control Input" id="email" name="email" 
                         placeholder="name@example.com" type="email">
                 </div>
 
                 <!-- <div class="form-row">
                     <label for="region" class="inputLable"><b>Region:</b></label>
-                    <select class="form-control Input" name="region">
+                    <select class="form-control Input" name="region" id="region>
                         <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
@@ -106,17 +106,17 @@
 
                 <div>
                     <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
-                    <input class="form-control InputOne" id='phone-number-1' name="phoneNumber1" type="number"></input>
+                    <input class="form-control InputOne" id='phonenumber1' name="phonenumber1" type="number"></input>
 
                     <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
-                    <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" type="number"></input>
+                    <input class="form-control InputTwo" id='phonenumber2' name="phoneumber2" type="number"></input>
                 </div>
 
 
 
                 <div class="form-row">
-                    <label for="nid" class="inputLable"><b>Trustee:</b></label>
-                    <input class="form-control Input" id='nid' class="form-control Input" name="trustee"></input>
+                    <label for="tnid" class="inputLable"><b>Trustee:</b></label>
+                    <input class="form-control Input" id='tnid' class="form-control Input" name="tnid"></input>
                 </div>
 
                 <div class="Twobtn">
