@@ -11,18 +11,6 @@
             <fieldset class="BackgroundFS">
                 <h2> ADD PEOPLE DATA </h2>
 
-                <?php
-                 if(isset($_GET['error'])){
-
-                     $error=$_GET['error'];
-                     if($error=="nid_exist"){
-                        echo '<div class="alert alert-danger" role="alert">This Person has already been  added to the System !</div>';
-                     }
-                 }
-
-
-                ?>
-
 
                 <div class="form-row">
                     <label for="Name" class="inputLable"><b>Name:</b></label>
