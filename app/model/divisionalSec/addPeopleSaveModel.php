@@ -39,6 +39,7 @@
         $email=$_SESSION['person_email'];
         $trustee=$_SESSION['people_trustee'];
         $jobType=$_SESSION['people_jobType'];
+        $region=$_SESSION['people_region'];
 
    
    if($duplicate==1){
@@ -51,15 +52,15 @@
    elseif($duplicate==0){
 
     
-    $query='INSERT INTO persons (name,nid,headOfFamily,address,phone,phone_two,birthdate,birthCertificateNo,civilStatus,email,trustee) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
+    $query='INSERT INTO persons (name,nid,headOfFamily,address,phone,phone_two,birthdate,birthCertificateNo,civilStatus,email,trustee,region) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)';
     $stmt=$con->prepare($query);
-    $stmt->bind_param('sssssssssss',$name,$nid,$headOfFamily,$address,$phoneNumber1,$phoneNumber2,$b_date,$b_certifi,$civilStatus,$email,$trustee);
+    $stmt->bind_param('ssssssssssss',$name,$nid,$headOfFamily,$address,$phoneNumber1,$phoneNumber2,$b_date,$b_certifi,$civilStatus,$email,$trustee,$region);
 
     $stmt->execute();
     $stmt->close();
 
       //redirecting to view
-  header("Location:/fadts/divisional/ViewAddPeople"); 
+    header("Location:/fadts/divisional/ViewAddPeople"); 
 
    }
 

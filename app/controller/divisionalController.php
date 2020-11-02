@@ -79,4 +79,14 @@ class divisionalController extends Controller{
       $this->model->load(); // This is how load the model
    }
 
+   
+   public function assignRegionView(){ 
+      $this->view('assignRegionView/assignRegionView');
+    
+      
+      $this->view->render();
+      // This is how load the model
+   }
+
+
 }

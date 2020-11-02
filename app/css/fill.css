@@ -27,6 +27,8 @@ body{
   padding-top:10px; 
   padding-bottom:10px; 
   margin-right:230px;
+  margin-bottom: 30px;
+  height:40px;
 }
 .searchBar{
   padding-top:15px;
@@ -42,9 +44,10 @@ body{
   margin-bottom:-25px; 
 }
 .BackgroundFS{
-  background-color:#fffef4; 
+  background-color:#fff; 
   border-bottom:10px; 
   padding-bottom:20px;
+  border:none;
 }
 .radioLbl2{
   margin-left:10px;

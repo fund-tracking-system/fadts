@@ -17,6 +17,7 @@
      $_SESSION['people_phoneNumber2']=$_POST['phoneNumber2'];
      $_SESSION['people_trustee']=$_POST['trustee'];
      $_SESSION['people_jobType']=$_POST['jobType'];
+     $_SESSION['people_region']=$_POST['region'];
 
 
 
@@ -26,10 +27,10 @@
       
     //next redirect URL
     $_SESSION['next_model'] = "Location:/fadts/divisional/addPeopleSaveModel"; 
-      header("Location:/fadts/divisional/addPeopleSaveModel");  
+       header("Location:/fadts/divisional/addPeopleSaveModel");  
 
     //redirecting to assignRegion view
-    // header("Location:/fadts/assignRegion/assignRegionView");  
+    // header("Location:/fadts/divisional/assignRegionView");  
     exit(); 
 
 
