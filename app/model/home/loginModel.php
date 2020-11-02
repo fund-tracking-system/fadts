@@ -45,7 +45,7 @@ if(isset($_POST['logsubmit'])){
             exit();
 
          }
-
+ 
       }
       else{
          header("Location:/fadts/home/index?error=wrong_user_or_pass");
