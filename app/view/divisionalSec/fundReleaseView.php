@@ -10,7 +10,7 @@
 
          <fieldset class="BackgroundFS">
 
-            <h2>ALTERNATIVE FUND RELEASE</h2>
+            <h2>ALTERNATE FUND RELEASE</h2>
 
             <fieldset class="searchBar">
                <div class="form-row ">
@@ -28,7 +28,10 @@
       <form>
          <fieldset class=" BackgroundFS">
             <div class="tbleMargin">
-
+               
+               <?php if(isset($_GET['result'])){ 
+                        $row = $_GET['result'];
+               ?>
                <table id="resultTable" class="display nowrap">
                   <thead>
                   <tr>
@@ -38,6 +41,18 @@
                   </tr>
                   </thead>
 
+                  <?php while($row){?>   
+
+                  <tbody>
+                  <tr>
+                     <td>Alfreds Futterkiste</td>
+                     <td>Disabled </td>
+                     <td><button type="submit" name="release" class="btn btn-primary">Release</button></td>
+                  </tr>
+                  </tbody>
+
+                  <?php } ?>
+
                   <tfoot>
                   <tr>
                      <th><B>Fund Name</B></th>
@@ -46,30 +61,29 @@
                   </tr>
                   </tfoot>
 
-                  <tr>
-                     <td>Alfreds Futterkiste</td>
-                     <td>Disabled </td>
-                     <td><button type="submit" name="release" class="btn btn-primary">Release</button></td>
-                  </tr>
+                  <?php //if(count($posts)>0):?>
+                <?php //foreach($posts as $post):?>
+                <tr>
+                    <th><?php //echo $post->title;?></th>
+                    <td><?php //echo $post->text;?></td>
+                    <td><?php //echo $post->date;?></td>
+                    <td>
+                        <?php //echo anchor("Admin/viewSingle/{$post->id}",'View',['class'=>'badge badge-success']); ?>
+                        <?php //echo anchor("Admin/update/{$post->id}",'Update',['class'=>'badge badge-warning']); ?>
+                        <?php //echo anchor("Admin/delete/{$post->id}",'Delete',['class'=>'badge badge-danger']); ?>
+                    </td>
+                </tr>
+                <?php //endforeach;?>
+                <?php //else: ?>
+                <tr>
+                    <td>No Records Found!</td>
+                </tr>
+                <?php //endif; ?>
 
-                  <tr>
-                     <td>Centro comercial Moctezuma</td>
-                     <td>covid 500</td>
-                     <td><button type="submit" class="btn btn-primary">Release</button></td>
-                  </tr>
-                  <tr>
-                     <td>Ernst Handel</td>
-                     <td> phora sahanadara</td>
-                     <td><button type="submit" class="btn btn-primary">Release</button></td>
-                  </tr>
-                  <tr>
-                     <td>Island Trading</td>
-                     <td>govi Vishrama wetup</td>
-                     <td><button type="submit" class="btn btn-primary">Release</button></td>
-                  </tr>
-
-                  </tr>
                </table>
+
+               <?php } ?>
+
          </fieldset>
    </div>
    </form>

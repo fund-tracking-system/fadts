@@ -41,7 +41,8 @@ if(isset($_POST['nicSubmit'])){
 
             if(mysqli_num_rows($result)==1){
 
-               $superRegion = $result; 
+               $row = mysqli_fetch_array($result);
+               $superRegion = $row['superRegion'];
 
                if($superRegion==$userRegion){
 
@@ -53,8 +54,10 @@ if(isset($_POST['nicSubmit'])){
                      exit();
                   }else{
                      mysqli_stmt_execute($stmt);
-                     $result = mysqli_stmt_get_result($stmt);                     
-                     header("Location:/fadts/divisional/fundRelease?result=$result");
+                     $result = mysqli_stmt_get_result($stmt);
+                     $row = mysqli_fetch_assoc($result);
+
+                     header("Location:/fadts/divisional/fundRelease?result=$row");
                      exit();
                   }
 
