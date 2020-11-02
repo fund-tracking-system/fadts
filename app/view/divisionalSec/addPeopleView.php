@@ -7,15 +7,14 @@
 
 
 
-        <form method="post"  id="form" action = "/fadts/divisional/addPeopleModel">
+        <form method="post" id="formAddPeople" action="/fadts/divisional/addPeopleModel">
             <fieldset class="BackgroundFS">
                 <h2> ADD PEOPLE DATA </h2>
 
 
                 <div class="form-row">
                     <label for="Name" class="inputLable"><b>Name:</b></label>
-                    <input class="form-control Input" id="Name" name="username"
-                        placeholder="Name In Full" ></input>
+                    <input class="form-control Input" id="name" name="name" placeholder="Name In Full"></input>
 
                 </div>
 
@@ -23,58 +22,68 @@
 
                 <div class="form-row">
                     <label for="nid" class="inputLable"><b>NID:</b></label>
-                    <input class="form-control Input" id='nid'  name="nid"></input>
+                    <input class="form-control Input" id='nid' name="nid"></input>
+                </div>
+
+
+
+                <div class="form-row">
+                    <label for="nid" class="inputLable"><b>Family Head :</b></label>
+                    <input class="form-control Input" id='headOfFamily' name="headOfFamily"></input>
                 </div>
 
 
 
                 <div class="form-row">
                     <label for="name " class="inputLable"><b>Adrress:</b></label>
-                    <input class="form-control Input" id="name"  name="address"
-                    ></input>
+                    <input class="form-control Input" id="address" name="address"></input>
                 </div>
 
 
 
-                <div>
-                    <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
-                    <input class="form-control InputOne" id='birthDate' name="b_Date" value="YYYY/MM/DD" type="date"></input>
+                <div class="form-row">
+                    <label for="birth-date" class="inputLable"><b>Birth Date:</b></label>
+                    <input class="form-control Input" id='b_date' name="b_date" type="date"></input>
                     <small> </small>
+                </div>
 
-                    <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
+                <div class="form-row">
+                    <label for="birthNO" class="inputLable"><b>Birth Certificate
                             No:</b></label>
-                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="b-certifi"></input>
+                    <input class="form-control Input" id='b_certifi' name="b_certifi"></input>
                 </div>
 
 
                 <div class="form-row">
-                    <label for="exampleFormControlInput1" class="inputLable"><b>Email
+                    <label for="email" class="inputLable"><b>Email
                         </b></label>
-                    <input type="email" class="form-control Input" id="exampleFormControlInput1" name="email" 
+                    <input type="email" class="form-control Input" id="email" name="email"
                         placeholder="name@example.com" type="email">
                 </div>
 
-                <!-- <div class="form-row">
-                    <label for="region" class="inputLable"><b>Region:</b></label>
-                    <select class="form-control Input" name="region">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                <div class="form-row">
+                    <label for="jobtype" class="inputLable"><b>Job type:</b></label>
+                    <select class="form-control Input" name="jobType" id="jobType">
+                        <option value="Goverment">Goverment</option>
+                        <option value="Private">Private</option>
+                        <option value="Retired">Retired</option>
+                        <option value="SelfEmployee">SelfEmployee</option>
+                        <option value="Jobless">Jobless</option>
+
                     </select>
-                </div> -->
+                </div>
 
 
-                <div class='form-row'>
+                <!-- <div class='form-row'>
                     <label class="inputLable"><b>Job type </br></label>
                     <label class="inputLable"></b></label>
 
                     <select class="form-control Input" onclick="showCheckboxes() ">
-                        <!-- <option>Select an option</option>  select krapua pennanna hadann ooona-->
-                    </select>
-                    <!-- <div class="overSelect"></div> -->
+                        <option>Select an option</option>  select krapua pennanna hadann ooona -->
+                <!-- </select> -->
+                <!-- <div class="overSelect"></div> -->
 
-                    <div id="checkboxes" class="checksbox" name="checkbox">
+                <!-- <div id="checkboxes" class="checksbox" name="checkbox">
 
                         <label for="one" class="form-control">
                             <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
@@ -90,39 +99,49 @@
                             Employee</label>
                         <label for="four" class="form-control">
                             <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
 
 
 
                 <div class="form-row">
                     <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
-                    <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
-                        <option value="unmarried">Unmarried</option>
-                        <option value="married">Married</option>
+                    <select class="form-control Input" id="civilStatus" name="civilStatus">
+                        <option value="1">Unmarried</option>
+                        <option value="0">Married</option>
                     </select>
                 </div>
 
 
-                <div>
-                    <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
-                    <input class="form-control InputOne" id='phone-number-1' name="phoneNumber1" type="number"></input>
-
-                    <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
-                    <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" type="number"></input>
-                </div>
 
 
 
                 <div class="form-row">
-                    <label for="nid" class="inputLable"><b>Trustee:</b></label>
-                    <input class="form-control Input" id='nid' class="form-control Input" name="trustee"></input>
+                    <label for="tnid" class="inputLable"><b>Trustee:</b></label>
+                    <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
+                </div>
+
+                <div class="form-row">
+                    <label for="tnid" class="inputLable"><b>Region:</b></label>
+                    <input class="form-control Input" id='region' class="form-control Input" name="region"></input>
+                </div>
+
+
+                
+                <div class="form-row">
+                    <label class="inputLable" for="phone-number"><b>Contact Number 1:</b></label>
+                    <input class="form-control Input"id='phonenumber1' name="phoneNumber1" type="number"></input>
+                </div>
+                <div class="form-row">
+
+                    <label class="inputLable" for="phone-number"><b>Contact Number 2:</b></label>
+                    <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
                 </div>
 
                 <div class="Twobtn">
 
-                    <button type="submit" class=' btn btn-primary '>Confirm</button>
-                    <button class=' btn btn-primary '>View List</button>
+                    <button type="submit" class=' btn btn-primary  signlebtn'>Add People</button>
+                    <!-- <button class=' btn btn-primary '>View List</button> -->
                 </div>
             </fieldset>
 
@@ -131,20 +150,20 @@
 
 
     </div>
-    </div>
-    <script type="text/javascript">
-    var expanded = false;
+</div>
+<script type="text/javascript">
+var expanded = false;
 
-    function showCheckboxes() {
-        var checkboxes = document.getElementById("checkboxes");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
     }
-    </script>
+}
+</script>
 
-    <?php include VIEW.'includes/footer.php' ?>
+<?php include VIEW.'includes/footer.php' ?>
