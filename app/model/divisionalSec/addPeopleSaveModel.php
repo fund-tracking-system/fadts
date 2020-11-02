@@ -67,7 +67,7 @@
 
     
     //redirecting to view
-//  header("Location:/fadts/divisional/ViewAddPeople"); 
+  header("Location:/fadts/divisional/ViewAddPeople"); 
 
 
 ?>
