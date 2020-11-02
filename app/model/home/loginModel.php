@@ -35,6 +35,7 @@ if(isset($_POST['logsubmit'])){
             $_SESSION['usernid'] = $row['usernid'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['userrole'] = $row['userrole'];
+            $_SESSION['region'] = $row['region'];
 
             if($_SESSION['userrole']=='villageofficer'){ $_SESSION['controller'] ='village'; $_SESSION['roleName'] = 'Village Officer'; }
             if($_SESSION['userrole']=='divisionalsec'){ $_SESSION['controller'] ='divisional'; $_SESSION['roleName'] = 'Divisional Secretary'; }

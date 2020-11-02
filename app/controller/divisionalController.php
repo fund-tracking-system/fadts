@@ -67,7 +67,6 @@ class divisionalController extends Controller{
 
    public function addPeopleModel(){ 
       $this->model('divisionalSec/addPeopleModel');
-    
       
       $this->model->load();
       // This is how load the model
@@ -75,8 +74,14 @@ class divisionalController extends Controller{
 
    public function addPeopleSaveModel(){ 
       $this->model('divisionalSec/addPeopleSaveModel');
-      echo ("here in"); 
+   
       $this->model->load(); // This is how load the model
+   }
+
+   public function nicSearchModel(){
+      $this->model('divisionalSec/nicSearchModel');
+
+      $this->model->load();
    }
 
 }
