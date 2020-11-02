@@ -21,17 +21,23 @@
      $name=$_SESSION['people_name'];
      echo $name;
      $nid=$_SESSION['people_nid'];
+    
      
-      $headOfFamily=$_SESSION['people_headOfFamily'];
-      $address=$_SESSION['people_address'];
-      $phoneNumber1=$_SESSION['people_phoneNumber1'];
+     $headOfFamily=$_SESSION['people_headOfFamily'];
+
+     $address=$_SESSION['people_address'];
+     $phoneNumber1=$_SESSION['people_phoneNumber1'];
      $phoneNumber2=$_SESSION['people_phoneNumber2'];
      $b_date=$_SESSION['people_b_date'];
      $b_certifi=$_SESSION['people_b_certifi'];
      $civilStatus=$_SESSION['people_civilStatus'];
      $email=$_SESSION['person_email'];
+   
      $trustee=$_SESSION['people_trustee'];
+     
      $jobType=$_SESSION['people_jobType'];
+     echo $jobType;
+
     // echo $checkbox;
     
 

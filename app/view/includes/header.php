@@ -39,8 +39,20 @@
 
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+   <script type="text/javascript" src="/fadts/app/js/main.js"></script>
+    
    <style>
+      .error {
+            color: red;
+            font-size: small;
+            font-style: italic;
+            margin-left: 150px;
+            margin-top: -20px;
+      }
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
       -webkit-appearance: none;
