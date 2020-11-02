@@ -117,7 +117,7 @@
                     <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
                     <input class="form-control InputOne" id='phonenumber1' name="phoneNumber1" type="number"></input>
 
-                    <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
+                    <label class='inputLable LableTwo' for="phone-number"><b>Contact Number 2:</b></label>
                     <input class="form-control InputTwo" id='phonenumber2' name="phoneNumber2" type="number"></input>
                 </div>
 

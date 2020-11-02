@@ -20,6 +20,7 @@
    
      $name=$_SESSION['people_name'];
      echo $name;
+    
      $nid=$_SESSION['people_nid'];
     
      
