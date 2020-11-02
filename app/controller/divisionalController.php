@@ -75,7 +75,7 @@ class divisionalController extends Controller{
 
    public function addPeopleSaveModel(){ 
       $this->model('divisionalSec/addPeopleSaveModel');
-      echo ("here in"); 
+
       $this->model->load(); // This is how load the model
    }
 

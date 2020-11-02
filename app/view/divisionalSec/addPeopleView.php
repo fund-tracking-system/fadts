@@ -14,7 +14,7 @@
 
                 <div class="form-row">
                     <label for="Name" class="inputLable"><b>Name:</b></label>
-                    <input class="form-control Input" id="Name" name="name"
+                    <input class="form-control Input" id="name" name="name"
                         placeholder="Name In Full" ></input>
 
                 </div>
@@ -45,12 +45,12 @@
 
                 <div>
                     <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
-                    <input class="form-control InputOne" id='birthDate' name="b_date" value="YYYY/MM/DD"></input>
+                    <input class="form-control InputOne" id='b_date' name="b_date" type="date"></input>
                     <small> </small>
 
                     <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
                             No:</b></label>
-                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="b_certifi"></input>
+                    <input class="form-control InputTwo" id='b_certifi' name="b_certifi"></input>
                 </div>
 
 
@@ -63,7 +63,7 @@
 
                 <div class="form-row">
                     <label for="jobtype" class="inputLable"><b>Job type:</b></label>
-                    <select class="form-control Input" name="jobType">
+                    <select class="form-control Input" name="jobType" id="jobType">
                         <option value="Goverment">Goverment</option>
                         <option value="Private">Private</option>
                         <option value="Retired">Retired</option>
@@ -131,7 +131,7 @@
                 <div class="Twobtn">
 
                     <button type="submit" class=' btn btn-primary '>Confirm</button>
-                    <button class=' btn btn-primary '>View List</button>
+                    <!-- <button class=' btn btn-primary '>View List</button> -->
                 </div>
             </fieldset>
 
