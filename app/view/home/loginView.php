@@ -27,7 +27,7 @@
             <legend style="color: #218BDB"><B>Sign in to your account</B> </legend>
 
           <?php
-               
+                
                if(isset($_GET['error'])){
          
                   $error = $_GET['error'];
