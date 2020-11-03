@@ -54,20 +54,14 @@ class divisionalController extends Controller{
       $this->view->render();      
    }
 
-
-   
    public function userProfileModel(){       // load the model for userProfile view of divisional Secratary
       $this->model('divisionalSec/userProfileView');
       
       $this->model->load();      
    }
 
-
-
-
    public function addPeopleModel(){ 
       $this->model('divisionalSec/addPeopleModel');
-    
       
       $this->model->load();
       // This is how load the model
@@ -75,17 +69,21 @@ class divisionalController extends Controller{
 
    public function addPeopleSaveModel(){ 
       $this->model('divisionalSec/addPeopleSaveModel');
-
+   
       $this->model->load(); // This is how load the model
    }
 
+   public function nicSearchModel(){
+      $this->model('divisionalSec/nicSearchModel');
+
+      $this->model->load();
+   }
    
    public function assignRegionView(){ 
       $this->view('assignRegionView/assignRegionView');
     
       
       $this->view->render();
-      // This is how load the model
    }
 
 
