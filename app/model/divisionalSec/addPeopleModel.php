@@ -61,11 +61,11 @@
         
         //next redirect URL
         $_SESSION['next_model'] = "Location:/fadts/divisional/addPeopleSaveModel"; 
-         //header("Location:/fadts/divisional/addPeopleSaveModel");
+         header("Location:/fadts/divisional/addPeopleSaveModel");
 
 
         //redirecting to assignRegion view
-         header("Location:/fadts/divisional/assignRegionView");  
+        // header("Location:/fadts/divisional/assignRegionView");  
         unset ($duplicate);
 
         exit(); 
