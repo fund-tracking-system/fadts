@@ -15,6 +15,7 @@ if(isset($_POST['nicSubmit'])){
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
+      mysqli_close($con);
       header("Location:/fadts/divisional/fundRelease?error=db_conn_err");
       exit();     
    }
@@ -33,6 +34,7 @@ if(isset($_POST['nicSubmit'])){
          $stmt = mysqli_stmt_init($con);
 
          if(!mysqli_stmt_prepare($stmt,$sql)){
+            mysqli_close($con);
             header("Location:/fadts/divisional/fundRelease?error=db_conn_err");
             exit(); 
          }else{
@@ -46,22 +48,45 @@ if(isset($_POST['nicSubmit'])){
 
                if($superRegion==$userRegion){
 
-                  $sql = "SELECT * FROM recipient WHERE personId=$personId";
+                  $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId";
+
+                 
                   $stmt = mysqli_stmt_init($con);
 
                   if(!mysqli_stmt_prepare($stmt,$sql)){
+                     mysqli_close($con);
                      header("Location:/fadts/divisional/fundRelease?error=db_conn_err");
                      exit();
                   }else{
                      mysqli_stmt_execute($stmt);
                      $result = mysqli_stmt_get_result($stmt);
-                     $row = mysqli_fetch_assoc($result);
+                     //$row = mysqli_fetch_assoc($result);
+                     // while($row = mysqli_fetch_assoc($result)){
+                     //    echo $row['name'].'\t';
+                     //    echo $row['amountPerPerson'].'\n';
+                     // }
+                     // exit();
+                     //    echo $row['name'].'\t';
+                     //    echo $row['amountPerPerson'].'\n';
+                     // }
+                     // exit();
 
-                     header("Location:/fadts/divisional/fundRelease?result=$row");
-                     exit();
+                     if($result){
+                        $_SESSION['results'] =mysqli_fetch_all($result);
+
+                        mysqli_close($con);
+                        header("Location:/fadts/divisional/fundRelease?error=succsess");
+                        exit();
+                     }else{
+                        mysqli_close($con);
+                        header("Location:/fadts/divisional/fundRelease?error=no_records");
+                        exit();
+                     }
+                     
                   }
 
                }else{
+                  mysqli_close($con);
                   header("Location:/fadts/divisional/fundRelease?error=wrong_region");
                   exit();
                }
@@ -72,6 +97,7 @@ if(isset($_POST['nicSubmit'])){
 
       }
       else{
+         mysqli_close($con);
          header("Location:/fadts/divisional/fundRelease?error=wrong_nid");
          exit();
       }
