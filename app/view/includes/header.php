@@ -50,8 +50,8 @@
             color: red;
             font-size: small;
             font-style: italic;
-            margin-left: 150px;
-            margin-top: -20px;
+            margin-left: 550px;
+            margin-top: -75px;
       }
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {

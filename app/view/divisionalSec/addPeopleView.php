@@ -11,6 +11,19 @@
             <fieldset class="BackgroundFS">
                 <h2> ADD PEOPLE DATA </h2>
 
+                <?php
+
+
+                if(isset($_GET['error'])){
+
+                $error = $_GET['error'];
+                    if($error=="person_exist"){
+                        echo '<div class="alert alert-danger" role="alert">This person has been already added to the system ! </div>';
+                    }
+
+                }
+                ?>
+
 
                 <div class="form-row">
                     <label for="Name" class="inputLable"><b>Name:</b></label>
@@ -54,12 +67,12 @@
                 </div>
 
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <label for="email" class="inputLable"><b>Email
                         </b></label>
                     <input type="email" class="form-control Input" id="email" name="email"
                         placeholder="name@example.com" type="email">
-                </div>
+                </div> -->
 
                 <div class="form-row">
                     <label for="jobtype" class="inputLable"><b>Job type:</b></label>
@@ -121,16 +134,16 @@
                     <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
                 </div>
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <label for="tnid" class="inputLable"><b>Region:</b></label>
                     <input class="form-control Input" id='region' class="form-control Input" name="region"></input>
-                </div>
+                </div> -->
 
 
-                
+
                 <div class="form-row">
                     <label class="inputLable" for="phone-number"><b>Contact Number 1:</b></label>
-                    <input class="form-control Input"id='phonenumber1' name="phoneNumber1" type="number"></input>
+                    <input class="form-control Input" id='phonenumber1' name="phoneNumber1" type="number"></input>
                 </div>
                 <div class="form-row">
 
@@ -140,7 +153,7 @@
 
                 <div class="Twobtn">
 
-                    <button type="submit" class=' btn btn-primary  signlebtn'>Add People</button>
+                    <button type="submit" class=' btn btn-primary  signlebtn'>Assign People Region</button>
                     <!-- <button class=' btn btn-primary '>View List</button> -->
                 </div>
             </fieldset>
