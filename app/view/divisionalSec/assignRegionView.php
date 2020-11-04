@@ -29,6 +29,8 @@
                         
                            $rgnRes=$_SESSION['region_result'];
                            foreach($rgnRes as $row) {
+
+                            if( $row['name']==$_SESSION['people_region']){
                                
                             print " <tr > "; 
                                 print ' <td> ' . $row['name'] . ' </td> ';
@@ -43,6 +45,7 @@
                                         </td> ';
                             print " </tr> ";
                         } 
+                    }
                              
 
 
