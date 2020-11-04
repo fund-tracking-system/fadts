@@ -48,7 +48,7 @@ if(isset($_POST['nicSubmit'])){
 
                if($superRegion==$userRegion){
 
-                  $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId";
+                  $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId AND deliveryStatus = 0";
 
                  
                   $stmt = mysqli_stmt_init($con);
@@ -60,16 +60,6 @@ if(isset($_POST['nicSubmit'])){
                   }else{
                      mysqli_stmt_execute($stmt);
                      $result = mysqli_stmt_get_result($stmt);
-                     //$row = mysqli_fetch_assoc($result);
-                     // while($row = mysqli_fetch_assoc($result)){
-                     //    echo $row['name'].'\t';
-                     //    echo $row['amountPerPerson'].'\n';
-                     // }
-                     // exit();
-                     //    echo $row['name'].'\t';
-                     //    echo $row['amountPerPerson'].'\n';
-                     // }
-                     // exit();
 
                      if($result){
                         $_SESSION['results'] =mysqli_fetch_all($result);
