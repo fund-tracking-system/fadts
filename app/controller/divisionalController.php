@@ -69,7 +69,7 @@ class divisionalController extends Controller{
 
    public function addPeopleSaveModel(){ 
       $this->model('divisionalSec/addPeopleSaveModel');
-   
+    
       $this->model->load(); // This is how load the model
    }
 
@@ -107,6 +107,7 @@ class divisionalController extends Controller{
       $this->model->load();
       // This is how load the model
    }
+   
 
 
 }

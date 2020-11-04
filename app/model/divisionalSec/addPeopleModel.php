@@ -25,7 +25,7 @@
 
 
 
-
+ 
 
      $nid=$_SESSION['people_nid'];//for nid validation
     

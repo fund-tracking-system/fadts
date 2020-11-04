@@ -7,12 +7,6 @@
 
 
 
-       
-   
-  
-
-
-
     
     $query='INSERT INTO person (name,nid,headOfFamily,phone, phone_two,         birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
     $stmt=$con->prepare($query);

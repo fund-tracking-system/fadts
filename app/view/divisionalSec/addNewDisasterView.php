@@ -5,9 +5,9 @@
 <div class="all_bacground_clor">
     <div class='SearchByCriteriaform1'>
 
-        <form class="form" id="addDisaster" action="/fadts/divisional/addNewDisasterModel" >
+        <form method="post" class="form" id="addDisaster" action="/fadts/divisional/addNewDisasterModel" >
 
-            <fieldset class=" BackgroundFS">
+            <fieldset class=" BackgroundFS"> 
 
                 <h2> ADD NEW DISASTERS</h2>
 

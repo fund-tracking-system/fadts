@@ -5,11 +5,12 @@
     
     //create connection
 
+    echo $_SESSION['disaster_disasterName'];
 
 
-    $query='INSERT INTO disaster (type,name,date,description) VALUES(?,?,?,?)';
+    $query='INSERT INTO disaster (type,     name,      date,  description )VALUES(?,?,?,?)';
     $stmt=$con->prepare($query);
-    $stmt->bind_param('sssss',$disaster,$disasterName,$date,$description);
+    $stmt->bind_param('ssss',$disaster,$disasterName,$date,$description);
 
 
 
@@ -19,8 +20,8 @@
     $date= $_SESSION['disaster_date'];
     $description= $_SESSION['disaster_description'];
 
-
-
+   echo $disasterName;
+ 
 
 
     $stmt->execute();
@@ -28,7 +29,7 @@
 
 
      //redirecting to view
-     header("Location:/fadts/divisional/ViewAddNewDisaster"); 
+    //  header("Location:/fadts/divisional/ViewAddNewDisaster"); 
 
 
      $con->close();
