@@ -69,32 +69,45 @@ class divisionalController extends Controller{
 
    public function addPeopleSaveModel(){ 
       $this->model('divisionalSec/addPeopleSaveModel');
-   
+    
       $this->model->load(); // This is how load the model
    }
+
+   public function addNewDisasterModel(){
+      $this->model('divisionalSec/addNewDisasterModel');
+
+      $this->model->load();      
+   }
+
+   public function addNewDisasterSaveModel(){
+      $this->model('divisionalSec/addNewDisasterSaveModel');
+
+      $this->model->load();      
+   }
+
+   
 
    public function nicSearchModel(){
       $this->model('divisionalSec/nicSearchModel');
 
       $this->model->load();
    }
-
    
    public function assignRegionView(){ 
-      $this->view('assignRegionView/assignRegionView');
+      $this->view('divisionalsec/assignRegionView');
     
       
       $this->view->render();
    }
 
 
-   // public function assignRegionModel(){ 
-   //    $this->model('assignRegionView/assignRegionView');
-    
-      
-   //    $this->view->load();
-   //    // This is how load the model
-   // }
+   public function assignRegionSelectModel(){ 
+      $this->model('divisionalsec/addPeopleSelectRegion');
+
+      $this->model->load();
+      // This is how load the model
+   }
+   
 
 
 }

@@ -5,9 +5,9 @@
 <div class="all_bacground_clor">
     <div class='SearchByCriteriaform1'>
 
-        <form class="form">
+        <form class="form" id="addDisaster" method="POST" action="/fadts/divisional/addNewDisasterModel" >
 
-            <fieldset class=" BackgroundFS">
+            <fieldset class=" BackgroundFS"> 
 
                 <h2> ADD NEW DISASTERS</h2>
 
@@ -30,34 +30,34 @@
                 <div class="form-row">
                     <label for="disaster-name" class="inputLable"><b>Disaster
                         Name:</b></label>
-                    <input class="form-control Input" id="disaster-name" required></input>
+                    <input class="form-control Input" id="disasterName" name="disasterName" required></input>
                 </div>
 
 
                 <div class="form-row">
                     <label for="date" class="inputLable"><b>Disaster Date:</b></label>
-                    <input placeholder="YYYY/MM/DD" class="form-control Input" id='date' required></input>
+                    <input placeholder="YYYY/MM/DD" class="form-control Input" id='date' name="date" type="date"></input>
                     <small></small>
                 </div>
 
                 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <label for="date" class="inputLable"><b>Disaster Region:</b></label>
                     <input  class="form-control Input" id='region' required></input>
                     <small></small>
-                </div>
+                </div> -->
 
 
                 <div class="form-row">
                     <label for="description" class="inputLable"><b>Description:</b></label>
-                    <textarea class="form-control Input txtWidth " id="description" required>  </textarea>
+                    <textarea class="form-control Input txtWidth " id="description" name="description" required>  </textarea>
                 </div>
 
 
 
                 <div class='button '>
 
-                    <button type="submit" class=' btn btn-primary signlebtn'>Add Disaster
+                    <button type="submit" class=' btn btn-primary signlebtn'>Assign Region
                     </button>
                 </div>
 
