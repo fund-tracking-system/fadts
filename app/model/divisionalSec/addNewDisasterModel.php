@@ -20,8 +20,8 @@
 
 
     //next redirect URL
-     $_SESSION['next_model'] = "Location:/fadts/divisional/addPeopleSaveModel"; 
-      header("Location:/fadts/divisional/addPeopleSaveModel");  
+     $_SESSION['next_model'] = "Location:/fadts/divisional/addNewDisasterSaveModel"; 
+      header("Location:/fadts/divisional/addNewDisasterSaveModel");  
 
 
 
