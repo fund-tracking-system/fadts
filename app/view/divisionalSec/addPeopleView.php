@@ -153,7 +153,7 @@
 
                 <div class="Twobtn">
 
-                    <button type="submit" class=' btn btn-primary  signlebtn'>Assign People Region</button>
+                    <button type="submit" class=' btn btn-primary  signlebtn'>Assign Region</button>
                     <!-- <button class=' btn btn-primary '>View List</button> -->
                 </div>
             </fieldset>
