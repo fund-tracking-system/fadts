@@ -60,7 +60,8 @@ class divisionalController extends Controller{
       $this->model->load();      
    }
 
-   public function addPeopleModel(){  
+   public function addPeopleModel(){ 
+      $this->model('divisionalSec/addPeopleModel');
       
       $this->model->load();
       // This is how load the model
@@ -91,23 +92,21 @@ class divisionalController extends Controller{
 
       $this->model->load();
    }
-
    
    public function assignRegionView(){ 
-      $this->view('assignRegionView/assignRegionView');
+      $this->view('divisionalsec/assignRegionView');
     
       
       $this->view->render();
    }
 
 
-   // public function assignRegionModel(){ 
-   //    $this->model('assignRegionView/assignRegionView');
-    
-      
-   //    $this->view->load();
-   //    // This is how load the model
-   // }
+   public function assignRegionSelectModel(){ 
+      $this->model('divisionalsec/addPeopleSelectRegion');
+
+      $this->model->load();
+      // This is how load the model
+   }
 
 
 }

@@ -1,14 +1,16 @@
 <?php
 
-    // store results in session varibles 
+    
      session_start();
 
      require 'connection.php'; 
 
+
+         // store results in session varibles 
+
      $_SESSION['people_name']=$_POST['name'];
      $_SESSION['people_nid']=$_POST['nid'];
      $_SESSION['people_headOfFamily']=$_POST['headOfFamily'];
-    //  $_SESSION['person_email']=$_POST['email'];
      $_SESSION['people_address']=$_POST['address'];
      $_SESSION['people_b_date']=$_POST['b_date'];
      $_SESSION['people_b_certifi']=$_POST['b_certifi'];
@@ -18,15 +20,25 @@
      $_SESSION['people_trustee']=$_POST['trustee'];
      $_SESSION['people_jobType']=$_POST['jobType'];
      $_SESSION['people_region']=$_POST['region'];
-     $nid=$_SESSION['people_nid'];
+     $_SESSION['people_regionName']=$_POST['region'];
 
 
 
-        // database connection file calling
+
+
+
+     $nid=$_SESSION['people_nid'];//for nid validation
     
-     //create connection
+
+    $rgn="SELECT level, regionid,name  FROM region  WHERE level=4 ";
+    $rgnRes=$con->query($rgn) ;
+    $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+    
+    $_SESSION['region_result']=$res;  //for assign region  
+    
+
  
- 
+    //check nid validation avoid person duplicate
      $sql="SELECT nid FROM person";
      $result=$con->query($sql);
      $duplicate=0;
@@ -50,7 +62,6 @@
 
 
     if($duplicate==1){
-        echo ("there is id   fsf  in table");
  
         //redirecting the view again 
  
@@ -61,26 +72,17 @@
         
         //next redirect URL
         $_SESSION['next_model'] = "Location:/fadts/divisional/addPeopleSaveModel"; 
-         header("Location:/fadts/divisional/addPeopleSaveModel");
+        //  header("Location:/fadts/divisional/addPeopleSaveModel");
 
 
         //redirecting to assignRegion view
-        // header("Location:/fadts/divisional/assignRegionView");  
+         header("Location:/fadts/divisional/assignRegionView");  
+         
         unset ($duplicate);
 
         exit(); 
     }
 
  
-    // //next redirect URL
-    // $_SESSION['next_model'] = "Location:/fadts/divisional/addPeopleSaveModel"; 
-    //   // header("Location:/fadts/divisional/addPeopleSaveModel");  
-
-    // //redirecting to assignRegion view
-    //  header("Location:/fadts/divisional/assignRegionView");  
-
-
-
-
 
 ?>
