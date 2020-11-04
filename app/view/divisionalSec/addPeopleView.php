@@ -134,10 +134,10 @@
                     <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
                 </div>
 
-                <!-- <div class="form-row">
+                <div class="form-row">
                     <label for="tnid" class="inputLable"><b>Region:</b></label>
                     <input class="form-control Input" id='region' class="form-control Input" name="region"></input>
-                </div> -->
+                </div>
 
 
 

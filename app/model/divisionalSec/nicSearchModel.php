@@ -40,7 +40,7 @@ if(isset($_POST['nicSubmit'])){
             $result = mysqli_stmt_get_result($stmt);
 
             if(mysqli_num_rows($result)==1){
-
+ 
                $row = mysqli_fetch_array($result);
                $superRegion = $row['superRegion'];
 
