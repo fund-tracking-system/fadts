@@ -73,13 +73,13 @@ class divisionalController extends Controller{
    }
 
    public function addNewDisasterModel(){
-      $this->model('divisionalSec/addNewDisaster');
+      $this->model('divisionalSec/addNewDisasterModel');
 
       $this->model->load();      
    }
 
    public function addNewDisasterSaveModel(){
-      $this->model('divisionalSec/addNewDisasterSave');
+      $this->model('divisionalSec/addNewDisasterSaveModel');
 
       $this->model->load();      
    }
