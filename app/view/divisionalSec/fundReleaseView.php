@@ -29,8 +29,12 @@
          <fieldset class=" BackgroundFS">
             <div class="tbleMargin">
                
-               <?php if(isset($_GET['result'])){ 
-                        $row = $_GET['result'];
+               <?php if($_GET['error']=='succsess'){ 
+
+                        // foreach ($_SESSION['results'] as $row){
+                        //    echo $row[0]."<br>";
+                        // }
+                        // exit();
                ?>
                <table id="resultTable" class="display nowrap">
                   <thead>
@@ -41,13 +45,13 @@
                   </tr>
                   </thead>
 
-                  <?php while($row){?>   
+                  <?php foreach($_SESSION['results'] as $fund){?>   
 
                   <tbody>
                   <tr>
-                     <td>Alfreds Futterkiste</td>
-                     <td>Disabled </td>
-                     <td><button type="submit" name="release" class="btn btn-primary">Release</button></td>
+                     <td><?php echo $fund[1] ?></td>
+                     <td><?php echo $fund[2] ?></td>
+                     <td><a href="/fadts/divisional/fundReleaseModel?fundId=<?php echo $fund[0]; ?>" ><B>Release</B></a></td>
                   </tr>
                   </tbody>
 
@@ -60,25 +64,6 @@
                      <th><B>Action</B></th>
                   </tr>
                   </tfoot>
-
-                  <?php //if(count($posts)>0):?>
-                <?php //foreach($posts as $post):?>
-                <tr>
-                    <th><?php //echo $post->title;?></th>
-                    <td><?php //echo $post->text;?></td>
-                    <td><?php //echo $post->date;?></td>
-                    <td>
-                        <?php //echo anchor("Admin/viewSingle/{$post->id}",'View',['class'=>'badge badge-success']); ?>
-                        <?php //echo anchor("Admin/update/{$post->id}",'Update',['class'=>'badge badge-warning']); ?>
-                        <?php //echo anchor("Admin/delete/{$post->id}",'Delete',['class'=>'badge badge-danger']); ?>
-                    </td>
-                </tr>
-                <?php //endforeach;?>
-                <?php //else: ?>
-                <tr>
-                    <td>No Records Found!</td>
-                </tr>
-                <?php //endif; ?>
 
                </table>
 

@@ -3,7 +3,7 @@
     
      session_start();
 
-     require 'connection.php';
+     require 'connection.php'; 
 
 
          // store results in session varibles 
