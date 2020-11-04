@@ -3,7 +3,7 @@
     // store results in session varibles 
      session_start();
 
-     require 'connection.php';
+     require 'connection.php'; 
 
      $_SESSION['people_name']=$_POST['name'];
      $_SESSION['people_nid']=$_POST['nid'];
