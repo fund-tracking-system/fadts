@@ -33,7 +33,7 @@ echo $_SESSION['disaster_type'];
 
 
      //redirecting to view
-    // header("Location:/fadts/divisional/ViewAddNewDisaster"); 
+     header("Location:/fadts/divisional/ViewAddNewDisaster"); 
 
 
      $con->close();
