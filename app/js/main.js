@@ -1,4 +1,33 @@
-//addpeople-divisionalsec
+//addnewDisaster-divisionalsec
+
+$(function(){
+    var $formDisasterAdd = $("#formAddDisaster");
+    if($formDisasterAdd.length){
+        $formDisasterAdd.validate({
+            rules: {
+                disaster: "required",
+                disasterName: "required",
+                date: {
+                    required: true,
+                    date: true
+                },
+                description: "required"
+            },
+            messages: {
+                disaster: "This field is required",
+                disasterName: "This field is required",
+                date: {
+                    required: "This field is required",
+                    date: "Date should be correct format"
+                },
+                description: "This field is required",           
+            }
+      });
+    }
+  });
+  
+  
+  //addpeople-divisionalsec
 $(function(){
     var $formPeople = $("#formAddPeople");
     if($formPeople.length){
@@ -58,32 +87,7 @@ $(function(){
   });
 
 
-//addnewDisaster
-$(function(){
-    var $formDisasterAdd = $("#formAddDisaster");
-    if($formDisasterAdd.length){
-        $formDisasterAdd.validate({
-            rules: {
-                disaster: "required",
-                disaster_name: "required",
-                date: {
-                    required: true,
-                    date: true
-                },
-                description: "required"
-            },
-            messages: {
-                disaster: "This field is required",
-                disaster_name: "This field is required",
-                date: {
-                    required: "This field is required",
-                    date: "Date should be correct format"
-                },
-                description: "This field is required",           
-            }
-      });
-    }
-  });
+
   
   //addOfficer
   $(function(){

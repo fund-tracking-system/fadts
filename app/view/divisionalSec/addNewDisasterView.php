@@ -5,7 +5,7 @@
 <div class="all_bacground_clor">
     <div class='SearchByCriteriaform1'>
 
-        <form class="form" id="addDisaster" method="POST" action="/fadts/divisional/addNewDisasterModel" >
+        <form class="form" id="formAddDisaster" method="POST" action="/fadts/divisional/addNewDisasterModel" >
 
             <fieldset class=" BackgroundFS"> 
 
@@ -30,7 +30,7 @@
                 <div class="form-row">
                     <label for="disaster-name" class="inputLable"><b>Disaster
                         Name:</b></label>
-                    <input class="form-control Input" id="disasterName" name="disasterName" required></input>
+                    <input class="form-control Input" id="disasterName" name="disasterName" ></input>
                 </div>
 
 
@@ -50,7 +50,7 @@
 
                 <div class="form-row">
                     <label for="description" class="inputLable"><b>Description:</b></label>
-                    <textarea class="form-control Input txtWidth " id="description" name="description" required>  </textarea>
+                    <textarea class="form-control Input txtWidth " id="description" name="description" >  </textarea>
                 </div>
 
 
