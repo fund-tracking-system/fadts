@@ -6,7 +6,7 @@
 
    <div class="SearchByCriteriaform1">
 
-      <form method="post" action="/fadts/divisional/nicSearchModel" id="fundReleaseSearch">
+      <form method="post" name="nicSearch" action="/fadts/divisional/nicSearchModel" id="fundReleaseSearch">
 
          <fieldset class="BackgroundFS">
 
@@ -14,10 +14,14 @@
 
             <fieldset class="searchBar">
                <div class="form-row ">
+
                   <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
-                  <input class="form-control searchInput" id='NID-number' placeholder="Type NIC here"
+
+                  <input class="form-control searchInput" id="nic" placeholder="Type NIC here"
                      name="nic"></input>
-                  <button type="submit" name="nicSubmit" class="btn btn-primary btnNav">Search</button>
+
+                  <button style="position:center" type="submit" name="nicSubmit" class="btn btn-primary btnNav">Search</button>
+
                </div>
             </fieldset>
 
@@ -29,13 +33,9 @@
          <fieldset class=" BackgroundFS">
             <div class="tbleMargin">
                
-               <?php if($_GET['error']=='succsess'){ 
+               <?php if(isset($_SESSION['results'])){ ?>
+               <h3>Search results:</h3></br></br>
 
-                        // foreach ($_SESSION['results'] as $row){
-                        //    echo $row[0]."<br>";
-                        // }
-                        // exit();
-               ?>
                <table id="resultTable" class="display nowrap">
                   <thead>
                   <tr>
@@ -45,25 +45,21 @@
                   </tr>
                   </thead>
 
-                  <?php foreach($_SESSION['results'] as $fund){?>   
+                  <?php foreach($_SESSION['results'] as $fund){
+                     $entryId = $fund[0];
+                  ?>   
 
                   <tbody>
                   <tr>
                      <td><?php echo $fund[1] ?></td>
                      <td><?php echo $fund[2] ?></td>
-                     <td><a href="/fadts/divisional/fundReleaseModel?fundId=<?php echo $fund[0]; ?>" ><B>Release</B></a></td>
+                     <td><a class="btn btn-primary" href="/fadts/divisional/fundReleaseModel?entryId=<?php echo $entryId ?>" ><B>Release</B></a></td>
                   </tr>
                   </tbody>
 
-                  <?php } ?>
-
-                  <tfoot>
-                  <tr>
-                     <th><B>Fund Name</B></th>
-                     <th><B>Amount</B></th>
-                     <th><B>Action</B></th>
-                  </tr>
-                  </tfoot>
+                  <?php } 
+                        unset($_SESSION['results']);
+                  ?>
 
                </table>
 
@@ -78,6 +74,30 @@
 <script>
 $(document).ready(function() {
    $("#resultTable").DataTable();
+});
+
+$(function() {
+  
+  $("form[name='nicSearch']").validate({
+
+    rules: {
+      nic: {
+         required: true,
+         minlength:10,
+         maxlength:12
+      },
+    },
+    messages: {
+      nic: {
+        required: "Please provide a NIC number",
+        minlength: "NIC is not valid",
+        maxlength:"NIC is not valid"
+      },
+    },
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
 });
 </script>
 
