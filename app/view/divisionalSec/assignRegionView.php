@@ -3,29 +3,50 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method="post"  action="/fadts/divisional/assignRegionSelectModel">
+        <form method="post" action="/fadts/divisional/assignRegionSelectModel">
             <fieldset class="BackgroundFS">
-                <h2>ASSIGN REGION</h2>
 
-                <div class="form-row" style="margin-top:100px;">
-                    <label for="regionName" class="detailsLable"><b>Region name</b></label>
-                    <input class="form-control inputDetails"  readonly
-                        value="<?php echo $_SESSION['people_region']." Grama Nildhari Wasama"?>">
-                </div>
+                <fieldset class="searchBar">
+                    <h2>ASSIGN REGION FOR ADD PEOPLE </h2>
+
+                    <div class="form-row" style="margin-top:100px;">
+                        <label for="regionName" class="detailsLable"><b>Region name</b></label>
+                        <input class="form-control inputDetails" readonly
+                            value="<?php echo $_SESSION['people_region']." Grama Nildhari Wasama"?>">
+                    </div>
 
 
-                <div class="tbleMargin">
-                    <table>
-                        <thead>
-                            <tr style="margin-top:50px;">
+                        <?php  
+                        $rgnRes=$_SESSION['region_result'];
+                        foreach($rgnRes as $row) {
+                        
+                      if( $row['name']==$_SESSION['people_region']){
+                                echo "right";
+                            }
+                            else{
+                                echo '<div class="alert alert-danger" role="alert">There is No machine Region  check again! </div>';
+                                print'
+                                <form method="post" action="/fadts/divisional/ViewAddPeople">
                                 
-                                <th><b>Region name</b></th>
-                                <th><b>Region level</b></th>
-                                <th><b>Select</b></th>
-                            </tr>
-                        </thead>
-                        <tbody >
-                            <?php
+                                <button class="btn btn-primary" type="submit">Go Back</button>;
+                                </form>';
+                            }
+                        }
+                        ?>
+
+                    <div class="tbleMargin" style='margin-left:400px;margin-top:100px;margin-bottom:150px;'>
+                        <table>
+                            <thead>
+                                <tr style="margin-top:50px;">
+
+                                    <th><b>Region name</b></th>
+                                    <th><b>Region level</b></th>
+                                    <th><b>Select</b></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $valid=0;
                         
                            $rgnRes=$_SESSION['region_result'];
                            foreach($rgnRes as $row) {
@@ -45,19 +66,20 @@
                                         </td> ';
                             print " </tr> ";
                         } 
+
+                      
                     }
-                             
-
-
+                    
                             ?>
-                        </tbody>
-                    </table> 
-                </div>
+                            </tbody>
+                        </table>
+                    </div>
 
 
 
 
 
+                </fieldset>
             </fieldset>
 
         </form>
