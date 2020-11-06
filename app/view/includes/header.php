@@ -4,13 +4,6 @@
       header("Location:/fadts/home/index");
       exit(); 
    }
-   $action = $this->getAction(); // in here $action is, view file name without .php
-
-   if($_SESSION['userrole']=='villageofficer'){ $user ='village'; }
-   if($_SESSION['userrole']=='divisionalsec'){ $user ='divisional'; }
-   if($_SESSION['userrole']=='ministry'){ $user ='ministry'; }
-   if($_SESSION['userrole']=='auditor'){ $user ='audit'; }
-
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +21,11 @@
    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.flash.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
-   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+   <!-- <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script> -->
    
    <link rel="stylesheet" type="text/css" href="/fadts/app/css/main.css">
    <link rel="stylesheet" type="text/css" href="/fadts/app/css/fill.css">
@@ -42,10 +35,11 @@
 
    <script src="https://kit.fontawesome.com/yourcode.js"></script>
    
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
-
    <script type="text/javascript" src="/fadts/app/js/main.js"></script>
+
+   
     
    <style>
       .error {
@@ -70,8 +64,7 @@
 <body >
    <div>
       <nav>
-         <img class="logo" src="/fadts/app/view/includes/FADTS.png" alt="logo_icon" >
-         <!-- <label class="logo">FADTS</label> -->
+         <img class="logo" src="/fadts/app/view/includes/logo.PNG" alt="logo_icon" >
          <ul>
             <li><a href="/fadts/includes/index" ><B>Home</B></a></li>
 

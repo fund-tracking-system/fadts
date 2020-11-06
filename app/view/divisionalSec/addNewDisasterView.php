@@ -9,7 +9,7 @@
 
             <fieldset class=" BackgroundFS"> 
 
-                <h2> ADD NEW DISASTERS</h2>
+                <h2> ADD NEW DISASTER</h2>
 
 
 
