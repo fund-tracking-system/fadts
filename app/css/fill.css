@@ -34,7 +34,7 @@ body{
   padding:3%;
 }
 .searchBarLable{
-  margin-left:100px; 
+  margin-left:120px; 
   margin-top:10px;
   font-size: 16px;
   margin-bottom:-25px; 
@@ -51,9 +51,9 @@ body{
 .form-control.searchInput{
 
   position: relative;
-  margin-left:50px; 
+  margin-left:40px; 
   margin-bottom:10px;
-  width: 400px;
+  width: 440px;
   height: 45px;
   border-radius: 5px;
   outline: none;border-width: 1.5px;
@@ -90,7 +90,7 @@ body{
 }
 .inputLable{
   margin-left:190px;
-  margin-bottom:23px;
+  margin-bottom:20px;
 }
 .inputLableOne{
   margin-left:185px;
@@ -126,8 +126,9 @@ body{
 
 .btn.btn-primary.btnNav{
   margin-left: 75%; 
-  margin-top:-50px; 
+  margin-top:-55px; 
   width:13%; 
+  height: 45px;
   margin-bottom:20px;
 }
 .userpro{

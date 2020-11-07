@@ -8,6 +8,8 @@
         <form class="form" id="formAddDisaster" method="POST" action="/fadts/divisional/addNewDisasterModel" >
 
             <fieldset class=" BackgroundFS"> 
+            <fieldset class="searchBar">
+
 
                 <h2> ADD NEW DISASTER</h2>
 
@@ -63,6 +65,8 @@
 
 
             </fieldset>
+            </fieldset>
+
 
 
         </form>
