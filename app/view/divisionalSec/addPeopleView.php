@@ -155,9 +155,9 @@
                     <!-- Dropdown -->
 
 
-                    <div class="form-row">
-                        <label for="tnid" class="inputLable" style="margin-right:180px;"><b>Region:</b></label>
-                        <select id="idd"  class="form-control Input" style="margin-left:350px;height:10px;">
+                    <div class="form-row" id="myModal">
+                        <label for="tnid" class="inputLable" ><b>Region:</b></label>
+                        <select id="idd"  class="form-control Input" >
 
                             <option value="AF">Afghanistan/ඇෆ්ගනිස්තාන්</option>
                             <option value="AX">Åland Islands</option>
@@ -165,11 +165,9 @@
                             <option value="DZ">Algeria</option>
                             <option value="AS">American Samoa</option>
                             <option value="AD">Andorra</option>
-                            
                             <option value="AO">Angola</option>
                             <option value="AI">Anguilla</option>
                             <option value="AQ">Antarctica</option>
-                            ...
                         </select>
                     </div>
 
@@ -177,7 +175,7 @@
 
 
                     <button type="submit" class=' btn btn-primary  signlebtn'>Assign Region</button>
-                    <!-- <button class=' btn btn-primary '>View List</button> -->
+                    
 
                 </fieldset>
             </fieldset>
@@ -195,10 +193,9 @@
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function()
-    {
-       $('#idd').select2();
-      
+    
+    $('#mySelect2').select2({
+        dropdownParent: $('#myModal')
     });
     </script>
 
