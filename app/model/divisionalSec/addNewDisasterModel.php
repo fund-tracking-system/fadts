@@ -9,6 +9,10 @@
      $_SESSION['disaster_disasterName']=$_POST['disasterName'];
      $_SESSION['disaster_date']=$_POST['date'];
      $_SESSION['disaster_description']=$_POST['description'];
+     $_SESSION['disaster_region']=$_POST['region'];
+
+     
+
 
 
 
@@ -21,8 +25,9 @@
 
     //next redirect URL
      $_SESSION['next_model'] = "Location:/fadts/divisional/addNewDisasterSaveModel"; 
-      header("Location:/fadts/divisional/addNewDisasterSaveModel");  
+      // header("Location:/fadts/divisional/addNewDisasterSaveModel");  
 
+      header("Location:/fadts/divisional/disasterRegionView");  
 
 
 

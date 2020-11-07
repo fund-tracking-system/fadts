@@ -8,7 +8,7 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method="post" action="/fadts/divisional/assignRegionSelectModel">
+        <form method="post" action="/fadts/divisional/disasterRegionSelectModel">
             <fieldset class="BackgroundFS">
 
                 <fieldset class="searchBar">
@@ -17,7 +17,7 @@
                     <div class="form-row" style="margin-top:100px;">
                         <label for="regionName" class="detailsLable"><b>Region name</b></label>
                         <input class="form-control inputDetails" readonly
-                            value="<?php echo $_SESSION['people_region']." Grama Nildhari Wasama"?>">
+                            value="<?php echo $_SESSION['disaster_region']." Grama Nildhari Wasama"?>">
                     </div>
 
 
@@ -25,15 +25,15 @@
                         $rgnRes=$_SESSION['region_result'];
                         foreach($rgnRes as $row) {
                         
-                      if( ($row['name']==$_SESSION['people_region'])&&($row['superRegion']==$_SESSION['region'])){
+                      if( $row['name']==$_SESSION['people_region']){
                                 echo "right";
                             }
                             else{
-                                echo '<div class="alert alert-danger" role="alert">This Grama niladhari region is not  in your divisional Secratory  region.please Check again! </div>';
-                                print'<div>
+                                echo '<div class="alert alert-danger" role="alert">There is No machine Region  check again! </div>';
+                                print'
                                 <form method="post" action="/fadts/divisional/ViewAddPeople">
                                 
-                                <button class="btn btn-primary" type="submit">Go Back</button>
+                                <button class="btn btn-primary" type="submit">Go Back</button>;
                                 </form>';
                             }
                         }
@@ -56,7 +56,7 @@
                            $rgnRes=$_SESSION['region_result'];
                            foreach($rgnRes as $row) {
 
-                            if( ($row['name']==$_SESSION['people_region'])&&($row['superRegion']==$_SESSION['region'])){
+                            if( $row['name']==$_SESSION['people_region']){
                                
                             print " <tr > "; 
                                 print ' <td> ' . $row['name'] . ' </td> ';

@@ -29,12 +29,17 @@
 
      $nid=$_SESSION['people_nid'];//for nid validation
     
+     
 
-    $rgn="SELECT level, regionid,name  FROM region  WHERE level=4 ";
+    $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
     $rgnRes=$con->query($rgn) ;
     $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
     
     $_SESSION['region_result']=$res;  //for assign region  
+    echo $_SESSION['region'] ;
+
+   
+
     
 
  
