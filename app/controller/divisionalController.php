@@ -99,6 +99,12 @@ class divisionalController extends Controller{
       
       $this->view->render();
    }
+   public function disasterRegionView(){ 
+      $this->view('divisionalsec/disasterRegionView');
+    
+      
+      $this->view->render();
+   }
 
 
    public function assignRegionSelectModel(){ 
