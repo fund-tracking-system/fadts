@@ -15,7 +15,7 @@
             <fieldset class="searchBar">
                <div class="form-row ">
 
-                  <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
+                  <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
 
                   <input class="form-control searchInput" id="nic" placeholder="Type NIC here"
                      name="nic"></input>
@@ -34,7 +34,7 @@
             <div class="tbleMargin">
                
                <?php if(isset($_SESSION['results'])){ ?>
-               <h3>Search results:</h3></br></br>
+               <h3>Search results :</h3></br></br>
 
                <table id="resultTable" class="display nowrap">
                   <thead>
@@ -76,29 +76,29 @@ $(document).ready(function() {
    $("#resultTable").DataTable();
 });
 
-$(function() {
+// $(function() {
   
-  $("form[name='nicSearch']").validate({
+//   $("form[name='nicSearch']").validate({
 
-    rules: {
-      nic: {
-         required: true,
-         minlength:10,
-         maxlength:12
-      },
-    },
-    messages: {
-      nic: {
-        required: "Please provide a NIC number",
-        minlength: "NIC is not valid",
-        maxlength:"NIC is not valid"
-      },
-    },
-    submitHandler: function(form) {
-      form.submit();
-    }
-  });
-});
+//     rules: {
+//       nic: {
+//          required: true,
+//          minlength:10,
+//          maxlength:12
+//       },
+//     },
+//     messages: {
+//       nic: {
+//         required: "Please provide a NIC number",
+//         minlength: "NIC is not valid",
+//         maxlength:"NIC is not valid"
+//       },
+//     },
+//     submitHandler: function(form) {
+//       form.submit();
+//     }
+//   });
+// });
 </script>
 
 <?php include VIEW.'includes/footer.php' ?>
