@@ -5,8 +5,11 @@ body{
 	background-size:cover;
 	background-position: center;
   font-family: 'Montserrat', sans-serif; 
+  scroll-margin-block: 00px;
  
 }
+
+
 .To{
   margin-right:170px;
 }
@@ -21,7 +24,7 @@ body{
 }
 .signlebtn{
   float: right; 
-  margin-right:230px;
+  margin-right:200px;
   margin-bottom: 30px;
   height:40px;
   
@@ -51,9 +54,9 @@ body{
 .form-control.searchInput{
 
   position: relative;
-  margin-left:40px; 
+  margin-left:125px; 
   margin-bottom:10px;
-  width: 280px;
+  width: 380px;
   height: 45px;
   border-radius: 5px;
   outline: none;border-width: 1.5px;
@@ -80,6 +83,7 @@ body{
   width:150px;
   margin-top:-30px; 
   margin-bottom:50px;
+  
 }
 .Twobtn{
   margin-left:790px;
@@ -89,8 +93,8 @@ body{
   margin-top:-80px;
 }
 .inputLable{
-  margin-left:190px;
-  margin-bottom:20px;
+  margin-left:100px;
+  margin-bottom:10px;
 }
 .inputLableOne{
   margin-left:185px;
@@ -100,7 +104,7 @@ body{
 .form-control.Input{
   margin-left:350px;
   margin-bottom:50px;
-  margin-right:250px; 
+  margin-right:150px; 
   margin-top:-4%;
 
   
@@ -126,7 +130,7 @@ body{
 }
 
 .btn.btn-primary.btnNav{
-  margin-left: 60%; 
+  margin-left: 72%; 
   margin-top:-55px; 
   width:13%; 
   height: 45px;
@@ -613,8 +617,8 @@ visibility: hidden;
       flex-wrap: wrap;
   margin-right: -5px;
   margin-left: -5px;
-  margin-bottom: 10px;;
-  margin-top: 20px;;
+  margin-bottom: 5px;;
+  margin-top: 5px;;
 }
 
 .form-row > .col,
@@ -975,4 +979,11 @@ visibility: hidden;
   top: 0;
   bottom: 0;
 }
+
+
+
+
+
+
+
 
