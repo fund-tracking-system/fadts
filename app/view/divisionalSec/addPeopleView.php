@@ -135,10 +135,10 @@
                         <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
                     </div>
 
-                    <!-- <div class="form-row">
+                    <div class="form-row">
                         <label for="tnid" class="inputLable"><b>Region:</b></label>
                         <input class="form-control Input" id='region' class="form-control Input" name="region"></input>
-                    </div> -->
+                    </div>
 
 
 
@@ -155,24 +155,6 @@
                     <!-- Dropdown -->
 
 
-                    <div class="form-row">
-                        <label for="tnid" class="inputLable" style="margin-right:180px;"><b>Region:</b></label>
-                        <select id="idd"  class="form-control Input" style="margin-left:350px;height:10px;">
-
-                            <option value="AF">Afghanistan/ඇෆ්ගනිස්තාන්</option>
-                            <option value="AX">Åland Islands</option>
-                            <option value="AL">Albania</option>
-                            <option value="DZ">Algeria</option>
-                            <option value="AS">American Samoa</option>
-                            <option value="AD">Andorra</option>
-                            
-                            <option value="AO">Angola</option>
-                            <option value="AI">Anguilla</option>
-                            <option value="AQ">Antarctica</option>
-                            ...
-                        </select>
-                    </div>
-
 
 
 
@@ -186,7 +168,7 @@
 
 
 
-
+        
 
 
 
@@ -194,15 +176,25 @@
     </div>
 </div>
 
+
+
+
+
+
+
 <script type="text/javascript">
-    $(document).ready(function()
-    {
-       $('#idd').select2();
-      
-    });
-    </script>
+var expanded = false;
 
-
-
+function showCheckboxes() {
+    var checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+    }
+}
+</script>
 
 <?php include VIEW.'includes/footer.php' ?>

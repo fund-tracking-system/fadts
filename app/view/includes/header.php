@@ -33,6 +33,8 @@
    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/main.css">
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/fill.css">
+
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
@@ -50,7 +52,12 @@
 
 
 
-    
+    <!-- <script type="text/javascript">
+    $(document).ready(function()
+    {
+       $('#idd').select2();
+      
+    }); -->
 
     </script>
 
