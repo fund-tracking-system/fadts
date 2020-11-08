@@ -19,8 +19,9 @@
      $_SESSION['people_phoneNumber2']=$_POST['phoneNumber2'];
      $_SESSION['people_trustee']=$_POST['trustee'];
      $_SESSION['people_jobType']=$_POST['jobType'];
+    //  $_SESSION['people_region']=$_POST['region'];
+    //  $_SESSION['people_regionName']=$_POST['region'];
      $_SESSION['people_region']=$_POST['region'];
-     $_SESSION['people_regionName']=$_POST['region'];
 
 
 
@@ -31,12 +32,12 @@
     
      
 
-    $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
-    $rgnRes=$con->query($rgn) ;
-    $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+    // $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
+    // $rgnRes=$con->query($rgn) ;
+    // $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
     
-    $_SESSION['region_result']=$res;  //for assign region  
-    echo $_SESSION['region'] ;
+    // $_SESSION['region_result']=$res;  //for assign region  
+    // echo $_SESSION['region'] ;
 
    
 
@@ -77,11 +78,11 @@
         
         //next redirect URL
         $_SESSION['next_model'] = "Location:/fadts/divisional/addPeopleSaveModel"; 
-        //  header("Location:/fadts/divisional/addPeopleSaveModel");
+         header("Location:/fadts/divisional/addPeopleSaveModel");
 
 
         //redirecting to assignRegion view
-         header("Location:/fadts/divisional/assignRegionView");  
+         //header("Location:/fadts/divisional/assignRegionView");  
          
         unset ($duplicate);
 

@@ -7,12 +7,8 @@
         <form class="form" id="formAddDisaster" method="POST" action="/fadts/divisional/addNewDisasterModel">
 
             <fieldset class=" BackgroundFS">
+            <h2> ADD NEW DISASTER</h2>
                 <fieldset class="searchBar">
-
-
-                    <h2> ADD NEW DISASTER</h2>
-
-
 
                     <div class="form-row ">
                         <label for="disaster" class="inputLable"><b>Disaster Type:</b></label>
@@ -42,33 +38,25 @@
                         <small></small>
                     </div>
 
-
-
-
                     <div class="form-row">
                         <label for="tnid" class="inputLable"><b>Region:</b></label>
                         <input class="form-control Input" id='region' class="form-control Input" name="region"></input>
                     </div>
-
 
                     <div class="form-row">
                         <label for="description" class="inputLable"><b>Description:</b></label>
                         <textarea class="form-control Input txtWidth " id="description" name="description">  </textarea>
                     </div>
 
-
-
                     <div class='button '>
 
-                        <button type="submit" class=' btn btn-primary signlebtn'>Assign Region
+                        <button type="submit" class='btn btn-primary signlebtn'>Assign Region
                         </button>
                     </div>
 
 
                 </fieldset>
             </fieldset>
-
-
 
         </form>
 

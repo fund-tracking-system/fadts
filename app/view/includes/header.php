@@ -14,6 +14,7 @@
     <title>Work Bench</title>
 
     <meta name="viewpoint" content="width=device-width,initial-scale=1.0">
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
@@ -33,6 +34,8 @@
    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/main.css">
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/fill.css">
+
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
@@ -45,12 +48,16 @@
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+   
 
 
 
-
-
-    
+    <!-- <script type="text/javascript">
+    $(document).ready(function()
+    {
+       $('#idd').select2();
+      
+    }); -->
 
     </script>
 

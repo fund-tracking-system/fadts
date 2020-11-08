@@ -1,5 +1,13 @@
 //addnewDisaster-divisionalsec
 
+
+
+
+
+
+
+
+
 $(function(){
     var $formDisasterAdd = $("#formAddDisaster");
     if($formDisasterAdd.length){
