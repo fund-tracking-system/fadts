@@ -58,8 +58,10 @@
 
                             if( ($row['name']==$_SESSION['people_region'])&&($row['superRegion']==$_SESSION['region'])){
                                
-                            print " <tr > "; 
+                            print " <tr > ";
+
                                 print ' <td> ' . $row['name'] . ' </td> ';
+                                
                                 print ' <td>   <b> <input   style="border:none; margin-right:30px; margin-left:30px;" name="level" value=" Grama Niladhari Wasama" readonly> </b></td> ';
                                 print ' <td>
                                 <form method="post" >

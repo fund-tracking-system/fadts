@@ -1,5 +1,9 @@
+
 <?php include VIEW.'includes/header.php' ?>
+
 <?php include VIEW.'includes/sidebar.php' ?>
+
+
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
@@ -8,9 +12,9 @@
 
         <form method="post" id="formAddPeople" action="/fadts/divisional/addPeopleModel">
             <fieldset class="BackgroundFS">
-            <h2> ADD PEOPLE DATA </h2>
+                <h2> ADD PEOPLE DATA </h2>
                 <fieldset class="searchBar">
-                    
+
 
                     <?php
 
@@ -155,68 +159,51 @@
                     <!-- Dropdown -->
 
 
-                    <div class="form-row" id="myModal">
-                        <label for="tnid" class="inputLable" ><b>Region:</b></label>
-                        <select id="idd"  class="form-control Input" >
+                    <div class="form-row">
+                        <label for="region" class="inputLable"><b>Region:</b></label>
+                        <?php
+                             require 'connection.php'; 
+                                     
+                            echo "<select class='form-control Input' id='region' name='region'>";
+                            $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
+                            $rgnRes=$con->query($rgn) ;
+                            $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                            $_SESSION['region_result']=$res; 
 
-                            <option value="AF">Afghanistan/ඇෆ්ගනිස්තාන්</option>
-                            <option value="AX">Åland Islands</option>
-                            <option value="AL">Albania</option>
-                            <option value="DZ">Algeria</option>
-                            <option value="AS">American Samoa</option>
-                            <option value="AD">Andorra</option>
-                            <option value="AO">Angola</option>
-                            <option value="AI">Anguilla</option>
-                            <option value="AQ">Antarctica</option>
-                        </select>
+                                            $row  = $_SESSION['region_result'];
+                                       
+                                            foreach($res as $row){
+                                                if($row['superRegion']==$_SESSION['region']){
+
+                                                    echo '<option value="'.$row['regionid'].'">'.$row['name'].'</option>' ;  
+
+                                             }
+                                          }
+
+                                          echo "</selct>";
+                                          echo "<br>";
+                            ?>
+
+
                     </div>
 
 
+                    <div class="form-row">
+
+                        <label class="inputLable" for="phone-number"><b>Contact Number 2:</b></label>
+                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="hidden"></input>
+                    </div>
+                    
 
 
                     <button type="submit" class=' btn btn-primary  signlebtn'>Assign Region</button>
-                    
-
                 </fieldset>
             </fieldset>
 
         </form>
-
-
-
-        
-
-
-
-
     </div>
 </div>
 
-<script type="text/javascript">
-    
-    $('#mySelect2').select2({
-        dropdownParent: $('#myModal')
-    });
-    </script>
 
-
-
-
-
-
-<script type="text/javascript">
-var expanded = false;
-
-function showCheckboxes() {
-    var checkboxes = document.getElementById("checkboxes");
-    if (!expanded) {
-        checkboxes.style.display = "block";
-        expanded = true;
-    } else {
-        checkboxes.style.display = "none";
-        expanded = false;
-    }
-}
-</script>
 
 <?php include VIEW.'includes/footer.php' ?>

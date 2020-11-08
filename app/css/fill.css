@@ -24,7 +24,7 @@ body{
 }
 .signlebtn{
   float: right; 
-  margin-right:200px;
+  margin-right:150px;
   margin-bottom: 30px;
   height:40px;
   
@@ -943,9 +943,11 @@ visibility: hidden;
  }
 /* new */
 .all_bacground_clor{
-  background-color:#ced4da;
+  background-color:#757677;
 }
 .SearchByCriteriaform1{
+  background-color:#757677;
+
   width: 80%;
    margin-left:300px; 
     margin-top:15px; 
