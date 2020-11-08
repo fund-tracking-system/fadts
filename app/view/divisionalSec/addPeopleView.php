@@ -98,11 +98,11 @@
 
                <!-- dn wada karana thana -->
 
-               <div class="form-row">
+               <div class="form-row" style="margin-bottom:50px;">
 
-               <label for="tnid" class="inputLable"><b>Region :</b></label>
+               <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
 
-                  <select id="region" class="form-control Input" multiple="multiple" name="region" id="region" style="position:sticky;top:60px;height:400px;overflow:scroll;">
+                  <select id="region" class="form-control Input" multiple="multiple" name="region" id="region" style="position:sticky;top:60px;height:400px;overflow:scroll;  width:545px;">
                      <option value="Goverment">colombo</option>
                      <option value="Private">matara</option>
                      <option value="Retired">galle</option>
