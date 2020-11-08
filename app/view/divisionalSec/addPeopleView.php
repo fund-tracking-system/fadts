@@ -98,22 +98,47 @@
 
                <!-- dn wada karana thana -->
 
-               <div class="form-row">
+               <div class="form-row" style="margin-bottom:50px;">
 
-               <label for="tnid" class="inputLable"><b>Region :</b></label>
+               <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
+               <?php
 
-                  <select id="region" class="form-control Input" multiple="multiple" name="region" id="region" style="position:sticky;top:60px;height:400px;overflow:scroll;">
-                     <option value="Goverment">colombo</option>
-                     <option value="Private">matara</option>
-                     <option value="Retired">galle</option>
-                     <option value="SelfEmployee">deniyaye</option>
-                     <option value="Jobless">akuressa</option>
-                  </select>
+                  require 'connection.php'; 
+                                 
+                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
+                  $rgnRes=$con->query($rgn) ;
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                  
+                  $_SESSION['region_result']=$res;  //for assign region  
+                  // echo $_SESSION['region'] ;
+                  echo "<select id='region' class='form-control Input' multiple='multiple' name='region' id='region' style='position:sticky;top:60px;height:400px;overflow:scroll;  width:545px;'>";
+                  foreach($res as $data){
+                     if($data['superRegion']==$_SESSION['region']){
+                        // echo "<option value='$data['regionid']'>colombo</option>";
+                        echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
 
+                     }
+                  }
+                  
+           
+
+
+                  // <select id="region" class="form-control Input" multiple="multiple" name="region" id="region" style="position:sticky;top:60px;height:400px;overflow:scroll;  width:545px;">
+                  //    <option value="Goverment">colombo</option>
+                  //    <option value="Private">matara</option>
+                  //    <option value="Retired">galle</option>
+                  //    <option value="SelfEmployee">deniyaye</option>
+                  //    <option value="Jobless">akuressa</option>
+                  // </select>
+               ?>
                </div>
 
 
 
+               <div class="form-row">
+                  <input class=" " id='' name="" type="hidden"></input>
+               </div>
+               
                <div class="form-row">
                   <label class="inputLable" for="phone-number"><b>Contact Number 1 :</b></label>
                   <input class="form-control Input" id='phonenumber1' name="phoneNumber1" type="number"></input>
