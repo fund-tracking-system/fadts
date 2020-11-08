@@ -52,13 +52,13 @@
 
 
 
-    <!-- <script type="text/javascript">
-    $(document).ready(function()
-    {
-       $('#idd').select2();
-      
-    }); -->
-
+    <script>
+     $(function() {
+        $('#nav li a').click(function() {
+           $('#nav li').removeClass();
+           $($(this).attr('href')).addClass('active');
+        });
+     });
     </script>
 
 

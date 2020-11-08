@@ -15,9 +15,6 @@
                     <legend><b>&nbsp;&nbsp;Search Pre Defined Functions</b></legend>
                     <div class="form-row ">
                         <label for="NID-number" class="searchBarLable"><b>Pre Defined Fund:</b></label>
-
-                        <!-- <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
-                            name="NID"></input> -->
                         <select class="form-control searchInput" name="select-PreFund" id="select-PreFund">
                             <option value="Samurdhi">Samurdhi</option>
                             <option value="Disabled">Disabled</option>
