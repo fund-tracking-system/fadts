@@ -96,7 +96,7 @@
                   <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
                </div>
 
-               <!-- dn wada karana thana -->
+               
 
                <div class="form-row" style="margin-bottom:50px;">
 
@@ -110,8 +110,9 @@
                   $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
                   
                   $_SESSION['region_result']=$res;  //for assign region  
-                  // echo $_SESSION['region'] ;
-                  echo "<select id='region' class='form-control Input' multiple='multiple' name='region' id='region' style='position:sticky;top:60px;height:400px;overflow:scroll;  width:545px;'>";
+                  // echo $_SESSION['region'] ;?>
+                  <select id='region' class='form-control Input' multiple='multiple' name='region' id='region' style='position:sticky;top:60px;overflow:scroll;width:530px;'>
+                  <?php 
                   foreach($res as $data){
                      if($data['superRegion']==$_SESSION['region']){
                         // echo "<option value='$data['regionid']'>colombo</option>";
@@ -119,24 +120,13 @@
 
                      }
                   }
-                  
-           
-
-
-                  // <select id="region" class="form-control Input" multiple="multiple" name="region" id="region" style="position:sticky;top:60px;height:400px;overflow:scroll;  width:545px;">
-                  //    <option value="Goverment">colombo</option>
-                  //    <option value="Private">matara</option>
-                  //    <option value="Retired">galle</option>
-                  //    <option value="SelfEmployee">deniyaye</option>
-                  //    <option value="Jobless">akuressa</option>
-                  // </select>
                ?>
                </div>
 
 
 
                <div class="form-row">
-                  <input class=" " id='' name="" type="hidden"></input>
+                  <input type="hidden"></input>
                </div>
                
                <div class="form-row">
