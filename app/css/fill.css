@@ -1,12 +1,10 @@
 body{
 	margin: 0;
 	padding: 0;
-	background-color:#fff;
+	background-color:#e6eded;
 	background-size:cover;
 	background-position: center;
   font-family: 'Montserrat', sans-serif; 
-
- 
 }
 
 
@@ -26,8 +24,7 @@ body{
   float: right; 
   margin-right:150px;
   margin-bottom: 30px;
-  height:40px;
-  
+  height:40px;  
 }
 .searchBar{
   padding-top:15px;
@@ -43,7 +40,7 @@ body{
   margin-bottom:-25px; 
 }
 .BackgroundFS{
-  background-color:#fff; 
+  background-color:#ffff; 
   border-bottom:10px; 
   padding-bottom:20px;
   border:none;
@@ -61,21 +58,6 @@ body{
   border-radius: 5px;
   outline: none;border-width: 1.5px;
 
-
-/* 
-
-  position: relative;
-  margin-left:50px;
-   margin-bottom:10px;
-   padding-bottom: 30px;;
-   width: 400px;
-   height: 30px;
-   border-radius: 5px;
-   outline: none;
-   border-width: 1.5px; 
-   padding:20px;
-
- */
 
 }
 .form-control.InputTwo{
@@ -943,10 +925,10 @@ visibility: hidden;
  }
 /* new */
 .all_bacground_clor{
-  background-color:#757677;
+  background-color:#e6eded;
 }
 .SearchByCriteriaform1{
-  background-color:#757677;
+  background-color:#ffffff;
 
   width: 80%;
    margin-left:300px; 
