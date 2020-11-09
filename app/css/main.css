@@ -68,10 +68,10 @@ a:active,a:hover{
 
 .sidebar {
 	position: fixed;
-	top: 91px;
+	top: 86px;
 	left: 8px;
 	width: 280px;
-	height: 78%;
+	height: 79%;
 	background: #2C3E50;
 	border-right: 2px solid #2C3E50;
 	box-shadow: 2px 2px 2px 2px #888888;

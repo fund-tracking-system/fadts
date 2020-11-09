@@ -40,20 +40,11 @@ switch($controller){
 ?>
 
 <div class="dashboard sidebar">
-   <!-- <a href="#" class="dashboard sidebar_link">
-      <span class="material-icons">home</span>Home
-   </a> -->
-   <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add  New Disaster
-
-   <a href="/fadts/divisional/fundRelease" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Alternate Fund Release
+   <a href="/fadts/divisional/ViewAddPeople" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Add People Data
    </a>
    <a href="/fadts/divisional/ViewUpdatePeopleData" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Update People Data
-   </a>
-   <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Disaster Details
    </a>
    <a href="/fadts/divisional/ViewSearchBycriteria" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Search People Data
@@ -61,8 +52,14 @@ switch($controller){
    <a href="/fadts/divisional/ViewFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Fund Details
    </a>
-   <a href="/fadts/divisional/ViewAddPeople" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add People Data
+   <a href="/fadts/divisional/fundRelease" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Alternate Fund Release
+   </a>
+   <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Add  New Disaster
+   </a>
+   <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>Disaster Details
    </a>
    <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help

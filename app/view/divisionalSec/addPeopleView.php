@@ -6,9 +6,6 @@
 
 <div class="all_bacground_clor">
    <div class="SearchByCriteriaform1">
-
-
-
       <form method="post" id="formAddPeople" action="/fadts/divisional/addPeopleModel">
          <fieldset class="BackgroundFS">
             <h2> ADD PEOPLE DATA </h2>
@@ -17,8 +14,6 @@
 
 
                <?php
-
-
                 if(isset($_GET['error'])){
 
                 $error = $_GET['error'];
@@ -96,39 +91,37 @@
                   <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
                </div>
 
-               
-
-               <div class="form-row" style="margin-bottom:50px;">
-
-               <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
-               <?php
-
-                  require 'connection.php'; 
-                                 
-                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
-                  $rgnRes=$con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
-                  
-                  $_SESSION['region_result']=$res;  //for assign region  
-                  // echo $_SESSION['region'] ;?>
-                  <select id='region' class='form-control Input' multiple='multiple' name='region' id='region' style='position:sticky;top:60px;overflow:scroll;width:530px;'>
-                  <?php 
-                  foreach($res as $data){
-                     if($data['superRegion']==$_SESSION['region']){
-                        // echo "<option value='$data['regionid']'>colombo</option>";
-                        echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-
-                     }
-                  }
-               ?>
-               </div>
-
 
 
                <div class="form-row">
-                  <input type="hidden"></input>
+                  <label for="tnid" class="inputLable"><b>Region :</b></label>
+
+                  <?php
+
+                  require 'connection.php'; 
+
+                  $region = $_SESSION['region'];
+                                 
+                  $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
+                  $rgnRes = $con->query($rgn) ;
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                  
+                  $_SESSION['region_result']=$res
+                  
+                  ?>
+
+                  <select class="form-control Input" name="region" id="region">
+
+                  <?php 
+                  foreach($res as $data){
+                        echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
+                  }
+                  ?>
+
                </div>
-               
+
+               <div><input type="hidden"></div>
+
                <div class="form-row">
                   <label class="inputLable" for="phone-number"><b>Contact Number 1 :</b></label>
                   <input class="form-control Input" id='phonenumber1' name="phoneNumber1" type="number"></input>
@@ -147,16 +140,5 @@
    </div>
 </div>
 
-
-
-
-<script>
-   $(document).ready(function() {
-     
-    $('#region').select2();
-
-
-   });
-</script>
 
 <?php include VIEW.'includes/footer.php' ?>
