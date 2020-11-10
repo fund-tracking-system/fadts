@@ -930,12 +930,12 @@ visibility: hidden;
 }
 .SearchByCriteriaform1{
   background-color:#ffffff;
-
   width: 80%;
-   margin-left:300px; 
-    margin-top:15px; 
-    overflow:auto;   
-    height:590px;  
+  margin-top:15px; 
+  overflow:auto;   
+  height:590px; 
+  margin-left:300px; 
+     
 }
 
 
@@ -963,6 +963,16 @@ visibility: hidden;
   right: 0;
   top: 0;
   bottom: 0;
+}
+
+.divisionDashboard{
+  background-color:#ffffff;
+  width: 80%;
+  margin-top:15px;
+  overflow:auto;   
+  height:590px; 
+  margin-left:300px; 
+     
 }
 
 .content{

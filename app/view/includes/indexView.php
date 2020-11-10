@@ -13,10 +13,10 @@ switch($controller){
 
 
 
-<div class="SearchByCriteriaform1">
+<div class="divisionDashboard">
    <div class="content">
       <div class="box-1">
-         <img src="./fadts/app/img/" alt="sri lanka map">
+         <img src="./fadts/app/img/Sri_Lanka_Map.jpeg" alt="sri lanka map">
       </div>
       <div class="box-2">
          <h1>BOX2</h1>
@@ -30,6 +30,30 @@ switch($controller){
    </div>
 
 </div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function () {
+			var chart = new CanvasJS.Chart("chart", {
+				title:{
+					text: "My First Chart in CanvasJS"              
+				},
+				data: [              
+				{
+					// Change type to "doughnut", "line", "splineArea", etc.
+					type: "column",
+					dataPoints: [
+						{ label: "apple",  y: 10  },
+						{ label: "orange", y: 15  },
+						{ label: "banana", y: 25  },
+						{ label: "mango",  y: 30  },
+						{ label: "grape",  y: 28  }
+					]
+				}
+				]
+			});
+			chart.render();
+		}
+	</script>
 
 
 
