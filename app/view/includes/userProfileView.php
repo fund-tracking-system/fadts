@@ -14,10 +14,10 @@
 
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
+            <h2>USER PROFILE </h2>
+                <fieldset class="searchBar"> 
 
-                <fieldset class="userpro"> 
-
-                    <h2>USER PROFILE </h2>
+                    
 
                     <div class="form-row">
                         <label for="name " class="inputLable"><b> Name:</b></label>
@@ -51,7 +51,7 @@
         <form method="POST" action="/fadts/includes/resetModel">
             <fieldset class="BackgroundFS">
 
-                <fieldset class="userpro">
+                <fieldset class="searchBar">
                     <h2>Reset Password</h2>
                     <?php 
                      if(isset($_GET['error'])){
