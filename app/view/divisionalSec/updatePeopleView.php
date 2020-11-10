@@ -1,19 +1,27 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
+<?php if(isset($_SESSION['updateResults'])){
+   $result = $_SESSION['updateResults'] ; 
+   // echo $result[0][1];
+   // exit();
+} 
+?>
+
 <div class="all_bacground_clor">
    <div class="SearchByCriteriaform1">
 
 
-
-      <form method="post" action="" id="form">
+      <form method="post" action="/fadts/divisional/nicSearchModel?view=updatePeople" id="form">
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
                <div class="form-row " >
                   <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
-                  <input class="form-control searchInput" id='NID-number' placeholder="Type here NIC to find person" name="NID"></input>
-                  <button type="submit" class="btn btn-primary btnNav">Search</button>
+                  <input class="form-control searchInput" id='NID-number' 
+                  placeholder="<?php echo isset($result) ? $result[0][1]:"Type here NIC"?>"  
+                  name="nic"></input>
+                  <button type="submit" class="btn btn-primary btnNav" name="submit">Search</button>
                </div>
             </fieldset>
          </fieldset>
@@ -22,15 +30,13 @@
 
 
 
-      <form>
+      <form method="POST" action="/fadts/divisional/updatePeopleModel">
          <fieldset class="BackgroundFS">
-            <!-- <h2>UPDATE PEOPLE DATA</h2> -->
-
-
+           
             <fieldset class="searchBar">
                <div class="form-row">
                   <label for="name " class="inputLable"><b>Full Name</b></label>
-                  <input class="form-control Input" id="name" name="name" value="name display only" readonly></input>
+                  <input class="form-control Input" id="name" name="name" value="<?php echo isset($result) ? $result[0][7]:"Type here NIC" ?>"></input>
                </div>
 
 
@@ -38,19 +44,19 @@
                <div class="form-row">
                   <label for="Address" class="inputLable"><b>Address</b></label>
                   <input class="form-control Input" id="address" name="address"
-                     placeholder="Opatha,ganegoda,Elptye,Galle"></input>
+                  value="<?php echo isset($result) ? $result[0][8]:"Type here NIC" ?>"></input>
                </div>
 
 
                <div class="form-row">
                   <label for="birth-date" class="inputLable"><b>Birth Date</b></label>
-                  <input class="form-control Input" id='birthDate' name="birthDate" value="YYYY/MM/DD"
+                  <input class="form-control Input" id='birthDate' name="birthDate" value="<?php echo isset($result) ? $result[0][5]:"Type here NIC" ?>"
                      readonly></input>
                   <small> </small>
                </div>
                <div class="form-row">
                   <label for="birthNO" class="inputLable"><b>Birth Certificate No</b></label>
-                  <input class="form-control Input" id='birthvertifiacateNo' name="birthCertificateNo"
+                  <input class="form-control Input" id='birthvertifiacateNo' name="birthCertificateNo" value="<?php echo isset($result) ? $result[0][6]:"Type here NIC" ?>"
                      readonly></input>
                </div>
 
@@ -70,6 +76,7 @@
 
                   <select id='region' class='form-control Input' multiple='multiple' name='region' id='region'
                      style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
+                     <option value="<?php echo isset($result) ? $result[0][8]:"Type here NIC" ?>" selected></option>
                      <?php 
                   foreach($res as $data){
                      if($data['superRegion']==$_SESSION['region']){
@@ -161,18 +168,6 @@
 
 
 <script type="text/javascript">
-var expanded = false;
-
-function showCheckboxes() {
-   var checkboxes = document.getElementById("checkboxes");
-   if (!expanded) {
-      checkboxes.style.display = "block";
-      expanded = true;
-   } else {
-      checkboxes.style.display = "none";
-      expanded = false;
-   }
-}
 $(document).ready(function() {
    $('#region').select2();
 });

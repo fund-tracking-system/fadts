@@ -27,7 +27,7 @@
 
                <div class="form-row">
                   <label for="Name" class="inputLable"><b>Name :</b></label>
-                  <input class="form-control Input" id="name" name="name" placeholder="Name In Full"></input>
+                  <input class="form-control Input" id="name" name="name" placeholder="Name in full"></input>
 
                </div>
 
@@ -35,7 +35,7 @@
 
                <div class="form-row">
                   <label for="nid" class="inputLable"><b>NIC :</b></label>
-                  <input class="form-control Input" id='nid' name="nid"></input>
+                  <input class="form-control Input" id='nid' name="nid" ></input>
                </div>
 
 
@@ -69,6 +69,7 @@
                <div class="form-row">
                   <label for="jobtype" class="inputLable"><b>Job Type :</b></label>
                   <select class="form-control Input" name="jobType" id="jobType">
+                     <option value="" disabled selected>Select job type</option>
                      <option value="Goverment">Goverment</option>
                      <option value="Private">Private</option>
                      <option value="Retired">Retired</option>
@@ -81,6 +82,7 @@
                <div class="form-row">
                   <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
                   <select class="form-control Input" id="civilStatus" name="civilStatus">
+                     <option value="" disabled selected>Select civil status</option>
                      <option value="1">Unmarried</option>
                      <option value="0">Married</option>
                   </select>
@@ -111,7 +113,7 @@
                   ?>
 
                   <select class="form-control Input" name="region" id="region">
-
+                  <option value="" disabled selected>Select region</option>
                   <?php 
                   foreach($res as $data){
                         echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';

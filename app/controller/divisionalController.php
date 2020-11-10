@@ -13,8 +13,8 @@ class divisionalController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-   public function ViewUpdatePeopleData(){
-      $this->view('divisionalSec/UpdatePeopleDataView');
+   public function updatePeople(){
+      $this->view('divisionalSec/updatePeopleView');
       
       $this->view->render(); // This is how load the view
    }

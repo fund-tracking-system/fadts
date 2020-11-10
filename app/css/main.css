@@ -45,15 +45,21 @@ nav ul li{
 }
 
 nav ul li a{
+	/* display: inline-flex; */
 	color: white;
 	font-size: 15px;
-	padding: 7px 13px;
+	padding: 10px 13px;
 	border-radius: 3px;
 	text-transform: uppercase;
 }
 
 nav ul li a.active{
 	background: #45B39D;
+}
+
+
+.nav_link .material-icons{
+	padding: 10px 13px;
 }
 
 a:active,a:hover{
@@ -126,7 +132,7 @@ footer h4{
 	color:#fff4f4;
 }
 
-.log_button:active,.log_button:hover{
+.log_button:hover{
 	background:#E3213B;
 	transition: .5s;
 }

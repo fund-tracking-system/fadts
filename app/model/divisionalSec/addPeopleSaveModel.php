@@ -8,7 +8,7 @@
 
 
     
-    $query='INSERT INTO person (name,nid,headOfFamily,phone, phone_two,         birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
+    $query='INSERT INTO person (name,nid,headOfFamily,phone, phone_two,birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
     $stmt=$con->prepare($query);
     $stmt->bind_param('sssssssssss',$name,$nid,$headOfFamily,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,      $civilStatus,$trustee,$jobType,$region);
 
