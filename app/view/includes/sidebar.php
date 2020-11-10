@@ -41,25 +41,25 @@ switch($controller){
 
 <div class="dashboard sidebar">
    <a href="/fadts/divisional/ViewAddPeople" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add People Data
+      <span class="material-icons">person_add</span>Add People Data
    </a>
    <a href="/fadts/divisional/ViewUpdatePeopleData" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Update People Data
+      <span class="material-icons">person</span>Update People Data
    </a>
    <a href="/fadts/divisional/ViewSearchBycriteria" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Search People Data
+      <span class="material-icons">people_alt</span>Search People Data
    </a>
    <a href="/fadts/divisional/ViewFundDetails" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Fund Details
+      <span class="material-icons">menu_book</span>View Fund Details
    </a>
    <a href="/fadts/divisional/fundRelease" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Alternate Fund Release
+      <span class="material-icons">post_add</span>Alternate Fund Release
    </a>
    <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add  New Disaster
+      <span class="material-icons">control_point</span>Add  New Disaster
    </a>
    <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Disaster Details
+      <span class="material-icons">menu_book</span>Disaster Details
    </a>
    <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help

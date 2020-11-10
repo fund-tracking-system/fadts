@@ -10,7 +10,7 @@
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
-               <div class="form-row " style="">
+               <div class="form-row " >
                   <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
                   <input class="form-control searchInput" id='NID-number' placeholder="Type here NIC to find person" name="NID"></input>
                   <button type="submit" class="btn btn-primary btnNav">Search</button>
