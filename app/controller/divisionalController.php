@@ -2,6 +2,12 @@
 
 class divisionalController extends Controller{
 
+   public function ViewDashboard(){
+      $this->view('divisionalSec/dashboardView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
    public function ViewaddNewDisaster(){
       $this->view('divisionalSec/addNewDisasterView');
       

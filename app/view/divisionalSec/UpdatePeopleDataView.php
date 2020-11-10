@@ -55,34 +55,35 @@
                </div>
 
 
-               <div class="form-row">
-                  <label for="tnid" class="inputLable"><b>Region :</b></label>
+               <div class="form-row" style="margin-bottom:50px;">
 
+                  <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
                   <?php
 
                   require 'connection.php'; 
-
-                  $region = $_SESSION['region'];
                                  
-                  $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
-                  $rgnRes = $con->query($rgn) ;
+                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
+                  $rgnRes=$con->query($rgn) ;
                   $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
                   
-                  $_SESSION['region_result']=$res
-                  
-                  ?>
+                  $_SESSION['region_result']=$res;  //for assign region  ?>
 
-                  <select class="form-control Input" name="region" id="region">
-
-                  <?php 
+                  <select id='region' class='form-control Input' multiple='multiple' name='region' id='region'
+                     style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
+                     <?php 
                   foreach($res as $data){
+                     if($data['superRegion']==$_SESSION['region']){
+                        // echo "<option value='$data['regionid']'>colombo</option>";
                         echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-                  }
-                  ?>
 
+                     }
+                  }
+               ?>
                </div>
 
-               <div><input type="hidden"></div>
+               <div class="form-row">
+                  <input type="hidden"></input>
+               </div>
 
 
 
@@ -114,21 +115,39 @@
                   </select>
                </div>
 
-               <div class="form-row">
-                  <label for="jobtype" class="inputLable"><b>Job Type :</b></label>
-                  <select class="form-control Input" name="jobType" id="jobType">
-                     <option value="Goverment">Goverment</option>
-                     <option value="Private">Private</option>
-                     <option value="Retired">Retired</option>
-                     <option value="SelfEmployee">SelfEmployee</option>
-                     <option value="Jobless">Jobless</option>
+               <div class='form-row'>
+                  <label class="inputLable"><b>Job type </br></label>
+                  <label class="inputLable"></b></label>
 
+                  <select class="form-control Input" onclick="showCheckboxes() ">
+                     <!-- <option>Select an option</option>  select krapua pennanna hadann ooona-->
                   </select>
+                  <!-- <div class="overSelect"></div> -->
+
+                  <div id="checkboxes" class="checksbox" name="checkbox">
+
+                     <label for="one" class="form-control">
+                        <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
+                     <label for="two" class="form-control">
+                        <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
+                     <label for="three" class="form-control">
+                        <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
+                     <label for="four" class="form-control">
+                        <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own
+                        Bussiness</label>
+                     <label for="four" class="form-control">
+                        <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self
+                        Employee</label>
+                     <label for="four" class="form-control">
+                        <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
+                  </div>
                </div>
 
 
                <div class="Twobtn">
-                  <button type="submit" class=' btn btn-primary '>Confirm and Update</button>
+
+                  <button type="submit" class=' btn btn-primary '>Confirm</button>
+                  <button class=' btn btn-primary '>View List</button>
                </div>
 
 
@@ -140,6 +159,24 @@
    </div>
 </div>
 
+
+<script type="text/javascript">
+var expanded = false;
+
+function showCheckboxes() {
+   var checkboxes = document.getElementById("checkboxes");
+   if (!expanded) {
+      checkboxes.style.display = "block";
+      expanded = true;
+   } else {
+      checkboxes.style.display = "none";
+      expanded = false;
+   }
+}
+$(document).ready(function() {
+   $('#region').select2();
+});
+</script>
 
 
 <?php include VIEW.'includes/footer.php' ?>
