@@ -51,6 +51,11 @@ nav ul li a{
 	border-radius: 3px;
 	text-transform: uppercase;
 }
+
+nav ul li a.active{
+	background: #45B39D;
+}
+
 a:active,a:hover{
 	background: #45B39D;
 	transition: .5s;
@@ -89,6 +94,7 @@ a:active,a:hover{
 	font-size: 1.125rem;
 	border-bottom: 1px solid #000040;
 }
+
 .sidebar_link .material-icons {
 	margin-right: 12px;
 }
@@ -100,9 +106,7 @@ footer{
 	width: 100%;
 	color: #ffffff;
 	text-align: justify;
-
 	background:#117A65;
-	/* background:#2E4053; */
 }
 footer h4{
 	padding-top: 20px;

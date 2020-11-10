@@ -32,6 +32,7 @@ body{
   margin-left:50px;
   border-radius:10px; 
   padding:3%;
+  background-color:#fdfdff;
 }
 .searchBarLable{
   margin-left:120px; 
@@ -40,7 +41,7 @@ body{
   margin-bottom:-25px; 
 }
 .BackgroundFS{
-  background-color:#ffff; 
+  background-color:#fafcfd; 
   border-bottom:10px; 
   padding-bottom:20px;
   border:none;
@@ -478,7 +479,7 @@ fieldset:disabled a.btn {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
+  background-color: #fafcfd;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
