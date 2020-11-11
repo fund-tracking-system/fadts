@@ -89,7 +89,7 @@
                </div>
 
                <div class="form-row">
-                  <input type="hidden"></input>
+                  <input type="hidden" name="nid" value="<?php echo isset($result) ? $result['nid']:""?>"></input>
                </div>
 
                <div class="form-row">

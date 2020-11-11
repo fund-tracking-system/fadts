@@ -11,17 +11,17 @@ if(isset($_POST['submit'])){
 
    $name = $_POST['name'];
    $address = $_POST['address'];
-   $birthDate = $_POST['birthDate'];
-   $birthCertificateNo = $_POST['birthCertificateNo'];
    $region = $_POST['region'];
    $trustee = $_POST['trustee'];
    $phone = $_POST['phone'];
    $phone_two = $_POST['phone_two'];
    $civilStatus = $_POST['civilStatus'];
    $jobType = $_POST['jobType'];
+   $nid = $_POST['nid'];
    
 
-   $sql = "UPDATE person WHERE password=? and email=?";
+   $sql = "UPDATE person SET name=?,address=?,region=?,trustee=?,phone=?,phone_two=?civilStatus=?,jobType=? WHERE nid=?";
+
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -29,48 +29,18 @@ if(isset($_POST['submit'])){
       exit();     
    }
    else{
-      mysqli_stmt_bind_param($stmt,"ss",$currentpwd,$email);
-      mysqli_stmt_execute($stmt);
-      $result = mysqli_stmt_get_result($stmt);
-
-      if($row = mysqli_fetch_assoc($result)){
-
-         if($currentpwd != $row['password']){
-            header("Location:/fadts/includes/userProfile?error=wrong_crrpwd");
-            exit();  
-         }
-         else{
-            
-            if($newpwd != $againpwd){
-               header("Location:/fadts/includes/userProfile?error=new_again_notsame");
-               exit();
-            }
-
-            $sql = "UPDATE user SET password = ? WHERE password=? and email=?";
-            $stmt = mysqli_stmt_init($con);
-
-            if(!mysqli_stmt_prepare($stmt,$sql)){
-               header("Location:/fadts/includes/userProfile?error=db_conn_err");
-               exit();     
-            }
-            else{
-               mysqli_stmt_bind_param($stmt,"sss",$newpwd,$currentpwd,$email);
-
-               if(mysqli_stmt_execute($stmt)){
-                  header("Location:/fadts/includes/userProfile?error=success");
-                  exit();
-               }else{
-                  header("Location:/fadts/includes/userProfile?error=update_error");
-                  exit();
-               }
-            }
-         }
-
+      mysqli_stmt_bind_param($stmt,"sssssssss",$name,$address,$region,$trustee,$phone,$phone_two,$civilStatus,$jobType,$nid);
+      
+      if(mysqli_stmt_execute($stmt)){
+         mysqli_close($con);
+         header("Location:/fadts/includes/userProfile?error=update_success");
+         exit();  
       }
       else{
-         header("Location:/fadts/includes/userProfile?error=wrong_crrpwd");
+         mysqli_close($con);
+         header("Location:/fadts/includes/userProfile?error=db_conn_err");
          exit();
-      }
+      }     
    }
    mysqli_stmt_close($stmt);
    mysqli_close($con);
