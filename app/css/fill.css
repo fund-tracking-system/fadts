@@ -976,18 +976,25 @@ visibility: hidden;
 }
 
 .content{
- 
-  height: 100vh;
-	display: grid;
+  background-color:#ffffff;
+  width: 80%;
+  height:79%; 
+  margin-top:15px; 
+  overflow:auto;   
+  margin-left:300px; 
+}
+
+.grid_box{
+  height: 100%;
+  display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-  
 }
 
 .box-1{
   /*width: 100%;*/
   margin: 5px;
-  background-color: #c8eeff;
+  background-color: #0006e0;
   grid-row: 1/2;
   grid-column: 1/2;
 }
@@ -1008,18 +1015,19 @@ visibility: hidden;
 
 .box-4{
   margin: 5px;
-  background: lightblue;
+  background: #ffffff;
   grid-row: 2/3;
   grid-column: 1/4;
 }
 
 .box-1 img{
 
-  height:350px; 
+  /* height:inherit; */
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 55%;
+  
 
 }
 
