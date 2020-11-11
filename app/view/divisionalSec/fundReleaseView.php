@@ -6,7 +6,7 @@
 
    <div class="SearchByCriteriaform1">
 
-      <form method="post" name="nicSearch" action="/fadts/divisional/nicSearchModel" id="fundReleaseSearch">
+      <form method="post" name="nicSearch" action="/fadts/divisional/nicSearchModel?view=fundRelease" id="fundReleaseSearch">
 
          <fieldset class="BackgroundFS">
 
@@ -20,7 +20,7 @@
                   <input class="form-control searchInput" id="nic" placeholder="Type NIC here"
                      name="nic"></input>
 
-                  <button style="position:center" type="submit" name="nicSubmit" class="btn btn-primary btnNav">Search</button>
+                  <button style="position:center" type="submit" name="submit" class="btn btn-primary btnNav">Search</button>
 
                </div>
             </fieldset>
@@ -30,10 +30,12 @@
       </form>
 
       <form>
-         <fieldset class=" BackgroundFS">
+         <fieldset class="BackgroundFS">
+            
             <div class="tbleMargin">
                
                <?php if(isset($_SESSION['results'])){ ?>
+               
                <h3>Search results :</h3></br></br>
 
                <table id="resultTable" class="display nowrap">
@@ -60,11 +62,12 @@
                   <?php } 
                         unset($_SESSION['results']);
                   ?>
-
+               
                </table>
-
+               
                <?php } ?>
-
+         
+           
          </fieldset>
    </div>
    </form>
@@ -75,30 +78,6 @@
 $(document).ready(function() {
    $("#resultTable").DataTable();
 });
-
-// $(function() {
-  
-//   $("form[name='nicSearch']").validate({
-
-//     rules: {
-//       nic: {
-//          required: true,
-//          minlength:10,
-//          maxlength:12
-//       },
-//     },
-//     messages: {
-//       nic: {
-//         required: "Please provide a NIC number",
-//         minlength: "NIC is not valid",
-//         maxlength:"NIC is not valid"
-//       },
-//     },
-//     submitHandler: function(form) {
-//       form.submit();
-//     }
-//   });
-// });
 </script>
 
 <?php include VIEW.'includes/footer.php' ?>

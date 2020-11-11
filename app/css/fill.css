@@ -32,6 +32,7 @@ body{
   margin-left:50px;
   border-radius:10px; 
   padding:3%;
+  background-color:#fdfdff;
 }
 .searchBarLable{
   margin-left:120px; 
@@ -40,7 +41,7 @@ body{
   margin-bottom:-25px; 
 }
 .BackgroundFS{
-  background-color:#ffff; 
+  background-color:#fafcfd; 
   border-bottom:10px; 
   padding-bottom:20px;
   border:none;
@@ -478,7 +479,7 @@ fieldset:disabled a.btn {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
+  background-color: #fafcfd;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -929,12 +930,12 @@ visibility: hidden;
 }
 .SearchByCriteriaform1{
   background-color:#ffffff;
-
   width: 80%;
-   margin-left:300px; 
-    margin-top:15px; 
-    overflow:auto;   
-    height:590px;  
+  margin-top:15px; 
+  overflow:auto;   
+  height:590px; 
+  margin-left:300px; 
+     
 }
 
 
@@ -963,6 +964,65 @@ visibility: hidden;
   top: 0;
   bottom: 0;
 }
+
+.divisionDashboard{
+  background-color:#ffffff;
+  width: 80%;
+  margin-top:15px;
+  overflow:auto;   
+  height:590px; 
+  margin-left:300px; 
+     
+}
+
+.content{
+ 
+  height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+  
+}
+
+.box-1{
+  /*width: 100%;*/
+  margin: 5px;
+  background-color: #c8eeff;
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.box-2{
+  margin: 5px;
+  background:lightblue;
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.box-3{
+  margin: 5px;
+  background: lightblue;
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
+.box-4{
+  margin: 5px;
+  background: lightblue;
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+
+.box-1 img{
+
+  height:350px; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
 
 
 

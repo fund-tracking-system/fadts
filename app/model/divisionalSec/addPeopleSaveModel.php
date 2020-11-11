@@ -8,9 +8,9 @@
 
 
     
-    $query='INSERT INTO person (name,nid,headOfFamily,phone, phone_two,         birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
+    $query='INSERT INTO person (name,nid,address,headOfFamily,phone, phone_two,birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)';
     $stmt=$con->prepare($query);
-    $stmt->bind_param('sssssssssss',$name,$nid,$headOfFamily,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,      $civilStatus,$trustee,$jobType,$region);
+    $stmt->bind_param('ssssssssssss',$name,$nid,$address,$headOfFamily,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,      $civilStatus,$trustee,$jobType,$region);
 
 
 
@@ -38,7 +38,7 @@
 
 
       //redirecting to view
-    header("Location:/fadts/divisional/ViewAddPeople"); 
+    //header("Location:/fadts/divisional/ViewAddPeople"); 
 
 
 
@@ -62,7 +62,7 @@
     unset($_SESSION['people_region']);
 
 
-    
+  
   
 
 

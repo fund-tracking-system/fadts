@@ -29,6 +29,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>	
 
     <!-- <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script> -->
@@ -43,7 +44,7 @@
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
-     <script type="text/javascript" src="/fadts/app/js/main.js"></script> 
+    <script type="text/javascript" src="/fadts/app/js/main.js"></script>
     <script type="text/javascript" src="/fadts/app/js/selectstyle.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
@@ -89,15 +90,16 @@
         <nav>
             <img class="logo" src="/fadts/app/view/includes/logo.PNG" alt="logo_icon">
             <ul>
-                <li><a href="/fadts/includes/index"><B>Home</B></a></li>
+                <li><a href="/fadts/includes/index" class="nav_link"><span class="material-icons">home</span><B>Home</B></a></li>
 
-                <li><a href="#"><B>Notifications</B></a></li>
+                <!-- <li><a href="#"><B>Notifications</B></a></li> -->
 
-                <li><a href="/fadts/includes/userProfile"><B>Profile</B></a></li>
+                <li><a href="/fadts/includes/userProfile" class="nav_link"><span class="material-icons">account_circle</span><B>Profile</B></a></li>
 
-                <li><a class="log_button" href="/fadts/home/index">
+                <li><a class="log_button" href="/fadts/home/index" class="nav_link"><span class="material-icons">exit_to_app</span>
                         <B>LOGOUT</B></a>
                 </li>
             </ul>
         </nav>
     </div>
+    

@@ -1,22 +1,22 @@
 <?php 
 session_start();
 
-if(isset($_POST['nicSubmit'])){
+$view = $_GET['view'];
 
-   
+if(isset($_POST['submit']) && isset($view)){
+ 
 
    require 'connection.php';   // database connection file calling
 
    $userRegion = $_SESSION['region'];
    $nic = $_POST['nic'];
-   
 
    $sql = "SELECT personId,name,region FROM person WHERE nid=?";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
       mysqli_close($con);
-      header("Location:/fadts/divisional/fundRelease?error=db_conn_err");
+      header("Location:/fadts/divisional/$view?error=db_conn_err");
       exit();     
    }
    else{
@@ -35,7 +35,7 @@ if(isset($_POST['nicSubmit'])){
 
          if(!mysqli_stmt_prepare($stmt,$sql)){
             mysqli_close($con);
-            header("Location:/fadts/divisional/fundRelease?error=db_conn_err");
+            header("Location:/fadts/divisional/$view?error=db_conn_err");
             exit(); 
          }else{
             mysqli_stmt_execute($stmt);
@@ -48,47 +48,26 @@ if(isset($_POST['nicSubmit'])){
 
                if($superRegion==$userRegion){
 
-                  $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId AND deliveryStatus = 0";
+                  switch ($view){
+                     case "fundRelease":
+                        fundRelease($con,$personId,$view);
+                        break;
+                     case "updatePeople":
+                        updatePeople($con,$personId,$view);
+                        break;
 
-                 
-                  $stmt = mysqli_stmt_init($con);
-
-                  if(!mysqli_stmt_prepare($stmt,$sql)){
-                     mysqli_close($con);
-                     header("Location:/fadts/divisional/fundRelease?error=db_conn_err");
-                     exit();
-                  }else{
-                     mysqli_stmt_execute($stmt);
-                     $result = mysqli_stmt_get_result($stmt);
-
-                     if($result){
-                        $_SESSION['results'] =mysqli_fetch_all($result);
-
-                        mysqli_close($con);
-                        header("Location:/fadts/divisional/fundRelease?error=succsess");
-                        exit();
-                     }else{
-                        mysqli_close($con);
-                        header("Location:/fadts/divisional/fundRelease?error=no_records");
-                        exit();
-                     }
-                     
-                  }
-
+               }
                }else{
                   mysqli_close($con);
-                  header("Location:/fadts/divisional/fundRelease?error=wrong_region");
+                  header("Location:/fadts/divisional/$view?error=wrong_region");
                   exit();
                }
-
             }
-
          }
-
       }
       else{
          mysqli_close($con);
-         header("Location:/fadts/divisional/fundRelease?error=wrong_nid");
+         header("Location:/fadts/divisional/$view?error=wrong_nid");
          exit();
       }
    }
@@ -96,6 +75,67 @@ if(isset($_POST['nicSubmit'])){
    mysqli_close($con);
 }
 else{
-   header("Location:/fadts/divisional/fundRelease?error=direct_access");
+   header("Location:/fadts/divisional/$view?error=direct_access");
    exit();
+}
+
+
+
+
+function fundRelease($con,$personId,$view){
+
+   $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId AND deliveryStatus = 0";
+
+                 
+   $stmt = mysqli_stmt_init($con);
+
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+      mysqli_close($con);
+      header("Location:/fadts/divisional/$view?error=db_conn_err");
+      exit();
+   }else{
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if($result){
+         $_SESSION['results'] =mysqli_fetch_all($result);
+
+         mysqli_close($con);
+         header("Location:/fadts/divisional/$view?error=succsess");
+         exit();
+      }else{
+         mysqli_close($con);
+         header("Location:/fadts/divisional/$view?error=no_records");
+         exit();
+      }
+                     
+   }  
+}
+
+function updatePeople($con,$personId,$view){
+
+   $sql = "SELECT * FROM person WHERE personId = $personId";
+   $stmt = mysqli_stmt_init($con);
+
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+      mysqli_close($con);
+      header("Location:/fadts/divisional/$view?error=db_conn_err");
+      exit();
+   }else{
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if($result){
+         $_SESSION['updateResults'] = mysqli_fetch_all($result);
+         mysqli_close($con);
+         header("Location:/fadts/divisional/$view?error=succsess");
+         exit();
+      }else{
+         mysqli_close($con);
+         header("Location:/fadts/divisional/$view?error=no_records");
+         exit();
+      }
+                     
+   }
+
 }
