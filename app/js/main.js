@@ -1,13 +1,5 @@
 //addnewDisaster-divisionalsec
 
-
-
-
-
-
-
-
-
 $(function(){
     var $formDisasterAdd = $("#formAddDisaster");
     if($formDisasterAdd.length){
@@ -36,63 +28,63 @@ $(function(){
   
   
   //addpeople-divisionalsec
-$(function(){
-    var $formPeople = $("#formAddPeople");
-    if($formPeople.length){
-        $formPeople.validate({
-            rules: {
-                name: "required",
-                nid: {
-                    required: true,
-                    maxlength: 12,
-                    minlength:10
-                },
-                address: "required",
-                b_date: {
-                    required: true,
-                    date: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                jobType: "required",
-                civilStatus: "required",
-                phoneNumber1: {
-                    required: true,
-                    number: true,
-                    minlength:10,
-                    maxlength:10
-                }
-            },
-            messages: {
-                name: "This field is required",
-                nid: {
-                    required: "This field is required",
-                    maxlength: "Please enter a correct NID",
-                    minlength: "Please enter correct NID"
-                },
-                address: "This field is required",
-                b_date: {
-                    required: "This field is required",
-                    date: "Date should be correct format"
-                },
-                email: {
-                    required: "Please enter user email",
-                    email: "Your email address must be in the format of name@domain.com"
-                },
-                jobType: "This field is required",
-                civilStatus: "This field is required",
-                phoneNumber1: {
-                    required: "This field is required",
-                    number: "Phone number must have numbers",
-                    minlength: "This number has less than 10 numbers",
-                    maxlength: "This number has more than 10 numbers"
-                },
-            }
-      });
-    }
-  });
+// $(function(){
+//     var $formPeople = $("#formAddPeople");
+//     if($formPeople.length){
+//         $formPeople.validate({
+//             rules: {
+//                 name: "required",
+//                 nid: {
+//                     required: true,
+//                     maxlength: 12,
+//                     minlength:10
+//                 },
+//                 address: "required",
+//                 b_date: {
+//                     required: true,
+//                     date: true
+//                 },
+//                 email: {
+//                     required: true,
+//                     email: true
+//                 },
+//                 jobType: "required",
+//                 civilStatus: "required",
+//                 phoneNumber1: {
+//                     required: true,
+//                     number: true,
+//                     minlength:10,
+//                     maxlength:10
+//                 }
+//             },
+//             messages: {
+//                 name: "This field is required",
+//                 nid: {
+//                     required: "This field is required",
+//                     maxlength: "Please enter a correct NID",
+//                     minlength: "Please enter correct NID"
+//                 },
+//                 address: "This field is required",
+//                 b_date: {
+//                     required: "This field is required",
+//                     date: "Date should be correct format"
+//                 },
+//                 email: {
+//                     required: "Please enter user email",
+//                     email: "Your email address must be in the format of name@domain.com"
+//                 },
+//                 jobType: "This field is required",
+//                 civilStatus: "This field is required",
+//                 phoneNumber1: {
+//                     required: "This field is required",
+//                     number: "Phone number must have numbers",
+//                     minlength: "This number has less than 10 numbers",
+//                     maxlength: "This number has more than 10 numbers"
+//                 },
+//             }
+//       });
+//     }
+//   });
 
 
 
