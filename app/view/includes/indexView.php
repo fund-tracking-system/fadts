@@ -21,7 +21,8 @@ switch($controller){
          <img src="/fadts/app/img/Sri_Lanka_Map.png" alt="matara district">
       </div>
       <div class="box-2">
-         <?php echo $_SESSION['userrole'];?>
+         <!-- <?php echo $_SESSION['userrole'];?> -->
+        
       </div>
       <div class="box-3">
          <iframe src="https://calendar.google.com/calendar/embed?src=<?php echo $username;?>%40gmail.com&ctz=Asia%2FColombo" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
