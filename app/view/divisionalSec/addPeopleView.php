@@ -11,14 +11,12 @@
                 <h2> ADD PEOPLE DATA </h2>
                 <fieldset class="searchBar">
 
-
-
-                    <?php
+                <?php
                 if(isset($_GET['error'])){
 
-                $error = $_GET['error'];
+                    $error = $_GET['error'];
                     if($error=="person_exist"){
-                        echo '<div class="alert alert-danger" role="alert">This person has been already added to the system ! </div>';
+                        echo '<div class="alert alert-danger" role="alert">This person has been already added to the system! </div>';
                     }
 
                 }
@@ -183,7 +181,6 @@
 </div>
 
 <script>
-
 $(document).ready(function() {
     $('#headOfFamily').select2();
 });
@@ -194,9 +191,5 @@ $(document).ready(function() {
     $('#region').select2();
 });
 
-$(document).ready(function() {
-    $('#headOfFamily').select2();
-});
-</script>
 
 <?php include VIEW.'includes/footer.php' ?>
