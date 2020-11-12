@@ -7,7 +7,7 @@
    // exit();
 } 
 ?>
-
+ 
 <div class="all_bacground_clor">
    <div class="SearchByCriteriaform1">
 

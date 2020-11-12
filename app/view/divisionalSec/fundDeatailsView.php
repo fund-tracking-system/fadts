@@ -9,19 +9,19 @@
 
 
         <form method="post" action="" id="form">
+        
             <fieldset class="BackgroundFS">
                 <h2>Pre Defined Fund</h2>
                 <fieldset class="searchBar">
                     <legend><b>&nbsp;&nbsp;Search Pre Defined Functions</b></legend>
                     <div class="form-row ">
-                        <label for="NID-number" class="searchBarLable"><b>Pre Defined Fund:</b></label>
+                        <label for="NID-number" class="searchBarLable" style="margin-left:30px;"><b>Pre Defined Fund:</b></label>
                         <select class="form-control searchInput" name="select-PreFund" id="select-PreFund">
                             <option value="Samurdhi">Samurdhi</option>
                             <option value="Disabled">Disabled</option>
                             <option value="govi vishrama">govi vishrama</option>
                             <option value="Wedihity deemana">Wedihity deemana</option>
                         </select>
-
                         <button type="submit" class="btn btn-primary btnNav">Select</button>
                     </div>
                 </fieldset>
