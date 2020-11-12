@@ -119,11 +119,6 @@ switch($controller){
     //Create the line chart
     areaChart.Line(areaChartData, areaChartOptions)
 
-<<<<<<< HEAD
-  });
-	
-	</script>
-=======
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!-- ChartJS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -177,7 +172,6 @@ switch($controller){
 
 
 
->>>>>>> 52c0f393a91ff8d9b99e82cc0b7996fa003c9d74
 
 
 

@@ -36,8 +36,8 @@ class divisionalController extends Controller{
       $this->view->render(); // This is how load the view
    }
     
-   public function ViewFundDetails(){
-      $this->view('divisionalSec/fundDeatailsView');
+   public function fundDetailsSelectView(){
+      $this->view('divisionalSec/fundDetailsSelectView');
       
       $this->view->render(); // This is how load the view
    }
@@ -123,9 +123,33 @@ class divisionalController extends Controller{
       $this->model('divisionalsec/addPeopleSelectRegion');
 
       $this->model->load();
-      // This is how load the model
+      
    }
    
+
+   public function ViewFundDetailsModel(){ 
+      $this->model('divisionalsec/loadFundDetailsModel');
+
+      $this->model->load();
+   
+   }
+
+
+   
+   public function fundDetailModel(){ 
+      $this->model('divisionalsec/fundDetailModel');
+
+      $this->model->load();
+   
+   }
+
+
+   public function selectFundDetailsView(){ 
+      $this->view('divisionalsec/selectFundDetailsView');
+    
+      
+      $this->view->render();
+   }
 
 
 }

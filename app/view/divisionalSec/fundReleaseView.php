@@ -70,7 +70,7 @@
                   ?>   
 
                   <tbody>
-                  <tr>
+                  <tr> 
                      <td><?php echo $fund[1] ?></td>
                      <td><?php echo $fund[2] ?></td>
                      <td><a class="btn btn-primary" href="/fadts/divisional/fundReleaseModel?entryId=<?php echo $entryId ?>" ><B>Release</B></a></td>
