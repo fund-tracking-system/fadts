@@ -126,7 +126,17 @@ function updatePeople($con,$personId,$view){
       $result = mysqli_stmt_get_result($stmt);
 
       if($result){
-         $_SESSION['updateResults'] = mysqli_fetch_all($result);
+         $_SESSION['updateResults'] = mysqli_fetch_assoc($result);
+
+         $personRegion = $_SESSION['updateResults']['region'];
+
+         $sql = "SELECT name FROM region WHERE regionId = $personRegion";
+         $stmt = mysqli_stmt_init($con);
+         mysqli_stmt_prepare($stmt,$sql);
+         mysqli_stmt_execute($stmt);
+         $result = mysqli_stmt_get_result($stmt);
+         $_SESSION['personRegion'] = mysqli_fetch_assoc($result);
+
          mysqli_close($con);
          header("Location:/fadts/divisional/$view?error=succsess");
          exit();

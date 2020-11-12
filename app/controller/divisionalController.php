@@ -18,6 +18,12 @@ class divisionalController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+   public function updatePeopleModel(){
+      $this->model('divisionalSec/updatePeopleModel');
+      
+      $this->model->load();
+   }
+
    public function ViewDisasterDetails(){
       $this->view('divisionalSec/disasterDetailsFormView');
       
