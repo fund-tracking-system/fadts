@@ -109,7 +109,7 @@
                                  
                   $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
                   $rgnRes = $con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
                   
                   $_SESSION['region_result']=$res
                   
@@ -171,7 +171,7 @@
                     <div class="form-row">
 
                         <label class="inputLable" for="phone-number"><b>Contact Number 2 :</b></label>
-                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
+                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number" ></input>
                     </div>
 
                     <button type="submit" class=' btn btn-primary  signlebtn'>Submit</button>

@@ -77,6 +77,7 @@ body{
 }
 .inputLable{
   margin-left:100px;
+  margin-right: 30px;;
   margin-bottom:10px;
 }
 .inputLableOne{
@@ -89,6 +90,15 @@ body{
   margin-bottom:50px;
   margin-right:150px; 
   margin-top:-4%;
+
+  
+}
+.form-control.details{
+  margin-left:0px;
+  margin-bottom:50px;
+  margin-right:150px; 
+  margin-top:-4%;
+  width:100px;
 
   
 }
