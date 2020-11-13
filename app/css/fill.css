@@ -974,6 +974,16 @@ visibility: hidden;
   margin-left:300px; 
      
 }
+.calender{
+  background-color:#e6eded;
+  width: 80%;
+  margin-top:15px;
+  overflow:auto;   
+  height:580px; 
+  margin-left:300px; 
+     
+}
+
 
 .content{
   background-color:#ffffff;
@@ -988,27 +998,29 @@ visibility: hidden;
   height: 100%;
   display: grid;
 	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  
 }
 
 .box-1{
   /*width: 100%;*/
   margin: 5px;
-  background-color:#1b29e4;
+  background-color:#e6e7eb;
   grid-row: 1/2;
   grid-column: 1/2;
 }
 
 .box-2{
   margin: 5px;
-  background:lightblue;
+  background:#218BDB;
   grid-row: 1/2;
   grid-column: 2/3;
+  
 }
 
 .box-3{
   margin: 5px;
-  background: lightblue;
+  background: #dadada;
   grid-row: 1/2;
   grid-column: 3/4;
 }
@@ -1030,6 +1042,195 @@ visibility: hidden;
   
 
 }
+
+
+
+
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+    max-width: 100%;
+  }
+}
+
+.container-fluid {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 576px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-toggleable .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+  }
+  .navbar-toggleable > .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.navbar-toggleable-lg > .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+.navbar-toggleable > .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+
+  @media (max-width: 767px) {
+  .navbar-toggleable-sm .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+  }
+  .navbar-toggleable-sm > .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+#calendardate{
+  width: 50%;
+  height: 100%;
+  background-color: rgba(11, 207, 109, 0.664);
+  color: #fff;
+  border-radius: 5%;
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);
+}
+
+#calendardate>p{
+  font-family: Verdana, Arial, sans-serif;
+  padding: 10px 0;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+
+#calendar_day{
+  font-size: 16px;
+}
+
+#calendar_month_year{
+  font-size: 14px;
+}
+
+#calendar_date{
+  font-size: 64px;
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+
 
 
 

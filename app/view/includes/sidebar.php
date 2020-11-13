@@ -80,8 +80,8 @@ switch($controller){
 <div class="dashboard sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
-   </a> -->
-   <a href="/fadts/ministry/ViewAddOfficer" class="dashboard sidebar_link">
+   </a> -->/fadts/ministry/ViewAddOfficer
+   <a href="" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Add Officer
    </a>
    <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
