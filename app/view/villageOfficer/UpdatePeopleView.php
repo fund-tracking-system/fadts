@@ -8,7 +8,7 @@
    <div class="SearchByCriteriaform1">
 
 
-      <form method="post" action="/fadts/divisional/nicSearchModel?view=updatePeople" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=updatePeople" id="form">
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
@@ -45,7 +45,7 @@
 
 
 
-      <form method="POST" action="/fadts/divisional/updatePeopleModel">
+      <form method="POST" action="/fadts/village/updatePeopleModel">
          <fieldset class="BackgroundFS">
 
             <fieldset class="searchBar">
@@ -71,7 +71,7 @@
                </div>
 
                <div class="form-row">
-                  <label for="Address" class="inputLable"><b>Address :</b></label>
+                  <label for="address" class="inputLable"><b>Address :</b></label>
                   <input class="form-control Input" id="address" name="address" 
                      value="<?php echo isset($result) ? $result['address']:"" ?>"></input>
                </div>
@@ -88,16 +88,16 @@
                     <?php
                         require 'connection.php'; 
                         $region = $_SESSION['region'];                     
-                        $rgns = "SELECT nid FROM person WHERE region=$region";
+                        $rgns = "SELECT nid,personId FROM person WHERE region=$region";
                         $rgnRess = $con->query($rgns) ;
                         $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                           
                     ?>
                     <select  class='form-control Input' name='headOfFamily' id='headOfFamily'
                             style="position:sticky;top:60px;overflow:scroll;  width:550px;">
-                        <option value="" disabled selected>Family Head :</option>
+                        <option value="<?php echo isset($result) ? $result['personId'] : ""?>" hidden selected><?php echo isset($result) ? $result['nid'] : ""?></option>
                         <?php 
                             foreach($ress as $data){
-                            echo '<option value="'.$data['nid'].'">'.$data['nid'].'</option>';
+                            echo '<option value="'.$data['personId'].'">'.$data['nid'].'</option>';
                             }
                         ?>
                     </select>
@@ -108,7 +108,7 @@
                </div>
 
                <div class="form-row">
-                  <label for="monthlyIncome" class="inputLable"><b>Monthley Income :</b></label>
+                  <label for="monthlyIncome" class="inputLable"><b>Monthly Income (Rs.) :</b></label>
                   <input class="form-control Input" id="monthlyIncome" name="monthlyIncome" 
                      value="<?php echo isset($result) ? $result['monthlyIncome']:"" ?>"></input>
                </div>
@@ -118,7 +118,7 @@
                   <select class="form-control Input" id="disordered" name="disordered">
 
                      <option
-                        value="<?php echo isset($result) ? ( ($result['disordered']=="yes") ? "With Disorder/Diease":"Without Disoeder/Diease" ) :"" ?>"
+                        value="<?php echo isset($result) ? $result['disordered'] :"" ?>"
                         selected hidden>
 
                         <?php echo isset($result) ? ( ($result['disordered']=="yes") ? "With Disorder/Diease":"Without Disoeder/Diease" ) :"" ?>
@@ -135,7 +135,7 @@
                   <select class="form-control Input" id="civilStatus" name="civilStatus">
 
                      <option
-                        value="<?php echo isset($result) ? ( ($result['civilStatus']=="0") ? "Unmarried":"Married" ) :"" ?>"
+                        value="<?php echo isset($result) ?$result['civilStatus'] :"" ?>"
                         selected hidden>
 
                         <?php echo isset($result) ? ( ($result['civilStatus']=="0") ? "Unmarried":"Married" ) :"" ?>
@@ -147,11 +147,9 @@
                   </select>
                </div>
 
-
-
                <div class="form-row">
                   <label class="inputLable" for="job type"><b>Job Type :</b></label>
-                  <select class="form-control Input" id="jobType" name="jobType">
+                  <select class="form-control Input" id="job" name="job">
                      <option value="<?php echo isset($result) ? $result['job']:"" ?>" selected hidden>
                         <?php echo isset($result) ? $result['job']:"" ?></option>
                      <option value="government">Government</option>
@@ -167,9 +165,8 @@
                   <label class="inputLable" for="dead"><b>Dead or Alive :</b></label>
                   <select class="form-control Input" id="dead" name="dead">
 
-                     <option
-                        value="<?php echo isset($result) ? ( ($result['dead']=="no") ? "Alive":"Dead" ) :"" ?>"
-                        selected hidden>
+                     <option value="<?php echo isset($result) ? $result['dead'] :"" ?>"
+                     selected hidden >
 
                         <?php echo isset($result) ? ( ($result['dead']=="no") ? "Alive":"Dead" ) :"" ?>
 
