@@ -8,25 +8,62 @@
     <div class="SearchByCriteriaform1">
         <form method="post" id="formAddPeople" action="/fadts/divisional/addPeopleModel">
             <fieldset class="BackgroundFS">
+
+
                 <h2 style="margin-bottom:100px;"> FUND DETAILS ANALISYS</h2>
+                <table>
 
-                <div class="form-row" style="margin-top:40px;">
-                    <label for="nid" class="inputLable" style="margin-top:-40px; "><b>Delivered amount</b></label>
-                    <input class="form-control details" style="margin-left:43px;" id='dilivered'
-                        value="<?php echo $_SESSION['fundDelivered']?>" readonly></input>
-                </div>
-                <div class="form-row">
-                    <label for="nid" class="inputLable" style="margin-top:-40px;"><b>Unelivered amount</b></label>
-                    <input class="form-control details" style="margin-left:33px;" id='undelivered'
-                        value="<?php echo $_SESSION['fundUndelivered']?>" readonly></input>
-                </div>
+                    <thead>
+                        <tr>
+                            <th>
+                                
+                                    <div class="form-row">
+                                        <label for="nid" class="inputLable" ><b>Amount Per
+                                                Person</b></label>
+                                        <input class="form-control details" style="margin-left:100px;" 
+                                            value="<?php echo $_SESSION['amountPerPerson']?>" readonly></input>
+                                    </div>
+                                    
+                            </th>
+                            <th>
+                                
+                                <div class="form-row">
+                                    <label for="nid" class="inputLable" ><b>Delivered
+                                            amount</b></label>
+                                    <input class="form-control details" style="margin-left:100px;" id='dilivered'
+                                        value="<?php echo $_SESSION['fundDelivered']?>" readonly></input>
+                                </div>
+                                
+                        </th>
+                            <th>
+                                <div class="form-row">
+                                    <label for="nid" class="inputLable" ><b>Unelivered
+                                            amount</b></label>
+                                    <input class="form-control details" style="margin-left:100px;" id='undelivered'
+                                        value="<?php echo $_SESSION['fundUndelivered']?>" readonly></input>
+                                </div>
+                            </th>
+                            <th>
 
-                <div class="form-row">
-                    <label for="nid" class="inputLable" style="margin-top:-40px;"><b>Total Recipient amount</b></label>
-                    <input class="form-control details" id='' value="<?php echo $_SESSION['totalRecipients']?>"
-                        readonly></input>
-                </div>
-
+                                <div class="form-row">
+                                    <label for="nid" class="inputLable"><b>Total Recipient
+                                            amount</b></label>
+                                    <input class="form-control details" id='' style="margin-left:100px;"
+                                        value="<?php echo $_SESSION['totalRecipients']?>" readonly></input>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="form-row">
+                                    <label for="nid" class="inputLable"><b>Published Date
+                                            amount
+                                        </b></label>
+                                    <input class="form-control details" id='' style="margin-left:100px;"
+                                        value="<?php echo $_SESSION['publishedTime']?>" readonly></input>
+                                </div>
+                            </th>
+                        <tr>
+                    </thead>
+                </table>
 
 
                 <script>
@@ -38,7 +75,7 @@
                     var dilivered = $("#dilivered").val();
 
                     var x = 40;
-                
+
                     var chart = new CanvasJS.Chart("chartContainer", {
                         animationEnabled: true,
                         title: {
@@ -53,7 +90,7 @@
                             indexLabel: "{label} - #percent%",
                             toolTipContent: "<b>{label}:</b> {y} (#percent%)",
                             dataPoints: [
-                               
+
                                 {
                                     y: dilivered,
                                     label: "Fund Delivered"
