@@ -47,6 +47,7 @@ class divisionalController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+
    
    public function fundRelease(){
       $this->view('divisionalSec/fundReleaseView');

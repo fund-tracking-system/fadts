@@ -4,7 +4,9 @@
 <?php
  
 $controller = $_SESSION['controller'];
-
+// $email = $_SESSION['email'];
+// $username = strtok($email, '@');
+//$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled. 
 
 switch($controller){
 
@@ -12,127 +14,50 @@ switch($controller){
 ?>
 
 
-
-
 <div class="divisionDashboard">
-   <div class="content">
+   <div class="grid_box">
       <div class="box-1">
-         <img src="/fadts/app/img/Sri_Lanka_Map.png" alt="matara district">
+         <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
-         <!-- <?php echo $_SESSION['userrole'];?> -->
+         
         
       </div>
-      <div class="box-3">
-         <iframe src="https://calendar.google.com/calendar/embed?src=jihaninanayakkara%40gmail.com&ctz=Asia%2FColombo" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+      <div class="box-3" id="box_3">
+         <div id="calendardate">
+            <p id="calendar_day"></p>
+            <p id="calendar_date"></p>
+            <p id="calendar_month_year"></p>
+         </div>
       </div>
       <div class="box-4">
-		<canvas id="areaChart" style="height:250px"></canvas>
+         <div>
+            <canvas id="Chart"></canvas>
+         </div>
       </div>
    </div>
-
 </div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<!-- ChartJS -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script>
-  $(function () {
-    /* ChartJS
-     * -------
-     * Here we will create a few charts using ChartJS
-     */
 
-    //--------------
-    //- AREA CHART -
-    //--------------
-
-    // Get context with jQuery - using jQuery's .get() method.
-    var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
-    // This will get the first returned node in the jQuery collection.
-    var areaChart       = new Chart(areaChartCanvas)
-
-    var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-      datasets: [
-        {
-          label               : 'Electronics',
-          fillColor           : 'rgba(210, 214, 222, 1)',
-          strokeColor         : 'rgba(210, 214, 222, 1)',
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-          label               : 'Digital Goods',
-          fillColor           : 'rgba(60,141,188,0.9)',
-          strokeColor         : 'rgba(60,141,188,0.8)',
-          pointColor          : '#3b8bba',
-          pointStrokeColor    : 'rgba(60,141,188,1)',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40, 19, 86, 27, 90]
-        }
-      ]
-    }
-
-    var areaChartOptions = {
-      //Boolean - If we should show the scale at all
-      showScale               : true,
-      //Boolean - Whether grid lines are shown across the chart
-      scaleShowGridLines      : false,
-      //String - Colour of the grid lines
-      scaleGridLineColor      : 'rgba(0,0,0,.05)',
-      //Number - Width of the grid lines
-      scaleGridLineWidth      : 1,
-      //Boolean - Whether to show horizontal lines (except X axis)
-      scaleShowHorizontalLines: true,
-      //Boolean - Whether to show vertical lines (except Y axis)
-      scaleShowVerticalLines  : true,
-      //Boolean - Whether the line is curved between points
-      bezierCurve             : true,
-      //Number - Tension of the bezier curve between points
-      bezierCurveTension      : 0.3,
-      //Boolean - Whether to show a dot for each point
-      pointDot                : false,
-      //Number - Radius of each point dot in pixels
-      pointDotRadius          : 4,
-      //Number - Pixel width of point dot stroke
-      pointDotStrokeWidth     : 1,
-      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-      pointHitDetectionRadius : 20,
-      //Boolean - Whether to show a stroke for datasets
-      datasetStroke           : true,
-      //Number - Pixel width of dataset stroke
-      datasetStrokeWidth      : 2,
-      //Boolean - Whether to fill the dataset with a color
-      datasetFill             : true,
-      //String - A legend template
-      legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
-      //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio     : true,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive              : true
-    }
-
-    //Create the line chart
-    areaChart.Line(areaChartData, areaChartOptions)
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!-- ChartJS -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script>
+   $( document ).ready(function() {
+      $('#box_3').click(function(){
+         window.location.href='/fadts/calender/ViewCalender';
+      })
+   });
   $(function () {
       // ChartJS
       var ctx = document.getElementById('Chart').getContext('2d');
       var chart = new Chart(ctx, {
          // The type of chart we want to create
-         type: 'bar',
+         type: 'line',
          data: {
             labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
             datasets: [{
-                  label: '# of Votes',
+                  label: '# fund release',
                   data: [12, 19, 3, 5, 2, 3],
                   backgroundColor: [
                      'rgba(255, 99, 132, 0.2)',
@@ -168,7 +93,228 @@ switch($controller){
       chart.canvas.parentNode.style.height = '100%';
 
   });
+
+
+  $(function () {
+      // ChartJS
+      var ctx = document.getElementById('Chart1').getContext('2d');
+      
+      var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'doughnut',
+         data: {
+            labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
+            datasets: [{
+                  label: '# fund release',
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                     'rgba(255, 99, 132, 0.2)',
+                     'rgba(54, 162, 235, 0.2)',
+                     'rgba(255, 206, 86, 0.2)',
+                     'rgba(75, 192, 192, 0.2)',
+                     'rgba(153, 102, 255, 0.2)',
+                     'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                     'rgba(255, 99, 132, 1)',
+                     'rgba(54, 162, 235, 1)',
+                     'rgba(255, 206, 86, 1)',
+                     'rgba(75, 192, 192, 1)',
+                     'rgba(153, 102, 255, 1)',
+                     'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+            }]
+         },
+         options: {
+            scales: {
+                  yAxes: [{
+                     ticks: {
+                        beginAtZero: true
+                     }
+                  }]
+            },
+            maintainAspectRatio: false
+
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
+
+
+function calendar(){
+   var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+   var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
+   var d=new Date();
+   console.log(day[d.getDay()]);
+   $('#calendar_day').text(day[d.getDay()]);
+   // setText('calendar_day', day[d.getDay()]);
+   setText('calendar_date', d.getDate());
+   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+};
+
+//this function will set the text value of tags
+function setText(id, val){
+    if(val < 10){
+        val = '0' + val;    //add leading 0 if val < 10
+    }
+    document.getElementById(id).innerHTML = val;
+};
+
+//call calendar() when page load
+window.onload = calendar;
+
+
 </script>
+
+<?php
+
+   break;
+
+   case "village":  // divisional secretary's sidebar elements 
+   
+?>
+<div class="divisionDashboard">
+   <div class="grid_box">
+      <div class="box-1">
+         <canvas id="Chart1"></canvas>
+      </div>
+      <div class="box-2">
+         
+        
+      </div>
+      <div class="box-3" id="box_3">
+         <div id="calendardate">
+            <p id="calendar_day"></p>
+            <p id="calendar_date"></p>
+            <p id="calendar_month_year"></p>
+         </div>
+      </div>
+      <div class="box-4">
+         <div>
+            <canvas id="Chart"></canvas>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script>
+   function calendar(){
+   var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+   var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
+   var d=new Date();
+   console.log(day[d.getDay()]);
+   $('#calendar_day').text(day[d.getDay()]);
+   // setText('calendar_day', day[d.getDay()]);
+   setText('calendar_date', d.getDate());
+   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+   };
+
+//this function will set the text value of tags
+function setText(id, val){
+    if(val < 10){
+        val = '0' + val;    //add leading 0 if val < 10
+    }
+    document.getElementById(id).innerHTML = val;
+   };
+
+//call calendar() when page load
+window.onload = calendar;
+</script>
+
+<?php
+
+   break;
+
+   case "audit":  // divisional secretary's sidebar elements 
+   
+?>
+
+<div class="divisionDashboard">
+   <div class="grid_box">
+      <div class="box-1">
+         <canvas id="Chart1"></canvas>
+      </div>
+      <div class="box-2">
+         
+        
+      </div>
+      <div class="box-3" id="box_3">
+         <div id="calendardate">
+            <p id="calendar_day"></p>
+            <p id="calendar_date"></p>
+            <p id="calendar_month_year"></p>
+         </div>
+      </div>
+      <div class="box-4">
+         <div>
+            <canvas id="Chart"></canvas>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+<?php
+
+   break;
+
+   case "ministry":  // divisional secretary's sidebar elements 
+   
+?>
+
+<div class="divisionDashboard">
+   <div class="grid_box">
+      <div class="box-1">
+         <canvas id="Chart1"></canvas>
+      </div>
+      <div class="box-2">
+         
+        
+      </div>
+      <div class="box-3" id="box_3">
+         <div id="calendardate">
+            <p id="calendar_day"></p>
+            <p id="calendar_date"></p>
+            <p id="calendar_month_year"></p>
+         </div>
+      </div>
+      <div class="box-4">
+         <div>
+            <canvas id="Chart"></canvas>
+         </div>
+      </div>
+   </div>
+</div>
+
+<script>
+   function calendar(){
+   var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+   var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
+   var d=new Date();
+   console.log(day[d.getDay()]);
+   $('#calendar_day').text(day[d.getDay()]);
+   // setText('calendar_day', day[d.getDay()]);
+   setText('calendar_date', d.getDate());
+   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+};
+
+//this function will set the text value of tags
+function setText(id, val){
+    if(val < 10){
+        val = '0' + val;    //add leading 0 if val < 10
+    }
+    document.getElementById(id).innerHTML = val;
+};
+
+//call calendar() when page load
+window.onload = calendar;
+</script>
+
+
 
 
 
