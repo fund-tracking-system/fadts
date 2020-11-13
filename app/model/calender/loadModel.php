@@ -7,12 +7,16 @@
     
     $connect = new PDO('mysql:host=localhost;dbname=project', 'root', '');
     
+    $user_id = $_GET['userid'];
     
 
     $data = array();
 
-    $query = "SELECT * FROM events ORDER BY id";
-    
+    $query = "SELECT * 
+            FROM events 
+            WHERE userid = $user_id 
+            ORDER BY id";
+
 
     $statement = $connect->prepare($query);
 

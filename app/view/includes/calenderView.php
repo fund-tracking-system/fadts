@@ -33,10 +33,11 @@
         {
         var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+        var userid = 2;
         $.ajax({
-        url:"/fadts/calender/addEventModel",
+        url:"/fadts/calender/addEventMode",
         type:"POST",
-        data:{title:title, start:start, end:end},
+        data:{title:title, start:start, end:end, userid:userid},
         success:function()
         {
             calendar.fullCalendar('refetchEvents');
