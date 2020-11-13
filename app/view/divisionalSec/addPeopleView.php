@@ -11,7 +11,7 @@
                 <h2> ADD PEOPLE DATA </h2>
                 <fieldset class="searchBar">
 
-                <?php
+                    <?php
                 if(isset($_GET['error'])){
 
                     $error = $_GET['error'];
@@ -149,7 +149,7 @@
 
 
 
-                        <select  class='form-control Input' name='headOfFamily' id='headOfFamily'
+                        <select class='form-control Input' name='headOfFamily' id='headOfFamily'
                             style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
                             <option value="" disabled selected>Family Head :</< /option>
                                 <?php 
@@ -161,7 +161,7 @@
 
                     </div>
 
-                
+                   
                     <div class="form-row">
                         <label class="inputLable" for="phone-number"><b>Contact Number 1 :</b></label>
                         <input class="form-control Input" id='phonenumber1' name="phoneNumber1" type="number"></input>
@@ -169,7 +169,7 @@
                     <div class="form-row">
 
                         <label class="inputLable" for="phone-number"><b>Contact Number 2 :</b></label>
-                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number" ></input>
+                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
                     </div>
 
                     <button type="submit" class=' btn btn-primary  signlebtn'>Submit</button>
@@ -190,6 +190,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#region').select2();
 });
+</script>
 
 
 <?php include VIEW.'includes/footer.php' ?>
