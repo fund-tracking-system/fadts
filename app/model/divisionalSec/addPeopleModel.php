@@ -19,9 +19,11 @@
      $_SESSION['people_phoneNumber2']=$_POST['phoneNumber2'];
      $_SESSION['people_trustee']=$_POST['trustee'];
      $_SESSION['people_jobType']=$_POST['jobType'];
+     $_SESSION['monthlyIncome']=$_POST['monthlyIncome'];
     //  $_SESSION['people_region']=$_POST['region'];
     //  $_SESSION['people_regionName']=$_POST['region'];
      $_SESSION['people_region']=$_POST['region'];
+     echo  $_SESSION['monthlyIncome'];
 
 
 

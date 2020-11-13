@@ -8,9 +8,9 @@
 
 
     
-    $query='INSERT INTO person (name,nid,address,headOfFamily,phone, phone_two,birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)';
+    $query='INSERT INTO person (name,nid,address,headOfFamily,monthlyIncome,phone, phone_two,birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $stmt=$con->prepare($query);
-    $stmt->bind_param('ssssssssssss',$name,$nid,$address,$headOfFamily,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,      $civilStatus,$trustee,$jobType,$region);
+    $stmt->bind_param('sssssssssssss',$name,$nid,$address,$headOfFamily,$monthlyIncome,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,      $civilStatus,$trustee,$jobType,$region);
 
 
 
@@ -18,6 +18,7 @@
     $name=$_SESSION['people_name'];
     $nid=$_SESSION['people_nid'];
     $headOfFamily=$_SESSION['people_headOfFamily'];
+    $monthlyIncome=$_SESSION['monthlyIncome'];
     $address=$_SESSION['people_address'];
     $phoneNumber1=$_SESSION['people_phoneNumber1'];
     $phoneNumber2=$_SESSION['people_phoneNumber2'];
