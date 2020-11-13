@@ -17,11 +17,12 @@ switch($controller){
 <div class="divisionDashboard">
    <div class="grid_box">
       <div class="box-1">
-      <div class="nav_link"><B>job type</B></div>
+      <div class="nav_link"><B>INCOME MEMTHOD</B></div>
 
          <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
+      <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div>
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
@@ -49,6 +50,81 @@ switch($controller){
          window.location.href='/fadts/calender/ViewCalender';
       })
    });
+
+
+   $(function () {
+      var ctx = document.getElementById('Chart1').getContext('2d');
+      var chart = new Chart(ctx, {
+         type: 'pie',
+         data: {
+            labels: ['Goverment', 'Private', 'Retired','unemployee','SelfEmployee'],
+            datasets: [{
+                  label: '# fund release',
+                  data: [100,200,50,30,20],
+                  backgroundColor: [
+                     '#16a085',
+                     ' #668cff',
+                     '#2980b9',
+                     '#b30000',
+                     '#f1c40f'
+                  ],
+                  borderColor: [
+                     
+                  ],
+                  borderWidth: 1
+            }]
+         },
+         options: {
+            rotation:Math.PI*0.5,
+            animation:{
+               animatescale:true
+            },
+            
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
+
+   $(function () {
+      var ctx = document.getElementById('Chart2').getContext('2d');
+      var chart = new Chart(ctx, {
+         type: 'doughnut',
+         data: {
+            labels: ['Delivered amount', 'Undelivered amount', 'Total Reipient amount',],
+            datasets: [{
+                  label: '# fund release',
+                  data: [20,5,25],
+                  backgroundColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9'
+                  ],
+                  borderColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9'
+                  ],
+                  borderWidth: 1
+            }]
+         },
+         options: {
+            rotation:Math.PI*0.5,
+            animation:{
+               animatescale:true
+            },
+            
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
+
+  
+
+
 
   $(function () {
       // ChartJS
@@ -85,40 +161,7 @@ switch($controller){
   });
 
 
-  $(function () {
-      var ctx = document.getElementById('Chart1').getContext('2d');
-      var chart = new Chart(ctx, {
-         type: 'doughnut',
-         data: {
-            labels: ['Delivered amount', 'Undelivered amount', 'Total Reipient amount',],
-            datasets: [{
-                  label: '# fund release',
-                  data: [20,5,25],
-                  backgroundColor: [
-                     '#16a085',
-                     '#f1c40f',
-                     '#2980b9'
-                  ],
-                  borderColor: [
-                     '#16a085',
-                     '#f1c40f',
-                     '#2980b9'
-                  ],
-                  borderWidth: 1
-            }]
-         },
-         options: {
-            rotation:Math.PI*0.5,
-            animation:{
-               animatescale:true
-            },
-            
-         }
-      }); 
-      chart.canvas.parentNode.style.height = '100%';
-
-  });
-
+  
 
 
 function calendar(){
