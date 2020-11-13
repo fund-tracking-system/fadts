@@ -21,14 +21,17 @@ class Application{
 
    protected function prepareURL(){
 
-// In our case $url[0] is project folder name 
-//             $url[1] is controller name
-//             $url[2] is methode name 
 
 
-      $request = trim($_SERVER['REQUEST_URI'],'/');
+      $req = explode('?',$_SERVER['REQUEST_URI']);
 
-      if(!empty($request)){
+      $request = trim($req[0],'/');
+
+      // In our case $url[0] is project folder name 
+      //             $url[1] is controller name
+      //             $url[2] is methode name 
+
+      if(!empty($request)){        
          $url = explode('/',$request);
          $this->controller = isset($url[1]) ? $url[1].'Controller':'homeController';
          $this->action = isset($url[2]) ? $url[2]:'index';

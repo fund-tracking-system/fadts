@@ -11,7 +11,5 @@
       echo "connection failed";
       die('Database connection failed'.mysqli_connect_errno());
    }
-   else{
-      //echo "db eka goda";
-   }
+   
 

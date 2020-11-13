@@ -17,24 +17,30 @@
 <body>
    <h2> FADTS | Forgot Password</h2>
    <div class="box">
-      <form class="box" method="post" action="/fadts/app/model/home/loginModel.php">
+      <form class="box" id="form" method="post" action="/fadts/home/forgotModel">
          <fieldset style="padding: 35px 50px">
             <legend style="color: #218BDB"><B>Sign in to your account</B></legend>
+
             <div class="form-group">
-               <label for="username"><B>User name</B></label>
-               <input type="text" class="form-control" name="username" placeholder="Enter User name">
+               <label for="username"><B>User NID</B></label>
+               <input type="text"  class="form-control" name="usernid" id="usernid" placeholder="Enter NID"><small>Error message</small>
             </div>
             <div class="form-group">
                <label for="email"><B>Email</B></label>
-               <input type="email" class="form-control" name="email" placeholder="Enter Email">
+               <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
+               <small>Error message</small>
             </div>
-            <button type="submit" name="fogsubmit" class="btn btn-primary"><B>Submit</B></button><br><br>
+ 
+            <button type="submit" name="fogsubmit" class="btn btn-primary">Submit</button><br><br>
             <div class="new-account">
+               <label style="font-size: 13px"><B>Back to login :</B></label>
+               <a href="/fadts/home/index"><B>Click here</B></a>
             </div>
          </fieldset>
       </form>
    </div>
 
 </body>
+<script src="/fadts/app/js/home.js"></script> 
 
 </html>

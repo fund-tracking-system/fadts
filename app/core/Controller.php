@@ -11,7 +11,7 @@ class Controller{
 
    public function model($modelName,$data=[]){
 
-      $this->view = new Model($modelName,$data);
+      $this->model = new Model($modelName,$data);
       return $this->model;
    }
 }

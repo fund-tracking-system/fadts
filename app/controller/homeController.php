@@ -9,8 +9,9 @@ class homeController extends Controller{
    }
 
    public function indexModel(){     // This is how load the model for login
-      $this->model('home/loginModel');
+
       
+      $this->model('home/loginModel');
       $this->model->load(); 
    }
 
@@ -37,6 +38,8 @@ class homeController extends Controller{
       
       $this->model->load(); 
    }
+
+   
 
    
    // public function index($id='',$name=''){  Example for send data to a view
