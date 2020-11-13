@@ -49,7 +49,7 @@ switch($controller){
    <a href="/fadts/divisional/ViewSearchBycriteria" class="dashboard sidebar_link">
       <span class="material-icons">people_alt</span>Search People Data
    </a>
-   <a href="/fadts/divisional/ViewFundDetails" class="dashboard sidebar_link">
+   <a href="/fadts/divisional/ViewFundDetailsModel" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
    </a>
    <a href="/fadts/divisional/fundRelease" class="dashboard sidebar_link">

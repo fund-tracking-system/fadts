@@ -11,14 +11,12 @@
                 <h2> ADD PEOPLE DATA </h2>
                 <fieldset class="searchBar">
 
-
-
-                    <?php
+                <?php
                 if(isset($_GET['error'])){
 
-                $error = $_GET['error'];
+                    $error = $_GET['error'];
                     if($error=="person_exist"){
-                        echo '<div class="alert alert-danger" role="alert">This person has been already added to the system ! </div>';
+                        echo '<div class="alert alert-danger" role="alert">This person has been already added to the system! </div>';
                     }
 
                 }
@@ -109,7 +107,7 @@
                                  
                   $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
                   $rgnRes = $con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
                   
                   $_SESSION['region_result']=$res
                   
@@ -171,7 +169,7 @@
                     <div class="form-row">
 
                         <label class="inputLable" for="phone-number"><b>Contact Number 2 :</b></label>
-                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
+                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number" ></input>
                     </div>
 
                     <button type="submit" class=' btn btn-primary  signlebtn'>Submit</button>
@@ -183,7 +181,6 @@
 </div>
 
 <script>
-
 $(document).ready(function() {
     $('#headOfFamily').select2();
 });
@@ -194,9 +191,5 @@ $(document).ready(function() {
     $('#region').select2();
 });
 
-$(document).ready(function() {
-    $('#headOfFamily').select2();
-});
-</script>
 
 <?php include VIEW.'includes/footer.php' ?>
