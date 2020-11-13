@@ -10,8 +10,6 @@ if(isset($_GET['fundId'])){
    $dilivered=0;
    $unDelivered=0;
    $totlRecipients=0;
-
-   echo $fundId;
    $officer_region=$_SESSION['region'];
 
    $sql="SELECT recipient.personId,recipient.deliveryStatus,person.region, region.superRegion  FROM recipient INNER JOIN person ON recipient.personId=person.personId INNER JOIN region ON region.regionId=person.region WHERE recipient.fundId= $fundId AND region.superRegion=$officer_region";
@@ -45,6 +43,19 @@ $totlRecipients=$dilivered+$unDelivered;
 echo "<br>";
 echo $totlRecipients;
 $_SESSION['totalRecipients']=$totlRecipients;
+
+
+$Fdate="SELECT publishedTime ,amountPerPerson FROM fund WHERE fundId=$fundId";
+$dateRes=$con->query($Fdate);
+$resDate=$dateRes->fetch_all(MYSQLI_ASSOC); 
+var_dump($resDate);
+foreach($resDate as $day){
+        $_SESSION['publishedTime']= $day['publishedTime'];
+        $_SESSION['amountPerPerson']=$day['amountPerPerson'];
+
+
+}
+
 
 header("Location:/fadts/divisional/selectFundDetailsView"); 
 

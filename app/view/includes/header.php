@@ -50,7 +50,15 @@
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+   
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    
 
 
 
@@ -93,7 +101,9 @@
             <ul>
                 <li><a href="/fadts/includes/index" class="nav_link"><span class="material-icons">home</span><B>Home</B></a></li>
 
-                <!-- <li><a href="#"><B>Notifications</B></a></li> -->
+                <li><a href="/fadts/calender/ViewCalender" class="nav_link"><span class="material-icons"></span><B>Calender</B></a></li>
+               
+   
 
                 <li><a href="/fadts/includes/userProfile" class="nav_link"><span class="material-icons">account_circle</span><B>Profile</B></a></li>
 
