@@ -17,7 +17,7 @@ switch($controller){
 <div class="divisionDashboard">
    <div class="grid_box">
       <div class="box-1">
-      <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div>
+      <div class="nav_link"><B>job type</B></div>
 
          <canvas id="Chart1"></canvas>
       </div>
