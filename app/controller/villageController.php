@@ -2,10 +2,21 @@
 
 class villageController extends Controller{
 
-   public function ViewUpdatePeople(){
-      $this->view('villageOfficer/UpdatePeopleView');
+   public function updatePeople(){
+      $this->view('villageOfficer/updatePeopleView');
       
       $this->view->render(); // This is how load the view
+   }
+   public function updatePeopleModel(){
+      $this->model('villageOfficer/updatePeopleModel');
+
+      $this->model->load();
+   }
+
+   public function nicSearchModel(){
+      $this->model('villageOfficer/nicSearchModel');
+
+      $this->model->load();
    }
  
    public function ViewSearchPeople(){

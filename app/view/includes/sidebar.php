@@ -50,7 +50,7 @@ switch($controller){
       <span class="material-icons">person</span>Update People Data
    </a>
    <a href="/fadts/divisional/ViewSearchBycriteria" class="dashboard sidebar_link">
-      <span class="material-icons">people_alt</span>Search People Data
+      <span class="material-icons">person_search</span>Search People Data
    </a>
    <a href="/fadts/divisional/ViewFundDetailsModel" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
@@ -59,7 +59,7 @@ switch($controller){
       <span class="material-icons">post_add</span>Alternate Fund Release
    </a>
    <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
-      <span class="material-icons">control_point</span>Add  New Disaster
+      <span class="material-icons">create_new_folder</span>Add  New Disaster
    </a>
    <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>Disaster Details
@@ -129,23 +129,23 @@ switch($controller){
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
-   <a href="/fadts/village/ViewUpdatePeople" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Update People Data
+   <a href="/fadts/village/updatePeople" class="dashboard sidebar_link">
+      <span class="material-icons">person</span>Update People Data
    </a>
    <a href="/fadts/village/ViewSearchPeople" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Search People Data
+      <span class="material-icons">person_search</span>Search People Data
    </a>
    <a href="/fadts/village/viewDisasterDetails" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Disaster Details
+      <span class="material-icons">menu_book</span>View Disaster Details
    </a>
    <a href="/fadts/village/ViewViewFund" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Fund
+      <span class="material-icons">menu_book</span>View Fund
    </a>   
    <a href="/fadts/village/ViewGetFundEligible" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Fund Release
+      <span class="material-icons">how_to_reg</span>Fund Release
    </a>
    <a href="/fadts/village/ViewGetAddVictimsToDisaster" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add Disaster Victims
+      <span class="material-icons">person_add</span>Add Disaster Victims
    </a>
    <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help

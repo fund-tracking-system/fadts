@@ -7,19 +7,19 @@ class auditController extends Controller{
       
       $this->model->load(); 
    }
-
+ 
    public function officerHistoryView(){
       $this->view('auditor/officerHistoryView');
       
       $this->view->render(); // This is how load the view
    }
    
-   public function officerHistoryModel(){          // load the model for index view of auditor
+   public function officerHistoryModel(){
       $this->model('auditor/officerHistoryModel');
       
       $this->model->load(); 
    }
- 
+
    public function ViewSearchPeople(){
       $this->view('auditor/searchPeopleView');
       
@@ -30,7 +30,6 @@ class auditController extends Controller{
       $this->view('auditor/disasterDetailsView');
 
       $this->view->render();
-
    }
 
    public function ViewFundDetails(){
@@ -44,7 +43,5 @@ class auditController extends Controller{
 
       $this->view->render();
    }
-
-
   
 }

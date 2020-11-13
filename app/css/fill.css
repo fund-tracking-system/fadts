@@ -1008,7 +1008,7 @@ visibility: hidden;
   display: grid;
 	grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  
+  background-color:#e6e7eb;
 }
 
 .box-1{
@@ -1021,7 +1021,7 @@ visibility: hidden;
 
 .box-2{
   margin: 5px;
-  background:#218BDB;
+  background: #e6e7eb;
   grid-row: 1/2;
   grid-column: 2/3;
   
@@ -1036,7 +1036,7 @@ visibility: hidden;
 
 .box-4{
   margin: 5px;
-  background: #ffffff;
+  background: #e6ebe6;
   grid-row: 2/3;
   grid-column: 1/4;
 }

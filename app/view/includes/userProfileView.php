@@ -34,7 +34,7 @@
                     <div class="form-row">
                         <label for="name " class="inputLable"><b>Region:</b></label>
                         <input class="form-control Input" id="name" name="region"
-                            value="SouthernProvince GalleDistrict ElptiyeDivisionalSec 29/B_Opatha " readonly></input>
+                            value="<?php echo $_SESSION['regionName']?>" readonly></input>
                     </div>
 
                     <div class="form-row">

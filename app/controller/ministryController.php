@@ -61,5 +61,5 @@ class ministryController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-   
+  
 }
