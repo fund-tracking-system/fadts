@@ -4,36 +4,37 @@
 <div class="all_bacground_clor" >
     <div class="SearchByCriteriaform1">
         <form method="post" action="/fadts/assignRegion/assignRegionModel"> 
-            <fieldset style="background-color:#fffef4; height:350px; "> 
-                <h2 style="margin-bottom:50px;">ASSIGN REGION</h2> 
-                <fieldset style="padding-top:15px; margin-right:20px; margin-left:20px;border-radius:10px; "> 
-                    <div class="form-row" style="margin-bottom:20px;">
-                        <label for="regionName" style="margin-left:200px;margin-bottom:18px;"><b>Region name</b></label>
-                        <input class="regionName" name="name" style="margin-left:400px;margin-right:50px">
+            <fieldset class="BackgroundFS"> 
+                <h2>ASSIGN REGION</h2> 
+
+                <fieldset class="searchBar"> 
+                    <div class="form-row">
+                        <label for="regionName" class="inputLable"><b>Region name</b></label>
+                        <input class="form-control Input" name="name">
                     </div>
                     
-                    <div class="form-row" style="margin-bottom:20px;">
-                        <label for="level" style="margin-left:200px;margin-bottom:18px;"><b>Region level:</b></label>
-                        <select class="form-control" name="level" style="margin-left:300px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%">
-                            <option value="4">Village officer</option>
-                            <option value="3">Divisional secretary</option> 
-                            <option value="2">District secretary</option>
-                            <option value="1">Provincial secretary</option> 
-                            <option value="0">Auditor</option> 
+                    <div class="form-row">
+                        <label for="level" class="inputLable"><b>Region level:</b></label>
+                        <select class="form-control Input" name="level" id="selectLevel">
+                            <option value="0">Island</option>
+                            <option value="1">Province</option>
+                            <option value="2">District</option>
+                            <option value="3">Division</option>
+                            <option value="4">Village</option> 
                         </select>
                     </div>
 
-                    <button style="margin-left: 500; margin-top:10px; width:13%; margin-bottom:20px;" type="submit" class="btn btn-primary">Filter</button>
+                    <button type="submit" class='btn btn-primary signlebtn'>Filter</button>
                 </fieldset>
             </fieldset> 
         </form> 
- 
-        <fieldset style="background-color:#fffef4; height:auto;"> 
-            <h2 style="margin-bottom:50px; margin-top:10px;"> Filtered list</h2>
 
-            <div style="margin:50px;">
-                <?php if (isset($_SESSION['query_results'])) { ?>
-                    <table style="margin-bottom:20px;" name="table" id="table">
+        <fieldset class="BackgroundFS">
+            <?php if (isset($_SESSION['query_results'])) { ?> 
+                <h2> Filtered list</h2>
+
+                <div class="tbleMargin">
+                    <table class="display nowrap" name="table" id="resultTable">
                         <tr>
                             <th><b>Region name</b></th> 
                             <th><b>Select</b></th>
@@ -49,19 +50,34 @@
                                                 <form method="post" action="/fadts/assignRegion/assignRegionSelectModel">
                                                     <input type="hidden" name="region" value="' . $row['regionId'] . '">
                                                     <input type="hidden" name="level" value="' . $row['level'] . '">
-                                                    <button class="btn btn-primary" type="submit">Select</button>
+                                                    <button class="btn btn-primary" style="margin-left:40%;" type="submit">Select</button>
                                                 </form>            
                                             </td> ';
                                 print " </tr> ";
                             } 
                         ?>
                     </table>
-
-                    <?php unset($_SESSION['query_results']); //unset results from session variables ?>
-                <?php } ?> 
-            </div>
-        </fieldset> 
+                </div>
+                
+                <?php unset($_SESSION['query_results']); //unset results from session variables ?>               
+            <?php } ?>
+        </fieldset>            
     </div>
 </div>
+
+<script>
+    //sets previous value as selected in position dropdown list 
+    var regionLevel = "<?php echo $_SESSION['region_level']; ?>";
+    var selectLevel = document.getElementById('selectLevel');
+    selectLevel.options[regionLevel].selected = true;
+</script>
+
+<?php unset($_SESSION['region_level']); //unset region level from session variables ?>
+
+<script>
+$(document).ready(function() {
+    $("#resultTable").DataTable();
+});
+</script>
 
 <?php include VIEW.'includes/footer.php'?>
