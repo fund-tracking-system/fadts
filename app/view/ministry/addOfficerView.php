@@ -1,45 +1,46 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<div style="background-color:#ced4da">
-
-    <form class="SearchByCriteriaform1" method = "post" action = "/fadts/ministry/addOfficerModel">
-            <fieldset style="background-color:#fffef4;margin-left:0px;height:600px;">
+<div class="all_bacground_clor">
+    <div class="SearchByCriteriaform1">
+        <form method="post" action="/fadts/ministry/addOfficerModel">
+            <fieldset class="BackgroundFS">
+                <!--
                 <h2 style="color:black ; margin-bottom:55px;padding-top:10px; ">Add Officer Form</h2>
-                
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="nid" style="margin-left:70px;margin-bottom:18px;"><b>NID:</b></label>
-                    <input class="form-control " name='nid' style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"></input>
-                </div>
+                -->
+                <h2> ADD OFFICER FORM </h2>
 
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="name" style="margin-left:70px;margin-bottom:18px;"><b>Name</b></label>
-                    <input class="form-control" name="name" style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%">
-                </div> 
-                
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="password" style="margin-left:70px;margin-bottom:18px;"><b>Password:</b></label>
-                    <input class="form-control " type="password" name='password' style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"></input>
-                </div>
+                <fieldset class="searchBar">                
+                    <div class="form-row">
+                        <label for="nid" class="inputLable"><b>NID:</b></label>
+                        <input class="form-control Input" name="nid"></input>
+                    </div>
 
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="email" style="margin-left:70px;margin-bottom:18px;"><b>E-mail:</b></label>
-                    <input class="form-control" type="email" name='email' style="margin-left:180px;margin-bottom:20px;margin-right:150px; margin-top:-3.5%"></input>
-                </div> 
+                    <div class="form-row" style="margin-bottom:20px;">
+                        <label for="name" class="inputLable"><b>Name</b></label>
+                        <input class="form-control Input" name="name"></input>
+                    </div>
 
-                <div class="form-row" style="margin-bottom:20px;">
-                    <label for="loginStatus" style="margin-left:70px;margin-bottom:18px;"><b>Login status:</b></label>
-                    <select class="form-control" name="loginStatus" style="margin-left:180px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%">
-                        <option value="permitted">Permitted</option>
-                        <option value="denied">Denied</option> 
-                    </select>
-                </div>
+                    <div class="form-row" style="margin-bottom:20px;">
+                        <label for="email" class="inputLable"><b>E-mail:</b></label>
+                        <input class="form-control Input" type="email" name='email'></input>
+                    </div> 
 
-                <div class='buttons' style="margin-left:900px;">
-                    <button type="submit" name = "submit" class='confirm-button btn btn-primary'>Confirm</button> 
-                </div>
+                    <div class="form-row" style="margin-bottom:20px;">
+                        <label for="loginStatus" class="inputLable"><b>Login status:</b></label>
+                        <select class="form-control Input" name="loginStatus">
+                            <option value="permitted">Permitted</option>
+                            <option value="denied">Denied</option> 
+                        </select>
+                    </div>
+
+                    <div class='buttons' style="margin-left:900px;">
+                        <button type="submit" name= "submit" class='btn btn-primary signlebtn'>Next</button> 
+                    </div>
+                </fieldset>    
             </fieldset>
-    </form>
+        </form>
+    </div>
 </div>
 
 <?php include VIEW.'includes/footer.php'?>

@@ -1,7 +1,5 @@
 <?php include VIEW.'includes/header.php' ?>
-
 <?php include VIEW.'includes/sidebar.php' ?>
-
 
 
 <div class="all_bacground_clor">
@@ -12,16 +10,15 @@
                 <fieldset class="searchBar">
 
                     <?php
-                if(isset($_GET['error'])){
+                    if(isset($_GET['error'])){
 
-                    $error = $_GET['error'];
-                    if($error=="person_exist"){
-                        echo '<div class="alert alert-danger" role="alert">This person has been already added to the system! </div>';
+                        $error = $_GET['error'];
+                        if($error=="person_exist"){
+                            echo '<div class="alert alert-danger" role="alert">This person has been already added to the system! </div>';
+                        }
+
                     }
-
-                }
-                ?>
-
+                    ?>
 
                     <div class="form-row">
                         <label for="Name" class="inputLable"><b>Name :</b></label>
@@ -29,13 +26,10 @@
 
                     </div>
 
-
-
                     <div class="form-row">
                         <label for="nid" class="inputLable"><b>NIC :</b></label>
                         <input class="form-control Input" id='nid' name="nid"></input>
                     </div>
-
 
                     <!-- 
                     <div class="form-row">
@@ -43,15 +37,10 @@
                         <input class="form-control Input" id='headOfFamily' name="headOfFamily"></input>
                     </div> -->
 
-
-
-
                     <div class="form-row">
                         <label for="name " class="inputLable"><b>Adrress :</b></label>
                         <input class="form-control Input" id="address" name="address"></input>
                     </div>
-
-
 
                     <div class="form-row">
                         <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
@@ -92,7 +81,6 @@
                         <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
                     </div>
 
-
                     <!-- for region -->
 
                     <div class="form-row" style="margin-bottom:50px;">
@@ -100,18 +88,18 @@
 
                         <?php
 
-                  require 'connection.php'; 
-                  
+                        require 'connection.php'; 
+                        
 
-                  $region = $_SESSION['region'];
-                                 
-                  $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
-                  $rgnRes = $con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
-                  
-                  $_SESSION['region_result']=$res
-                  
-                  ?>
+                        $region = $_SESSION['region'];
+                                        
+                        $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
+                        $rgnRes = $con->query($rgn) ;
+                        $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
+                        
+                        $_SESSION['region_result']=$res
+                        
+                        ?>
 
 
                         <select id='region' class='form-control Input' name='region' id='region'
@@ -134,19 +122,15 @@
                         <label for="tnid" class="inputLable" style="margin-right:140px;"><b>Family Head :</b></label>
 
                         <?php
+                            require 'connection.php'; 
 
-                                require 'connection.php'; 
-
-                                $region = $_SESSION['region'];
-                                                
-                                $rgns = "SELECT nid FROM person ";
-                                $rgnRess = $con->query($rgns) ;
-                                $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);
-                                
-                                
+                            $region = $_SESSION['region'];
+                                            
+                            $rgns = "SELECT nid FROM person ";
+                            $rgnRess = $con->query($rgns) ;
+                            $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                                
                                 
                         ?>
-
 
 
                         <select class='form-control Input' name='headOfFamily' id='headOfFamily'
@@ -181,15 +165,15 @@
 </div>
 
 <script>
-$(document).ready(function() {
-    $('#headOfFamily').select2();
-});
-</script>
+    $(document).ready(function() {
+        $('#headOfFamily').select2();
+    });
+    </script>
 
-<script>
-$(document).ready(function() {
-    $('#region').select2();
-});
+    <script>
+    $(document).ready(function() {
+        $('#region').select2();
+    });
 </script>
 
 

@@ -14,12 +14,12 @@
                     
                     <div class="form-row" style="margin-bottom:20px;">
                         <label for="level" style="margin-left:200px;margin-bottom:18px;"><b>Region level:</b></label>
-                        <select class="form-control" name="level" style="margin-left:300px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%">
-                            <option value="4">Village officer</option>
-                            <option value="3">Divisional secretary</option> 
-                            <option value="2">District secretary</option>
-                            <option value="1">Provincial secretary</option> 
-                            <option value="0">Auditor</option> 
+                        <select class="form-control" name="level" id="selectLevel" style="margin-left:300px;margin-bottom:20px;margin-right:150px;margin-top:-3.5%">
+                            <option value="0">Island</option>
+                            <option value="1">Province</option>
+                            <option value="2">District</option>
+                            <option value="3">Division</option>
+                            <option value="4">Village</option> 
                         </select>
                     </div>
 
@@ -63,5 +63,14 @@
         </fieldset> 
     </div>
 </div>
+
+<script>
+    //sets previous value as selected in position dropdown list 
+    var regionLevel = "<?php echo $_SESSION['region_level']; ?>";
+    var selectLevel = document.getElementById('selectLevel');
+    selectLevel.options[regionLevel].selected = true;
+</script>
+
+<?php unset($_SESSION['region_level']); //unset region level from session variables ?>
 
 <?php include VIEW.'includes/footer.php'?>
