@@ -9,7 +9,7 @@
 
                 <fieldset class="searchBar"> 
                     <div class="form-row">
-                        <label for="regionName" class="inputLable"><b>Region name</b></label>
+                        <label for="name" class="inputLable"><b>Region name</b></label>
                         <input class="form-control Input" name="name">
                     </div>
                     
