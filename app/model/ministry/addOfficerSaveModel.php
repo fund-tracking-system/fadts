@@ -1,6 +1,7 @@
 <?php 
     session_start();
 
+    /*
     //db credentials
     $host = 'localhost';
     $user = 'root';
@@ -8,16 +9,20 @@
     $dbname = 'pdodb';
 
     //create connection
-    $conn = new mysqli($host, $user, $password, $dbname);
+    $con = new mysqli($host, $user, $password, $dbname);
 
     //Check connection
-    if ($conn->connect_error) {
-    die("Database not connected: " . $conn->connect_error);
+    if ($con->connect_error) {
+    die("Database not connected: " . $con->connect_error);
     }
+    */
+
+    //database connection file calling
+    require 'connectionOOP.php';
     
     //prepare and bind
     $query = 'INSERT INTO officer (nid, password, email, region, loginStatus, name, position) VALUES (?, ?, ?, ?, ?, ?, ?)';
-    $stmt = $conn->prepare($query);
+    $stmt = $con->prepare($query);
     $stmt->bind_param("sssssss", $nid, $password, $email, $region, $loginStatus, $name, $position);
  
     //assign values from post
@@ -34,7 +39,7 @@
     
     //close connection
     $stmt->close();
-    $conn->close();
+    $con->close();
 
     //unset form data stored in session variables
     unset($_SESSION['officer_nid']); 
