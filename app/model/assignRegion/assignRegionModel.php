@@ -1,4 +1,5 @@
 <?php 
+    /*
     //db credentials
     $host = 'localhost';
     $user = 'root';
@@ -6,16 +7,20 @@
     $dbname = 'pdodb';
 
     //create connection
-    $conn = new mysqli($host, $user, $password, $dbname);
+    $con = new mysqli($host, $user, $password, $dbname);
 
     //Check connection
-    if ($conn->connect_error) {
-    die("Database not connected: " . $conn->connect_error);
+    if ($con->connect_error) {
+    die("Database not connected: " . $con->connect_error);
     }
+    */
+
+    //database connection file calling
+    require 'connectionOOP.php';
     
     //prepare and bind
     $query = 'SELECT regionId, name, level FROM region WHERE name LIKE ? AND level LIKE ?';
-    $stmt = $conn->prepare($query);
+    $stmt = $con->prepare($query);
     $stmt->bind_param("ss", $name, $level);
 
     //if name is set
@@ -44,28 +49,12 @@
     session_start();
     $_SESSION['query_results'] = $data;
 
-    //store officer position in session variables
-    switch ($_POST['level']) {
-        case 0:
-            $_SESSION['officer_position'] = 'auditor';
-            break;
-        case 1:
-            $_SESSION['officer_position'] = 'provincial secretary';
-            break;
-        case 2:
-            $_SESSION['officer_position'] = 'district secretary';
-            break; 
-        case 3:
-            $_SESSION['officer_position'] = 'divisional secretary';
-            break;
-        case 4:
-            $_SESSION['officer_position'] = 'village officer';
-            break;    
-    } 
+    //store level in session variables
+    $_SESSION['region_level'] = $_POST['level'];
 
     //close connection
     $stmt->close();
-    $conn->close();
+    $con->close();
     
     //redirecting to view
     header("Location:/fadts/assignRegion/assignRegionView"); 

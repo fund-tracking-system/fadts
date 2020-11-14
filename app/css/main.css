@@ -86,19 +86,21 @@ a:active,a:hover{
 	background: #2C3E50;
 	border-right: 2px solid #2C3E50;
 	box-shadow: 2px 2px 2px 2px #888888;
+	border-radius: 8px;
 }
 
 .sidebar_link {
 	display: flex;
 	align-items: center;
 	/* background:#17a286; */
-	background: #44586a;
+	background: #2C3E50;
 	color: #ffffff;
 	padding: 12px;
 	text-decoration: none;
 	font-weight: bold;
 	font-size: 1.125rem;
-	border-bottom: 1px solid #000040;
+	border-radius: 8px;
+	/* border-bottom: 1px solid #000040; */
 }
 
 .sidebar_link .material-icons {
