@@ -18,40 +18,42 @@
     */
 
     //database connection file calling
-    require 'connectionOOP.php';
+    require 'connectionOOP.php';	
     
     //prepare and bind
-    $query = 'INSERT INTO officer (nid, password, email, region, loginStatus, name, position) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    $query = 'INSERT INTO user (username, usernid, email, password, userrole, region, loginStatus) VALUES (?, ?, ?, ?, ?, ?, ?)';
     $stmt = $con->prepare($query);
-    $stmt->bind_param("sssssss", $nid, $password, $email, $region, $loginStatus, $name, $position);
+    $stmt->bind_param("sssssss", $name, $nid, $email, $password, $position, $region, $loginStatus);
  
     //assign values from post
-    $nid = $_SESSION['officer_nid']; 
-    $password = $_SESSION['officer_password'];
+    $name = $_SESSION['officer_name'];
+    $nid = $_SESSION['officer_nid'];
     $email = $_SESSION['officer_email'];
+    //$position = $_SESSION['assign_region_level'];   
     $region = $_SESSION['assign_region_id']; 
     $loginStatus = $_SESSION['officer_loginStatus'];
-    $name = $_SESSION['officer_name'];
-    //$position = $_SESSION['assign_region_level']; 
-
+    
     //determine officer position from region level
     switch ($_SESSION['assign_region_level']) {
         case 0:
             $position = 'auditor';
             break;
         case 1:
-            $position = 'provincial secretary';
+            $position = 'provincialsec';
             break;
         case 2:
-            $position = 'district secretary';
+            $position = 'districtsec';
             break; 
         case 3:
-            $position = 'divisional secretary';
+            $position = 'divisionalsec';
             break;
         case 4:
-            $position = 'village officer';
+            $position = 'villageofficer';
             break;    
     }
+
+    //default password is set initially
+    $password = "123456";
 
     //execute prepared statement
     $stmt->execute();
@@ -61,13 +63,13 @@
     $con->close();
 
     //unset form data stored in session variables
+    unset($_SESSION['officer_name']);
     unset($_SESSION['officer_nid']); 
-    unset($_SESSION['officer_password']); 
-    unset($_SESSION['officer_email']); 
-    unset($_SESSION['assign_region_id']); 
-    unset($_SESSION['officer_loginStatus']); 
-    unset($_SESSION['officer_name']); 
+    unset($_SESSION['officer_email']);
+    //unset($_SESSION['officer_password']);  
     unset($_SESSION['assign_region_level']);
+    unset($_SESSION['assign_region_id']); 
+    unset($_SESSION['officer_loginStatus']);  
     
     //redirecting to view
     header("Location:/fadts/ministry/addOfficerView"); 
