@@ -7,11 +7,11 @@
     $dbname = 'pdodb';
 
     //create connection
-    $conn = new mysqli($host, $user, $password, $dbname);
+    $con = new mysqli($host, $user, $password, $dbname);
 
     //Check connection
-    if ($conn->connect_error) {
-    die("Database not connected: " . $conn->connect_error);
+    if ($con->connect_error) {
+    die("Database not connected: " . $con->connect_error);
     }
     */
 
