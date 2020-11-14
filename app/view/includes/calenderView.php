@@ -3,7 +3,7 @@
 
 
 
-<div class="calender" style="background-color: #aac5f2" >
+<div class="calender" style="background-color:white" >
    
     
     
@@ -18,33 +18,31 @@
     var calendar = $('#calendar').fullCalendar({
         height: 550,
         editable:true,
+        eventColor: '#85e085',
         header:{
         left:'prev,next today',
         center:'title',
         right:'month,agendaWeek,agendaDay'
         },
-        events: '/fadts/calender/loadEventModel?userid=2',
+        events: '/fadts/calender/loadEventModel?userid=<?php echo $_SESSION['userid']; ?>',
         selectable:true,
         selectHelper:true,
         select: function(start, end, allDay)
         {
-        var title = prompt("Enter Your Event Title");
-        if(title)
-        {
-        var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
-        var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-        var userid = 2;
-        $.ajax({
-        url:"/fadts/calender/addEventMode",
-        type:"POST",
-        data:{title:title, start:start, end:end, userid:userid},
-        success:function()
-        {
-            calendar.fullCalendar('refetchEvents');
-            alert("Added Successfully");
-        }
-        })
-        }
+            var title = prompt("Enter Your Event Title");
+            if(title){
+                var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+                var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                $.ajax({
+                    url:"/fadts/calender/addEventModel?userid=<?php echo $_SESSION['userid']; ?>",
+                    type:"POST",
+                    data:{title:title, start:start, end:end},
+                    success:function(){
+                        calendar.fullCalendar('refetchEvents');
+                        alert("Added Successfully");
+                    }
+                })
+            }
         },
         editable:true,
         eventResize:function(event)
