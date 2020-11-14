@@ -1,7 +1,8 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<?php if(isset($_SESSION['updateResults'])) $result = $_SESSION['updateResults']; ?>
+<?php if(isset($_SESSION['updateResults'])) $result = $_SESSION['updateResults']; 
+      unset($_SESSION['updateResults'],$_SESSION['personRegion']) ?>
 
 
 <div class="all_bacground_clor">
@@ -148,7 +149,7 @@
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="job type"><b>Job Type :</b></label>
+                  <label class="inputLable" for="job type"><b>Income Type :</b></label>
                   <select class="form-control Input" id="job" name="job">
                      <option value="<?php echo isset($result) ? $result['job']:"" ?>" selected hidden>
                         <?php echo isset($result) ? $result['job']:"" ?></option>
@@ -176,8 +177,6 @@
                      <option value="yes">Dead</option>
                   </select>
                </div>
-
-               <?php unset($_SESSION['updateResults'],$_SESSION['personRegion']) ?>
 
                <div class="Twobtn">
                   <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>

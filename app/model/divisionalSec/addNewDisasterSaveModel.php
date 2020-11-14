@@ -7,7 +7,7 @@
 
     echo $_SESSION['disaster_disasterName'];
 
-echo $_SESSION['disaster_type'];
+    echo $_SESSION['disaster_type'];
     $query='INSERT INTO disaster (type,name,date,description) VALUES(?,?,?,?)';
     $stmt=$con->prepare($query);
     $stmt->bind_param('ssss',$disaster,$disasterName,$date,$description);

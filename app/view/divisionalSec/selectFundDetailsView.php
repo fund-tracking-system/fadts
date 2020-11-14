@@ -74,7 +74,7 @@
                     var undelivered = $("#undelivered").val();
                     var dilivered = $("#dilivered").val();
 
-                    var x = 40;
+                    
 
                     var chart = new CanvasJS.Chart("chartContainer", {
                         animationEnabled: true,
@@ -84,7 +84,7 @@
                         },
                         data: [{
                             type: "doughnut",
-                            startAngle: 60,
+                            startAngle: 70,
                             //innerRadius: 60,
                             indexLabelFontSize: 17,
                             indexLabel: "{label} - #percent%",

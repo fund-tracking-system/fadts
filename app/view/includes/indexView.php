@@ -4,6 +4,7 @@
 <?php
  
 $controller = $_SESSION['controller'];
+
 // $email = $_SESSION['email'];
 // $username = strtok($email, '@');
 //$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled. 
@@ -22,7 +23,7 @@ switch($controller){
          <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
-      <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div>
+      <div class="nav_link"><B>AGE GROUP</B></div>
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
@@ -89,7 +90,7 @@ switch($controller){
       var chart = new Chart(ctx, {
          type: 'doughnut',
          data: {
-            labels: ['Delivered amount', 'Undelivered amount', 'Total Reipient amount',],
+            labels: ['0-18', '18-24', '25-64'],
             datasets: [{
                   label: '# fund release',
                   data: [20,5,25],
@@ -231,38 +232,6 @@ window.onload = calendar;
 
 
    $(function () {
-      var ctx = document.getElementById('Chart2').getContext('2d');
-      var chart = new Chart(ctx, {
-         type: 'pie',
-         data: {
-            labels: ['Goverment', 'Private', 'Retired','unemployee','SelfEmployee'],
-            datasets: [{
-                  label: '# fund release',
-                  data: [100,200,50,30,20],
-                  backgroundColor: [
-                     '#16a085',
-                     ' #668cff',
-                     '#2980b9',
-                     '#b30000',
-                     '#f1c40f'
-                  ],
-                  borderWidth: 1
-            }]
-         },
-         options: {
-            rotation:Math.PI*0.5,
-            animation:{
-               animatescale:true
-            },
-            
-         }
-      }); 
-      chart.canvas.parentNode.style.height = '100%';
-
-  });
-
-
-   $(function () {
       var ctx = document.getElementById('Chart1').getContext('2d');
       var chart = new Chart(ctx, {
          type: 'doughnut',
@@ -295,6 +264,41 @@ window.onload = calendar;
       chart.canvas.parentNode.style.height = '100%';
 
   });
+
+  $(function () {
+      // ChartJS
+      var ctx = document.getElementById('Chart2').getContext('2d');
+      console.log(Chart.defaults.scale.ticks);
+      Chart.defaults.scale.ticks.beginAtZero=true;
+      var chart = new Chart(ctx, {
+         type: 'horizontalBar', // The type of chart we want to create
+         data: {
+            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            datasets: [{
+                  label: 'Victims per Year',
+                  data: [100,200,400,300,250,140,370,200,300,200],
+                  // backgroundColor:'#4cd84c',
+                  hoverBackgroundColor:'#00FF00',
+                  borderColor:'#00FF00',
+                  borderWidth: 2
+            }]
+         },
+         options: {
+            scales: {
+                  yAxes: [{
+                     ticks: {
+                        beginAtZero: true
+                     }
+                  }]
+            },
+            maintainAspectRatio: false
+
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
 
 
   
@@ -411,11 +415,13 @@ window.onload = calendar;
 <div class="divisionDashboard">
    <div class="grid_box">
       <div class="box-1">
+      <div class="nav_link"><B>GROSS INCOME</B></div>
+
          <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
-         
-        
+      <!-- <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div> -->
+         <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
          <div id="calendardate">
@@ -426,13 +432,11 @@ window.onload = calendar;
       </div>
       <div class="box-4">
          <div>
-            <canvas id="Chart"></canvas>
+            <canvas id="Chart3"></canvas>
          </div>
       </div>
    </div>
 </div>
-
-
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!-- ChartJS -->
@@ -444,33 +448,57 @@ window.onload = calendar;
       })
    });
 
-  $(function () {
-      // ChartJS
-      var ctx = document.getElementById('Chart3').getContext('2d');
+
+   $(function () {
+      var ctx = document.getElementById('Chart1').getContext('2d');
       var chart = new Chart(ctx, {
-         type: 'line', // The type of chart we want to create
+         type: 'doughnut',
          data: {
-            labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
+            labels: ['Law Income', 'Middle Income','High Income',],
             datasets: [{
                   label: '# fund release',
-                  data: [12, 19, 3, 5, 2, 3],
+                  data: [20,5,25],
                   backgroundColor: [
-                     'rgba(255, 99, 132, 0.2)',
-                     'rgba(54, 162, 235, 0.2)',
-                     'rgba(255, 206, 86, 0.2)',
-                     'rgba(75, 192, 192, 0.2)',
-                     'rgba(153, 102, 255, 0.2)',
-                     'rgba(255, 159, 64, 0.2)'
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9'
                   ],
                   borderColor: [
-                     'rgba(255, 99, 132, 1)',
-                     'rgba(54, 162, 235, 1)',
-                     'rgba(255, 206, 86, 1)',
-                     'rgba(75, 192, 192, 1)',
-                     'rgba(153, 102, 255, 1)',
-                     'rgba(255, 159, 64, 1)'
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9'
                   ],
                   borderWidth: 1
+            }]
+         },
+         options: {
+            rotation:Math.PI*-10.5,
+            animation:{
+               animatescale:true
+            },
+            
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
+  $(function () {
+      // ChartJS
+      var ctx = document.getElementById('Chart2').getContext('2d');
+      console.log(Chart.defaults.scale.ticks);
+      Chart.defaults.scale.ticks.beginAtZero=true;
+      var chart = new Chart(ctx, {
+         type: 'horizontalBar', // The type of chart we want to create
+         data: {
+            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            datasets: [{
+                  label: 'Victims per Year',
+                  data: [100,200,400,300,250,140,370,200,300,200],
+                  // backgroundColor:'#4cd84c',
+                  hoverBackgroundColor:'#00FF00',
+                  borderColor:'#00FF00',
+                  borderWidth: 2
             }]
          },
          options: {
@@ -490,7 +518,47 @@ window.onload = calendar;
   });
 
 
-   function calendar(){
+
+  
+  $(function () {
+      // ChartJS
+      var ctx = document.getElementById('Chart3').getContext('2d');
+      console.log(Chart.defaults.scale.ticks);
+      Chart.defaults.scale.ticks.beginAtZero=true;
+      var chart = new Chart(ctx, {
+         type: 'bar', // The type of chart we want to create
+         data: {
+            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            datasets: [{
+                  label: 'Population By Age',
+                  data: [100,200,400,300,250,140,370,200,300,200],
+                  // backgroundColor:'#4cd84c',
+                  hoverBackgroundColor:'#00FF00',
+                  borderColor:'#00FF00',
+                  borderWidth: 2
+            }]
+         },
+         options: {
+            scales: {
+                  yAxes: [{
+                     ticks: {
+                        beginAtZero: true
+                     }
+                  }]
+            },
+            maintainAspectRatio: false
+
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
+
+  
+
+
+function calendar(){
    var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
    var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
    var d=new Date();
@@ -511,9 +579,9 @@ function setText(id, val){
 
 //call calendar() when page load
 window.onload = calendar;
+
+
 </script>
-
-
 
 
 
