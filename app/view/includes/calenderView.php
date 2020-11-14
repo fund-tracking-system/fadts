@@ -35,14 +35,14 @@
         var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
         var userid = 2;
         $.ajax({
-        url:"/fadts/calender/addEventMode",
-        type:"POST",
-        data:{title:title, start:start, end:end, userid:userid},
-        success:function()
-        {
-            calendar.fullCalendar('refetchEvents');
-            alert("Added Successfully");
-        }
+            url:"/fadts/calender/addEventMode",
+            type:"POST",
+            data:{title:title, start:start, end:end, userid:2},
+            success:function()
+            {
+                calendar.fullCalendar('refetchEvents');
+                alert("Added Successfully");
+            }
         })
         }
         },
