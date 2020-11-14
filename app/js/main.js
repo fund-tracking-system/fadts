@@ -1,12 +1,12 @@
+//addnewDisaster-divisionalsec
 
-//addnewDisaster
 $(function(){
     var $formDisasterAdd = $("#formAddDisaster");
     if($formDisasterAdd.length){
         $formDisasterAdd.validate({
             rules: {
                 disaster: "required",
-                disaster_name: "required",
+                disasterName: "required",
                 date: {
                     required: true,
                     date: true
@@ -15,7 +15,7 @@ $(function(){
             },
             messages: {
                 disaster: "This field is required",
-                disaster_name: "This field is required",
+                disasterName: "This field is required",
                 date: {
                     required: "This field is required",
                     date: "Date should be correct format"
@@ -25,6 +25,69 @@ $(function(){
       });
     }
   });
+  
+  
+  //addpeople-divisionalsec
+// $(function(){
+//     var $formPeople = $("#formAddPeople");
+//     if($formPeople.length){
+//         $formPeople.validate({
+//             rules: {
+//                 name: "required",
+//                 nid: {
+//                     required: true,
+//                     maxlength: 12,
+//                     minlength:10
+//                 },
+//                 address: "required",
+//                 b_date: {
+//                     required: true,
+//                     date: true
+//                 },
+//                 email: {
+//                     required: true,
+//                     email: true
+//                 },
+//                 jobType: "required",
+//                 civilStatus: "required",
+//                 phoneNumber1: {
+//                     required: true,
+//                     number: true,
+//                     minlength:10,
+//                     maxlength:10
+//                 }
+//             },
+//             messages: {
+//                 name: "This field is required",
+//                 nid: {
+//                     required: "This field is required",
+//                     maxlength: "Please enter a correct NID",
+//                     minlength: "Please enter correct NID"
+//                 },
+//                 address: "This field is required",
+//                 b_date: {
+//                     required: "This field is required",
+//                     date: "Date should be correct format"
+//                 },
+//                 email: {
+//                     required: "Please enter user email",
+//                     email: "Your email address must be in the format of name@domain.com"
+//                 },
+//                 jobType: "This field is required",
+//                 civilStatus: "This field is required",
+//                 phoneNumber1: {
+//                     required: "This field is required",
+//                     number: "Phone number must have numbers",
+//                     minlength: "This number has less than 10 numbers",
+//                     maxlength: "This number has more than 10 numbers"
+//                 },
+//             }
+//       });
+//     }
+//   });
+
+
+
   
   //addOfficer
   $(function(){
@@ -87,67 +150,7 @@ $(function(){
     }  
   });
   
-  $(function(){
-    var $formPeople = $("#formAddPeople");
-    if($formPeople.length){
-        $formPeople.validate({
-            rules: {
-                name: "required",
-                nid: {
-                    required: true,
-                    maxlength: 12,
-                    minlength:10
-                },
-                address: "required",
-                birth_date: {
-                    required: true,
-                    date: true
-                },
-                email: {
-                    required: true,
-                    email: true
-                },
-                region: "required",
-                job: "required",
-                civil_status: "required",
-                phone_number: {
-                    required: true,
-                    number: true,
-                    minlength:10,
-                    maxlength:10
-                }
-            },
-            messages: {
-                name: "This field is required",
-                nid: {
-                    required: "This field is required",
-                    maxlength: "Please enter a correct NID",
-                    minlength: "Please enter correct NID"
-                },
-                address: "This field is required",
-                birth_date: {
-                    required: "This field is required",
-                    date: "Date should be correct format"
-                },
-                email: {
-                    required: "Please enter user email",
-                    email: "Your email address must be in the format of name@domain.com"
-                },
-                region: "This field is required",
-                job: "This field is required",
-                civil_status: "This field is required",
-                phone_number: {
-                    required: "This field is required",
-                    number: "Phone number must have numbers",
-                    minlength: "This number has less than 10 numbers",
-                    maxlength: "This number has more than 10 numbers"
-                },
-            }
-      });
-    }
-  });
-
-
+ 
 
   jQuery.validator.addMethod("lettersonly", function(value, element) {
     return this.optional(element) || /^[a-z\s]+$/i.test(value);
@@ -356,6 +359,13 @@ $(function(){
 
 
 
+
+
+
+      
+/****************************************************************
+* Selector plug that made select tag in to custome select style *
+*****************************************************************/
 
 
       

@@ -43,7 +43,7 @@ class ministryController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-   
+
    public function viewAdddPeopleToFundElighibleList(){
       $this->view('ministry/addPeopleToFundEligiblListView');
       
@@ -60,6 +60,6 @@ class ministryController extends Controller{
       $this->view('ministry/disasterDetailsFormView');
       
       $this->view->render(); // This is how load the view
-   } 
-
+   }
+  
 }

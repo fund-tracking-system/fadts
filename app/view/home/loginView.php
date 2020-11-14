@@ -1,7 +1,7 @@
 <?php 
    session_start();
    session_unset();
-   session_destroy();
+   session_destroy(); 
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 </head>
 
 <body  >  
-   <h2 style="margin-top:-10px;"> FADTS | User Login</h2>
+   <h2> FADTS | User Login</h2>
 
       <form id="form" class="box"  method="post" action="/fadts/home/indexModel">
       
@@ -27,7 +27,7 @@
             <legend style="color: #218BDB"><B>Sign in to your account</B> </legend>
 
           <?php
-               
+                
                if(isset($_GET['error'])){
          
                   $error = $_GET['error'];

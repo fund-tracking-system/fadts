@@ -5,45 +5,9 @@
 
     <div class="SearchByCriteriaform1">
 
-        <form method="post" action="/fadts/divisional/fundDetailModel">
+        <form>
             <fieldset class="BackgroundFS">
                 <h2>SELECT FUND </h2>
-
-
-
-                <div class="form-row" style="margin-bottom:50px;">
-                    <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
-
-                    <?php
-
-                  require 'connection.php'; 
-                  
-
-                  $region = $_SESSION['region'];
-                                 
-                  $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
-                  $rgnRes = $con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
-                  
-                  $_SESSION['region_result']=$res
-                  
-                  ?>
-
-
-                    <select id='region' class='form-control Input' name='region' id='region'
-                        style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
-                        <option value="<?php echo $region?> ">MY DIVISION</option>
-                        <?php 
-                             foreach($res as $data){
-                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-                              }
-                                ?>
-                    </select>
-
-                </div>
-
-
-
 
 
                 <div class="tbleMargin">
@@ -52,7 +16,7 @@
                     <table id="resultTable" class="display nowrap">
                         <thead>
                             <tr>
-                                <th><B>Fund Name</B></th>
+                                <th><B>Fund ID</B></th>
                                 <th><B>Fund Name</B></th>
                                 <th><B>Date</B></th>
                                 <th><B>View</B></th>
@@ -66,11 +30,11 @@
                         <tbody>
 
                             <tr>
-                                <td><input type="hidden" name="fundId" style="margin-left:30%;"><?php echo $fund['fundId']?></input>
+                                <td><input type="hidden" name="fundid" style="margin-left:30%;" value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
                                 </td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['name']?></B></td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
-                                <td><button class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></button>
+                                <td><a href="/fadts/divisional/funddetailModel?fundId=<?php echo $fund['fundId'] ?>" class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
                                 </td>
                             </tr>
 

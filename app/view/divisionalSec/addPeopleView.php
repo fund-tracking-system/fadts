@@ -1,141 +1,196 @@
 <?php include VIEW.'includes/header.php' ?>
+
 <?php include VIEW.'includes/sidebar.php' ?>
+
 
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-
-
-
-        <form method="post" action="" id="form">
+        <form method="post" id="formAddPeople" action="/fadts/divisional/addPeopleModel">
             <fieldset class="BackgroundFS">
                 <h2> ADD PEOPLE DATA </h2>
-                <div class="form-row">
-                    <label for="Name" class="inputLable"><b>Name:</b></label>
-                    <input class="form-control Input" id="Name" aria-describedby="validationServer03Feedback"
-                        placeholder="Name In Full" required></input>
-                </div>
+                <fieldset class="searchBar">
+
+                    <?php
+                if(isset($_GET['error'])){
+
+                    $error = $_GET['error'];
+                    if($error=="person_exist"){
+                        echo '<div class="alert alert-danger" role="alert">This person has been already added to the system! </div>';
+                    }
+
+                }
+                ?>
 
 
-                <div class="form-row">
-                    <label for="nid" class="inputLable"><b>NID:</b></label>
-                    <input class="form-control Input" id='nid' required></input>
-                </div>
+                    <div class="form-row">
+                        <label for="Name" class="inputLable"><b>Name :</b></label>
+                        <input class="form-control Input" id="name" name="name" placeholder="Name in full"></input>
 
-                <div class="form-row">
-                    <label for="name " class="inputLable"><b>Adrress:</b></label>
-                    <input class="form-control Input" id="name" aria-describedby="validationServer03Feedback"
-                        required></input>
-                </div>
-
-                <div>
-                    <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
-                    <input class="form-control InputOne" id='birthDate' name="birthDate" value="YYYY/MM/DD"></input>
-                    <small> </small>
-                    <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
-                            No:</b></label>
-                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="birthCertificateNo"></input>
-                </div>
-
-
-                <div class="form-row">
-                    <label for="exampleFormControlInput1" class="inputLable"><b>Email
-                        </b></label>
-                    <input type="email" class="form-control Input" id="exampleFormControlInput1" required
-                        placeholder="name@example.com">
-                </div>
-
-                <div class="form-row">
-                    <label for="region" class="inputLable"><b>Region:</b></label>
-                    <select class="form-control Input" name="region">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                    </select>
-                </div>
-
-
-                <div class='form-row'>
-                    <label class="inputLable"><b>Job type </br></label>
-                    <label class="inputLable"></b></label>
-
-                    <select class="form-control Input" onclick="showCheckboxes() ">
-                        <!-- <option>Select an option</option>  select krapua pennanna hadann ooona-->
-                    </select>
-                    <!-- <div class="overSelect"></div> -->
-
-                    <div id="checkboxes" class="checksbox" name="checkbox">
-
-                        <label for="one" class="form-control">
-                            <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
-                        <label for="two" class="form-control">
-                            <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
-                        <label for="three" class="form-control">
-                            <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
-                        <label for="four" class="form-control">
-                            <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own
-                            Bussiness</label>
-                        <label for="four" class="form-control">
-                            <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self
-                            Employee</label>
-                        <label for="four" class="form-control">
-                            <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
                     </div>
-                </div>
 
 
 
-                <div class="form-row">
-                    <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
-                    <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
-                        <option value="unmarried">Unmarried</option>
-                        <option value="married">Married</option>
-                    </select>
-                </div>
+                    <div class="form-row">
+                        <label for="nid" class="inputLable"><b>NIC :</b></label>
+                        <input class="form-control Input" id='nid' name="nid"></input>
+                    </div>
 
 
-                <div>
-                    <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
-                    <input class="form-control InputOne" id='phone-number-1' name="phoneNumber1" required></input>
-
-                    <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
-                    <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" required></input>
-                </div>
+                    <!-- 
+                    <div class="form-row">
+                        <label for="nid" class="inputLable"><b>Family Head :</b></label>
+                        <input class="form-control Input" id='headOfFamily' name="headOfFamily"></input>
+                    </div> -->
 
 
 
-                <div class="form-row">
-                    <label for="nid" class="inputLable"><b>Trustee:</b></label>
-                    <input class="form-control Input" id='nid' class="form-control Input" required></input>
-                </div>
 
-                <div class="Twobtn">
+                    <div class="form-row">
+                        <label for="name " class="inputLable"><b>Adrress :</b></label>
+                        <input class="form-control Input" id="address" name="address"></input>
+                    </div>
 
-                    <button type="submit" class=' btn btn-primary '>Confirm</button>
-                    <button class=' btn btn-primary '>View List</button>
-                </div>
+
+
+                    <div class="form-row">
+                        <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
+                        <input class="form-control Input" id='b_date' name="b_date" type="date"></input>
+                        <small> </small>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="birthNO" class="inputLable"><b>Birth Certificate
+                                No :</b></label>
+                        <input class="form-control Input" id='b_certifi' name="b_certifi"></input>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="jobtype" class="inputLable"><b>Job Type :</b></label>
+                        <select class="form-control Input" name="jobType" id="jobType">
+                            <option value="" disabled selected>Select job type</option>
+                            <option value="Goverment">Goverment</option>
+                            <option value="Private">Private</option>
+                            <option value="Retired">Retired</option>
+                            <option value="SelfEmployee">SelfEmployee</option>
+                            <option value="Jobless">Jobless</option>
+
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
+                        <select class="form-control Input" id="civilStatus" name="civilStatus">
+                            <option value="" disabled selected>Select civil status</option>
+                            <option value="1">Unmarried</option>
+                            <option value="0">Married</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="tnid" class="inputLable"><b>Trustee :</b></label>
+                        <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
+                    </div>
+
+
+                    <!-- for region -->
+
+                    <div class="form-row" style="margin-bottom:50px;">
+                        <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
+
+                        <?php
+
+                  require 'connection.php'; 
+                  
+
+                  $region = $_SESSION['region'];
+                                 
+                  $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
+                  $rgnRes = $con->query($rgn) ;
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
+                  
+                  $_SESSION['region_result']=$res
+                  
+                  ?>
+
+
+                        <select id='region' class='form-control Input' name='region' id='region'
+                            style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
+                            <option value="" disabled selected>Select region</option>
+                            <?php 
+                             foreach($res as $data){
+                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
+                              }
+                                ?>
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- for  family head -->
+
+                    <div class="form-row" style="margin-bottom:50px;">
+                        <label for="tnid" class="inputLable" style="margin-right:140px;"><b>Family Head :</b></label>
+
+                        <?php
+
+                                require 'connection.php'; 
+
+                                $region = $_SESSION['region'];
+                                                
+                                $rgns = "SELECT nid FROM person ";
+                                $rgnRess = $con->query($rgns) ;
+                                $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);
+                                
+                                
+                                
+                        ?>
+
+
+
+                        <select class='form-control Input' name='headOfFamily' id='headOfFamily'
+                            style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
+                            <option value="" disabled selected>Family Head :</< /option>
+                                <?php 
+                                         foreach($ress as $data){
+                                            echo '<option value="'.$data['nid'].'">'.$data['nid'].'</option>';
+                                         }
+                                     ?>
+                        </select>
+
+                    </div>
+
+                   
+                    <div class="form-row">
+                        <label class="inputLable" for="phone-number"><b>Contact Number 1 :</b></label>
+                        <input class="form-control Input" id='phonenumber1' name="phoneNumber1" type="number"></input>
+                    </div>
+                    <div class="form-row">
+
+                        <label class="inputLable" for="phone-number"><b>Contact Number 2 :</b></label>
+                        <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
+                    </div>
+
+                    <button type="submit" class=' btn btn-primary  signlebtn'>Submit</button>
+                </fieldset>
             </fieldset>
 
         </form>
-
-
-
     </div>
-    </div>
-    <script type="text/javascript">
-    var expanded = false;
+</div>
 
-    function showCheckboxes() {
-        var checkboxes = document.getElementById("checkboxes");
-        if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-        } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-        }
-    }
-    </script>
+<script>
+$(document).ready(function() {
+    $('#headOfFamily').select2();
+});
+</script>
 
-    <?php include VIEW.'includes/footer.php' ?>
+<script>
+$(document).ready(function() {
+    $('#region').select2();
+});
+</script>
+
+
+<?php include VIEW.'includes/footer.php' ?>

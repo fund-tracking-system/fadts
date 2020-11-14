@@ -3,68 +3,99 @@
 
 
 <div class="all_bacground_clor">
-    <div class="SearchByCriteriaform1">
 
+   <div class="SearchByCriteriaform1">
 
+      <form method="post" name="nicSearch" action="/fadts/divisional/nicSearchModel?view=fundRelease" id="fundReleaseSearch">
 
-        <form method="post" action="" id="form">
-            <fieldset class="BackgroundFS">
-                <h2>ALTERNATIVE FUND RELEASE</h2>
-                <fieldset class="searchBar">
-                    <div class="form-row ">
-                        <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
-                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
-                            name="NID"></input>
-                        <button type="submit" class="btn btn-primary btnNav">Search</button>
-                    </div>
-                </fieldset>
+         <fieldset class="BackgroundFS">
+
+            <h2>ALTERNATE FUND RELEASE</h2>
+
+            <fieldset class="searchBar">
+            <?php 
+               if(isset($_GET['searcherror'])){
+         
+                  $error = $_GET['searcherror'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "wrong_region"){
+                     echo '<div class="alert alert-danger" role="alert">You can\'t view other regions data!</div>';
+                  }
+                  if($error == "wrong_nid_or_dead"){
+                     echo '<div class="alert alert-danger" role="alert">This NIC is wrong or this person does not exist!</div>';
+                  }
+                  if($error == "no_records"){
+                     echo '<div class="alert alert-danger" role="alert">No records found!</div>';
+                  }        
+               }   
+            ?> 
+               <div class="form-row ">
+
+                  <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
+
+                  <input class="form-control searchInput" id="nic" placeholder="Type NIC here"
+                     name="nic"></input>
+
+                  <button style="position:center" type="submit" name="submit" class="btn btn-primary btnNav">Search</button>
+
+               </div>
             </fieldset>
-        </form>
 
+         </fieldset>
 
+      </form>
 
-        <form>
-            <fieldset class=" BackgroundFS">
-                <div class="tbleMargin">
+      <form>
+         <fieldset class="BackgroundFS">
+            
+            <div class="tbleMargin">
+               
+               <?php if(isset($_SESSION['results'])){ ?>
+               
+               <h3>Search results :</h3></br></br>
 
-                    <table>
+               <table id="resultTable" class="display nowrap">
+                  <thead>
+                  <tr>
+                     <th><B>Fund Name</B></th>
+                     <th><B>Amount</B></th>
+                     <th><B>Action</B></th>
+                  </tr>
+                  </thead>
 
-                        <tr>
-                            <th><B>Fund Name</B></th>
-                            <th><B>Amount</B></th>
-                            <th><B>Release</B></th>
-                        </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Disabled </td>
-                            <td><button type="submit" class="btn btn-primary">Release</button></td>
-                        </tr>
-                        <tr>
-                            <td>Centro comercial Moctezuma</td>
-                            <td>covid 500</td>
-                            <td><button type="submit" class="btn btn-primary">Release</button></td>
-                        </tr>
-                        <tr>
-                            <td>Ernst Handel</td>
-                            <td> phora sahanadara</td>
-                            <td><button type="submit" class="btn btn-primary">Release</button></td>
-                        </tr>
-                        <tr>
-                            <td>Island Trading</td>
-                            <td>govi Vishrama wetup</td>
-                            <td><button type="submit" class="btn btn-primary">Release</button></td>
-                        </tr>
+                  <?php foreach($_SESSION['results'] as $fund){
+                     $entryId = $fund[0];
+                  ?>   
 
-                        </tr>
-                    </table>
-            </fieldset>
-    </div>
-    </form>
+                  <tbody>
+                  <tr> 
+                     <td><?php echo $fund[1] ?></td>
+                     <td><?php echo $fund[2] ?></td>
+                     <td><a class="btn btn-primary" href="/fadts/divisional/fundReleaseModel?entryId=<?php echo $entryId ?>" ><B>Release</B></a></td>
+                  </tr>
+                  </tbody>
 
-
-
+                  <?php } 
+                        unset($_SESSION['results']);
+                  ?>
+               
+               </table>
+               
+               <?php } ?>
+         
+           
+         </fieldset>
+   </div>
+   </form>
+</div>
 </div>
 
+<script>
+$(document).ready(function() {
+   $("#resultTable").DataTable();
+});
+</script>
 
-</div>
 <?php include VIEW.'includes/footer.php' ?>
