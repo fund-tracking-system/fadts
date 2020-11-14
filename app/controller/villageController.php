@@ -19,8 +19,8 @@ class villageController extends Controller{
       $this->model->load();
    }
  
-   public function ViewSearchPeople(){
-      $this->view('villageOfficer/SearchPeopleDataView');
+   public function searchPeople(){
+      $this->view('villageOfficer/searchPeopleView');
       
       $this->view->render(); // This is how load the view
    }
@@ -30,8 +30,8 @@ class villageController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-   public function ViewGetFundEligible(){
-      $this->view('villageOfficer/getFundEligibleView');
+   public function fundRelease(){
+      $this->view('villageOfficer/fundReleaseView');
       
       $this->view->render(); // This is how load the view
    }
@@ -40,8 +40,8 @@ class villageController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-   public function ViewViewFund(){
-      $this->view('villageOfficer/ViewFundView');
+   public function fundDetails(){
+      $this->view('villageOfficer/fundDetailsView');
       
       $this->view->render(); // This is how load the view
    }

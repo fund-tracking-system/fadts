@@ -7,14 +7,15 @@
 
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="form">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
                <div class="form-row ">
-                  <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
-                  <input class="form-control searchInput" id="NID-number" name="NID"></input>
-                  <button type="submit" class="btn btn-primary btnNav">Search</button>
+                  <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
+                  <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
+                     name="NID"></input>
+                  <button type="submit" class="btn btn-primary btnNav ">Search</button>
                </div>
             </fieldset>
          </fieldset>
@@ -24,46 +25,8 @@
       <form method="post" id="form">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
-            <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">    
 
-            <div>
-               <label class="inputLable"><b>Age:</b></label>
-               <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
-                     to</b></span>
-               <input class="form-control InputTwo" name="age2"></input>
-            </div>
-
-            <div class='form-row'>
-               <label class="inputLable " style=><b>Job Type</br></label>
-               <label class="inputLable" style ="padding-right:1000px;"></b></label>
-
-               <select class="form-control Input" onclick="showCheckboxes() ">
-                  <!-- <option>Select an option</option> select kree mnwada kyla pennanna onna methana -->
-               </select>
-               <!-- <div class="overSelect"></div> - -->
-
-               <div id="checkboxes" class="checksbox" name="checkbox">
-
-                  <label for="one" class="form-control">
-                     <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
-                  <label for="two" class="form-control">
-                     <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
-                  <label for="three" class="form-control">
-                     <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
-                  <label for="four" class="form-control">
-                     <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own
-                     Bussiness</label>
-                  <label for="four" class="form-control">
-                     <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self Employee</label>
-                  <label for="four" class="form-control">
-                     <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
-               </div>
-            </div>
-
-
-
-
-            <fieldset class="searchBar">
+            <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
                <div>
                   <label class="inputLable"><b>Age:</b></label>
                   <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
@@ -72,8 +35,9 @@
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="job type"><b>Income Type :</b></label>
-                  <select class="js-example-responsive" multiple="multiple" style="position:sticky;top:60px;overflow:scroll;  width:550px;" id="job" name="job">
+                  <label class="inputLable" for="job type" style="margin-right:12.5%;"><b>Income Type :</b></label>
+                  <select class="js-example-responsive" multiple="multiple"
+                     style="position:sticky;top:60px;overflow:scroll; padding-right:510px;  " id="job" name="job">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
                      <option value="retired">Retired</option>
@@ -86,7 +50,7 @@
                <div style="  padding-top: 30px; ">
                   <label class="inputLable"><b>Prolonged</br>
                   </label>
-                  <label class="inputLable">
+                  <label class="inputLable" style="margin-right:3.5%;">
                      Disorders/Diseases:</b></label>
 
                   <div class='radio1'>
@@ -99,10 +63,10 @@
                   </div>
                </div>
                <div style="  padding-top: 30px; ">
-                  <label class="inputLable"><b></br>
-                  </label>
-                  <label class="inputLable">
-                  Civil Status :</b></label>
+                  </br>
+
+                  <label class="inputLable" style="margin-right:9%;"><b>
+                        Civil Status :</b></label>
 
                   <div class='radio1'>
                      <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
@@ -125,8 +89,10 @@
 
 
                <div class='form-row'>
-                  <label class="inputLable"><b>Current Funds :</br></label>
-                  <select class="js-example-responsive" multiple="multiple" style='position:sticky;top:60px;overflow:scroll;  width:550px;' id="funds" name="funds">
+                  <label class="inputLable" style="margin-right:10%;"><b>Current Funds :</br>
+                  </label>
+                  <select class="js-example-responsive" multiple="multiple"
+                     style='position:sticky;top:60px;overflow:scroll; padding-right:500px;' id="funds" name="funds">
                      <option value="government">Samurdhi</option>
                      <option value="private">Samurdhi Eligible List</option>
                      <option value="retired">Adults Fund</option>
@@ -136,7 +102,7 @@
                </div>
 
 
-               <div class='button '>
+               <div class='button ' style="margin-top:30px;">
 
                   <button type="submit" class=' btn btn-primary signlebtn'>Search
                      Here</button>
@@ -150,19 +116,12 @@
 
 
 
-<!-- checkBox scriptFiles  -->
-
-
-
-
 <script>
 $(document).ready(function() {
    $('#job').select2();
    $('#funds').select2();
 });
 </script>
-
-
 
 
 <?php include VIEW.'includes/footer.php' ?>

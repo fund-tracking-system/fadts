@@ -9,7 +9,7 @@
             <fieldset class="BackgroundFS">
                 <h2>SELECT FUND </h2>
 
-
+            <fieldset class="tableBar">
                 <div class="tbleMargin">
 
 
@@ -62,7 +62,7 @@
 
                     </table>
                  <div>
-
+                 </fieldset>                
             </fieldset>
         </form>
 
@@ -79,9 +79,4 @@ $(document).ready(function() {
 });
 </script>
 
-<script>
-$(document).ready(function() {
-    $('#region').select2();
-});
-</script>
 <?php include VIEW.'includes/footer.php'?>
