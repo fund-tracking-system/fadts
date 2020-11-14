@@ -68,9 +68,6 @@ switch($controller){
                      '#b30000',
                      '#f1c40f'
                   ],
-                  borderColor: [
-                     
-                  ],
                   borderWidth: 1
             }]
          },
@@ -110,7 +107,7 @@ switch($controller){
             }]
          },
          options: {
-            rotation:Math.PI*0.5,
+            rotation:Math.PI*-10.5,
             animation:{
                animatescale:true
             },
@@ -199,11 +196,13 @@ window.onload = calendar;
 <div class="divisionDashboard">
    <div class="grid_box">
       <div class="box-1">
+      <div class="nav_link"><B>GROSS INCOME</B></div>
+
          <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
-         
-        
+      <!-- <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div> -->
+         <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
          <div id="calendardate">
@@ -214,13 +213,11 @@ window.onload = calendar;
       </div>
       <div class="box-4">
          <div>
-            <canvas id="Chart"></canvas>
+            <canvas id="Chart3"></canvas>
          </div>
       </div>
    </div>
 </div>
-
-
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <!-- ChartJS -->
@@ -232,33 +229,91 @@ window.onload = calendar;
       })
    });
 
+
+   $(function () {
+      var ctx = document.getElementById('Chart2').getContext('2d');
+      var chart = new Chart(ctx, {
+         type: 'pie',
+         data: {
+            labels: ['Goverment', 'Private', 'Retired','unemployee','SelfEmployee'],
+            datasets: [{
+                  label: '# fund release',
+                  data: [100,200,50,30,20],
+                  backgroundColor: [
+                     '#16a085',
+                     ' #668cff',
+                     '#2980b9',
+                     '#b30000',
+                     '#f1c40f'
+                  ],
+                  borderWidth: 1
+            }]
+         },
+         options: {
+            rotation:Math.PI*0.5,
+            animation:{
+               animatescale:true
+            },
+            
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
+
+   $(function () {
+      var ctx = document.getElementById('Chart1').getContext('2d');
+      var chart = new Chart(ctx, {
+         type: 'doughnut',
+         data: {
+            labels: ['Law Income', 'Middle Income','High Income',],
+            datasets: [{
+                  label: '# fund release',
+                  data: [20,5,25],
+                  backgroundColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9'
+                  ],
+                  borderColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9'
+                  ],
+                  borderWidth: 1
+            }]
+         },
+         options: {
+            rotation:Math.PI*-10.5,
+            animation:{
+               animatescale:true
+            },
+            
+         }
+      }); 
+      chart.canvas.parentNode.style.height = '100%';
+
+  });
+
+
+  
   $(function () {
       // ChartJS
       var ctx = document.getElementById('Chart3').getContext('2d');
+      console.log(Chart.defaults.scale.ticks);
+      Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
          type: 'line', // The type of chart we want to create
          data: {
-            labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
+            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: '# fund release',
-                  data: [12, 19, 3, 5, 2, 3],
-                  backgroundColor: [
-                     'rgba(255, 99, 132, 0.2)',
-                     'rgba(54, 162, 235, 0.2)',
-                     'rgba(255, 206, 86, 0.2)',
-                     'rgba(75, 192, 192, 0.2)',
-                     'rgba(153, 102, 255, 0.2)',
-                     'rgba(255, 159, 64, 0.2)'
-                  ],
-                  borderColor: [
-                     'rgba(255, 99, 132, 1)',
-                     'rgba(54, 162, 235, 1)',
-                     'rgba(255, 206, 86, 1)',
-                     'rgba(75, 192, 192, 1)',
-                     'rgba(153, 102, 255, 1)',
-                     'rgba(255, 159, 64, 1)'
-                  ],
-                  borderWidth: 1
+                  label: 'Victims per Year',
+                  data: [100,200,400,300,250,140,370,200,300,200],
+                  // backgroundColor:'#4cd84c',
+                  hoverBackgroundColor:'#00FF00',
+                  borderColor:'#00FF00',
+                  borderWidth: 2
             }]
          },
          options: {
@@ -278,7 +333,10 @@ window.onload = calendar;
   });
 
 
-   function calendar(){
+  
+
+
+function calendar(){
    var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
    var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
    var d=new Date();
@@ -287,7 +345,7 @@ window.onload = calendar;
    // setText('calendar_day', day[d.getDay()]);
    setText('calendar_date', d.getDate());
    setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
-   };
+};
 
 //this function will set the text value of tags
 function setText(id, val){
@@ -295,11 +353,18 @@ function setText(id, val){
         val = '0' + val;    //add leading 0 if val < 10
     }
     document.getElementById(id).innerHTML = val;
-   };
+};
 
 //call calendar() when page load
 window.onload = calendar;
+
+
 </script>
+
+
+
+
+
 
 <?php
 

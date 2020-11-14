@@ -100,7 +100,8 @@
 
                         <?php
 
-                  require 'connection.php';
+                  require 'connection.php'; 
+                  
 
                   $region = $_SESSION['region'];
                                  
@@ -124,6 +125,7 @@
                         </select>
 
                     </div>
+
 
 
                     <!-- for  family head -->

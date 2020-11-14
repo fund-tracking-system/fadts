@@ -66,7 +66,7 @@
  
     }
 
-    /*
+
     if($duplicate==1){
  
         //redirecting the view again 
@@ -88,8 +88,7 @@
 
         exit(); 
     }
-    */
-    
-    print("Model check!");
+
+ 
 
 ?>
