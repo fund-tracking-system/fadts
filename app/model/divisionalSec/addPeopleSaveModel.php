@@ -13,8 +13,12 @@
     $stmt->bind_param('sssssssssssss',$name,$nid,$address,$headOfFamily,$monthlyIncome,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,      $civilStatus,$trustee,$jobType,$region);
 
 
+    $noti='INSERT INTO notification (type,nid)VALUES(?,?)';
+    $stmtNoti=$con->prepare($noti);
+    $stmtNoti->bind_param('ss',$type,$nid);
+    
 
-
+    $type=1;
     $name=$_SESSION['people_name'];
     $nid=$_SESSION['people_nid'];
     $headOfFamily=$_SESSION['people_headOfFamily'];
@@ -30,6 +34,12 @@
     $region=$_SESSION['people_region'];
     echo $region;
 
+  
+
+
+    $stmtNoti->execute();
+    $stmtNoti->close();
+
 
     $stmt->execute();
     $stmt->close();
@@ -39,7 +49,7 @@
 
 
       //redirecting to view
-    header("Location:/fadts/divisional/ViewAddPeople"); 
+    //header("Location:/fadts/divisional/ViewAddPeople"); 
 
 
 
