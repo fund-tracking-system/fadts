@@ -45,6 +45,12 @@ class villageController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+   public function setUpdateModel(){
+      $this->model('villageOfficer/setUpdateModel');
+
+      $this->model->load();
+   }
+ 
    
    
   

@@ -129,6 +129,15 @@ switch($controller){
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
+
+
+
+   <a href="/fadts/includes/notificationView" class="dashboard sidebar_link">
+      <span class="material-icons">menu_book</span>Notification View
+   </a> 
+
+
+
    <a href="/fadts/village/updatePeople" class="dashboard sidebar_link">
       <span class="material-icons">person</span>Update People Data
    </a>
