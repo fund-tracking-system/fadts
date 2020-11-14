@@ -99,16 +99,15 @@
         <nav>
             <img class="logo" src="/fadts/app/view/includes/logo.PNG" alt="logo_icon">
             <ul>
-                <li><a href="/fadts/includes/index" class="nav_link"><span class="material-icons">home</span><B>Home</B></a></li>
+                <li><a href="/fadts/includes/index" class="nav_link"><B>Home</B></a></li>
 
-                <li><a href="/fadts/calender/ViewCalender" class="nav_link"><span class="material-icons"></span><B>Calender</B></a></li>
+                <li><a href="/fadts/calender/ViewCalender" class="nav_link"><B>Calender</B></a></li>
                
    
 
-                <li><a href="/fadts/includes/userProfile" class="nav_link"><span class="material-icons">account_circle</span><B>Profile</B></a></li>
+                <li><a href="/fadts/includes/userProfile" class="nav_link"><B>Profile</B></a></li>
 
-                <li><a class="log_button" href="/fadts/home/index" class="nav_link"><span class="material-icons">exit_to_app</span>
-                        <B>LOGOUT</B></a>
+                <li><a class="log_button" href="/fadts/home/index" class="nav_link"><B>LOGOUT</B></a>
                 </li>
             </ul>
         </nav>

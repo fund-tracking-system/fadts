@@ -148,7 +148,7 @@
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="job type"><b>Job Type :</b></label>
+                  <label class="inputLable" for="job type"><b>Income Type :</b></label>
                   <select class="form-control Input" id="job" name="job">
                      <option value="<?php echo isset($result) ? $result['job']:"" ?>" selected hidden>
                         <?php echo isset($result) ? $result['job']:"" ?></option>
