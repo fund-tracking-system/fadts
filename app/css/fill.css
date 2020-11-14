@@ -361,7 +361,9 @@ margin-top:10px;
   bottom: 0;
 }
 
-
+span{
+  color: #8F8E91;
+}
 label{
   color: #8F8E91;
   text-align:left;

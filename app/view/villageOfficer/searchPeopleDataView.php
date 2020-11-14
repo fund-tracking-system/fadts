@@ -49,7 +49,7 @@
                     <div style="  padding-top: 30px; ">
                         <label class="inputLable"><b>Prolonged</br>
                         </label>
-                        <label class="inputLable"  style="margin-rigt:10%;">>
+                        <label class="inputLable"  style="margin-right:3.5%;">
                             Disorders/Diseases:</b></label>
 
                         <div class='radio1'>
@@ -62,10 +62,10 @@
                         </div>
                     </div>
                     <div style="  padding-top: 30px; ">
-                        <label class="inputLable"><b>Civil Status :</br>
-                        </label>
-                        <label class="inputLable"  style="margin-rigt:110%;">>
-                            Disorders/Diseases:</b></label>
+                        </br>
+                        
+                        <label class="inputLable"  style="margin-right:9%;"><b>
+                        Civil Status :</b></label>
 
                         <div class='radio1'>
                             <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
