@@ -1,7 +1,12 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<?php if(isset($_SESSION['updateResults'])) $result = $_SESSION['updateResults']; ?>
+<?php 
+   if(isset($_SESSION['updateResults'])){
+      $result = $_SESSION['updateResults'];
+      $personRegion = $_SESSION['personRegion'];
+   } 
+?>
 
 
 <div class="all_bacground_clor">
@@ -126,7 +131,7 @@
                      style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
 
                      <option value="<?php echo isset($result) ? $result['region']:"" ?>" selected hidden>
-                        <?php echo isset($_SESSION['personRegion']) ? $_SESSION['personRegion']['name']:"" ?>
+                        <?php echo isset($personRegion) ? $personRegion['name']:"" ?>
                      </option>
 
                      <?php 
