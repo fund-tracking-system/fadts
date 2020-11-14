@@ -19,5 +19,30 @@ class includesController extends Controller{
       $this->model->load(); 
    }   
 
+
+   public function notificationView(){                  
+      $this->view('includes/notificationView');
+      
+      $this->view->render(); 
+   }
+
+   public function notificationViewModel(){                     
+      $this->model('includes/notificationViewModel');
+      
+      $this->model->load(); 
+   }   
+
+   
+   public function notificationTypeOneView(){                  
+      $this->view('includes/notificationTypeOneView');
+      
+      $this->view->render(); 
+   }
+   public function updatePeople(){                     
+      $this->view('includes/updatePeople');
+      
+      $this->view->render();
+   }   
+
   
 }

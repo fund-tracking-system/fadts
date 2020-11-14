@@ -130,42 +130,24 @@
 
                     <!-- for  family head -->
 
-                    <div class="form-row" style="margin-bottom:50px;">
-                        <label for="tnid" class="inputLable" style="margin-right:140px;"><b>Family Head :</b></label>
-
-                        <?php
-
-                                require 'connection.php'; 
-
-                                $region = $_SESSION['region'];
-                                                
-                                $rgns = "SELECT nid FROM person ";
-                                $rgnRess = $con->query($rgns) ;
-                                $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);
-                                
-                                
-                                
-                        ?>
-
-
-
-                        <select class='form-control Input' name='headOfFamily' id='headOfFamily'
-                            style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
-                            <option value="" disabled selected>Family Head :</< /option>
-                                <?php 
-                                         foreach($ress as $data){
-                                            echo '<option value="'.$data['nid'].'">'.$data['nid'].'</option>';
-                                         }
-                                     ?>
-                        </select>
-
+                    <!--  -->
+                    
+                    <div class="form-row">
+                        <label class="inputLable" for="headOfFamily"><b>Family Head :</b></label>
+                        <input class="form-control Input" id='headOfFamily' name="headOfFamily"></input>
                     </div>
-
-                   
+                                     
                     <div class="form-row">
                         <label class="inputLable" for="phone-number"><b>Contact Number 1 :</b></label>
                         <input class="form-control Input" id='phonenumber1' name="phoneNumber1" type="number"></input>
                     </div>
+
+                    <div class="form-row">
+                        <label class="inputLable" for="monthlyIncome"><b>Monthly Gross Income :</b></label>
+                        <input class="form-control Input" id='monthlyIncome' name="monthlyIncome" type="number"></input>
+                    </div>
+                    
+
                     <div class="form-row">
 
                         <label class="inputLable" for="phone-number"><b>Contact Number 2 :</b></label>
@@ -180,11 +162,6 @@
     </div>
 </div>
 
-<script>
-$(document).ready(function() {
-    $('#headOfFamily').select2();
-});
-</script>
 
 <script>
 $(document).ready(function() {

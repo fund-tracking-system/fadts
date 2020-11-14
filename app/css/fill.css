@@ -122,7 +122,7 @@ body{
 }
 
 .btn.btn-primary.btnNav{
-  margin-left: 72%; 
+  margin-left: 75%; 
   margin-top:-55px; 
   width:13%; 
   height: 45px;
@@ -361,7 +361,9 @@ margin-top:10px;
   bottom: 0;
 }
 
-
+span{
+  color: #8F8E91;
+}
 label{
   color: #8F8E91;
   text-align:left;
@@ -1062,6 +1064,7 @@ visibility: hidden;
   margin-right: auto;
   padding-right: 15px;
   padding-left: 15px;
+  /* background-color: #020a13; */
 }
 
 @media (min-width: 576px) {

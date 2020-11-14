@@ -30,11 +30,13 @@
                         <tbody>
 
                             <tr>
-                                <td><input type="hidden" name="fundid" style="margin-left:30%;" value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
+                                <td><input type="hidden" name="fundid" style="margin-left:30%;"
+                                        value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
                                 </td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['name']?></B></td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
-                                <td><a href="/fadts/divisional/funddetailModel?fundId=<?php echo $fund['fundId'] ?>" class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                <td><a href="/fadts/divisional/funddetailModel?fundId=<?php echo $fund['fundId'] ?>"
+                                        class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
                                 </td>
                             </tr>
 
@@ -59,7 +61,7 @@
 
 
                     </table>
-                    <div>
+                 <div>
 
             </fieldset>
         </form>

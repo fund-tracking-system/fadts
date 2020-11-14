@@ -24,6 +24,44 @@
       <form method="post" id="form">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
+            <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">    
+
+            <div>
+               <label class="inputLable"><b>Age:</b></label>
+               <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
+                     to</b></span>
+               <input class="form-control InputTwo" name="age2"></input>
+            </div>
+
+            <div class='form-row'>
+               <label class="inputLable " style=><b>Job Type</br></label>
+               <label class="inputLable" style ="padding-right:1000px;"></b></label>
+
+               <select class="form-control Input" onclick="showCheckboxes() ">
+                  <!-- <option>Select an option</option> select kree mnwada kyla pennanna onna methana -->
+               </select>
+               <!-- <div class="overSelect"></div> - -->
+
+               <div id="checkboxes" class="checksbox" name="checkbox">
+
+                  <label for="one" class="form-control">
+                     <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
+                  <label for="two" class="form-control">
+                     <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
+                  <label for="three" class="form-control">
+                     <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
+                  <label for="four" class="form-control">
+                     <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own
+                     Bussiness</label>
+                  <label for="four" class="form-control">
+                     <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self Employee</label>
+                  <label for="four" class="form-control">
+                     <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
+               </div>
+            </div>
+
+
+
 
             <fieldset class="searchBar">
                <div>
