@@ -1064,6 +1064,7 @@ visibility: hidden;
   margin-right: auto;
   padding-right: 15px;
   padding-left: 15px;
+  /* background-color: #020a13; */
 }
 
 @media (min-width: 576px) {
