@@ -1021,7 +1021,7 @@ visibility: hidden;
 
 .box-2{
   margin: 5px;
-  background:#218BDB;
+  background: #e6e7eb;
   grid-row: 1/2;
   grid-column: 2/3;
   
@@ -1036,7 +1036,7 @@ visibility: hidden;
 
 .box-4{
   margin: 5px;
-  background: #e6ebe6;
+  background: #e6e7eb;
   grid-row: 2/3;
   grid-column: 1/4;
 }
