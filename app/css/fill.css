@@ -1,12 +1,13 @@
 body{
 	margin: 0;
 	padding: 0;
-	/*background-color:#F7F7FC;*/
+	background-color:#e6eded;
 	background-size:cover;
 	background-position: center;
   font-family: 'Montserrat', sans-serif; 
- 
 }
+
+
 .To{
   margin-right:170px;
 }
@@ -20,31 +21,29 @@ body{
   margin-bottom:30px;
 }
 .signlebtn{
-  float: right;
-  margin-top: 0px; 
-  padding-left:20px;
-  padding-right:20px;
-  padding-top:10px; 
-  padding-bottom:10px; 
-  margin-right:230px;
+  float: right; 
+  margin-right:150px;
+  margin-bottom: 30px;
+  height:40px;  
 }
 .searchBar{
   padding-top:15px;
   margin-right:50px; 
-  margin-left:50px;
-  border-radius:10px; 
+  margin-left:50px; 
   padding:3%;
+  background-color:#fdfdff;
 }
 .searchBarLable{
-  margin-left:100px; 
+  margin-left:120px; 
   margin-top:10px;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom:-25px; 
 }
 .BackgroundFS{
-  background-color:#fffef4; 
+  background-color:#fafcfd; 
   border-bottom:10px; 
   padding-bottom:20px;
+  border:none;
 }
 .radioLbl2{
   margin-left:10px;
@@ -52,28 +51,13 @@ body{
 .form-control.searchInput{
 
   position: relative;
-  margin-left:50px; 
+  margin-left:125px; 
   margin-bottom:10px;
-  width: 400px;
+  width: 380px;
   height: 45px;
   border-radius: 5px;
   outline: none;border-width: 1.5px;
 
-
-/* 
-
-  position: relative;
-  margin-left:50px;
-   margin-bottom:10px;
-   padding-bottom: 30px;;
-   width: 400px;
-   height: 30px;
-   border-radius: 5px;
-   outline: none;
-   border-width: 1.5px; 
-   padding:20px;
-
- */
 
 }
 .form-control.InputTwo{
@@ -81,17 +65,19 @@ body{
   width:150px;
   margin-top:-30px; 
   margin-bottom:50px;
+  
 }
 .Twobtn{
-  margin-left:790px;
+  margin-left:500px;
 }
 .inputLable.LableTwo{
   margin-left:640px;
   margin-top:-80px;
 }
 .inputLable{
-  margin-left:190px;
-  margin-bottom:23px;
+  margin-left:100px;
+  margin-right: 30px;;
+  margin-bottom:10px;
 }
 .inputLableOne{
   margin-left:185px;
@@ -101,8 +87,18 @@ body{
 .form-control.Input{
   margin-left:350px;
   margin-bottom:50px;
-  margin-right:250px; 
+  margin-right:150px; 
   margin-top:-4%;
+
+  
+}
+.form-control.details{
+  margin-left:0px;
+  margin-bottom:50px;
+  margin-right:1px; 
+  margin-top:4%;
+  width:110px;
+
   
 }
 .btn.siz{
@@ -127,8 +123,9 @@ body{
 
 .btn.btn-primary.btnNav{
   margin-left: 72%; 
-  margin-top:-50px; 
+  margin-top:-55px; 
   width:13%; 
+  height: 45px;
   margin-bottom:20px;
 }
 .userpro{
@@ -304,6 +301,7 @@ margin-top:10px;
 }
 .tbleMargin{
   margin-left:50px; 
+  position: center;
   margin-right:50px;
   margin-bottom:50px;
   margin-top:30px;
@@ -330,22 +328,7 @@ margin-top:10px;
   margin-bottom:5%; 
   margin-top:5%;
 }
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 
 .radio1, .radio2 , .job-type {
   display: inline-block;
@@ -386,7 +369,7 @@ label{
 
  h2{
    text-align: center;
-   font-size: 28px;
+   font-size: 33px;
    padding-top: 2%;
    color: black;
    margin-bottom:50px;
@@ -505,7 +488,7 @@ fieldset:disabled a.btn {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
+  background-color: #fafcfd;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -626,8 +609,8 @@ visibility: hidden;
       flex-wrap: wrap;
   margin-right: -5px;
   margin-left: -5px;
-  margin-bottom: 10px;;
-  margin-top: 20px;;
+  margin-bottom: 5px;;
+  margin-top: 5px;;
 }
 
 .form-row > .col,
@@ -952,14 +935,16 @@ visibility: hidden;
  }
 /* new */
 .all_bacground_clor{
-  background-color:#ced4da;
+  background-color:#e6eded;
 }
 .SearchByCriteriaform1{
+  background-color:#ffffff;
   width: 80%;
-   margin-left:300px; 
-    margin-top:15px; 
-    overflow:auto;   
-    height:590px;  
+  margin-top:15px; 
+  overflow:auto;   
+  height:590px; 
+  margin-left:300px; 
+     
 }
 
 
@@ -988,4 +973,279 @@ visibility: hidden;
   top: 0;
   bottom: 0;
 }
+
+.divisionDashboard{
+  background-color:#ffffff;
+  width: 80%;
+  margin-top:15px;
+  overflow:auto;   
+  height:590px; 
+  margin-left:300px; 
+     
+}
+.calender{
+  background-color:#e6eded;
+  width: 80%;
+  margin-top:15px;
+  overflow:auto;   
+  height:580px; 
+  margin-left:300px; 
+     
+}
+
+
+.content{
+  background-color:#ffffff;
+  width: 80%;
+  height:79%; 
+  margin-top:15px; 
+  overflow:auto;   
+  margin-left:300px; 
+}
+
+.grid_box{
+  height: 100%;
+  display: grid;
+	grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color:#e6e7eb;
+}
+
+.box-1{
+  /*width: 100%;*/
+  margin: 5px;
+  background-color:#e6e7eb;
+  grid-row: 1/2;
+  grid-column: 1/2;
+}
+
+.box-2{
+  margin: 5px;
+  background: #e6e7eb;
+  grid-row: 1/2;
+  grid-column: 2/3;
+  
+}
+
+.box-3{
+  margin: 5px;
+  background: #dadada;
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
+.box-4{
+  margin: 5px;
+  background: #e6ebe6;
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+
+.box-1 img{
+
+  /* height:inherit; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55%;
+  
+
+}
+
+
+
+
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+    max-width: 100%;
+  }
+}
+
+.container-fluid {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 576px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-toggleable .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+  }
+  .navbar-toggleable > .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.navbar-toggleable-lg > .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+.navbar-toggleable > .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+
+  @media (max-width: 767px) {
+  .navbar-toggleable-sm .navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+  }
+  .navbar-toggleable-sm > .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+#calendardate{
+  width: 50%;
+  height: 100%;
+  background-color: rgba(11, 207, 109, 0.664);
+  color: #fff;
+  border-radius: 5%;
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);
+}
+
+#calendardate>p{
+  font-family: Verdana, Arial, sans-serif;
+  padding: 10px 0;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+
+#calendar_day{
+  font-size: 16px;
+}
+
+#calendar_month_year{
+  font-size: 14px;
+}
+
+#calendar_date{
+  font-size: 64px;
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
 

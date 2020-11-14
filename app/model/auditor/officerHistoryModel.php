@@ -1,4 +1,5 @@
 <?php 
+    /*
     //db credentials
     $host = 'localhost';
     $user = 'root';
@@ -12,10 +13,14 @@
     if ($conn->connect_error) {
     die("Database not connected: " . $conn->connect_error);
     }
+    */
+
+    //database connection file calling
+    require 'connectionOOP.php';   
     
     //prepare and bind
     $query = 'SELECT updateTime, officerId, nid, email, region, loginStatus, name, position FROM officerhistory WHERE nid = ?';
-    $stmt = $conn->prepare($query);
+    $stmt = $con->prepare($query);
     $stmt->bind_param("s", $nid);
 
     //if nid is set
@@ -28,7 +33,7 @@
     }
     else {
         $sql = "SELECT updateTime, officerId, nid, email, region, loginStatus, name, position FROM officerhistory";
-        $result = $conn->query($sql);
+        $result = $con->query($sql);
     }
     
     //fetch query results
@@ -40,7 +45,7 @@
 
     //close connection
     $stmt->close();
-    $conn->close();
+    $con->close();
     
     //redirecting to view
     header("Location:/fadts/audit/officerHistoryView"); 

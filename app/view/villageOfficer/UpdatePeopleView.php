@@ -1,152 +1,201 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
+<?php if(isset($_SESSION['updateResults'])) $result = $_SESSION['updateResults']; ?>
+
+
 <div class="all_bacground_clor">
-    <div class="SearchByCriteriaform1">
+   <div class="SearchByCriteriaform1">
 
 
+      <form method="post" action="/fadts/village/nicSearchModel?view=updatePeople" id="form">
+         <fieldset class="BackgroundFS">
+            <h2>UPDATE PEOPLE DATA</h2>
+            <fieldset class="searchBar">
 
-        <form method="post" action="" id="form">
-            <fieldset class="BackgroundFS">
-                <h2>Search By NID</h2>
-                <fieldset class="searchBar">
-                    <div class="form-row ">
-                        <label for="NID-number" class="searchBarLable"><b>NID Number:</b></label>
-                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v"
-                            name="NID"></input>
-                        <button type="submit" class="btn btn-primary btnNav">Search</button>
-                    </div>
-                </fieldset>
+            <?php 
+               if(isset($_GET['searcherror'])){
+         
+                  $error = $_GET['searcherror'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "wrong_region"){
+                     echo '<div class="alert alert-danger" role="alert">You can\'t view other regions data!</div>';
+                  }
+                  if($error == "wrong_nid_or_dead"){
+                     echo '<div class="alert alert-danger" role="alert">This NIC is wrong or this person does not exist!</div>';
+                  }
+                  if($error == "no_records"){
+                     echo '<div class="alert alert-danger" role="alert">No records found!</div>';
+                  }        
+               }   
+            ?>
+
+               <div class="form-row ">
+                  <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
+                  <input class="form-control searchInput" id='NID-number'
+                     placeholder="<?php echo isset($result) ? $result['nid']:"Type here NIC"?>" name="nic"></input>
+                  <button type="submit" class="btn btn-primary btnNav" name="submit">Search</button>
+               </div>
             </fieldset>
-        </form>  
+         </fieldset>
+      </form>
 
 
 
 
-        <form>
-            <fieldset class=" BackgroundFS">
-                <h2>UPDATE PEOPLE DATA</h2>
+      <form method="POST" action="/fadts/village/updatePeopleModel">
+         <fieldset class="BackgroundFS">
+
+            <fieldset class="searchBar">
+
+            <?php 
+               if(isset($_GET['error'])){
+         
+                  $error = $_GET['error'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "update_success"){
+                     echo '<div class="alert alert-success" role="alert">Updation is successful!</div>';
+                  }        
+               }   
+            ?>
 
 
+               <div class="form-row">
+                  <label for="name " class="inputLable"><b>Full Name :</b></label>
+                  <input class="form-control Input" id="name" name="name" readonly
+                     value="<?php echo isset($result) ? $result['name']:"" ?>"></input>
+               </div>
 
-            <div class="form-row">
-               <label for="name " class="inputLable"><b>Full Name:</b></label>
-               <input class="form-control Input" id="name" name="name" value="name display only" readonly></input>
-            </div>
+               <div class="form-row">
+                  <label for="address" class="inputLable"><b>Address :</b></label>
+                  <input class="form-control Input" id="address" name="address" 
+                     value="<?php echo isset($result) ? $result['address']:"" ?>"></input>
+               </div>
 
+               <div class="form-row">
+                  <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
+                  <input class="form-control Input" id='birthDate' name="birthDate"
+                     value="<?php echo isset($result) ? $result['birthDate']:"" ?>" readonly></input>
+               </div>
 
+               <div class="form-row" style="margin-bottom:50px;">
+                    <label for="tnid" class="inputLable" style="margin-right:140px;"><b>Family Head :</b></label>
 
-                <div class="form-row">
-                    <label for="Address" class="inputLable"><b>Address:</b></label>
-                    <input class="form-control Input" id="address" name="address"
-                        placeholder="Opatha,ganegoda,Elptye,Galle"></input>
-                </div>
-
-
-                <div>
-                    <label for="birth-date" class="inputLableOne"><b>Birth Date:</b></label>
-                    <input class="form-control InputOne" id='birthDate' name="birthDate" value="YYYY/MM/DD"
-                        readonly></input>
-                    <small> </small>
-                    <label for="birthNO" class="inputLable LableTwo"><b>Birth Certificate
-                            No:</b></label>
-                    <input class="form-control InputTwo" id='birthvertifiacateNo' name="birthCertificateNo"
-                        readonly></input>
-                </div>
-
-
-                <div class="form-row">
-                    <label for="region" class="inputLable"><b>Region:</b></label>
-                    <select class="form-control Input" name="region" id="region" name="region">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                    <?php
+                        require 'connection.php'; 
+                        $region = $_SESSION['region'];                     
+                        $rgns = "SELECT nid,personId FROM person WHERE region=$region";
+                        $rgnRess = $con->query($rgns) ;
+                        $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                           
+                    ?>
+                    <select  class='form-control Input' name='headOfFamily' id='headOfFamily'
+                            style="position:sticky;top:60px;overflow:scroll;  width:550px;">
+                        <option value="<?php echo isset($result) ? $result['personId'] : ""?>" hidden selected><?php echo isset($result) ? $result['nid'] : ""?></option>
+                        <?php 
+                            foreach($ress as $data){
+                            echo '<option value="'.$data['personId'].'">'.$data['nid'].'</option>';
+                            }
+                        ?>
                     </select>
                 </div>
+               <!-- this field is use for send nid to the model -->
+               <div class="form-row">
+                  <input type="hidden" name="nid" value="<?php echo isset($result) ? $result['nid']:""?>"></input>
+               </div>
 
+               <div class="form-row">
+                  <label for="monthlyIncome" class="inputLable"><b>Monthly Income (Rs.) :</b></label>
+                  <input class="form-control Input" id="monthlyIncome" name="monthlyIncome" 
+                     value="<?php echo isset($result) ? $result['monthlyIncome']:"" ?>"></input>
+               </div>
+                
+               <div class="form-row">
+                  <label class="inputLable" for="disordered"><b>Prolonged Disorder/Disease :</b></label>
+                  <select class="form-control Input" id="disordered" name="disordered">
 
+                     <option
+                        value="<?php echo isset($result) ? $result['disordered'] :"" ?>"
+                        selected hidden>
 
+                        <?php echo isset($result) ? ( ($result['disordered']=="yes") ? "With Disorder/Diease":"Without Disoeder/Diease" ) :"" ?>
 
-            <div class="form-row">
-               <label for="trustee" class="inputLable"><b>Trustee
-                  </b></label>
-               <input id="trustee" class="form-control Input" readonly></input>
-            </div>
+                     </option>
 
+                     <option value="no">Without Disoeder/Diease</option>
+                     <option value="yes">With Disorder/Diease</option>
+                  </select>
+               </div>
 
+               <div class="form-row">
+                  <label class="inputLable" for="CivilStatus"><b>Civil status :</b></label>
+                  <select class="form-control Input" id="civilStatus" name="civilStatus">
 
-                <div>
-                    <label class='inputLableOne' for="phone-number"><b>Contact Number 1:</b></label>
-                    <input class="form-control InputOne" id='phone-number-1' readonly name="phoneNumber1"></input>
+                     <option
+                        value="<?php echo isset($result) ?$result['civilStatus'] :"" ?>"
+                        selected hidden>
 
-                    <label class='inputLable LableTwo' for="phone-number"><b>Contacy Number 2:</b></label>
-                    <input class="form-control InputTwo" id='phone-number2' name="phoneNumber2" readonly></input>
-                </div>
+                        <?php echo isset($result) ? ( ($result['civilStatus']=="0") ? "Unmarried":"Married" ) :"" ?>
 
+                     </option>
 
+                     <option value="0">Unmarried</option>
+                     <option value="1">Married</option>
+                  </select>
+               </div>
 
-                <div class="form-row">
-                    <label class="inputLable" for="CivilStatus"><b>Civil status:</b></label>
-                    <select class="form-control Input" name="trustee" id="civilStatus" name="civilStatus">
-                        <option value="unmarried">Unmarried</option>
-                        <option value="married">Married</option>
-                    </select>
-                </div>
+               <div class="form-row">
+                  <label class="inputLable" for="job type"><b>Job Type :</b></label>
+                  <select class="form-control Input" id="job" name="job">
+                     <option value="<?php echo isset($result) ? $result['job']:"" ?>" selected hidden>
+                        <?php echo isset($result) ? $result['job']:"" ?></option>
+                     <option value="government">Government</option>
+                     <option value="private">Private</option>
+                     <option value="retired">Retired</option>
+                     <option value="business_owner">Business owner</option>
+                     <option value="self_employeed">Self employeed</option>
+                     <option value="jobless">Jobless</option>
+                  </select>
+               </div>
 
-                <div class='form-row'>
-                    <label class="inputLable"><b>Job type </br></label>
-                    <label class="inputLable"></b></label>
+               <div class="form-row">
+                  <label class="inputLable" for="dead"><b>Dead or Alive :</b></label>
+                  <select class="form-control Input" id="dead" name="dead">
 
-                    <select class="form-control Input" onclick="showCheckboxes() ">
-                        <!-- <option>Select an option</option>  select krapua pennanna hadann ooona-->
-                    </select>
-                    <!-- <div class="overSelect"></div> -->
+                     <option value="<?php echo isset($result) ? $result['dead'] :"" ?>"
+                     selected hidden >
 
-                    <div id="checkboxes" class="checksbox" name="checkbox">
-                    
-                        <label for="one"class="form-control">
-                            <input type="checkbox" id="Goverment" name="Goverment" />&nbsp; &nbsp;Goverment</label>
-                        <label for="two" class="form-control">
-                            <input type="checkbox" id="Private" name="Private" /> &nbsp; &nbsp;Private</label>
-                        <label for="three" class="form-control">
-                            <input type="checkbox" id="Retired" name="Retired" /> &nbsp; &nbsp; Retired</label>
-                        <label for="four" class="form-control">
-                            <input type="checkbox" id="Own Bussiness" name="Own Bussiness" /> &nbsp; &nbsp;Own Bussiness</label>
-                        <label for="four" class="form-control">
-                            <input type="checkbox" id="SelfEmployee" name="Own Bussiness" /> &nbsp; &nbsp;Self Employee</label>
-                            <label for="four" class="form-control">
-                            <input type="checkbox" id="Jobless" name="jobless" /> &nbsp; &nbsp;Jobless</label>
-                    </div>
-                </div>
+                        <?php echo isset($result) ? ( ($result['dead']=="no") ? "Alive":"Dead" ) :"" ?>
 
+                     </option>
 
-            <div class="Twobtn">
+                     <option value="no">Alive</option>
+                     <option value="yes">Dead</option>
+                  </select>
+               </div>
 
-               <button type="submit" class=' btn btn-primary '>Confirm</button>
-               <button class=' btn btn-primary '>View List</button>
-            </div>
+               <?php unset($_SESSION['updateResults'],$_SESSION['personRegion']) ?>
 
+               <div class="Twobtn">
+                  <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>
 
+               </div>
 
-
+            </fieldset>
          </fieldset>
 
       </form>
    </div>
 </div>
-<script type="text/javascript">
-var expanded = false;
 
-function showCheckboxes() {
-    var checkboxes = document.getElementById("checkboxes");
-    if (!expanded) {
-        checkboxes.style.display = "block";
-        expanded = true;
-    } else {
-        checkboxes.style.display = "none";
-        expanded = false;
-    }
-}
+
+<script>
+$(document).ready(function() {
+    $('#headOfFamily').select2();
+});
 </script>
+
 <?php include VIEW.'includes/footer.php' ?>
