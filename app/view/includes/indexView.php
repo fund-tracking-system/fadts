@@ -4,6 +4,7 @@
 <?php
  
 $controller = $_SESSION['controller'];
+
 // $email = $_SESSION['email'];
 // $username = strtok($email, '@');
 //$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled. 
@@ -22,7 +23,7 @@ switch($controller){
          <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
-      <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div>
+      <div class="nav_link"><B>AGE GROUP</B></div>
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
@@ -89,7 +90,7 @@ switch($controller){
       var chart = new Chart(ctx, {
          type: 'doughnut',
          data: {
-            labels: ['Delivered amount', 'Undelivered amount', 'Total Reipient amount',],
+            labels: ['0-18', '18-24', '25-64'],
             datasets: [{
                   label: '# fund release',
                   data: [20,5,25],
