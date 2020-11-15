@@ -61,8 +61,8 @@ switch($controller){
    <a href="/fadts/divisional/fundRelease" class="dashboard sidebar_link">
       <span class="material-icons">post_add</span>Alternate Fund Release
    </a>
-   <a href="/fadts/divisional/ViewAddNewDisaster" class="dashboard sidebar_link">
-      <span class="material-icons">create_new_folder</span>Add  New Disaster
+   <a href="/fadts/divisional/addDisaster" class="dashboard sidebar_link">
+      <span class="material-icons">create_new_folder</span>Add New Disaster
    </a>
    <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
