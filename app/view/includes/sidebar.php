@@ -14,6 +14,9 @@ switch($controller){
    <a href="/fadts/audit/officerHistoryView" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Officer History
    </a>
+   <a href="/fadts/audit/eligibilityHistoryView" class="dashboard sidebar_link">
+      <span class="material-icons">corporate_fare</span>View Eligibility History
+   </a>
    <a href="/fadts/audit/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>View Disaster Details
    </a>
@@ -87,7 +90,7 @@ switch($controller){
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Add Officer
    </a>
-   <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Update Officer
    </a>
    <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
