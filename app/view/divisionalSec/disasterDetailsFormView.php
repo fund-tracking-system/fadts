@@ -5,7 +5,7 @@
 
     <div class="SearchByCriteriaform1">
 
-        <form>
+        <form method="post" id="" action="/fadts/divisional/selectDisasterDetails">
             <fieldset class="BackgroundFS">
                 <h2>SELECT DISASTER</h2>
             <fieldset class="tableBar">
@@ -26,14 +26,14 @@
                                 <td><B>Tsunami 2004</B></td>
                                 <td><B>2004-12-26</B></td>
                                 <td><B>southern,eastern and northern provices</B></td>
-                                <td><a class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                <td><button type="submit" class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td><B>Flood 2003</B></td>
                                 <td><B>2003-06-26</B></td>
                                 <td><B>Whole Island</B></td>
-                                <td><a class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                <td><button type="submit" class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></button>
                                 </td>
                             </tr>
                         </tbody>
