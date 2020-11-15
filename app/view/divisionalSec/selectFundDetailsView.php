@@ -22,7 +22,7 @@
 
                                     <th>
                                         <fieldset
-                                            style="background-color: #fBF6FA; border:none; margin-left:30px;border-radius:10px;">
+                                            class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
                                                 <label for="nid" class="inputLable"><b>Amount Per
                                                         Person <br> <br>
@@ -35,7 +35,7 @@
                                     </th>
                                     <th>
                                         <fieldset
-                                            style="background-color: #fBF6FA; border:none; margin-left:30px;border-radius:20px;">
+                                        class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
                                                 <label for="dilivered" class="inputLable"><b>Delivered
                                                         amount <br> <br>
@@ -49,7 +49,7 @@
                                     </th>
                                     <th>
                                         <fieldset
-                                            style="background-color: #fBF6FA; border:none; margin-left:30px;border-radius:20px;">
+                                        class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
                                                 <label for="nid" class="inputLable"><b>Unelivered
                                                         amount <br> <br>
@@ -62,7 +62,7 @@
                                     </th>
                                     <th>
                                         <fieldset
-                                            style="background-color: #fBF6FA; border:none; margin-left:30px;border-radius:20px;">
+                                        class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
                                                 <label for="nid" class="inputLable"><b>Total Recipient
                                                         amount<br>
@@ -74,8 +74,8 @@
                                         </fieldset>
                                     </th>
                                     <th>
-                                        <fieldset
-                                            style="background-color: #fBF6FA; border:none; margin-left:30px;border-radius:20px;margin-right:30px;">
+                                        <fieldset class="FSdetail"
+                                            style="margin-right:30px;">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
                                                 <label for="nid" class="inputLable"><b>Published
                                                         <br> <br><?php echo $_SESSION['publishedTime']?>

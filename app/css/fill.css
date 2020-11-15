@@ -1719,8 +1719,18 @@ ul.tabs li.current{
 }
 
 
+.FSdetail{
+  background-color: #fBF6FE; 
+  border-color: yellow;
+  margin-left:30px;
+  border-radius:10px;
+}
 
 
-
+.FSdetail:hover {
+  color: #fff;
+  background-color: #c6e6ee;
+  border-color: #0062cc;
+}
 
 
