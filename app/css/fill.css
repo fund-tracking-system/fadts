@@ -1282,7 +1282,8 @@ visibility: hidden;
   float: left;
   position: relative;
   width: 25%;
-  height: 160px;
+  height: 200px;
+ 
 }
 .user-image img{
   width: 100%;

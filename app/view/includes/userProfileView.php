@@ -23,13 +23,14 @@
             <fieldset class="BackgroundFS">
                 <h2>USER PROFILE </h2>
                 <div class="profile-main" style="width:91%; height:80%;">
-                    <div class="profile-header" style="height:210px;">
+                    <div class="profile-header" style="height:240px;">
                         <div class="user-detail">
                             <div class="user-image">
-                                <img src="/fadts/app/view/includes/avatar.png">
+                                <img src="/fadts/app/view/includes/avatar.png" >
                             </div>
 
                             <div class="user-data">
+                            <br>
                                 <h2><B><?php echo $_SESSION['username']?></B></h2>
                                 <br>
                                 <span class="post-label"><B><?php echo $_SESSION['roleName']?></B></span>
