@@ -90,19 +90,21 @@ switch($controller){
       var chart = new Chart(ctx, {
          type: 'doughnut',
          data: {
-            labels: ['0-18', '18-24', '25-64'],
+            labels: ['0-18 years', '18-24 years', '25-64 years' ,'65 years and above'],
             datasets: [{
                   label: '# fund release',
-                  data: [20,5,25],
+                  data: [20,30,25,40],
                   backgroundColor: [
                      '#16a085',
                      '#f1c40f',
-                     '#2980b9'
+                     '#2980b9',
+                     '#004080'
                   ],
                   borderColor: [
                      '#16a085',
                      '#f1c40f',
-                     '#2980b9'
+                     '#2980b9',
+                     '#004080'
                   ],
                   borderWidth: 1
             }]
