@@ -1,58 +1,56 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<link rel="stylesheet" type="text/css" href="viewHistory.css">
-
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
         <form method = "post" action = "/fadts/audit/officerHistoryModel" id="form">
             <fieldset class="BackgroundFS">
-                <h2 style="margin-bottom:50px;">View Officer History</h2>
+                <h2>VIEW OFFICER HISTORY</h2>
+
                 <fieldset class="searchBar">
                     <div class="form-row ">
-                        <label for="NID-number" class="searchBarLable"><b>Officer NID:</b></label>
-                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v" name = "nid"></input>
-                        <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
+                        <label for="nid" class="inputLable"><b>Officer NID</b></label>
+                        <input class="form-control Input" name = "nid" placeholder="NIC number here"></input>
                     </div>
+                    
+                    <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
                 </fieldset> 
             </fieldset>
         </form> 
         
         <fieldset class='BackgroundFS'>
             <?php if (isset($_SESSION['query_results'])) { ?>
-                <h3 class = 'fntStyle'>Filtered results:</h3>
+                <h2>Filtered results</h2>
                 
                 <div class = 'tbleMargin'>
-                    <fieldset style = "padding: 35px 50px">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Timestamp</th>
-                                    <th>Officer ID</th>
-                                    <th>NID</th>
-                                    <th>E-mail</th>
-                                    <th>Region</th>
-                                    <th>LogStat</th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                            <?php 
-                                //get results from session variables
-                                $data = $_SESSION['query_results'];
+                    <table class="display nowrap" name="table" id="resultTable">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Officer ID</th>
+                                <th>NID</th>
+                                <th>E-mail</th>
+                                <th>Region</th>
+                                <th>LogStat</th>
+                                <th>Name</th>
+                                <th>Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <?php 
+                            //get results from session variables
+                            $data = $_SESSION['query_results'];
 
-                                foreach($data as $row) {
-                                    print " <tr> ";
-                                        foreach ($row as $attribute=>$value) {
-                                            print " <td>$value</td> ";
-                                        } 
-                                    print " </tr> ";
-                                } 
-                            ?>
-                        </table>
-                    </fieldset>
+                            foreach($data as $row) {
+                                print " <tr> ";
+                                    foreach ($row as $attribute=>$value) {
+                                        print " <td style='text-align:center'> $value </td> ";
+                                    } 
+                                print " </tr> ";
+                            } 
+                        ?>
+                    </table>
                 </div>
 
                 <?php unset($_SESSION['query_results']); //unset results from session variables ?>
@@ -60,5 +58,11 @@
         </fieldset> 
     </div>    
 </div>
+
+<script>
+$(document).ready(function() {
+    $("#resultTable").DataTable();
+});
+</script>
 
 <?php include VIEW.'includes/footer.php' ?>
