@@ -137,4 +137,15 @@ class divisionalController extends Controller{
    }
 
 
+   
+
+   
+   public function selectDisasterDetails(){ 
+      $this->view('divisionalsec/selectDisasterDetails');
+    
+      
+      $this->view->render();
+   }
+
+
 }

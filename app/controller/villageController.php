@@ -36,7 +36,7 @@ class villageController extends Controller{
       $this->view->render(); // This is how load the view
    }
    public function ViewGetAddVictimsToDisaster(){
-      $this->view('villageOfficer/addDisasterVictimsViews');
+      $this->view('villageOfficer/addDisasterVictimsViews'); 
       
       $this->view->render(); // This is how load the view
    }
