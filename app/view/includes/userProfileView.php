@@ -16,57 +16,93 @@
     foreach ($rgn as $key ) {
         $_SESSION['regionName']=$key['name'];
     }
-
-
-
     ?>
-
-
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-
-
-
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
                 <h2>USER PROFILE </h2>
-                <fieldset class="searchBar">
+                <div class="profile-main" style="width:91%; height:80%;">
+                    <div class="profile-header" style="height:240px;">
+                        <div class="user-detail">
+                            <div class="user-image">
+                                <img src="/fadts/app/view/includes/avatar.png" >
+                            </div>
+
+                            <div class="user-data">
+                            <br>
+                                <h2><B><?php echo $_SESSION['username']?></B></h2>
+                                <br>
+                                <span class="post-label"><B><?php echo $_SESSION['roleName']?></B></span>
+                                <br>
+
+                                <p style="font-size:15px;">Goverment Officer <strong></strong><br>
+                                    <i class="fa fa-map-marker"
+                                        aria-hidden="true"></i><?php echo $_SESSION['roleName']?>,
+                                    <?php echo $_SESSION['regionName']?>, Sri Lanka
+                                    <br>
+                                    <?php echo $_SESSION['email']?>
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="tab-panel-main">
+                            <div id="Basic-detail" class="tab-content current">
+                                <div class="skill-box">
+                                    <ul>
+                                        <li><strong>My Core Skills:</strong></li>
+                                        <li>LeaderShip skills<i class="fa fa-star" aria-hidden="true"></i><i
+                                                class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                                                aria-hidden="true"></i></li>
+                                        <li>ENTERPRENEURSHIP<i class="fa fa-star" aria-hidden="true"></i><i
+                                                class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li>GROWTH MARKETING<i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li>RESOURCE MANEGMENT<i class="fa fa-star" aria-hidden="true"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="bio-box">
+                                    <div class="heading">
+                                        <p>Professional Bio
+                                            <label><B>10 Year Experience</B></label>
+                                        </p>
+                                    </div>
+                                    <div class="desc"><strong>chamath Ranasinghe Golluwamula Opatha ganegoda  Elpitye 5 family member  and age 43
+                                    how many child areas he controll . like that we can data from database<strong>
+                                    </div>
+                                </div>
+                                <div class="detail-box">
+                                    <p>Detail</p>
+                                    <ul class="ul-first">
+                                        <li>Birth date</li>
+                                        <li>City</li>
+                                        <li>Country</li>
+                                        <li>Contact No</li>
+                                    </ul>
+                                    <ul class="ul-second">
+                                        <li>07 October1997</li>
+                                        <li>Elpitye</li>
+                                        <li>Srilanka</li>
+                                        <li>0712562583</li>
+                                    </ul>
+                                </div>
+                            </div>
 
 
+                        </div>
 
-                    <div class="form-row">
-                        <label for="name " class="inputLable"><b> Name:</b></label>
-                        <input class="form-control Input" id="name" name="name"
-                            value="<?php echo $_SESSION['username']?>" readonly></input>
                     </div>
+                    <div style="clear: both;"></div>
+                </div>
 
-                    <div class="form-row">
-                        <label for="name " class="inputLable"><b>NID:</b></label>
-                        <input class="form-control Input" id="name" name="NId" value="<?php echo $_SESSION['usernid']?>"
-                            readonly></input>
-                    </div>
 
-                    <div class="form-row">
-                        <label for="name " class="inputLable"><b>Region:</b></label>
-                        <input class="form-control Input" id="name" name="region"
-                            value="<?php echo  $_SESSION['regionName']?>" readonly></input>
-                    </div>
 
-                    <div class="form-row">
-                        <label for="name " class="inputLable"><b>Position:</b></label>
-                        <input class="form-control Input" id="name" name="name"
-                            value="<?php echo $_SESSION['roleName']?>" readonly></input>
-                    </div>
-                    <div class="form-row">
-                        <label for="email " class="inputLable"><b>Email:</b></label>
-                        <input class="form-control Input" id="email" name="email"
-                            value="<?php echo $_SESSION['email']?>" readonly></input>
-                    </div>
 
-                </fieldset>
+
             </fieldset>
 
         </form>
+
 
         <form method="POST" action="/fadts/includes/resetModel">
             <fieldset class="BackgroundFS">
@@ -141,110 +177,6 @@
 
 
 
-        <form method="post" action="" id="form">
-            <fieldset class="BackgroundFS">
-                <h2>USER PROFILE </h2>
-
-                    <div class="profile-main" style="width:80%; height:80%;">
-                        <div class="profile-header" style="height:200px;">
-                            <div class="user-detail" >
-                                <div class="user-image">
-                                    <img src="/fadts/app/view/includes/propic.jpeg">
-
-                                </div>
-                                <div class="user-data" >
-                                    <h2><B><?php echo $_SESSION['username']?></B></h2>
-                                    <br>
-                                    <span class="post-label"><B><?php echo $_SESSION['roleName']?></B></span>
-                                    <br>
-                                    
-
-                                    <p style="font-size:15px;">Goverment Officer <strong></strong><br>
-                                        <i class="fa fa-map-marker"
-                                            aria-hidden="true"></i><?php echo $_SESSION['roleName']?>,
-                                        <?php echo $_SESSION['regionName']?>, Sri Lanka
-                                    </p>
-                                    
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="tab-panel-main">
-
-                                <div id="Basic-detail" class="tab-content current">
-                                    <div class="skill-box">
-                                        <ul>
-                                            <li><strong>My Core Skills:</strong></li>
-                                            <li>LeaderShip skills<i class="fa fa-star" aria-hidden="true"></i><i
-                                                    class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                    aria-hidden="true"></i></li>
-                                            <li>ENTERPRENEURSHIP<i class="fa fa-star" aria-hidden="true"></i><i
-                                                    class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li>GROWTH MARKETING<i class="fa fa-star" aria-hidden="true"></i></li>
-                                        </ul>
-                                    </div>
-                                    <div class="bio-box">
-                                        <div class="heading">
-                                            <p>Professional Bio
-                                                <label>10 Year Experience</label>
-                                            </p>
-                                        </div>
-                                        <div class="desc">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                                        </div>
-                                    </div>
-                                    <div class="detail-box">
-                                        <p>Detail</p>
-                                        <ul class="ul-first">
-                                            <li>Birth date</li>
-                                            <li>City</li>
-                                            <li>Country</li>
-                                            <li>Contact No</li>
-                                        </ul>
-                                        <ul class="ul-second">
-                                            <li>8 March 1997</li>
-                                            <li>Jamanagar</li>
-                                            <li>California</li>
-                                            <li>9900990087</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="user-data">
-                                    
-                                    
-                                        <img src="/fadts/app/view/includes/gmail.jpg"
-                                            style="width:20%;margin-top:50px; ">
-                                            <img src="/fadts/app/view/includes/phone.jpg"
-                                            style="width:15%;margin-top:1px;">
-                                            <img src="/fadts/app/view/includes/whatsapp.png"
-                                            style="width:20%;margin-top:1px;">  
-                                            <img src="/fadts/app/view/includes/logo.PNG"
-                                            style="width:40%;height:50px;;margin-top:1px;">                                 
-                                        <span class="post-label"
-                                            style="font-size:20px; margin-top:-30px;"><B><?php echo $_SESSION['email']?><B></span>
-                                            <span>
-                                       
-
-                                   
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div style="clear: both;"></div>
-                    </div>
-
-
-
-
-    
-            </fieldset>
-
-        </form>
         <script type="text/javascript">
         $(document).ready(function() {
             $('ul.tabs li').click(function() {

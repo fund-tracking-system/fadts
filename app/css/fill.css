@@ -1025,20 +1025,21 @@ visibility: hidden;
   display: grid;
 	grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color:#e6e7eb;
+  background-color:#fcfcfc;
+  
 }
 
 .box-1{
   /*width: 100%;*/
   margin: 5px;
-  background-color:#e6e7eb;
+  background-color:#ffffff;
   grid-row: 1/2;
   grid-column: 1/2;
 }
 
 .box-2{
   margin: 5px;
-  background: #e6e7eb;
+  background:#ffffff;
   grid-row: 1/2;
   grid-column: 2/3;
   
@@ -1046,14 +1047,14 @@ visibility: hidden;
 
 .box-3{
   margin: 5px;
-  background: #dadada;
+  background:#ffffff;
   grid-row: 1/2;
   grid-column: 3/4;
 }
 
 .box-4{
   margin: 5px;
-  background: #e6e7eb;
+  background:#ffffff;
   grid-row: 2/3;
   grid-column: 1/4;
 }
@@ -1262,31 +1263,34 @@ visibility: hidden;
 .profile-main{
   width: 750px;
   margin: 0 auto;
-  border: 1px solid #aed5e2;
+  border: 1px solid #011116;
   padding-bottom: 10px;
+  border-radius: 10px;
 }
 .profile-header{
   height: 200px;
   width: 100%;
   background-color: #EBF6FA;
   border-bottom: 2px solid #E2F3FB;
+  
 }
 .user-detail{
   position: relative;
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   height: 100%;
 }
 .user-image{
   float: left;
   position: relative;
-  width: 23%;
-  height: 135px;
+  width: 25%;
+  height: 200px;
+ 
 }
 .user-image img{
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 45%;
   margin-top: 35px;
 }
 .prof-label{
@@ -1310,7 +1314,7 @@ visibility: hidden;
   margin-top: 35px;
   font-size: 25px;
   font-weight: 600;
-  padding-right:100px;
+  padding-right:500px;
 }
 .user-data .post-label{
   font-size: 20px;
@@ -1375,7 +1379,7 @@ visibility: hidden;
 
 /*tab*/
 .tab-panel-main{
-  width: 75%;
+  width:90%;
   margin: 0 auto;
 }
 ul.tabs{
@@ -1716,8 +1720,18 @@ ul.tabs li.current{
 }
 
 
+.FSdetail{
+  background-color: #fBF6FE; 
+  border-color: yellow;
+  margin-left:30px;
+  border-radius:10px;
+}
 
 
-
+.FSdetail:hover {
+  color: #fff;
+  background-color: #c6e6ee;
+  border-color: #0062cc;
+}
 
 

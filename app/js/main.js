@@ -1,11 +1,12 @@
 //addnewDisaster-divisionalsec
-jQuery.validator.addMethod("lettersonly", function(value, element) {
+jQuery.validator.addMethod("lettersonly", function(value, element) {        
     return this.optional(element) || /^[a-z\s]+$/i.test(value);
     }, "Only alphabetical characters");
 
 
 jQuery.validator.addMethod("nidvalidator", function(value, element) {
     var validator = this;
+    
 
     if (value.length>12 || value.length <10) {
         var errors = {};
@@ -25,6 +26,10 @@ jQuery.validator.addMethod("nidvalidator", function(value, element) {
     
 
 },'');
+
+// jQuery.validator.addMethod("floatgross", function (value, element) {
+//     return this.optional(element) || /^\d{0,4}(\.\d{0,2})?$/i.test(value);
+// }, "You must include two decimal places");
 
 
 $(function(){
@@ -68,7 +73,7 @@ $(function(){
                     required: true,
                     // maxlength: 12,
                     // minlength:10,
-                    nidvalidator:true,
+                    nidvalidator:true
                 },
                 address: "required",
                 b_date: {
@@ -76,11 +81,22 @@ $(function(){
                     date: true
                 },
                 jobType: "required",
-                headOfFamily:"required",
+                headOfFamily:{
+                    required:true,
+                    nidvalidator:true
+                },
+                trustee:{
+                    required:true,
+                    nidvalidator:true
+                },
                 civilStatus: "required",
                 phoneNumber1: {
                     required: true,
                     number: true,
+                    minlength:10,
+                    maxlength:10
+                },
+                phoneNumber2:{
                     minlength:10,
                     maxlength:10
                 }
@@ -102,9 +118,12 @@ $(function(){
                 },
                 jobType: "This field is required",
                 headOfFamily:{
-                    required: "This field is required",
+                    required: "Enter family head NID",
                     maxlength: "Please enter a correct NID",
                     minlength: "Please enter correct NID"
+                },
+                trustee:{
+                    required: "Enter trustee head NID",
                 },
                 civilStatus: "This field is required",
                 phoneNumber1: {
@@ -408,14 +427,15 @@ $(function(){
     //     $('#formAddPeople').submit(function(e) {
     //         e.preventDefault();
     //         var nid = $('#nid').val();
-    //         if (nid.length < 10)
-    //             $("span").text("Text is short");
-    //         else if (nid.length > 12)
-    //             $("span").text("Text is long");
-    //         else if (nid.length == 11)
-    //             $("span").text("Invalid");
-    //         else
-    //             $("span").text("Text is valid");
+    //         var validate =this;
+    //         if (nid.slice(-1)='v') {
+    //             var errors = {};
+    //             errors[element.name] = "Invalid NID";
+    //             validator.showErrors(errors);
+    //             return true;
+    //         }
+
+           
                 
             
     //     });

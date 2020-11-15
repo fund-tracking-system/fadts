@@ -23,86 +23,89 @@
                 ?>
 
 
-               <div class="form-row">
-                  <label for="Name" class="inputLable"><b>Name :</b></label>
-                  <input class="form-control Input" id="name" name="name" placeholder="Name in full"></input>
+                    <div class="form-row">
+                        <label for="Name" class="inputLable"><b>Name :</b></label>
+                        <input class="form-control Input" id="name" name="name" placeholder="Name in full"></input>
 
-               </div>
-
-               <div class="form-row">
-                  <label for="nid" class="inputLable"><b>NIC :</b></label>
-                  <input class="form-control Input" id='nid' name="nid"></input>
-               </div>
-
-               <div class="form-row">
-                  <label for="name " class="inputLable"><b>Adrress :</b></label>
-                  <input class="form-control Input" id="address" name="address"></input>
-               </div>
+                    </div>
 
 
 
-               <div class="form-row">
-                  <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
-                  <input class="form-control Input" id='b_date' name="b_date" type="date"></input>
-                  <small> </small>
-               </div>
+                    <div class="form-row">
+                        <label for="nid" class="inputLable"><b>NIC :</b></label>
+                        <input class="form-control Input" id='nid' name="nid"></input>
+                    </div>
 
-               <div class="form-row">
-                  <label for="birthNO" class="inputLable"><b>Birth Certificate
-                        No :</b></label>
-                  <input class="form-control Input" id='b_certifi' name="b_certifi"></input>
-               </div>
+                    <div class="form-row">
+                        <label for="name " class="inputLable"><b>Adrress :</b></label>
+                        <input class="form-control Input" id="address" name="address"></input>
+                    </div>
 
-               <div class="form-row">
-                  <label for="jobtype" class="inputLable"><b>Income Type :</b></label>
-                  <select class="form-control Input" name="jobType" id="jobType">
-                     <option value="" disabled selected>Select job type</option>
-                     <option value="Goverment">Goverment</option>
-                     <option value="Private">Private</option>
-                     <option value="Retired">Retired</option>
-                     <option value="SelfEmployee">SelfEmployee</option>
-                     <option value="Jobless">Jobless</option>
+                    <div class="form-row">
+                        <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
+                        <input class="form-control Input" id='b_date' name="b_date" type="date"></input>
+                        <small> </small>
+                    </div>
 
-                  </select>
-               </div>
+                    <div class="form-row">
+                        <label for="birthNO" class="inputLable"><b>Birth Certificate
+                                No :</b></label>
+                        <input class="form-control Input" id='b_certifi' name="b_certifi"></input>
+                    </div>
 
-               <div class="form-row">
-                  <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
-                  <select class="form-control Input" id="civilStatus" name="civilStatus">
-                     <option value="" disabled selected>Select civil status</option>
-                     <option value="1">Unmarried</option>
-                     <option value="0">Married</option>
-                  </select>
-               </div>
+                    <div class="form-row">
+                        <label for="jobtype" class="inputLable"><b>Income Type :</b></label>
+                        <select class="form-control Input" name="jobType" id="jobType">
+                            <option value="" disabled selected>Select job type</option>
+                            <option value="Goverment">Goverment</option>
+                            <option value="Private">Private</option>
+                            <option value="Retired">Retired</option>
+                            <option value="SelfEmployee">SelfEmployee</option>
+                            <option value="Jobless">Jobless</option>
 
-               <div class="form-row">
-                  <label for="tnid" class="inputLable"><b>Trustee :</b></label>
-                  <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
-               </div>
+                        </select>
+                    </div>
 
-               <div class="form-row" style="margin-bottom:50px;">
+                    <div class="form-row">
+                        <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
+                        <select class="form-control Input" id="civilStatus" name="civilStatus">
+                            <option value="" disabled selected>Select civil status</option>
+                            <option value="1">Unmarried</option>
+                            <option value="0">Married</option>
+                        </select>
+                    </div>
 
-                  <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
+                    <div class="form-row">
+                        <label for="tnid" class="inputLable"><b>Trustee :</b></label>
+                        <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
+                    </div>
+
+
+                    <!-- for region -->
+
+                    <div class="form-row" style="margin-bottom:50px;">
+                        <label for="region" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
+
                   <?php
 
-                    require 'connection.php'; 
-               
-                    $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
-                    $rgnRes=$con->query($rgn) ;
-                    $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                  require 'connection.php'; 
+                  
 
-                    $_SESSION['region_result']=$res;  //for assign region  ?>
-
-                  <select id='region' class='form-control Input' name='region' id='region'
-                     style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
-                     <?php 
-                        foreach($res as $data){
-                            if($data['superRegion']==$_SESSION['region']){
+                  $region = $_SESSION['region'];
+                                 
+                  $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
+                  $rgnRes = $con->query($rgn) ;
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
+                  
+                  ?>
+                        <select id='region' class='form-control Input' name='region' id='region'
+                            style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
+                            <option value="" disabled selected>Select region</option>
+                           <?php 
+                              foreach($res as $data){
                                 echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-
-                            }
-                        }
-                    ?>
+                              }
+                           ?>
                </div>
                <div><input type="hidden"></input></div>
 
@@ -120,11 +123,6 @@
 
                   <label class="inputLable" for="phone-number"><b>Contact Number 2 :</b></label>
                   <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
-               </div>
-
-               <div class="form-row">
-                  <label class="inputLable" for="monthlyIncome"><b>Monthly Gross Income :</b></label>
-                  <input class="form-control Input" id='monthlyIncome' name="monthlyIncome" type="number"></input>
                </div>
 
                 <div class="Twobtn">
