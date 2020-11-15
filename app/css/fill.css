@@ -1253,7 +1253,7 @@ visibility: hidden;
 }
 #calendar_events{
   width: 50%;
-  height: 290px;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   float: right;

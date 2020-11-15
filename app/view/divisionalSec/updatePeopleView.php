@@ -14,7 +14,7 @@
    <div class="SearchByCriteriaform1">
 
 
-      <form method="post" action="/fadts/divisional/nicSearchModel?view=updatePeople" id="form">
+      <form method="post" action="/fadts/divisional/nicSearchModel?view=updatePeople" id="formUpdate">
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
