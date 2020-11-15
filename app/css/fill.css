@@ -6,7 +6,9 @@ body{
 	background-position: center;
   font-family: 'Montserrat', sans-serif; 
 }
-
+h3{
+  color: black;
+}
 
 .To{
   margin-right:170px;
