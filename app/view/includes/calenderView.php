@@ -7,7 +7,7 @@
    
     
     
-    <div id="calendar" ></div>
+    <div id="calendar" style="padding: 10px;" ></div>
     </div>
 </div>
 
