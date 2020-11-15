@@ -75,9 +75,9 @@
                                     </th>
                                     <th>
                                         <fieldset
-                                            style="background-color: #fBF6FA; border:none; margin-left:30px;border-radius:20px;">
+                                            style="background-color: #fBF6FA; border:none; margin-left:30px;border-radius:20px;margin-right:30px;">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Published Date
+                                                <label for="nid" class="inputLable"><b>Published
                                                         <br> <br><?php echo $_SESSION['publishedTime']?>
                                                     </b></label>
                                                 <input class="form-control details" id='' type="hidden"
