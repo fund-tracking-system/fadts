@@ -29,13 +29,17 @@ switch($controller){
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events">
+            <h3>Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -178,7 +182,9 @@ function calendar(){
    $('#calendar_day').text(day[d.getDay()]);
    // setText('calendar_day', day[d.getDay()]);
    setText('calendar_date', d.getDate());
-   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+   setText('calendar_month', month[d.getMonth()]);
+   setText('calendar_year', (1900+d.getYear()));
+   
 };
 
 //this function will set the text value of tags
@@ -214,13 +220,17 @@ window.onload = calendar;
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events">
+            <h3>Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -359,7 +369,8 @@ function calendar(){
    $('#calendar_day').text(day[d.getDay()]);
    // setText('calendar_day', day[d.getDay()]);
    setText('calendar_date', d.getDate());
-   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+   setText('calendar_month', month[d.getMonth()]);
+   setText('calendar_year', (1900+d.getYear()));
 };
 
 //this function will set the text value of tags
@@ -399,13 +410,17 @@ window.onload = calendar;
         
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events">
+            <h3>Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -438,13 +453,17 @@ window.onload = calendar;
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events">
+            <h3>Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -583,7 +602,8 @@ function calendar(){
    $('#calendar_day').text(day[d.getDay()]);
    // setText('calendar_day', day[d.getDay()]);
    setText('calendar_date', d.getDate());
-   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+   setText('calendar_month', month[d.getMonth()]);
+   setText('calendar_year', (1900+d.getYear()));
 };
 
 //this function will set the text value of tags

@@ -11,7 +11,7 @@
                 <fieldset style="background-color: #EBF6FA; border:none;margin-top:-10px;">
                     <fieldset style="background-color: #EBF6FA; border:none; margin-top:30px;">
 
-                        <h2 style="margin-bottom:30px;"> FUND DETAILS ANALISYS</h2>
+                        <h2 style="margin-bottom:30px;"> DISASTER DETAILS ANALISYS</h2>
 
 
                         <table>
@@ -23,9 +23,8 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Amount Per
-                                                        Person <br> <br>
-                                                        <?php echo $_SESSION['amountPerPerson']?></b></label>
+                                                <label for="nid" class="inputLable"><b>Disaster Type <br> <br>
+                                                        <?php echo "Flood"?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;"
                                                     value="<?php echo $_SESSION['amountPerPerson']?>" readonly></input>
@@ -35,9 +34,9 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="dilivered" class="inputLable"><b>Delivered
+                                                <label for="dilivered" class="inputLable"><b>Victims 
                                                         amount <br> <br>
-                                                        <?php echo $_SESSION['fundDelivered']?></b></label>
+                                                        <?php echo "400"?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='dilivered'
                                                     value="<?php echo $_SESSION['fundDelivered']?>" readonly></input>
@@ -48,9 +47,8 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Unelivered
-                                                        amount <br> <br>
-                                                        <?php echo $_SESSION['fundUndelivered']?></b></label>
+                                                <label for="nid" class="inputLable"><b> DIsaster Region <br> <br>
+                                                        <?php echo "Opatha"?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='undelivered'
                                                     value="<?php echo $_SESSION['fundUndelivered']?>" readonly></input>
@@ -60,9 +58,8 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Total Recipient
-                                                        amount<br>
-                                                        <br><?php echo $_SESSION['totalRecipients']?></b></label>
+                                                <label for="nid" class="inputLable"><b> Disaster Name<br>
+                                                        <br><?php echo " Big Flood "?></b></label>
                                                 <input class="form-control details" id='' type="hidden"
                                                     style="margin-left:100px;"
                                                     value="<?php echo $_SESSION['totalRecipients']?>" readonly></input>
@@ -72,7 +69,7 @@
                                     <th>
                                         <fieldset class="FSdetail" style="margin-right:30px;">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Published
+                                                <label for="nid" class="inputLable"><b>Disaster Date
                                                         <br> <br><?php echo $_SESSION['publishedTime']?>
                                                     </b></label>
                                                 <input class="form-control details" id='' type="hidden"
@@ -88,68 +85,10 @@
                         </table>
                     </fieldset>
 
-                    <script>
-                    window.onload = function() {
-
-
-                        var dilivered = $("#dilivered").val();
-                        var undelivered = $("#undelivered").val();
-                        var dilivered = $("#dilivered").val();
-
-
-
-                        var chart = new CanvasJS.Chart("chartContainer", {
-                            animationEnabled: true,
-                            title: {
-                                text: "FUND DILIVERY ANALISYS",
-                                horizontalAlign: "left"
-                            },
-                            data: [{
-                                type: "doughnut",
-                                startAngle: 70,
-                                //innerRadius: 60,
-                                indexLabelFontSize: 17,
-                                indexLabel: "{label} - #percent%",
-                                toolTipContent: "<b>{label}:</b> {y} (#percent%)",
-                                dataPoints: [
-
-                                    {
-                                        y: dilivered,
-                                        label: "Fund Delivered"
-                                    },
-                                    {
-                                        y: undelivered,
-                                        label: "Undelivered"
-                                    }
-                                ]
-                            }]
-                        });
-                        chart.render();
-
-                    }
-                    </script>
-
-
-                    <div id="chartContainer" style="height: 370px; width: 100%;margin-top:30px;"></div>
-                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-
-
-
                 </fieldset>
             </fieldset>
         </form>
 
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 <?php include VIEW.'includes/footer.php' ?>
