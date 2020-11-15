@@ -1262,8 +1262,9 @@ visibility: hidden;
 .profile-main{
   width: 750px;
   margin: 0 auto;
-  border: 1px solid #aed5e2;
+  border: 1px solid #011116;
   padding-bottom: 10px;
+  border-radius: 10px;
 }
 .profile-header{
   height: 200px;
@@ -1273,20 +1274,20 @@ visibility: hidden;
 }
 .user-detail{
   position: relative;
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   height: 100%;
 }
 .user-image{
   float: left;
   position: relative;
-  width: 23%;
-  height: 135px;
+  width: 25%;
+  height: 160px;
 }
 .user-image img{
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 45%;
   margin-top: 35px;
 }
 .prof-label{
@@ -1310,7 +1311,7 @@ visibility: hidden;
   margin-top: 35px;
   font-size: 25px;
   font-weight: 600;
-  padding-right:100px;
+  padding-right:500px;
 }
 .user-data .post-label{
   font-size: 20px;
@@ -1375,7 +1376,7 @@ visibility: hidden;
 
 /*tab*/
 .tab-panel-main{
-  width: 75%;
+  width:90%;
   margin: 0 auto;
 }
 ul.tabs{
