@@ -1,4 +1,31 @@
 //addnewDisaster-divisionalsec
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+    return this.optional(element) || /^[a-z\s]+$/i.test(value);
+    }, "Only alphabetical characters");
+
+
+jQuery.validator.addMethod("nidvalidator", function(value, element) {
+    var validator = this;
+
+    if (value.length>12 || value.length <10) {
+        var errors = {};
+        errors[element.name] = "Invalid NID";
+        validator.showErrors(errors);
+        return true;
+    }
+    if (value.length==11) {
+        var errors = {};
+        errors[element.name] = "Invalid NID";
+        validator.showErrors(errors);
+        return true;
+    }
+    else{
+        return true;
+    }
+    
+
+},'');
+
 
 $(function(){
     var $formDisasterAdd = $("#formAddDisaster");
@@ -28,66 +55,77 @@ $(function(){
   
   
   //addpeople-divisionalsec
-// $(function(){
-//     var $formPeople = $("#formAddPeople");
-//     if($formPeople.length){
-//         $formPeople.validate({
-//             rules: {
-//                 name: "required",
-//                 nid: {
-//                     required: true,
-//                     maxlength: 12,
-//                     minlength:10
-//                 },
-//                 address: "required",
-//                 b_date: {
-//                     required: true,
-//                     date: true
-//                 },
-//                 email: {
-//                     required: true,
-//                     email: true
-//                 },
-//                 jobType: "required",
-//                 civilStatus: "required",
-//                 phoneNumber1: {
-//                     required: true,
-//                     number: true,
-//                     minlength:10,
-//                     maxlength:10
-//                 }
-//             },
-//             messages: {
-//                 name: "This field is required",
-//                 nid: {
-//                     required: "This field is required",
-//                     maxlength: "Please enter a correct NID",
-//                     minlength: "Please enter correct NID"
-//                 },
-//                 address: "This field is required",
-//                 b_date: {
-//                     required: "This field is required",
-//                     date: "Date should be correct format"
-//                 },
-//                 email: {
-//                     required: "Please enter user email",
-//                     email: "Your email address must be in the format of name@domain.com"
-//                 },
-//                 jobType: "This field is required",
-//                 civilStatus: "This field is required",
-//                 phoneNumber1: {
-//                     required: "This field is required",
-//                     number: "Phone number must have numbers",
-//                     minlength: "This number has less than 10 numbers",
-//                     maxlength: "This number has more than 10 numbers"
-//                 },
-//             }
-//       });
-//     }
-//   });
+$(function(){
+    var $formPeople = $("#formAddPeople");
+    if($formPeople.length){
+        $formPeople.validate({
+            rules: {
+                name: {
+                    lettersonly:true,
+                    required:true
+                },
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true,
+                },
+                address: "required",
+                b_date: {
+                    required: true,
+                    date: true
+                },
+                jobType: "required",
+                headOfFamily:"required",
+                civilStatus: "required",
+                phoneNumber1: {
+                    required: true,
+                    number: true,
+                    minlength:10,
+                    maxlength:10
+                }
+            },
+            messages: {
+                name:{
+                    required:"This field is required",
+                    lettersonly:"Please enter letters only"
+                },
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                },
+                address: "This field is required",
+                b_date: {
+                    required: "This field is required",
+                    date: "Date should be correct format"
+                },
+                jobType: "This field is required",
+                headOfFamily:{
+                    required: "This field is required",
+                    maxlength: "Please enter a correct NID",
+                    minlength: "Please enter correct NID"
+                },
+                civilStatus: "This field is required",
+                phoneNumber1: {
+                    required: "This field is required",
+                    number: "Phone number must have numbers",
+                    minlength: "This number has less than 10 numbers",
+                    maxlength: "This number has more than 10 numbers"
+                },
+            }
+      });
+    }
+  });
 
 
 
+  jQuery.validator.addMethod("lettersonly", function(value, element) {
+    return this.optional(element) || /^[a-z\s]+$/i.test(value);
+    }, "Only alphabetical characters");
+    
+
+  
   
   //addOfficer
   $(function(){
@@ -101,7 +139,10 @@ $(function(){
                     maxlength: 12,
                     minlength:10
                 },
-                name: "required",
+                name: {
+                    lettersonly:true,
+                    required:true,
+                },
                 birth_date: {
                     required: true,
                     date: true
@@ -127,7 +168,10 @@ $(function(){
                     maxlength: "Please enter a correct NID",
                     minlength: "Please enter correct NID"
                 },
-                name: "This field is required",
+                name:{
+                    required:"This field is required",
+                    lettersonly:"Please enter letters only"
+                },
                 birth_date: {
                     required: "This field is required",
                     date: "Date should be correct format"
@@ -356,6 +400,30 @@ $(function(){
         }
       });
 
+
+
+
+    //   $(document).ready(function() {
+
+    //     $('#formAddPeople').submit(function(e) {
+    //         e.preventDefault();
+    //         var nid = $('#nid').val();
+    //         if (nid.length < 10)
+    //             $("span").text("Text is short");
+    //         else if (nid.length > 12)
+    //             $("span").text("Text is long");
+    //         else if (nid.length == 11)
+    //             $("span").text("Invalid");
+    //         else
+    //             $("span").text("Text is valid");
+                
+            
+    //     });
+      
+    //   });
+    
+    
+    
 
 
 

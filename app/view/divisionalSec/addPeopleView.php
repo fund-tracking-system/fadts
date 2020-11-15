@@ -96,7 +96,7 @@
                     <!-- for region -->
 
                     <div class="form-row" style="margin-bottom:50px;">
-                        <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
+                        <label for="region" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
 
                         <?php
 
