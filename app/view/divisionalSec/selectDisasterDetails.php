@@ -8,13 +8,45 @@
     <div class="SearchByCriteriaform1">
         <form>
             <fieldset class="BackgroundFS">
+
                 <fieldset style="background-color: #EBF6FA; border:none;margin-top:-10px;">
+
                     <fieldset style="background-color: #EBF6FA; border:none; margin-top:30px;">
 
                         <h2 style="margin-bottom:30px;"> DISASTER DETAILS ANALISYS</h2>
+                        <div class="form-row" style="margin-bottom:50px;">
+                            <label for="region" class="inputLable" style="margin-right:15px;"><b>Select Dsaster Result
+                                    Region :</b></label>
+                            <?php
+
+                                    require 'connection.php'; 
 
 
-                        <table>
+                                    $region = $_SESSION['region'];
+                                                
+                                    $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
+                                    $rgnRes = $con->query($rgn) ;
+                                    $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
+
+                                    ?>
+                            <select id='region' class='form-control Input' name='region' id='region'
+                                style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
+                                <option value="23" ><?php echo $_SESSION['regionName']?> Division
+                                    Secretory Area</option>
+                                <?php 
+                                                foreach($res as $data){
+                                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
+                                                }
+                                            ?>
+                            </select>
+                            <button type="submit" class="btn btn-primary btnNavR ">Search</button>
+
+                        </div>
+
+
+                        <div><input type="hidden"></input></div>
+
+                        <table style="margin-bottom:50px;">
 
                             <thead>
                                 <tr>
@@ -23,23 +55,23 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Disaster Type <br> <br>
-                                                        <?php echo "Flood"?></b></label>
+                                                <label for="nid" class="inputLable"><b>Disaster Name <br> <br>
+                                                        <?php echo "Tsunami "?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;"
-                                                    value="<?php echo $_SESSION['amountPerPerson']?>" readonly></input>
+                                                    value="" readonly></input>
                                             </div>
                                         </fieldset>
                                     </th>
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="dilivered" class="inputLable"><b>Victims 
-                                                        amount <br> <br>
-                                                        <?php echo "400"?></b></label>
+                                                <label for="dilivered" class="inputLable"><b>Region Victims Amount
+                                                        <br> <br>
+                                                        <?php echo  "450";?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='dilivered'
-                                                    value="<?php echo $_SESSION['fundDelivered']?>" readonly></input>
+                                                    value="" readonly></input>
                                             </div>
                                         </fieldset>
 
@@ -47,29 +79,30 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b> DIsaster Region <br> <br>
-                                                        <?php echo "Opatha"?></b></label>
+                                                <label for="nid" class="inputLable"><b>Disaster Creator  <br> <br>
+                                                        <?php echo "Ministry "?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='undelivered'
-                                                    value="<?php echo $_SESSION['fundUndelivered']?>" readonly></input>
+                                                    value="" readonly></input>
                                             </div>
                                         </fieldset>
                                     </th>
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b> Disaster Name<br>
-                                                        <br><?php echo " Big Flood "?></b></label>
+                                                <label for="nid" class="inputLable"><b>Analysised Region
+                                                        <br>
+                                                        <br><?php echo  $_SESSION['regionName']?></b></label>
                                                 <input class="form-control details" id='' type="hidden"
                                                     style="margin-left:100px;"
-                                                    value="<?php echo $_SESSION['totalRecipients']?>" readonly></input>
+                                                    value="<?php echo  $_SESSION['regionName']?>" readonly></input>
                                             </div>
                                         </fieldset>
                                     </th>
                                     <th>
                                         <fieldset class="FSdetail" style="margin-right:30px;">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Disaster Date
+                                                <label for="nid" class="inputLable"><b>Published
                                                         <br> <br><?php echo $_SESSION['publishedTime']?>
                                                     </b></label>
                                                 <input class="form-control details" id='' type="hidden"
@@ -83,12 +116,105 @@
 
                             </thead>
                         </table>
+
+
                     </fieldset>
 
+                    <script>
+                    window.onload = function() {
+
+
+                        var dilivered = $("#dilivered").val();
+                        var undelivered = $("#undelivered").val();
+                        var dilivered = $("#dilivered").val();
+
+
+
+                        var chart = new CanvasJS.Chart("chartContainer", {
+                            animationEnabled: true,
+                            title: {
+                                text: "DISASTER VICTIMS ANALISYS",
+                                horizontalAlign: "left"
+                            },
+                            data: [{
+                                type: "doughnut",
+                                startAngle: 70,
+                                //innerRadius: 60,
+                                indexLabelFontSize: 17,
+                                indexLabel: "{label} - #percent%",
+                                toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                                dataPoints: [
+
+                                    {
+                                        y: dilivered,
+                                        label: "Fund Delivered"
+                                    },
+                                    {
+                                        y: undelivered,
+                                        label: "Undelivered"
+                                    }
+                                ]
+                            }]
+                        });
+                        chart.render();
+
+                    }
+                    </script>
+
                 </fieldset>
+
+                <div class="detail-box-Analyse">
+
+                    <ul class="ul-first"><B>
+                            <br>
+                            <br>
+                            <li style="color:blue;">Victims
+                                Amount<?php echo "--------> ";?><?php echo $_SESSION['fundDelivered'] ?> Persons</li>
+                            <br>
+                            <li style="color:red;">Fully
+                                Victims<?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons</li>
+                            <br><br>
+                            <br>
+                            <li style="color:green;">Astimate
+                                Money<?php echo "------> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundDelivered'] ?>
+                                Rs</li>
+                            <br>
+                            <li style="color:brown;">delivered
+                                Miney<?php echo "----> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundUndelivered'] ?>
+                                Rs</li>
+                        </B></ul>
+
+
+
+
+
+
+                </div>
+
+                <div id="chartContainer" style="height: 370px; width: 70%;"></div>
+                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
             </fieldset>
+
+
         </form>
 
     </div>
 </div>
+
+
+
+
+
+
+
+<script>
+$(document).ready(function() {
+    $('#region').select2();
+});
+</script>
+
+
 <?php include VIEW.'includes/footer.php' ?>
