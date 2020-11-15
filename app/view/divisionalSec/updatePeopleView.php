@@ -5,6 +5,7 @@
    if(isset($_SESSION['updateResults'])){
       $result = $_SESSION['updateResults'];
       $personRegion = $_SESSION['personRegion'];
+      unset($_SESSION['updateResults'],$_SESSION['personRegion']);
    } 
 ?>
 
@@ -102,7 +103,7 @@
                   <select class="form-control Input" id="validRegion" name="validRegion">
 
                      <option
-                        value="<?php echo isset($result) ? ( ($result['validRegion']=="yes") ? "Enable":"Disable" ) :"" ?>"
+                        value="<?php echo isset($result) ? $result['validRegion'] :"" ?>"
                         selected hidden 
                      >
                         <?php echo isset($result) ? ( ($result['validRegion']=="yes") ? "Enable":"Disable" ) :"" ?>
@@ -133,11 +134,9 @@
                         <?php echo  isset($personRegion) ? $personRegion['name']:"" ?>
                      </option>
                      <?php 
-                  foreach($res as $data){
-                     if($data['superRegion']==$_SESSION['region']){
-                        // echo "<option value='$data['regionid']'>colombo</option>";
-                        echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-
+                     foreach($res as $data){
+                        if($data['superRegion']==$_SESSION['region']){
+                           echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
                      }
                   }
                ?>
@@ -170,11 +169,9 @@
                   <select class="form-control Input" id="civilStatus" name="civilStatus">
 
                      <option
-                        value="<?php echo isset($result) ? ( ($result['civilStatus']=="0") ? "Unmarried":"Married" ) :"" ?>"
-                        selected hidden>
-
+                     value="<?php echo isset($result) ? $result['civilStatus'] :"" ?>"
+                     selected hidden>
                         <?php echo isset($result) ? ( ($result['civilStatus']=="0") ? "Unmarried":"Married" ) :"" ?>
-
                      </option>
 
                      <option value="0">Unmarried</option>
@@ -195,8 +192,6 @@
                      <option value="Jobless">Jobless</option>
                   </select>
                </div>
-
-               <?php unset($_SESSION['updateResults'],$_SESSION['personRegion']) ?>
 
                <div class="Twobtn">
                   <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>

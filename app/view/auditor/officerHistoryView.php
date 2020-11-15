@@ -12,7 +12,7 @@
                         <label for="nid" class="inputLable"><b>Officer NID</b></label>
                         <input class="form-control Input" name = "nid" placeholder="NIC number here"></input>
                     </div>
-                    
+                        
                     <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
                 </fieldset> 
             </fieldset>
@@ -37,19 +37,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                        </tbody>
-                        <?php 
-                            //get results from session variables
-                            $data = $_SESSION['query_results'];
+                            <?php 
+                                //get results from session variables
+                                $data = $_SESSION['query_results'];
 
-                            foreach($data as $row) {
-                                print " <tr> ";
-                                    foreach ($row as $attribute=>$value) {
-                                        print " <td style='text-align:center'> $value </td> ";
-                                    } 
-                                print " </tr> ";
-                            } 
-                        ?>
+                                foreach($data as $row) {
+                                    print " <tr> ";
+                                        foreach ($row as $attribute=>$value) {
+                                            print " <td style='text-align:center'> $value </td> ";
+                                        } 
+                                    print " </tr> ";
+                                } 
+                            ?>
+                        </tbody>
                     </table>
                 </div>
 

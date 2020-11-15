@@ -2,17 +2,6 @@
 
 class divisionalController extends Controller{
 
-   public function ViewDashboard(){
-      $this->view('divisionalSec/dashboardView');
-      
-      $this->view->render(); // This is how load the view
-   }
-
-   public function ViewaddNewDisaster(){
-      $this->view('divisionalSec/addNewDisasterView');
-      
-      $this->view->render(); // This is how load the view
-   }
    public function updatePeople(){
       $this->view('divisionalSec/updatePeopleView');
       
@@ -22,6 +11,17 @@ class divisionalController extends Controller{
       $this->model('divisionalSec/updatePeopleModel');
       
       $this->model->load();
+   }
+
+   public function addDisaster(){
+      $this->view('divisionalSec/addNewDisasterView');
+      
+      $this->view->render(); // This is how load the view
+   }
+   public function addDisasterModel(){
+      $this->model('divisionalSec/addDisasterModel');
+
+      $this->model->load();      
    }
 
    public function ViewDisasterDetails(){
@@ -77,7 +77,6 @@ class divisionalController extends Controller{
       $this->model('divisionalSec/addPeopleModel');
       
       $this->model->load();
-      // This is how load the model
    }
 
    public function addPeopleSaveModel(){ 
@@ -85,20 +84,6 @@ class divisionalController extends Controller{
     
       $this->model->load(); // This is how load the model
    }
-
-   public function addNewDisasterModel(){
-      $this->model('divisionalSec/addNewDisasterModel');
-
-      $this->model->load();      
-   }
-
-   public function addNewDisasterSaveModel(){
-      $this->model('divisionalSec/addNewDisasterSaveModel');
-
-      $this->model->load();      
-   }
-
-   
 
    public function nicSearchModel(){
       $this->model('divisionalSec/nicSearchModel');
@@ -115,7 +100,6 @@ class divisionalController extends Controller{
    public function disasterRegionView(){ 
       $this->view('divisionalsec/disasterRegionView');
     
-      
       $this->view->render();
    }
 

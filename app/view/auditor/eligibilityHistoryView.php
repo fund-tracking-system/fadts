@@ -6,14 +6,14 @@
         <form method = "post" action = "/fadts/audit/eligibilityHistoryModel" id="form">
             <fieldset class="BackgroundFS">
                 <h2>VIEW ELIGIBILITY HISTORY</h2>
-
+                
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="nid" class="inputLable"><b>Person NID</b></label>
                         <input class="form-control Input" name = "nid" placeholder="NIC number here"></input>
                     </div>
-                    
-                    <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
+                        
+                        <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
                 </fieldset> 
             </fieldset>
         </form> 
@@ -32,8 +32,7 @@
                                 <th>Update time</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
+                        <tbody>                            
                         <?php 
                             //get results from session variables
                             $data = $_SESSION['query_results'];
@@ -46,6 +45,7 @@
                                 print " </tr> ";
                             } 
                         ?>
+                        </tbody>
                     </table>
                 </div>
 
