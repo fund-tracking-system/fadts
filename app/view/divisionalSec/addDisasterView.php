@@ -12,13 +12,14 @@
 
                <div class="form-row ">
                   <label for="disaster" class="inputLable"><b>Disaster Type:</b></label>
-                  <select class="form-control Input" name="disaster" id="disaster">
+                  <select class="form-control Input" name="type" id="type">
                      <option value="Fire">Fire </option>
                      <option value="Flood">Flood </option>
-                     <option value="lewgini">Tsunami </option>
+                     <option value="Tsunami">Tsunami </option>
                      <option value="Landslide">LandSlide </option>
                      <option value="Tonado">Tonado </option>
-                     <option value="Tonado">Earthquake </option>
+                     <option value="Earthquake">Earthquake </option>
+                     <option value="Drought">Drought</option>
                   </select>
                </div>
 
@@ -26,7 +27,7 @@
                <div class="form-row">
                   <label for="disaster-name" class="inputLable" type="hidden"><b>Disaster
                         Name:</b></label>
-                  <input class="form-control Input" id="disasterName" name="disasterName"></input>
+                  <input class="form-control Input" id="name" name="name"></input>
                </div>
 
                <div class="form-row">
@@ -49,9 +50,8 @@
                   
                   $_SESSION['region_result']=$res;  //for assign region  ?>
 
-                  <select id='region' class='form-control Input' multiple='multiple' name='region' id='region'
-                     style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
-                     <?php 
+                  <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
+                  <?php 
                   foreach($res as $data){
                      if($data['superRegion']==$_SESSION['region']){
                         // echo "<option value='$data['regionid']'>colombo</option>";
@@ -59,7 +59,8 @@
 
                      }
                   }
-               ?>
+                  ?>
+                  </select>
                </div>
 
                <div class="form-row">
@@ -74,7 +75,7 @@
 
                <!-- <div class='button '> -->
 
-               <button type="submit" class='btn btn-primary signlebtn'>Add Disaster
+               <button type="submit" id="submit" name="submit" class='btn btn-primary signlebtn'>Add Disaster
                </button>
                <!-- </div> -->
 
