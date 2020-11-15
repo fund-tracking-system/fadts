@@ -90,7 +90,7 @@ switch($controller){
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Add Officer
    </a>
-   <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">corporate_fare</span>Update Officer
    </a>
    <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
