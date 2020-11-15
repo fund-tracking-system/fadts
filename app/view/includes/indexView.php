@@ -7,9 +7,20 @@
  
 $controller = $_SESSION['controller'];
 
-//  $email = $_SESSION['email'];
+ $email = $_SESSION['email'];
 // $username = strtok($email, '@');
-//$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled. 
+//$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled.
+require 'connection.php';   // database connection file calling
+// $userid=$_SESSION['userid'];
+
+// $sql="SELECT title FROM events WHERE userid=$userid ";
+// $res=$con->query($sql);
+// $rgn=$res->fetch_all(MYSQLI_ASSOC); 
+
+// foreach ($rgn as $key ) {
+//     $_SESSION['title']=$key['title'];
+// } 
+// var_dump($_SESSION['title']);
 
 switch($controller){
 
@@ -20,7 +31,7 @@ switch($controller){
 <div class="divisionDashboard">
    <div class="grid_box">
       <div class="box-1">
-      <div class="nav_link"><B>INCOME MEMTHOD</B></div>
+      <div class="nav_link"><B>INCOME METHOD</B></div>
 
          <canvas id="Chart1"></canvas>
       </div>
@@ -39,7 +50,34 @@ switch($controller){
             <p id="calendar_year"></p>
          </div>
          <div id="calendar_events">
-            <h3>Events</h3>
+            <h3 style="color: black;">Your Events</h3>
+            <?php echo $_SESSION['userrole']; ?>
+            <?php
+
+               $userid=$_SESSION['userid'];
+
+               $sql="SELECT title,start_event FROM events WHERE events.userid=$userid ";
+               $res=$con->query($sql);
+               $rgn=$res->fetch_all(MYSQLI_ASSOC); 
+               $event="You Have No Event";
+               if($rgn==NULL){
+                  print ' <h3> ' . $event . ' </h3>';
+               }
+               else{
+                  foreach ($rgn as $key ) {
+                     $_SESSION['title']=$key['title'];
+                     $_SESSION['start_event']=$key['start_event'];
+                     print ' <h3> ' . $key['start_event'] . ' </h3>';
+                     print ' <h3> ' . $key['title'] . ' </h3>';
+                     // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
+                  } 
+                 
+
+               }
+
+               
+                           
+            ?>
          </div>
       </div>
       <div class="box-4">
@@ -462,8 +500,8 @@ window.onload = calendar;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events">
-            <h3>Events</h3>
+         <div id="calendar_events" style="height:100%;">
+            <h3 >Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -562,11 +600,11 @@ window.onload = calendar;
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
-         type: 'bar', // The type of chart we want to create
+         type: 'line', // The type of chart we want to create
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Population By Age',
+                  label: 'deliveries Made',
                   data: [100,200,400,300,250,140,370,200,300,200],
                   // backgroundColor:'#4cd84c',
                   hoverBackgroundColor:'#00FF00',
