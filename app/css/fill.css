@@ -8,6 +8,18 @@ body{
 }
 h3{
   color: black;
+  padding: 15px;
+  font-weight: 15px;
+}
+h5{
+ 
+   font-size: 16px;
+   padding:1px;
+   color: black;
+   padding-left: 10px;
+  
+  
+  /* color: #011116; */
 }
 
 .To{
@@ -1236,8 +1248,8 @@ visibility: hidden;
   margin: 0px;
   background-color: rgba(11, 207, 109, 0.664);
   color: #fff;
-  /* border-radius: 5%;
-  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4); */
+  /* border-radius: 5%; */
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4); 
 }
 #calendar_events{
   width: 50%;
@@ -1248,8 +1260,8 @@ visibility: hidden;
   background: lightgray;
   /* background-color: rgba(11, 207, 109, 0.664); */
   color: #fff;
-   border-radius: 5%;
-  /*box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);*/
+   /* border-radius: 5%; */
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);
 } 
 
 #calendardate>p{
