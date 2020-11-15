@@ -19,9 +19,9 @@
     require 'connectionOOP.php';   
     
     //prepare and bind
-    $query = 'SELECT updateTime, officerId, nid, email, region, loginStatus, name, position FROM officerhistory WHERE nid = ?';
+    $query = 'SELECT predefinedFundId, personId, editor, updateTime FROM eligibilityhistory WHERE personId = ?';
     $stmt = $con->prepare($query);
-    $stmt->bind_param("s", $nid);
+    $stmt->bind_param("s", $nid);	
 
     //if nid is set
     if (isset($_POST['nid']) && $_POST['nid'] != 0) {
@@ -32,7 +32,7 @@
         $result = $stmt->get_result();
     }
     else {
-        $sql = "SELECT updateTime, officerId, nid, email, region, loginStatus, name, position FROM officerhistory";
+        $sql = "SELECT predefinedFundId, personId, editor, updateTime FROM eligibilityhistory";
         $result = $con->query($sql);
     }
     
@@ -48,6 +48,6 @@
     $con->close();
     
     //redirecting to view
-    header("Location:/fadts/audit/officerHistoryView"); 
+    header("Location:/fadts/audit/eligibilityHistoryView"); 
     exit(); 
 ?>

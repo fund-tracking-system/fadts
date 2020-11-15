@@ -5,6 +5,7 @@
    if(isset($_SESSION['updateResults'])){
       $result = $_SESSION['updateResults'];
       $personRegion = $_SESSION['personRegion'];
+      unset($_SESSION['updateResults'],$_SESSION['personRegion']);
    } 
 ?>
 
@@ -102,7 +103,7 @@
                   <select class="form-control Input" id="validRegion" name="validRegion">
 
                      <option
-                        value="<?php echo isset($result) ? ( ($result['validRegion']=="yes") ? "Enable":"Disable" ) :"" ?>"
+                        value="<?php echo isset($result) ? $result['validRegion'] :"" ?>"
                         selected hidden 
                      >
                         <?php echo isset($result) ? ( ($result['validRegion']=="yes") ? "Enable":"Disable" ) :"" ?>
@@ -113,34 +114,32 @@
                   </select>
                </div>
 
+
                <div class="form-row" style="margin-bottom:50px;">
 
                   <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
-
                   <?php
+
                   require 'connection.php'; 
                                  
                   $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
                   $rgnRes=$con->query($rgn) ;
                   $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
                   
-                  $_SESSION['region_result']=$res;  //for assign region
-                  ?>
+                  $_SESSION['region_result']=$res;  //for assign region  ?>
 
-                  <select class='form-control Input' name="region" id='region'
+                  <select id='region' class='form-control Input'  name='region' id='region'
                      style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
-
                      <option value="<?php echo isset($result) ? $result['region']:"" ?>" selected hidden>
-                        <?php echo isset($personRegion) ? $personRegion['name']:"" ?>
+                        <?php echo  isset($personRegion) ? $personRegion['name']:"" ?>
                      </option>
-
                      <?php 
                      foreach($res as $data){
-                     if($data['superRegion']==$_SESSION['region']){
-                        echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
+                        if($data['superRegion']==$_SESSION['region']){
+                           echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
                      }
-                     }
-                     ?>
+                  }
+               ?>
                </div>
 
                <div class="form-row">
@@ -170,11 +169,9 @@
                   <select class="form-control Input" id="civilStatus" name="civilStatus">
 
                      <option
-                        value="<?php echo isset($result) ? ( ($result['civilStatus']=="0") ? "Unmarried":"Married" ) :"" ?>"
-                        selected hidden>
-
+                     value="<?php echo isset($result) ? $result['civilStatus'] :"" ?>"
+                     selected hidden>
                         <?php echo isset($result) ? ( ($result['civilStatus']=="0") ? "Unmarried":"Married" ) :"" ?>
-
                      </option>
 
                      <option value="0">Unmarried</option>
@@ -183,7 +180,7 @@
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="job type"><b>Job type :</b></label>
+                  <label class="inputLable" for="job type"><b>Income type :</b></label>
                   <select class="form-control Input" id="jobType" name="jobType">
                      <option value="<?php echo isset($result) ? $result['job']:"" ?>" selected hidden>
                         <?php echo isset($result) ? $result['job']:"" ?></option>
@@ -195,8 +192,6 @@
                      <option value="Jobless">Jobless</option>
                   </select>
                </div>
-
-               <?php unset($_SESSION['updateResults'],$_SESSION['personRegion']) ?>
 
                <div class="Twobtn">
                   <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>
