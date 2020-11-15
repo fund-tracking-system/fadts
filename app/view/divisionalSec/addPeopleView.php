@@ -86,7 +86,7 @@
                     <div class="form-row" style="margin-bottom:50px;">
                         <label for="region" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
 
-                        <?php
+                  <?php
 
                   require 'connection.php'; 
                   
@@ -96,8 +96,6 @@
                   $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
                   $rgnRes = $con->query($rgn) ;
                   $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
-                  
-                  $_SESSION['region_result']=$res
                   
                   ?>
                         <select id='region' class='form-control Input' name='region' id='region'
@@ -125,11 +123,6 @@
 
                   <label class="inputLable" for="phone-number"><b>Contact Number 2 :</b></label>
                   <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
-               </div>
-
-               <div class="form-row">
-                  <label class="inputLable" for="monthlyIncome"><b>Monthly Gross Income :</b></label>
-                  <input class="form-control Input" id='monthlyIncome' name="monthlyIncome" type="number"></input>
                </div>
 
                 <div class="Twobtn">

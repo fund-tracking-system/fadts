@@ -4,9 +4,6 @@
 
 
 <div class="calender" style="background-color:white" >
-   
-    
-    
     <div id="calendar" style="padding: 10px;" ></div>
     </div>
 </div>
