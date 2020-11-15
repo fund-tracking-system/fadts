@@ -1025,20 +1025,21 @@ visibility: hidden;
   display: grid;
 	grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  background-color:#e6e7eb;
+  background-color:#fcfcfc;
+  
 }
 
 .box-1{
   /*width: 100%;*/
   margin: 5px;
-  background-color:#e6e7eb;
+  background-color:#ffffff;
   grid-row: 1/2;
   grid-column: 1/2;
 }
 
 .box-2{
   margin: 5px;
-  background: #e6e7eb;
+  background:#ffffff;
   grid-row: 1/2;
   grid-column: 2/3;
   
@@ -1046,14 +1047,15 @@ visibility: hidden;
 
 .box-3{
   margin: 5px;
-  background: #dadada;
+  background:#ffffff;
   grid-row: 1/2;
   grid-column: 3/4;
+  display: flex;
 }
 
 .box-4{
   margin: 5px;
-  background: #e6e7eb;
+  background:#ffffff;
   grid-row: 2/3;
   grid-column: 1/4;
 }
@@ -1171,7 +1173,7 @@ visibility: hidden;
     padding-right: 15px;
     padding-left: 15px;
   }
-}
+} 
 
 @media (max-width: 575px) {
   .navbar-toggleable .navbar-nav .dropdown-menu {
@@ -1228,30 +1230,48 @@ visibility: hidden;
 #calendardate{
   width: 50%;
   height: 100%;
+  padding: 0px;
+  margin: 0px;
   background-color: rgba(11, 207, 109, 0.664);
   color: #fff;
-  border-radius: 5%;
-  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);
+  /* border-radius: 5%;
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4); */
 }
+#calendar_events{
+  width: 50%;
+  height: 290px;
+  margin: 0px;
+  padding: 0px;
+  float: right;
+  background: lightgray;
+  /* background-color: rgba(11, 207, 109, 0.664); */
+  color: #fff;
+   border-radius: 5%;
+  /*box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);*/
+} 
 
 #calendardate>p{
   font-family: Verdana, Arial, sans-serif;
-  padding: 10px 0;
+  padding: 15px 0;
   margin: 0;
   color: #fff;
   text-align: center;
 }
 
 #calendar_day{
-  font-size: 16px;
+  font-size: 20px;
 }
 
-#calendar_month_year{
-  font-size: 14px;
+#calendar_month {
+  font-size: 20px;
+}
+
+#calendar_year {
+  font-size: 20px;
 }
 
 #calendar_date{
-  font-size: 64px;
+  font-size: 80px;
   padding-top: 10px;
   padding-bottom: 0;
 }
@@ -1262,31 +1282,34 @@ visibility: hidden;
 .profile-main{
   width: 750px;
   margin: 0 auto;
-  border: 1px solid #aed5e2;
+  border: 1px solid #011116;
   padding-bottom: 10px;
+  border-radius: 10px;
 }
 .profile-header{
   height: 200px;
   width: 100%;
   background-color: #EBF6FA;
   border-bottom: 2px solid #E2F3FB;
+  
 }
 .user-detail{
   position: relative;
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
   height: 100%;
 }
 .user-image{
   float: left;
   position: relative;
-  width: 23%;
-  height: 135px;
+  width: 25%;
+  height: 200px;
+ 
 }
 .user-image img{
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 45%;
   margin-top: 35px;
 }
 .prof-label{
@@ -1310,7 +1333,7 @@ visibility: hidden;
   margin-top: 35px;
   font-size: 25px;
   font-weight: 600;
-  padding-right:100px;
+  padding-right:500px;
 }
 .user-data .post-label{
   font-size: 20px;
@@ -1375,7 +1398,7 @@ visibility: hidden;
 
 /*tab*/
 .tab-panel-main{
-  width: 75%;
+  width:90%;
   margin: 0 auto;
 }
 ul.tabs{
@@ -1716,8 +1739,38 @@ ul.tabs li.current{
 }
 
 
+.FSdetail{
+  background-color: #fBF6FE; 
+  border-color: yellow;
+  margin-left:30px;
+  border-radius:10px;
+}
 
 
+.FSdetail:hover {
+  color: #fff;
+  background-color: #c6e6ee;
+  border-color: #0062cc;
+}
 
 
+.detail-box-Analyse{
+  float: right;
+  width: 32%;
+  border:1px solid #ededed;
+  padding: 13px;
+  border-radius: 4px;
+  height: 370px;
+}
+.detail-box-Analyse .ul-first{
+  padding: 0px;
+  list-style: none;
+  margin-left: 50px;
+}.btn.btn-primary.btnNavR{
+margin-left: 10px;
+margin-top:-4px;
+height: 26px;
+width: 130px;
 
+padding-bottom: 26px;
+}

@@ -14,7 +14,7 @@ class divisionalController extends Controller{
    }
 
    public function addDisaster(){
-      $this->view('divisionalSec/addNewDisasterView');
+      $this->view('divisionalSec/addDisasterView');
       
       $this->view->render(); // This is how load the view
    }
@@ -131,6 +131,17 @@ class divisionalController extends Controller{
 
    public function selectFundDetailsView(){ 
       $this->view('divisionalsec/selectFundDetailsView');
+    
+      
+      $this->view->render();
+   }
+
+
+   
+
+   
+   public function selectDisasterDetails(){ 
+      $this->view('divisionalsec/selectDisasterDetails');
     
       
       $this->view->render();

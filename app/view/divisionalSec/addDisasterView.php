@@ -4,11 +4,23 @@
 <div class="all_bacground_clor">
    <div class='SearchByCriteriaform1'>
 
-      <form class="form" id="formAddDisaster" method="POST" action="/fadts/divisional/addNewDisasterModel">
+      <form class="form" id="formAddDisaster" method="POST" action="/fadts/divisional/addDisasterModel">
 
          <fieldset class=" BackgroundFS">
             <h2> ADD NEW DISASTER</h2>
             <fieldset class="searchBar">
+            <?php 
+               if(isset($_GET['error'])){
+         
+                  $error = $_GET['error'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger " role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "success"){
+                     echo '<div class="alert alert-success " role="alert">Disaster records successfully added!</div>';
+                  }       
+               }   
+            ?>
 
                <div class="form-row ">
                   <label for="disaster" class="inputLable"><b>Disaster Type:</b></label>
