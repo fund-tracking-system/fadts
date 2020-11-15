@@ -94,49 +94,81 @@
                     </fieldset>
 
                     <script>
-                    window.onload = function() {
+                    // window.onload = function() {
 
 
-                        var dilivered = $("#dilivered").val();
-                        var undelivered = $("#undelivered").val();
-                        var dilivered = $("#dilivered").val();
+                    //     var dilivered = $("#dilivered").val();
+                    //     var undelivered = $("#undelivered").val();
+                    //     var dilivered = $("#dilivered").val();
 
 
 
-                        var chart = new CanvasJS.Chart("chartContainer", {
-                            animationEnabled: true,
-                            title: {
-                                text: "FUND DILIVERY ANALISYS",
-                                horizontalAlign: "left"
+                    //     var chart = new CanvasJS.Chart("chartContainer", {
+                    //         animationEnabled: true,
+                    //         title: {
+                    //             text: "FUND DILIVERY ANALISYS",
+                    //             horizontalAlign: "left"
+                    //         },
+                    //         data: [{
+                    //             type: "doughnut",
+                    //             startAngle: 70,
+                    //             //innerRadius: 60,
+                    //             indexLabelFontSize: 17,
+                    //             indexLabel: "{label} - #percent%",
+                    //             toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    //             dataPoints: [
+
+                    //                 {
+                    //                     y: dilivered,
+                    //                     label: "Fund Delivered"
+                    //                 },
+                    //                 {
+                    //                     y: undelivered,
+                    //                     label: "Undelivered"
+                    //                 }
+                    //             ]
+                    //         }]
+                    //     });
+                    //     chart.render();
+
+                    // }
+
+                    $(function () {
+                        var ctx = document.getElementById('chartContainer').getContext('2d');
+                        var chart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Delivered','Undelivered'],
+                                datasets: [{
+                                    label: '# fund release',
+                                    data: [10,4],
+                                    backgroundColor: [
+                                        '#2980b9',
+                                        '#b30000',
+                                        // '#f1c40f'
+                                    ],
+                                    borderWidth: 1
+                                }]
                             },
-                            data: [{
-                                type: "doughnut",
-                                startAngle: 70,
-                                //innerRadius: 60,
-                                indexLabelFontSize: 17,
-                                indexLabel: "{label} - #percent%",
-                                toolTipContent: "<b>{label}:</b> {y} (#percent%)",
-                                dataPoints: [
+                            options: {
+                                rotation:Math.PI*10.5,
+                                animation:{
+                                animatescale:true
+                                },
+                                
+                            }
+                        }); 
+                        chart.canvas.parentNode.style.height = '100%';
 
-                                    {
-                                        y: dilivered,
-                                        label: "Fund Delivered"
-                                    },
-                                    {
-                                        y: undelivered,
-                                        label: "Undelivered"
-                                    }
-                                ]
-                            }]
-                        });
-                        chart.render();
-
-                    }
+                    });
                     </script>
 
-
-                    <div id="chartContainer" style="height: 370px; width: 100%;margin-top:30px;"></div>
+                    <div style="height: 1000px; width:800px;margin-top:30px;">
+                        <canvas id="chartContainer"></canvas>
+                    </div>
+                    <!-- <div id="chartContainer" style="height: 370px; width: 100%;margin-top:30px;"></div> -->
                     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 
 
