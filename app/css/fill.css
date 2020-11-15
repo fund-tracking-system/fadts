@@ -1754,3 +1754,23 @@ ul.tabs li.current{
 }
 
 
+.detail-box-Analyse{
+  float: right;
+  width: 32%;
+  border:1px solid #ededed;
+  padding: 13px;
+  border-radius: 4px;
+  height: 370px;
+}
+.detail-box-Analyse .ul-first{
+  padding: 0px;
+  list-style: none;
+  margin-left: 50px;
+}.btn.btn-primary.btnNavR{
+margin-left: 10px;
+margin-top:-4px;
+height: 26px;
+width: 130px;
+
+padding-bottom: 26px;
+}
