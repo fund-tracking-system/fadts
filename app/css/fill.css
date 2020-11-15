@@ -1272,6 +1272,7 @@ visibility: hidden;
   width: 100%;
   background-color: #EBF6FA;
   border-bottom: 2px solid #E2F3FB;
+  
 }
 .user-detail{
   position: relative;
@@ -1719,8 +1720,18 @@ ul.tabs li.current{
 }
 
 
+.FSdetail{
+  background-color: #fBF6FE; 
+  border-color: yellow;
+  margin-left:30px;
+  border-radius:10px;
+}
 
 
-
+.FSdetail:hover {
+  color: #fff;
+  background-color: #c6e6ee;
+  border-color: #0062cc;
+}
 
 
