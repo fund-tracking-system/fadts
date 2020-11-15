@@ -13,9 +13,9 @@
 
                     <fieldset style="background-color: #EBF6FA; border:none; margin-top:30px;">
 
-                        <h2 style="margin-bottom:30px;"> FUND DETAILS ANALISYS</h2>
+                        <h2 style="margin-bottom:30px;"> DISASTER DETAILS ANALISYS</h2>
                         <div class="form-row" style="margin-bottom:50px;">
-                            <label for="region" class="inputLable" style="margin-right:15px;"><b>Select Fund Result
+                            <label for="region" class="inputLable" style="margin-right:15px;"><b>Select Dsaster Result
                                     Region :</b></label>
                             <?php
 
@@ -55,24 +55,23 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Amount Per
-                                                        Person <br> <br>
-                                                        <?php echo $_SESSION['amountPerPerson']?></b></label>
+                                                <label for="nid" class="inputLable"><b>Disaster Name <br> <br>
+                                                        <?php echo "Tsunami "?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;"
-                                                    value="<?php echo $_SESSION['amountPerPerson']?>" readonly></input>
+                                                    value="" readonly></input>
                                             </div>
                                         </fieldset>
                                     </th>
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="dilivered" class="inputLable"><b>Region Fund Amount
+                                                <label for="dilivered" class="inputLable"><b>Region Victims Amount
                                                         <br> <br>
-                                                        <?php echo $_SESSION['amountPerPerson']*$_SESSION['totalRecipients']?></b></label>
+                                                        <?php echo  "450";?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='dilivered'
-                                                    value="<?php echo $_SESSION['fundDelivered']?>" readonly></input>
+                                                    value="" readonly></input>
                                             </div>
                                         </fieldset>
 
@@ -80,11 +79,11 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Fund Creator Name <br> <br>
+                                                <label for="nid" class="inputLable"><b>Disaster Creator  <br> <br>
                                                         <?php echo "Ministry "?></b></label>
                                                 <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='undelivered'
-                                                    value="<?php echo $_SESSION['fundUndelivered']?>" readonly></input>
+                                                    value="" readonly></input>
                                             </div>
                                         </fieldset>
                                     </th>
@@ -134,7 +133,7 @@
                         var chart = new CanvasJS.Chart("chartContainer", {
                             animationEnabled: true,
                             title: {
-                                text: "FUND DILIVERY ANALISYS",
+                                text: "DISASTER VICTIMS ANALISYS",
                                 horizontalAlign: "left"
                             },
                             data: [{
@@ -169,18 +168,18 @@
                     <ul class="ul-first"><B>
                             <br>
                             <br>
-                            <li style="color:blue;">Dilivered
+                            <li style="color:blue;">Victims
                                 Amount<?php echo "--------> ";?><?php echo $_SESSION['fundDelivered'] ?> Persons</li>
                             <br>
-                            <li style="color:red;">Undelivered
-                                amount<?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons</li>
+                            <li style="color:red;">Fully
+                                Victims<?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons</li>
                             <br><br>
                             <br>
-                            <li style="color:green;">Dilivered
+                            <li style="color:green;">Astimate
                                 Money<?php echo "------> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundDelivered'] ?>
                                 Rs</li>
                             <br>
-                            <li style="color:brown;">Undelivered
+                            <li style="color:brown;">delivered
                                 Miney<?php echo "----> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundUndelivered'] ?>
                                 Rs</li>
                         </B></ul>

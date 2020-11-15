@@ -49,7 +49,7 @@
 
                         <div class="tab-panel-main">
                             <div id="Basic-detail" class="tab-content current">
-                                <div class="skill-box">
+                                <!-- <div class="skill-box">
                                     <ul>
                                         <li><strong>My Core Skills:</strong></li>
                                         <li>LeaderShip skills<i class="fa fa-star" aria-hidden="true"></i><i
@@ -60,7 +60,7 @@
                                         <li>GROWTH MARKETING<i class="fa fa-star" aria-hidden="true"></i></li>
                                         <li>RESOURCE MANEGMENT<i class="fa fa-star" aria-hidden="true"></i></li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 <div class="bio-box">
                                     <div class="heading">
                                         <p>Professional Bio

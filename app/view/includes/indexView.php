@@ -7,9 +7,19 @@
  
 $controller = $_SESSION['controller'];
 
-//  $email = $_SESSION['email'];
+ $email = $_SESSION['email'];
 // $username = strtok($email, '@');
-//$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled. 
+//$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled.
+require 'connection.php';   // database connection file calling
+$userid=$_SESSION['userid'];
+
+$sql="SELECT title FROM events WHERE userid=$userid ";
+$res=$con->query($sql);
+$rgn=$res->fetch_all(MYSQLI_ASSOC); 
+
+// foreach ($rgn as $key ) {
+//     $_SESSION['title']=$key['name'];
+// } 
 
 switch($controller){
 
@@ -20,7 +30,7 @@ switch($controller){
 <div class="divisionDashboard">
    <div class="grid_box">
       <div class="box-1">
-      <div class="nav_link"><B>INCOME MEMTHOD</B></div>
+      <div class="nav_link"><B>INCOME METHOD</B></div>
 
          <canvas id="Chart1"></canvas>
       </div>
@@ -29,13 +39,18 @@ switch($controller){
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events">
+            <h3 style="color: black;">Events</h3>
+            <?php echo $_SESSION['userrole']; ?>
          </div>
       </div>
       <div class="box-4">
@@ -178,7 +193,9 @@ function calendar(){
    $('#calendar_day').text(day[d.getDay()]);
    // setText('calendar_day', day[d.getDay()]);
    setText('calendar_date', d.getDate());
-   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+   setText('calendar_month', month[d.getMonth()]);
+   setText('calendar_year', (1900+d.getYear()));
+   
 };
 
 //this function will set the text value of tags
@@ -214,13 +231,17 @@ window.onload = calendar;
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events">
+            <h3>Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -359,7 +380,8 @@ function calendar(){
    $('#calendar_day').text(day[d.getDay()]);
    // setText('calendar_day', day[d.getDay()]);
    setText('calendar_date', d.getDate());
-   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+   setText('calendar_month', month[d.getMonth()]);
+   setText('calendar_year', (1900+d.getYear()));
 };
 
 //this function will set the text value of tags
@@ -399,13 +421,17 @@ window.onload = calendar;
         
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events">
+            <h3>Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -438,13 +464,17 @@ window.onload = calendar;
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
-      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
-      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
-            <p id="calendar_month_year"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events" style="height:100%;">
+            <h3 >Events</h3>
          </div>
       </div>
       <div class="box-4">
@@ -543,11 +573,11 @@ window.onload = calendar;
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
-         type: 'bar', // The type of chart we want to create
+         type: 'line', // The type of chart we want to create
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Population By Age',
+                  label: 'deliveries Made',
                   data: [100,200,400,300,250,140,370,200,300,200],
                   // backgroundColor:'#4cd84c',
                   hoverBackgroundColor:'#00FF00',
@@ -583,7 +613,8 @@ function calendar(){
    $('#calendar_day').text(day[d.getDay()]);
    // setText('calendar_day', day[d.getDay()]);
    setText('calendar_date', d.getDate());
-   setText('calendar_month_year', month[d.getMonth()]+' '+(1900+d.getYear()));
+   setText('calendar_month', month[d.getMonth()]);
+   setText('calendar_year', (1900+d.getYear()));
 };
 
 //this function will set the text value of tags
