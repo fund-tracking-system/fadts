@@ -1,4 +1,4 @@
-//addnewDisaster-divisionalsec
+//divisionalsec
 jQuery.validator.addMethod("lettersonly", function(value, element) {        
     return this.optional(element) || /^[a-z\s]+$/i.test(value);
     }, "Only alphabetical characters");
@@ -37,22 +37,22 @@ $(function(){
     if($formDisasterAdd.length){
         $formDisasterAdd.validate({
             rules: {
-                disaster: "required",
-                disasterName: "required",
+                type: "required",
+                name: "required",
                 date: {
                     required: true,
                     date: true
                 },
-                description: "required"
+                region[]: "required"
             },
             messages: {
-                disaster: "This field is required",
-                disasterName: "This field is required",
+                type: "This field is required",
+                name: "This field is required",
                 date: {
                     required: "This field is required",
                     date: "Date should be correct format"
                 },
-                description: "This field is required",           
+                region[]: "This field is required",           
             }
       });
     }
