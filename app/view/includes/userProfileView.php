@@ -16,18 +16,9 @@
     foreach ($rgn as $key ) {
         $_SESSION['regionName']=$key['name'];
     }
-
-
-
     ?>
-
-
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-
-
-
-
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
                 <h2>USER PROFILE </h2>
