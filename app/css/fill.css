@@ -1082,7 +1082,7 @@ visibility: hidden;
   padding-right: 15px;
   padding-left: 15px;
 }
-/*
+
 @media (min-width: 576px) {
   .container {
     padding-right: 15px;
@@ -1110,7 +1110,7 @@ visibility: hidden;
     padding-left: 15px;
   }
 }
-*/
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
@@ -1146,7 +1146,7 @@ visibility: hidden;
   padding-right: 15px;
   padding-left: 15px;
 }
-/* 
+
 @media (min-width: 576px) {
   .container-fluid {
     padding-right: 15px;
@@ -1173,7 +1173,7 @@ visibility: hidden;
     padding-right: 15px;
     padding-left: 15px;
   }
-} */
+} 
 
 @media (max-width: 575px) {
   .navbar-toggleable .navbar-nav .dropdown-menu {
