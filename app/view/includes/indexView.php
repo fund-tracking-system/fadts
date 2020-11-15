@@ -1,11 +1,13 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
+
+
 <?php
  
 $controller = $_SESSION['controller'];
 
-// $email = $_SESSION['email'];
+//  $email = $_SESSION['email'];
 // $username = strtok($email, '@');
 //$username = "jihaninanayakkara"; // the email must be valid. if note the calendar will not be visibled. 
 
@@ -27,6 +29,9 @@ switch($controller){
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
+      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <h1><B><?php echo $_SESSION['userrole']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
@@ -36,6 +41,7 @@ switch($controller){
       <div class="box-4">
          <div>
             <canvas id="Chart3"></canvas>
+            
          </div>
       </div>
    </div>
@@ -208,6 +214,9 @@ window.onload = calendar;
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
+      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <h1><B><?php echo $_SESSION['userrole']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
@@ -390,6 +399,9 @@ window.onload = calendar;
         
       </div>
       <div class="box-3" id="box_3">
+      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <h1><B><?php echo $_SESSION['userrole']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>
@@ -426,6 +438,9 @@ window.onload = calendar;
          <canvas id="Chart2"></canvas>
       </div>
       <div class="box-3" id="box_3">
+      <h1><B><?php echo $_SESSION['username']?></B></h1>
+      <h1><B><?php echo $_SESSION['userrole']?></B></h1>
+      <h1><B><?php echo $_SESSION['regionName']?></B></h1>
          <div id="calendardate">
             <p id="calendar_day"></p>
             <p id="calendar_date"></p>

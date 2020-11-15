@@ -403,24 +403,25 @@ $(function(){
 
 
 
-    //   $(document).ready(function() {
+      $(document).ready(function() {
 
-    //     $('#formAddPeople').submit(function(e) {
-    //         e.preventDefault();
-    //         var nid = $('#nid').val();
-    //         if (nid.length < 10)
-    //             $("span").text("Text is short");
-    //         else if (nid.length > 12)
-    //             $("span").text("Text is long");
-    //         else if (nid.length == 11)
-    //             $("span").text("Invalid");
-    //         else
-    //             $("span").text("Text is valid");
+        $('#formAddPeople').submit(function(e) {
+            e.preventDefault();
+            var nid = $('#nid').val();
+            var validate =this;
+            if (nid.slice(-1)='v') {
+                var errors = {};
+                errors[element.name] = "Invalid NID";
+                validator.showErrors(errors);
+                return true;
+            }
+
+           
                 
             
-    //     });
+        });
       
-    //   });
+      });
     
     
     
