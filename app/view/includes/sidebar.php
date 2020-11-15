@@ -12,19 +12,19 @@ switch($controller){
       <span class="material-icons">home</span>Home
    </a> -->
    <a href="/fadts/audit/officerHistoryView" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Officer History
+      <span class="material-icons">account_box</span>View Officer History
    </a>
    <a href="/fadts/audit/ViewDisasterDetails" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Disaster Details
+      <span class="material-icons">menu_book</span>View Disaster Details
    </a>
    <a href="/fadts/audit/ViewFundDetails" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Fund
+      <span class="material-icons">menu_book</span>View Fund Details
    </a>
    <a href="/fadts/audit/ViewSearchPeople" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Search People Data
+      <span class="material-icons">person_search</span>Search People Data
    </a>
    <a href="/fadts/audit/viewHistoryRecord" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View History Records
+      <span class="material-icons">find_in_page</span>View History Records
    </a>
    <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
@@ -85,28 +85,28 @@ switch($controller){
       <span class="material-icons">home</span>Home
    </a> -->
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add Officer
+      <span class="material-icons">person_add</span>Add Officer
    </a>
    <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Update Officer
+      <span class="material-icons">person</span>Update Officer
    </a>
    <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Create Fund
+      <span class="material-icons">create_new_folder</span>Create Fund
    </a>
    <a href="/fadts/ministry/viewAdddPeopleToFundElighibleList" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add People to Fund Eligible List
+      <span class="material-icons">group_add</span>Create Fund Eligible List
    </a>
    <a href="/fadts/ministry/viewFund" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Fund
+      <span class="material-icons">menu_book</span>View Fund Details
    </a>   
    <a href="/fadts/ministry/viewPeople" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Search People Data
+      <span class="material-icons">person_search</span>Search People Data
    </a>
    <a href="/fadts/ministry/ViewAddNewDisaster" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>Add New Disaster
+      <span class="material-icons">create_new_folder</span>Add New Disaster
    </a>
    <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Disaster Details
+      <span class="material-icons">menu_book</span>View Disaster Details
    </a>
    <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
