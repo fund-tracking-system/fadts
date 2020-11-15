@@ -10,7 +10,7 @@
                 <h2>SELECT DISASTER</h2>
             <fieldset class="tableBar">
                 <div class="tbleMargin">
-                    <table id="resultTable" class="display nowrap" style="table-layout:fixed">
+                    <table id="resultTable" style="table-layout:fixed" class="display" >
                         <thead>
                             <tr>
                                 <th><B>Disaster Name</B></th>
@@ -26,14 +26,14 @@
                                 <td><B>Tsunami 2004</B></td>
                                 <td><B>2004-12-26</B></td>
                                 <td><B>southern,eastern and northern provices</B></td>
-                                <td><a class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                <td><a href="" class="btn btn-primary" style="margin-left:20%"><B>VIEW DISASTER</B></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td><B>Flood 2003</B></td>
                                 <td><B>2003-06-26</B></td>
                                 <td><B>Whole Island</B></td>
-                                <td><a class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                <td><a href="" class="btn btn-primary" style="margin-left:20%"><B>VIEW DISASTER</B></a>
                                 </td>
                             </tr>
                         </tbody>

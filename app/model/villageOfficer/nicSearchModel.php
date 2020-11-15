@@ -51,6 +51,23 @@ if(isset($_POST['submit']) && isset($view)){
                   exit();
                }
                break;
+
+            case "victimSelect":
+               if($personRegion==$userRegion && $validRegion=="yes"){ 
+                  
+                  $result = array("personName"=>"$personName","personId"=>"$personId","nic"=>"$nic");
+
+                  $_SESSION['results'] = $result;    
+                  mysqli_close($con);
+                  header("Location:/fadts/village/$view");
+                  exit();         
+               }else{
+                  mysqli_close($con);
+                  header("Location:/fadts/village/$view?searcherror=wrong_region");
+                  exit();
+               }
+               break;
+            
          }
       }
       else{
@@ -137,3 +154,4 @@ function updatePeople($con,$personId,$view){
    }
 
 }
+
