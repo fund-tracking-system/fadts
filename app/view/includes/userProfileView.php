@@ -57,6 +57,11 @@
                         <input class="form-control Input" id="name" name="name"
                             value="<?php echo $_SESSION['roleName']?>" readonly></input>
                     </div>
+                    <div class="form-row">
+                        <label for="email " class="inputLable"><b>Email:</b></label>
+                        <input class="form-control Input" id="email" name="email"
+                            value="<?php echo $_SESSION['email']?>" readonly></input>
+                    </div>
 
                 </fieldset>
             </fieldset>

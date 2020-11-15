@@ -23,7 +23,7 @@
       <form method="post" id="form">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
-            <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">    
+            <fieldset class="searchBar">    
 
             <div>
                <label class="inputLable"><b>Age:</b></label>
@@ -33,8 +33,8 @@
             </div>
 
             <div class='form-row'>
-               <label class="inputLable " style=><b>Job Type</br></label>
-               <label class="inputLable" style ="padding-right:1000px;"></b></label>
+               <label class="inputLable"><b>Job Type</br></label>
+               <label class="inputLable"></b></label>
 
                <select class="form-control Input" onclick="showCheckboxes() ">
                   <!-- <option>Select an option</option> select kree mnwada kyla pennanna onna methana -->

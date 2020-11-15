@@ -1,7 +1,8 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<?php if(isset($_SESSION['updateResults'])) $result = $_SESSION['updateResults']; ?>
+<?php if(isset($_SESSION['updateResults'])) $result = $_SESSION['updateResults']; 
+      unset($_SESSION['updateResults'],$_SESSION['personRegion']) ?>
 
 
 <div class="all_bacground_clor">
@@ -176,8 +177,6 @@
                      <option value="yes">Dead</option>
                   </select>
                </div>
-
-               <?php unset($_SESSION['updateResults'],$_SESSION['personRegion']) ?>
 
                <div class="Twobtn">
                   <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>

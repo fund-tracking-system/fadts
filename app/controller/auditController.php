@@ -20,6 +20,18 @@ class auditController extends Controller{
       $this->model->load(); 
    }
 
+   public function eligibilityHistoryView(){
+      $this->view('auditor/eligibilityHistoryView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function eligibilityHistoryModel(){
+      $this->model('auditor/eligibilityHistoryModel');
+      
+      $this->model->load(); 
+   }
+
    public function ViewSearchPeople(){
       $this->view('auditor/searchPeopleView');
       
