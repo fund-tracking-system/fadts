@@ -88,23 +88,29 @@ $(function(){
 
 
 
-  $(function(){
-    var $formAddDisaster = $("#formUpdateVillage");
-    if($formAddDisaster.length){
-        $formAddDisaster.validate({
-            rules: {
-                nic: {
-                    required: true,
-                    nidvalidator:true
-                }
-            },
-            messages: {
-                nic:"This field is required"
-                
-            }
-      });
-    }
-  });
+//   $(function(){
+//     var $formAddDisaster = $("#formUpdateVillage");
+//     if($formAddDisaster.length){
+//         $formAddDisaster.validate({
+//             rules: {
+//                 nic: {
+//                     required: true,
+//                     // maxlength: 12,
+//                     // minlength:10,
+//                     nidvalidator:true
+//                 }
+//             },
+//             messages: {
+//                 nic: {
+//                     required: "This field is required",
+//                     // maxlength: "Please enter no more than 12 or 10 characters",
+//                     // minlength: "Please enter at most 10 or 12 characters"
+//                 }
+
+//             }
+//       });
+//     }
+//   });
 
 
   $(function(){
@@ -123,7 +129,7 @@ $(function(){
             }
       });
     }
-    
+
   });
 
 
