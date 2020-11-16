@@ -24,12 +24,7 @@
                 <fieldset class="tableBar">
                     <div class="tbleMargin">
 
-<<<<<<< HEAD
                         <table id="resultTable" class="display">
-=======
-
-                    <table id="resultTable" class="display " style="table-layout:fixed">
->>>>>>> 01c8227bf2628506ab4e2ed9190d687529f0687e
                             <thead>
                                 <tr>
                                     <th><B>Disaster Type</B></th>
