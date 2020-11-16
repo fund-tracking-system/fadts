@@ -155,7 +155,7 @@
                         <?php echo isset($result) ? $result['job']:"" ?></option>
                      <option value="government">Government</option>
                      <option value="private">Private</option>
-                     <option value="retired">Retired</option>
+                     <option value="retired">Government pension</option>
                      <option value="business_owner">Business owner</option>
                      <option value="self_employeed">Self employeed</option>
                      <option value="jobless">Jobless</option>

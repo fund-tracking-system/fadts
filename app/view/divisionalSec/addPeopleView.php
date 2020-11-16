@@ -59,7 +59,7 @@
                             <option value="" disabled selected>Select job type</option>
                             <option value="Goverment">Goverment</option>
                             <option value="Private">Private</option>
-                            <option value="Retired">Retired</option>
+                            <option value="Retired">Government pension</option>
                             <option value="SelfEmployee">SelfEmployee</option>
                             <option value="Jobless">Jobless</option>
 
