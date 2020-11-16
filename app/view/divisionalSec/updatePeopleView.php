@@ -194,7 +194,8 @@
                </div>
 
                <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>
+                  <button type="submit" name="submit" class="btn btn-primary"
+                  <?php echo isset($result)? "":"disabled" ?>>Confirm and Update</button>
 
                </div>
 
