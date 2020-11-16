@@ -81,6 +81,11 @@
                   <label for="description" class="inputLable"><b>Description :</b></label>
                   <textarea class="form-control Input txtWidth " id="description" name="description">  </textarea>
                </div>
+
+               <div class="Twobtn">
+                  <button type="submit" name="submit" class="btn btn-primary" >Confirm and Add
+                  </button>
+               </div>
             
             </fieldset>
                  
