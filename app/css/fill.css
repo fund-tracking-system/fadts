@@ -9,14 +9,15 @@ body{
 h3{
   color: black;
   padding: 15px;
-  font-weight: 15px;
+  font-weight: 25px;
 }
 h5{
  
-   font-size: 16px;
+   font-size: 15px;
    padding:1px;
-   color: black;
+   color:rgb(13, 40, 51);
    padding-left: 10px;
+   font-style: initial;
   
   
   /* color: #011116; */

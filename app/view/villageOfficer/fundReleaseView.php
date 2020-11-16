@@ -39,7 +39,7 @@
                   <input class="form-control searchInput" id="nic" placeholder="Type NIC here" name="nic"></input>
 
                   <button style="position:center;" type="submit" name="submit"
-                     class="btn btn-primary btnNav"><B>SEARCH</B></button>
+                     class="btn btn-primary btnNav">Search</button>
 
                </div>
             </fieldset>
