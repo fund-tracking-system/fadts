@@ -351,19 +351,19 @@ window.onload = calendar;
       var chart = new Chart(ctx, {
          type: 'doughnut',
          data: {
-            labels: ['Samuddi', 'Mahapola','Adult Fund','Not receiving Fund'],
+            labels: ['Samuddi', 'Mahapola','Adult Fund','Not receiving Any Fund'],
             datasets: [{
                   label: '# fund release',
                   data: [20,5,25,10],
                   backgroundColor: [
                      '#16a085',
-                     '#f1c40f',
+                     'red',
                      '#2980b9',
                      '#00FF00'
                   ],
                   borderColor: [
                      '#16a085',
-                     '#f1c40f',
+                     'red',
                      '#2980b9',
                      '#00FF00'
                   ],
@@ -394,7 +394,7 @@ window.onload = calendar;
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Victims per Year',
+                  label: 'Fund distribution Progress',
                   data: [100,200,400,300,250,140,370,200,300,200],
                   // backgroundColor:'#4cd84c',
                   hoverBackgroundColor:'#00FF00',
