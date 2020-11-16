@@ -63,7 +63,7 @@
                                 </div> -->
                                 <div class="bio-box">
                                     
-                                    <div class="desc"><strong>chamath Ranasinghe Golluwamula Opatha ganegoda Elpitye 5
+                                    <div class="desc"><strong><?php echo $_SESSION['username']?> Golluwamula Opatha ganegoda Elpitye 5
                                             family member and age 43
                                             how many child areas he controll . like that we can data from
                                             database<strong>

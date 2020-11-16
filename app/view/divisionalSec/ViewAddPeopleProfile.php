@@ -42,14 +42,13 @@
 
                         <div class="bio-box">
                             
-                            <div class="desc"><strong>trustee is---------------> <?php echo $_SESSION['people_trustee']?>
+                            <div class="desc"><strong>Trustee is----------------> <?php echo $_SESSION['people_trustee']?>
                                     <br>
-                                    Family head is----------><?php echo $_SESSION['people_headOfFamily']?>
+                                    Family head is----------> <?php echo $_SESSION['people_headOfFamily']?>
                                     <br>
                                     Living Region Is--------> <?php echo $_SESSION['people_region']?>
                                     <br>
-                                    Job Type is--------------->
-                                    <?php echo $_SESSION['people_jobType']?>
+                                    Job Type is---------------> <?php echo $_SESSION['people_jobType']?>
                                     
                                     <strong>
                             </div>
