@@ -52,6 +52,11 @@ class divisionalController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+   public function ViewAddPeopleProfile(){
+      $this->view('divisionalSec/ViewAddPeopleProfile');
+      
+      $this->view->render(); // This is how load the view
+   }
 
    
    public function fundRelease(){

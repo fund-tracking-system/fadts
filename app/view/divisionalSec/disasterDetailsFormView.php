@@ -28,7 +28,7 @@
                     <div class="tbleMargin">
 
 
-                        <table id="resultTable" class="display nowrap">
+                    <table id="resultTable" class="display " style="table-layout:fixed">
                             <thead>
                                 <tr>
                                     <th><B>Disaster Type</B></th>
@@ -38,14 +38,14 @@
                                     <th><B>View</B></th>
                                 </tr>
                             </thead>
+                            
+
+                            <tbody>
                             <?php foreach($_SESSION['disasterList'] as $disaster){
                          
                                  
-                                     ?>
-
-                            <tbody>
-
-                                <tr>
+                         ?>
+                                <tr> 
                                     <td><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
                                     </td>
@@ -57,6 +57,10 @@
                                     </td>
                                 </tr>
 
+                                <?php    } 
+                        unset($_SESSION['results']);
+                  ?>
+
 
                             </tbody>
 
@@ -67,10 +71,6 @@
 
 
 
-
-                            <?php    } 
-                        unset($_SESSION['results']);
-                  ?>
 
 
 
