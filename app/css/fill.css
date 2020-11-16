@@ -1516,8 +1516,8 @@ ul.tabs li.current{
 .bio-box .desc{
   padding: 10px 10px 10px 10px;
   text-align: justify;
-  color: #838383;
-  font-size: 13px;
+  color: #050505;
+  font-size: 20px;
 }
 .detail-box{
   padding: 10px;
@@ -1787,4 +1787,13 @@ height: 26px;
 width: 130px;
 
 padding-bottom: 26px;
+}
+
+.profile-headerPeople{
+  height: 200px;
+  width: 100%;
+  background-color: #9ff1d6;
+  border-bottom: 2px solid #E2F3FB;
+  
+  
 }

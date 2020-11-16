@@ -62,11 +62,7 @@
                                     </ul>
                                 </div> -->
                                 <div class="bio-box">
-                                    <div class="heading">
-                                        <p>Professional Bio
-                                            <label><B>10 Year Experience</B></label>
-                                        </p>
-                                    </div>
+                                    
                                     <div class="desc"><strong>chamath Ranasinghe Golluwamula Opatha ganegoda Elpitye 5
                                             family member and age 43
                                             how many child areas he controll . like that we can data from
