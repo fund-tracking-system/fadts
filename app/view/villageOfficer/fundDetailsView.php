@@ -12,7 +12,7 @@
             <fieldset class="tableBar">
                 <div class="tbleMargin">
 
-                    <table id="resultTable" class="display nowrap">
+                    <table id="resultTable" class="display" style="table-layout:fixed">
                         <thead>
                             <tr>
                                 <th><B>Fund Name</B></th>
@@ -28,14 +28,14 @@
                                 <td><B>Corona Fund(May)</B></td>
                                 <td><B>5000.00</B></td>
                                 <td><B>2020-05-22</B></td>
-                                <td><a class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                <td><a href="" class="btn btn-primary" style="margin-left:20%"><B>VIEW FUND</B></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td><B>Drought Fund(August)</B></td>
                                 <td><B>3500.00</B></td>
                                 <td><B>2020-08-02</B></td>
-                                <td><a class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                <td><a href="" class="btn btn-primary" style="margin-left:20%"><B>VIEW FUND</B></a>
                                 </td>
                             </tr>
 

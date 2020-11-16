@@ -31,32 +31,37 @@ jQuery.validator.addMethod("nidvalidator", function(value, element) {
 //     return this.optional(element) || /^\d{0,4}(\.\d{0,2})?$/i.test(value);
 // }, "You must include two decimal places");
 
-
 $(function(){
-    var $formDisasterAdd = $("#formAddDisaster");
-    if($formDisasterAdd.length){
-        $formDisasterAdd.validate({
+    var $formAddDisaster = $("#formAddDisaster");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
             rules: {
-                type: "required",
-                name: "required",
+                type:  "required",
+                name:  "required", 
+                region : "required",
+                description:"required",
                 date: {
                     required: true,
                     date: true
-                },
-                region[]: "required"
+                }
             },
             messages: {
-                type: "This field is required",
-                name: "This field is required",
+                type:"This field is required",
+                name:"This field is required", 
+                region:"This field is required",
+                description:"required field",
                 date: {
                     required: "This field is required",
                     date: "Date should be correct format"
                 },
-                region[]: "This field is required",           
+
             }
       });
     }
   });
+
+
+
   
   
   //addpeople-divisionalsec
@@ -152,11 +157,9 @@ $(function(){
     if($formAddOfficer.length){
         $formAddOfficer.validate({
             rules: {
-                officer_id: "required",
                 nid: {
                     required: true,
-                    maxlength: 12,
-                    minlength:10
+                    nidvalidator:true
                 },
                 name: {
                     lettersonly:true,
@@ -169,19 +172,9 @@ $(function(){
                 email: {
                     required: true,
                     email: true
-                },
-                region: "required",
-                position: "required",
-                civil_status: "required",
-                phone_number: {
-                    required: true,
-                    number: true,
-                    minlength:10,
-                    maxlength:10
                 }
             },
             messages: {
-                officer_id: "This field is required",
                 nid: {
                     required: "This field is required",
                     maxlength: "Please enter a correct NID",
@@ -198,20 +191,69 @@ $(function(){
                 email: {
                     required: "Please enter user email",
                     email: "Your email address must be in the format of name@domain.com"
-                },
-                region: "This field is required",
-                position: "This field is required",
-                civil_status: "This field is required",
-                phone_number: {
-                    required: "This field is required",
-                    number: "Phone number must have numbers",
-                    minlength: "This number has less than 10 numbers",
-                    maxlength: "This number has more than 10 numbers"
-                },
+                }
             }
       });
     }  
   });
+
+
+
+  $(function(){
+    var $formPeople = $("#formUpdate");
+    if($formPeople.length){
+        $formPeople.validate({
+            rules: {
+                name: {
+                    lettersonly:true,
+                    required:true
+                },
+                address:"required",
+                trustee:{
+                    required:true,
+                    nidvalidator:true
+                },
+                phone: {
+                    number: true,
+                    minlength:10,
+                    maxlength:10
+                },
+                phone_two:{
+                    minlength:10,
+                    maxlength:10,
+                    number:true
+                }
+            },
+            messages: {
+                name:{
+                    required:"This field Cannot be blank",
+                    lettersonly:"Please enter letters only"
+                },
+                address: "This field is required",
+                trustee:{
+                    required: "Enter trustee  NID",
+                },
+                phone: {
+                    number: "Phone number must have numbers",
+                    minlength: "This number has less than 10 numbers",
+                    maxlength: "This number has more than 10 numbers"
+                },
+                phone_two: {
+                    number: "Phone number must have numbers",
+                    minlength: "This number has less than 10 numbers",
+                    maxlength: "This number has more than 10 numbers"
+                }
+            }
+      });
+    }
+  });
+
+
+
+
+
+
+  
   
  
 

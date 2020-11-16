@@ -6,7 +6,21 @@ body{
 	background-position: center;
   font-family: 'Montserrat', sans-serif; 
 }
-
+h3{
+  color: black;
+  padding: 15px;
+  font-weight: 15px;
+}
+h5{
+ 
+   font-size: 16px;
+   padding:1px;
+   color: black;
+   padding-left: 10px;
+  
+  
+  /* color: #011116; */
+}
 
 .To{
   margin-right:170px;
@@ -464,7 +478,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: #45B39D;
   border-color: #007bff;
 }
 
@@ -1082,7 +1096,7 @@ visibility: hidden;
   padding-right: 15px;
   padding-left: 15px;
 }
-/*
+
 @media (min-width: 576px) {
   .container {
     padding-right: 15px;
@@ -1110,7 +1124,7 @@ visibility: hidden;
     padding-left: 15px;
   }
 }
-*/
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
@@ -1146,7 +1160,7 @@ visibility: hidden;
   padding-right: 15px;
   padding-left: 15px;
 }
-/* 
+
 @media (min-width: 576px) {
   .container-fluid {
     padding-right: 15px;
@@ -1173,7 +1187,7 @@ visibility: hidden;
     padding-right: 15px;
     padding-left: 15px;
   }
-} */
+} 
 
 @media (max-width: 575px) {
   .navbar-toggleable .navbar-nav .dropdown-menu {
@@ -1234,20 +1248,20 @@ visibility: hidden;
   margin: 0px;
   background-color: rgba(11, 207, 109, 0.664);
   color: #fff;
-  /* border-radius: 5%;
-  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4); */
+  /* border-radius: 5%; */
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4); 
 }
 #calendar_events{
   width: 50%;
-  height: 290px;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   float: right;
   background: lightgray;
   /* background-color: rgba(11, 207, 109, 0.664); */
   color: #fff;
-   border-radius: 5%;
-  /*box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);*/
+   /* border-radius: 5%; */
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);
 } 
 
 #calendardate>p{

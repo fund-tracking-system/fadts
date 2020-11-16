@@ -1,54 +1,59 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<div>
-    <div class='SearchByCriteriaform1'>
+<div class="all_bacground_clor">
 
+    <div class="SearchByCriteriaform1">
 
-
-        <form class="form" method="post" action="" id="form">
-
+        <form>
             <fieldset class="BackgroundFS">
+                <h2>SELECT DISASTER </h2>
+            <fieldset class="tableBar">
+                <div class="tbleMargin">
+                    <table id="resultTable" class="display" style="table-layout:fixed">
+                        <thead>
+                            <tr>
+                                <th><B>Disaster Name</B></th>
+                                <th><B>Date</B></th>
+                                <th><B>Affected Areas</B></th>
+                                <th><B>Action</B></th>
+                            </tr>
+                        </thead>
 
-                <h2>ADD VICTIMS TO DISASTER
-                </h2>
+                        <tbody>
 
-                </br>
-                </br>
-                <div class="form-row">
-                    <label for="select-disaster" class="detailsLable"><b>Disaster
-                            Type:</b></label>
-                    <select name="select-disaster" id="select-disaster" class="form-control inputDetails"
-                        name="disaster">
-                        <option value="Flood" name="Flood">Flood</option>
-                        <option value="Landslide" name="Landslide">Landslide</option>
-                        <option value="Hurricanes" name="Hurricanes">Hurricanes</option>
-                        <option value="Tsunami" name="Tsunamiable">Tsunami</option>
-                        <option value="Fire" name="Fire">Fire</option>
-
-                    </select>
-                </div>
-
-
-                <div class="form-row">
-                    <label for="select-disasterName" class="detailsLable"><b>Disaster
-                            Name:</b></label>
-                    <input class="form-control inputDetailsFunfInput" id="neame" name="name"></input>
-                </div>
-
-
-
-                <div class="form-row">
-                    <label for="select-disaster" class="detailsLable"><b>Disaster
-                            Date:</b></label>
-                    <input class="form-control inputDetails" placeholder="YYYY/MM/DD" id="Date" name="Date"></input>
-                </div>
-
-                <button class='btn btn-primary location'>Select Fund</button>
+                            <tr>
+                                <td><B>Tsunami 2004</B></td>
+                                <td><B>2004-12-26</B></td>
+                                <td><B>southern,eastern and northern provices</B></td>
+                                <td><a href="/fadts/village/victimSelect" class="btn btn-primary" style="margin-left:20%;"><B>ADD VICTIMS</B></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><B>Flood 2003</B></td>
+                                <td><B>2003-06-26</B></td>
+                                <td><B>Whole Island</B></td>
+                                <td><a href="/fadts/village/victimSelect" class="btn btn-primary" style="margin-left:20%;"><B>ADD VICTIMS</B></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 <div>
+                </fieldset>           
             </fieldset>
-
         </form>
+
+
     </div>
 </div>
 
-<?php include VIEW.'includes/footer.php' ?>
+
+
+
+<script>
+$(document).ready(function() {
+    $("#resultTable").DataTable();
+});
+</script>
+
+<?php include VIEW.'includes/footer.php'?>
