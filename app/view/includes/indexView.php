@@ -49,7 +49,7 @@ switch($controller){
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events">
+         <div id="calendar_events" style="height: 290px;">
             <h3>Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
