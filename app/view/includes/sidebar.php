@@ -15,7 +15,10 @@ switch($controller){
       <span class="material-icons">account_box</span>View Officer History
    </a>
    <a href="/fadts/audit/eligibilityHistoryView" class="dashboard sidebar_link">
-      <span class="material-icons">corporate_fare</span>View Eligibility History
+      <span class="material-icons">account_box</span>View Eligibility History
+   </a>
+   <a href="/fadts/audit/personHistoryView" class="dashboard sidebar_link">
+      <span class="material-icons">account_box</span>View Person History
    </a>
    <a href="/fadts/audit/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details

@@ -2,7 +2,7 @@
 
 class auditController extends Controller{
 
-   public function indexModel(){          // load the model for index view of auditor
+   public function indexModel(){ // load the model for index view of auditor
       $this->model('auditor/indexModel');
       
       $this->model->load(); 
@@ -28,6 +28,18 @@ class auditController extends Controller{
 
    public function eligibilityHistoryModel(){
       $this->model('auditor/eligibilityHistoryModel');
+      
+      $this->model->load(); 
+   }
+
+   public function personHistoryView(){
+      $this->view('auditor/personHistoryView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function personHistoryModel(){
+      $this->model('auditor/personHistoryModel');
       
       $this->model->load(); 
    }
