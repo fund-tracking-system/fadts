@@ -9,7 +9,7 @@
 
                 <fieldset class="searchBar">
                     <div class="form-row ">
-                        <label for="nid" class="inputLable"><b>Officer NID</b></label>
+                        <label for="nid" class="inputLable"><b>Officer NID:</b></label>
                         <input class="form-control Input" name='nid' placeholder="NIC number here"></input>
                     </div>
 
@@ -31,22 +31,22 @@
 
                     <fieldset class="searchBar">   
                         <div class="form-row">
-                            <label for="name" class="inputLable"><b>Name</b></label>
+                            <label for="name" class="inputLable"><b>Name:</b></label>
                             <input class="form-control Input" name="name"></input>
                         </div>
 
                         <div class="form-row">
-                            <label for="nid" class="inputLable"><b>NID</b></label>
+                            <label for="nid" class="inputLable"><b>NID:</b></label>
                             <input class="form-control Input" name="nid"></input>
                         </div>
 
                         <div class="form-row">
-                            <label for="email" class="inputLable"><b>E-mail</b></label>
+                            <label for="email" class="inputLable"><b>E-mail:</b></label>
                             <input class="form-control Input" type="email" name='email'></input>
                         </div> 
 
                         <div class="form-row">
-                            <label for="password" class="inputLable"><b>Reset Password?</b></label>
+                            <label for="password" class="inputLable"><b>Reset Password:</b></label>
                             <select class="form-control Input" name="password">
                                 <option value="permitted">No</option>
                                 <option value="denied">Reset</option> 
@@ -54,17 +54,17 @@
                         </div>
 
                         <div class="form-row">
-                            <label for="position" class="inputLable"><b>Position</b></label>
+                            <label for="position" class="inputLable"><b>Position:</b></label>
                             <input class="form-control Input" name="position" value="Officer" readonly></input>
                         </div>
 
                         <div class="form-row">
-                            <label for="region" class="inputLable"><b>Region</b></label>
+                            <label for="region" class="inputLable"><b>Region:</b></label>
                             <input class="form-control Input" name='region' value="Island" readonly></input>
                         </div>
 
                         <div class="form-row">
-                            <label for="loginStatus" class="inputLable"><b>Login status</b></label>
+                            <label for="loginStatus" class="inputLable"><b>Login status:</b></label>
                             <select class="form-control Input" name="loginStatus">
                                 <option value="permitted">Permitted</option>
                                 <option value="denied">Denied</option> 
