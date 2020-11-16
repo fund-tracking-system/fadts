@@ -89,7 +89,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color:  #45B39D;
   border-color: #007bff;
 }
 
@@ -203,7 +203,7 @@ select.form-control:focus::-ms-value {
 
 .alert {
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 1px solid transparent;
   border-radius: 4px;
 
@@ -219,9 +219,9 @@ select.form-control:focus::-ms-value {
   color: #8a6d3b;
 }
 .alert-danger {
-  color: #7f3f00;
-  background-color: #fde4cc;
-  border-color: #fcdab8;
+  color: #c50909;
+  background-color: #ffc9c9;
+  border-color: #ff6363;
 }
 
 

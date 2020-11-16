@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
-      header("Location:/fadts/divisional/updatePeople?error=db_conn_err");
+      header("Location:/fadts/village/updatePeople?error=db_conn_err");
       exit();     
    }
    else{
@@ -29,12 +29,12 @@ if(isset($_POST['submit'])){
       
       if(mysqli_stmt_execute($stmt)){
          mysqli_close($con);
-         header("Location:/fadts/divisional/updatePeople?error=update_success");
+         header("Location:/fadts/village/updatePeople?error=update_success");
          exit();  
       }
       else{
          mysqli_close($con);
-         header("Location:/fadts/divisional/updatePeople?error=db_conn_err");
+         header("Location:/fadts/village/updatePeople?error=db_conn_err");
          exit();
       }     
    }
@@ -42,6 +42,6 @@ if(isset($_POST['submit'])){
    mysqli_close($con);
 }
 else{
-   header("Location:/fadts/divisional/updatePeople?error=direct_access");
+   header("Location:/fadts/village/updatePeople?error=direct_access");
    exit();
 }

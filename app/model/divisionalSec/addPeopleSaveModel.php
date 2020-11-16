@@ -50,7 +50,7 @@
 
       //redirecting to view
     header("Location:/fadts/divisional/ViewAddPeople"); 
-
+    header("Location:/fadts/divisional/ViewAddPeopleProfile"); 
 
 
 
@@ -59,18 +59,18 @@
     
     $con->close();
 
-    unset($_SESSION['people_nid']);
-    unset($_SESSION['people_name']);
-    unset($_SESSION['people_headOfFamily']);
-    unset($_SESSION['people_address']);
-    unset($_SESSION['people_phoneNumber1']);
-    unset($_SESSION['people_phoneNumber2']);
-    unset($_SESSION['people_b_date']);
-    unset($_SESSION['people_b_certifi']);
-    unset($_SESSION['people_civilStatus']);
-    unset($_SESSION['people_trustee']);
-    unset($_SESSION['people_jobType']);
-    unset($_SESSION['people_region']);
+    // unset($_SESSION['people_nid']);
+    // unset($_SESSION['people_name']);
+    // unset($_SESSION['people_headOfFamily']);
+    // unset($_SESSION['people_address']);
+    // unset($_SESSION['people_phoneNumber1']);
+    // unset($_SESSION['people_phoneNumber2']);
+    // unset($_SESSION['people_b_date']);
+    // unset($_SESSION['people_b_certifi']);
+    // unset($_SESSION['people_civilStatus']);
+    // unset($_SESSION['people_trustee']);
+    // unset($_SESSION['people_jobType']);
+    // unset($_SESSION['people_region']);
 
 
   

@@ -40,7 +40,7 @@
                      style="position:sticky;top:60px;overflow:scroll; padding-right:510px;  " id="job" name="job">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
-                     <option value="retired">Retired</option>
+                     <option value="retired">Government pension</option>
                      <option value="business_owner">Business owner</option>
                      <option value="self_employeed">Self employeed</option>
                      <option value="jobless">Jobless</option>

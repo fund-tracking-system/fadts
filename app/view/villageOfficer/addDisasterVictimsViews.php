@@ -1,54 +1,74 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<div>
-    <div class='SearchByCriteriaform1'>
+<div class="all_bacground_clor">
 
+    <div class="SearchByCriteriaform1">
+        <?php
+            require 'connection.php'; 
+            $myRegion=$_SESSION['region'];
+            $myRegion;
+            
+            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
+            FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
+            $result=$con->query($sql);
+            $res=$result->fetch_all(MYSQLI_ASSOC); 
+            $_SESSION['disasterList']=$res;
+               
+        ?>
 
-
-        <form class="form" method="post" action="" id="form">
-
+        <form>
             <fieldset class="BackgroundFS">
+                <h2>DISASTER LIST</h2>
 
-                <h2>ADD VICTIMS TO DISASTER
-                </h2>
+                <fieldset class="tableBar">
+                    <div class="tbleMargin">
 
-                </br>
-                </br>
-                <div class="form-row">
-                    <label for="select-disaster" class="detailsLable"><b>Disaster
-                            Type:</b></label>
-                    <select name="select-disaster" id="select-disaster" class="form-control inputDetails"
-                        name="disaster">
-                        <option value="Flood" name="Flood">Flood</option>
-                        <option value="Landslide" name="Landslide">Landslide</option>
-                        <option value="Hurricanes" name="Hurricanes">Hurricanes</option>
-                        <option value="Tsunami" name="Tsunamiable">Tsunami</option>
-                        <option value="Fire" name="Fire">Fire</option>
+                        <table id="resultTable" class="display">
+                            <thead>
+                                <tr>
+                                    <th><B>Disaster Type</B></th>
+                                    <th><B>Disaster Region</B></th>
+                                    <th><B>Disaster Name</B></th>
+                                    <th><B>Date</B></th>
+                                    <th><B>View</B></th>
+                                </tr>
+                            </thead>
 
-                    </select>
-                </div>
+                            <tbody>
+                                <?php foreach($_SESSION['disasterList'] as $disaster){ ?>
+                                <tr>
+                                    <td><input type="hidden" name="disasterId" style="margin-left:30%;"
+                                            value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
+                                    </td>
+                                    <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
+                                    <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
+                                    <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
+                                    <td><a href="/fadts/village/victimSelect?disasterId=<?php echo $disaster['disasterId'] ?>"
+                                            class="btn btn-primary" style="margin-left:20%;"><B>ADD VICTIM</B></a>
+                                    </td>
+                                </tr>
+                                <?php    } unset($_SESSION['results']); ?>
 
+                            </tbody>
 
-                <div class="form-row">
-                    <label for="select-disasterName" class="detailsLable"><b>Disaster
-                            Name:</b></label>
-                    <input class="form-control inputDetailsFunfInput" id="neame" name="name"></input>
-                </div>
+                            
 
-
-
-                <div class="form-row">
-                    <label for="select-disaster" class="detailsLable"><b>Disaster
-                            Date:</b></label>
-                    <input class="form-control inputDetails" placeholder="YYYY/MM/DD" id="Date" name="Date"></input>
-                </div>
-
-                <button class='btn btn-primary location'>Select Fund</button>
+                        </table>
+                        <div>
+                </fieldset>
             </fieldset>
-
         </form>
+
     </div>
 </div>
 
-<?php include VIEW.'includes/footer.php' ?>
+
+
+<script>
+$(document).ready(function() {
+    $("#resultTable").DataTable();
+});
+</script>
+
+<?php include VIEW.'includes/footer.php'?>

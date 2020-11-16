@@ -26,11 +26,11 @@
                     <div class="profile-header" style="height:240px;">
                         <div class="user-detail">
                             <div class="user-image">
-                                <img src="/fadts/app/view/includes/avatar.png" >
+                                <img src="/fadts/app/view/includes/avatar.png">
                             </div>
 
                             <div class="user-data">
-                            <br>
+                                <br>
                                 <h2><B><?php echo $_SESSION['username']?></B></h2>
                                 <br>
                                 <span class="post-label"><B><?php echo $_SESSION['roleName']?></B></span>
@@ -62,13 +62,11 @@
                                     </ul>
                                 </div> -->
                                 <div class="bio-box">
-                                    <div class="heading">
-                                        <p>Professional Bio
-                                            <label><B>10 Year Experience</B></label>
-                                        </p>
-                                    </div>
-                                    <div class="desc"><strong>chamath Ranasinghe Golluwamula Opatha ganegoda  Elpitye 5 family member  and age 43
-                                    how many child areas he controll . like that we can data from database<strong>
+                                    
+                                    <div class="desc"><strong><?php echo $_SESSION['username']?> Golluwamula Opatha ganegoda Elpitye 5
+                                            family member and age 43
+                                            how many child areas he controll . like that we can data from
+                                            database<strong>
                                     </div>
                                 </div>
                                 <div class="detail-box">
@@ -108,7 +106,9 @@
             <fieldset class="BackgroundFS">
 
                 <fieldset class="searchBar">
-                    <h2>Reset Password</h2>
+                    <div style="margin-bottom:120px;">
+                        <h2>Reset Password</h2>
+                    </div>
                     <?php 
                      if(isset($_GET['error'])){
          
@@ -138,8 +138,8 @@
 
 
 
-                    <div class="form-row">
-                        <label for="password" class="inputLable"><B>Current
+                    <div class="form-row" style="margin-top:2;">
+                        <label for="password" class="inputLable" style="margin-top:-45px;"><B>Current
                                 Password:</B></label>
                         <input type="password" class="form-control InputPro" name="currentpwd" id="CurrentPassword"
                             placeholder="Enter Current Password">
@@ -147,16 +147,16 @@
                     </div>
 
 
-                    <div class="form-row">
-                        <label for="password" class="inputLable"><B>New
+                    <div class="form-row" style="margin-top:20px;">
+                        <label for="password" class="inputLable" style="margin-top:-50px;"><B>New
                                 Password:</B></label>
                         <input type="password" class="form-control InputPro" name="newpassword" id="newpassword"
                             placeholder="Enter Password">
                         <small></small>
                     </div>
 
-                    <div class="form-row">
-                        <label for="password" class="inputLable"><B>Confirm
+                    <div class="form-row" style="margin-top:20px;">
+                        <label for="password" class="inputLable" style="margin-top:-50px;"><B>Confirm
                                 Password:</B></label>
                         <input type="password" class="form-control InputPro" name="againpassword" id="reEnter"
                             placeholder="Again Enter New Password">

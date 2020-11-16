@@ -6,7 +6,22 @@ body{
 	background-position: center;
   font-family: 'Montserrat', sans-serif; 
 }
-
+h3{
+  color: black;
+  padding: 15px;
+  font-weight: 25px;
+}
+h5{
+ 
+   font-size: 15px;
+   padding:1px;
+   color:rgb(13, 40, 51);
+   padding-left: 10px;
+   font-style: initial;
+  
+  
+  /* color: #011116; */
+}
 
 .To{
   margin-right:170px;
@@ -464,7 +479,7 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
+  background-color: #45B39D;
   border-color: #007bff;
 }
 
@@ -1234,20 +1249,20 @@ visibility: hidden;
   margin: 0px;
   background-color: rgba(11, 207, 109, 0.664);
   color: #fff;
-  /* border-radius: 5%;
-  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4); */
+  /* border-radius: 5%; */
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4); 
 }
 #calendar_events{
   width: 50%;
-  height: 290px;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   float: right;
   background: lightgray;
   /* background-color: rgba(11, 207, 109, 0.664); */
   color: #fff;
-   border-radius: 5%;
-  /*box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);*/
+   /* border-radius: 5%; */
+  box-shadow: 0 4px 4px 0 rgba(50, 50, 50, 0.4);
 } 
 
 #calendardate>p{
@@ -1502,8 +1517,8 @@ ul.tabs li.current{
 .bio-box .desc{
   padding: 10px 10px 10px 10px;
   text-align: justify;
-  color: #838383;
-  font-size: 13px;
+  color: #050505;
+  font-size: 20px;
 }
 .detail-box{
   padding: 10px;
@@ -1773,4 +1788,13 @@ height: 26px;
 width: 130px;
 
 padding-bottom: 26px;
+}
+
+.profile-headerPeople{
+  height: 200px;
+  width: 100%;
+  background-color: #9ff1d6;
+  border-bottom: 2px solid #E2F3FB;
+  
+  
 }

@@ -14,7 +14,7 @@
    <div class="SearchByCriteriaform1">
 
 
-      <form method="post" action="/fadts/divisional/nicSearchModel?view=updatePeople" id="form">
+      <form method="post" action="/fadts/divisional/nicSearchModel?view=updatePeople" >
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
@@ -51,7 +51,7 @@
 
 
 
-      <form method="POST" action="/fadts/divisional/updatePeopleModel">
+      <form method="POST" action="/fadts/divisional/updatePeopleModel" id="formUpdate">
          <fieldset class="BackgroundFS">
 
             <fieldset class="searchBar">
@@ -186,7 +186,7 @@
                         <?php echo isset($result) ? $result['job']:"" ?></option>
                      <option value="Government">Government</option>
                      <option value="Private">Private</option>
-                     <option value="Retired">Retired</option>
+                     <option value="Retired">Government pension</option>
                      <option value="Business owner">Business owner</option>
                      <option value="Self employeed">Self employeed</option>
                      <option value="Jobless">Jobless</option>
@@ -194,7 +194,8 @@
                </div>
 
                <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>
+                  <button type="submit" name="submit" class="btn btn-primary"
+                  <?php echo isset($result)? "":"disabled" ?>>Confirm and Update</button>
 
                </div>
 

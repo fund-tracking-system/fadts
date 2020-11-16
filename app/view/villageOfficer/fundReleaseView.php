@@ -38,7 +38,7 @@
 
                   <input class="form-control searchInput" id="nic" placeholder="Type NIC here" name="nic"></input>
 
-                  <button style="position:center" type="submit" name="submit"
+                  <button style="position:center;" type="submit" name="submit"
                      class="btn btn-primary btnNav">Search</button>
 
                </div>
@@ -76,7 +76,7 @@
                         <tr>
                            <td><?php echo $fund[1] ?></td>
                            <td><?php echo $fund[2] ?></td>
-                           <td><a class="btn btn-primary"
+                           <td><a class="btn btn-primary" style="background: #45B39D"
                                  href="/fadts/divisional/fundReleaseModel?entryId=<?php echo $entryId ?>"><B>Release</B></a>
                            </td>
                         </tr>

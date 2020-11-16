@@ -9,7 +9,7 @@
    <div class="SearchByCriteriaform1">
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=updatePeople" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=updatePeople" id="formUpdateVillage">
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
@@ -35,7 +35,7 @@
 
                <div class="form-row ">
                   <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
-                  <input class="form-control searchInput" id='NID-number'
+                  <input class="form-control searchInput" id='nic'
                      placeholder="<?php echo isset($result) ? $result['nid']:"Type here NIC"?>" name="nic"></input>
                   <button type="submit" class="btn btn-primary btnNav" name="submit">Search</button>
                </div>
@@ -46,7 +46,7 @@
 
 
 
-      <form method="POST" action="/fadts/village/updatePeopleModel">
+      <form method="POST" action="/fadts/village/updatePeopleModel" id="updateVillage">
          <fieldset class="BackgroundFS">
 
             <fieldset class="searchBar">
@@ -94,7 +94,7 @@
                         $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                           
                     ?>
                     <select  class='form-control Input' name='headOfFamily' id='headOfFamily'
-                            style="position:sticky;top:60px;overflow:scroll;  width:550px;">
+                            style="position:sticky;top:60px;overflow:scroll;  width:530px;">
                         <option value="<?php echo isset($result) ? $result['personId'] : ""?>" hidden selected><?php echo isset($result) ? $result['nid'] : ""?></option>
                         <?php 
                             foreach($ress as $data){
@@ -155,7 +155,7 @@
                         <?php echo isset($result) ? $result['job']:"" ?></option>
                      <option value="government">Government</option>
                      <option value="private">Private</option>
-                     <option value="retired">Retired</option>
+                     <option value="retired">Government pension</option>
                      <option value="business_owner">Business owner</option>
                      <option value="self_employeed">Self employeed</option>
                      <option value="jobless">Jobless</option>
@@ -179,7 +179,8 @@
                </div>
 
                <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>
+                  <button type="submit" name="submit" class="btn btn-primary" 
+                  <?php echo isset($result)? "":"disabled" ?> >Confirm and Update</button>
 
                </div>
 

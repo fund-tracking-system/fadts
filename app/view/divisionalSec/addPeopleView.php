@@ -59,7 +59,7 @@
                             <option value="" disabled selected>Select job type</option>
                             <option value="Goverment">Goverment</option>
                             <option value="Private">Private</option>
-                            <option value="Retired">Retired</option>
+                            <option value="Retired">Government pension</option>
                             <option value="SelfEmployee">SelfEmployee</option>
                             <option value="Jobless">Jobless</option>
 
@@ -99,7 +99,7 @@
                   
                   ?>
                         <select id='region' class='form-control Input' name='region' id='region'
-                            style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
+                            style='position:sticky;top:60px;overflow:scroll;  width:544px; '>
                             <option value="" disabled selected>Select region</option>
                            <?php 
                               foreach($res as $data){

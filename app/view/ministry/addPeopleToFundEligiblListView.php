@@ -34,7 +34,7 @@
 
 
 
-        <form>
+        <!-- <form>
         <fieldset class="BackgroundFS">
 
                 <h2> Manually Created Fund</h2>
@@ -69,7 +69,7 @@
                     </table>
                 </div>
             </fieldset>
-        </form>
+        </form> -->
     </div>
 </div>
 <?php include VIEW.'includes/footer.php'?>

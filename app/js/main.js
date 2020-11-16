@@ -32,22 +32,24 @@ jQuery.validator.addMethod("nidvalidator", function(value, element) {
 // }, "You must include two decimal places");
 
 $(function(){
-    var $formPeople = $("#formAddDisaster");
-    if($formPeople.length){
-        $formPeople.validate({
+    var $formAddDisaster = $("#formAddDisaster");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
             rules: {
-                name:  "required",
                 type:  "required",
-                region: "required",
+                name:  "required", 
+                region : "required",
+                description:"required",
                 date: {
                     required: true,
                     date: true
                 }
             },
             messages: {
-                name:"This field is required",
                 type:"This field is required",
+                name:"This field is required", 
                 region:"This field is required",
+                description:"required field",
                 date: {
                     required: "This field is required",
                     date: "Date should be correct format"
@@ -57,6 +59,81 @@ $(function(){
       });
     }
   });
+
+
+  $(function(){
+    var $formAddDisaster = $("#formViewOfficerHistory");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                }
+
+            }
+      });
+    }
+  });
+
+
+
+
+//   $(function(){
+//     var $formAddDisaster = $("#formUpdateVillage");
+//     if($formAddDisaster.length){
+//         $formAddDisaster.validate({
+//             rules: {
+//                 nic: {
+//                     required: true,
+//                     // maxlength: 12,
+//                     // minlength:10,
+//                     nidvalidator:true
+//                 }
+//             },
+//             messages: {
+//                 nic: {
+//                     required: "This field is required",
+//                     // maxlength: "Please enter no more than 12 or 10 characters",
+//                     // minlength: "Please enter at most 10 or 12 characters"
+//                 }
+
+//             }
+//       });
+//     }
+//   });
+
+
+  $(function(){
+    var $formAddDisaster = $("#updateVillage");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                address:  "required",
+                monthlyIncome:  "required"
+               
+            },
+            messages: {
+                address:"This field cannot be empty",
+                monthlyIncome:"This field cannot be empty"
+
+            }
+      });
+    }
+
+  });
+
+
+
 
 
 
@@ -194,6 +271,64 @@ $(function(){
       });
     }  
   });
+
+
+
+  $(function(){
+    var $formPeople = $("#formUpdate");
+    if($formPeople.length){
+        $formPeople.validate({
+            rules: {
+                name: {
+                    lettersonly:true,
+                    required:true
+                },
+                address:"required",
+                trustee:{
+                    required:true,
+                    nidvalidator:true
+                },
+                phone: {
+                    number: true,
+                    minlength:10,
+                    maxlength:10
+                },
+                phone_two:{
+                    minlength:10,
+                    maxlength:10,
+                    number:true
+                }
+            },
+            messages: {
+                name:{
+                    required:"This field Cannot be blank",
+                    lettersonly:"Please enter letters only"
+                },
+                address: "This field is required",
+                trustee:{
+                    required: "Enter trustee  NID",
+                },
+                phone: {
+                    number: "Phone number must have numbers",
+                    minlength: "This number has less than 10 numbers",
+                    maxlength: "This number has more than 10 numbers"
+                },
+                phone_two: {
+                    number: "Phone number must have numbers",
+                    minlength: "This number has less than 10 numbers",
+                    maxlength: "This number has more than 10 numbers"
+                }
+            }
+      });
+    }
+  });
+
+
+
+
+
+
+  
   
  
 
