@@ -94,7 +94,7 @@
                         $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                           
                     ?>
                     <select  class='form-control Input' name='headOfFamily' id='headOfFamily'
-                            style="position:sticky;top:60px;overflow:scroll;  width:550px;">
+                            style="position:sticky;top:60px;overflow:scroll;  width:530px;">
                         <option value="<?php echo isset($result) ? $result['personId'] : ""?>" hidden selected><?php echo isset($result) ? $result['nid'] : ""?></option>
                         <?php 
                             foreach($ress as $data){
@@ -179,7 +179,8 @@
                </div>
 
                <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary">Confirm and Update</button>
+                  <button type="submit" name="submit" class="btn btn-primary" 
+                  <?php echo isset($result)? "":"disabled" ?> >Confirm and Update</button>
 
                </div>
 
