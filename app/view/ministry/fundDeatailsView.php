@@ -11,7 +11,7 @@
 
         <form method="post" action="" id="form">
             <fieldset class="BackgroundFS">
-                <h2>ADD PEOPLE TO FUND ELIGIBILITY LIST </h2>
+                <h2> VIEW GENERIC FUND </h2>
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="NID-number" class="searchBarLable"><b>Pre Defined Fund:</b></label>
@@ -40,7 +40,7 @@
             <fieldset class="BackgroundFS">
 
                 <fieldset class="userpro">
-                    <h2> Search Manually Defined Funds </h2>
+                    <h2> SEARCH MANUALLY DEFINED FUND </h2>
                     </br>
                     </br>
 
@@ -63,8 +63,7 @@
                     </div>
 
                     <div class="form-row">
-                        <label for="date" class="inputLable"><b>Disaster
-                                Date:</b></label>
+                        <label for="date" class="inputLable"><b>Date created:</b></label>
                         <input placeholder="YYYY/MM/DD" class="form-control Input" nameid='date' name="date"
                             required></input>
                         <small></small>
