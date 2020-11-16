@@ -39,13 +39,6 @@
                                     <th><B>View</B></th>
                                 </tr>
                             </thead>
-<<<<<<< HEAD
-                            <?php foreach($_SESSION['disasterList'] as $disaster){ ?>
-
-                            <tbody>
-
-                                <tr>
-=======
                             
 
                             <tbody>
@@ -54,7 +47,6 @@
                                  
                          ?>
                                 <tr> 
->>>>>>> 01c8227bf2628506ab4e2ed9190d687529f0687e
                                     <td><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
                                     </td>
