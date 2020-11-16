@@ -50,7 +50,7 @@
 
       //redirecting to view
     header("Location:/fadts/divisional/ViewAddPeople"); 
-    //header("Location:/fadts/divisional/ViewAddPeopleProfile"); 
+    header("Location:/fadts/divisional/ViewAddPeopleProfile"); 
 
 
 

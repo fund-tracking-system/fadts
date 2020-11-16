@@ -9,7 +9,7 @@
     <div class="SearchByCriteriaform1">
 
         <fieldset class="BackgroundFS">
-            <h2>USER PROFILE </h2>
+            <h2>ADD PEOPLE DATA </h2>
             <div class="profile-main" style="width:91%; height:80%;">
                 <div class="profile-headerPeople" style="height:240px;">
                     <div class="user-detail">
@@ -24,49 +24,48 @@
                             <h4><B> NID : <?php echo $_SESSION['people_nid']?></h4>
                             <br>
 
-                            <h4><B>Address :     <strong></strong>
+                            <h4><B>Address <strong></strong><br>
                                 <i class="fa fa-map-marker"
                                     aria-hidden="true"></i><?php echo $_SESSION['people_address']?>,
                                 Sri Lanka
-                                <br> 
+                                
                                 <br>phone Number  :
                                 <?php echo $_SESSION['people_phoneNumber1']?>
-                                <br>
-                                <?php echo $_SESSION['people_phoneNumber2']?>
+                                
+                                
                                 </h4>
 
                         </div>
                     </div>
 
-                    <div>
+                    <div class="tab-panel-main">
 
                         <div class="bio-box">
-                            <div class="heading" >
-                              
-                            </div>
-                            <div class="desc"style="margin-left:20px;"><h3 ><strong>Trustee is : </h3><h4> <?php echo $_SESSION['people_trustee']?></h4>
+                            
+                            <div class="desc"><strong>trustee is---------------> <?php echo $_SESSION['people_trustee']?>
                                     <br>
-                                    Family head is : <h4><?php echo $_SESSION['people_headOfFamily']?></h4>
+                                    Family head is----------><?php echo $_SESSION['people_headOfFamily']?>
                                     <br>
-                                    Living Region Is : <h4  text-align: left;><?php echo $_SESSION['people_region']?></h4>
+                                    Living Region Is--------> <?php echo $_SESSION['people_region']?>
                                     <br>
-                                    Job Type is: <h4>
-                                    <?php echo $_SESSION['people_jobType']?></h4>
+                                    Job Type is--------------->
+                                    <?php echo $_SESSION['people_jobType']?>
+                                    
                                     <strong>
                             </div>
                         </div>
                         <div class="detail-box">
-                            <p>Detail</p>
+                           
                             <ul class="ul-first">
-                                <li>Birth date</li>
-                                <li>Civil Status</li>
-                                <li>Birth CN</li>
+                                <li>Birth date--></li>
+                                <li>Civil Status--></li>
+                                <li>Birth CN--></li>
 
                             </ul>
-                            <ul class="ul-second">
+                            <ul class="ul-second"><B>
                                 <li><?php echo $_SESSION['people_b_date']?></li>
-                                <li><?php echo $_SESSION['people_civilStatus']?></li>
-                                <li><?php $_SESSION['people_b_certifi']?>
+                                <li><?php echo "0".$_SESSION['people_civilStatus']?></li>
+                                <li><?php echo "0".$_SESSION['people_b_certifi']?></B>
 
                             </ul>
                         </div>
