@@ -62,6 +62,47 @@ $(function(){
 
 
 
+
+  $(function(){
+    var $formAddDisaster = $("#formUpdateVillage");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                nic:  "required",
+                nidvalidator:true,
+            },
+            messages: {
+                name:"This field is required", 
+
+            }
+      });
+    }
+  });
+
+
+  $(function(){
+    var $formAddDisaster = $("#updateVillage");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                address:  "required",
+                monthlyIncome:  "required"
+               
+            },
+            messages: {
+                address:"This field cannot be empty",
+                monthlyIncome:"This field cannot be empty"
+
+            }
+      });
+    }
+  });
+
+
+
+
+
+
   
   
   //addpeople-divisionalsec
