@@ -251,6 +251,7 @@ window.onload = calendar;
          <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
+         <div class="nav_link"><B>Predefined Fund</B></div>
       <!-- <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div> -->
          <canvas id="Chart2"></canvas>
       </div>
@@ -264,7 +265,7 @@ window.onload = calendar;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events">
+         <div id="calendar_events" style="height:290px ;">
          <h3>Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
@@ -346,39 +347,40 @@ window.onload = calendar;
   });
 
   $(function () {
-      // ChartJS
       var ctx = document.getElementById('Chart2').getContext('2d');
-      console.log(Chart.defaults.scale.ticks);
-      Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
-         type: 'horizontalBar', // The type of chart we want to create
+         type: 'doughnut',
          data: {
-            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            labels: ['Samuddi', 'Mahapola','Adult Fund','Not receiving Fund'],
             datasets: [{
-                  label: 'Victims per Year',
-                  data: [100,200,400,300,250,140,370,200,300,200],
-                  // backgroundColor:'#4cd84c',
-                  hoverBackgroundColor:'#00FF00',
-                  borderColor:'#00FF00',
-                  borderWidth: 2
+                  label: '# fund release',
+                  data: [20,5,25,10],
+                  backgroundColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9',
+                     '#00FF00'
+                  ],
+                  borderColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9',
+                     '#00FF00'
+                  ],
+                  borderWidth: 1
             }]
          },
          options: {
-            scales: {
-                  yAxes: [{
-                     ticks: {
-                        beginAtZero: true
-                     }
-                  }]
+            rotation:Math.PI*-10.5,
+            animation:{
+               animatescale:true
             },
-            maintainAspectRatio: false
-
+            
          }
       }); 
       chart.canvas.parentNode.style.height = '100%';
 
   });
-
 
 
   
