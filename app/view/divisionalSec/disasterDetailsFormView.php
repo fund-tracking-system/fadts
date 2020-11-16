@@ -5,20 +5,17 @@
 
     <div class="SearchByCriteriaform1">
         <?php
-
-        
-
-                require 'connection.php'; 
-                $myRegion;
-                $myRegion=$_SESSION['region'];
-
-                $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
-                FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
-                $result=$con->query($sql);
-                $res=$result->fetch_all(MYSQLI_ASSOC); 
-                $_SESSION['disasterList']=$res;
+            require 'connection.php'; 
+            $myRegion=$_SESSION['region'];
+            $myRegion;
+            
+            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
+            FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
+            $result=$con->query($sql);
+            $res=$result->fetch_all(MYSQLI_ASSOC); 
+            $_SESSION['disasterList']=$res;
                
-            ?>
+        ?>
 
         <form>
             <fieldset class="BackgroundFS">
@@ -27,8 +24,7 @@
                 <fieldset class="tableBar">
                     <div class="tbleMargin">
 
-
-                        <table id="resultTable" class="display nowrap">
+                        <table id="resultTable" class="display">
                             <thead>
                                 <tr>
                                     <th><B>Disaster Type</B></th>
@@ -38,10 +34,7 @@
                                     <th><B>View</B></th>
                                 </tr>
                             </thead>
-                            <?php foreach($_SESSION['disasterList'] as $disaster){
-                         
-                                 
-                                     ?>
+                            <?php foreach($_SESSION['disasterList'] as $disaster){ ?>
 
                             <tbody>
 
@@ -57,25 +50,9 @@
                                     </td>
                                 </tr>
 
-
                             </tbody>
 
-
-
-
-
-
-
-
-
-                            <?php    } 
-                        unset($_SESSION['results']);
-                  ?>
-
-
-
-
-
+                            <?php    } unset($_SESSION['results']); ?>
 
                         </table>
                         <div>
@@ -83,16 +60,10 @@
             </fieldset>
         </form>
 
-
-
-
-
-
-
-
-
     </div>
 </div>
+
+
 
 <script>
 $(document).ready(function() {

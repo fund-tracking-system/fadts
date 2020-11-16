@@ -1,10 +1,12 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<?php if(isset($_SESSION['results'])){
+<?php 
+      if(isset($_GET['disasterid'])){$disasterId = $_GET['disasterid']; }
+      if(isset($_SESSION['results'])){
          $result = $_SESSION['results'];
          unset($_SESSION['results']);
-      }
+      }        
 ?>
 
 <div class="all_bacground_clor">
@@ -53,7 +55,7 @@
 
       </form>
 
-      <form>
+      <form action="/fadts/village/victimSelectModel? <?php echo isset($disasterId) ? $disasterId : "" ?>">
          <fieldset class="BackgroundFS">
             <?php if(isset($result)){ ?>
             
@@ -66,6 +68,7 @@
                   <input class="form-control Input" id="pname" name="pname" 
                   value="<?php echo $result['personName'] ?>" readonly></input>
                </div>
+               <div><input name="personId" value="<?php echo $result['personId'] ?>"></input></div>
 
                <div class="form-row">
                   <label for="total-damage" class="inputLable" ><b>Total Damage :</b></label>
@@ -74,7 +77,7 @@
 
                <div class="form-row">
                   <label for="Location" class="inputLable"><b>Location :</b></label>
-                  <input class="form-control Input" id="Location" name="Location"></input>
+                  <input class="form-control Input" id="location" name="location"></input>
                </div>
 
                <div class="form-row">
