@@ -61,6 +61,81 @@ $(function(){
   });
 
 
+  $(function(){
+    var $formAddDisaster = $("#formViewOfficerHistory");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                }
+
+            }
+      });
+    }
+  });
+
+
+
+
+  $(function(){
+    var $formAddDisaster = $("#formUpdateVillage");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                }
+
+            }
+      });
+    }
+  });
+
+
+  $(function(){
+    var $formAddDisaster = $("#updateVillage");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                address:  "required",
+                monthlyIncome:  "required"
+               
+            },
+            messages: {
+                address:"This field cannot be empty",
+                monthlyIncome:"This field cannot be empty"
+
+            }
+      });
+    }
+    
+  });
+
+
+
+
+
 
   
   

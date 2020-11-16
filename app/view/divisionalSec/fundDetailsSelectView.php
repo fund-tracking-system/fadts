@@ -22,13 +22,13 @@
                                 <th><B>View</B></th>
                             </tr>
                         </thead>
+                        
+
+                        <tbody>
                         <?php foreach($_SESSION['fundList'] as $fund){
                          
                                  
-                                     ?>
-
-                        <tbody>
-
+                         ?>
                             <tr>
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
@@ -40,6 +40,9 @@
                                 </td>
                             </tr>
 
+                            <?php    } 
+                        unset($_SESSION['results']);
+                  ?>
 
                         </tbody>
 
@@ -51,10 +54,7 @@
 
 
 
-                        <?php    } 
-                        unset($_SESSION['results']);
-                  ?>
-
+                    
 
 
 

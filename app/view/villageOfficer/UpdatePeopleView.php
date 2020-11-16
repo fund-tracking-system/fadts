@@ -9,7 +9,7 @@
    <div class="SearchByCriteriaform1">
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=updatePeople" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=updatePeople" id="formUpdateVillage">
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
@@ -46,7 +46,7 @@
 
 
 
-      <form method="POST" action="/fadts/village/updatePeopleModel">
+      <form method="POST" action="/fadts/village/updatePeopleModel" id="updateVillage">
          <fieldset class="BackgroundFS">
 
             <fieldset class="searchBar">

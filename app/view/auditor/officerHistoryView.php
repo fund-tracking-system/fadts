@@ -3,14 +3,14 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method = "post" action = "/fadts/audit/officerHistoryModel" id="form">
+        <form method = "post" id="formViewOfficerHistory"  action = "/fadts/audit/officerHistoryModel">
             <fieldset class="BackgroundFS">
                 <h2>VIEW OFFICER HISTORY</h2>
 
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="nid" class="inputLable"><b>Officer NID</b></label>
-                        <input class="form-control Input" name = "nid" placeholder="NIC number here"></input>
+                        <input class="form-control Input" name = "nid" placeholder="NIC number here" required></input>
                     </div>
                         
                     <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
