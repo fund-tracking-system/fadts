@@ -110,7 +110,7 @@ switch($controller){
                   backgroundColor: [
                      '#16a085',
                      ' #668cff',
-                     '#2980b9',
+                     '#004080',
                      '#b30000',
                      '#f1c40f'
                   ],
@@ -181,7 +181,7 @@ switch($controller){
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Fund Release Per Month',
+                  label: 'Fund Distribution',
                   data: [100,200,400,300,250,140,370,200,300,200],
                   backgroundColor:'#4cd84c',
                   hoverBackgroundColor:'#00FF00',

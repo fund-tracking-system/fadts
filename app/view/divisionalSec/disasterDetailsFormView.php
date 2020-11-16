@@ -4,51 +4,95 @@
 <div class="all_bacground_clor">
 
     <div class="SearchByCriteriaform1">
+        <?php
 
-        <form method="post" id="" action="/fadts/divisional/selectDisasterDetails">
+        
+
+                require 'connection.php'; 
+                $myRegion;
+                $myRegion=$_SESSION['region'];
+
+                $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
+                FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
+                $result=$con->query($sql);
+                $res=$result->fetch_all(MYSQLI_ASSOC); 
+                $_SESSION['disasterList']=$res;
+               
+            ?>
+
+        <form>
             <fieldset class="BackgroundFS">
-                <h2>SELECT DISASTER</h2>
-            <fieldset class="tableBar">
-                <div class="tbleMargin">
-                    <table id="resultTable" class="display nowrap" style="table-layout:fixed">
-                        <thead>
-                            <tr>
-                                <th><B>Disaster Name</B></th>
-                                <th><B>Date</B></th>
-                                <th><B>Affected Areas</B></th>
-                                <th><B>Action</B></th>
-                            </tr>
-                        </thead>
+                <h2>Disaster FUND </h2>
 
-                        <tbody>
+                <fieldset class="tableBar">
+                    <div class="tbleMargin">
 
-                            <tr>
-                                <td><B>Tsunami 2004</B></td>
-                                <td><B>2004-12-26</B></td>
-                                <td><B>southern,eastern and northern provices</B></td>
-                                <td><button type="submit" class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><B>Flood 2003</B></td>
-                                <td><B>2003-06-26</B></td>
-                                <td><B>Whole Island</B></td>
-                                <td><button type="submit" class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                <div>
-                </fieldset>           
+
+                        <table id="resultTable" class="display nowrap">
+                            <thead>
+                                <tr>
+                                    <th><B>Disaster Type</B></th>
+                                    <th><B>Disaster Region</B></th>
+                                    <th><B>Disaster Name</B></th>
+                                    <th><B>Date</B></th>
+                                    <th><B>View</B></th>
+                                </tr>
+                            </thead>
+                            <?php foreach($_SESSION['disasterList'] as $disaster){
+                         
+                                 
+                                     ?>
+
+                            <tbody>
+
+                                <tr>
+                                    <td><input type="hidden" name="disasterId" style="margin-left:30%;"
+                                            value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
+                                    </td>
+                                    <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
+                                    <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
+                                    <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
+                                    <td><a href="/fadts/divisional/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>"
+                                            class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+
+
+
+
+
+
+
+
+
+                            <?php    } 
+                        unset($_SESSION['results']);
+                  ?>
+
+
+
+
+
+
+                        </table>
+                        <div>
+                </fieldset>
             </fieldset>
         </form>
 
 
+
+
+
+
+
+
+
     </div>
 </div>
-
-
-
 
 <script>
 $(document).ready(function() {
