@@ -90,7 +90,7 @@ switch($controller){
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Officer
    </a>
-   <a href="/fadts/ministry/ViewUpdateOfficer" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person</span>Update Officer
    </a>
    <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
@@ -105,7 +105,7 @@ switch($controller){
    <a href="/fadts/ministry/viewPeople" class="dashboard sidebar_link">
       <span class="material-icons">person_search</span>Search People Data
    </a>
-   <a href="/fadts/ministry/ViewAddNewDisaster" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/addDisaster" class="dashboard sidebar_link">
       <span class="material-icons">create_new_folder</span>Add New Disaster
    </a>
    <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
@@ -129,10 +129,10 @@ switch($controller){
 
 
 <div class="dashboard sidebar">
- 
-   <!-- <a href="/fadts/includes/notificationView" class="dashboard sidebar_link">
+<!--  
+   <a href="/fadts/includes/notificationView" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>Notification View
-   </a>  -->
+   </a>   -->
 
    <a href="/fadts/village/updatePeople" class="dashboard sidebar_link">
       <span class="material-icons">person</span>Update People Data
@@ -144,12 +144,12 @@ switch($controller){
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
    <a href="/fadts/village/fundDetails" class="dashboard sidebar_link">
-      <span class="material-icons">menu_book</span>View Fund
+      <span class="material-icons">menu_book</span>View Fund Details
    </a>   
    <a href="/fadts/village/fundRelease" class="dashboard sidebar_link">
       <span class="material-icons">how_to_reg</span>Fund Release
    </a>
-   <a href="/fadts/village/ViewGetAddVictimsToDisaster" class="dashboard sidebar_link">
+   <a href="/fadts/village/addDisasterVictim" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Disaster Victims
    </a>
    <a href="#" class="dashboard sidebar_link">

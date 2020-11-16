@@ -13,6 +13,7 @@ class villageController extends Controller{
       $this->model->load();
    }
 
+
    public function nicSearchModel(){
       $this->model('villageOfficer/nicSearchModel');
 
@@ -30,26 +31,31 @@ class villageController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+
    public function fundRelease(){
       $this->view('villageOfficer/fundReleaseView');
       
       $this->view->render(); // This is how load the view
    }
-   public function ViewGetAddVictimsToDisaster(){
+
+   public function addDisasterVictim(){
       $this->view('villageOfficer/addDisasterVictimsViews'); 
       
       $this->view->render(); // This is how load the view
    }
+   public function victimSelect(){
+      $this->view('villageOfficer/victimSelectView'); 
+      
+      $this->view->render(); // This is how load the view
+   }
+
+
    public function fundDetails(){
       $this->view('villageOfficer/fundDetailsView');
       
       $this->view->render(); // This is how load the view
    }
-   public function setUpdateModel(){
-      $this->model('villageOfficer/setUpdateModel');
-
-      $this->model->load();
-   }
+   
  
    
    

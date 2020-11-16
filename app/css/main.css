@@ -160,9 +160,9 @@ footer h4{
 	color: #8a6d3b;
  }
  .alert-danger {
-	color: #7f3f00;
-	background-color: #fde4cc;
-	border-color: #fcdab8;
+	color: #7f0000;
+	background-color: #fdcccc;
+	border-color: #f84e4e;
  }
  .myButton {
 	box-shadow:inset 0px 1px 0px 0px #3dc21b;

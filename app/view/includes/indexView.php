@@ -49,9 +49,9 @@ switch($controller){
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events">
-            <h3 style="color: black;">Your Events</h3>
-            <?php echo $_SESSION['userrole']; ?>
+         <div id="calendar_events" style="height: 290px;">
+            <h3>Your Events</h3>
+            <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
 
                $userid=$_SESSION['userid'];
@@ -67,16 +67,13 @@ switch($controller){
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h3> ' . $key['start_event'] . ' </h3>';
-                     print ' <h3> ' . $key['title'] . ' </h3>';
+                     print ' <h5> ' . $key['start_event'] . ' </h5>';
+                     print ' <h5> ' . $key['title'] . ' </h5>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
 
-               }
-
-               
-                           
+               }                       
             ?>
          </div>
       </div>
@@ -254,6 +251,7 @@ window.onload = calendar;
          <canvas id="Chart1"></canvas>
       </div>
       <div class="box-2">
+         <div class="nav_link"><B>Predefined Fund</B></div>
       <!-- <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div> -->
          <canvas id="Chart2"></canvas>
       </div>
@@ -267,8 +265,32 @@ window.onload = calendar;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events">
-            <h3>Events</h3>
+         <div id="calendar_events" style="height:290px ;">
+         <h3>Your Events</h3>
+            <!-- <?php echo $_SESSION['userrole']; ?> -->
+            <?php
+
+               $userid=$_SESSION['userid'];
+
+               $sql="SELECT title,start_event FROM events WHERE events.userid=$userid ";
+               $res=$con->query($sql);
+               $rgn=$res->fetch_all(MYSQLI_ASSOC); 
+               $event="You Have No Event";
+               if($rgn==NULL){
+                  print ' <h3> ' . $event . ' </h3>';
+               }
+               else{
+                  foreach ($rgn as $key ) {
+                     $_SESSION['title']=$key['title'];
+                     $_SESSION['start_event']=$key['start_event'];
+                     print ' <h5> ' . $key['start_event'] . ' </h5>';
+                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
+                  } 
+                 
+
+               }                       
+            ?>
          </div>
       </div>
       <div class="box-4">
@@ -325,39 +347,40 @@ window.onload = calendar;
   });
 
   $(function () {
-      // ChartJS
       var ctx = document.getElementById('Chart2').getContext('2d');
-      console.log(Chart.defaults.scale.ticks);
-      Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
-         type: 'horizontalBar', // The type of chart we want to create
+         type: 'doughnut',
          data: {
-            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            labels: ['Samuddi', 'Mahapola','Adult Fund','Not receiving Fund'],
             datasets: [{
-                  label: 'Victims per Year',
-                  data: [100,200,400,300,250,140,370,200,300,200],
-                  // backgroundColor:'#4cd84c',
-                  hoverBackgroundColor:'#00FF00',
-                  borderColor:'#00FF00',
-                  borderWidth: 2
+                  label: '# fund release',
+                  data: [20,5,25,10],
+                  backgroundColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9',
+                     '#00FF00'
+                  ],
+                  borderColor: [
+                     '#16a085',
+                     '#f1c40f',
+                     '#2980b9',
+                     '#00FF00'
+                  ],
+                  borderWidth: 1
             }]
          },
          options: {
-            scales: {
-                  yAxes: [{
-                     ticks: {
-                        beginAtZero: true
-                     }
-                  }]
+            rotation:Math.PI*-10.5,
+            animation:{
+               animatescale:true
             },
-            maintainAspectRatio: false
-
+            
          }
       }); 
       chart.canvas.parentNode.style.height = '100%';
 
   });
-
 
 
   
@@ -458,7 +481,31 @@ window.onload = calendar;
             <p id="calendar_year"></p>
          </div>
          <div id="calendar_events">
-            <h3>Events</h3>
+         <h3>Your Events</h3>
+            <!-- <?php echo $_SESSION['userrole']; ?> -->
+            <?php
+
+               $userid=$_SESSION['userid'];
+
+               $sql="SELECT title,start_event FROM events WHERE events.userid=$userid ";
+               $res=$con->query($sql);
+               $rgn=$res->fetch_all(MYSQLI_ASSOC); 
+               $event="You Have No Event";
+               if($rgn==NULL){
+                  print ' <h3> ' . $event . ' </h3>';
+               }
+               else{
+                  foreach ($rgn as $key ) {
+                     $_SESSION['title']=$key['title'];
+                     $_SESSION['start_event']=$key['start_event'];
+                     print ' <h5> ' . $key['start_event'] . ' </h5>';
+                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
+                  } 
+                 
+
+               }                       
+            ?>
          </div>
       </div>
       <div class="box-4">
@@ -501,7 +548,31 @@ window.onload = calendar;
             <p id="calendar_year"></p>
          </div>
          <div id="calendar_events" style="height:100%;">
-            <h3 >Events</h3>
+         <h3>Your Events</h3>
+            <!-- <?php echo $_SESSION['userrole']; ?> -->
+            <?php
+
+               $userid=$_SESSION['userid'];
+
+               $sql="SELECT title,start_event FROM events WHERE events.userid=$userid ";
+               $res=$con->query($sql);
+               $rgn=$res->fetch_all(MYSQLI_ASSOC); 
+               $event="You Have No Event";
+               if($rgn==NULL){
+                  print ' <h3> ' . $event . ' </h3>';
+               }
+               else{
+                  foreach ($rgn as $key ) {
+                     $_SESSION['title']=$key['title'];
+                     $_SESSION['start_event']=$key['start_event'];
+                     print ' <h5> ' . $key['start_event'] . ' </h5>';
+                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
+                  } 
+                 
+
+               }                       
+            ?>
          </div>
       </div>
       <div class="box-4">

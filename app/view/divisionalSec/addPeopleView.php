@@ -99,7 +99,7 @@
                   
                   ?>
                         <select id='region' class='form-control Input' name='region' id='region'
-                            style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
+                            style='position:sticky;top:60px;overflow:scroll;  width:530px; '>
                             <option value="" disabled selected>Select region</option>
                            <?php 
                               foreach($res as $data){
