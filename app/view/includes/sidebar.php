@@ -105,7 +105,7 @@ switch($controller){
    <a href="/fadts/ministry/viewPeople" class="dashboard sidebar_link">
       <span class="material-icons">person_search</span>Search People Data
    </a>
-   <a href="/fadts/ministry/ViewAddNewDisaster" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/addDisaster" class="dashboard sidebar_link">
       <span class="material-icons">create_new_folder</span>Add New Disaster
    </a>
    <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
@@ -129,10 +129,10 @@ switch($controller){
 
 
 <div class="dashboard sidebar">
- 
-   <!-- <a href="/fadts/includes/notificationView" class="dashboard sidebar_link">
+<!--  
+   <a href="/fadts/includes/notificationView" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>Notification View
-   </a>  -->
+   </a>   -->
 
    <a href="/fadts/village/updatePeople" class="dashboard sidebar_link">
       <span class="material-icons">person</span>Update People Data
