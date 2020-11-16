@@ -68,4 +68,18 @@ class ministryController extends Controller{
       $this->view->render(); // This is how load the view
    }
   
+
+
+
+   public function addDisaster(){
+      $this->view('ministry/addDisasterView');
+      
+      $this->view->render(); // This is how load the view
+   }
+   public function addDisasterModel(){
+      $this->model('ministry/addDisasterModel');
+
+      $this->model->load();      
+   }
+  
 }
