@@ -93,20 +93,14 @@ $(function(){
     if($formAddDisaster.length){
         $formAddDisaster.validate({
             rules: {
-                nid: {
+                nic: {
                     required: true,
-                    // maxlength: 12,
-                    // minlength:10,
                     nidvalidator:true
                 }
             },
             messages: {
-                nid: {
-                    required: "This field is required",
-                    // maxlength: "Please enter no more than 12 or 10 characters",
-                    // minlength: "Please enter at most 10 or 12 characters"
-                }
-
+                nic:"This field is required"
+                
             }
       });
     }

@@ -35,7 +35,7 @@
 
                <div class="form-row ">
                   <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
-                  <input class="form-control searchInput" id='NID-number'
+                  <input class="form-control searchInput" id='nic'
                      placeholder="<?php echo isset($result) ? $result['nid']:"Type here NIC"?>" name="nic"></input>
                   <button type="submit" class="btn btn-primary btnNav" name="submit">Search</button>
                </div>
