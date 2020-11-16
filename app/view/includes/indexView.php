@@ -43,16 +43,16 @@ switch($controller){
             <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
       <h1><B><?php echo $_SESSION['userrole']?></B></h1>
       <h1><B><?php echo $_SESSION['regionName']?></B></h1> -->
-            <div id="calendardate">
-                <p id="calendar_day"></p>
-                <p id="calendar_date"></p>
-                <p id="calendar_month"></p>
-                <p id="calendar_year"></p>
-            </div>
-            <div id="calendar_events">
-                <h3>Your Events</h3>
-                <!-- <?php echo $_SESSION['userrole']; ?> -->
-                <?php
+         <div id="calendardate">
+            <p id="calendar_day"></p>
+            <p id="calendar_date"></p>
+            <p id="calendar_month"></p>
+            <p id="calendar_year"></p>
+         </div>
+         <div id="calendar_events" style="height: 290px;">
+            <h3>Your Events</h3>
+            <!-- <?php echo $_SESSION['userrole']; ?> -->
+            <?php
 
                $userid=$_SESSION['userid'];
 
