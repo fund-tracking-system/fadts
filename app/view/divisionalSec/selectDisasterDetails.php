@@ -14,37 +14,7 @@
                     <fieldset style="background-color: #EBF6FA; border:none; margin-top:30px;">
 
                         <h2 style="margin-bottom:30px;"> DISASTER DETAILS ANALISYS</h2>
-                        <div class="form-row" style="margin-bottom:50px;">
-                            <label for="region" class="inputLable" style="margin-right:15px;"><b>Select Dsaster Result
-                                    Region :</b></label>
-                            <?php
-
-                                    require 'connection.php'; 
-
-
-                                    $region = $_SESSION['region'];
-                                                
-                                    $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
-                                    $rgnRes = $con->query($rgn) ;
-                                    $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
-
-                                    ?>
-                            <select id='region' class='form-control Input' name='region' id='region'
-                                style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
-                                <option value="23" ><?php echo $_SESSION['regionName']?> Division
-                                    Secretory Area</option>
-                                <?php 
-                                                foreach($res as $data){
-                                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-                                                }
-                                            ?>
-                            </select>
-                            <button type="submit" class="btn btn-primary btnNavR ">Search</button>
-
-                        </div>
-
-
-                        <div><input type="hidden"></input></div>
+                        
 
                         <table style="margin-bottom:50px;">
 
@@ -66,7 +36,7 @@
                                     <th>
                                         <fieldset class="FSdetail">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="dilivered" class="inputLable"><b>Region Victims Amount
+                                                <label for="dilivered" class="inputLable"><b>Victims Amount
                                                         <br> <br>
                                                         <?php echo  "450";?></b></label>
                                                 <input class="form-control details" type="hidden"
@@ -102,12 +72,12 @@
                                     <th>
                                         <fieldset class="FSdetail" style="margin-right:30px;">
                                             <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Published
-                                                        <br> <br><?php echo $_SESSION['publishedTime']?>
+                                                <label for="nid" class="inputLable"><b>Disaster Date
+                                                        <br> <br><?php echo "2007-10-01"?>
                                                     </b></label>
                                                 <input class="form-control details" id='' type="hidden"
                                                     style="margin-left:100px;"
-                                                    value="<?php echo $_SESSION['publishedTime']?>" readonly></input>
+                                                    value="" readonly></input>
                                             </div>
                                         </fieldset>
                                     </th>
@@ -120,7 +90,7 @@
 
                     </fieldset>
 
-                    <script>
+                    <!-- <script>
                     window.onload = function() {
 
 
@@ -159,7 +129,7 @@
                         chart.render();
 
                     }
-                    </script>
+                    </script> -->
 
                 </fieldset>
 
@@ -169,18 +139,18 @@
                             <br>
                             <br>
                             <li style="color:blue;">Victims
-                                Amount<?php echo "--------> ";?><?php echo $_SESSION['fundDelivered'] ?> Persons</li>
+                                Amount<?php echo "--------> ";?><?php echo "180" ?> Persons</li>
                             <br>
                             <li style="color:red;">Fully
-                                Victims<?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons</li>
+                                Victims<?php echo "-----> ";?><?php echo '100' ?> Persons</li>
                             <br><br>
                             <br>
                             <li style="color:green;">Astimate
-                                Money<?php echo "------> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundDelivered'] ?>
+                                Money<?php echo "------> ";?><?php echo "133" ?>
                                 Rs</li>
                             <br>
                             <li style="color:brown;">delivered
-                                Miney<?php echo "----> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundUndelivered'] ?>
+                                Miney<?php echo "----> ";?><?php "  11" ?>
                                 Rs</li>
                         </B></ul>
 
@@ -191,8 +161,10 @@
 
                 </div>
 
-                <div id="chartContainer" style="height: 370px; width: 70%;"></div>
-                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+              
+<div id="chartContainer" style="height: 370px; width: 70%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
 
 
 
@@ -204,17 +176,56 @@
     </div>
 </div>
 
+ 
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title:{
+		text: "Victims   amount per date"
+	},
+	axisY :{
+		valueFormatString: "#0,.",
+		suffix: "victims"
+	},
+	axisX: {
+		title: "Day"
+	},
+	toolTip: {
+		shared: true
+	},
+	data: [
+	{        
+		type: "stackedArea",  
+		name: "victims",
+		toolTipContent: "<span style=\"color:#C0504E\"><strong>{name}: </strong></span> {y}<br><b>Total:<b> #total",
+		showInLegend: true,
+		dataPoints: [
+		{ x: 4, y: 4000 },
+		{ x: 5, y: 6000 },
+		{ x: 6, y: 9000 },
+		{ x: 7,y: 14000 },
+		{ x: 8,y: 21000 },
+		{ x: 9, y: 31000 },
+		{ x: 10, y: 46000 },
+		{ x: 11, y: 61000 }   
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
 
 
-
-
-
+<!-- 
 
 <script>
 $(document).ready(function() {
     $('#region').select2();
 });
-</script>
+</script> -->
 
 
 <?php include VIEW.'includes/footer.php' ?>

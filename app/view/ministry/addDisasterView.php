@@ -4,7 +4,7 @@
 <div class="all_bacground_clor">
    <div class='SearchByCriteriaform1'>
 
-      <form class="form" id="formAddDisaster" method="POST" action="/fadts/divisional/addDisasterModel">
+      <form class="form" id="formAddDisaster" method="POST" action="/fadts/ministry/addDisasterModel">
 
          <fieldset class=" BackgroundFS">
             <h2> ADD NEW DISASTER</h2>
@@ -56,7 +56,7 @@
 
                   require 'connection.php'; 
                                  
-                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
+                  $rgn="SELECT level, regionid, superRegion,name  FROM region WHERE level!=4 ";
                   $rgnRes=$con->query($rgn) ;
                   $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
                   
@@ -65,11 +65,11 @@
                   <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
                   <?php 
                   foreach($res as $data){
-                     if($data['superRegion']==$_SESSION['region']){
+                    
                         // echo "<option value='$data['regionid']'>colombo</option>";
                         echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
 
-                     }
+                     
                   }
                   ?>
                   </select>

@@ -29,7 +29,12 @@ class divisionalController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-   
+   public function disasterDetailModel(){
+      $this->model('divisionalSec/disasterDetailModel');
+
+      $this->model->load();      
+   }
+
    public function searchPeople(){
       $this->view('divisionalSec/searchPeopleView');
       
@@ -44,6 +49,11 @@ class divisionalController extends Controller{
 
    public function ViewAddPeople(){
       $this->view('divisionalSec/addPeopleView');
+      
+      $this->view->render(); // This is how load the view
+   }
+   public function ViewAddPeopleProfile(){
+      $this->view('divisionalSec/ViewAddPeopleProfile');
       
       $this->view->render(); // This is how load the view
    }

@@ -9,14 +9,15 @@ body{
 h3{
   color: black;
   padding: 15px;
-  font-weight: 15px;
+  font-weight: 25px;
 }
 h5{
  
-   font-size: 16px;
+   font-size: 15px;
    padding:1px;
-   color: black;
+   color:rgb(13, 40, 51);
    padding-left: 10px;
+   font-style: initial;
   
   
   /* color: #011116; */
@@ -1516,8 +1517,8 @@ ul.tabs li.current{
 .bio-box .desc{
   padding: 10px 10px 10px 10px;
   text-align: justify;
-  color: #838383;
-  font-size: 13px;
+  color: #050505;
+  font-size: 20px;
 }
 .detail-box{
   padding: 10px;
@@ -1787,4 +1788,13 @@ height: 26px;
 width: 130px;
 
 padding-bottom: 26px;
+}
+
+.profile-headerPeople{
+  height: 200px;
+  width: 100%;
+  background-color: #9ff1d6;
+  border-bottom: 2px solid #E2F3FB;
+  
+  
 }

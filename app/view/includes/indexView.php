@@ -110,7 +110,7 @@ switch($controller){
                   backgroundColor: [
                      '#16a085',
                      ' #668cff',
-                     '#2980b9',
+                     '#004080',
                      '#b30000',
                      '#f1c40f'
                   ],
@@ -181,7 +181,7 @@ switch($controller){
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Fund Release Per Month',
+                  label: 'Fund Distribution',
                   data: [100,200,400,300,250,140,370,200,300,200],
                   backgroundColor:'#4cd84c',
                   hoverBackgroundColor:'#00FF00',
@@ -351,19 +351,19 @@ window.onload = calendar;
       var chart = new Chart(ctx, {
          type: 'doughnut',
          data: {
-            labels: ['Samuddi', 'Mahapola','Adult Fund','Not receiving Fund'],
+            labels: ['Samuddi', 'Mahapola','Adult Fund','Not receiving Any Fund'],
             datasets: [{
                   label: '# fund release',
                   data: [20,5,25,10],
                   backgroundColor: [
                      '#16a085',
-                     '#f1c40f',
+                     'red',
                      '#2980b9',
                      '#00FF00'
                   ],
                   borderColor: [
                      '#16a085',
-                     '#f1c40f',
+                     'red',
                      '#2980b9',
                      '#00FF00'
                   ],
@@ -394,7 +394,7 @@ window.onload = calendar;
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Victims per Year',
+                  label: 'Fund distribution Progress',
                   data: [100,200,400,300,250,140,370,200,300,200],
                   // backgroundColor:'#4cd84c',
                   hoverBackgroundColor:'#00FF00',
@@ -797,9 +797,9 @@ window.onload = calendar;
             datasets: [{
                   label: 'Victims per Year',
                   data: [100,200,400,300,250,140,370,200,300,200],
-                  // backgroundColor:'#4cd84c',
-                  hoverBackgroundColor:'#00FF00',
-                  borderColor:'#00FF00',
+                  backgroundColor:'#4cd84c',
+                  hoverBackgroundColor:'rgb(4, 17, 41)',
+                  borderColor:'rgb(4, 17, 41)',
                   borderWidth: 2
             }]
          },
