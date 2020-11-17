@@ -2,11 +2,13 @@
 <?php include VIEW.'includes/sidebar.php' ?>
 
 <?php 
-      if(isset($_GET['disasterid'])){$disasterId = $_GET['disasterid']; }
       if(isset($_SESSION['results'])){
          $result = $_SESSION['results'];
          unset($_SESSION['results']);
-      }        
+      } 
+      if(isset($_GET['disasterId'])){
+         $disasterId = $_GET['disasterId'];
+      }       
 ?>
 
 <div class="all_bacground_clor">
@@ -52,13 +54,25 @@
             </fieldset>
 
          </fieldset>
-
+         
+               <?php 
+               if(isset($_GET['error'])){
+         
+                  $error = $_GET['error'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "success"){
+                     echo '<div class="alert alert-success" role="alert">Victim successfully added to the database!</div>';
+                  }       
+               }   
+            ?>
       </form>
-
-      <form methode="post" action="/fadts/village/victimSelectModel? <?php echo isset($disasterId) ? $disasterId : "" ?>">
+      <?php if(isset($result)){ ?>
+      <form method="post" name="getVictimDetails" action="/fadts/village/victimSelectModel">
          <fieldset class="BackgroundFS">
-            <?php if(isset($result)){ ?>
-            
+           
+         
             <fieldset class="searchBar">
          
                <h3>Add Details :</h3></br></br>
@@ -68,7 +82,9 @@
                   <input class="form-control Input" id="pname" name="pname" 
                   value="<?php echo $result['personName'] ?>" readonly></input>
                </div>
+
                <div><input name="personId" value="<?php echo $result['personId'] ?>" type="hidden"></input></div>
+               <div><input name="disasterId" value="<?php echo $result['disasterId'] ?>" type="hidden"></input></div>
 
                <div class="form-row">
                   <label for="total-damage" class="inputLable" ><b>Total Damage :</b></label>
@@ -82,21 +98,19 @@
 
                <div class="form-row">
                   <label for="description" class="inputLable"><b>Description :</b></label>
-                  <textarea class="form-control Input txtWidth " id="description" name="description">  </textarea>
+                  <textarea class="form-control Input txtWidth" id="description" name="description">  </textarea>
                </div>
 
                <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary" >Confirm and Add
-                  </button>
+                  <button type="submit" name="submit" class="btn btn-primary" >Confirm and Add</button>
                </div>
             
             </fieldset>
                  
-            <?php } ?>
-
          </fieldset>
 
       </form>
+      <?php } ?>
    </div>
 </div>
 
