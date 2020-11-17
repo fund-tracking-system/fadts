@@ -55,7 +55,7 @@
 
       </form>
 
-      <form action="/fadts/village/victimSelectModel? <?php echo isset($disasterId) ? $disasterId : "" ?>">
+      <form methode="post" action="/fadts/village/victimSelectModel? <?php echo isset($disasterId) ? $disasterId : "" ?>">
          <fieldset class="BackgroundFS">
             <?php if(isset($result)){ ?>
             
