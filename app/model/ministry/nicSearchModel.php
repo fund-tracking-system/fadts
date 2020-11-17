@@ -16,7 +16,7 @@ if(isset($_POST['submit']) && isset($view)){
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
       mysqli_close($con);
-      header("Location:/fadts/village/$view?searcherror=db_conn_err");
+      header("Location:/fadts/divisional/$view?searcherror=db_conn_err");
       exit();     
    }
    else{
@@ -31,48 +31,54 @@ if(isset($_POST['submit']) && isset($view)){
          $personId = $row['personId'];
          $validRegion = $row['validRegion'];
 
-         switch($view){
-            case "fundRelease":
-               if($personRegion==$userRegion && $validRegion=="yes"){
-                  fundRelease($con,$personId,$view);
-               }else{
-                  mysqli_close($con);
-                  header("Location:/fadts/village/$view?searcherror=wrong_region");
-                  exit();
-               }
-               break;
+         $sql = "SELECT superRegion FROM region WHERE regionId=$personRegion";
+         $stmt = mysqli_stmt_init($con);
 
-            case "updatePeople":
-               if($personRegion==$userRegion && $validRegion=="yes"){      
-                  updatePeople($con,$personId,$view);         
-               }else{
-                  mysqli_close($con);
-                  header("Location:/fadts/village/$view?searcherror=wrong_region");
-                  exit();
-               }
-               break;
+         if(!mysqli_stmt_prepare($stmt,$sql)){
+            mysqli_close($con);
+            header("Location:/fadts/divisional/$view?searcherror=db_conn_err");
+            exit(); 
+         }else{
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
 
-            case "victimSelect":
-               if($personRegion==$userRegion && $validRegion=="yes"){ 
-                  
-                  $result = array("personName"=>"$personName","personId"=>"$personId","nic"=>"$nic","disasterId"=>$_GET['disasterId']);
+            if(mysqli_num_rows($result)==1){
+ 
+               $row = mysqli_fetch_array($result);
+               $superRegion = $row['superRegion'];
 
-                  $_SESSION['results'] = $result;    
-                  mysqli_close($con);
-                  header("Location:/fadts/village/$view");
-                  exit();         
-               }else{
-                  mysqli_close($con);
-                  header("Location:/fadts/village/$view?searcherror=wrong_region");
-                  exit();
+               switch($view){
+                  case "fundRelease":
+                     if($superRegion==$userRegion && $validRegion=="yes"){
+                        fundRelease($con,$personId,$view);
+                     }else{
+                        mysqli_close($con);
+                        header("Location:/fadts/divisional/$view?searcherror=wrong_region");
+                        exit();
+                     }
+                     break;
+
+                  case "updatePeople":
+                     if($superRegion==$userRegion || $validRegion=="no" ){      
+                        updatePeople($con,$personId,$view);         
+                     }else{
+                        mysqli_close($con);
+                        header("Location:/fadts/divisional/$view?searcherror=wrong_region");
+                        exit();
+                     }
+                     break;
                }
-               break;
-            
+               
+            }else{
+               mysqli_close($con);
+               header("Location:/fadts/divisional/$view?searcherror=wrong_region");
+               exit();
+            }
          }
       }
       else{
          mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=wrong_nid_or_dead");
+         header("Location:/fadts/divisional/$view?searcherror=wrong_nid_or_dead");
          exit();
       }
    }
@@ -80,7 +86,7 @@ if(isset($_POST['submit']) && isset($view)){
    mysqli_close($con);
 }
 else{
-   header("Location:/fadts/village/$view?searcherror=direct_access");
+   header("Location:/fadts/divisional/$view?searcherror=direct_access");
    exit();
 }
 
@@ -96,7 +102,7 @@ function fundRelease($con,$personId,$view){
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
       mysqli_close($con);
-      header("Location:/fadts/village/$view?searcherror=db_conn_err");
+      header("Location:/fadts/divisional/$view?searcherror=db_conn_err");
       exit();
    }else{
       mysqli_stmt_execute($stmt);
@@ -106,11 +112,11 @@ function fundRelease($con,$personId,$view){
          $_SESSION['results'] =mysqli_fetch_all($result);
 
          mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=succsess");
+         header("Location:/fadts/divisional/$view?searcherror=succsess");
          exit();
       }else{
          mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=no_records");
+         header("Location:/fadts/divisional/$view?searcherror=no_records");
          exit();
       }
                      
@@ -124,7 +130,7 @@ function updatePeople($con,$personId,$view){
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
       mysqli_close($con);
-      header("Location:/fadts/village/$view?searcherror=db_conn_err");
+      header("Location:/fadts/divisional/$view?searcherror=db_conn_err");
       exit();
    }else{
       mysqli_stmt_execute($stmt);
@@ -143,15 +149,14 @@ function updatePeople($con,$personId,$view){
          $_SESSION['personRegion'] = mysqli_fetch_assoc($result);
 
          mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=succsess");
+         header("Location:/fadts/divisional/$view?searcherror=succsess");
          exit();
       }else{
          mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=no_records");
+         header("Location:/fadts/divisional/$view?searcherror=no_records");
          exit();
       }
                      
    }
 
 }
-

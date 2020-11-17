@@ -17,11 +17,27 @@
 
     //database connection file calling
     require 'connectionOOP.php';   
-    
+
+    // //prepare and bind
+    // $query =   'SELECT area.name
+    //             FROM officerhistory 
+    //             INNER JOIN region AS area ON officerhistory.region=area.regionId 
+    //             WHERE officerhistory.officerId = (SELECT user.userid FROM user WHERE user.usernid = ?)';
+    // $stmt = $con->prepare($query);
+    // $stmt->bind_param("s", $nid);
+
     //prepare and bind
-    $query = 'SELECT updateTime, officerId, nid, email, region, loginStatus, name, position FROM officerhistory WHERE nid = ?';
+    $query =   'SELECT officerhistory.updateTime, officerhistory.officerId, officerhistory.nid, officerhistory.email, region.name AS region, officerhistory.loginStatus, officerhistory.name AS name, officerhistory.position 
+                FROM officerhistory 
+                INNER JOIN region ON officerhistory.region=region.regionId 
+                WHERE officerhistory.officerId = (SELECT user.userid FROM user WHERE user.usernid = ?)';
     $stmt = $con->prepare($query);
     $stmt->bind_param("s", $nid);
+    
+    // //prepare and bind
+    // $query = 'SELECT updateTime, officerId, nid, email, region, loginStatus, name, position FROM officerhistory WHERE nid = ?';
+    // $stmt = $con->prepare($query);
+    // $stmt->bind_param("s", $nid);
 
     //if nid is set
     if (isset($_POST['nid']) && $_POST['nid'] != 0) {
@@ -38,6 +54,8 @@
     
     //fetch query results
     $data = $result->fetch_all(MYSQLI_ASSOC);
+
+    var_dump($data);
 
     //store results in session variables
     session_start();

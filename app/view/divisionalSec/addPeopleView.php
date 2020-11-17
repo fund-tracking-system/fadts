@@ -70,11 +70,11 @@
                         <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
                         <select class="form-control Input" id="civilStatus" name="civilStatus">
                             <option value="" disabled selected>Select civil status</option>
-                            <option value="1">Unmarried</option>
-                            <option value="0">Married</option>
+                            <option value="0">Unmarried</option>
+                            <option value="1">Married</option>
                         </select>
                     </div>
-
+ 
                     <div class="form-row">
                         <label for="tnid" class="inputLable"><b>Trustee :</b></label>
                         <input class="form-control Input" id='tnid' class="form-control Input" name="trustee"></input>
