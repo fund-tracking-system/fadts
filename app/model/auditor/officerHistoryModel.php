@@ -30,7 +30,7 @@
     $query =   'SELECT officerhistory.updateTime, officerhistory.officerId, officerhistory.nid, officerhistory.email, region.name AS region, officerhistory.loginStatus, officerhistory.name AS name, officerhistory.position 
                 FROM officerhistory 
                 INNER JOIN region ON officerhistory.region=region.regionId 
-                WHERE officerhistory.officerId = (SELECT user.userid FROM user WHERE user.usernid = ?)';
+                WHERE officerhistory.officerId = (SELECT user.userid FROM user WHERE user.userid = ?)';
     $stmt = $con->prepare($query);
     $stmt->bind_param("s", $nid);
     
