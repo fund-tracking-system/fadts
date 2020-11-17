@@ -2,21 +2,13 @@
     session_start();
 
     //database connection file calling
-    require 'connectionOOP.php';	
-    
+    require 'connectionOOP.php';
+
     //prepare and bind
-    $query = 'INSERT INTO user (username, usernid, email, password, userrole, region, loginStatus) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    $query = 'UPDATE user SET username=?, usernid=?, email=?, password=?, userrole=?, region=?, loginStatus=? WHERE userid=?';
     $stmt = $con->prepare($query);
-    $stmt->bind_param("sssssss", $name, $nid, $email, $password, $position, $region, $loginStatus);
+    $stmt->bind_param("ssssssss", $name, $nid, $email, $password, $position, $region, $loginStatus, $id);
  
-    //assign values from post
-    $name = $_SESSION['officer_name'];
-    $nid = $_SESSION['officer_nid'];
-    $email = $_SESSION['officer_email'];
-    //$position = $_SESSION['assign_region_level'];   
-    $region = $_SESSION['assign_region_id']; 
-    $loginStatus = $_SESSION['officer_loginStatus'];
-    
     //determine officer position from region level
     switch ($_SESSION['assign_region_level']) {
         case 0:
@@ -36,8 +28,20 @@
             break;    
     }
 
-    //default password is set initially
-    $password = "123456";
+    //assign values from post
+    $name = $_POST['name'];
+    $nid = $_POST['nid'];
+    $email = $_POST['email'];
+    $region = $_SESSION['assign_region_id'];
+    $loginStatus = $_POST['loginStatus'];
+    $id = $_SESSION['officer_id'];
+
+    if ($_POST['password'] == "yes") {
+        $password = "123456";
+    }
+    else {
+        $password = $_SESSION['officer_password'];
+    }
 
     //execute prepared statement
     $stmt->execute();
@@ -47,15 +51,19 @@
     $con->close();
 
     //unset form data stored in session variables
+    unset($_SESSION['officer_id']);
     unset($_SESSION['officer_name']);
     unset($_SESSION['officer_nid']); 
     unset($_SESSION['officer_email']);
-    //unset($_SESSION['officer_password']);  
+    unset($_SESSION['officer_password']); 
+    unset($_SESSION['officer_role']);    
+    unset($_SESSION['assign_region_id']); 
+    unset($_SESSION['assign_region_name']);
     unset($_SESSION['assign_region_level']);
     unset($_SESSION['assign_region_id']); 
     unset($_SESSION['officer_loginStatus']);  
     
     //redirecting to view
-    header("Location:/fadts/ministry/addOfficerView"); 
+    header("Location:/fadts/ministry/updateOfficerView"); 
     exit(); 
 ?>
