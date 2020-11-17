@@ -55,7 +55,7 @@
 
       </form>
 
-      <form action="/fadts/village/victimSelectModel? <?php echo isset($disasterId) ? $disasterId : "" ?>">
+      <form methode="post" action="/fadts/village/victimSelectModel? <?php echo isset($disasterId) ? $disasterId : "" ?>">
          <fieldset class="BackgroundFS">
             <?php if(isset($result)){ ?>
             
@@ -68,7 +68,7 @@
                   <input class="form-control Input" id="pname" name="pname" 
                   value="<?php echo $result['personName'] ?>" readonly></input>
                </div>
-               <div><input name="personId" value="<?php echo $result['personId'] ?>"></input></div>
+               <div><input name="personId" value="<?php echo $result['personId'] ?>" type="hidden"></input></div>
 
                <div class="form-row">
                   <label for="total-damage" class="inputLable" ><b>Total Damage :</b></label>

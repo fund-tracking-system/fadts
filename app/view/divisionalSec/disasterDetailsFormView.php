@@ -53,9 +53,9 @@
                                     </td>
                                 </tr>
 
+                                <?php    } unset($_SESSION['results']); ?>
                             </tbody>
 
-                            <?php    } unset($_SESSION['results']); ?>
 
                         </table>
                         <div>

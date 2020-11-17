@@ -95,18 +95,26 @@ $(function(){
 //             rules: {
 //                 nic: {
 //                     required: true,
+<<<<<<< HEAD
+=======
 //                     // maxlength: 12,
 //                     // minlength:10,
+>>>>>>> 75a5b71201b0ecb988cf1b458652b933bb912e3f
 //                     nidvalidator:true
 //                 }
 //             },
 //             messages: {
+<<<<<<< HEAD
+//                 nic:"This field is required"
+                
+=======
 //                 nic: {
 //                     required: "This field is required",
 //                     // maxlength: "Please enter no more than 12 or 10 characters",
 //                     // minlength: "Please enter at most 10 or 12 characters"
 //                 }
 
+>>>>>>> 75a5b71201b0ecb988cf1b458652b933bb912e3f
 //             }
 //       });
 //     }
