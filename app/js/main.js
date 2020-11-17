@@ -88,23 +88,23 @@ $(function(){
 
 
 
-  $(function(){
-    var $formAddDisaster = $("#formUpdateVillage");
-    if($formAddDisaster.length){
-        $formAddDisaster.validate({
-            rules: {
-                nic: {
-                    required: true,
-                    nidvalidator:true
-                }
-            },
-            messages: {
-                nic:"This field is required"
+//   $(function(){
+//     var $formAddDisaster = $("#formUpdateVillage");
+//     if($formAddDisaster.length){
+//         $formAddDisaster.validate({
+//             rules: {
+//                 nic: {
+//                     required: true,
+//                     nidvalidator:true
+//                 }
+//             },
+//             messages: {
+//                 nic:"This field is required"
                 
-            }
-      });
-    }
-  });
+//             }
+//       });
+//     }
+//   });
 
 
   $(function(){
