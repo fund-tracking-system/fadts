@@ -3,19 +3,19 @@
 
 <?php
     //next redirect URL
-    $_SESSION['next_model'] = "Location:/fadts/ministry/updateOfficerSetRegionModel";
+    //$_SESSION['next_model'] = "Location:/fadts/ministry/updateOfficerSetRegionModel";
 ?>
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method="post" action="/fadts/ministry/updateOfficerFindModel">
+        <form method="post" action="/fadts/ministry/updateOfficerFindModel" style="display: none;">
             <fieldset class="BackgroundFS">            
                 <h2>FIND OFFICER</h2>
 
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="nid" class="inputLable"><b>Officer NID:</b></label>
-                        <input class="form-control Input" name='nid' placeholder="NIC number here" ></input>
+                        <input class="form-control Input" name='nid' placeholder="NIC number here"></input>
                     </div>
 
                     <button type="submit" class="btn btn-primary signlebtn">Search</button>                   
@@ -23,7 +23,7 @@
             </fieldset>
         </form>
 
-        <form method="post" action="/fadts/ministry/updateOfficerModel">
+        <form method="post" action="/fadts/ministry/updateOfficerSaveModel">
             <fieldset class="BackgroundFS">
                 <?php if (isset($_SESSION['officer_id']) && $_SESSION['officer_id']==-1) { ?>
                     <div class="form-row ">
@@ -37,24 +37,24 @@
                     <fieldset class="searchBar">   
                         <div class="form-row">
                             <label for="name" class="inputLable"><b>Name:</b></label>
-                            <input class="form-control Input" name="name" value="<?php echo $_SESSION['officer_name'] ?>" readonly></input>
+                            <input class="form-control Input" name="name" value="<?php echo $_SESSION['officer_name'] ?>"></input>
                         </div>
 
                         <div class="form-row">
                             <label for="nid" class="inputLable"><b>NID:</b></label>
-                            <input class="form-control Input" name="nid" value="<?php echo $_SESSION['officer_nid'] ?>" readonly></input>
+                            <input class="form-control Input" name="nid" value="<?php echo $_SESSION['officer_nid'] ?>"></input>
                         </div>
 
                         <div class="form-row">
                             <label for="email" class="inputLable"><b>E-mail:</b></label>
-                            <input class="form-control Input" type="email" name='email' value="<?php echo $_SESSION['officer_email'] ?>" readonly></input>
+                            <input class="form-control Input" type="email" name='email' value="<?php echo $_SESSION['officer_email'] ?>"></input>
                         </div> 
 
-                        <div class="form-row" style="display: none;">
+                        <div class="form-row">
                             <label for="password" class="inputLable"><b>Reset Password:</b></label>
-                            <select class="form-control Input" name="password" readonly>
-                                <option value="permitted">No</option>
-                                <option value="denied">Reset</option> 
+                            <select class="form-control Input" name="password">
+                                <option value="no">No</option>
+                                <option value="yes">Reset</option> 
                             </select>
                         </div>
 
@@ -70,15 +70,15 @@
 
                         <div class="form-row">
                             <label for="loginStatus" class="inputLable"><b>Login status:</b></label>
-                            <select class="form-control Input" name="loginStatus" readonly>
+                            <select class="form-control Input" name="loginStatus">
                                 <option value="permitted">Permitted</option>
                                 <option value="denied">Denied</option> 
                             </select>
                         </div>
 
                         <div class="Twobtn">
-                            <a href="/fadts/assignRegion/assignRegionView" class=' btn btn-primary '>Set Region</a>
-                            <button type="submit" class=' btn btn-primary ' style="display: none;">Confirm</button>
+                            <a href="/fadts/assignRegion/assignRegionView" class=' btn btn-primary ' style="display: none;">Set Region</a>
+                            <button type="submit" class=' btn btn-primary '>Confirm</button>
                         </div>
                     </fieldset>
                 <?php } ?>

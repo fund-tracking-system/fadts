@@ -55,7 +55,7 @@ if(isset($_POST['submit']) && isset($view)){
             case "victimSelect":
                if($personRegion==$userRegion && $validRegion=="yes"){ 
                   
-                  $result = array("personName"=>"$personName","personId"=>"$personId","nic"=>"$nic");
+                  $result = array("personName"=>"$personName","personId"=>"$personId","nic"=>"$nic","disasterId"=>$_GET['disasterId']);
 
                   $_SESSION['results'] = $result;    
                   mysqli_close($con);

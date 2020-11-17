@@ -9,7 +9,7 @@
 
                 <fieldset class="searchBar">   
                     <div class="form-row">
-                        <label for="name" class="inputLable"><b>Name</b></label>
+                        <label for="name" class="inputLable"><b>Name:</b></label>
                         <input class="form-control Input" name="name"></input>
                     </div>
 

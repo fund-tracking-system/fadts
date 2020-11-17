@@ -61,29 +61,29 @@ $(function(){
   });
 
 
-  $(function(){
-    var $formAddDisaster = $("#formViewOfficerHistory");
-    if($formAddDisaster.length){
-        $formAddDisaster.validate({
-            rules: {
-                nid: {
-                    required: true,
-                    // maxlength: 12,
-                    // minlength:10,
-                    nidvalidator:true
-                }
-            },
-            messages: {
-                nid: {
-                    required: "This field is required",
-                    // maxlength: "Please enter no more than 12 or 10 characters",
-                    // minlength: "Please enter at most 10 or 12 characters"
-                }
+//   $(function(){
+//     var $formAddDisaster = $("#formViewOfficerHistory");
+//     if($formAddDisaster.length){
+//         $formAddDisaster.validate({
+//             rules: {
+//                 nid: {
+//                     required: true,
+//                     // maxlength: 12,
+//                     // minlength:10,
+//                     nidvalidator:true
+//                 }
+//             },
+//             messages: {
+//                 nid: {
+//                     required: "This field is required",
+//                     // maxlength: "Please enter no more than 12 or 10 characters",
+//                     // minlength: "Please enter at most 10 or 12 characters"
+//                 }
 
-            }
-      });
-    }
-  });
+//             }
+//       });
+//     }
+//   });
 
 
 
@@ -95,18 +95,12 @@ $(function(){
 //             rules: {
 //                 nic: {
 //                     required: true,
-//                     // maxlength: 12,
-//                     // minlength:10,
 //                     nidvalidator:true
 //                 }
 //             },
 //             messages: {
-//                 nic: {
-//                     required: "This field is required",
-//                     // maxlength: "Please enter no more than 12 or 10 characters",
-//                     // minlength: "Please enter at most 10 or 12 characters"
-//                 }
-
+//                 nic:"This field is required"
+                
 //             }
 //       });
 //     }

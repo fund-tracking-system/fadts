@@ -35,9 +35,9 @@
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="job type" style="margin-right:12.5%;"><b>Income Type :</b></label>
+                  <label class="inputLable" for="job type" style="margin-right:12.1%;"><b>Income Type :</b></label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style="position:sticky;top:60px;overflow:scroll; padding-right:510px;  " id="job" name="job">
+                     style="position:sticky;top:60px;overflow:scroll; padding-right:501px;  " id="job" name="job">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
                      <option value="retired">Retired</option>
@@ -48,10 +48,8 @@
                </div>
 
                <div style="  padding-top: 30px; ">
-                  <label class="inputLable"><b>Prolonged</br>
-                  </label>
-                  <label class="inputLable" style="margin-right:3.5%;">
-                     Disorders/Diseases:</b></label>
+                  <label class="inputLable"><b>Prolonged</br></label>
+                  <label class="inputLable" style="margin-right:3.5%;">Disorders/Diseases:</b></label>
 
                   <div class='radio1'>
                      <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
@@ -87,12 +85,12 @@
 
                </div>
 
-
+               
                <div class='form-row'>
-                  <label class="inputLable" style="margin-right:10%;"><b>Current Funds :</br>
+                  <label class="inputLable" style="margin-right:11%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='position:sticky;top:60px;overflow:scroll; padding-right:500px;' id="funds" name="funds">
+                     style='position:sticky;top:60px;overflow:scroll; padding-right:470px;' id="funds" name="funds">
                      <option value="government">Samurdhi</option>
                      <option value="private">Samurdhi Eligible List</option>
                      <option value="retired">Adults Fund</option>

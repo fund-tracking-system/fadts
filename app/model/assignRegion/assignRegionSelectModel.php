@@ -6,8 +6,13 @@
 
     //store officer position in session variables
     $_SESSION['assign_region_level'] = $_POST['level'];
+
+    $nextModel = $_SESSION['next_model'];
+    
+    //unset next model URL
+    unset($_SESSION['next_model']);
  
     //redirecting to addOfficerSave model
-    header($_SESSION['next_model']); 
+    header($nextModel); 
     exit(); 
 ?>
