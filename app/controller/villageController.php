@@ -48,6 +48,11 @@ class villageController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+   public function victimSelectModel(){
+      $this->model('villageOfficer/victimSelectModel'); 
+      
+      $this->model->load(); // This is how load the view
+   }
 
 
    public function fundDetails(){
@@ -55,9 +60,5 @@ class villageController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-   
- 
-   
-   
-  
+    
 }
