@@ -38,8 +38,26 @@ class ministryController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
-   public function updateOfficerfindModel(){ 
-      $this->model('ministry/updateOfficerfindModel');
+   public function updateOfficerView2(){
+      $this->view('ministry/updateOfficerView2');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function updateOfficerFindModel(){ 
+      $this->model('ministry/updateOfficerFindModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   public function updateOfficerSetRegionModel(){ 
+      $this->model('ministry/updateOfficerSetRegionModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   public function updateOfficerSaveModel(){ 
+      $this->model('ministry/updateOfficerSaveModel');
       
       $this->model->load(); // This is how load the model
    }

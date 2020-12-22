@@ -7,7 +7,7 @@ switch($controller){
    case "audit": // auditor's sidebar elements
 ?>
 
-<div class="dashboard sidebar">
+<div class="dashboard sidebar" id="sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
@@ -48,7 +48,7 @@ switch($controller){
    
 ?>
 
-<div class="dashboard sidebar">
+<div class="dashboard sidebar" id="sidebar">
    <a href="/fadts/divisional/ViewAddPeople" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add People Data
    </a>
@@ -86,7 +86,7 @@ switch($controller){
    
 ?>
 
-<div class="dashboard sidebar">
+<div class="dashboard sidebar" id="sidebar">
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
@@ -131,7 +131,7 @@ switch($controller){
 ?>
 
 
-<div class="dashboard sidebar">
+<div class="dashboard sidebar" id="sidebar">
 <!--  
    <a href="/fadts/includes/notificationView" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>Notification View

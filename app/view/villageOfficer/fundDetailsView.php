@@ -15,7 +15,7 @@
                     <table id="resultTable" class="display" style="table-layout:fixed">
                         <thead>
                             <tr>
-                                <th><B>Fund Name</B></th>
+                                <th><B>Fund Name  </B></th>
                                 <th><B>Amount Per-Person(Rs)</B></th>
                                 <th><B>Published Date</B></th>
                                 <th><B>View</B></th>
