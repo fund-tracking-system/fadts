@@ -89,10 +89,10 @@
 
 
                <div class='form-row'>
-                  <label class="inputLable" style="margin-right:10%;"><b>Current Funds :</br>
+                  <label class="inputLable" style="margin-right:12.5%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='position:sticky;top:60px;overflow:scroll; padding-right:500px;' id="funds" name="funds">
+                     style='position:sticky;top:60px;overflow:scroll; padding-right:510px;' id="funds" name="funds">
                      <option value="government">Samurdhi</option>
                      <option value="private">Samurdhi Eligible List</option>
                      <option value="retired">Adults Fund</option>
