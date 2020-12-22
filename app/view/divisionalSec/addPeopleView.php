@@ -4,7 +4,7 @@
 
 
 
-<div class="all_bacground_clor">
+<div class="all_bacground_clor" id="content">
    <div class="SearchByCriteriaform1">
       <form method="post" id="formAddPeople" action="/fadts/divisional/addPeopleModel">
          <fieldset class="BackgroundFS">

@@ -95,7 +95,8 @@
 </head>
 
 <body>
-    <div>
+    
+    <div id="header">
         <nav>
             <img class="logo" src="/fadts/app/view/includes/logo.PNG" alt="logo_icon">
             <ul>

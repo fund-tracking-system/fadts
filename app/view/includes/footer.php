@@ -1,4 +1,5 @@
-<footer class="dashboard">
+
+<footer class="dashboard" id ="footer">
 		<h4>© 2020, 2nd Year Group Project | University of Colombo School of Computing</h4>
 </footer>
 
@@ -12,6 +13,6 @@
                   }
               }
 </script>
-
+            
 </body>
 </html>
