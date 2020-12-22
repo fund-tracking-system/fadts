@@ -1013,6 +1013,34 @@ textarea.form-control.is-valid {
     margin-left: 300px;
 }
 
+
+/* @media screen and (max-width: 750px) {
+    .BackgroundFS {
+        width: 200px;
+    }
+    .SearchByCriteriaform1 {
+        width: 200px;
+    }
+} */
+
+
+/* @media (min-width: 700px) {
+    .SearchByCriteriaform1 {
+        width: 610px;
+    }
+    .BackgroundFS {
+        width: 500px;
+    }
+} */
+
+
+/* 
+@media (min-width: 80%) {
+    .SearchByCriteriaform1 {
+        width: 80%;
+    }
+} */
+
 .multiselect {
     margin-top: 20px;
     width: 100%;
