@@ -7,10 +7,16 @@
         <?php
             require 'connection.php'; 
             $myRegion=$_SESSION['region'];
+            // echo $myRegion;
             $myRegion;
             
             $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
-            FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
+            FROM disaster 
+            INNER JOIN disasterregion 
+            ON disaster.disasterId=disasterregion.disasterId 
+            INNER JOIN region ON 
+            region.regionId=disasterregion.regionId 
+            WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
             $_SESSION['disasterList']=$res;
