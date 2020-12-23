@@ -1,6 +1,11 @@
 <?php include VIEW.'includes/header.php' ?>
 
 <?php include VIEW.'includes/sidebar.php' ?>
+<?php
+require 'connection.php'; 
+// $disasterId = $_GET['disasterId'];
+
+?>
 
 
 <div class="all_bacground_clor">
@@ -19,9 +24,11 @@
 			<div style="padding:50px;">
 				<button>Victim Search</button>
 				<button>Add Victims</button>
+				
 			</div>
 			<div class="box2">
 				<h1>Disaster Name</h1>
+				<h3></h3>
 			</div>
 			<div class="box3">
 				<h1>Disaster Type</h1>
@@ -30,7 +37,7 @@
 				<h1>Disaster Date</h1>
 			</div>
 			<div class="box5">
-				<h1>Disaster creater</h1>
+				<h1>Disaster creater-<?php echo $_SESSION['userrole']?></h1>
 			</div>
 			<div class="box6">
 				<h1>Victims Amount</h1>
