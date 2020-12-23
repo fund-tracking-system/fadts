@@ -10,7 +10,7 @@
       <form>
          <fieldset class="BackgroundFS">
 
-            <h2>Person Details Form</h2>
+            <h2>PERSON DETAILS</h2>
 
             <fieldset class="searchBar">
 
@@ -80,40 +80,45 @@
                      value="<?php echo isset($result) ? $result['monthlyIncome']:"" ?>"></textarea>
                </div>
 
-               <table id="resultTable" class="display" style="table-layout:fixed">
-                  <thead>
-                     <tr>
-                        <th><B>Fund Name </B></th>
-                        <th><B>Amount Per-Person(Rs)</B></th>
-                        <th><B>Published Date</B></th>
-                        <th><B>View</B></th>
-                     </tr>
-                  </thead>
+               <div class="form-row">
+                  <label class="inputLable" for="majorFunds"><b>Other Funds :</b></label>
+                  <fieldset class="tableBar2">
+                  <div class="tableMargin2">
+                     <table id="resultTable" class="display" style="table-layout:fixed">
+                        <thead>
+                           <tr>
+                              <th><B>Fund Name </B></th>
+                              <th><B>Amount Per-Person(Rs)</B></th>
+                              <th><B>Status</B></th>
+                           </tr>
+                        </thead>
 
-                  <tbody>
+                        <tbody>
 
-                     <tr>
-                        <td><B>Corona Fund(May)</B></td>
-                        <td><B>5000.00</B></td>
-                        <td><B>2020-05-22</B></td>
-                        <td><a href="" class="btn btn-primary" style="margin-left:20%"><B>VIEW FUND</B></a>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td><B>Drought Fund(August)</B></td>
-                        <td><B>3500.00</B></td>
-                        <td><B>2020-08-02</B></td>
-                        <td><a href="" class="btn btn-primary" style="margin-left:20%"><B>VIEW FUND</B></a>
-                        </td>
-                     </tr>
+                           <tr>
+                              <td><B>Corona Fund(May)</B></td>
+                              <td><B>5000.00</B></td>
+                              <td><B>Recieved</B></td>
+                           </tr>
+                           <tr>
+                              <td><B>Drought Fund(August)</B></td>
+                              <td><B>3500.00</B></td>
+                              <td><B>Pending</B></td>
+                           </tr>
 
-                  </tbody>
+                        </tbody>
 
-               </table>
-
-               <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary">Back to Search</button>
+                     </table>
+                     <div>
+               </fieldset>
                </div>
+
+               
+
+
+               <!-- <div class="Twobtn">
+                  <button type="submit" name="submit" class="btn btn-primary">Back to Search</button>
+               </div> -->
 
             </fieldset>
          </fieldset>
@@ -131,5 +136,10 @@
    </div>
 </div>
 
+<script>
+$(document).ready(function() {
+   $("#resultTable").DataTable();
+});
+</script>
 
 <?php include VIEW.'includes/footer.php' ?>

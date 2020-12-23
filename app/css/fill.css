@@ -56,15 +56,31 @@ h5 {
 }
 
 .tableBar {
-    /* padding-top:10px;
-  
-  padding:1%; */
     margin-right: 20px;
     margin-left: 20px;
     background-color: #fdfdff;
-    /* border-color: #fdfdff; */
     border-radius: 6px;
-    /* border: none; */
+}
+
+.tableBar2 {
+    margin-right:50px;
+    margin-left: 220px;
+    background-color: #fdfdff;
+    border-radius: 6px;
+
+}
+
+.tbleMargin {
+    margin-left: 50px;
+    position: center;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.tableMargin2 { 
+    margin:2px;
+    position: center;
 }
 
 .searchBarLable {
@@ -383,13 +399,6 @@ h5 {
     margin-left: 30px;
 }
 
-.tbleMargin {
-    margin-left: 50px;
-    position: center;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-top: 30px;
-}
 
 .form-control.inputDetailsFunfInput {
     position: relative;
