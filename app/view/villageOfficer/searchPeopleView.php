@@ -15,11 +15,13 @@
                   <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
                   <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
                      name="NID"></input>
-                  <button type="submit" class="btn btn-primary btnNav ">Search</button>
+                  <!-- <button type="submit" class="btn btn-primary btnNav ">Search</button> -->
+                  <a href="/fadts/village/personDetails" class="btn btn-primary btnNav">Search</a>
                </div>
             </fieldset>
          </fieldset>
       </form>
+
 
 
       <form method="post" id="form">
