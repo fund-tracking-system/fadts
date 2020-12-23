@@ -2,7 +2,7 @@
 
 class calenderController extends Controller{
 
-    public function ViewCalender(){
+    public function calender(){
         $this->view('includes/calenderView');
         
         $this->view->render(); // This is how load the view

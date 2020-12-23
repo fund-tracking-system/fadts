@@ -49,18 +49,6 @@
 
                         <div class="tab-panel-main">
                             <div id="Basic-detail" class="tab-content current">
-                                <!-- <div class="skill-box">
-                                    <ul>
-                                        <li><strong>My Core Skills:</strong></li>
-                                        <li>LeaderShip skills<i class="fa fa-star" aria-hidden="true"></i><i
-                                                class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                                aria-hidden="true"></i></li>
-                                        <li>ENTERPRENEURSHIP<i class="fa fa-star" aria-hidden="true"></i><i
-                                                class="fa fa-star" aria-hidden="true"></i></li>
-                                        <li>GROWTH MARKETING<i class="fa fa-star" aria-hidden="true"></i></li>
-                                        <li>RESOURCE MANEGMENT<i class="fa fa-star" aria-hidden="true"></i></li>
-                                    </ul>
-                                </div> -->
                                 <div class="bio-box">
                                     
                                     <div class="desc"><strong><?php echo $_SESSION['username']?> Golluwamula Opatha ganegoda Elpitye 5
