@@ -30,7 +30,7 @@
                 <fieldset class="tableBar">
                     <div class="tbleMargin">
 
-                        <table id="resultTable" class="display">
+                        <table id="resultTable" class="display" method="get";>
                             <thead>
                                 <tr>
                                     <th><B>Disaster Type</B></th>
