@@ -90,7 +90,7 @@
                         require 'connection.php'; 
                         $region = $_SESSION['region'];                     
                         $rgns = "SELECT nid,personId FROM person WHERE region=$region";
-                        $rgnRess = $con->query($rgns) ;
+                        $rgnRess = $con->query($rgns);
                         $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                           
                     ?>
                     <select  class='js-example-responsive' name='headOfFamily' id='headOfFamily'
@@ -126,11 +126,11 @@
                         value="<?php echo isset($result) ? $result['disordered'] :"" ?>"
                         selected hidden>
 
-                        <?php echo isset($result) ? ( ($result['disordered']=="yes") ? "With Disorder/Diease":"Without Disoeder/Diease" ) :"" ?>
+                        <?php echo isset($result) ? ( ($result['disordered']=="yes") ? "With Disorder/Diease":"Without Disorder/Diease" ) :"" ?>
 
                      </option>
 
-                     <option value="no">Without Disoeder/Diease</option>
+                     <option value="no">Without Disorder/Diease</option>
                      <option value="yes">With Disorder/Diease</option>
                   </select>
                </div>

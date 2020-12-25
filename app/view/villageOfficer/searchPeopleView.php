@@ -7,7 +7,7 @@
 
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" name="singlePersonSearch" id="form">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
@@ -35,8 +35,8 @@
                <div class="form-row ">
                   <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
                   <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
-                     name="NID"></input>
-                  <button type="submit" class="btn btn-primary btnNav ">Search</button>
+                     name="nic"></input>
+                  <button type="submit" name="submit" class="btn btn-primary btnNav ">Search</button>
                   <!-- <a href="/fadts/village/personDetails" class="btn btn-primary btnNav">Search</a> -->
                </div>
             </fieldset>
