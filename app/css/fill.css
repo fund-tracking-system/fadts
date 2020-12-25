@@ -58,14 +58,14 @@ h5 {
 .tableBar {
     margin-right: 20px;
     margin-left: 20px;
-    background-color: #fdfdff;
+    background-color:#fdfdff;
     border-radius: 6px;
 }
 
 .tableBar2 {
     margin-right:50px;
     margin-left: 220px;
-    background-color: #fdfdff;
+    background-color:#fdfdff;
     border-radius: 6px;
 
 }
@@ -1963,7 +1963,6 @@ ul.tabs li.current {
     width: 100%;
     background-color: #9ff1d6;
     border-bottom: 2px solid #E2F3FB;
-<<<<<<< HEAD
 }
 
 .grid_box1 {
@@ -2055,6 +2054,4 @@ ul.tabs li.current {
     /* background: purple; */
     grid-row: 4/5;
     grid-column: 4/6;
-=======
->>>>>>> e35512a1a1ca96dfb846e25911449e513bbdd1bc
 }

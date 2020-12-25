@@ -68,6 +68,16 @@ if(isset($_POST['submit']) && isset($view)){
                }
                break;
             
+            case "searchPeople":
+               if($personRegion==$userRegion && $validRegion=="yes"){ 
+                  personDetails($con,$personId,$view); 
+               }else{
+                  mysqli_close($con);
+                  header("Location:/fadts/village/$view?searcherror=wrong_region");
+                  exit();
+               }
+               break;
+            
          }
       }
       else{
@@ -155,3 +165,30 @@ function updatePeople($con,$personId,$view){
 
 }
 
+function personDetails($con,$personId,$view){
+
+   $sql = "SELECT * FROM person WHERE personId = $personId";
+   $stmt = mysqli_stmt_init($con);
+
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+      mysqli_close($con);
+      header("Location:/fadts/village/$view?searcherror=db_conn_err");
+      exit();
+   }else{
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if($result){
+         $_SESSION['personDetails'] = mysqli_fetch_assoc($result);
+
+         
+         mysqli_close($con);
+         header("Location:/fadts/village/$view?searcherror=succsess");
+         exit();
+      }else{
+         mysqli_close($con);
+         header("Location:/fadts/village/$view?searcherror=no_records");
+         exit();
+      }
+   }
+}
