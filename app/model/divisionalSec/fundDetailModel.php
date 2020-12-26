@@ -1,10 +1,13 @@
                     <?php
 
                     session_start();
+                    
 
-                    if(isset($_GET['fundId'])){
+                    if(isset($_GET['fundId']))
+                    {
+                        require 'connection.php';  
 
-                    require 'connection.php';   // database connection file calling
+                     // database connection file calling
 
                     $fundId = $_GET['fundId'];
                     $dilivered=0;
@@ -27,7 +30,7 @@
 
 
                     }
-echo  $_SESSION['SelectFundName'];
+
 
                     var_dump($resName);
                     foreach($res as $data){
