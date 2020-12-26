@@ -27,17 +27,17 @@
             <h2>SEARCH BY CRITERIA</h2>
 
             <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
-               <div>
+               <div style=margin-left:10px;>
                   <label class="inputLable"><b>Age:</b></label>
                   <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
                         to</b></span>
                   <input class="form-control InputTwo" name="age2"></input>
                </div>
 
-               <div class="form-row">
-                  <label class="inputLable" for="job type" style="margin-right:12.5%;"><b>Income Type :</b></label>
+               <div class="form-row" style=margin-left:10px;>
+                  <label class="inputLable" for="job type" style="margin-right:21.5%;"><b>Income Type :</b></label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style="position:sticky;top:60px;overflow:scroll; padding-right:510px;  " id="job" name="job">
+                     style="position:sticky;top:60px;overflow:scroll; padding-right:470px;  " id="job" name="job">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
                      <option value="retired">Government pension</option>
@@ -47,13 +47,13 @@
                   </select>
                </div>
 
-               <div style="  padding-top: 30px; ">
+               <div style="  padding-top: 30px; margin-left:10px; ">
                   <label class="inputLable"><b>Prolonged</br>
                   </label>
                   <label class="inputLable" style="margin-right:3.5%;">
                      Disorders/Diseases:</b></label>
 
-                  <div class='radio1'>
+                  <div class='radio1' style=margin-left:130px;>
                      <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
                      <label for="have-pro" class="radioHaveLable"></label><span><b>Have</b></span>
                   </div>
@@ -62,13 +62,13 @@
                      <label for="no-pro" class="radioLbl2"></label><span><b>No</b></span>
                   </div>
                </div>
-               <div style="  padding-top: 30px; ">
+               <div style="  padding-top: 30px; " >
                   </br>
 
-                  <label class="inputLable" style="margin-right:9%;"><b>
+                  <label class="inputLable" style="margin-right:9%;margin-left:10px;"><b>
                         Civil Status :</b></label>
 
-                  <div class='radio1'>
+                  <div class='radio1'style=margin-left:130px;>
                      <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
                      <label for="have-pro" class="radioHaveLable"></label><span><b>Married</b></span>
                   </div>
@@ -78,7 +78,7 @@
                   </div>
                </div>
 
-               <div class="margn">
+               <div class="margn" style=margin-left:10px;>
 
                   <label class="inputLable"><b>Gross Income:</b></label>
                   <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
@@ -88,11 +88,11 @@
                </div>
 
 
-               <div class='form-row'>
-                  <label class="inputLable" style="margin-right:10%;"><b>Current Funds :</br>
+               <div class='form-row'style=margin-left:10px;>
+                  <label class="inputLable" style="margin-right:19.5%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='position:sticky;top:60px;overflow:scroll; padding-right:500px;' id="funds" name="funds">
+                     style='position:sticky;top:60px;overflow:scroll; padding-right:470px;' id="funds" name="funds">
                      <option value="government">Samurdhi</option>
                      <option value="private">Samurdhi Eligible List</option>
                      <option value="retired">Adults Fund</option>
@@ -104,7 +104,7 @@
 
                <div class='button ' style="margin-top:30px;">
 
-                  <button type="submit" class=' btn btn-primary signlebtn'>Search
+                  <button type="submit" class=' btn btn-primary signlebtn' style="margin-left:390px;">Search
                      Here</button>
                </div>
 
