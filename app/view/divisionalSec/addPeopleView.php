@@ -84,7 +84,7 @@
                     <!-- for region -->
 
                     <div class="form-row" style="margin-bottom:50px;">
-                        <label for="region" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
+                        <label for="region" class="inputLable" style="margin-right:285px;"><b>Region :</b></label>
 
                   <?php
 
