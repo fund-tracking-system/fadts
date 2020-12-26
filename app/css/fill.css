@@ -1023,14 +1023,40 @@ textarea.form-control.is-valid {
     }
 } */
 
-
-/* @media (min-width: 700px) {
+/* 
+@media only screen and (max-width: 600px) {
+      
     .SearchByCriteriaform1 {
-        width: 610px;
+        background-color: #005cbf;
+        width: 150px;
+        margin-left: 270px;
     }
-    .BackgroundFS {
-        width: 500px;
+    .all_bacground_clor {
+        background: rgb(211, 92, 92);
+        width: 550px;
     }
+    .BackgroundFS{
+        background-color: #005cbf;
+        width: 550px;
+    }
+    .searchBar{
+        background-color: #011116;
+        width: 550px;
+    }
+    #sidebar{
+        width: 200px;
+    }
+    .head{
+        width: 510px;
+    }
+    #footer{
+        width: 510px;
+    }
+    #formAddPeople{
+        width: 150px;
+    }
+
+  
 } */
 
 

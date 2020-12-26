@@ -96,8 +96,8 @@
 
 <body>
     
-    <div id="header">
-        <nav>
+    <div class="head">
+        <nav class="navi">
             <img class="logo" src="/fadts/app/view/includes/logo.PNG" alt="logo_icon">
             <ul>
                 <li><a href="/fadts/includes/index" class="nav_link"><B>Home</B></a></li>
