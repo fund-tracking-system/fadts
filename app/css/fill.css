@@ -56,15 +56,31 @@ h5 {
 }
 
 .tableBar {
-    /* padding-top:10px;
-  
-  padding:1%; */
     margin-right: 20px;
     margin-left: 20px;
-    background-color: #fdfdff;
-    /* border-color: #fdfdff; */
+    background-color:#fdfdff;
     border-radius: 6px;
-    /* border: none; */
+}
+
+.tableBar2 {
+    margin-right:50px;
+    margin-left: 220px;
+    background-color:#fdfdff;
+    border-radius: 6px;
+
+}
+
+.tbleMargin {
+    margin-left: 50px;
+    position: center;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.tableMargin2 { 
+    margin:2px;
+    position: center;
 }
 
 .searchBarLable {
@@ -111,12 +127,54 @@ h5 {
     margin-left: 640px;
     margin-top: -80px;
 }
+.btn.siz{
+  margin-left: 66%; 
+  width:13%;
+}
+.form-control.Input.txtWidth{
+  min-height: 100px;;
+}
+.selectBox.input{
+  margin-left:350px;
+  margin-bottom:50px;
+  margin-right:250px; 
+  margin-top:-4%;
+}
+.form-control.InputOne{
+  width:150px; 
+  margin-top:-30px; 
+  margin-left:345px; 
+  margin-bottom:-30px;
+}
 
-.inputLable {
-    margin-left: 100px;
-    margin-right: 30px;
-    ;
-    margin-bottom: 10px;
+.btn.btn-primary.btnNav{
+  margin-left: 75%; 
+  margin-top:-55px; 
+  width:13%; 
+  height: 45px;
+  margin-bottom:20px;
+}
+.userpro{
+  margin:80px;
+}
+.radioHaveInput{
+  margin-left:20px
+  ;margin-bottom:18px;
+}
+.radioHaveLable{
+  margin-left:-130px;
+  margin-bottom:20px;
+  margin-right:150px;
+}
+.margn{
+  margin-top:50px;
+}
+.form-control.InputPro{
+  margin-left:350px;
+  margin-bottom:50px;
+  margin-right:210px; 
+  margin-top:-5%;
+  
 }
 
 .inputLableOne {
@@ -341,13 +399,6 @@ h5 {
     margin-left: 30px;
 }
 
-.tbleMargin {
-    margin-left: 50px;
-    position: center;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    margin-top: 30px;
-}
 
 .form-control.inputDetailsFunfInput {
     position: relative;
@@ -1938,4 +1989,95 @@ ul.tabs li.current {
     width: 100%;
     background-color: #9ff1d6;
     border-bottom: 2px solid #E2F3FB;
+}
+
+.grid_box1 {
+    height: 84%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /* grid-column-gap: 10px;
+    grid-row-gap: 20px; */
+}
+
+.box1 {
+    box-shadow: inset 0 0 10px rgb(245, 244, 244);
+    /*width: 100%;*/
+    margin: 10px;
+    background-color: white;
+    grid-row: 1/4;
+    grid-column: 1/4;
+    grid-column-gap: 10px;
+    /*display: flex;
+	align-items: center;
+	justify-content: space-around;*/
+}
+
+.box2 {
+    text-align: center;
+    background: rgb(251, 254, 255);
+    box-shadow: inset 0 0 10px #000000;
+    margin: 5px;
+    grid-row: 1/2;
+    grid-column: 4/5;
+}
+
+.box3 {
+    text-align: center;
+    background: rgb(251, 254, 255);
+    box-shadow: inset 0 0 10px #000000;
+    margin: 5px;
+    /* background: green; */
+    grid-row: 1/2;
+    grid-column: 5/6;
+}
+
+.box4 {
+    text-align: center;
+    background: rgb(251, 254, 255);
+    box-shadow: inset 0 0 10px #000000;
+    margin: 5px;
+    /* background: blue; */
+    grid-row: 2/3;
+    grid-column: 4/5;
+}
+
+.box5 {
+    text-align: center;
+    background: rgb(251, 254, 255);
+    box-shadow: inset 0 0 10px #000000;
+    margin: 5px;
+    /* background: yellow; */
+    grid-row: 2/3;
+    grid-column: 5/6;
+}
+
+.box6 {
+    text-align: center;
+    background: rgb(251, 254, 255);
+    box-shadow: inset 0 0 10px #000000;
+    margin: 5px;
+    /* background: darkgreen; */
+    grid-row: 3/4;
+    grid-column: 4/5;
+}
+
+.box7 {
+    text-align: center;
+    background: rgb(251, 254, 255);
+    box-shadow: inset 0 0 10px #000000;
+    margin: 5px;
+    /* background: lightblue; */
+    grid-row: 3/4;
+    grid-column: 5/6;
+}
+
+.box8 {
+    text-align: center;
+    background: rgb(251, 254, 255);
+    box-shadow: inset 0 0 10px #000000;
+    margin: 5px;
+    /* background: purple; */
+    grid-row: 4/5;
+    grid-column: 4/6;
 }

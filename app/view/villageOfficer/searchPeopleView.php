@@ -7,19 +7,42 @@
 
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" name="singlePersonSearch" id="form">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
+
+            <?php 
+               if(isset($_GET['searcherror'])){
+         
+                  $error = $_GET['searcherror'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "wrong_region"){
+                     echo '<div class="alert alert-danger" role="alert">You can\'t view other regions data!</div>';
+                  }
+                  if($error == "wrong_nid_or_dead"){
+                     echo '<div class="alert alert-danger" role="alert">This NIC is wrong or this person does not exist!</div>';
+                  }
+                  if($error == "no_records"){
+                     echo '<div class="alert alert-danger" role="alert">No records found!</div>';
+                  }        
+               }   
+            ?>
+
+
                <div class="form-row ">
                   <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
                   <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
-                     name="NID"></input>
-                  <button type="submit" class="btn btn-primary btnNav ">Search</button>
+                     name="nic"></input>
+                  <button type="submit" name="submit" class="btn btn-primary btnNav ">Search</button>
+                  <!-- <a href="/fadts/village/personDetails" class="btn btn-primary btnNav">Search</a> -->
                </div>
             </fieldset>
          </fieldset>
       </form>
+
 
 
       <form method="post" id="form">
@@ -89,10 +112,10 @@
 
 
                <div class='form-row'>
-                  <label class="inputLable" style="margin-right:10%;"><b>Current Funds :</br>
+                  <label class="inputLable" style="margin-right:12.5%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='position:sticky;top:60px;overflow:scroll; padding-right:500px;' id="funds" name="funds">
+                     style='position:sticky;top:60px;overflow:scroll; padding-right:510px;' id="funds" name="funds">
                      <option value="government">Samurdhi</option>
                      <option value="private">Samurdhi Eligible List</option>
                      <option value="retired">Adults Fund</option>

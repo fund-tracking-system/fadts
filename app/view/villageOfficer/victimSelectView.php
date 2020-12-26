@@ -87,7 +87,7 @@
                <div><input name="disasterId" value="<?php echo $result['disasterId'] ?>" type="hidden"></input></div>
 
                <div class="form-row">
-                  <label for="total-damage" class="inputLable" ><b>Total Damage :</b></label>
+                  <label for="total-damage" class="inputLable" ><b>Total Damage (Rs.):</b></label>
                   <input class="form-control Input" id="totalDamage" name="totalDamage"></input>
                </div>
 
