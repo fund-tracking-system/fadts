@@ -10,7 +10,7 @@
             // echo $myRegion;
             $myRegion;
             
-            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
+            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
             FROM disaster 
             INNER JOIN disasterregion 
             ON disaster.disasterId=disasterregion.disasterId 
@@ -54,7 +54,7 @@
                                     <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
-                                    <td><a href="/fadts/divisional/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>"
+                                    <td><a href="/fadts/divisional/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>&regionId=<?php echo $disaster['regionID']?>"
                                             class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
                                     </td>
                                 </tr>
