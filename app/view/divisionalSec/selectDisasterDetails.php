@@ -27,9 +27,9 @@ require 'connection.php';
 				
 			</div>
 		
-			<div class="box2">
+			<div class="box2" style="color:yellow; background-color:blue;">
 				<h1>Disaster Name</h1>
-				<h3> 	<?php echo  $_SESSION['disasterName'];?></h3>
+				<h3 > 	<?php echo  $_SESSION['disasterName'];?></h3>
 			</div>
 			<div class="box3">
 				<h1>Disaster Type</h1>
@@ -45,9 +45,11 @@ require 'connection.php';
 			</div>
 			<div class="box6">
 				<h1>Victims Amount</h1>
+				<h3><?php echo $_SESSION['victimsCount']?></h3>
 			</div>
 			<div class="box7">
 				<h1>Total Damage</h1>
+				<h3><?php echo $_SESSION['totalDamege']?></h3>
 			</div>
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
