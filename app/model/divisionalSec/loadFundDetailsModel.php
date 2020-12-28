@@ -44,7 +44,7 @@ echo$_SESSION['provincialRegion'];
 
 
         $officer_region=$_SESSION['region'];
-        $sql="SELECT fund.fundId,fund.name,region.name as ren ,fund.region ,fund.publishedTime FROM  fund left JOIN region ON region.regionId =fund.region WhERE region.superRegion=$myRegion or fund.region=$myRegion or fund.region=0 or fund.region= $provincialRegion or fund.region=$districtRegion";        $result=$con->query($sql);
+        $sql="SELECT fund.fundId,fund.name,region.level as lvl,region.name as ren ,fund.region ,fund.publishedTime FROM  fund left JOIN region ON region.regionId =fund.region WhERE region.superRegion=$myRegion or fund.region=$myRegion or fund.region=0 or fund.region= $provincialRegion or fund.region=$districtRegion";        $result=$con->query($sql);
         $res=$result->fetch_all(MYSQLI_ASSOC); 
         $_SESSION['fundList']=$res;
         var_dump($res);
