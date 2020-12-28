@@ -19,6 +19,7 @@
 				<h2><?php echo  $_SESSION['SelectFundName'];?></h2>
 				
                         <div class="form-row" style="margin-bottom:50px;">
+                        
                             <label for="region" class="inputLable" style="margin-right:15px;"><b>Select Fund Result
                                     Region :</b></label>
                             <?php
@@ -43,7 +44,7 @@
                                                 }
                                             ?>
                             </select>
-                            <button type="submit" class="btn btn-primary btnNavR ">Search</button>
+                            <a type="button" class="btn btn-primary btnNavR " href="/fadts/divisional/funddetailModel?fundId=<?php echo $data['regionid'] ?>" >Search</a>
 
                         </div>
 

@@ -28,7 +28,7 @@
                         <tbody>
                         <?php foreach($_SESSION['fundList'] as $fund){
                          
-                                 
+                                  
                          ?>
                             <tr>
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"

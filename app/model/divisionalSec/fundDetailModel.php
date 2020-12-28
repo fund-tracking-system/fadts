@@ -16,23 +16,6 @@
                     $officer_region=$_SESSION['region'];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    
-
                     $sql="SELECT recipient.personId,recipient.deliveryStatus,person.region, region.superRegion  FROM recipient INNER JOIN person ON recipient.personId=person.personId INNER JOIN region ON region.regionId=person.region WHERE recipient.fundId= $fundId AND region.superRegion=$officer_region";
                     $result=$con->query($sql);
                     $res=$result->fetch_all(MYSQLI_ASSOC); 

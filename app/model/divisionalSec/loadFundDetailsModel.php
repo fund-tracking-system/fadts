@@ -4,6 +4,10 @@ session_start();
 
 require 'connection.php'; 
 
+if(isset($_GET['fundId'])){
+
+}else{
+
 
 $myRegion=$_SESSION['region'];
 $myRegion;
@@ -52,7 +56,7 @@ echo$_SESSION['provincialRegion'];
 
 
 
- header("Location:/fadts/divisional/fundDetailsSelectView"); 
-
+ //header("Location:/fadts/divisional/fundDetailsSelectView"); 
+}
 
 ?>
