@@ -18,38 +18,7 @@
                         
 				<h2><?php echo  $_SESSION['SelectFundName'];?></h2>
 				
-                        <div class="form-row" style="margin-bottom:50px;">
-                        
-                            <label for="region" class="inputLable" style="margin-right:15px;"><b>Select Fund Result
-                                    Region :</b></label>
-                            <?php
-
-                                    require 'connection.php'; 
-
-
-                                    $region = $_SESSION['region'];
-                                                
-                                    $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
-                                    $rgnRes = $con->query($rgn) ;
-                                    $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
-
-                                    ?>
-                            <select id='region' class='form-control Input' name='region' id='region'
-                                style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
-                                <option value="23" ><?php echo $_SESSION['regionName']?> Division
-                                    Secretory Area</option>
-                                <?php 
-                                                foreach($res as $data){
-                                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-                                                }
-                                            ?>
-                            </select>
-                            <a type="button" class="btn btn-primary btnNavR " href="/fadts/divisional/funddetailModel?fundId=<?php echo $data['regionid'] ?>" >Search</a>
-
-                        </div>
-
-                            
-                                        <div><input type="hidden"></input></div>
+                       
 
                         <table style="margin-bottom:50px;">
 

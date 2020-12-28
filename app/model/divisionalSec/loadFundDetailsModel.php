@@ -56,7 +56,7 @@ echo$_SESSION['provincialRegion'];
 
 
 
- //header("Location:/fadts/divisional/fundDetailsSelectView"); 
+header("Location:/fadts/divisional/fundDetailsSelectView"); 
 }
 
 ?>
