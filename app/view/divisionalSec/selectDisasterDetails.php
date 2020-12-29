@@ -14,21 +14,16 @@ require 'connection.php';
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
-<<<<<<< HEAD
 				<h1>Disaster Distribution</h1>
-=======
-				<h1>disasters</h1>
-
->>>>>>> 5ae13bd54b56f7758b77c66b858357040fb6e06e
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
 				<!-- <canvas id="Chart1" style="height: 370px; width: 70%;"></canvas> -->
 				
 			</div>
-			<div style="padding:50px;">
-				<a href="" class="btn btn-primary" style="margin-left:40%;"><B>Victim Search</B></a>
-				<a href="" class="btn btn-primary" style="margin-left:40%;"><B>Add Victims</B></a>
+			<div style="display:inline-block;">
+				<a href="" class="btn btn-primary" style="float:left;"><B>Victim Search</B></a>
+				<a href="" class="btn btn-primary" style="float:right;"><B>Add Victims</B></a>
 						
 				
 				

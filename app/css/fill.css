@@ -1995,7 +1995,8 @@ ul.tabs li.current {
 }
 
 .grid_box1 {
-    height: 80%;
+    
+    height: 84%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -2004,10 +2005,10 @@ ul.tabs li.current {
 }
 
 .box1 {
-    box-shadow: inset 0 0 10px rgb(245, 244, 244);
+    /* box-shadow: inset 0 0 10px rgb(245, 244, 244); */
     /*width: 100%;*/
     margin: 10px;
-    background-color: white;
+    background-color: rgb(228, 227, 235);
     grid-row: 1/4;
     grid-column: 1/4;
     grid-column-gap: 10px;
@@ -2017,9 +2018,11 @@ ul.tabs li.current {
 }
 
 .box2 {
+    
     text-align: center;
+    color: #E2F3FB;
     background: rgb(18, 164, 212);
-    box-shadow: inset 0 0 10px #000000;
+    /* box-shadow: inset 0 0 10px #000000; */
     margin: 5px;
     grid-row: 1/2;
     grid-column: 4/5;
@@ -2027,8 +2030,9 @@ ul.tabs li.current {
 
 .box3 {
     text-align: center;
-    background: rgb(119, 121, 122);
-    box-shadow: inset 0 0 10px #000000;
+    color: #E2F3FB;
+    background: rgb(4, 110, 57);
+    /* box-shadow: inset 0 0 10px #000000; */
     margin: 5px;
     /* background: green; */
     grid-row: 1/2;
@@ -2037,8 +2041,9 @@ ul.tabs li.current {
 
 .box4 {
     text-align: center;
-    background: rgb(41, 236, 250);
-    box-shadow: inset 0 0 10px #000000;
+    color: #E2F3FB;
+    background: rgb(4, 16, 80);
+    /* box-shadow: inset 0 0 10px #000000; */
     margin: 5px;
     /* background: blue; */
     grid-row: 2/3;
@@ -2047,8 +2052,9 @@ ul.tabs li.current {
 
 .box5 {
     text-align: center;
+    color: #E2F3FB;
     background: rgb(42, 197, 145);
-    box-shadow: inset 0 0 10px #000000;
+    /* box-shadow: inset 0 0 10px #000000; */
     margin: 5px;
     /* background: yellow; */
     grid-row: 2/3;
@@ -2057,8 +2063,9 @@ ul.tabs li.current {
 
 .box6 {
     text-align: center;
-    background: rgb(204, 204, 207);
-    box-shadow: inset 0 0 10px #000000;
+    color: #E2F3FB;
+    background: rgb(111, 107, 172);
+    /* box-shadow: inset 0 0 10px #000000; */
     margin: 5px;
     /* background: darkgreen; */
     grid-row: 3/4;
@@ -2067,8 +2074,9 @@ ul.tabs li.current {
 
 .box7 {
     text-align: center;
-    background: rgb(157, 152, 228);
-    box-shadow: inset 0 0 10px #000000;
+    color: #E2F3FB;
+    background: rgb(12, 72, 128);
+    /* box-shadow: inset 0 0 10px #000000; */
     margin: 5px;
     /* background: lightblue; */
     grid-row: 3/4;
@@ -2077,10 +2085,11 @@ ul.tabs li.current {
 
 .box8 {
     text-align: center;
-    background: rgb(251, 254, 255);
-    box-shadow: inset 0 0 10px #000000;
+    background: rgb(215, 223, 226);
+    /* box-shadow: inset 0 0 10px #000000; */
     margin: 5px;
     /* background: purple; */
     grid-row: 4/5;
     grid-column: 4/6;
+    height: 100px;
 }
