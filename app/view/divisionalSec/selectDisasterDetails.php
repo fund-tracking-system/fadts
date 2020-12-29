@@ -14,7 +14,12 @@ require 'connection.php';
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
+<<<<<<< HEAD
 				<h1>Disaster Distribution</h1>
+=======
+				<h1>disasters</h1>
+
+>>>>>>> 5ae13bd54b56f7758b77c66b858357040fb6e06e
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
