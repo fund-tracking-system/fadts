@@ -14,7 +14,8 @@ require 'connection.php';
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
-				<h1>disaster</h1>
+				<h1>disasters</h1>
+
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
