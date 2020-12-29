@@ -18,6 +18,7 @@
                             <tr>
                                 <th><B>Fund ID</B></th>
                                 <th><B>Fund Name</B></th>
+                                <th><B>Region</B></th>
                                 <th><B>Date</B></th>
                                 <th><B>View</B></th>
                             </tr>
@@ -27,13 +28,14 @@
                         <tbody>
                         <?php foreach($_SESSION['fundList'] as $fund){
                          
-                                 
+                                  
                          ?>
                             <tr>
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
                                 </td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['name']?></B></td>
+                                <td><B style="margin-left:30%;"><?php echo $fund['ren']?></B></td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
                                 <td><a href="/fadts/divisional/funddetailModel?fundId=<?php echo $fund['fundId'] ?>"
                                         class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>

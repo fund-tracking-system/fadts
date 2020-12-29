@@ -26,24 +26,30 @@ require 'connection.php';
 				<button>Add Victims</button>
 				
 			</div>
-			<div class="box2">
-				<h1>Disaster Name.</h1>
-				<h3></h3>
+		
+			<div class="box2" style="color:yellow; background-color:blue;">
+				<h1>Disaster Name</h1>
+				<h3 > 	<?php echo  $_SESSION['disasterName'];?></h3>
 			</div>
 			<div class="box3">
 				<h1>Disaster Type</h1>
+				<h3><?php echo  $_SESSION['disasterType'];?></h3>
 			</div>
 			<div class="box4">
 				<h1>Disaster Date</h1>
+				<h3><?php echo  $_SESSION['disasterDate'];?></h3>
 			</div>
 			<div class="box5">
-				<h1>Disaster creater-<?php echo $_SESSION['userrole']?></h1>
+				<h1>Disaster creater</h1>
+				<h3><?php echo $_SESSION['userrole']?></h3>
 			</div>
 			<div class="box6">
 				<h1>Victims Amount</h1>
+				<h3><?php echo $_SESSION['victimsCount']?></h3>
 			</div>
 			<div class="box7">
 				<h1>Total Damage</h1>
+				<h3><?php echo $_SESSION['totalDamege']?></h3>
 			</div>
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->

@@ -128,6 +128,11 @@ class divisionalController extends Controller{
       $this->model->load();
    
    }
+   public function selectFundDetailRegionModel(){
+      $this->model('divisionalsec/selectFundRegionDetailsModel');
+      
+      $this->model->load();
+   }
 
 
    
