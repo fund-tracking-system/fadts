@@ -14,7 +14,7 @@ require 'connection.php';
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
-				<h1>disaster</h1>
+				<h1>Disaster Distribution</h1>
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
@@ -22,12 +22,15 @@ require 'connection.php';
 				
 			</div>
 			<div style="padding:50px;">
-				<button>Victim Search</button>
-				<button>Add Victims</button>
+				<a href="" class="btn btn-primary" style="margin-left:40%;"><B>Victim Search</B></a>
+				<a href="" class="btn btn-primary" style="margin-left:40%;"><B>Add Victims</B></a>
+						
+				
+				
 				
 			</div>
 		
-			<div class="box2" style="color:yellow; background-color:blue;">
+			<div class="box2">
 				<h1>Disaster Name</h1>
 				<h3 > 	<?php echo  $_SESSION['disasterName'];?></h3>
 			</div>
@@ -76,7 +79,7 @@ require 'connection.php';
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Fund Distribution',
+                  label: 'Disaster Distribution',
                   data: [10,200,400,300,250,140,370,200,300,200,100,70],
                   backgroundColor:'blue',
                   hoverBackgroundColor:'blue',
