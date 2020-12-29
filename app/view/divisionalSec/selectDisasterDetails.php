@@ -27,7 +27,7 @@ require 'connection.php';
 				
 			</div>
 			<div class="box2">
-				<h1>Disaster Name</h1>
+				<h1>Disaster Name.</h1>
 				<h3></h3>
 			</div>
 			<div class="box3">
