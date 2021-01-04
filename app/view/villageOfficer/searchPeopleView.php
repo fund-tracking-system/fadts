@@ -12,7 +12,7 @@
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
 
-            <?php 
+               <?php 
                if(isset($_GET['searcherror'])){
          
                   $error = $_GET['searcherror'];
@@ -49,18 +49,19 @@
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
 
-            <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
+            <fieldset class="searchBar">
+
                <div>
                   <label class="inputLable"><b>Age:</b></label>
-                  <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
-                        to</b></span>
+                  <input class="form-control InputOne" name="age1"></input>
+                  <span class="inputLable LableTwo"><b>to</b></span>
                   <input class="form-control InputTwo" name="age2"></input>
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="job type" style="margin-right:12.5%;"><b>Income Type :</b></label>
-                  <select class="js-example-responsive" multiple="multiple"
-                     style="position:sticky;top:60px;overflow:scroll; padding-right:510px;  " id="job" name="job">
+                  <label class="inputLable" for="incomeType" style="margin-right:12.5%;"><b>Income Type :</b></label>
+                  <select class="form-control Input" multiple="multiple"
+                     style="position:sticky;top:60px;overflow:scroll; padding-right:510px" id="incomeType" name="incomeTypes">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
                      <option value="retired">Government pension</option>
@@ -69,53 +70,41 @@
                      <option value="jobless">Jobless</option>
                   </select>
                </div>
-
-               <div style="  padding-top: 30px; ">
-                  <label class="inputLable"><b>Prolonged</br>
-                  </label>
-                  <label class="inputLable" style="margin-right:3.5%;">
-                     Disorders/Diseases:</b></label>
-
-                  <div class='radio1'>
-                     <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
-                     <label for="have-pro" class="radioHaveLable"></label><span><b>Have</b></span>
-                  </div>
-                  <div class='radio2'>
-                     <input type="radio" id="no-pro" name="prolonged" value="no">
-                     <label for="no-pro" class="radioLbl2"></label><span><b>No</b></span>
-                  </div>
-               </div>
-               <div style="  padding-top: 30px; ">
-                  </br>
-
-                  <label class="inputLable" style="margin-right:9%;"><b>
-                        Civil Status :</b></label>
-
-                  <div class='radio1'>
-                     <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
-                     <label for="have-pro" class="radioHaveLable"></label><span><b>Married</b></span>
-                  </div>
-                  <div class='radio2'>
-                     <input type="radio" id="no-pro" name="prolonged" value="no">
-                     <label for="no-pro" class="radioLbl2"></label><span><b>Unmarried</b></span>
-                  </div>
+               <div class="form-row">
+                  <input type="hidden" ></input>
                </div>
 
-               <div class="margn">
+               <div class="form-row">
+                  <label class="inputLable" for="disordered"><b>Prolonged Disorder/Disease :</b></label>
+                  <select class="form-control Input" id="disordered" name="disordered">
+                     <option value="" disabled selected>Not select</option>
+                     <option value="no">Without Disorder/Diease</option>
+                     <option value="yes">With Disorder/Diease</option>
+                  </select>
+               </div>
 
+               <div class="form-row">
+                  <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
+                  <select class="form-control Input" id="civilStatus" name="civilStatus">
+                     <option value="" disabled selected>Not select</option>
+                     <option value="0">Unmarried</option>
+                     <option value="1">Married</option>
+                  </select>
+               </div>
+
+               <div>
                   <label class="inputLable"><b>Gross Income:</b></label>
-                  <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
-                     <b> to</b></span>
+                  <input class="form-control InputOne" ame="income1"></input>
+                  <span class="inputLable LableTwo"><b>to</b></span>
                   <input class="form-control InputTwo" name="income2 "></input>
-
                </div>
 
 
                <div class='form-row'>
-                  <label class="inputLable" style="margin-right:12.5%;"><b>Current Funds :</br>
+                  <label class="inputLable" style="margin-right:22%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='position:sticky;top:60px;overflow:scroll; padding-right:510px;' id="funds" name="funds">
+                     style='top:60px; overflow:scroll; padding-right:510px;' id="funds" name="funds">
                      <option value="government">Samurdhi</option>
                      <option value="private">Samurdhi Eligible List</option>
                      <option value="retired">Adults Fund</option>
@@ -123,11 +112,11 @@
                      <option value="self_employeed">Other Gov Funds</option>
                   </select>
                </div>
-
+               <input hidden disabled></input>
 
                <div class='button ' style="margin-top:30px;">
 
-                  <button type="submit" class=' btn btn-primary signlebtn'>Search
+                  <button type="submit" class='btn btn-primary signlebtn'>Search
                      Here</button>
                </div>
 
