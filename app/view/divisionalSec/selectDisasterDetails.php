@@ -21,7 +21,14 @@ require 'connection.php';
 				<!-- <canvas id="Chart1" style="height: 370px; width: 70%;"></canvas> -->
 				
 			</div>
-			<div style="display:inline-block;">
+			<div class="box9">
+				<div style="display:inline-block;">
+					<a href="" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Victim Search</B></a>
+					<a href="" class="btn btn-primary" style="float:right; margin: 15px; margin-top: 55px;"><B>Add Victims</B></a>
+
+				</div>
+			</div>
+			<!-- <div style="display:inline-block;">
 				<a href="" class="btn btn-primary" style="float:left;"><B>Victim Search</B></a>
 				<a href="" class="btn btn-primary" style="float:right;"><B>Add Victims</B></a>
 						
@@ -29,34 +36,34 @@ require 'connection.php';
 				
 				
 			</div>
-		
+		 -->
 			<div class="box2">
-				<h1>Disaster Name</h1>
-				<h3 > 	<?php echo  $_SESSION['disasterName'];?></h3>
+				<h1 class="dashboard-title">Disaster Name</h1>
+				<h3 class="fontwhite" > <?php echo  $_SESSION['disasterName'];?></h3>
 			</div>
 			<div class="box3">
-				<h1>Disaster Type</h1>
-				<h3><?php echo  $_SESSION['disasterType'];?></h3>
+				<h1 class="dashboard-title">Disaster Type</h1>
+				<h3 class="fontwhite" ><?php echo  $_SESSION['disasterType'];?></h3>
 			</div>
 			<div class="box4">
-				<h1>Disaster Date</h1>
-				<h3><?php echo  $_SESSION['disasterDate'];?></h3>
+				<h1 class="dashboard-title">Disaster Date</h1>
+				<h3 class="fontwhite" ><?php echo  $_SESSION['disasterDate'];?></h3>
 			</div>
 			<div class="box5">
-				<h1>Disaster creater</h1>
-				<h3><?php echo $_SESSION['userrole']?></h3>
+				<h1 class="dashboard-title">Disaster creater</h1>
+				<h3 class="fontwhite" ><?php echo $_SESSION['userrole']?></h3>
 			</div>
 			<div class="box6">
-				<h1>Victims Amount</h1>
-				<h3><?php echo $_SESSION['victimsCount']?></h3>
+				<h1 class="dashboard-title">Victims Amount</h1>
+				<h3 class="fontwhite" ><?php echo $_SESSION['victimsCount']?></h3>
 			</div>
 			<div class="box7">
-				<h1>Total Damage</h1>
-				<h3><?php echo $_SESSION['totalDamege']?></h3>
+				<h1 class="dashboard-title">Total Damage</h1>
+				<h3 class="fontwhite" ><?php echo $_SESSION['totalDamege']?></h3>
 			</div>
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
-				<h1><?php echo  $_SESSION['regionName']?></h1>
+				<h1 class="dashboard-title"><?php echo  $_SESSION['regionName']?></h1>
 			</div>
 		</div>
 	</div>
@@ -81,10 +88,10 @@ require 'connection.php';
             datasets: [{
                   label: 'Disaster Distribution',
                   data: [10,200,400,300,250,140,370,200,300,200,100,70],
-                  backgroundColor:'blue',
-                  hoverBackgroundColor:'blue',
-                  // borderColor:'#00FF00',
-                  borderWidth: 2
+                //   backgroundColor:' rgb(194, 238, 252)',
+                  hoverBackgroundColor:' rgb(27, 233, 164)',
+                  borderColor:'rgb(169, 249, 252)',
+                  borderWidth: 4
             }]
          },
          options: {
