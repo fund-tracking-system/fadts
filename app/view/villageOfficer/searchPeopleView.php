@@ -51,17 +51,19 @@
 
             <fieldset class="searchBar">
 
-               <div>
+               <div >
                   <label class="inputLable"><b>Age:</b></label>
-                  <input class="form-control InputOne" name="age1"></input>
+                  <input class="form-control InputOne" name="ageStart"></input>
                   <span class="inputLable LableTwo"><b>to</b></span>
-                  <input class="form-control InputTwo" name="age2"></input>
+                  <input class="form-control InputTwo" name="ageEnd"></input>
                </div>
 
-               <div class="form-row">
-                  <label class="inputLable" for="incomeType" style="margin-right:12.5%;"><b>Income Type :</b></label>
-                  <select class="form-control Input" multiple="multiple"
-                     style="position:sticky;top:60px;overflow:scroll; padding-right:510px" id="incomeType" name="incomeTypes">
+
+               <div class='form-row'>
+                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:7%"><b>Income Type /(s) :</br>
+                  </label>
+                  <select class="js-example-responsive" multiple="multiple"
+                     style='top:60px; overflow:scroll; padding-right:510px;' id="incomeType" name="incomeType">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
                      <option value="retired">Government pension</option>
@@ -70,9 +72,7 @@
                      <option value="jobless">Jobless</option>
                   </select>
                </div>
-               <div class="form-row">
-                  <input type="hidden" ></input>
-               </div>
+               <input hidden disabled></input>
 
                <div class="form-row">
                   <label class="inputLable" for="disordered"><b>Prolonged Disorder/Disease :</b></label>
@@ -114,9 +114,10 @@
                </div>
                <input hidden disabled></input>
 
+
                <div class='button ' style="margin-top:30px;">
 
-                  <button type="submit" class='btn btn-primary signlebtn'>Search
+                  <button type="submit" name="submit" class='btn btn-primary signlebtn'>Search
                      Here</button>
                </div>
 
@@ -130,7 +131,7 @@
 
 <script>
 $(document).ready(function() {
-   $('#job').select2();
+   $('#incomeType').select2();
    $('#funds').select2();
 });
 </script>

@@ -173,7 +173,8 @@
                      <option value="<?php echo isset($result) ? $result['dead'] :"" ?>"
                      selected hidden >
 
-                        <?php echo isset($result) ? ( ($result['dead']=="no") ? "Alive":"Dead" ) :"" ?>
+                        <?php echo isset($result) ? ( ($result['dead']=="no") ? 
+                        "Alive":"Dead" ) :"" ?>
 
                      </option>
 
