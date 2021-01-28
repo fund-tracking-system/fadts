@@ -14,110 +14,66 @@
                     <fieldset style="background-color: #EBF6FA; border:none; margin-top:30px;">
 
                         <h2 style="margin-bottom:30px;"> FUND DETAILS ANALISYS</h2>
-                        <div class="form-row" style="margin-bottom:50px;">
-                            <label for="region" class="inputLable" style="margin-right:15px;"><b>Select Fund Result
-                                    Region :</b></label>
-                            <?php
 
-                                    require 'connection.php'; 
-
-
-                                    $region = $_SESSION['region'];
-                                                
-                                    $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
-                                    $rgnRes = $con->query($rgn) ;
-                                    $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
-
-                                    ?>
-                            <select id='region' class='form-control Input' name='region' id='region'
-                                style='position:sticky;top:60px;overflow:scroll;  width:550px; '>
-                                <option value="23" ><?php echo $_SESSION['regionName']?> Division
-                                    Secretory Area</option>
-                                <?php 
-                                                foreach($res as $data){
-                                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-                                                }
-                                            ?>
-                            </select>
-                            <button type="submit" class="btn btn-primary btnNavR ">Search</button>
-
-                        </div>
-
-
-                        <div><input type="hidden"></input></div>
+                        
+				<h2><?php echo  $_SESSION['SelectFundName'];?></h2>
+				
+                       
 
                         <table style="margin-bottom:50px;">
 
                             <thead>
-                                <tr>
+                                
 
-
-                                    <th>
-                                        <fieldset class="FSdetail">
-                                            <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Amount Per
-                                                        Person <br> <br>
-                                                        <?php echo $_SESSION['amountPerPerson']?></b></label>
-                                                <input class="form-control details" type="hidden"
+<th>
+    <div class="box3">
+        <h1>Per Person</h1>
+        <h3> <?php echo $_SESSION['amountPerPerson']?></h3>
+        <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;"
                                                     value="<?php echo $_SESSION['amountPerPerson']?>" readonly></input>
-                                            </div>
-                                        </fieldset>
-                                    </th>
-                                    <th>
-                                        <fieldset class="FSdetail">
-                                            <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="dilivered" class="inputLable"><b>Region Fund Amount
-                                                        <br> <br>
-                                                        <?php echo $_SESSION['amountPerPerson']*$_SESSION['totalRecipients']?></b></label>
-                                                <input class="form-control details" type="hidden"
+    </div></th>
+                        
+    <th>
+                        <div class="box3">
+    <h1>Fund Amount</h1>
+    <h3><?php echo $_SESSION['amountPerPerson']*$_SESSION['totalRecipients']?></h3>
+    <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='dilivered'
                                                     value="<?php echo $_SESSION['fundDelivered']?>" readonly></input>
-                                            </div>
-                                        </fieldset>
-
-                                    </th>
-                                    <th>
-                                        <fieldset class="FSdetail">
-                                            <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Fund Creator Name <br> <br>
-                                                        <?php echo "Ministry "?></b></label>
-                                                <input class="form-control details" type="hidden"
+</div></th>
+  
+    <th>
+    <div class="box3">
+        <h1>Fund Creator</h1>
+        <h3>ministry</h3>
+        <input class="form-control details" type="hidden"
                                                     style="margin-left:100px;" id='undelivered'
                                                     value="<?php echo $_SESSION['fundUndelivered']?>" readonly></input>
-                                            </div>
-                                        </fieldset>
-                                    </th>
-                                    <th>
-                                        <fieldset class="FSdetail">
-                                            <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Analysised Region
-                                                        <br>
-                                                        <br><?php echo  $_SESSION['regionName']?></b></label>
-                                                <input class="form-control details" id='' type="hidden"
+    </div></th>
+  
+    <th>
+    <div class="box3">
+        <h1>Analysised Region</h1>
+        <h3> <?php echo  $_SESSION['regionName']?></h3>
+        <input class="form-control details" id='' type="hidden"
                                                     style="margin-left:100px;"
                                                     value="<?php echo  $_SESSION['regionName']?>" readonly></input>
-                                            </div>
-                                        </fieldset>
-                                    </th>
-                                    <th>
-                                        <fieldset class="FSdetail" style="margin-right:30px;">
-                                            <div class="form-row " style="margin-left:-45px; margin-top:10px;">
-                                                <label for="nid" class="inputLable"><b>Published
-                                                        <br> <br><?php echo $_SESSION['publishedTime']?>
-                                                    </b></label>
-                                                <input class="form-control details" id='' type="hidden"
+                                                    <input class="form-control details" id='' type="hidden"
                                                     style="margin-left:100px;"
                                                     value="<?php echo $_SESSION['publishedTime']?>" readonly></input>
-                                            </div>
-                                        </fieldset>
-                                    </th>
-                                <tr>
-
+    </div></th>
+ 
+    <th>
+                                                    <div class="box3">
+                                <h1>Published Day</h1>
+                                <h3><?php echo $_SESSION['publishedTime']?>"</h3>
+                            </div></th>
+                            <tr>
 
                             </thead>
                         </table>
-
+                 
 
                     </fieldset>
 
@@ -169,20 +125,28 @@
                     <ul class="ul-first"><B>
                             <br>
                             <br>
-                            <li style="color:blue;">Dilivered
+                            <div class="box3" >
+                            <li style="color:blue; margin:5px;">Dilivered
                                 Amount<?php echo "--------> ";?><?php echo $_SESSION['fundDelivered'] ?> Persons</li>
+                                </div>
                             <br>
-                            <li style="color:red;">Undelivered
+                            <div class="box3">
+                            <li style="color:red; margin:5px;">Undelivered
                                 amount<?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons</li>
+                                </div>
                             <br><br>
                             <br>
-                            <li style="color:green;">Dilivered
+                            <div class="box3">
+                            <li style="color:green;margin:5px;">Dilivered
                                 Money<?php echo "------> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundDelivered'] ?>
                                 Rs</li>
+                                </div>
                             <br>
-                            <li style="color:brown;">Undelivered
+                            <div class="box3">
+                            <li style="color:brown; margin:5px;" >Undelivered
                                 Miney<?php echo "----> ";?><?php echo $_SESSION['amountPerPerson']*$_SESSION['fundUndelivered'] ?>
                                 Rs</li>
+                                </div>
                         </B></ul>
 
 

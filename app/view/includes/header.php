@@ -95,13 +95,14 @@
 </head>
 
 <body>
-    <div>
+    
+    <div id="header">
         <nav>
-            <img class="logo" src="/fadts/app/view/includes/logo.PNG" alt="logo_icon">
+            <img class="logo" src="/fadts/app/images/logo.PNG" alt="logo_icon">
             <ul>
                 <li><a href="/fadts/includes/index" class="nav_link"><B>Home</B></a></li>
 
-                <li><a href="/fadts/calender/ViewCalender" class="nav_link"><B>Calender</B></a></li>
+                <li><a href="/fadts/calender/calender" class="nav_link"><B>Calender</B></a></li>
                
    
 

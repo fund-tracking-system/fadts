@@ -117,7 +117,7 @@
 
                <div class="form-row" style="margin-bottom:50px;">
 
-                  <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
+                  <label for="tnid" class="inputLable" style="margin-right:285px;"><b>Region :</b></label>
                   <?php
 
                   require 'connection.php'; 

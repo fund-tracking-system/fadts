@@ -7,10 +7,16 @@
         <?php
             require 'connection.php'; 
             $myRegion=$_SESSION['region'];
+            // echo $myRegion;
             $myRegion;
             
-            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
-            FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
+            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
+            FROM disaster 
+            INNER JOIN disasterregion 
+            ON disaster.disasterId=disasterregion.disasterId 
+            INNER JOIN region ON 
+            region.regionId=disasterregion.regionId 
+            WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
             $_SESSION['disasterList']=$res;
@@ -24,7 +30,7 @@
                 <fieldset class="tableBar">
                     <div class="tbleMargin">
 
-                        <table id="resultTable" class="display">
+                        <table id="resultTable" class="display" method="get";>
                             <thead>
                                 <tr>
                                     <th><B>Disaster Type</B></th>
@@ -48,7 +54,7 @@
                                     <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
-                                    <td><a href="/fadts/divisional/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>"
+                                    <td><a href="/fadts/divisional/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>&regionId=<?php echo $disaster['regionID']?>"
                                             class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
                                     </td>
                                 </tr>

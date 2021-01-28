@@ -128,6 +128,11 @@ class divisionalController extends Controller{
       $this->model->load();
    
    }
+   public function selectFundDetailRegionModel(){
+      $this->model('divisionalsec/selectFundRegionDetailsModel');
+      
+      $this->model->load();
+   }
 
 
    
@@ -150,12 +155,21 @@ class divisionalController extends Controller{
    
 
    
+   public function selectDisasterDetailspast(){ 
+      $this->view('divisionalsec/selectDisasterDetails1');
+    
+      
+      $this->view->render();
+   }
+
    public function selectDisasterDetails(){ 
       $this->view('divisionalsec/selectDisasterDetails');
     
       
       $this->view->render();
    }
+
+
 
 
 }

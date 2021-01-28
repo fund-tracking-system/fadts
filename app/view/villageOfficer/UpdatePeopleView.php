@@ -90,17 +90,21 @@
                         require 'connection.php'; 
                         $region = $_SESSION['region'];                     
                         $rgns = "SELECT nid,personId FROM person WHERE region=$region";
-                        $rgnRess = $con->query($rgns) ;
+                        $rgnRess = $con->query($rgns);
                         $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                           
                     ?>
-                    <select  class='form-control Input' name='headOfFamily' id='headOfFamily'
-                            style="position:sticky;top:60px;overflow:scroll;  width:530px;">
-                        <option value="<?php echo isset($result) ? $result['personId'] : ""?>" hidden selected><?php echo isset($result) ? $result['nid'] : ""?></option>
+                    <select  class='js-example-responsive' name='headOfFamily' id='headOfFamily'
+                            style="position:sticky; top:60px; overflow:scroll; width:530px;" >
+
+                        <option value="<?php echo isset($result) ? $result['personId'] : ""?>" hidden selected><?php echo isset($result) ? $result['nid'] : ""?>
+                        </option>
+
                         <?php 
                             foreach($ress as $data){
                             echo '<option value="'.$data['personId'].'">'.$data['nid'].'</option>';
                             }
                         ?>
+
                     </select>
                 </div>
                <!-- this field is use for send nid to the model -->
@@ -122,11 +126,11 @@
                         value="<?php echo isset($result) ? $result['disordered'] :"" ?>"
                         selected hidden>
 
-                        <?php echo isset($result) ? ( ($result['disordered']=="yes") ? "With Disorder/Diease":"Without Disoeder/Diease" ) :"" ?>
+                        <?php echo isset($result) ? ( ($result['disordered']=="yes") ? "With Disorder/Diease":"Without Disorder/Diease" ) :"" ?>
 
                      </option>
 
-                     <option value="no">Without Disoeder/Diease</option>
+                     <option value="no">Without Disorder/Diease</option>
                      <option value="yes">With Disorder/Diease</option>
                   </select>
                </div>
@@ -169,7 +173,8 @@
                      <option value="<?php echo isset($result) ? $result['dead'] :"" ?>"
                      selected hidden >
 
-                        <?php echo isset($result) ? ( ($result['dead']=="no") ? "Alive":"Dead" ) :"" ?>
+                        <?php echo isset($result) ? ( ($result['dead']=="no") ? 
+                        "Alive":"Dead" ) :"" ?>
 
                      </option>
 

@@ -62,9 +62,12 @@ nav ul li a.active{
 	padding: 10px 13px;
 }
 
-a:active,a:hover{
-	background: #45B39D;
+a:active{
+	background: #378374;
 	transition: .5s;
+}
+a:hover{
+	background: #117A65;
 }
 
 @media (max-width: 925px){
@@ -92,7 +95,6 @@ a:active,a:hover{
 .sidebar_link {
 	display: flex;
 	align-items: center;
-	/* background:#17a286; */
 	background: #2C3E50;
 	color: #ffffff;
 	padding: 12px;
@@ -100,7 +102,6 @@ a:active,a:hover{
 	font-weight: bold;
 	font-size: 1.125rem;
 	border-radius: 8px;
-	/* border-bottom: 1px solid #000040; */
 }
 
 .sidebar_link .material-icons {
