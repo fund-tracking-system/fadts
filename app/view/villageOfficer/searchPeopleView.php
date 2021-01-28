@@ -45,7 +45,7 @@
 
 
 
-      <form method="post" id="form">
+      <form method="post" action="/fadts/village/" name="serchByCriteria" id="form">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
 
@@ -59,24 +59,9 @@
                </div>
 
 
-               <div class='form-row'>
-                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:7%"><b>Income Type /(s) :</br>
-                  </label>
-                  <select class="js-example-responsive" multiple="multiple"
-                     style='top:60px; overflow:scroll; padding-right:510px;' id="incomeType" name="incomeType">
-                     <option value="government">Government</option>
-                     <option value="private">Private</option>
-                     <option value="retired">Government pension</option>
-                     <option value="business_owner">Business owner</option>
-                     <option value="self_employeed">Self employeed</option>
-                     <option value="jobless">Jobless</option>
-                  </select>
-               </div>
-               <input hidden disabled></input>
-
                <div class="form-row">
-                  <label class="inputLable" for="disordered"><b>Prolonged Disorder/Disease :</b></label>
-                  <select class="form-control Input" id="disordered" name="disordered">
+                  <label class="inputLable" for="disorder"><b>Prolonged Disorder/Disease :</b></label>
+                  <select class="form-control Input" id="disorder" name="disorder">
                      <option value="" disabled selected>Not select</option>
                      <option value="no">Without Disorder/Diease</option>
                      <option value="yes">With Disorder/Diease</option>
@@ -92,11 +77,26 @@
                   </select>
                </div>
 
+               <div class='form-row'>
+                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type / (s) :</br>
+                  </label>
+                  <select class="js-example-responsive" multiple="multiple"
+                     style='top:60px; overflow:scroll; padding-right:510px;' id="incomeType" name="incomeType[]">
+                     <option value="government">Government</option>
+                     <option value="private">Private</option>
+                     <option value="retired">Government pension</option>
+                     <option value="business_owner">Business owner</option>
+                     <option value="self_employeed">Self employeed</option>
+                     <option value="jobless">Jobless</option>
+                  </select>
+               </div>
+               <input hidden disabled></input>
+
                <div>
                   <label class="inputLable"><b>Gross Income:</b></label>
-                  <input class="form-control InputOne" ame="income1"></input>
+                  <input class="form-control InputOne" ame="incomeStart"></input>
                   <span class="inputLable LableTwo"><b>to</b></span>
-                  <input class="form-control InputTwo" name="income2 "></input>
+                  <input class="form-control InputTwo" name="incomeEnd"></input>
                </div>
 
 
@@ -104,7 +104,7 @@
                   <label class="inputLable" style="margin-right:22%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='top:60px; overflow:scroll; padding-right:510px;' id="funds" name="funds">
+                     style='top:60px; overflow:scroll; padding-right:510px;' id="funds" name="funds[]">
                      <option value="government">Samurdhi</option>
                      <option value="private">Samurdhi Eligible List</option>
                      <option value="retired">Adults Fund</option>
