@@ -7,18 +7,18 @@ if(isset($_POST['submit'])){
   require 'connection.php';      //link to mysql connection
 
   $ageStart = $_POST['ageStart'];
-  $ageEnd = $_SESSION['ageEnd']; 
+  $ageEnd = $_POST['ageEnd']; 
   $disorder = $_POST['disorder'];
   $civilStatus = $_POST['civilStatus'];
   $incomeType = $_POST['incomeType'];
   $incomeStart = $_POST['incomeStart'];
-  $incomeEnd = $_SESSION['incomeEnd']; 
+  $incomeEnd = $_POST['incomeEnd']; 
   $funds = $_POST['funds'];
 
   
-  
+  $sql = queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart,          $incomeEnd,$funds);
 
-  $sql = "SELECT * FROM ";
+  $sql = "SELECT nid,name,address,phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE ((birthDate BETWEEN '1940-01-01' AND '1980-01-01') AND (disordered = 'yes') AND (civilStatus = 1) AND (job = 'government' OR job = 'retired') AND (monthlyIncome BETWEEN 4000 AND 60000) AND (predefinedFundId = 10 OR predefinedFundId = 6))";
   $stmt = mysqli_stmt_init($con);
 
   if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -47,7 +47,36 @@ if(isset($_POST['submit'])){
     header("Location:/fadts/fadts/village/victimSelect?error=direct_access_prohibited");
     exit();
 }
-     
+ 
+
+function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart,          $incomeEnd,$funds)
+{
+   $count=0;
+   if($ageStart!="" && $ageEnd!=""){
+      $ageCondition = setAge($ageStart,$ageEnd);
+      $count++;
+   }
+   if($disorder!=""){
+      $disorderCondition = "(disordered = $disorder)";
+      $count++;
+   }
+   if($civilStatus!=""){
+      $civilStatusCondition = "(civilStatus = $civilStatus)";
+      $count++;
+   }
+   if(!empty($incomeType)){
+      $incomeTypeCondition = setIncomeType($incomeType);
+      $count++;
+   }
+   if($incomeStart!="" && $incomeEnd!=""){
+      setIncomeValue($incomeStart,$incomeEnd);
+      $count++;
+   }
+   if(!empty($funds)){
+      setAge($ageStart,$ageEnd);
+      $count++;
+   }
+}
 
 function setAge($ageStart,$ageEnd){
    
@@ -64,22 +93,51 @@ function setAge($ageStart,$ageEnd){
    $monthDay = date('m-d');
    $start = $year - $ageEnd;
    $end = $year - $ageStart;
-   $birthDate = array("start"=>$start."-". $monthDay, "end"=>$end."-". $monthDay);
 
-   return $birthDate;
+   $ageCondition = "( birthDate BETWEEN $start-$monthDay AND $end-$monthDay )";
+
+   return $ageCondition;
 }
 
-function setDisorder(){
+
+function setIncomeType($incomeType){
+   
+   $string = "(";
+   foreach ($incomeType as $value){
+      
+      $string = $string." job = '".$value."'";  
+      if($incomeType->hasNext()) {
+         $string = $string." OR ";
+      }else{
+         $string = $string.")";
+      }
+  }
+  return $string;
 
 }
-function setCivilStatus(){
 
-}
-function setIncomeType(){
+function setIncomeValue($incomeStart,$incomeEnd){
 
-}
-function setIncome(){
+   $incomeValueCondition = "";
+   if($incomeStart>$incomeEnd){              //If user enters values like 60000 to 30000 
+      $incomeEnd = $incomeStart + $incomeEnd;
+      $incomeStart = $incomeEnd - $incomeStart;
+      $incomeEnd = $incomeEnd - $incomeStart;
+   }
 
+   //(monthlyIncome BETWEEN 4000 AND 60000)
+
+   if($incomeStart==""){
+      $incomeValueCondition = "(monthlyIncome < $incomeEnd)";    
+   }
+   else if($incomeEnd==""){
+      $incomeValueCondition = "(monthlyIncome > $incomeStart)";
+   }
+   else{
+      $incomeValueCondition = "(monthlyIncome BETWEEN $incomeStart AND $incomeEnd)";
+   }
+
+   return $incomeValueCondition;
 }
 function setFunds(){
 
