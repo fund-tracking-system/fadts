@@ -56,7 +56,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                     echo  $_SESSION['disasterType'];
 }
 
-header("Location:/fadts/divisional/selectDisasterDetails"); 
+//header("Location:/fadts/divisional/selectDisasterDetails"); 
 
 
 
