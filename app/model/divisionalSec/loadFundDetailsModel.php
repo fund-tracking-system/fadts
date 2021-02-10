@@ -45,15 +45,20 @@ echo$_SESSION['provincialRegion'];
 
 
         $officer_region=$_SESSION['region'];
-        $sql="SELECT fund.fundId,fund.name,region.level as lvl,region.name as ren ,fund.region ,fund.publishedTime FROM  fund left JOIN region ON region.regionId =fund.region WhERE region.superRegion=$myRegion or fund.region=$myRegion or fund.region=0 or fund.region= $provincialRegion or fund.region=$districtRegion";        
+        $sql="SELECT fund.fundId,fund.name,region.level as lvl,region.name as ren ,fundregion.regionId ,fund.publishedTime FROM  fund  right join fundregion On fund.fundId=fundregion.fundId inner join  region ON region.regionId =fundregion.regionId WhERE region.superRegion=$myRegion or fundregion.regionId=$myRegion or fundregion.regionId=1 or fundregion.regionId= $provincialRegion or fundregion.regionId=$districtRegion";        
         $result=$con->query($sql);
         $res=$result->fetch_all(MYSQLI_ASSOC); 
         $_SESSION['fundList']=$res;
         var_dump($res);
+        // $sql="SELECT fund.fundId,fund.name,region.level as lvl,region.name as ren ,fundregion.regionId ,fund.publishedTime FROM  fund inner join fundregion ON fund.fundId=fundregion.fundId ";        
+        // $result=$con->query($sql);
+        // $res=$result->fetch_all(MYSQLI_ASSOC); 
+        // $_SESSION['fundList']=$res;
+        // var_dump($res);
 
 
-
-
+echo '<br>';
+echo "ashva";
 
 
 
