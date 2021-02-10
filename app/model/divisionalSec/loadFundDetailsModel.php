@@ -50,11 +50,7 @@ echo$_SESSION['provincialRegion'];
         $res=$result->fetch_all(MYSQLI_ASSOC); 
         $_SESSION['fundList']=$res;
         var_dump($res);
-        // $sql="SELECT fund.fundId,fund.name,region.level as lvl,region.name as ren ,fundregion.regionId ,fund.publishedTime FROM  fund inner join fundregion ON fund.fundId=fundregion.fundId ";        
-        // $result=$con->query($sql);
-        // $res=$result->fetch_all(MYSQLI_ASSOC); 
-        // $_SESSION['fundList']=$res;
-        // var_dump($res);
+       
 
 
 echo '<br>';
