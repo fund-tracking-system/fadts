@@ -66,6 +66,55 @@ require 'connection.php';
 				<h1 class="dashboard-title"><?php echo  $_SESSION['regionName']?></h1>
 			</div>
 		</div>
+
+
+		<fieldset class="tableBar">
+                <div class="tbleMargin">
+
+
+                    <table id="resultTable" class="display nowrap">
+                        <thead>
+                            <tr>
+                                <th><B>Victim Name </B></th>
+                                <th><B>Address</B></th>
+                                <th><B>Region</B></th>
+                                <th><B>Phone Number</B></th>
+                                <th><B>Victim Damage</B></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach($_SESSION['victimadata'] as $victim){                              
+                         ?>
+                            <tr>
+                                <td><input type="hidden" name="fundid" style="margin-left:30%;"
+                                        value='<?php echo $victim['name']?>'><?php echo $victim['name']?></input>
+                                </td>
+                                <td><B style="margin-left:30%;"><?php echo $victim['personId']?></B></td>
+                                <td><B style="margin-left:30%;"><?php echo $victim['regionName']?></B></td>
+                                <td><B style="margin-left:30%;"><?php echo $victim['disasterId'] ?></B></td>
+
+								<td><B style="margin-left:30%;"><?php echo $victim['totalDamage'] ?></B></td>
+
+                               
+                            </tr>
+
+                            <?php    } 
+                        unset($_SESSION['results']);
+                  ?>
+
+                        </tbody>
+
+                    </table>
+                 <div>
+                 </fieldset>   
+
+
+
+
+
+
+
+
 	</div>
 </div>
 
@@ -74,7 +123,11 @@ require 'connection.php';
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
 
-
+<script>
+$(document).ready(function() {
+    $("#resultTable").DataTable();
+});
+</script>
 
 <script>
 	 $(function () {
