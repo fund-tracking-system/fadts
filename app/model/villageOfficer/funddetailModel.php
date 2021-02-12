@@ -84,7 +84,7 @@
 
             }
 
-            header("Location:/fadts/divisional/selectFundDetailsView"); 
+            header("Location:/fadts/village/selectFundDetailsView"); 
             }
 
             // else {
