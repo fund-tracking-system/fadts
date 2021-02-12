@@ -70,6 +70,11 @@ class villageController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
+   public function funddetailModel(){
+      $this->model('villageOfficer/funddetailModel');
+
+      $this->model->load();
+   }
 
 
 
