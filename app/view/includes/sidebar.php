@@ -146,7 +146,7 @@ switch($controller){
    <a href="/fadts/village/viewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
-   <a href="/fadts/village/fundDetails" class="dashboard sidebar_link">
+   <a href="/fadts/village/loadFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
    </a>   
    <a href="/fadts/village/fundRelease" class="dashboard sidebar_link">
