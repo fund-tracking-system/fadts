@@ -92,7 +92,13 @@ class villageController extends Controller{
 
       $this->model->load();
    }
+   public function    disasterDetailModel(){
+      $this->model('villageOfficer/disasterDetailModel');
 
+      $this->model->load();
+   }
+
+   
    
 
 
