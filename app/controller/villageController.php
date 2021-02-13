@@ -19,7 +19,13 @@ class villageController extends Controller{
 
       $this->model->load();
    }
- 
+   
+   public function searchViewLoadModel(){
+      $this->model('villageOfficer/searchViewLoadModel');
+      
+      $this->model->load(); // This is how load the view
+   }
+
    public function searchPeople(){
       $this->view('villageOfficer/searchPeopleView');
       

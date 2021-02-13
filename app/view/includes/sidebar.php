@@ -140,7 +140,7 @@ switch($controller){
    <a href="/fadts/village/updatePeople" class="dashboard sidebar_link">
       <span class="material-icons">person</span>Update People Data
    </a>
-   <a href="/fadts/village/searchPeople" class="dashboard sidebar_link">
+   <a href="/fadts/village/searchViewLoadModel" class="dashboard sidebar_link">
       <span class="material-icons">person_search</span>Search People Data
    </a>
    <a href="/fadts/village/viewDisasterDetails" class="dashboard sidebar_link">
