@@ -8,9 +8,7 @@ if(isset($_GET['disasterId']))
 
     
                     $disasterId = $_GET['disasterId'];
-                    $regionID = $_GET['regionId'];
                     $victims=0;
-                    echo    $regionID;
 
                     $provincialRegion= $_SESSION['provincialRegion']; 
                     $districtRegion= $_SESSION['districtRegion']; 
@@ -30,7 +28,9 @@ if(isset($_GET['disasterId']))
 
 
             //get disaster victims details
-                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (person.region=$officer_region or region.regionId=$provincialRegion or region.regionId=$districtRegion or region.regionId=1 or region.regionId=$divisionRegion) and (victim.disasterId= $disasterId)";
+                    // $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (person.region=$officer_region or region.regionId=$provincialRegion or region.regionId=$districtRegion or region.regionId=1 or region.regionId=$divisionRegion) and (victim.disasterId= $disasterId)";
+                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (region.regionId=$officer_region) and (victim.disasterId= $disasterId)";
+
                     $result2=$con->query($sql2);
                     $res2=$result2->fetch_all(MYSQLI_ASSOC);
                     $_SESSION['victimadata']=$res2;
@@ -69,7 +69,7 @@ if(isset($_GET['disasterId']))
                     echo  $_SESSION['disasterType'];
 }
 
-header("Location:/fadts/divisional/selectDisasterDetails"); 
+header("Location:/fadts/village/selectDisasterDetails"); 
 
 
 

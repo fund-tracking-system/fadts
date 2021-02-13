@@ -98,6 +98,13 @@ class villageController extends Controller{
       $this->model->load();
    }
 
+   public function selectDisasterDetails(){
+      $this->view('villageOfficer/selectDisasterDetailsView');
+      
+      $this->view->render();
+   }
+   
+
    
    
 
