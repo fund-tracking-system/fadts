@@ -49,7 +49,7 @@ session_start();
 
             //get region disasters
             
-            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
+            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.level as lvl,region.name as ren
             FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE 
             region.regionId= $divisionRegion OR region.regionId= $districRegion Or region.regionId=$provincialRegion or region.regionId=1 or region.regionId= $myRegion";
             $result=$con->query($sql);
