@@ -62,7 +62,7 @@ require 'connection.php';
 			</div>
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
-				<h1 class="dashboard-title"><?php echo  $_SESSION['regionName']?> Division Secertory </h1>
+				<h1 class="dashboard-title"><?php echo  $_SESSION['regionName']?> Grama Niladharai Area </h1>
 			</div>
 		</div>
 

@@ -168,8 +168,14 @@ class divisionalController extends Controller{
       
       $this->view->render();
    }
+   
 
-
+   public function disasterVictimsView(){ 
+      $this->view('divisionalsec/disasterVictimsView');
+    
+      
+      $this->view->render();
+   }
 
 
 }

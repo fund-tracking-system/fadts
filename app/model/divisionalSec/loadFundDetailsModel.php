@@ -14,6 +14,7 @@ $myRegion;
 
 
 //select district Region  
+
 $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
 $result1=$con->query($sql1);
 $res1=$result1->fetch_all(MYSQLI_ASSOC);
@@ -22,7 +23,7 @@ foreach($res1 as $data1){
 $_SESSION['districtRegion']=$data1['superRegion'];
 
 }
-$districtRegion= $_SESSION['districtRegion'];
+$districtRegion= $_SESSION['districtRegion'];                   //  save district region
 
 
 //select provincial  Region
@@ -35,7 +36,7 @@ $_SESSION['provincialRegion']=$data2['superRegion'];
 }
 
 
-$provincialRegion= $_SESSION['provincialRegion'];
+$provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
 
 echo$_SESSION['provincialRegion'];
 
@@ -44,14 +45,16 @@ echo$_SESSION['provincialRegion'];
 
 
         $officer_region=$_SESSION['region'];
-        $sql="SELECT fund.fundId,fund.name,region.level as lvl,region.name as ren ,fund.region ,fund.publishedTime FROM  fund left JOIN region ON region.regionId =fund.region WhERE region.superRegion=$myRegion or fund.region=$myRegion or fund.region=0 or fund.region= $provincialRegion or fund.region=$districtRegion";        $result=$con->query($sql);
+        $sql="SELECT fund.fundId,fund.name,region.level as lvl,region.name as ren ,fundregion.regionId ,fund.publishedTime FROM  fund  right join fundregion On fund.fundId=fundregion.fundId inner join  region ON region.regionId =fundregion.regionId WhERE region.superRegion=$myRegion or fundregion.regionId=$myRegion or fundregion.regionId=1 or fundregion.regionId= $provincialRegion or fundregion.regionId=$districtRegion";        
+        $result=$con->query($sql);
         $res=$result->fetch_all(MYSQLI_ASSOC); 
         $_SESSION['fundList']=$res;
         var_dump($res);
+       
 
 
-
-
+echo '<br>';
+echo "ashva";
 
 
 

@@ -27,6 +27,62 @@ switch($controller){
    case "divisional": 
 ?>
 
+<?php
+$myRegion=$_SESSION['region'];
+
+$_SESSION['privateCount']=0;
+$privateCount=0;
+
+$_SESSION['retireteCount']=0;
+$retireCount=0;
+
+$_SESSION['selfEmployeeCount']=0;
+$selfEmployeeCount=0;
+
+$_SESSION['governmentCount']=0;
+$governmentCount=0;
+
+$_SESSION['JoblessCount']=0;
+$joblessCount=0;
+
+
+
+
+//select district Region  
+$sql1="SELECT * From person Inner join  region ON region.regionId=person.region Where region.superRegion=$myRegion";
+$result1=$con->query($sql1);
+$res1=$result1->fetch_all(MYSQLI_ASSOC);
+foreach($res1 as $mydash){
+
+   if($mydash['job']=="Private"){
+      $privateCount++;
+   }
+   if($mydash['job']=="Goverment"){
+      $governmentCount++;
+   }
+   if($mydash['job']=="Retired"){
+      $retireCount++;
+   }
+   if($mydash['job']=="SelfEmployee"){
+      $selfEmployeeCount++;
+   }
+   if($mydash['job']=="Jobless"){
+      $joblessCount++;
+   }
+}
+$_SESSION['privateCount']=$privateCount;
+
+$_SESSION['retireteCount']=$retireCount;
+
+$_SESSION['selfEmployeeCount']=$selfEmployeeCount;
+
+$_SESSION['governmentCount']=$governmentCount;
+
+$_SESSION['JoblessCount']=$joblessCount;
+
+
+
+?>
 
 <div class="divisionDashboard">
    <div class="grid_box">
@@ -34,6 +90,20 @@ switch($controller){
       <div class="nav_link"><B>INCOME METHOD</B></div>
 
          <canvas id="Chart1"></canvas>
+         <input class="form-control details" type="hidden" id='privateCount'
+                              value="<?php echo $_SESSION['privateCount']?>" readonly></input>
+
+         <input class="form-control details" type="hidden" id='retireteCount'
+                              value="<?php echo $_SESSION['retireteCount']?>" readonly></input>
+
+         <input class="form-control details" type="hidden" id='selfEmployeeCount'
+                              value="<?php echo $_SESSION['selfEmployeeCount']?>" readonly></input>
+
+         <input class="form-control details" type="hidden" id='governmentCount'
+                              value="<?php echo $_SESSION['governmentCount']?>" readonly></input>
+
+         <input class="form-control details" type="hidden" id='JoblessCount'
+                              value="<?php echo $_SESSION['JoblessCount']?>" readonly></input>
       </div>
       <div class="box-2">
       <div class="nav_link"><B>AGE GROUP</B></div>
@@ -98,7 +168,16 @@ switch($controller){
    });
 
 
+
    $(function () {
+
+      var privateCount = $("#privateCount").val();
+      var retireteCount = $("#retireteCount").val();
+      var governmentCount = $("#governmentCount").val();
+      var JoblessCount = $("#JoblessCount").val();
+      var selfEmployeeCount = $("#selfEmployeeCount").val();
+
+      var x= 180;
       var ctx = document.getElementById('Chart1').getContext('2d');
       var chart = new Chart(ctx, {
          type: 'pie',
@@ -106,7 +185,7 @@ switch($controller){
             labels: ['Goverment', 'Private', 'Retired','unemployee','SelfEmployee'],
             datasets: [{
                   label: '# fund release',
-                  data: [100,200,50,30,20],
+                  data: [governmentCount,privateCount,retireteCount,JoblessCount,selfEmployeeCount],
                   backgroundColor: [
                      '#16a085',
                      ' #668cff',

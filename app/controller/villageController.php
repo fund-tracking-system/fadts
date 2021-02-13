@@ -61,11 +61,60 @@ class villageController extends Controller{
    }
 
 
+   public function loadFundDetails(){
+      $this->model('villageOfficer/loadFundDetails');
+
+      $this->model->load();
+   }
+
+
+
+
    public function fundDetails(){
       $this->view('villageOfficer/fundDetailsView');
       
       $this->view->render(); // This is how load the view
    }
+
+   public function funddetailModel(){
+      $this->model('villageOfficer/funddetailModel');
+
+      $this->model->load();
+   }
+   
+   public function selectFundDetailsView(){
+      $this->view('villageOfficer/selectFundDetailsView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+
+
+
+
+
+   public function    loadDisasterDetailsModel(){
+      $this->model('villageOfficer/loadDisasterDetailsModel');
+
+      $this->model->load();
+   }
+   public function    disasterDetailModel(){
+      $this->model('villageOfficer/disasterDetailModel');
+
+      $this->model->load();
+   }
+
+   public function selectDisasterDetails(){
+      $this->view('villageOfficer/selectDisasterDetailsView');
+      
+      $this->view->render();
+   }
+   
+
+   
+   
+
+
 
    public function personDetails(){
       $this->view('villageOfficer/personDetailsView');

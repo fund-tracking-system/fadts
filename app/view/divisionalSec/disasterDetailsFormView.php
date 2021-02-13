@@ -7,8 +7,67 @@
         <?php
             require 'connection.php'; 
             $myRegion=$_SESSION['region'];
+
+
+
+
+
+
+
+
+            //select district Region  
+
+                $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
+                $result1=$con->query($sql1);
+                $res1=$result1->fetch_all(MYSQLI_ASSOC);
+
+                foreach($res1 as $data1){ 
+                $_SESSION['districtRegion']=$data1['superRegion'];
+
+                }
+                $districtRegion= $_SESSION['districtRegion'];                   //  save district region
+
+
+//select provincial  Region
+
+
+                $sql2="SELECT superRegion  From region Where region.regionId= $districtRegion";
+                $result2=$con->query($sql2);
+                $res2=$result2->fetch_all(MYSQLI_ASSOC);
+                foreach($res2 as $data2){ 
+                $_SESSION['provincialRegion']=$data2['superRegion'];
+
+                }
+
+
+                $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
+
+                
+echo$_SESSION['provincialRegion'];
+
+
+
+
+
+        $officer_region=$_SESSION['region'];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             // echo $myRegion;
-            $myRegion;
+            $myRegion; 
             
             $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
             FROM disaster 
@@ -16,7 +75,7 @@
             ON disaster.disasterId=disasterregion.disasterId 
             INNER JOIN region ON 
             region.regionId=disasterregion.regionId 
-            WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
+            WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.regionId=$provincialRegion or region.regionId=$provincialRegion or region.regionId=1 ";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
             $_SESSION['disasterList']=$res;
