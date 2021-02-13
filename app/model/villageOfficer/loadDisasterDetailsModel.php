@@ -51,7 +51,7 @@ session_start();
             
             $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.name as ren
             FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId WHERE 
-            region.regionId= $divisionRegion OR region.regionId= $districRegion Or region.regionId=$provincialRegion or region.regionId=0 or region.regionId= $myRegion";
+            region.regionId= $divisionRegion OR region.regionId= $districRegion Or region.regionId=$provincialRegion or region.regionId=1 or region.regionId= $myRegion";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
 
