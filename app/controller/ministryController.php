@@ -14,9 +14,13 @@ class ministryController extends Controller{
       $this->model->load(); // This is how load the model
    }
 
+   
 
-
-
+   public function funddetailModel(){ 
+      $this->model('ministry/funddetailModel');
+      
+      $this->model->load(); // This is how load the model
+   }
 
 
 

@@ -18,7 +18,7 @@
             $officer_region=$_SESSION['region'];
 
 
-            $sql="SELECT recipient.personId,recipient.deliveryStatus,person.region, region.superRegion,person.name as name,person.address as address,person.phone as mobile , region.name as regionName  FROM recipient INNER JOIN person ON recipient.personId=person.personId INNER JOIN region ON region.regionId=person.region WHERE recipient.fundId= $fundId AND region.superRegion=$officer_region";
+            $sql="SELECT recipient.personId,recipient.deliveryStatus,person.region, region.superRegion,person.name as name,person.address as address,person.phone as mobile , region.name as regionName  FROM recipient INNER JOIN person ON recipient.personId=person.personId INNER JOIN region ON region.regionId=person.region WHERE recipient.fundId= $fundId AND region.regionId=$officer_region";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC);   // awashaya visthra ganna  
             var_dump($res);
