@@ -2,11 +2,28 @@
 
 class ministryController extends Controller{
 
-   public function viewFund(){
-      $this->view('ministry/fundDeatailsView');
+   public function fundDetails(){
+      $this->view('ministry/fundDetailsView');
       
       $this->view->render(); // This is how load the view
    }
+
+   public function loadFundDetails(){ 
+      $this->model('ministry/loadFundDetails');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+
+
+
+
+
+
+
+
+
+
 
    public function searchPeople(){
       $this->view('ministry/searchPeopleView');
@@ -61,7 +78,7 @@ class ministryController extends Controller{
       
       $this->model->load(); // This is how load the model
    }
-
+ 
    public function ViewCreateFund(){
       $this->view('ministry/createFundView');
       
@@ -98,11 +115,5 @@ class ministryController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
-   public function ViewFundDetailsModel(){ 
-      $this->model('divisionalsec/loadFundDetailsModel');
-
-      $this->model->load();
-   
-   }
   
 }
