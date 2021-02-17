@@ -37,7 +37,6 @@
                   <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
                      name="nic"></input>
                   <button type="submit" name="submit" class="btn btn-primary btnNav ">Search</button>
-                  <!-- <a href="/fadts/village/personDetails" class="btn btn-primary btnNav">Search</a> -->
                </div>
             </fieldset>
          </fieldset>
@@ -78,16 +77,19 @@
                </div>
 
                <div class='form-row'>
-                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type / (s) :</br>
+                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type / (s) :
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
                      style='top:60px; overflow:scroll; padding-right:510px;' id="incomeType" name="incomeType[]">
-                     <option value="government">Government</option>
-                     <option value="private">Private</option>
-                     <option value="retired">Government pension</option>
-                     <option value="business_owner">Business owner</option>
-                     <option value="self_employeed">Self employeed</option>
-                     <option value="jobless">Jobless</option>
+
+                     <?php 
+                     foreach($_SESSION['incomeTypes'] as $incomeType){ ?>
+
+                     <option value="<?php echo $incomeType['id']?>"><?php echo $incomeType['type']?></option>
+
+                     <?php    } 
+                     unset($_SESSION['incomeTypes']); ?>
+
                   </select>
                </div>
                <input hidden disabled></input>
@@ -105,11 +107,15 @@
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
                      style='top:60px; overflow:scroll; padding-right:510px;' id="funds" name="funds[]">
-                     <option value="government">Samurdhi</option>
-                     <option value="private">Samurdhi Eligible List</option>
-                     <option value="retired">Adults Fund</option>
-                     <option value="business_owner">Mahapola</option>
-                     <option value="self_employeed">Other Gov Funds</option>
+
+                     <?php 
+                     foreach($_SESSION['fundList'] as $fund){ ?>
+
+                     <option value="<?php echo $fund['Id']?>"><?php echo $fund['name']?></option>
+
+                     <?php    } 
+                     unset($_SESSION['fundList']); ?>
+
                   </select>
                </div>
                <input hidden disabled></input>
