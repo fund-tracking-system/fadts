@@ -22,6 +22,14 @@ class ministryController extends Controller{
       $this->model->load(); // This is how load the model
    }
 
+   
+
+   public function selectFundDetailsView(){
+      $this->view('ministry/selectFundDetailsView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
 
 
 
