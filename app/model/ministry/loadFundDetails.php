@@ -9,16 +9,6 @@ echo $myRegion;
   
 
 
-  $sql2="SELECT superRegion  From region Where region.regionId= $divisionalRegion";
-  $result2=$con->query($sql2);
-  $res2=$result2->fetch_all(MYSQLI_ASSOC);
-  foreach($res2 as $data2){ 
-  $_SESSION['districtRegion']=$data2['superRegion'];
-
-  }
-
-  $districtRegion= $_SESSION['districtRegion'];               //save district region
-
 
 
   
