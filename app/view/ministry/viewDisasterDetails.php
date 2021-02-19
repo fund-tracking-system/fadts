@@ -55,7 +55,7 @@
 
                                     <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
-                                    <td><a href="/fadts/village/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>"
+                                    <td><a href="/fadts/ministry/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>"
                                             class="btn btn-primary" style="margin-left:20%;"><B>VIEW</B></a>
                                     </td>
                                 </tr>
