@@ -111,7 +111,7 @@ switch($controller){
    <a href="/fadts/ministry/addDisaster" class="dashboard sidebar_link">
       <span class="material-icons">create_new_folder</span>Add New Disaster
    </a>
-   <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/loadDisasterDetailsModel" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
    <a href="#" class="dashboard sidebar_link">
