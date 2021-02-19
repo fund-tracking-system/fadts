@@ -30,6 +30,28 @@ class ministryController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
+   // disaster details functions
+   
+   public function loadDisasterDetailsModel(){ 
+      $this->model('ministry/loadDisasterDetailsModel');
+      
+      $this->model->load(); // This is how load the model
+
+   }
+
+   
+   public function viewDisasterDetails(){
+      $this->view('ministry/viewDisasterDetails');
+      
+      $this->view->render(); // This is how load the view
+   }
+   
+   public function disasterDetailModel(){ 
+      $this->model('ministry/disasterDetailModel');
+      
+      $this->model->load(); // This is how load the model
+
+   }
 
 
 
@@ -121,11 +143,6 @@ class ministryController extends Controller{
       $this->model->load();      
    }
 
-   public function ViewDisasterDetails(){
-      $this->view('ministry/disasterDetailsFormView');
-      
-      $this->view->render(); // This is how load the view
-   }
 
   
 }
