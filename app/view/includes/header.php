@@ -36,6 +36,9 @@
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/main.css">
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/fill.css">
 
+   <!-- textarea text editor -->
+    <script src="https://cdn.tiny.cloud/1/mlextyq52qostbbcmfsxoy8483ratikid6t7l2ifwdkkfeyg/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
