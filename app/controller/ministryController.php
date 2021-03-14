@@ -69,6 +69,18 @@ class ministryController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+
+   public function viewOfficerView(){
+      $this->view('ministry/viewOfficerView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function viewOfficerFindModel(){ 
+      $this->model('ministry/viewOfficerFindModel');
+      
+      $this->model->load(); // This is how load the model
+   }
    
    public function addOfficerView(){
       $this->view('ministry/addOfficerView');

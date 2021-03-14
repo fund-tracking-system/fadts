@@ -90,6 +90,9 @@ switch($controller){
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
+   <a href="/fadts/ministry/viewOfficerView" class="dashboard sidebar_link">
+      <span class="material-icons">person_search</span>View Officer
+   </a>
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Officer
    </a>
