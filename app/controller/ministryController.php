@@ -2,16 +2,84 @@
 
 class ministryController extends Controller{
 
-   public function viewFund(){
-      $this->view('ministry/fundDeatailsView');
+   public function fundDetails(){
+      $this->view('ministry/fundDetailsView');
       
       $this->view->render(); // This is how load the view
    }
+
+   public function loadFundDetails(){ 
+      $this->model('ministry/loadFundDetails');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   
+
+   public function funddetailModel(){ 
+      $this->model('ministry/funddetailModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   
+
+   public function selectFundDetailsView(){
+      $this->view('ministry/selectFundDetailsView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   // disaster details functions
+   
+   public function loadDisasterDetailsModel(){ 
+      $this->model('ministry/loadDisasterDetailsModel');
+      
+      $this->model->load(); // This is how load the model
+
+   }
+
+   
+   public function viewDisasterDetails(){
+      $this->view('ministry/viewDisasterDetails');
+      
+      $this->view->render(); // This is how load the view
+   }
+   
+   public function disasterDetailModel(){ 
+      $this->model('ministry/disasterDetailModel');
+      
+      $this->model->load(); // This is how load the model
+
+   }
+   
+   public function selectDisasterDetails(){
+      $this->view('ministry/selectDisasterDetails');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+
+
+
+
 
    public function searchPeople(){
       $this->view('ministry/searchPeopleView');
       
       $this->view->render(); // This is how load the view
+   }
+
+   public function viewOfficerView(){
+      $this->view('ministry/viewOfficerView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function viewOfficerFindModel(){ 
+      $this->model('ministry/viewOfficerFindModel');
+      
+      $this->model->load(); // This is how load the model
    }
    
    public function addOfficerView(){
@@ -61,7 +129,7 @@ class ministryController extends Controller{
       
       $this->model->load(); // This is how load the model
    }
-
+ 
    public function ViewCreateFund(){
       $this->view('ministry/createFundView');
       
@@ -92,17 +160,6 @@ class ministryController extends Controller{
       $this->model->load();      
    }
 
-   public function ViewDisasterDetails(){
-      $this->view('ministry/disasterDetailsFormView');
-      
-      $this->view->render(); // This is how load the view
-   }
 
-   public function ViewFundDetailsModel(){ 
-      $this->model('divisionalsec/loadFundDetailsModel');
-
-      $this->model->load();
-   
-   }
   
 }

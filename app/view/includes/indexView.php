@@ -45,6 +45,25 @@ $governmentCount=0;
 $_SESSION['JoblessCount']=0;
 $joblessCount=0;
 
+// get age variations 
+
+$_SESSION['studentCount']=0;
+$studentCount=0;
+
+$_SESSION['youngsters']=0;
+$youngsters=0;
+
+$_SESSION['midagers']=0;
+$midagers=0;
+
+$_SESSION['olders']=0;
+$olders=0;
+
+
+
+
+
+
 
 
 
@@ -52,6 +71,9 @@ $joblessCount=0;
 $sql1="SELECT * From person Inner join  region ON region.regionId=person.region Where region.superRegion=$myRegion";
 $result1=$con->query($sql1);
 $res1=$result1->fetch_all(MYSQLI_ASSOC);
+
+
+// job type get for diagram
 foreach($res1 as $mydash){
 
    if($mydash['job']=="Private"){
@@ -79,6 +101,41 @@ $_SESSION['selfEmployeeCount']=$selfEmployeeCount;
 $_SESSION['governmentCount']=$governmentCount;
 
 $_SESSION['JoblessCount']=$joblessCount;
+
+// for get age variations
+foreach($res1 as $mydash){
+   $dateOfBirth=$mydash['birthDate'];
+   $today=date("y-m-d");
+   $diff=date_diff(date_create($dateOfBirth),date_create($today));
+   if($diff->format('%y')>=65){
+      // echo "high";
+      $olders++;
+   }
+   elseif ($diff->format('%y')>=25) {
+      // echo "up in 25";
+      $midagers++;
+   }
+   elseif ($diff->format('%y')>=18) {
+      // echo "up in 18";
+      $youngsters++;
+   }
+   elseif ($diff->format('%y')>=0) {
+      // echo "student";
+      $studentCount++;
+   }
+   // echo 'your'.$diff->format('%y').'years old';
+   // echo '<br>';
+
+
+}
+// store the counting in session varbles
+$_SESSION['studentCount']=$studentCount;
+
+$_SESSION['youngsters']=$youngsters;
+
+$_SESSION['midagers']=$midagers;
+
+$_SESSION['olders']=$olders;
 
 
 
@@ -108,6 +165,22 @@ $_SESSION['JoblessCount']=$joblessCount;
       <div class="box-2">
       <div class="nav_link"><B>AGE GROUP</B></div>
          <canvas id="Chart2"></canvas>
+
+
+
+         <input class="form-control details" type="hidden" id='studentCount'
+                              value="<?php echo $_SESSION['studentCount']?>" readonly></input>
+
+         <input class="form-control details" type="hidden" id='youngsters'
+                              value="<?php echo $_SESSION['youngsters']?>" readonly></input>
+
+         <input class="form-control details" type="hidden" id='midagers'
+                              value="<?php echo $_SESSION['midagers']?>" readonly></input>
+
+         <input class="form-control details" type="hidden" id='olders'
+                              value="<?php echo $_SESSION['olders']?>" readonly></input>
+
+      
       </div>
       <div class="box-3" id="box_3">
       <!-- <h1><B><?php echo $_SESSION['username']?></B></h1>
@@ -210,6 +283,15 @@ $_SESSION['JoblessCount']=$joblessCount;
 
 
    $(function () {
+      
+      var studentCount = $("#studentCount").val();
+      var youngsters = $("#youngsters").val();
+      var midagers = $("#midagers").val();
+      var olders = $("#olders").val();
+
+
+
+
       var ctx = document.getElementById('Chart2').getContext('2d');
       var chart = new Chart(ctx, {
          type: 'doughnut',
@@ -217,7 +299,7 @@ $_SESSION['JoblessCount']=$joblessCount;
             labels: ['0-18 years', '18-24 years', '25-64 years' ,'65 years and above'],
             datasets: [{
                   label: '# fund release',
-                  data: [20,30,25,40],
+                  data: [studentCount,youngsters,midagers,olders],
                   backgroundColor: [
                      '#16a085',
                      '#f1c40f',

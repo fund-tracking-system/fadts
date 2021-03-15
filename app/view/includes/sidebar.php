@@ -90,6 +90,9 @@ switch($controller){
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
+   <a href="/fadts/ministry/viewOfficerView" class="dashboard sidebar_link">
+      <span class="material-icons">person_search</span>View Officer
+   </a>
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Officer
    </a>
@@ -99,7 +102,7 @@ switch($controller){
    <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
       <span class="material-icons">create_new_folder</span>Create Fund
    </a>
-   <a href="/fadts/ministry/viewFund" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/loadFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
    </a>
    <a href="/fadts/ministry/viewAdddPeopleToFundElighibleList" class="dashboard sidebar_link">
@@ -111,7 +114,7 @@ switch($controller){
    <a href="/fadts/ministry/addDisaster" class="dashboard sidebar_link">
       <span class="material-icons">create_new_folder</span>Add New Disaster
    </a>
-   <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/loadDisasterDetailsModel" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
    <a href="#" class="dashboard sidebar_link">

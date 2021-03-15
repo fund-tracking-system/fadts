@@ -80,15 +80,19 @@
                
 
                <div class="form-row">
-                  <label for="description" class="inputLable"><b>Description:</b></label>
-                  <textarea class="form-control Input txtWidth " id="description" name="description">  </textarea>
+                  <label for="description" class="inputLable" ><b>Description:</b></label>
+                  <textarea class="form-control Input txtWidth "   id="description" name="description" >  </textarea>
+
                </div>
 
                <!-- <div class='button '> -->
 
-               <button type="submit" id="submit" name="submit" class='btn btn-primary signlebtn'>Add Disaster
-               </button>
+               <button type="submit" id="submit" name="submit" class='btn btn-primary signlebtn'>Add Disaster</button>
                <!-- </div> -->
+
+
+
+
 
 
             </fieldset>
@@ -105,5 +109,20 @@ $(document).ready(function() {
    $('#region').select2();
 });
 </script>
+
+<!-- text area -->
+<!-- <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+   });
+  </script> -->
+
+
+
+
+
+
 
 <?php include VIEW.'includes/footer.php' ?>
