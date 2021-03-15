@@ -19,36 +19,28 @@ if(isset($_POST['submit'])){
 
   if(isset($_POST['funds']))$funds = $_POST['funds'];
   else $funds="";
-//   print_r($incomeType);
-//   echo "\n";
-//   print_r($funds);
-//   exit();
-  
-  $sql = queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart, $incomeEnd,$funds);
 
-//   $sql = "SELECT nid,name,address,phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE ((birthDate BETWEEN '1940-01-01' AND '1980-01-01') AND (disordered = 'yes') AND (civilStatus = 1) AND (job = 'government' OR job = 'retired') AND (monthlyIncome BETWEEN 4000 AND 60000) AND (predefinedFundId = 10 OR predefinedFundId = 6))";
+  $sql = queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart, $incomeEnd,$funds);
   $stmt = mysqli_stmt_init($con);
 
   if(!mysqli_stmt_prepare($stmt,$sql)){
     mysqli_close($con);
-    header("Location:/fadts/village/victimSelect?error=db_conn_err1");
+    header("Location:/fadts/village/searchpPeople?searcherror2=db_conn_err1");
     exit();
   }else{
-    mysqli_stmt_bind_param($stmt,"ssssss",$disasterId,$personId,$totalDamage,$location,$description,$userId);
 
     if(mysqli_stmt_execute($stmt)){
-      //$disasterId = mysqli_insert_id($con); this will help you to get newly added column id
+      $result = mysqli_stmt_get_result($stmt);
+      $_SESSION['personList']=$result;
       mysqli_close($con);
-      header("Location:/fadts/village/victimSelect?error=success&disasterId=$disasterId");
+      header("Location:/fadts/village/criteriaResult");
       exit();
 
     }else{
       mysqli_close($con);
-      header("Location:/fadts/village/victimSelect?error=db_conn_err2");
+      header("Location:/fadts/village/searchpPeople?searcherror2=db_conn_err2");
       exit();
     }
-   
-
   }
 
 }else{
@@ -112,8 +104,6 @@ function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$inc
    }
 
    $query = $query.")";  
-   echo $query;
-   exit();
    return $query;
    
 }

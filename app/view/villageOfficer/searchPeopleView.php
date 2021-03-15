@@ -50,6 +50,25 @@
 
             <fieldset class="searchBar">
 
+            <?php 
+               if(isset($_GET['searcherror'])){
+         
+                  $error = $_GET['searcherror'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "wrong_region"){
+                     echo '<div class="alert alert-danger" role="alert">You can\'t view other regions data!</div>';
+                  }
+                  if($error == "wrong_nid_or_dead"){
+                     echo '<div class="alert alert-danger" role="alert">This NIC is wrong or this person does not exist!</div>';
+                  }
+                  if($error == "no_records"){
+                     echo '<div class="alert alert-danger" role="alert">No records found!</div>';
+                  }        
+               }   
+            ?>
+
                <div >
                   <label class="inputLable"><b>Age:</b></label>
                   <input class="form-control InputOne" value=18 name="ageStart"></input>
