@@ -10,37 +10,37 @@ if(isset($_POST['submit'])){
   $ageEnd = $_POST['ageEnd']; 
   $disorder = $_POST['disorder'];
   $civilStatus = $_POST['civilStatus'];
-  $incomeType = $_POST['incomeType'];
+
+  if(isset($_POST['incomeType']))$incomeType = $_POST['incomeType'];
+  else $incomeType = "";
+
   $incomeStart = $_POST['incomeStart'];
   $incomeEnd = $_POST['incomeEnd']; 
-  $funds = $_POST['funds'];
 
-  
-  $sql = queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart,          $incomeEnd,$funds);
+  if(isset($_POST['funds']))$funds = $_POST['funds'];
+  else $funds="";
 
-  $sql = "SELECT nid,name,address,phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE ((birthDate BETWEEN '1940-01-01' AND '1980-01-01') AND (disordered = 'yes') AND (civilStatus = 1) AND (job = 'government' OR job = 'retired') AND (monthlyIncome BETWEEN 4000 AND 60000) AND (predefinedFundId = 10 OR predefinedFundId = 6))";
+  $sql = queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart, $incomeEnd,$funds);
   $stmt = mysqli_stmt_init($con);
 
   if(!mysqli_stmt_prepare($stmt,$sql)){
     mysqli_close($con);
-    header("Location:/fadts/village/victimSelect?error=db_conn_err1");
+    header("Location:/fadts/village/searchpPeople?searcherror2=db_conn_err1");
     exit();
   }else{
-    mysqli_stmt_bind_param($stmt,"ssssss",$disasterId,$personId,$totalDamage,$location,$description,$userId);
 
     if(mysqli_stmt_execute($stmt)){
-      //$disasterId = mysqli_insert_id($con); this will help you to get newly added column id
+      $result = mysqli_stmt_get_result($stmt);
+      $_SESSION['personList']=$result;
       mysqli_close($con);
-      header("Location:/fadts/village/victimSelect?error=success&disasterId=$disasterId");
+      header("Location:/fadts/village/criteriaResult");
       exit();
 
     }else{
       mysqli_close($con);
-      header("Location:/fadts/village/victimSelect?error=db_conn_err2");
+      header("Location:/fadts/village/searchpPeople?searcherror2=db_conn_err2");
       exit();
     }
-   
-
   }
 
 }else{
@@ -49,33 +49,63 @@ if(isset($_POST['submit'])){
 }
  
 
-function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart,          $incomeEnd,$funds)
+function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart,$incomeEnd,$funds)
 {
    $count=0;
+   $query = "SELECT nid,name,address,phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE (";
+
    if($ageStart!="" && $ageEnd!=""){
       $ageCondition = setAge($ageStart,$ageEnd);
+
+      if($count==0) $query = $query.$ageCondition;
+      else $query = $query." AND ".$ageCondition;
+
       $count++;
    }
    if($disorder!=""){
       $disorderCondition = "(disordered = $disorder)";
+
+      if($count==0) $query = $query.$disorderCondition;
+      else $query = $query." AND ".$disorderCondition;
+
       $count++;
    }
    if($civilStatus!=""){
       $civilStatusCondition = "(civilStatus = $civilStatus)";
+
+      if($count==0) $query = $query.$civilStatusCondition;
+      else $query = $query." AND ".$civilStatusCondition;
+
       $count++;
    }
    if(!empty($incomeType)){
       $incomeTypeCondition = setIncomeType($incomeType);
+
+      if($count==0) $query = $query.$incomeTypeCondition;
+      else $query = $query." AND ".$incomeTypeCondition;
+
       $count++;
    }
    if($incomeStart!="" && $incomeEnd!=""){
-      setIncomeValue($incomeStart,$incomeEnd);
+      $incomeValueCondition = setIncomeValue($incomeStart,$incomeEnd);
+
+      if($count==0) $query = $query.$incomeValueCondition;
+      else $query = $query." AND ".$incomeValueCondition;
+
       $count++;
    }
    if(!empty($funds)){
-      setAge($ageStart,$ageEnd);
-      $count++;
+      $fundsCondiion = setFunds($funds);
+
+      if($count==0) $query = $query.$fundsCondiion;
+      else $query = $query." AND ".$fundsCondiion;
+
+      // $count++;
    }
+
+   $query = $query.")";  
+   return $query;
+   
 }
 
 function setAge($ageStart,$ageEnd){
@@ -103,6 +133,10 @@ function setAge($ageStart,$ageEnd){
 function setIncomeType($incomeType){
    
    $string = "(";
+
+   // $ait = new ArrayIterator($incomeType);
+   $incomeType = new CachingIterator($incomeType);
+
    foreach ($incomeType as $value){
       
       $string = $string." job = '".$value."'";  
@@ -139,8 +173,23 @@ function setIncomeValue($incomeStart,$incomeEnd){
 
    return $incomeValueCondition;
 }
-function setFunds(){
+function setFunds($funds){
 
+   $string = "(";
+
+    // $ait = new ArrayIterator($incomeType);
+    $funds = new CachingIterator($funds);
+
+   foreach ($funds as $value){
+      
+      $string = $string." predefinedFundId = ".$value;  
+      if($funds->hasNext()) {
+         $string = $string." OR ";
+      }else{
+         $string = $string.")";
+      }
+  }
+  return $string;
 }
 
 

@@ -13,25 +13,31 @@ class villageController extends Controller{
       $this->model->load();
    }
 
+   public function searchPeople(){
+      $this->view('villageOfficer/searchPeopleView');
+      
+      $this->view->render(); // This is how render the view of searching people data
+   }
+
+   public function searchViewLoadModel(){
+      $this->model('villageOfficer/searchViewLoadModel');
+      
+      $this->model->load(); // This is how load the model 
+   }
 
    public function nicSearchModel(){
       $this->model('villageOfficer/nicSearchModel');
 
       $this->model->load();
    }
-   
-   public function searchViewLoadModel(){
-      $this->model('villageOfficer/searchViewLoadModel');
-      
-      $this->model->load(); // This is how load the view
+   public function criteriaSearchModel(){
+      $this->model('villageOfficer/criteriaSearchModel');
+
+      $this->model->load();
    }
 
-   public function searchPeople(){
-      $this->view('villageOfficer/searchPeopleView');
-      
-      $this->view->render(); // This is how load the view
-   }
    
+
    public function ViewDisasterDetails(){
       $this->view('villageOfficer/disasterDetailsView');
       
@@ -44,6 +50,8 @@ class villageController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
+
+   
    public function addDisasterVictim(){
       $this->view('villageOfficer/addDisasterVictimsViews'); 
       

@@ -68,7 +68,6 @@
                      if($data['superRegion']==$_SESSION['region']){
                         // echo "<option value='$data['regionid']'>colombo</option>";
                         echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-
                      }
                   }
                   ?>
