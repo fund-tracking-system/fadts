@@ -78,7 +78,12 @@
 
 <script>
 $(document).ready(function() {
-    $("#resultTable").DataTable();
+    $("#resultTable").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+        'print','pdf'
+    ]
+    });
 });
 </script>
 

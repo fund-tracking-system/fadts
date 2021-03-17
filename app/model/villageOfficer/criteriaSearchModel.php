@@ -1,5 +1,5 @@
 <?php
-     // store results in session varibles 
+
 session_start();
 
 if(isset($_POST['submit'])){
@@ -11,16 +11,17 @@ if(isset($_POST['submit'])){
   $disorder = $_POST['disorder'];
   $civilStatus = $_POST['civilStatus'];
 
-  if(isset($_POST['incomeType']))$incomeType = $_POST['incomeType'];
+  if(isset($_POST['incomeType'])) $incomeType = $_POST['incomeType'];
   else $incomeType = "";
 
   $incomeStart = $_POST['incomeStart'];
   $incomeEnd = $_POST['incomeEnd']; 
 
-  if(isset($_POST['funds']))$funds = $_POST['funds'];
+  if(isset($_POST['funds'])) $funds = $_POST['funds'];
   else $funds="";
 
   $sql = queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart, $incomeEnd,$funds);
+
   $stmt = mysqli_stmt_init($con);
 
   if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -30,7 +31,11 @@ if(isset($_POST['submit'])){
   }else{
 
     if(mysqli_stmt_execute($stmt)){
+
       $result = mysqli_stmt_get_result($stmt);
+      $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+      // print_r($result);
+      // exit();
       $_SESSION['personList']=$result;
       mysqli_close($con);
       header("Location:/fadts/village/criteriaResult");
@@ -51,56 +56,43 @@ if(isset($_POST['submit'])){
 
 function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart,$incomeEnd,$funds)
 {
-   $count=0;
-   $query = "SELECT nid,name,address,phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE (";
+
+   $region=$_SESSION['region'];
+
+   if(!empty($funds)){
+      $fundsCondiion = setFunds($funds);
+      $query = "SELECT person.personId,nid,name,address,phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE ((region = $region)";
+      
+      $query = $query." AND ".$fundsCondiion;
+
+   }else{
+      $query = "SELECT person.personId,nid,name,address,phone FROM person WHERE ((region = $region)";
+   }
 
    if($ageStart!="" && $ageEnd!=""){
       $ageCondition = setAge($ageStart,$ageEnd);
 
-      if($count==0) $query = $query.$ageCondition;
-      else $query = $query." AND ".$ageCondition;
-
-      $count++;
+      $query = $query." AND ".$ageCondition;
    }
    if($disorder!=""){
       $disorderCondition = "(disordered = $disorder)";
 
-      if($count==0) $query = $query.$disorderCondition;
-      else $query = $query." AND ".$disorderCondition;
-
-      $count++;
+      $query = $query." AND ".$disorderCondition;
    }
    if($civilStatus!=""){
       $civilStatusCondition = "(civilStatus = $civilStatus)";
 
-      if($count==0) $query = $query.$civilStatusCondition;
-      else $query = $query." AND ".$civilStatusCondition;
-
-      $count++;
+      $query = $query." AND ".$civilStatusCondition;
    }
    if(!empty($incomeType)){
       $incomeTypeCondition = setIncomeType($incomeType);
 
-      if($count==0) $query = $query.$incomeTypeCondition;
-      else $query = $query." AND ".$incomeTypeCondition;
-
-      $count++;
+      $query = $query." AND ".$incomeTypeCondition;
    }
    if($incomeStart!="" && $incomeEnd!=""){
       $incomeValueCondition = setIncomeValue($incomeStart,$incomeEnd);
 
-      if($count==0) $query = $query.$incomeValueCondition;
-      else $query = $query." AND ".$incomeValueCondition;
-
-      $count++;
-   }
-   if(!empty($funds)){
-      $fundsCondiion = setFunds($funds);
-
-      if($count==0) $query = $query.$fundsCondiion;
-      else $query = $query." AND ".$fundsCondiion;
-
-      // $count++;
+      $query = $query." AND ".$incomeValueCondition;
    }
 
    $query = $query.")";  
@@ -124,7 +116,7 @@ function setAge($ageStart,$ageEnd){
    $start = $year - $ageEnd;
    $end = $year - $ageStart;
 
-   $ageCondition = "( birthDate BETWEEN $start-$monthDay AND $end-$monthDay )";
+   $ageCondition = "(birthDate BETWEEN '$start-$monthDay' AND '$end-$monthDay')";
 
    return $ageCondition;
 }
@@ -134,7 +126,7 @@ function setIncomeType($incomeType){
    
    $string = "(";
 
-   // $ait = new ArrayIterator($incomeType);
+   $incomeType = new ArrayIterator($incomeType);
    $incomeType = new CachingIterator($incomeType);
 
    foreach ($incomeType as $value){
@@ -177,8 +169,8 @@ function setFunds($funds){
 
    $string = "(";
 
-    // $ait = new ArrayIterator($incomeType);
-    $funds = new CachingIterator($funds);
+   $funds = new ArrayIterator($funds);
+   $funds = new CachingIterator($funds);
 
    foreach ($funds as $value){
       
