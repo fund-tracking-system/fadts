@@ -62,7 +62,7 @@
                   
                   $_SESSION['region_result']=$res;  //for assign region  ?>
 
-                  <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
+                  <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:540px;'>
                   <?php 
                   foreach($res as $data){
                      if($data['superRegion']==$_SESSION['region']){

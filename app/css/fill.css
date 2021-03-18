@@ -116,7 +116,7 @@ h5 {
 }
 
 .form-control.InputTwo {
-    margin-left: 810px;
+    margin-left:740px;
     width: 150px;
     margin-top: -30px;
     margin-bottom: 50px;
@@ -127,7 +127,7 @@ h5 {
 }
 
 .inputLable.LableTwo {
-    margin-left: 640px;
+    margin-left: 580px;
     margin-top: -80px;
 }
 .btn.siz{
@@ -189,7 +189,7 @@ h5 {
     margin-left: 350px;
     margin-bottom: 50px;
     margin-right: 150px;
-    margin-top: -4%;
+    margin-top: -2.8%;
 }
 
 .form-control.details {

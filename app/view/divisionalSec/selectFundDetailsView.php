@@ -16,7 +16,10 @@
                         <h2 style="margin-bottom:30px;"> FUND DETAILS ANALISYS</h2>
 
                         
+
 				<h2><?php echo  $_SESSION['SelectFundName'];?></h2>
+
+                <h3><a href="/fadts/divisional/recipeintView">Reecipient List</a></h3>
 				
                        
 

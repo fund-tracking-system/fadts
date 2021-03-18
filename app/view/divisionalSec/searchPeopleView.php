@@ -31,7 +31,7 @@
                   <label class="inputLable"><b>Age:</b></label>
                   <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
                         to</b></span>
-                  <input class="form-control InputTwo" name="age2"></input>
+                  <input class="form-control InputTwo" style="margin-left:810px;" name="age2"></input>
                </div>
 
                <div class="form-row" style=margin-left:10px;>
@@ -83,7 +83,7 @@
                   <label class="inputLable"><b>Gross Income:</b></label>
                   <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
                      <b> to</b></span>
-                  <input class="form-control InputTwo" name="income2 "></input>
+                  <input class="form-control InputTwo" style= "margin-left:800px;" name="income2 "></input>
 
                </div>
 
