@@ -117,7 +117,7 @@ $dec=0;
 foreach($resl as  $data){
    $date=$data['publishedTime'];
    $month = date("m",strtotime($date));
-   echo $month;
+   // echo $month;
    if($month ==1){
       $jan=$jan+$data['amountPerPerson'];
    }
@@ -463,8 +463,8 @@ $_SESSION['olders']=$olders;
             datasets: [{
                   label: 'Fund Distribution',
                   data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
-                  backgroundColor:'#4cd84c',
-                  hoverBackgroundColor:'#00FF00',
+                  backgroundColor:'#668cff',
+                  hoverBackgroundColor:'#698CD1',
                   // borderColor:'#00FF00',
                   borderWidth: 2
             }]
