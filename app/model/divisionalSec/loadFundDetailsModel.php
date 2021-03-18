@@ -38,7 +38,7 @@ $_SESSION['provincialRegion']=$data2['superRegion'];
 
 $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
 
-echo$_SESSION['provincialRegion'];
+$_SESSION['provincialRegion'];
 
 
 
@@ -49,17 +49,17 @@ echo$_SESSION['provincialRegion'];
         $result=$con->query($sql);
         $res=$result->fetch_all(MYSQLI_ASSOC); 
         $_SESSION['fundList']=$res;
-        var_dump($res);
+        //var_dump($res);
        
 
 
 echo '<br>';
-echo "ashva";
+//echo "ashva";
 
 
 
 
-header("Location:/fadts/divisional/fundDetailsSelectView"); 
+//header("Location:/fadts/divisional/fundDetailsSelectView"); 
 }
 
 ?>

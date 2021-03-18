@@ -116,7 +116,7 @@ h5 {
 }
 
 .form-control.InputTwo {
-    margin-left:740px;
+    margin-left: 810px;
     width: 150px;
     margin-top: -30px;
     margin-bottom: 50px;
@@ -127,7 +127,7 @@ h5 {
 }
 
 .inputLable.LableTwo {
-    margin-left: 580px;
+    margin-left: 640px;
     margin-top: -80px;
 }
 .btn.siz{
@@ -189,7 +189,7 @@ h5 {
     margin-left: 350px;
     margin-bottom: 50px;
     margin-right: 150px;
-    margin-top: -2.8%;
+    margin-top: -4%;
 }
 
 .form-control.details {
@@ -2064,7 +2064,7 @@ ul.tabs li.current {
 .box7 {
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(20, 134, 241),#9bb8eb);
+    background-image: linear-gradient(  rgb(40, 221, 40),#9bb8eb);
     /*background: rgb(20, 134, 241);*/
     margin: 5px;
     grid-row: 3/4;

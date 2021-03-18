@@ -140,7 +140,7 @@ $(document).ready(function() {
             datasets: [{
                   label: 'Disaster Distribution',
                   data: [100,200,400,300,250,140,370,200,300,200,100,70],
-                  backgroundColor:'#9bb8eb',
+                  backgroundColor:'#c9e5f2',
                   hoverBackgroundColor:'#102240',
                   borderColor:'#3c79e6',
                   borderWidth: 3
