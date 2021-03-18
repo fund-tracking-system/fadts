@@ -189,16 +189,6 @@ class ministryController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-
-
-
-   //view people
-
-   public function searchPeople(){
-      $this->view('ministry/searchPeopleView');
-      
-      $this->view->render(); // This is how load the view
-   }
    
    public function ViewAddNewDisaster(){
       $this->view('ministry/addNewDisasterView');
@@ -216,6 +206,16 @@ class ministryController extends Controller{
       $this->model('ministry/addDisasterModel');
 
       $this->model->load();      
+   }
+
+
+
+   //view people
+
+   public function searchPeople(){
+      $this->view('ministry/searchPeopleView');
+      
+      $this->view->render(); // This is how load the view
    }
   
 }
