@@ -102,7 +102,7 @@ switch($controller){
    <a href="/fadts/ministry/loadFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
    </a>
-   <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/createFundView" class="dashboard sidebar_link">
       <span class="material-icons">create_new_folder</span>Create Fund
    </a>   
    <a href="/fadts/ministry/viewEligibilityView" class="dashboard sidebar_link">

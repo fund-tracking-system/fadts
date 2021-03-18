@@ -96,6 +96,34 @@ class ministryController extends Controller{
       $this->model->load(); // This is how load the model
    }
 
+   
+
+   //create fund section
+ 
+   public function createFundView(){
+      $this->view('ministry/createFundView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function createFundModel(){ 
+      $this->model('ministry/createFundModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   public function createFundSaveModel(){ 
+      $this->model('ministry/createFundSaveModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   
+
+   //--------------------------------------------------------------------------------------------------------------------------------------------
+   //end of my functions
+   //--------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
    //add to eligibility section
@@ -105,12 +133,6 @@ class ministryController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
-
-   
-
-   //--------------------------------------------------------------------------------------------------------------------------------------------
-   //end of my functions
-   //--------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -174,12 +196,6 @@ class ministryController extends Controller{
 
    public function searchPeople(){
       $this->view('ministry/searchPeopleView');
-      
-      $this->view->render(); // This is how load the view
-   }
- 
-   public function ViewCreateFund(){
-      $this->view('ministry/createFundView');
       
       $this->view->render(); // This is how load the view
    }
