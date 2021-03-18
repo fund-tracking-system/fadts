@@ -885,6 +885,40 @@ window.onload = calendar;
    
 ?>
 
+      <?php 
+
+         
+   $myRegion=$_SESSION['region'];
+   $lowIncome=0;
+   $midIncome=0;
+   $highIncome=0;
+   $_SESSION['lowIncome']=0;
+   $_SESSION['midIncome']=0;
+   $_SESSION['highIncome']=0;
+
+      $sql1="SELECT * From person";
+      $result1=$con->query($sql1);
+      $res1=$result1->fetch_all(MYSQLI_ASSOC);
+
+      foreach($res1 as $data){
+         if($data['monthlyIncome']>=100000){
+            $highIncome++;
+         }
+         elseif($data['monthlyIncome']>=30000){
+            $midIncome++;
+         }
+         else{
+            $lowIncome++;
+         }
+      }
+      $_SESSION['lowIncome']=$lowIncome;
+      $_SESSION['midIncome']=$midIncome;
+      $_SESSION['highIncome']=$highIncome;
+      
+      ?>
+
+
+
 <div class="divisionDashboard">
    <div class="grid_box">
       <div class="box-1">
@@ -954,6 +988,13 @@ window.onload = calendar;
 
 
    $(function () {
+
+
+      var lowIncome=<?php  echo $_SESSION['lowIncome'];?>;
+      var highIncome=<?php echo $_SESSION['highIncome'];?>;
+      var midIncome=<?php echo $_SESSION['midIncome'];?>;
+
+
       var ctx = document.getElementById('Chart1').getContext('2d');
       var chart = new Chart(ctx, {
          type: 'doughnut',
@@ -961,7 +1002,7 @@ window.onload = calendar;
             labels: ['Law Income', 'Middle Income','High Income',],
             datasets: [{
                   label: '# fund release',
-                  data: [20,5,25],
+                  data: [lowIncome,midIncome,highIncome],
                   backgroundColor: [
                      '#16a085',
                      '#f1c40f',
