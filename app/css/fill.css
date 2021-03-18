@@ -2014,7 +2014,8 @@ ul.tabs li.current {
     
     text-align: center;
     color: #E2F3FB;
-    background: rgb(18, 164, 212);
+    background-image: linear-gradient( rgb(18, 164, 212),#9bb8eb);
+    /*background: rgb(18, 164, 212);*/
     margin: 5px;
     grid-row: 1/2;
     grid-column: 4/5;
@@ -2023,7 +2024,8 @@ ul.tabs li.current {
 .box3 {
     text-align: center;
     color: #E2F3FB;
-    background: rgb(4, 110, 57);
+    background-image: linear-gradient(  rgb(4, 110, 57),#67e792);
+    /*background: rgb(4, 110, 57);*/
     margin: 5px;
     grid-row: 1/2;
     grid-column: 5/6;
@@ -2032,7 +2034,8 @@ ul.tabs li.current {
 .box4 {
     text-align: center;
     color: #E2F3FB;
-    background: rgb(69, 69, 70);
+    background-image: linear-gradient(  rgb(69, 69, 70),#b8bbbe);
+    /*background: rgb(69, 69, 70);*/
     margin: 5px;
     grid-row: 2/3;
     grid-column: 4/5;
@@ -2041,7 +2044,8 @@ ul.tabs li.current {
 .box5 {
     text-align: center;
     color: #E2F3FB;
-    background:rgb(27, 233, 164);
+    background-image: linear-gradient( #e4730a,#f1cf0d);
+    /*ackground:rgb(27, 233, 164);*/
     margin: 5px;
     grid-row: 2/3;
     grid-column: 5/6;
@@ -2050,7 +2054,8 @@ ul.tabs li.current {
 .box6 {
     text-align: center;
     color: #E2F3FB;
-    background: rgb(131, 125, 212);
+    background-image: linear-gradient( #6c26c7,#9bb8eb);
+    /*background: #6c26c7;*/
     margin: 5px;
     grid-row: 3/4;
     grid-column: 4/5;
@@ -2059,7 +2064,8 @@ ul.tabs li.current {
 .box7 {
     text-align: center;
     color: #E2F3FB;
-    background: rgb(20, 134, 241);
+    background-image: linear-gradient(  rgb(20, 134, 241),#9bb8eb);
+    /*background: rgb(20, 134, 241);*/
     margin: 5px;
     grid-row: 3/4;
     grid-column: 5/6;
@@ -2067,13 +2073,15 @@ ul.tabs li.current {
 
 .box8 {
     text-align: center;
-    background: rgb(49, 185, 235);
+    /*background: rgb(49, 185, 235);*/
+    background-image: linear-gradient(#3c79e6,#9bb8eb);
     margin: 5px;
     grid-row: 4/5;
     grid-column: 4/6;
     display: flex;
 	align-items: center;
-	justify-content: space-around;
+    justify-content: space-around;
+    
     
 }
 
@@ -2087,13 +2095,14 @@ ul.tabs li.current {
 }
 
 .fontwhite{
-    color: #E0E0E0;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
 }
 
 .dashboard-title {
     color: white;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
     margin: 5px;
 }
