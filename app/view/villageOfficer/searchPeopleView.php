@@ -66,7 +66,7 @@
                   if($error == "no_records"){
                      echo '<div class="alert alert-danger" role="alert">No records found!</div>';
                   }        
-               }   
+               }    
             ?>
 
                <div >
@@ -95,23 +95,7 @@
                   </select>
                </div>
 
-               <div class='form-row'>
-                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type / (s) :
-                  </label>
-                  <select class="js-example-responsive" multiple="multiple"
-                     style='top:60px; overflow:scroll; padding-right:510px;' id="incomeType" name="incomeType[]">
-
-                     <?php 
-                     foreach($_SESSION['incomeTypes'] as $incomeType){ ?>
-
-                     <option value="<?php echo $incomeType['id']?>"><?php echo $incomeType['type']?></option>
-
-                     <?php    } 
-                     unset($_SESSION['incomeTypes']); ?>
-
-                  </select>
-               </div>
-               <input hidden disabled></input>
+              
 
                <div>
                   <label class="inputLable"><b>Gross Income (Rs):</b></label>
@@ -125,7 +109,7 @@
                   <label class="inputLable" style="margin-right:22%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='top:60px; overflow:scroll; padding-right:510px;' id="funds" name="funds[]">
+                     style='top:60px; overflow:scroll; padding-right:525px;' id="funds" name="funds[]">
 
                      <?php 
                      foreach($_SESSION['fundList'] as $fund){ ?>
@@ -134,6 +118,25 @@
 
                      <?php    } 
                      unset($_SESSION['fundList']); ?>
+
+                  </select>
+               </div>
+               <input hidden disabled></input>
+
+
+               <div class='form-row' style="margin-top:50px;">
+                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type / (s) :
+                  </label>
+                  <select class="js-example-responsive" multiple="multiple"
+                     style='top:60px; overflow:scroll; padding-right:525px;' id="incomeType" name="incomeType[]">
+
+                     <?php 
+                     foreach($_SESSION['incomeTypes'] as $incomeType){ ?>
+
+                     <option value="<?php echo $incomeType['id']?>"><?php echo $incomeType['type']?></option>
+
+                     <?php    } 
+                     unset($_SESSION['incomeTypes']); ?>
 
                   </select>
                </div>
