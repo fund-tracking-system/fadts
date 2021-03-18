@@ -35,7 +35,23 @@ class villageController extends Controller{
 
       $this->model->load();
    }
+   public function criteriaResult(){
+      $this->view('villageOfficer/criteriaResultView');
+      
+      $this->view->render();
+   }
+    
 
+   public function personDetails(){
+      $this->view('villageOfficer/personDetailsView');
+      
+      $this->view->render();
+   }
+   public function personDetailsModel(){
+      $this->model('villageOfficer/personDetailsModel'); 
+      
+      $this->model->load(); 
+   }
    
 
    public function ViewDisasterDetails(){
@@ -124,16 +140,7 @@ class villageController extends Controller{
 
 
 
-   public function personDetails(){
-      $this->view('villageOfficer/personDetailsView');
-      
-      $this->view->render();
-   }
-   public function personDetailsModel(){
-      $this->model('villageOfficer/personDetailsModel'); 
-      
-      $this->model->load(); // This is how load the view
-   }
+   
 
     
 }

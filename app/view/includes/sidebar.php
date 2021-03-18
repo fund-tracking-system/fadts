@@ -99,11 +99,14 @@ switch($controller){
    <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person</span>Update Officer
    </a>
-   <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
-      <span class="material-icons">create_new_folder</span>Create Fund
-   </a>
    <a href="/fadts/ministry/loadFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
+   </a>
+   <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
+      <span class="material-icons">create_new_folder</span>Create Fund
+   </a>   
+   <a href="/fadts/ministry/viewEligibilityView" class="dashboard sidebar_link">
+      <span class="material-icons">menu_book</span>View Eligibility
    </a>
    <a href="/fadts/ministry/viewAdddPeopleToFundElighibleList" class="dashboard sidebar_link">
       <span class="material-icons">group_add</span>Add To Eligibility

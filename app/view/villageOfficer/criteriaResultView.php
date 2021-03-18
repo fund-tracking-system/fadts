@@ -18,24 +18,27 @@
                                     <th><B>NIC Number</B></th>
                                     <th><B>Name</B></th>
                                     <th><B>Address</B></th>
-                                    <th><B>Phone Num.</B></th>
+                                    <th><B>Contact</B></th>
                                     <th><B>View</B></th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <?php foreach($_SESSION['personList'] as $person){ ?>
+                                <?php foreach($_SESSION['personList'] as $person){ 
+                                    $pid = $person['personId'];
+                                ?>
                                  <tr>
-                                    <td><B style="margin-left:30%;"><?php echo $person['id']?></B></input>
+                                    <td><B style="margin-left:30%;"><?php echo $person['nid']?></B></input>
                                     </td>
                                     <td><B style="margin-left:30%;"><?php echo $person['name']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $person['address']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $person['phone'] ?></B></td>
-                                    <td><a href="/fadts/village/victimSelect?disasterId=<?php echo $disaster['disasterId'] ?>"
-                                            class="btn btn-primary" style="margin-left:20%;"><B>ADD VICTIM</B></a>
+                                    <td><B style="margin-left:30%;"><?php echo $person['phone']?></B></td>
+                                    
+                                    <td><a href="/fadts/village/personDetailsModel?pid=<?php echo $pid ?>&view=criteriaResult" class="btn btn-primary" style="margin-left:20%">VIEW</a>
                                     </td>
+                                    </form>
                                 </tr>
-                                <?php    } unset($_SESSION['personList']); ?>
+                                <?php    } //unset($_SESSION['personList']); ?>
 
                             </tbody>
 
@@ -54,7 +57,12 @@
 
 <script>
 $(document).ready(function() {
-    $("#resultTable").DataTable();
+    $("#resultTable").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+        'print','pdf'
+    ]
+    });
 });
 </script>
 
