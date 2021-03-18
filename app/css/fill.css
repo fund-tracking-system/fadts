@@ -2088,12 +2088,12 @@ ul.tabs li.current {
 
 .fontwhite{
     color: #E0E0E0;
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .dashboard-title {
     color: white;
     font-size: 25px;
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 5px;
 }
