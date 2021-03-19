@@ -38,7 +38,7 @@
                             $_SESSION['region_result']=$res;  //for assign region  
                         ?>
 
-                        <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky; top:60px; overflow:scroll; width:550px;'>                        
+                        <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky; top:60px; overflow:scroll; width:53%;'>                        
                             <?php 
                                 foreach($res as $data){                     
                                 //echo "<option value='$data['regionid']'>colombo</option>";
