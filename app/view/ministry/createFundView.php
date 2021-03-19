@@ -19,8 +19,33 @@
                     </div>
 
                     <div class="form-row">
-                        <label for="description" class="inputLable" ><b>Description:</b></label>
-                        <textarea class="form-control Input txtWidth" id="description" name="description" ></textarea>
+                        <label for="description" class="inputLable"><b>Description:</b></label>
+                        <textarea class="form-control Input txtWidth" id="description" name="description"></textarea>
+                    </div>
+
+                    <!-- <div class="form-row" style="margin-bottom:50px;"> -->
+                    <div class="form-row">
+                        <!-- <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region:</b></label> -->
+                        <label for="region[]" class="inputLable"><b>Region:</b></label>
+
+                        <?php
+                            require 'connection.php'; 
+                                            
+                            $rgn="SELECT level, regionid, superRegion,name FROM region WHERE level != 4";
+                            $rgnRes=$con->query($rgn) ;
+                            $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                            
+                            $_SESSION['region_result']=$res;  //for assign region  
+                        ?>
+
+                        <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky; top:60px; overflow:scroll; width:530px;'>                        
+                            <?php 
+                                foreach($res as $data){                     
+                                //echo "<option value='$data['regionid']'>colombo</option>";
+                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';                        
+                                }
+                            ?>
+                        </select>
                     </div>
 
                     <div class='buttons'>
@@ -31,5 +56,11 @@
         </form>
     </div>
 </div>
+
+<script>
+$(document).ready(function() {
+   $('#region').select2();
+});
+</script>
 
 <?php include VIEW.'includes/footer.php'?>
