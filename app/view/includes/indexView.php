@@ -64,6 +64,111 @@ $olders=0;
 
 
 
+$myRegion=$_SESSION['region'];
+$myRegion;
+
+
+//select district Region  
+
+$sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
+$result1=$con->query($sql1);
+$res1=$result1->fetch_all(MYSQLI_ASSOC);
+
+foreach($res1 as $data1){ 
+$_SESSION['districtRegion']=$data1['superRegion'];
+
+}
+$districtRegion= $_SESSION['districtRegion'];                   //  save district region
+
+
+//select provincial  Region
+$sql2="SELECT superRegion  From region Where region.regionId= $districtRegion";
+$result2=$con->query($sql2);
+$res2=$result2->fetch_all(MYSQLI_ASSOC);
+foreach($res2 as $data2){ 
+$_SESSION['provincialRegion']=$data2['superRegion'];
+
+}
+
+
+$provincialRegion= $_SESSION['provincialRegion'];
+
+
+
+
+
+$sql4="SELECT region.name,amountPerPerson,publishedTime from fund   inner join recipient ON recipient.fundId=fund.fundId inner join person ON person.personId=recipient.personId  inner join region ON person.region=region.regionId where region.superRegion=$myRegion";
+$results=$con->query($sql4);
+$resl=$results->fetch_all(MYSQLI_ASSOC);
+
+$jan=0;
+$feb=0;
+$march=0;
+$april=0;
+$may=0;
+$june=0;
+$july=0;
+$august=0;
+$september=0;
+$oct=0;
+$nove=0;
+$dec=0;
+
+foreach($resl as  $data){
+   $date=$data['publishedTime'];
+   $month = date("m",strtotime($date));
+   // echo $month;
+   if($month ==1){
+      $jan=$jan+$data['amountPerPerson'];
+   }
+   if($month ==2){
+      $feb=$feb+$data['amountPerPerson'];
+   }
+   if($month ==3){
+      $march=$march+$data['amountPerPerson'];
+   }
+   if($month ==4){
+      $april=$april+$data['amountPerPerson'];
+   }
+   if($month ==5){
+      $may=$may+$data['amountPerPerson'];
+   }
+   if($month ==6){
+      $june=$june+$data['amountPerPerson'];
+   }
+   if($month ==7){
+      $july=$july+$data['amountPerPerson'];
+   }
+   if($month ==8){
+      $august=$august+$data['amountPerPerson'];
+   }
+   if($month ==9){
+      $september=$september+$data['amountPerPerson'];
+   }
+   if($month ==10){
+      $oct=$oct+$data['amountPerPerson'];
+   }
+   if($month ==11){
+      $nove=$nove+$data['amountPerPerson'];
+   }
+   if($month ==12){
+      $dec=$dec+$data['amountPerPerson'];
+   }
+}
+$_SESSION['jan']=$jan;
+$_SESSION['feb']=$feb;
+$_SESSION['march']=$march;
+$_SESSION['may']=$may;
+$_SESSION['april']=$april;
+$_SESSION['june']=$june;
+$_SESSION['july']=$july;
+$_SESSION['august']=$august;
+$_SESSION['september']=$september;
+$_SESSION['october']=$oct;
+$_SESSION['november']=$nove;
+$_SESSION['december']=$dec;
+
+// var_dump($resl);
 
 
 
@@ -334,6 +439,19 @@ $_SESSION['olders']=$olders;
 
 
   $(function () {
+
+   var jan=<?php echo $_SESSION['jan'];?>;
+   var feb=<?php echo $_SESSION['feb'];?>;
+   var march=<?php echo $_SESSION['march'];?>;
+   var april=<?php echo $_SESSION['april'];?>;
+   var may=<?php echo $_SESSION['may'];?>;
+   var june=<?php echo $_SESSION['june'];?>;
+   var july=<?php echo $_SESSION['july'];?>;
+   var august=<?php echo $_SESSION['august'];?>;
+   var september=<?php echo $_SESSION['september'];?>;
+   var october=<?php echo $_SESSION['october'];?>;
+   var december=<?php echo $_SESSION['december'];?>;
+   var november=<?php echo $_SESSION['november'];?>;
       // ChartJS
       var ctx = document.getElementById('Chart3').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
@@ -344,9 +462,9 @@ $_SESSION['olders']=$olders;
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
                   label: 'Fund Distribution',
-                  data: [100,200,400,300,250,140,370,200,300,200],
-                  backgroundColor:'#4cd84c',
-                  hoverBackgroundColor:'#00FF00',
+                  data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
+                  backgroundColor:'#668cff',
+                  hoverBackgroundColor:'#698CD1',
                   // borderColor:'#00FF00',
                   borderWidth: 2
             }]

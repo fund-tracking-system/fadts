@@ -62,7 +62,7 @@ require 'connection.php';
 			</div>
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
-				<h1 class="dashboard-title"><?php echo  $_SESSION['regionName']?> Division Secertory </h1>
+				<h1 class="fontwhite"><?php echo  $_SESSION['regionName']?> Division Secertory </h1>
 			</div>
 		</div>
 
@@ -139,11 +139,11 @@ $(document).ready(function() {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
                   label: 'Disaster Distribution',
-                  data: [10,200,400,300,250,140,370,200,300,200,100,70],
-                //   backgroundColor:' rgb(194, 238, 252)',
-                  hoverBackgroundColor:' rgb(27, 233, 164)',
-                  borderColor:'rgb(169, 249, 252)',
-                  borderWidth: 4
+                  data: [100,200,400,300,250,140,370,200,300,200,100,70],
+                  backgroundColor:'#c9e5f2',
+                  hoverBackgroundColor:'#102240',
+                  borderColor:'#3c79e6',
+                  borderWidth: 3
             }]
          },
          options: {
