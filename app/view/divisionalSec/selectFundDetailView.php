@@ -10,11 +10,12 @@ require 'connection.php';
 
 <div class="all_bacground_clor">
 	<div class="SearchByCriteriaform1">
-	<h2 style="margin-bottom:30px;"> DISASTER DETAILS ANALISYS</h2>
+	<h2 style="margin-bottom:30px;"> FUND DETAILS ANALISYS</h2>
+    <!-- <h2><?php //echo  $_SESSION['SelectFundName'];?></h2> -->
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
-				<h1>Disaster Distribution</h1>
+				<h1><?php echo  $_SESSION['SelectFundName'];?></h1>
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
@@ -23,7 +24,7 @@ require 'connection.php';
 			</div>
 			<div class="box9">
 				<div style="display:inline-block;">
-					<a href="/fadts/divisional/disasterVictimsView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Victim List</B></a>
+					<a href="/fadts/divisional/recipeintView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Reecipient List</B></a>
 
 				</div>
 			</div>
@@ -37,32 +38,27 @@ require 'connection.php';
 			</div>
 		 -->
 			<div class="box2">
-				<h1 class="dashboard-title">Disaster Name</h1>
-				<h3 class="fontwhite" > <?php echo  $_SESSION['disasterName'];?></h3>
+				<h1 class="dashboard-title">Per Person</h1>
+				<h3 class="fontwhite" ><?php echo $_SESSION['amountPerPerson']?></h3>
 			</div>
 			<div class="box3">
-				<h1 class="dashboard-title">Disaster Type</h1>
-				<h3 class="fontwhite" ><?php echo  $_SESSION['disasterType'];?></h3>
+				<h1 class="dashboard-title">Fund Amount</h1>
+				<h3 class="fontwhite" ><?php echo $_SESSION['amountPerPerson']*$_SESSION['totalRecipients']?></h3>
 			</div>
 			<div class="box4">
-				<h1 class="dashboard-title">Disaster Date</h1>
-				<h3 class="fontwhite" ><?php echo  $_SESSION['disasterDate'];?></h3>
+				<h1 class="dashboard-title">Analyse Region</h1>
+				<h3 class="fontwhite" ><?php echo  $_SESSION['regionName']?></h3>
 			</div>
 			<div class="box5">
-				<h1 class="dashboard-title">Disaster creater</h1>
-				<h3 class="fontwhite" ><?php echo $_SESSION['userrole']?></h3>
+				<h1 class="dashboard-title">Published Day</h1>
+				<h3 class="fontwhite" ><?php echo $_SESSION['publishedTime']?></h3>
 			</div>
-			<div class="box6">
-				<h1 class="dashboard-title">Victims Amount</h1>
-				<h3 class="fontwhite" ><?php echo $_SESSION['victimsCount']?></h3>
-			</div>
-			<div class="box7">
-				<h1 class="dashboard-title">Total Damage</h1>
-				<h3 class="fontwhite" ><?php echo $_SESSION['totalDamege']?></h3>
-			</div>
+			
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
-				<h1 class="fontwhite"><?php echo  $_SESSION['regionName']?> Grama Niladharai Area </h1>
+				<h1 class="fontwhite">Delivered Amount
+                <?php echo "--------> ";?>
+                <?php echo $_SESSION['fundDelivered'] ?> Persons</h1>
 			</div>
 		</div>
 
@@ -134,43 +130,32 @@ $(document).ready(function() {
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
-         type: 'line', // The type of chart we want to create
+         type: 'pie', // The type of chart we want to create
          data: {
-            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            labels: ['Fund Delivered','Undelivered'],
             datasets: [{
-                  label: 'Disaster Distribution',
-                  data: [100,200,400,300,250,140,370,200,300,200,100,70],
-                  backgroundColor:' #c9e5f2',
-                  hoverBackgroundColor:' #102240',
+                  label: 'Fund Delivere Analysis',
+                  data: [100,200],
+                  backgroundColor: [
+                     '#16a085',
+                     '#102240',
+                     
+                  ],
+                  hoverBackgroundColor:'#3c79e6',
                   borderColor:'#3c79e6',
                   borderWidth: 2
             }]
          },
          options: {
-            scales: {
-                  yAxes: [{
-                     ticks: {
-                        beginAtZero: true
-                     },
-                     scaleLabel: {
-                            display: true,
-                            labelString: 'Damage'
-                        },
-                  }],
-                  xAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'NumberOf Victims'
-                        },
-
-                   }]
+            rotation:Math.PI*0.5,
+            animation:{
+               animatescale:true
             },
             maintainAspectRatio: false
 
          }
       }); 
-      chart.canvas.parentNode.style.height = '100%';
+     
 	});
   
 </script>

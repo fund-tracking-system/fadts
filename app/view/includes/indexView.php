@@ -465,7 +465,7 @@ $_SESSION['olders']=$olders;
                   data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                   backgroundColor:'#668cff',
                   hoverBackgroundColor:'#698CD1',
-                  // borderColor:'#00FF00',
+                  //borderColor:'#00FF00',
                   borderWidth: 2
             }]
          },

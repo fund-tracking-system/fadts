@@ -143,7 +143,7 @@ $(document).ready(function() {
                   backgroundColor:'#c9e5f2',
                   hoverBackgroundColor:'#102240',
                   borderColor:'#3c79e6',
-                  borderWidth: 3
+                  borderWidth: 2
             }]
          },
          options: {
@@ -154,14 +154,14 @@ $(document).ready(function() {
                      },
                      scaleLabel: {
                             display: true,
-                            labelString: 'Damage'
+                            labelString: 'Number of victims'
                         },
                   }],
                   xAxes: [{
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'NumberOf Victims'
+                            labelString: 'Month'
                         },
 
                    }]
