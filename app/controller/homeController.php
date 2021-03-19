@@ -39,16 +39,13 @@ class homeController extends Controller{
       $this->model->load(); 
    }
 
+   public function testmailModel(){     // This is how load the model for login
+      $this->model('home/testmail');
+      
+      $this->model->load(); 
+   }
    
 
    
-   // public function index($id='',$name=''){  Example for send data to a view
-   //    $this->view('home/loginView',[  
-   //       'name' => $name,                    
-   //       'id' => $id
-   //    ]);
-      
-   //    $this->view->render(); 
-   // }
-  
+   
 }

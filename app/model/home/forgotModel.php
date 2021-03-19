@@ -1,4 +1,5 @@
 <?php 
+use PHPMailer\PHPMailer\PHPMailer;
 
 if(isset($_POST['fogsubmit'])){
 
@@ -7,9 +8,6 @@ if(isset($_POST['fogsubmit'])){
    $token = random_bytes(32);
 
    $myurl = "localhost/fadts/home/reset?selector=".$selector."&validator=".bin2hex($token);
-   
-   // print_r($myurl);
-   // exit();
 
    $expires = date("U") + 1800;
 
@@ -63,16 +61,53 @@ if(isset($_POST['fogsubmit'])){
 
       $message = "<p>We recieved a password reset request. The link to reset your password is below. If it is not you make this request, you can ignore this email</p>";
       $message .= '<p>Here is your password reset link: </br>';
-      $message .= '<a href"' .$myurl. '">'.$myurl.'</a></p>';
+      // $message .= '<a href"' .$myurl. '">'.$myurl.'</a></p>';
+      $message .= "<a href = $myurl >$myurl</a></p>";
 
       $headers = "From: FADTS fadtsproject@gmail.com>\r\n";
       $headers .= "Reply-To: fadtsproject@gmail.com\r\n";
       $headers .= "Content-type: text/html\r\n";
 
-      mail($to,$subject,$message,'From: fadtsproject@gmail.com');
+      // mail($to,$subject,$message,'From: fadtsproject@gmail.com');
 
-      header("Location:/fadts/home/forgot?error=success");
+      // header("Location:/fadts/home/forgot?error=success");     
 
+      require_once "PHPMailer/PHPMailer.php";
+      require_once "PHPMailer/SMTP.php";
+      require_once "PHPMailer/Exception.php";
+
+      // $email="madushantjg@gmail.com";
+      $name='FADTS Admin';
+      // $subject = "Test Subject";
+      // $Message = "This is the message of new testing new new";
+      $mail = new PHPMailer();
+
+      $mail->isSMTP();
+      $mail->Host = "smtp.gmail.com";
+      $mail->SMTPAuth = true;
+      $mail->Username = "fadtsproject@gmail.com";
+      $mail->Password = 'fadts@123'; 
+      $mail->Port = 465;
+      $mail->SMTPSecure = "ssl";
+
+      $mail->isHTML(true);
+      $mail->setFrom($email,$name);
+      $mail->addAddress($email);
+      $mail->Subject = ("$email ($subject)");
+      $mail->Body = $message;
+      $mail->createHeader($headers);
+
+      if($mail->send()){
+         $status = "success";
+         $response = "Email is sent!";
+         echo $status;
+         exit();
+      }else{
+         $status = "failed";
+         $response = "Something is wrong!";
+         echo $status;
+         exit();
+      }
 
    }
    else{

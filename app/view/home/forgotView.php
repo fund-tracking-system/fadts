@@ -18,7 +18,7 @@
    <h2> FADTS | Forgot Password</h2>
    <div class="box">
       <form class="box" id="form" method="post" action="/fadts/home/forgotModel">
-         <fieldset style="padding: 35px 50px">
+         <fieldset style="padding: 30px 45px">
             <legend style="color: #218BDB"><B>Sign in to your account</B></legend>
 
             <?php
@@ -41,8 +41,10 @@
 
             <div class="form-group">
                <label for="username"><B>User NID</B></label>
-               <input type="text"  class="form-control" name="usernid" id="usernid" placeholder="Enter NID"><small>Error message</small>
+               <input type="text"  class="form-control" name="usernid" id="usernid" placeholder="Enter NID">
+               <small>Error message</small>
             </div>
+            
             <div class="form-group">
                <label for="email"><B>Email</B></label>
                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email">
