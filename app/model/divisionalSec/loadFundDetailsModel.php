@@ -59,7 +59,7 @@ echo '<br>';
 
 
 
-//header("Location:/fadts/divisional/fundDetailsSelectView"); 
+header("Location:/fadts/divisional/fundDetailsSelectView"); 
 }
 
 ?>
