@@ -34,8 +34,6 @@ if(isset($_POST['submit'])){
 
       $result = mysqli_stmt_get_result($stmt);
       $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
-      // print_r($result);
-      // exit();
       $_SESSION['personList']=$result;
       mysqli_close($con);
       header("Location:/fadts/village/criteriaResult");

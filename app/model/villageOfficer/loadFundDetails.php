@@ -13,8 +13,8 @@ $myRegion=$_SESSION['region'];
 
   foreach($res1 as $data1){ 
   $_SESSION['divisionalRegion']=$data1['superRegion'];
-
   }
+  
   $divisionalRegion= $_SESSION['divisionalRegion'];                   //  save Divisional region
 
 

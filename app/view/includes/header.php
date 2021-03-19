@@ -106,8 +106,6 @@
                 <li><a href="/fadts/includes/index" class="nav_link"><B>Home</B></a></li>
 
                 <li><a href="/fadts/calender/calender" class="nav_link"><B>Calender</B></a></li>
-               
-   
 
                 <li><a href="/fadts/includes/userProfile" class="nav_link"><B>Profile</B></a></li>
 
