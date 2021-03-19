@@ -26,7 +26,7 @@
                     <!-- <div class="form-row" style="margin-bottom:50px;"> -->
                     <div class="form-row">
                         <!-- <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region:</b></label> -->
-                        <label for="region[]" class="inputLable"><b>Region:</b></label>
+                        <label for="region[]" class="inputLable" style="margin-right:285px;"><b>Region:</b></label>
 
                         <?php
                             require 'connection.php'; 
@@ -38,7 +38,7 @@
                             $_SESSION['region_result']=$res;  //for assign region  
                         ?>
 
-                        <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky; top:60px; overflow:scroll; width:530px;'>                        
+                        <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky; top:60px; overflow:scroll; width:550px;'>                        
                             <?php 
                                 foreach($res as $data){                     
                                 //echo "<option value='$data['regionid']'>colombo</option>";
@@ -48,7 +48,7 @@
                         </select>
                     </div>
 
-                    <div class='buttons'>
+                    <div class='buttons' style="margin-top:50px;">
                         <button type="submit" name= "submit" class='btn btn-primary signlebtn'>Next</button> 
                     </div>
                 </fieldset>    
