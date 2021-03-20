@@ -149,7 +149,7 @@ $(document).ready(function() {
                      '#102240',
                      
                   ],
-                  hoverBackgroundColor:'#3c79e6',
+                  hoverBackgroundColor:'rgb(18, 164, 212)',
                   borderColor:'#3c79e6',
                   borderWidth: 2
             }]

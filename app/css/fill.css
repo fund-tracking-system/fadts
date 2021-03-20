@@ -2076,7 +2076,7 @@ ul.tabs li.current {
 .box67{
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(40, 221, 40),#9bb8eb);
+    background-image: linear-gradient( #6c26c7,#9bb8eb);
     /*background: rgb(20, 134, 241);*/
     margin: 5px;
     grid-row: 3/4;
