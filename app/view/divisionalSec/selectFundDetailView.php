@@ -10,7 +10,7 @@ require 'connection.php';
 
 <div class="all_bacground_clor">
 	<div class="SearchByCriteriaform1">
-	<h2 style="margin-bottom:30px;"> FUND DETAILS ANALISYS</h2>
+	<h2 style="margin-bottom:30px;"> FUND DETAILS ANALYSIS</h2>
     <!-- <h2><?php //echo  $_SESSION['SelectFundName'];?></h2> -->
 		<div class="grid_box1">
 			<div class="box1">
