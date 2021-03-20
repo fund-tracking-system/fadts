@@ -12,11 +12,11 @@
 
 
 
-                    <h2 style="margin-top:20px;margin-bottom:30px;">Reecipient List/</h2>
+                    <h2 style="margin-top:20px;margin-bottom:30px;">Recipient List</h2>
                     <table id="resultTable" class="display nowrap">
                         <thead>
                             <tr>
-                                <th><B>Recepient </B></th>
+                                <th><B>Recipient </B></th>
                                 <th><B>Address</B></th>
                                 <th><B>Region</B></th>
                                 <th><B>Phone Number</B></th>
