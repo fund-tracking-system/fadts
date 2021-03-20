@@ -113,7 +113,7 @@ $(document).ready(function() {
             }]
          },
          options: {
-			rotation:Math.PI*-100.5,
+			rotation:Math.PI*-12.5,
 			animation:{
                animatescale:true
             },
