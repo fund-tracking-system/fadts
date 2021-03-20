@@ -52,16 +52,75 @@ if(isset($_GET['disasterId']))
                     }
 
                     //get victims data
+
+
+                    $_SESSION['victimsCount']=0;
+                    $_SESSION['totalDamege']=0;
+                    $_SESSION['lowDamege']=0;
+                    $_SESSION['midDamege']=0;
+                    $_SESSION['highDamege']=0;
+                    $_SESSION['peekDamege']=0;
+
+
+                    $lowDamege=0;
+                    $midDamege=0;
+                    $highDamege=0;
+                    $peekDamege=0;
+                    $totalDamege=0;
+                    $victimsCount=0;
+
+
+
+
                     $_SESSION['victimsCount']=0;
                     $_SESSION['totalDamege']=0;
                     $totalDamege=0;
                     $victimsCount=0;
-                    foreach($res2 as $data2){
+
+
+                    foreach($res2 as $data2)
+                    {
                     
                     $totalDamege=$totalDamege+$data2['totalDamage'];
                     $victimsCount=$victimsCount+1;
 
+
+
+                    if($data2['totalDamage']>100000)
+                                {
+                                        $peekDamege++;
+
+                                }
+                                else if($data2['totalDamage']>75000)
+                                {
+
+                                                $highDamege++;
+                                                
+                                }  
+                                else if($data2['totalDamage']>25000)
+                                {
+            
+                                    $midDamege++;
+            
+                                }
+                                else
+                                {
+            
+                                    $lowDamege++;
+            
+                                }
+
+
+
                     }
+
+
+                        
+                    $_SESSION['lowDamege']=$lowDamege;
+                    $_SESSION['midDamege']=$midDamege;
+                    $_SESSION['highDamege']=$highDamege;
+                    $_SESSION['peekDamege']=$peekDamege;
+
 
                     $_SESSION['victimsCount']=$victimsCount;
                     $_SESSION['totalDamege']=$totalDamege;

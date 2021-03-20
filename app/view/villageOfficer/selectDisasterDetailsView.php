@@ -67,53 +67,6 @@ require 'connection.php';
 		</div>
 
 
-		<fieldset class="tableBar">
-                <div class="tbleMargin">
-
-
-                    <table id="resultTable" class="display nowrap">
-                        <thead>
-                            <tr>
-                                <th><B>Victim Name </B></th>
-                                <th><B>Address</B></th>
-                                <th><B>Region</B></th>
-                                <th><B>Phone Number</B></th>
-                                <th><B>Victim Damage</B></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach($_SESSION['victimadata'] as $victim){                              
-                         ?>
-                            <tr>
-                                <td><input type="hidden" name="fundid" style="margin-left:30%;"
-                                        value='<?php echo $victim['name']?>'><?php echo $victim['name']?></input>
-                                </td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['address']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['regionName']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['mobile'] ?></B></td>
-
-								<td><B style="margin-left:30%;"><?php echo $victim['totalDamage'] ?></B></td>
-
-                               
-                            </tr>
-
-                            <?php    } 
-                        unset($_SESSION['results']);
-                  ?>
-
-                        </tbody>
-
-                    </table>
-                 <div>
-                 </fieldset>   
-
-
-
-
-
-
-
-
 	</div>
 </div>
 
@@ -130,6 +83,16 @@ $(document).ready(function() {
 
 <script>
 	 $(function () {
+
+
+        var lowDamege=<?php  echo $_SESSION['lowDamege']; ?>;
+		 var midDamege= <?php echo $_SESSION['midDamege']; ?>;
+		 var highDamage=<?php echo $_SESSION['highDamege'];?>;
+		 var peekDamage=<?php echo $_SESSION['peekDamege'];?>;
+
+
+
+
 	  var ctx = document.getElementById('Chart1').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
@@ -139,7 +102,7 @@ $(document).ready(function() {
             labels: ['0-25000','25000-75000','75000-100000','Above 100000'],
             datasets: [{
                   label: 'Disaster Distribution',
-                  data: [150,200,100,180],
+                  data: [lowDamege,midDamege,highDamage,peekDamage],
                   backgroundColor: [
                      '#F1C40F ',
                      '#EB984E ',
