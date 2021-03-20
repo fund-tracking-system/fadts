@@ -82,18 +82,18 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                                 $totalDamege=$totalDamege+$data2['totalDamage'];
                                 $victimsCount=$victimsCount+1;
 
-                                if($data2['totalDamage']>15000)
+                                if($data2['totalDamage']>100000)
                                 {
                                         $peekDamege++;
 
                                 }
-                                else if($data2['totalDamage']>10000)
+                                else if($data2['totalDamage']>75000)
                                 {
 
                                                 $highDamege++;
                                                 
                                 }  
-                                else if($data2['totalDamage']>5000)
+                                else if($data2['totalDamage']>25000)
                                 {
             
                                     $midDamege++;
