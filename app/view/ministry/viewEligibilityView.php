@@ -49,7 +49,7 @@
                                         print ' <td> ' . $row['name'] . ' </td> '; 
                                         print ' <td>
                                                     <form method="post" action="/fadts/ministry/viewEligibilitySelectModel">
-                                                        <input type="hidden" name="predefinedfund" value="' . $row['predefinedFundId'] . '">
+                                                        <input type="hidden" name="predefinedfund" value="' . $row['Id'] . '">
                                                         <button class="btn btn-primary" style="margin-left:40%;" type="submit">Select</button>
                                                     </form>            
                                                 </td> ';

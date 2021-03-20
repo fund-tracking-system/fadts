@@ -3,7 +3,7 @@
     require 'connectionOOP.php';
 
     //prepare and bind
-    $query = 'SELECT predefinedFundId, name FROM predefinedfund WHERE name LIKE ?';
+    $query = 'SELECT Id, name FROM predefinedfund WHERE name LIKE ?';
     $stmt = $con->prepare($query);
     $stmt->bind_param("s", $name);
 
