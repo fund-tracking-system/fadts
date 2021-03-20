@@ -16,7 +16,7 @@
                     <table id="resultTable" class="display nowrap">
                         <thead>
                             <tr>
-                                <th><B>Reecipient </B></th>
+                                <th><B>Recepient </B></th>
                                 <th><B>Address</B></th>
                                 <th><B>Region</B></th>
                                 <th><B>Phone Number</B></th>
