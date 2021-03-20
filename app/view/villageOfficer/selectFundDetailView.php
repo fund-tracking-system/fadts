@@ -146,7 +146,7 @@ $(document).ready(function() {
                   data: [100,200],
                   backgroundColor: [
                      '#16a085',
-                     '#102240',
+                     '#abc9f7',
                      
                   ],
                   hoverBackgroundColor:'rgb(18, 164, 212)',
