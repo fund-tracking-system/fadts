@@ -18,7 +18,7 @@ require 'connection.php';
 				<h1><?php echo  $_SESSION['SelectFundName'];?></h1>
 				</div>
 
-				<canvas id="Chart1" style="padding:5px; "></canvas>
+				<canvas id="Chart1" style="padding:5px; background-image: linear-gradient( rgb(241, 240, 240),white,rgb(241, 240, 240)); "></canvas>
 				<!-- <canvas id="Chart1" style="height: 370px; width: 70%;"></canvas> -->
 				
 			</div>
