@@ -69,13 +69,15 @@
             // echo $myRegion;
             $myRegion; 
             
-            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
+            $sql="SELECT Distinct disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
             FROM disaster 
             INNER JOIN disasterregion 
             ON disaster.disasterId=disasterregion.disasterId 
             INNER JOIN region ON 
             region.regionId=disasterregion.regionId 
-            WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.regionId=$provincialRegion or region.regionId=$provincialRegion or region.regionId=1 ";
+            inner join victim ON 
+            victim.disasterId=disaster.disasterId
+            WHERE region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1 ";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
             $_SESSION['disasterList']=$res;

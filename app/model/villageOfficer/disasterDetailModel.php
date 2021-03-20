@@ -10,9 +10,9 @@ if(isset($_GET['disasterId']))
                     $disasterId = $_GET['disasterId'];
                     $victims=0;
 
-                    $provincialRegion= $_SESSION['provincialRegion']; 
-                    $districtRegion= $_SESSION['districtRegion']; 
-                    $divisionRegion= $_SESSION['divisionalRegion'];   
+                //     $provincialRegion= $_SESSION['provincialRegion']; 
+                //     $districtRegion= $_SESSION['districtRegion']; 
+                //     $divisionRegion= $_SESSION['divisionalRegion'];   
 
 
                     
@@ -27,16 +27,18 @@ if(isset($_GET['disasterId']))
                     var_dump($res);
 
 
+
+
             //get disaster victims details
                     // $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (person.region=$officer_region or region.regionId=$provincialRegion or region.regionId=$districtRegion or region.regionId=1 or region.regionId=$divisionRegion) and (victim.disasterId= $disasterId)";
-                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (region.regionId=$officer_region) and (victim.disasterId= $disasterId)";
+                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where ((region.regionId=$officer_region) and (victim.disasterId= $disasterId))";
 
                     $result2=$con->query($sql2);
                     $res2=$result2->fetch_all(MYSQLI_ASSOC);
                     $_SESSION['victimadata']=$res2;
                     echo '<br>';
                     echo '<br>';
-                    echo '<br>';
+                    echo 'vicims data';
                     var_dump($res2);
                     echo '<br>';
                     echo '<br>';
