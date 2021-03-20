@@ -15,8 +15,10 @@ require 'connection.php';
 
 
 		<fieldset class="tableBar">
+
                 <div class="tbleMargin">
 
+                <h2 > <?php echo  $_SESSION['disasterName'];?></h2>
 
                     <table id="resultTable" class="display nowrap">
                         <thead>
@@ -71,7 +73,12 @@ require 'connection.php';
 
 <script>
 $(document).ready(function() {
-    $("#resultTable").DataTable();
+    $("#resultTable").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+        'print','pdf'
+    ]
+    });
 });
 </script>
 

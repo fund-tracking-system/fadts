@@ -63,7 +63,7 @@ require 'connection.php';
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
                 <h1 class="fontwhite">
-                Undelivered amount
+                Pending Amount
                 <?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons
                 </h1>
                 
