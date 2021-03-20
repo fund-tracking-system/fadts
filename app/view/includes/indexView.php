@@ -859,9 +859,9 @@ $_SESSION['december']=$dec;
             datasets: [{
                   label: 'Fund distribution Progress',
                   data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
-                  // backgroundColor:'#4cd84c',
+                  backgroundColor:'#95bcff',
                   hoverBackgroundColor:'#00FF00',
-                  borderColor:'#00FF00',
+                  borderColor:'rgb(18, 164, 212)',
                   borderWidth: 2
             }]
          },

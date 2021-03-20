@@ -107,7 +107,7 @@ class villageController extends Controller{
    }
    
    public function selectFundDetailsView(){
-      $this->view('villageOfficer/selectFundDetailsView');
+      $this->view('villageOfficer/selectFundDetailView');
       
       $this->view->render(); // This is how load the view
    }
