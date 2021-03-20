@@ -241,6 +241,7 @@ select.form-control:focus::-ms-value {
 
 .form-group.success small {
 visibility: hidden;
+
 }
 
 .form-group.error input {

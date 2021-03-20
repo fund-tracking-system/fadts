@@ -178,4 +178,14 @@ class divisionalController extends Controller{
    }
 
 
+   public function recipeintView(){ 
+      $this->view('divisionalsec/recipeintView');
+    
+      
+      $this->view->render();
+   }
+
+   
+
+
 }

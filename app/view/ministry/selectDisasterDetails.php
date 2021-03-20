@@ -23,7 +23,7 @@ require 'connection.php';
 			</div>
 			<div class="box9">
 				<div style="display:inline-block;">
-					<a href="/fadts/divisional/disasterVictimsView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Victim List</B></a>
+					<a href="/fadts/ministry/disasterVictimsView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Victim List</B></a>
 
 				</div>
 			</div>

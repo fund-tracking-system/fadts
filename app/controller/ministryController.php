@@ -217,5 +217,15 @@ class ministryController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+
+
+   public function disasterVictimsView(){
+      $this->view('ministry/disasterVictimsView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+
+   
   
 }
