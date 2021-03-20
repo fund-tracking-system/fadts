@@ -14,7 +14,7 @@ require 'connection.php';
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
-				<h1>Disaster Damage Levels</h1>
+				<h1 class="disasterDamageHeader">Disaster Damage Levels</h1>
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
@@ -136,17 +136,18 @@ $(document).ready(function() {
       var chart = new Chart(ctx, {
         type: 'pie', // The type of chart we want to create
          data: {
-            labels: ['0-5000','5000-15000','Above 15000'],
+            labels: ['0-25000','25000-75000','75000-100000','Above 100000'],
             datasets: [{
                   label: 'Disaster Distribution',
-                  data: [150,200,100],
+                  data: [150,200,100,180],
                   backgroundColor: [
-                     '#a64dff',
-                     '#102240',
-                     '#3c79e6'
+                     '#F1C40F ',
+                     '#EB984E ',
+                     '#D35400',
+                     'rgb(221, 40, 70) '
                   ],
                   hoverBackgroundColor:'#00cc44',
-                  borderColor:'#3c79e6',
+                  //borderColor:none,
                   borderWidth: 2
             }]
          },

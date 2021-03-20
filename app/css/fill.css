@@ -2013,10 +2013,10 @@ ul.tabs li.current {
 }
 
 .box2 {
-    
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( rgb(18, 164, 212),#c3d2ec);
+    background-image: linear-gradient( rgb(18, 164, 212),#b0cbfa);
     /*background: rgb(18, 164, 212);*/
     margin: 5px;
     grid-row: 1/2;
@@ -2024,6 +2024,7 @@ ul.tabs li.current {
 }
 
 .box3 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
     background-image: linear-gradient(  rgb(4, 110, 57),#67e792);
@@ -2034,9 +2035,10 @@ ul.tabs li.current {
 }
 
 .box4 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(119, 69, 11),#b8bbbe);
+    background-image: linear-gradient(  rgb(119, 69, 11),#c6ce80);
     /*background: rgb(69, 69, 70);*/
     margin: 5px;
     grid-row: 2/3;
@@ -2044,6 +2046,7 @@ ul.tabs li.current {
 }
 
 .box5 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
     background-image: linear-gradient( #e4730a,#f1cf0d);
@@ -2054,9 +2057,10 @@ ul.tabs li.current {
 }
 
 .box6 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( #6c26c7,#9bb8eb);
+    background-image: linear-gradient( #5D6D7E,#a2a3a3);
     /*background: #6c26c7;*/
     margin: 5px;
     grid-row: 3/4;
@@ -2064,9 +2068,10 @@ ul.tabs li.current {
 }
 
 .box7 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(40, 221, 40),#9bb8eb);
+    background-image: linear-gradient(  rgb(221, 40, 70),#eb7a7f);
     /*background: rgb(20, 134, 241);*/
     margin: 5px;
     grid-row: 3/4;
@@ -2074,9 +2079,10 @@ ul.tabs li.current {
 }
 
 .box67{
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( #6c26c7,#9bb8eb);
+    background-image: linear-gradient( #f06067,#f397a1);
     /*background: rgb(20, 134, 241);*/
     margin: 5px;
     grid-row: 3/4;
@@ -2090,9 +2096,10 @@ ul.tabs li.current {
 
 
 .box8 {
+    border-radius: 5px;
     text-align: center;
     /*background: rgb(49, 185, 235);*/
-    background-image: linear-gradient(#3c79e6,#9bb8eb);
+    background-image: linear-gradient(#3c79e6,#85aff7);
     margin: 5px;
     grid-row: 4/5;
     grid-column: 4/6;
@@ -2104,6 +2111,7 @@ ul.tabs li.current {
 }
 
 .box9 {
+    border-radius: 5px;
     text-align: center;
     background:white;
     margin: 5px;
@@ -2123,4 +2131,10 @@ ul.tabs li.current {
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     margin: 5px;
+}
+
+
+.disasterDamageHeader{
+    font-size:25px ;
+    color: #0a2430;
 }

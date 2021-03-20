@@ -36,7 +36,8 @@ require 'connection.php';
 				
 				
 			</div>
-		 -->
+         -->
+        
 			<div class="box2">
 				<h1 class="dashboard-title">Per Person</h1>
 				<h3 class="fontwhite" ><?php echo $_SESSION['amountPerPerson']?></h3>
@@ -67,7 +68,8 @@ require 'connection.php';
                 <?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons
                 </h1>
                 
-			</div>
+            </div>
+
 		</div>
 
 <!-- 
