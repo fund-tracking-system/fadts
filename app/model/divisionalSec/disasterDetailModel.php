@@ -90,7 +90,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                                 else if($data2['totalDamage']>10000)
                                 {
 
-                                                $highDamege++
+                                                $highDamege++;
                                                 
                                 }  
                                 else if($data2['totalDamage']>5000)
