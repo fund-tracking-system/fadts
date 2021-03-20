@@ -14,7 +14,7 @@ require 'connection.php';
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
-				<h1>Disaster Distribution</h1>
+				<h1>Disaster Damage Levels</h1>
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
@@ -134,39 +134,48 @@ $(document).ready(function() {
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
-         type: 'line', // The type of chart we want to create
+        type: 'pie', // The type of chart we want to create
          data: {
-            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            labels: ['0-5000','5000-15000','Above 15000'],
             datasets: [{
                   label: 'Disaster Distribution',
-                  data: [100,200,400,300,250,140,370,200,300,200,100,70],
-                  backgroundColor:' #c9e5f2',
-                  hoverBackgroundColor:' #102240',
+                  data: [150,200,100],
+                  backgroundColor: [
+                     '#a64dff',
+                     '#102240',
+                     '#3c79e6'
+                  ],
+                  hoverBackgroundColor:'#00cc44',
                   borderColor:'#3c79e6',
                   borderWidth: 2
             }]
          },
          options: {
-            scales: {
-                  yAxes: [{
-                     ticks: {
-                        beginAtZero: true
-                     },
-                     scaleLabel: {
-                            display: true,
-                            labelString: 'Damage'
-                        },
-                  }],
-                  xAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'NumberOf Victims'
-                        },
-
-                   }]
+			rotation:Math.PI*-12.5,
+			animation:{
+               animatescale:true
             },
+            // scales: {
+            //       yAxes: [{
+            //          ticks: {
+            //             beginAtZero: true
+            //          },
+            //          scaleLabel: {
+            //                 display: true,
+            //                 labelString: 'Number of victims'
+            //             },
+            //       }],
+            //       xAxes: [{
+            //             display: true,
+            //             scaleLabel: {
+            //                 display: true,
+            //                 labelString: 'Month'
+            //             },
+
+            //        }]
+            // },
             maintainAspectRatio: false
+
 
          }
       }); 

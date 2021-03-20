@@ -24,7 +24,7 @@ require 'connection.php';
 			</div>
 			<div class="box9">
 				<div style="display:inline-block;">
-					<a href="/fadts/divisional/recipeintView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Recepient List</B></a>
+					<a href="/fadts/village/recipientView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Recepient List</B></a>
 
 				</div>
 			</div>

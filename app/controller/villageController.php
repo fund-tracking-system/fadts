@@ -112,6 +112,13 @@ class villageController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
+   public function recipientView(){ 
+      $this->view('villageOfficer/recipientView');
+    
+      
+      $this->view->render();
+   }
+
 
 
 
