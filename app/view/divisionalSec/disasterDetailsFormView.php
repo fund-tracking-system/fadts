@@ -43,7 +43,7 @@
                 $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
 
                 
-echo$_SESSION['provincialRegion'];
+//echo$_SESSION['provincialRegion'];
 
 
 

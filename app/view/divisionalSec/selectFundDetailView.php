@@ -24,7 +24,7 @@ require 'connection.php';
 			</div>
 			<div class="box9">
 				<div style="display:inline-block;">
-					<a href="/fadts/divisional/recipeintView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Reecipient List</B></a>
+					<a href="/fadts/divisional/recipeintView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Recepient List</B></a>
 
 				</div>
 			</div>
@@ -52,17 +52,25 @@ require 'connection.php';
 			<div class="box5">
 				<h1 class="dashboard-title">Published Day</h1>
 				<h3 class="fontwhite" ><?php echo $_SESSION['publishedTime']?></h3>
+            </div>
+            <div class="box67">
+            <h1 class="fontwhite">Delivered Amount
+                <?php echo "--------> ";?>
+                <?php echo $_SESSION['fundDelivered'] ?> Persons</h1><br>
+               
 			</div>
 			
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
-				<h1 class="fontwhite">Delivered Amount
-                <?php echo "--------> ";?>
-                <?php echo $_SESSION['fundDelivered'] ?> Persons</h1>
+                <h1 class="fontwhite">
+                Undelivered amount
+                <?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons
+                </h1>
+                
 			</div>
 		</div>
 
-
+<!-- 
 		<fieldset class="tableBar">
                 <div class="tbleMargin">
 
@@ -78,30 +86,30 @@ require 'connection.php';
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($_SESSION['victimadata'] as $victim){                              
+                        <?//php foreach($_SESSION['victimadata'] as $victim){                              
                          ?>
                             <tr>
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"
-                                        value='<?php echo $victim['name']?>'><?php echo $victim['name']?></input>
+                                        value='<?//php echo $victim['name']?>'><?//php echo $victim['name']?></input>
                                 </td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['address']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['regionName']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['mobile'] ?></B></td>
+                                <td><B style="margin-left:30%;"><?// php echo $victim['address']?></B></td>
+                                <td><B style="margin-left:30%;"><?//php echo $victim['regionName']?></B></td>
+                                <td><B style="margin-left:30%;"><?//php echo $victim['mobile'] ?></B></td>
 
-								<td><B style="margin-left:30%;"><?php echo $victim['totalDamage'] ?></B></td>
+								<td><B style="margin-left:30%;"><?//php echo $victim['totalDamage'] ?></B></td>
 
                                
                             </tr>
 
-                            <?php    } 
-                        unset($_SESSION['results']);
+                            <?//php    } 
+                       // unset($_SESSION['results']);
                   ?>
 
                         </tbody>
 
                     </table>
                  <div>
-                 </fieldset>   
+                 </fieldset>    -->
 
 
 
