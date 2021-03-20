@@ -134,6 +134,10 @@ $(document).ready(function() {
 
 <script>
 	 $(function () {
+
+         var dilivered =<?php echo $_SESSION['fundDelivered'];?>;
+         var undilivered =<?php echo $_SESSION['fundUndelivered'] ;?>;
+         console.log(dilivered);
 	  var ctx = document.getElementById('Chart1').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
@@ -143,7 +147,7 @@ $(document).ready(function() {
             labels: ['Fund Delivered','Undelivered'],
             datasets: [{
                   label: 'Fund Delivere Analysis',
-                  data: [100,200],
+                  data: [dilivered,undilivered],
                   backgroundColor: [
                      '#16a085',
                      '#102240',
