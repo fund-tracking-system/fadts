@@ -182,9 +182,12 @@
                         <?php foreach($_SESSION['selectFundDetails'] as $fund){                              
                          ?>
                             <tr>
-                                <td><input type="hidden" name="fundid" style="margin-left:30%;"
-                                        value='<?php echo $fund['fundId']?>'><?php echo $fund['name']?></input>
-                                </td>
+                                <!-- <td><input type="hidden" name="fundid" style="margin-left:30%;"
+                                        value='
+                                        <?php //echo $fund['fundId']?>'>
+                                        <?php// echo $fund['name']?>
+                                        </input>
+                                </td> -->
                                 <td><B style="margin-left:30%;"><?php echo $fund['address']?></B></td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['regionName']?></B></td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['mobile'] ?></B></td>

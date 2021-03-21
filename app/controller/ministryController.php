@@ -157,7 +157,7 @@ class ministryController extends Controller{
    }   
 
    public function selectFundDetailsView(){
-      $this->view('ministry/selectFundDetailsView');
+      $this->view('ministry/selectFundDetailView');
       
       $this->view->render(); // This is how load the view
    }
@@ -217,5 +217,15 @@ class ministryController extends Controller{
       
       $this->view->render(); // This is how load the view
    }
+
+
+   public function disasterVictimsView(){
+      $this->view('ministry/disasterVictimsView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+
+   
   
 }

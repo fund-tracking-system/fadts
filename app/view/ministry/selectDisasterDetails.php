@@ -14,7 +14,7 @@ require 'connection.php';
 		<div class="grid_box1">
 			<div class="box1">
 				<div>
-				<h1>Disaster Distribution</h1>
+				<h1>Disaster Damage Levels</h1>
 				</div>
 
 				<canvas id="Chart1" style="padding:5px; "></canvas>
@@ -23,7 +23,7 @@ require 'connection.php';
 			</div>
 			<div class="box9">
 				<div style="display:inline-block;">
-					<a href="/fadts/divisional/disasterVictimsView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Victim List</B></a>
+					<a href="/fadts/ministry/disasterVictimsView" class="btn btn-primary" style="float:left; margin: 15px; margin-top: 55px;"><B>Disaster Victim List</B></a>
 
 				</div>
 			</div>
@@ -41,7 +41,7 @@ require 'connection.php';
 				<h3 class="fontwhite" > <?php echo  $_SESSION['disasterName'];?></h3>
 			</div>
 			<div class="box3">
-				<h1 class="dashboard-title">Disaster Type</h1>
+				<h1 class="dashboard-title">Disaster Type</h1> 
 				<h3 class="fontwhite" ><?php echo  $_SESSION['disasterType'];?></h3>
 			</div>
 			<div class="box4">
@@ -62,50 +62,12 @@ require 'connection.php';
 			</div>
 			<div class="box8">
 				<!-- <h1>Affected Area</h1> -->
-				<h1 class="dashboard-title"><?php echo  $_SESSION['regionName']?> Grama Niladharai Area </h1>
+				<h1 class="fontwhite"><?php echo  $_SESSION['regionName']?>  </h1>
 			</div>
 		</div>
 
 
-		<fieldset class="tableBar">
-                <div class="tbleMargin">
-
-
-                    <table id="resultTable" class="display nowrap">
-                        <thead>
-                            <tr>
-                                <th><B>Victim Name </B></th>
-                                <th><B>Address</B></th>
-                                <th><B>Region</B></th>
-                                <th><B>Phone Number</B></th>
-                                <th><B>Victim Damage</B></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php foreach($_SESSION['victimadata'] as $victim){                              
-                         ?>
-                            <tr>
-                                <td><input type="hidden" name="fundid" style="margin-left:30%;"
-                                        value='<?php echo $victim['name']?>'><?php echo $victim['name']?></input>
-                                </td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['address']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['regionName']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['mobile'] ?></B></td>
-
-								<td><B style="margin-left:30%;"><?php echo $victim['totalDamage'] ?></B></td>
-
-                               
-                            </tr>
-
-                            <?php    } 
-                        unset($_SESSION['results']);
-                  ?>
-
-                        </tbody>
-
-                    </table>
-                 <div>
-                 </fieldset>   
+		
 
 
 
@@ -130,42 +92,56 @@ $(document).ready(function() {
 
 <script>
 	 $(function () {
+		 var lowDamege=<?php  echo $_SESSION['lowDamege']; ?>;
+		 var midDamege= <?php echo $_SESSION['midDamege']; ?>;
+		 var highDamage=<?php echo $_SESSION['highDamege'];?>;
+		 var peekDamage=<?php echo $_SESSION['peekDamege'];?>;
 	  var ctx = document.getElementById('Chart1').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
-         type: 'line', // The type of chart we want to create
+         type: 'pie', // The type of chart we want to create
          data: {
-            labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
+            labels: ['0-25000','25000-75000','75000-100000','Above 100000'],
             datasets: [{
                   label: 'Disaster Distribution',
-                  data: [10,200,400,300,250,140,370,200,300,200,100,70],
-                //   backgroundColor:' rgb(194, 238, 252)',
-                  hoverBackgroundColor:' rgb(27, 233, 164)',
-                  borderColor:'rgb(169, 249, 252)',
-                  borderWidth: 4
+				  data: [lowDamege,midDamege,highDamage,peekDamage],
+				  //data: [100,200,300,200],
+                  backgroundColor: [
+                     '#fff75d ',
+                     '#ffc11f ',
+                     '#fa912e',
+                     '#ff6b6b '
+                  ],
+                  hoverBackgroundColor:'#da1f05',
+                 // borderColor:'#3c79e6',
+                  borderWidth: 0
             }]
          },
          options: {
-            scales: {
-                  yAxes: [{
-                     ticks: {
-                        beginAtZero: true
-                     },
-                     scaleLabel: {
-                            display: true,
-                            labelString: 'Damage'
-                        },
-                  }],
-                  xAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'NumberOf Victims'
-                        },
-
-                   }]
+			rotation:Math.PI*-12.5,
+			animation:{
+               animatescale:true
             },
+            // scales: {
+            //       yAxes: [{
+            //          ticks: {
+            //             beginAtZero: true
+            //          },
+            //          scaleLabel: {
+            //                 display: true,
+            //                 labelString: 'Number of victims'
+            //             },
+            //       }],
+            //       xAxes: [{
+            //             display: true,
+            //             scaleLabel: {
+            //                 display: true,
+            //                 labelString: 'Month'
+            //             },
+
+            //        }]
+            // },
             maintainAspectRatio: false
 
          }

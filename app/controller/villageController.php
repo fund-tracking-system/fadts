@@ -107,9 +107,16 @@ class villageController extends Controller{
    }
    
    public function selectFundDetailsView(){
-      $this->view('villageOfficer/selectFundDetailsView');
+      $this->view('villageOfficer/selectFundDetailView');
       
       $this->view->render(); // This is how load the view
+   }
+
+   public function recipientView(){ 
+      $this->view('villageOfficer/recipientView');
+    
+      
+      $this->view->render();
    }
 
 
@@ -132,8 +139,24 @@ class villageController extends Controller{
       $this->view('villageOfficer/selectDisasterDetailsView');
       
       $this->view->render();
+
+   }
+
+   public function victimsListView(){
+      $this->view('villageOfficer/victimsListView');
+      
+      $this->view->render();
+
    }
    
+   
+   
+   public function helpview(){
+      $this->view('villageOfficer/helpView');
+      
+      $this->view->render();
+
+   }
 
     
    

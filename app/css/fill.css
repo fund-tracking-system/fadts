@@ -25,6 +25,12 @@ h5 {
     /* color: #011116; */
 }
 
+h6{
+    color: white;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
 .To {
     margin-right: 170px;
 }
@@ -2002,6 +2008,8 @@ ul.tabs li.current {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+
+
 .box1 {
     margin: 10px;
     background-color: white;
@@ -2011,10 +2019,10 @@ ul.tabs li.current {
 }
 
 .box2 {
-    
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( rgb(18, 164, 212),#9bb8eb);
+    background-image: linear-gradient( rgb(18, 164, 212),#b0cbfa);
     /*background: rgb(18, 164, 212);*/
     margin: 5px;
     grid-row: 1/2;
@@ -2022,9 +2030,10 @@ ul.tabs li.current {
 }
 
 .box3 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(4, 110, 57),#67e792);
+    background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190));
     /*background: rgb(4, 110, 57);*/
     margin: 5px;
     grid-row: 1/2;
@@ -2032,9 +2041,10 @@ ul.tabs li.current {
 }
 
 .box4 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(69, 69, 70),#b8bbbe);
+    background-image: linear-gradient(  rgb(119, 69, 11),#c6ce80);
     /*background: rgb(69, 69, 70);*/
     margin: 5px;
     grid-row: 2/3;
@@ -2042,6 +2052,7 @@ ul.tabs li.current {
 }
 
 .box5 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
     background-image: linear-gradient( #e4730a,#f1cf0d);
@@ -2052,29 +2063,49 @@ ul.tabs li.current {
 }
 
 .box6 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( #6c26c7,#9bb8eb);
-    /*background: #6c26c7;*/
+    background-image: linear-gradient( #5D6D7E,#a2a3a3);
+    /*background: #2C3E50;*/
     margin: 5px;
     grid-row: 3/4;
     grid-column: 4/5;
 }
 
 .box7 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(40, 221, 40),#9bb8eb);
+    background-image: linear-gradient(  rgb(221, 40, 70),#eb7a7f);
     /*background: rgb(20, 134, 241);*/
     margin: 5px;
     grid-row: 3/4;
     grid-column: 5/6;
 }
 
+.box67{
+    border-radius: 5px;
+    text-align: center;
+    color: #E2F3FB;
+    background-image: linear-gradient( #f06067,#f397a1);
+    /*background: rgb(20, 134, 241);*/
+    margin: 5px;
+    grid-row: 3/4;
+    grid-column: 4/6;
+    display: flex;
+	align-items: center;
+    justify-content: space-around;
+    
+}
+
+
+
 .box8 {
+    border-radius: 5px;
     text-align: center;
     /*background: rgb(49, 185, 235);*/
-    background-image: linear-gradient(#3c79e6,#9bb8eb);
+    background-image: linear-gradient(#3c79e6,#85aff7);
     margin: 5px;
     grid-row: 4/5;
     grid-column: 4/6;
@@ -2086,6 +2117,7 @@ ul.tabs li.current {
 }
 
 .box9 {
+    border-radius: 5px;
     text-align: center;
     background:white;
     margin: 5px;
@@ -2105,4 +2137,20 @@ ul.tabs li.current {
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     margin: 5px;
+}
+
+
+.disasterDamageHeader{
+    font-size:25px ;
+    color: #0a2430;
+}
+
+
+#calendar_events{
+    height:290px;
+    background: #2C3E50;
+}
+
+.colorEve{
+    color: white;
 }

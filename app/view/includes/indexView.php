@@ -298,9 +298,9 @@ $_SESSION['olders']=$olders;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height: 290px;">
-            <h3>Your Events</h3>
-            <!-- <?php echo $_SESSION['userrole']; ?> -->
+         <div id="calendar_events" >
+            <h3 class="colorEve">Your Events</h3>
+            <!-- <?php //echo $_SESSION['userrole']; ?> -->
             <?php
 
                $userid=$_SESSION['userid'];
@@ -310,14 +310,14 @@ $_SESSION['olders']=$olders;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h3> ' . $event . ' </h3>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
@@ -465,7 +465,7 @@ $_SESSION['olders']=$olders;
                   data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                   backgroundColor:'#668cff',
                   hoverBackgroundColor:'#698CD1',
-                  // borderColor:'#00FF00',
+                  //borderColor:'#00FF00',
                   borderWidth: 2
             }]
          },
@@ -706,8 +706,8 @@ $_SESSION['december']=$dec;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height:290px ;">
-         <h3>Your Events</h3>
+         <div id="calendar_events" >
+         <h3 class="colorEve">Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
 
@@ -718,14 +718,14 @@ $_SESSION['december']=$dec;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h3> ' . $event . ' </h3>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
@@ -762,7 +762,7 @@ $_SESSION['december']=$dec;
       var chart = new Chart(ctx, {
          type: 'doughnut',
          data: {
-            labels: ['Law Incomesss', 'Middle Income','High Income',],
+            labels: ['Law Income', 'Middle Income','High Income',],
             datasets: [{
                   label: '# fund release',
                   data: [lowIncome,midIncome,highIncome],
@@ -802,15 +802,15 @@ $_SESSION['december']=$dec;
                   data: [20,5,25,10],
                   backgroundColor: [
                      '#16a085',
-                     'red',
+                     '#00FF00',
                      '#2980b9',
-                     '#00FF00'
+                     ' red'
                   ],
                   borderColor: [
                      '#16a085',
-                     'red',
+                     '#00FF00',
                      '#2980b9',
-                     '#00FF00'
+                     'red'
                   ],
                   borderWidth: 1
             }]
@@ -859,9 +859,9 @@ $_SESSION['december']=$dec;
             datasets: [{
                   label: 'Fund distribution Progress',
                   data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
-                  // backgroundColor:'#4cd84c',
+                  backgroundColor:'#95bcff',
                   hoverBackgroundColor:'#00FF00',
-                  borderColor:'#00FF00',
+                  borderColor:'rgb(18, 164, 212)',
                   borderWidth: 2
             }]
          },
@@ -946,8 +946,8 @@ window.onload = calendar;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height:100%;">
-         <h3>Your Events</h3>
+         <div id="calendar_events" >
+         <h3 class="colorEve">Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
 
@@ -958,14 +958,14 @@ window.onload = calendar;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h3> ' . $event . ' </h3>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
@@ -1279,8 +1279,8 @@ $_SESSION['december']=$dec;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height:100%;">
-         <h3>Your Events</h3>
+         <div id="calendar_events" >
+         <h3 class="colorEve">Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
 
@@ -1291,14 +1291,14 @@ $_SESSION['december']=$dec;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h3> ' . $event . ' </h3>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  

@@ -145,7 +145,7 @@ class divisionalController extends Controller{
 
 
    public function selectFundDetailsView(){ 
-      $this->view('divisionalsec/selectFundDetailsView');
+      $this->view('divisionalsec/selectFundDetailView');
     
       
       $this->view->render();
@@ -176,6 +176,16 @@ class divisionalController extends Controller{
       
       $this->view->render();
    }
+
+
+   public function recipeintView(){ 
+      $this->view('divisionalsec/recipeintView');
+    
+      
+      $this->view->render();
+   }
+
+   
 
 
 }

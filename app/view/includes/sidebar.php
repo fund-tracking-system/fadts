@@ -161,7 +161,7 @@ switch($controller){
    <a href="/fadts/village/addDisasterVictim" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Disaster Victims
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/village/helpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
