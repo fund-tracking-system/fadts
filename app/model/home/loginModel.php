@@ -4,8 +4,6 @@ if(isset($_POST['logsubmit'])){
 
    require 'connection.php';   // database connection file calling
 
-   //include CONN."connection.php";
-
    $email = $_POST['email'];
    $password = $_POST['password'];
 
@@ -25,7 +23,7 @@ if(isset($_POST['logsubmit'])){
 
       if($row = mysqli_fetch_assoc($result)){
 
-         if($password != $row['password']){
+         if(!password_verify($password, $row['password'])){
             mysqli_close($con);
             header("Location:/fadts/home/index?error=wrong_user_or_pass");
             exit();  

@@ -30,7 +30,7 @@ if(isset($_POST['fogsubmit'])){
       $stmt = mysqli_stmt_init($con);
    
       if(!mysqli_stmt_prepare($stmt,$sql)){
-         echo "There was an error!";
+         header('Location:/fadts/home/forgot?error=db_conn_err');
          exit();   
       }
       else{
@@ -43,7 +43,7 @@ if(isset($_POST['fogsubmit'])){
       $stmt = mysqli_stmt_init($con);
 
       if(!mysqli_stmt_prepare($stmt,$sql)){
-         header('Location:/fadts/home/forgot');
+         header('Location:/fadts/home/forgot?error=db_conn_error');
          exit();   
       }
       else{
@@ -61,25 +61,17 @@ if(isset($_POST['fogsubmit'])){
 
       $message = "<p>We recieved a password reset request. The link to reset your password is below. If it is not you make this request, you can ignore this email</p>";
       $message .= '<p>Here is your password reset link: </br>';
-      // $message .= '<a href"' .$myurl. '">'.$myurl.'</a></p>';
       $message .= "<a href = $myurl >$myurl</a></p>";
 
       $headers = "From: FADTS fadtsproject@gmail.com>\r\n";
       $headers .= "Reply-To: fadtsproject@gmail.com\r\n";
       $headers .= "Content-type: text/html\r\n";
 
-      // mail($to,$subject,$message,'From: fadtsproject@gmail.com');
-
-      // header("Location:/fadts/home/forgot?error=success");     
-
       require_once "PHPMailer/PHPMailer.php";
       require_once "PHPMailer/SMTP.php";
       require_once "PHPMailer/Exception.php";
 
-      // $email="madushantjg@gmail.com";
       $name='FADTS Admin';
-      // $subject = "Test Subject";
-      // $Message = "This is the message of new testing new new";
       $mail = new PHPMailer();
 
       $mail->isSMTP();
@@ -98,20 +90,16 @@ if(isset($_POST['fogsubmit'])){
       $mail->createHeader($headers);
 
       if($mail->send()){
-         $status = "success";
-         $response = "Email is sent!";
-         echo $status;
+         header('Location:/fadts/home/forgot?error=success');
          exit();
       }else{
-         $status = "failed";
-         $response = "Something is wrong!";
-         echo $status;
+         header('Location:/fadts/home/forgot?error=failed');
          exit();
       }
 
    }
    else{
-      header('Location:/fadts/home/forgot?error?wrong_id_or_mail');
+      header('Location:/fadts/home/forgot?error=wrong_id_or_mail');
       exit();  
    }
 }else{

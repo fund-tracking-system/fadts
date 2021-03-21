@@ -35,6 +35,12 @@
                   if($error == "success"){
                      echo '<div class="alert alert-success" role="alert">Check your email!</div>';
                   }
+                  if($error == "failed"){
+                     echo '<div class="alert alert-danger" role="alert">Something is wrong.Try again!</div>';
+                  }
+                  if($error == "reset_db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Something is wrong.Try again using the link!</div>';
+                  }
                }
             ?> 
 
