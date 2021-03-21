@@ -157,7 +157,7 @@ class ministryController extends Controller{
    }   
 
    public function selectFundDetailsView(){
-      $this->view('divisionalsec/selectFundDetailView');
+      $this->view('ministry/selectFundDetailView');
       
       $this->view->render(); // This is how load the view
    }
