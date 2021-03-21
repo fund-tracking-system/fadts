@@ -43,7 +43,7 @@ session_start();
            $res3=$result3->fetch_all(MYSQLI_ASSOC);
            foreach($res3 as $data3){ 
              $_SESSION['provincialRegion']=$data3['superRegion'];
-  
+   
              }
 
              $provincialRegion=$_SESSION['provincialRegion'];

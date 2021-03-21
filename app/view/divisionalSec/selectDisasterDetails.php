@@ -41,7 +41,7 @@ require 'connection.php';
 				<h3 class="fontwhite" > <?php echo  $_SESSION['disasterName'];?></h3>
 			</div>
 			<div class="box3">
-				<h1 class="dashboard-title">Disaster Type</h1>
+				<h1 class="dashboard-title">Disaster Type</h1> 
 				<h3 class="fontwhite" ><?php echo  $_SESSION['disasterType'];?></h3>
 			</div>
 			<div class="box4">

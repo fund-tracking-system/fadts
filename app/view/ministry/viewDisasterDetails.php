@@ -25,12 +25,13 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
+                            <tbody> 
                                 <?php foreach($_SESSION['disasterList'] as $disaster){ ?>
                                 <tr>
                                     <td><B><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'> <?php echo $disaster['disasterId'] ?> <?php echo $disaster['type']?></input>
                                     </B></td>
+
                                     <td><B style="margin-left:30%;"><?php 
 
                                     if($disaster['lvl']==0){
@@ -55,7 +56,7 @@
 
                                     <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
-                                    <td><a href="/fadts/ministry/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>"
+                                    <td><a href="/fadts/ministry/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'];?>&&region=<?php echo $disaster['rId'];?>&&level=<?php echo $disaster['lvl'];?>"
                                             class="btn btn-primary" style="margin-left:20%;"><B>VIEW</B></a>
                                     </td>
                                 </tr>

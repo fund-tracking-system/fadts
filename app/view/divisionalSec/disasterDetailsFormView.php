@@ -124,7 +124,7 @@
                                 <?php    } unset($_SESSION['results']); ?>
                             </tbody>
 
-
+ 
                         </table>
                         <div>
                 </fieldset>
