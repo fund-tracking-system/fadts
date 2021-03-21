@@ -8,8 +8,8 @@ if(isset($_GET['disasterId']))
 
     
                     $disasterId = $_GET['disasterId'];
-                    $region = $_GET['region'];
-                    $level = $_GET['level'];
+                    $region = $_GET['region']; //top most super region by default
+                    $level = $_GET['level']; 
                     $victims=0;
                     echo $level;
                     echo'<br>';

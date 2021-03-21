@@ -23,6 +23,12 @@ $officer_region=$_SESSION['region'];
 
     if($level==0){
 
+
+    }
+    else if($level==1){
+
+    }
+    else if($level==2){
         
     }
 
