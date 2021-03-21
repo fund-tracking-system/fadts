@@ -18,7 +18,6 @@
                                 <tr>
                                     <th><B>Disaster Type</B></th>
                                  
-                                    <th><B>Disaster Region</B></th>
                                     <th><B>Disaster Name</B></th>
                                     <th><B>Date</B></th>
                                     <th><B>View</B></th>
@@ -32,31 +31,31 @@
                                             value='<?php echo $disaster['type']?>'> <?php echo $disaster['disasterId'] ?> <?php echo $disaster['type']?></input>
                                     </B></td>
 
-                                    <td><B style="margin-left:30%;"><?php 
+                                    <!-- <td><B style="margin-left:30%;"><?php 
 
-                                    if($disaster['lvl']==0){
-                                         echo " Island Wide Disaster";
-                                    }
-                                    else if($disaster['disasterId']==1){
-                                        echo "Provincial Wide Disaster";
-                                    }
-                                    else if($disaster['disasterId']==2){
-                                        echo "Distric Wide Disaster";
-                                    }
-                                    else if($disaster['disasterId']==3){
-                                        echo "Divisional Wide Disaster";
-                                    }
-                                    else{
-                                        echo $disaster['ren'];
-                                    }
+                                    // if($disaster['lvl']==0){
+                                    //      echo " Island Wide Disaster";
+                                    // }
+                                    // else if($disaster['disasterId']==1){
+                                    //     echo "Provincial Wide Disaster";
+                                    // }
+                                    // else if($disaster['disasterId']==2){
+                                    //     echo "Distric Wide Disaster";
+                                    // }
+                                    // else if($disaster['disasterId']==3){
+                                    //     echo "Divisional Wide Disaster";
+                                    // }
+                                    // else{
+                                    //     echo $disaster['ren'];
+                                    // }
 
                                     
                                     
-                                    ?></B></td>
+                                    ?></B></td> -->
 
                                     <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
-                                    <td><a href="/fadts/ministry/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'];?>&&region=<?php echo $disaster['rId'];?>&&level=<?php echo $disaster['lvl'];?>"
+                                    <td><a href="/fadts/ministry/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'];?>"
                                             class="btn btn-primary" style="margin-left:20%;"><B>VIEW</B></a>
                                     </td>
                                 </tr>
