@@ -150,6 +150,13 @@ class villageController extends Controller{
    }
    
    
+   
+   public function helpview(){
+      $this->view('villageOfficer/helpView');
+      
+      $this->view->render();
+
+   }
 
     
    
