@@ -36,8 +36,10 @@ $myRegion=$_SESSION['region'];
   $sql3="SELECT superRegion  From region Where region.regionId= $districtRegion";
   $result3=$con->query($sql3);
   $res3=$result3->fetch_all(MYSQLI_ASSOC);
+
+
   foreach($res3 as $data3){ 
-  $_SESSION['provincialRegion']=$data2['superRegion'];
+  $_SESSION['provincialRegion']=$data3['superRegion'];
 
   }
 

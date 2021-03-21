@@ -53,39 +53,41 @@ foreach($res as $data){
     echo $data['region'];
     echo "<br>";
     
-}
+            }
 
 
 
-echo $dilivered;
-echo "<br>";
-echo "<br>";
-echo $dilivered;
+            echo $dilivered;
+            echo "<br>";
+            echo "<br>";
+            echo $dilivered;
 
-echo "<br>";
-$_SESSION['fundDelivered']=$dilivered;
-echo "<br>";
-echo $unDelivered;
-$_SESSION['fundUndelivered']=$unDelivered;
-$totlRecipients=$dilivered+$unDelivered;
-echo "<br>";
-echo $totlRecipients;
-$_SESSION['totalRecipients']=$totlRecipients;
-
-
-$Fdate="SELECT publishedTime ,amountPerPerson FROM fund WHERE fundId=$fundId";
-$dateRes=$con->query($Fdate);
-$resDate=$dateRes->fetch_all(MYSQLI_ASSOC); 
-var_dump($resDate);
-foreach($resDate as $day){
-        $_SESSION['publishedTime']= $day['publishedTime'];
-        $_SESSION['amountPerPerson']=$day['amountPerPerson'];
+            echo "<br>";
+            $_SESSION['fundDelivered']=$dilivered;
+            echo "<br>";
+            echo $unDelivered;
+            $_SESSION['fundUndelivered']=$unDelivered;
+            $totlRecipients=$dilivered+$unDelivered;
+            echo "<br>";
+            echo $totlRecipients;
+            $_SESSION['totalRecipients']=$totlRecipients;
 
 
-}
+            $Fdate="SELECT publishedTime ,amountPerPerson FROM fund WHERE fundId=$fundId";
+            $dateRes=$con->query($Fdate);
+            $resDate=$dateRes->fetch_all(MYSQLI_ASSOC); 
+            var_dump($resDate);
 
-header("Location:/fadts/ministry/selectFundDetailsView"); 
-}
+            
+            foreach($resDate as $day){
+                    $_SESSION['publishedTime']= $day['publishedTime'];
+                    $_SESSION['amountPerPerson']=$day['amountPerPerson'];
+
+
+            }
+
+            header("Location:/fadts/ministry/selectFundDetailsView"); 
+            }
 
 // else {
     

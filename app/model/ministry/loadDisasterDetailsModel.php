@@ -11,15 +11,18 @@ session_start();
 
              echo "akdgjga";
          
-
+ 
         
             
            
 
             //get  disasters
             
-            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.level as lvl,region.name as ren
-            FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId ";
+            $sql="SELECT Distinct disaster.disasterId,disaster.name,disaster.type,disaster.date,region.level as lvl,region.name as ren,region.regionId as rId
+            FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId 
+            INNER JOIN region ON region.regionId=disasterregion.regionId 
+            inner join victim ON 
+            victim.disasterId=disaster.disasterId ";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
 

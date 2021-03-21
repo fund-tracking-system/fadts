@@ -134,16 +134,19 @@ $(document).ready(function() {
 
 <script>
 	 $(function () {
+
+        var dilivered =<?php echo $_SESSION['fundDelivered'];?>;
+         var undilivered =<?php echo $_SESSION['fundUndelivered'] ;?>;
 	  var ctx = document.getElementById('Chart1').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
       var chart = new Chart(ctx, {
          type: 'pie', // The type of chart we want to create
          data: {
-            labels: ['Fund Delivered','Undelivered'],
+            labels: ['Fund Delivered','Pendings'],
             datasets: [{
                   label: 'Fund Delivere Analysis',
-                  data: [100,200],
+                  data: [dilivered,undilivered],
                   backgroundColor: [
                      '#f397a1',
                      '#85aff7',

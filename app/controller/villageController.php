@@ -139,8 +139,24 @@ class villageController extends Controller{
       $this->view('villageOfficer/selectDisasterDetailsView');
       
       $this->view->render();
+
+   }
+
+   public function victimsListView(){
+      $this->view('villageOfficer/victimsListView');
+      
+      $this->view->render();
+
    }
    
+   
+   
+   public function helpview(){
+      $this->view('villageOfficer/helpView');
+      
+      $this->view->render();
+
+   }
 
     
    
