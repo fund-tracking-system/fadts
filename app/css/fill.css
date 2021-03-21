@@ -2033,7 +2033,7 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(4, 110, 57),h3);
+    background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190));
     /*background: rgb(4, 110, 57);*/
     margin: 5px;
     grid-row: 1/2;

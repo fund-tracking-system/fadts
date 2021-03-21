@@ -762,7 +762,7 @@ $_SESSION['december']=$dec;
       var chart = new Chart(ctx, {
          type: 'doughnut',
          data: {
-            labels: ['Law Incomesss', 'Middle Income','High Income',],
+            labels: ['Law Income', 'Middle Income','High Income',],
             datasets: [{
                   label: '# fund release',
                   data: [lowIncome,midIncome,highIncome],
@@ -802,15 +802,15 @@ $_SESSION['december']=$dec;
                   data: [20,5,25,10],
                   backgroundColor: [
                      '#16a085',
-                     'red',
+                     '#00FF00',
                      '#2980b9',
-                     '#00FF00'
+                     ' red'
                   ],
                   borderColor: [
                      '#16a085',
-                     'red',
+                     '#00FF00',
                      '#2980b9',
-                     '#00FF00'
+                     'red'
                   ],
                   borderWidth: 1
             }]
