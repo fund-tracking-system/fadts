@@ -298,7 +298,7 @@ $_SESSION['olders']=$olders;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height: 290px;">
+         <div id="calendar_events" >
             <h3>Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
@@ -706,8 +706,8 @@ $_SESSION['december']=$dec;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height:290px ;">
-         <h3>Your Events</h3>
+         <div id="calendar_events" >
+         <h3 class="colorEve">Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
 
@@ -946,7 +946,7 @@ window.onload = calendar;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height:100%;">
+         <div id="calendar_events" >
          <h3>Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
@@ -1279,7 +1279,7 @@ $_SESSION['december']=$dec;
             <p id="calendar_month"></p>
             <p id="calendar_year"></p>
          </div>
-         <div id="calendar_events" style="height:100%;">
+         <div id="calendar_events" >
          <h3>Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
