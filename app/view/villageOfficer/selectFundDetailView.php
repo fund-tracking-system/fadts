@@ -143,18 +143,18 @@ $(document).ready(function() {
       var chart = new Chart(ctx, {
          type: 'pie', // The type of chart we want to create
          data: {
-            labels: ['Fund Delivered','Pendings'],
+            labels: ['Fund Delivered','Undelivered'],
             datasets: [{
                   label: 'Fund Delivere Analysis',
                   data: [dilivered,undilivered],
                   backgroundColor: [
-                     '#f397a1',
-                     '#85aff7',
+                    '#EC7063',
+                    '#85aff7',
                      
                   ],
                   hoverBackgroundColor:'#67e792',
                   //borderColor:'#3c79e6',
-                  borderWidth: 1
+                  borderWidth: 0
             }]
          },
          options: {

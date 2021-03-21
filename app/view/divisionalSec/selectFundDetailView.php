@@ -151,13 +151,13 @@ $(document).ready(function() {
                   label: 'Fund Delivere Analysis',
                   data: [dilivered,undilivered],
                   backgroundColor: [
-                    '#f397a1',
+                    '#EC7063',
                     '#85aff7',
                      
                   ],
                   hoverBackgroundColor:'#67e792',
                   //borderColor:'#3c79e6',
-                  borderWidth: 1
+                  borderWidth: 0
             }]
          },
          options: {

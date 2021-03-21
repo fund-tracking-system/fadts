@@ -105,16 +105,17 @@ $(document).ready(function() {
             labels: ['0-25000','25000-75000','75000-100000','Above 100000'],
             datasets: [{
                   label: 'Disaster Distribution',
-                  data: [lowDamege,midDamege,highDamage,peekDamage],
+				  data: [lowDamege,midDamege,highDamage,peekDamage],
+				  //data: [100,200,300,200],
                   backgroundColor: [
-                     '#F1C40F ',
-                     '#EB984E ',
-                     '#D35400',
-                     'rgb(221, 40, 70) '
+                     '#fff75d ',
+                     '#ffc11f ',
+                     '#fa912e',
+                     '#ff6b6b '
                   ],
-                  hoverBackgroundColor:'#00cc44',
-                  borderColor:'#3c79e6',
-                  borderWidth: 2
+                  hoverBackgroundColor:'#da1f05',
+                 // borderColor:'#3c79e6',
+                  borderWidth: 0
             }]
          },
          options: {
