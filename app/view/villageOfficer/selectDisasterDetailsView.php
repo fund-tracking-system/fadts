@@ -104,14 +104,14 @@ $(document).ready(function() {
                   label: 'Disaster Distribution',
                   data: [lowDamege,midDamege,highDamage,peekDamage],
                   backgroundColor: [
-                     '#F1C40F ',
-                     '#EB984E ',
-                     '#D35400',
-                     'rgb(221, 40, 70) '
+					'#fff75d ',
+                     '#ffc11f ',
+                     '#fa912e',
+                     '#ff6b6b '
                   ],
-                  hoverBackgroundColor:'#00cc44',
+                  hoverBackgroundColor:'#da1f05',
                   //borderColor:none,
-                  borderWidth: 2
+                  borderWidth: 0
             }]
          },
          options: {
