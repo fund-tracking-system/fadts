@@ -25,6 +25,12 @@ h5 {
     /* color: #011116; */
 }
 
+h6{
+    color: white;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
 .To {
     margin-right: 170px;
 }

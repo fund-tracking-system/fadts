@@ -299,8 +299,8 @@ $_SESSION['olders']=$olders;
             <p id="calendar_year"></p>
          </div>
          <div id="calendar_events" >
-            <h3>Your Events</h3>
-            <!-- <?php echo $_SESSION['userrole']; ?> -->
+            <h3 class="colorEve">Your Events</h3>
+            <!-- <?php //echo $_SESSION['userrole']; ?> -->
             <?php
 
                $userid=$_SESSION['userid'];
@@ -310,14 +310,14 @@ $_SESSION['olders']=$olders;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h3> ' . $event . ' </h3>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
@@ -718,14 +718,14 @@ $_SESSION['december']=$dec;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h4> ' . $event . ' </h4>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
@@ -947,7 +947,7 @@ window.onload = calendar;
             <p id="calendar_year"></p>
          </div>
          <div id="calendar_events" >
-         <h3>Your Events</h3>
+         <h3 class="colorEve">Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
 
@@ -958,14 +958,14 @@ window.onload = calendar;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h3> ' . $event . ' </h3>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
@@ -1280,7 +1280,7 @@ $_SESSION['december']=$dec;
             <p id="calendar_year"></p>
          </div>
          <div id="calendar_events" >
-         <h3>Your Events</h3>
+         <h3 class="colorEve">Your Events</h3>
             <!-- <?php echo $_SESSION['userrole']; ?> -->
             <?php
 
@@ -1291,14 +1291,14 @@ $_SESSION['december']=$dec;
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
                $event="You Have No Event";
                if($rgn==NULL){
-                  print ' <h3> ' . $event . ' </h3>';
+                  print ' <h6> ' . $event . ' </h6>';
                }
                else{
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h5> ' . $key['start_event'] . ' </h5>';
-                     print ' <h5> ' . $key['title'] . ' </h5>';
+                     print ' <h6> ' . $key['start_event'] . ' </h6>';
+                     print ' <h6> ' . $key['title'] . ' </h6>';
                      // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
                   } 
                  
