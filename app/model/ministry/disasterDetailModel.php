@@ -18,14 +18,6 @@ if(isset($_GET['disasterId']))
 
 
 
-
-                    function getSuperRegion($myRegion){
-                                        
-                        $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
-                        $result1=$con->query($sql1);
-                        $res1=$result1->fetch_all(MYSQLI_ASSOC);
-                        retrun $res1;
-                    }
                                    
 
 
@@ -145,7 +137,7 @@ if(isset($_GET['disasterId']))
                     echo $victimsCount;
 }
 
-//header("Location:/fadts/ministry/selectDisasterDetails"); 
+header("Location:/fadts/ministry/selectDisasterDetails"); 
 
 
 

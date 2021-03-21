@@ -3,19 +3,34 @@
 session_start();
 
 require 'connection.php';  
-
+ 
 
 
 if(isset($_GET['fundId'])||isset($_GET['regionId']))
 
 {
+    
 
 $fundId = $_GET['fundId'];
+$region = $_GET['region'];
+$level = $_GET['level'];
 $_SESSION['funddetailsFundId']=  $fundId;
 $dilivered=0;
 $unDelivered=0;
 $totlRecipients=0;
 $officer_region=$_SESSION['region'];
+
+
+    if($level==0){
+
+        
+    }
+
+
+
+
+
+
 
 
 $sql="SELECT recipient.personId,recipient.deliveryStatus,person.region, region.superRegion,person.name as name,person.address as address,person.phone as mobile , region.name as regionName  FROM recipient INNER JOIN person ON recipient.personId=person.personId INNER JOIN region ON region.regionId=person.region WHERE recipient.fundId= $fundId ";
