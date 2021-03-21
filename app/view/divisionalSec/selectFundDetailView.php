@@ -147,13 +147,13 @@ $(document).ready(function() {
                   label: 'Fund Delivere Analysis',
                   data: [100,200],
                   backgroundColor: [
-                     '#16a085',
-                     '#abc9f7',
+                    '#f397a1',
+                    '#85aff7',
                      
                   ],
-                  hoverBackgroundColor:'rgb(18, 164, 212)',
-                  borderColor:'#3c79e6',
-                  borderWidth: 2
+                  hoverBackgroundColor:'#67e792',
+                  //borderColor:'#3c79e6',
+                  borderWidth: 1
             }]
          },
          options: {
