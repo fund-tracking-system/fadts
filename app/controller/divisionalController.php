@@ -185,7 +185,12 @@ class divisionalController extends Controller{
       $this->view->render();
    }
 
-   
+   public function DShelpview(){ 
+      $this->view('divisionalsec/DShelpView');
+    
+      
+      $this->view->render();
+   }
 
 
 }
