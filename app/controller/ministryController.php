@@ -225,6 +225,12 @@ class ministryController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
+
+   public function MShelpview(){
+      $this->view('ministry/MShelpView');
+      
+      $this->view->render(); // This is how load the view
+   }
    
    
    public function selectFundDetailRegionView(){
