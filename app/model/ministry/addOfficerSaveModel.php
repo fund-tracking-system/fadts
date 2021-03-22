@@ -37,7 +37,7 @@
     }
 
     //default password is set initially
-    $password = "123456";
+    $password = password_hash("123456", PASSWORD_DEFAULT);
 
     //execute prepared statement
     $stmt->execute();
