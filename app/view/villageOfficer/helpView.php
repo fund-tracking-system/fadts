@@ -9,7 +9,7 @@
 
     <h3>UPDATE PEOPLE DATA</h3>
     <ul>
-    <li class="help">Initially the User has to enter his correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
+    <li class="help">Initially the User has to enter correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
     <li>Then the User data with Full name and Birth Date will be displayed only and other fields are kept empty for Updating.<br> The User can't
     change his Full Name and Birth Date.</li><br>
     <li>Now the User can change the details Address, Family Head, Monthly Income, Prolonged Disease/Disorder,<br> Civil Status, Income type

@@ -16,7 +16,7 @@
 
     <h3>UPDATE PEOPLE DATA</h3>
     <ul>
-    <li>Initially the User has to enter his correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
+    <li>Initially the User has to enter correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
     <li>Then the User data with Birth Date and Birth Certificate number will be displayed only, and other fields are kept empty for Updating.<br> The User can't
     change his Birth Date and Birth Certificate number.</li><br>
     <li>Now the User can change the details in the fields except Birth Date and Birth Certificate number</li><br>
