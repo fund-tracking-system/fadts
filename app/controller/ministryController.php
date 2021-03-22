@@ -226,6 +226,11 @@ class ministryController extends Controller{
    }
 
 
+   public function MShelpview(){
+      $this->view('ministry/MShelpView');
+      
+      $this->view->render(); // This is how load the view
+   }
    
   
 }
