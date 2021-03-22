@@ -46,6 +46,14 @@
     <li>After entering the dat in the fields click next button to assign region and Submit to save the Fund details in Database.</li>
     </ul><br><br>
 
+    <h3>VIEW ELIGIBILITY</h3>
+    <ul>
+    <li>When the User clicks on View eligibility and enter into the page, The user has to enter the name of the fund.</li><br>
+    <li>After entering the fund name, the User can view the details of the fund.</li>
+    </ul><br><br>
+
+
+
 
     </div>
 </div>
