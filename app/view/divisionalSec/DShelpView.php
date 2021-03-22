@@ -31,7 +31,15 @@
     <li>Otherwise the user can Search the data by criteria. User can filter the data by entering the data that has to be filtered 
     in the fields in the form. After entering the data click Search Here button, then the data will be displayed.</li>
     </ul><br><br>
-
+    
+    <h3>VIEW FUND DETAILS</h3>
+    <ul>
+    <li>When the User clicks on View Fund details and enter into the page. Then the User can view all the Fund details.<br> User can filter the
+    data by entering terms in the Search bar.</li><br>
+    <li>When the User clicks the View button the detailed analysis like Fund amount, Fund per person, Fund published date,<br> Analyse region, 
+    Number of delivered person and Pending person of the particular fund will be displayed.</li><br>
+    <li>When the User clicks the Recipient List button the Detailed information of Recipients of the particular Fund will be displayed.</li>
+    </ul><br><br>
 
      
     
