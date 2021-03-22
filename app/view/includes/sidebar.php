@@ -70,7 +70,7 @@ switch($controller){
    <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/divisional/DShelpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
