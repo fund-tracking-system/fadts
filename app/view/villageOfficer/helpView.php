@@ -47,7 +47,7 @@
     <h3>FUND RELEASE</h3>
     <ul>
     <li>User enter this page and type correct NIC number in the box and click Search button.</li><br>
-    <li>Then the User can view the fund details that is released corresponding to that particular NIC.</li><br>
+    <li>Then the User can view the fund details if that person corresponding to that NIC is in Recipient list.</li><br>
     </ul><br><br>
 
     <h3>ADD DISASTER VICTIMS</h3>
