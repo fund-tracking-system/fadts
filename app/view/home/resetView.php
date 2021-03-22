@@ -11,7 +11,7 @@ if(empty($selector) || empty($validator)){
 
 <head>
    <meta charset="utf-8">
-   <title>forgot password</title>
+   <title>Reset password</title>
    <link rel="stylesheet" type="text/css" href="<?php echo CSS.'logFog.css'?>">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
@@ -19,11 +19,7 @@ if(empty($selector) || empty($validator)){
 <body>
    <h2> FADTS | Reset Password</h2>
    <?php
-   
-      
-      
-         if((ctype_xdigit($selector) !==false) && (ctype_xdigit($validator) !==false)){
-            
+         if((ctype_xdigit($selector) !==false) && (ctype_xdigit($validator) !==false)){        
    ?>
             <div class="box">
                <form class="box" method="post" id="form" action="/fadts/home/resetModel">
@@ -50,7 +46,7 @@ if(empty($selector) || empty($validator)){
                      </div>
                      </br>
 
-                     <button type="submit" name="resetsubmit" class="btn btn-primary"><B>Reset</B></button><br><br>
+                     <button type="submit" name="resetsubmit" class="btn btn-primary">Submit</button><br><br>
 
                   </fieldset>
 

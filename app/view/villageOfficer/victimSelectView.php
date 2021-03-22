@@ -7,7 +7,7 @@
          unset($_SESSION['results']);
       } 
       if(isset($_GET['disasterId'])){
-         $disasterId = $_GET['disasterId'];
+         $_SESSION['dId'] = $_GET['disasterId'];         
       }       
 ?>
 
@@ -16,7 +16,7 @@
    <div class="SearchByCriteriaform1">
 
       <form method="post" name="nicSearch" action="/fadts/village/nicSearchModel?view=victimSelect"
-         id="fundReleaseSearch">
+         id="victimSearch">
 
          <fieldset class="BackgroundFS">
 
@@ -102,7 +102,7 @@
                </div>
 
                <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary" >Confirm and Add</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Confirm and Add</button>
                </div>
             
             </fieldset>
