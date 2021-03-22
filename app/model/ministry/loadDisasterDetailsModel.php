@@ -9,7 +9,6 @@ session_start();
             $myRegion;
 
 
-             echo "akdgjga";
          
 
              
@@ -22,9 +21,9 @@ session_start();
             $res=$result->fetch_all(MYSQLI_ASSOC); 
  
         
-
-
-            
+            // $password = "thisara";
+            // $hash=password_hash($password,PASSWORD_DEFAULT);
+            // echo $hash;
            
 
             //get  disasters
