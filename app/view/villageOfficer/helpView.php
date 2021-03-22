@@ -7,7 +7,7 @@
 
     <div class="SearchByCriteriaform1">
 
-    <h3>UPDATE PEOPLE DATA</h3>
+    <h3 class="Vh1">UPDATE PEOPLE DATA</h3>
     <ul>
     <li class="help">Initially the User has to enter correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
     <li>Then the User data with Full name and Birth Date will be displayed only and other fields are kept empty for Updating.<br> The User can't
