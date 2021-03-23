@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
 
   if(!mysqli_stmt_prepare($stmt, $sql)){
     mysqli_close($con);
-    header("Location:/fadts/village/searchpPeople?searcherror2=db_conn_err1");
+    header("Location:/fadts/ministry/searchRecipientView?searcherror2=db_conn_err1");
     exit();
   }else{
 
@@ -36,18 +36,19 @@ if(isset($_POST['submit'])){
       $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
       $_SESSION['personList']=$result;
       mysqli_close($con);
-      header("Location:/fadts/village/criteriaResult");
+      //header("Location:/fadts/ministry/criteriaResultView");
+      header("Location:/fadts/ministry/searchRecipientView");
       exit();
 
     }else{
       mysqli_close($con);
-      header("Location:/fadts/village/searchpPeople?searcherror2=db_conn_err2");
+      header("Location:/fadts/ministry/searchRecipientView?searcherror2=db_conn_err2");
       exit();
     }
   }
 
 }else{
-    header("Location:/fadts/fadts/village/victimSelect?error=direct_access_prohibited");
+    header("Location:/fadts/fadts/ministry/searchRecipientView?error=direct_access_prohibited");
     exit();
 }
  
