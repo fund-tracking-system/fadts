@@ -37,9 +37,9 @@
          </fieldset>
       </form> -->
 
-      <form method="post" action="/fadts/village/criteriaSearchModel" name="serchByCriteria" id="form">
+      <form method="post" action="/fadts/ministry/criteriaSearchModel" name="serchByCriteria" id="form">
          <fieldset class="BackgroundFS">
-            <h2>SEARCH BY CRITERIA</h2>
+            <h2>FILTER RECIPIENTS BY CRITERIA</h2>
 
             <fieldset class="searchBar">
                <?php 
@@ -69,7 +69,7 @@
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="disorder"><b>Prolonged Disorder/Disease :</b></label>
+                  <label class="inputLable" for="disorder"><b>Prolonged Disorder/Disease:</b></label>
                   <select class="form-control Input" id="disorder" name="disorder">
                      <option value="" selected>Not select</option>
                      <option value="no">Without Disorder/Diease</option>
@@ -78,7 +78,7 @@
                </div>
 
                <div class="form-row">
-                  <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
+                  <label class="inputLable" for="CivilStatus"><b>Civil Status:</b></label>
                   <select class="form-control Input" id="civilStatus" name="civilStatus">
                      <option value="" selected>Not select</option>
                      <option value="0">Unmarried</option>
@@ -94,7 +94,7 @@
                </div>
 
                <div class='form-row'>
-                  <label class="inputLable" style="margin-right:22%;"><b>Current Funds :</b></label>
+                  <label class="inputLable" style="margin-right:22%;"><b>Current Funds:</b></label>
                   <select class="js-example-responsive" multiple="multiple" style='top:60px; overflow:scroll; padding-right:525px;' id="funds" name="funds[]">
                      <?php    foreach($_SESSION['fundList'] as $fund){
                      ?>
@@ -109,7 +109,7 @@
                <input hidden disabled></input>
 
                <div class='form-row' style="margin-top:50px;">
-                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type / (s) :</b></label>
+                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type(s):</b></label>
                   <select class="js-example-responsive" multiple="multiple" style='top:60px; overflow:scroll; padding-right:525px;' id="incomeType" name="incomeType[]">
                      <?php    foreach($_SESSION['incomeTypes'] as $incomeType){     ?>
                                  <option value="<?php echo $incomeType['id']?>">

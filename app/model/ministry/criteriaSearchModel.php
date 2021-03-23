@@ -20,11 +20,11 @@ if(isset($_POST['submit'])){
   if(isset($_POST['funds'])) $funds = $_POST['funds'];
   else $funds="";
 
-  $sql = queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart, $incomeEnd,$funds);
+  $sql = queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds);
 
   $stmt = mysqli_stmt_init($con);
 
-  if(!mysqli_stmt_prepare($stmt,$sql)){
+  if(!mysqli_stmt_prepare($stmt, $sql)){
     mysqli_close($con);
     header("Location:/fadts/village/searchpPeople?searcherror2=db_conn_err1");
     exit();
@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
 }
  
 
-function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$incomeStart,$incomeEnd,$funds)
+function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds)
 {
 
    $region=$_SESSION['region'];
@@ -68,7 +68,7 @@ function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$inc
    }
 
    if($ageStart!="" && $ageEnd!=""){
-      $ageCondition = setAge($ageStart,$ageEnd);
+      $ageCondition = setAge($ageStart, $ageEnd);
 
       $query = $query." AND ".$ageCondition;
    }
@@ -88,7 +88,7 @@ function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$inc
       $query = $query." AND ".$incomeTypeCondition;
    }
    if($incomeStart!="" && $incomeEnd!=""){
-      $incomeValueCondition = setIncomeValue($incomeStart,$incomeEnd);
+      $incomeValueCondition = setIncomeValue($incomeStart, $incomeEnd);
 
       $query = $query." AND ".$incomeValueCondition;
    }
@@ -98,7 +98,7 @@ function queryGenerate($ageStart,$ageEnd,$disorder,$civilStatus,$incomeType,$inc
    
 }
 
-function setAge($ageStart,$ageEnd){
+function setAge($ageStart, $ageEnd){
    
    if($ageStart>$ageEnd){              //If user enters values like 60 to 30 
       $ageEnd = $ageStart + $ageEnd;
@@ -140,7 +140,7 @@ function setIncomeType($incomeType){
 
 }
 
-function setIncomeValue($incomeStart,$incomeEnd){
+function setIncomeValue($incomeStart, $incomeEnd){
 
    $incomeValueCondition = "";
    if($incomeStart>$incomeEnd){              //If user enters values like 60000 to 30000 
