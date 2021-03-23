@@ -53,7 +53,7 @@ require 'connection.php';
 				<h3 class="fontwhite" ><?php echo $_SESSION['userrole']?></h3>
 			</div>
 			<div class="box6">
-				<h1 class="dashboard-title">Victims Amount</h1>
+				<h1 class="dashboard-title">Number of Victims</h1>
 				<h3 class="fontwhite" ><?php echo $_SESSION['victimsCount']?></h3>
 			</div>
 			<div class="box7">
