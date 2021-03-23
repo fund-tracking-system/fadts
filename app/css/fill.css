@@ -2177,7 +2177,7 @@ ul.tabs li.current {
 
 .VOh1{
     color: rgb(9, 69, 80);
-    background-color: rgb(159, 214, 171);
+    background-color: rgb(105, 231, 168);
     border-radius: 25px;
     width: 300px;
     padding: 20px;
@@ -2187,14 +2187,16 @@ ul.tabs li.current {
 
 .VOp1{
     color: rgb(39, 9, 9);
-    width: 700px;
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
     padding: 20px;
     margin: 20px;
 }
 
 .VOh2{
     color: rgb(9, 69, 80);
-    background-color: rgb(159, 214, 171);
+    background-color: rgb(105, 231, 168);
     border-radius: 25px;
     width: 300px;
     padding: 20px;
@@ -2204,14 +2206,16 @@ ul.tabs li.current {
 
 .VOp2{
     color: rgb(39, 9, 9);
-    width: 700px;
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
     padding: 20px;
     margin: 20px;
 }
 
 .VOh3{
     color: rgb(9, 69, 80);
-    background-color: rgb(159, 214, 171);
+    background-color: rgb(105, 231, 168);
     border-radius: 25px;
     width: 300px;
     padding: 20px;
@@ -2221,14 +2225,16 @@ ul.tabs li.current {
 
 .VOp3{
     color: rgb(39, 9, 9);
-    width: 700px;
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
     padding: 20px;
     margin: 20px;
 }
 
 .VOh4{
     color: rgb(9, 69, 80);
-    background-color: rgb(159, 214, 171);
+    background-color: rgb(105, 231, 168);
     border-radius: 25px;
     width: 300px;
     padding: 20px;
@@ -2238,14 +2244,16 @@ ul.tabs li.current {
 
 .VOp4{
     color: rgb(39, 9, 9);
-    width: 700px;
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
     padding: 20px;
     margin: 20px;
 }
 
 .VOh5{
     color: rgb(9, 69, 80);
-    background-color: rgb(159, 214, 171);
+    background-color: rgb(105, 231, 168);
     border-radius: 25px;
     width: 300px;
     padding: 20px;
@@ -2255,14 +2263,16 @@ ul.tabs li.current {
 
 .VOp5{
     color: rgb(39, 9, 9);
-    width: 700px;
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
     padding: 20px;
     margin: 20px;
 }
 
 .VOh6{
     color: rgb(9, 69, 80);
-    background-color: rgb(159, 214, 171);
+    background-color: rgb(105, 231, 168);
     border-radius: 25px;
     width: 300px;
     padding: 20px;
@@ -2272,7 +2282,9 @@ ul.tabs li.current {
 
 .VOp6{
     color: rgb(39, 9, 9);
-    width: 700px;
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
     padding: 20px;
     margin: 20px;
 }
