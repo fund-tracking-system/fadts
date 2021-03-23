@@ -12,8 +12,8 @@
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
                <div class="form-row ">
-                  <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
-                  <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
+                  <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
+                  <input  class="form-control searchInput" id="NID-number" placeholder="Type Nice here"
                      name="NID"></input>
                   <button type="submit" class="btn btn-primary btnNav ">Search</button>
                </div>
@@ -27,14 +27,15 @@
             <h2>SEARCH BY CRITERIA</h2>
 
             <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
-               <div style=margin-left:10px;>
+
+               <div style=margin-left:30px;>
                   <label class="inputLable"><b>Age:</b></label>
                   <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
                         to</b></span>
                   <input class="form-control InputTwo" style="margin-left:810px;" name="age2"></input>
                </div>
 
-               <div class="form-row" style=margin-left:10px;>
+               <div class="form-row" style=margin-left:30px;>
                   <label class="inputLable" for="job type" style="margin-right:21.5%;"><b>Income Type :</b></label>
                   <select class="js-example-responsive" multiple="multiple"
                      style="position:sticky;top:60px;overflow:scroll; padding-right:470px;  " id="job" name="job">
@@ -47,7 +48,7 @@
                   </select>
                </div>
 
-               <div style="  padding-top: 30px; margin-left:10px; ">
+               <div style="  padding-top: 30px; margin-left:30px; ">
                   <label class="inputLable"><b>Prolonged</br>
                   </label>
                   <label class="inputLable" style="margin-right:3.5%;">
@@ -65,7 +66,7 @@
                <div style="  padding-top: 30px; " >
                   </br>
 
-                  <label class="inputLable" style="margin-right:9%;margin-left:10px;"><b>
+                  <label class="inputLable" style="margin-right:9%;margin-left:30px;"><b>
                         Civil Status :</b></label>
 
                   <div class='radio1'style=margin-left:130px;>
@@ -78,7 +79,7 @@
                   </div>
                </div>
 
-               <div class="margn" style=margin-left:10px;>
+               <div class="margn" style=margin-left:30px;>
 
                   <label class="inputLable"><b>Gross Income:</b></label>
                   <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
@@ -88,8 +89,8 @@
                </div>
 
 
-               <div class='form-row'style=margin-left:10px;>
-                  <label class="inputLable" style="margin-right:19.5%;"><b>Current Funds :</br>
+               <div class='form-row'style=margin-left:30px;>
+                  <label class="inputLable" style="margin-right:20%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
                      style='position:sticky;top:60px;overflow:scroll; padding-right:470px;' id="funds" name="funds">
@@ -102,9 +103,9 @@
                </div>
 
 
-               <div class='button ' style="margin-top:30px;">
+               <div class='Twobtns ' style="margin-top:60px;margin-bottom:30px; margin-left:600px;">
 
-                  <button type="submit" class=' btn btn-primary signlebtn' style="margin-left:390px;">Search
+                  <button type="submit" class=' btn btn-primary'>Search
                      Here</button>
                </div>
 

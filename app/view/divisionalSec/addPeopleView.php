@@ -36,10 +36,7 @@
                   <input class="form-control Input" id='nid' name="nid"></input>
                </div>
 
-               <div class="form-row">
-                  <label for="name " class="inputLable"><b>Adrress :</b></label>
-                  <input class="form-control Input" id="address" name="address"></input>
-               </div>
+               
 
                <div class="form-row">
                   <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
@@ -125,7 +122,17 @@
                   <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
                </div>
 
-               <div class="Twobtn">
+               <div class="form-row">
+                  <label for="name " class="inputLable"><b>Adrress :</b></label>
+                  <textarea class="form-control Input txtWidth  id="address" name="address"></textarea>
+               </div>
+
+
+
+
+
+
+               <div class="Twobtns">
                   <button type="submit" class="btn btn-primary">Confirm and Submit</button>
                </div>
 

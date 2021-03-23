@@ -139,7 +139,7 @@ h6{
 }
 
 .inputLable.LableTwo {
-    margin-left: 640px;
+    margin-left: 570px;
     margin-top: -80px;
 }
 .btn.siz{
@@ -196,6 +196,10 @@ h6{
     margin-left: 185px;
     margin-bottom: 23px;
 }
+.inputLable{
+    margin-bottom: -15px;
+}
+
 
 .form-control.Input {
     margin-left: 350px;
