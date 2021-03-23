@@ -130,6 +130,12 @@ h6{
 
 .Twobtn {
     margin-left: 500px;
+    margin-top:-140px;
+    margin-left:770px;
+}
+
+.Twobtns{
+    margin-left: 500px;
 }
 
 .inputLable.LableTwo {
@@ -195,7 +201,7 @@ h6{
     margin-left: 350px;
     margin-bottom: 50px;
     margin-right: 150px;
-    margin-top: -4%;
+    margin-top: -2%;
 }
 
 .form-control.details {
@@ -229,6 +235,20 @@ h6{
     margin-left: 345px;
     margin-bottom: -30px;
 }
+.form-control.InputOnes {
+    width: 150px;
+    margin-top: -30px;
+    margin-left: 345px;
+    margin-bottom: -30px;
+    margin-left:570px;margin-top:-25px;width:260px;
+}
+
+.form-control.InputOness {
+    width: 150px;
+    margin-top: -30px;
+    margin-left: 345px;
+    margin-bottom: -30px;
+    margin-left:160px;width:300px;}
 
 .btn.btn-primary.btnNav {
     margin-left: 75%;
@@ -2153,4 +2173,106 @@ ul.tabs li.current {
 
 .colorEve{
     color: white;
+}
+
+.VOh1{
+    color: rgb(9, 69, 80);
+    background-color: rgb(159, 214, 171);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp1{
+    color: rgb(39, 9, 9);
+    width: 700px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh2{
+    color: rgb(9, 69, 80);
+    background-color: rgb(159, 214, 171);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp2{
+    color: rgb(39, 9, 9);
+    width: 700px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh3{
+    color: rgb(9, 69, 80);
+    background-color: rgb(159, 214, 171);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp3{
+    color: rgb(39, 9, 9);
+    width: 700px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh4{
+    color: rgb(9, 69, 80);
+    background-color: rgb(159, 214, 171);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp4{
+    color: rgb(39, 9, 9);
+    width: 700px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh5{
+    color: rgb(9, 69, 80);
+    background-color: rgb(159, 214, 171);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp5{
+    color: rgb(39, 9, 9);
+    width: 700px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh6{
+    color: rgb(9, 69, 80);
+    background-color: rgb(159, 214, 171);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp6{
+    color: rgb(39, 9, 9);
+    width: 700px;
+    padding: 20px;
+    margin: 20px;
 }

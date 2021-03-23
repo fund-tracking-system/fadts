@@ -32,7 +32,7 @@ switch($controller){
    <a href="/fadts/audit/viewHistoryRecord" class="dashboard sidebar_link">
       <span class="material-icons">find_in_page</span>View History Records
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ADhelpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">

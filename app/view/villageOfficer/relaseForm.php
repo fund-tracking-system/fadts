@@ -1,56 +1,57 @@
 <?php include VIEW.'includes/header.php' ?>
+
 <?php include VIEW.'includes/sidebar.php' ?>
 
-        <form method="post" action="" id="form">
-            <fieldset class="BackgroundFS">
-                <h2>Fund Release Form</h2>
 
 
-                <div class="form-row">
-                    <label for="person-id" class="inputLable"><b>Person ID:</b></label>
-                    <input id="person-id" class="form-control Input" aria-describedby="validationServer03Feedback"
-                        value="person Name" readonly></input>
-                </div>
+<div class="all_bacground_clor">
+    <div class="SearchByCriteriaform1 ">
+    
+    <form method="post" action="/fadts/village/......" id="formAddOfficer">
+            <fieldset class="BackgroundFS" style="margin-top:-30px;">
+                <h2> </h2>
 
+                <fieldset class="searchBar"> 
 
-                <div class="form-row">
-                    <label for="name" class="inputLable"><b>Name:</b></label>
-                    <input id="name" class="form-control Input" aria-describedby="validationServer03Feedback"
-                        value="person Name" readonly></input>
-                </div>
+                <div>
+                  <label class="inputLable"><b>Fund Name</b></label>
+                  <input class="form-control InputOness" style="" name="fname" value="govi setha" ></input>
+                  
+                  <label class="inputLable" style="margin-left:510px;"><b>OTP</b></label>
+                  <input class="form-control InputOnes"style="" name="otp" value=0 ></input>
+                  <button type="submit"  style="margin-left:850px;margin-top:-5px;"class="btn btn-primary">Request OTP</button>
 
-                <div class="form-row">
-                    <label for="name" class="inputLable"><b>Amount:</b></label>
-                    <input id="name" class="form-control Input" aria-describedby="validationServer03Feedback"
-                        value="Name is read only" readonly></input>
-                </div>
+               </div>
 
 
 
-                <div class="form-row">
-                    <label for="Pnumber" class="inputLable"><b>Phone Number:</b></label>
-                    <input id="name" class="form-control Input" aria-describedby="validationServer03Feedback"
-                        value="0932876272" readonly></input>
-                </div>
+
+               <div  class="form-row" style="margin-bottom:50px;margin-left:-650px;">
+            
+               <span class="inputLable LableTwo"style="margin-top:50px;"><b>Amount (Rs):</b></span>
+                  <input class="form-control InputTwo" name="amount" value=1000000 style="width:300px;"></input>
+               
+               </div>
+                
+
+               <div class="Twobtn">
+                  <button type="submit" class="btn btn-primary">Confirm Recieving</button>
+               </div>
+
+                              
 
 
-                <div class="form-row">
-                    <label for="OTP" class="inputLable"><b>OTP:</b></label>
-                    <input id="OTP" class="form-control Input" aria-describedby="validationServer03Feedback"
-                        placeholder="Enter Validation Code"></input>
-                </div>
-
-
-                <div class="Twobtn">
-
-                    <button type="submit" class='confirm-button btn btn-primary '>REQ OTP</button>
-                    <button class='confirm-button btn btn-primary '>Confirm</button>
-                </div>
-
-            </fieldset>
-        </form>
-    </div>
+</fieldset>
+</fieldset>
+</form>
 
 </div>
 
-<?php include VIEW.'includes/footer.php' ?>
+
+
+</div>
+
+
+
+
+<?php include VIEW.'includes/footer.php'?>

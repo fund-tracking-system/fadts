@@ -32,10 +32,10 @@
                                 <td><B style="margin-left:30%;"><?php echo $fund['name']?></B></td>
                                 
                                 <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
-                                <td><a href="/fadts/ministry/funddetailModel?fundId=<?php echo $fund['fundId']; ?>"
+                                <td><a href="/fadts/ministry/selectFundDetailRegionView"
                                         class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
                                 </td>
-                            </tr>
+                            </tr> 
 
                             <?php    } 
                         unset($_SESSION['results']);
