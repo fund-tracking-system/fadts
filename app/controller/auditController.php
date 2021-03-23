@@ -68,4 +68,9 @@ class auditController extends Controller{
       $this->view->render();
    }
   
+   public function ADhelpview(){
+      $this->view('auditor/ADhelpView');
+
+      $this->view->render();
+   }
 }
