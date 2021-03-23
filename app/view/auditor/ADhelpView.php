@@ -22,9 +22,33 @@
     <h3>VIEW PERSON HISTORY</h3>
     <ul>
     <li>User can enter into the View Eligibility History page and Enter the NID of the Person and click on Search button.</li><br>
-    <li>After clicking Search button the User can view the History of that corresponding NID.</li>
+    <li>After clicking Search button the User can view the past History of that corresponding NID.</li>
     </ul><br><br>
     
+    <h3>VIEW DISASTER DETAILS</h3>
+    <ul>
+    <li>User clicks on View disaster details and enter into the page. Then the user has to fill the fields with correct data.</li><br>
+    <li>When the User clicks the View Selected Disaster button the detailed analysis of that Disaster will be displayed to the 
+    User.</li>
+    </ul><br><br>
+
+    <h3>VIEW FUND DETAILS</h3>
+    <ul>
+    <li>When the User clicks on View Fund details and enter into the page. Then the User can view Pre defined funds<br> and can search
+    manually defined funds .</li><br>
+    <li>User can select the predefined fund and Search for the details or he can manually fill the data in manually <br>defined funds
+    form and click on Search Here button to get the details of the fund.</li>
+    </ul><br><br>
+
+    <h3>SEARCH PEOPLE DATA</h3>
+    <ul>
+    <li>Here User can search the data using NIC or Search by Criteria.</li><br>
+    <li>Initially User can Search the details by entering correct NIC number. If the correct NIC is entered and<br> Search button is clicked
+    the data will be displayed.</li><br>
+    <li>Otherwise the user can Search the data by criteria. User can filter the data by entering the data that has to be filtered<br> 
+    in the fields in the form. After entering the data click Search Here button, then the people data will be displayed.</li>
+    </ul><br><br>
+
     
 
     </div>
