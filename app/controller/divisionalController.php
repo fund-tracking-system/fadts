@@ -2,6 +2,11 @@
 
 class divisionalController extends Controller{
 
+   
+   
+   // ***********************updatePeople functions************************
+
+
    public function updatePeople(){
       $this->view('divisionalSec/updatePeopleView');
       
@@ -12,6 +17,20 @@ class divisionalController extends Controller{
       
       $this->model->load();
    }
+
+
+
+
+
+
+
+
+
+
+
+
+// ***************************add disaster functions***************************************
+
 
    public function addDisaster(){
       $this->view('divisionalSec/addDisasterView');
@@ -24,6 +43,21 @@ class divisionalController extends Controller{
       $this->model->load();      
    }
 
+
+
+
+
+
+
+
+
+
+   
+
+
+   // *************************view Disaster Details Functions***********************
+
+
    public function ViewDisasterDetails(){
       $this->view('divisionalSec/disasterDetailsFormView');
       
@@ -35,11 +69,65 @@ class divisionalController extends Controller{
       $this->model->load();      
    }
 
+   public function selectDisasterDetailspast(){ 
+      $this->view('divisionalsec/selectDisasterDetails1');
+    
+      
+      $this->view->render();
+   }
+
+   
+   public function selectDisasterDetails(){ 
+      $this->view('divisionalsec/selectDisasterDetails');
+    
+      
+      $this->view->render();
+   }
+   
+
+   public function disasterVictimsView(){ 
+      $this->view('divisionalsec/disasterVictimsView');
+    
+      
+      $this->view->render();
+   }
+
+
+
+
+
+
+
+
+
+   // **************************search  people  functions **************************************
+
    public function searchPeople(){
       $this->view('divisionalSec/searchPeopleView');
       
       $this->view->render(); // This is how load the view
    }
+
+
+   public function nicSearchModel(){
+      $this->model('divisionalSec/nicSearchModel');
+
+      $this->model->load();
+   }
+
+
+
+
+
+
+
+
+
+
+
+   // *******************************fund details functions*****************************************
+
+
     
    public function fundDetailsSelectView(){
       $this->view('divisionalSec/fundDetailsSelectView');
@@ -47,79 +135,7 @@ class divisionalController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
-   public function ViewAddPeople(){
-      $this->view('divisionalSec/addPeopleView');
-      
-      $this->view->render(); // This is how load the view
-   }
-   public function ViewAddPeopleProfile(){
-      $this->view('divisionalSec/ViewAddPeopleProfile');
-      
-      $this->view->render(); // This is how load the view
-   }
 
-   
-   public function fundRelease(){
-      $this->view('divisionalSec/fundReleaseView');
-      
-      $this->view->render(); // This is how load the view
-   }
-   public function fundReleaseModel(){
-      $this->model('divisionalSec/fundReleaseModel');
-      
-      $this->model->load();
-   }
-
-   // load the userProfile view of divisional Secratary
-   public function userProfile(){
-      $this->view('divisionalSec/userProfileView');
-      
-      $this->view->render();      
-   }
-
-   public function userProfileModel(){       // load the model for userProfile view of divisional Secratary
-      $this->model('divisionalSec/userProfileView');
-      
-      $this->model->load();      
-   }
-
-   public function addPeopleModel(){ 
-      $this->model('divisionalSec/addPeopleModel');
-      
-      $this->model->load();
-   }
-
-   public function addPeopleSaveModel(){ 
-      $this->model('divisionalSec/addPeopleSaveModel');
-    
-      $this->model->load(); // This is how load the model
-   }
-
-   public function nicSearchModel(){
-      $this->model('divisionalSec/nicSearchModel');
-
-      $this->model->load();
-   }
-   
-   public function assignRegionView(){ 
-      $this->view('divisionalsec/assignRegionView');
-    
-      
-      $this->view->render();
-   }
-   public function disasterRegionView(){ 
-      $this->view('divisionalsec/disasterRegionView');
-    
-      $this->view->render();
-   }
-
-
-   public function assignRegionSelectModel(){ 
-      $this->model('divisionalsec/addPeopleSelectRegion');
-
-      $this->model->load();
-      
-   }
    
 
    public function ViewFundDetailsModel(){ 
@@ -151,39 +167,133 @@ class divisionalController extends Controller{
       $this->view->render();
    }
 
-
-   
-
-   
-   public function selectDisasterDetailspast(){ 
-      $this->view('divisionalsec/selectDisasterDetails1');
-    
-      
-      $this->view->render();
-   }
-
-   public function selectDisasterDetails(){ 
-      $this->view('divisionalsec/selectDisasterDetails');
-    
-      
-      $this->view->render();
-   }
-   
-
-   public function disasterVictimsView(){ 
-      $this->view('divisionalsec/disasterVictimsView');
-    
-      
-      $this->view->render();
-   }
-
-
    public function recipeintView(){ 
       $this->view('divisionalsec/recipeintView');
     
       
       $this->view->render();
    }
+
+
+
+
+
+
+
+
+
+
+
+
+   // **********************************add people functions************************************************
+
+
+
+
+   public function ViewAddPeople(){
+      $this->view('divisionalSec/addPeopleView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function addPeopleModel(){ 
+      $this->model('divisionalSec/addPeopleModel');
+      
+      $this->model->load();
+   }
+
+   
+   public function addPeopleSaveModel(){ 
+      $this->model('divisionalSec/addPeopleSaveModel');
+    
+      $this->model->load(); // This is how load the model
+   }
+
+
+   public function ViewAddPeopleProfile(){
+      $this->view('divisionalSec/ViewAddPeopleProfile');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+
+
+
+
+
+
+   // *********************************fund release***********************************************
+
+
+   
+   public function fundRelease(){
+      $this->view('divisionalSec/fundReleaseView');
+      
+      $this->view->render(); // This is how load the view
+   }
+   public function fundReleaseModel(){
+      $this->model('divisionalSec/fundReleaseModel');
+      
+      $this->model->load();
+   }
+
+
+
+
+
+
+
+
+
+
+   //***************************************load the userProfile view of divisional Secratary
+
+
+   public function userProfile(){
+      $this->view('divisionalSec/userProfileView');
+      
+      $this->view->render();      
+   }
+
+   public function userProfileModel(){       // load the model for userProfile view of divisional Secratary
+      $this->model('divisionalSec/userProfileView');
+      
+      $this->model->load();      
+   }
+
+  
+
+
+   
+   public function assignRegionView(){ 
+      $this->view('divisionalsec/assignRegionView');
+    
+      
+      $this->view->render();
+   }
+   public function disasterRegionView(){ 
+      $this->view('divisionalsec/disasterRegionView');
+    
+      $this->view->render();
+   }
+
+
+   public function assignRegionSelectModel(){ 
+      $this->model('divisionalsec/addPeopleSelectRegion');
+
+      $this->model->load();
+      
+   }
+
+
+   
+
+
+   
+
+
+
+//  ****************************help*******
 
    public function DShelpview(){ 
       $this->view('divisionalsec/DShelpView');
