@@ -124,10 +124,10 @@ class ministryController extends Controller{
       $this->model->load(); // This is how load the model
    }
 
-   public function criteriaResultView(){
-      $this->view('ministry/criteriaResultView');
+   public function createFundSaveModel(){ 
+      $this->model('ministry/createFundSaveModel');
       
-      $this->view->render(); // This is how load the view
+      $this->model->load(); // This is how load the model
    }
 
    

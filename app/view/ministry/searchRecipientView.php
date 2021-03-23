@@ -39,7 +39,7 @@
 
       <form method="post" action="/fadts/ministry/criteriaSearchModel" name="serchByCriteria" id="form">
          <fieldset class="BackgroundFS">
-            <h2>FILTER RECIPIENTS BY CRITERIA</h2>
+            <h2>FILTER PEOPLE BY CRITERIA</h2>
 
             <fieldset class="searchBar">
                <?php 
@@ -128,6 +128,54 @@
             </fieldset>
          </fieldset>
       </form>
+
+      <?php if (isset($_SESSION['personList'])) { ?>                  
+         <form>
+            <fieldset class="BackgroundFS">
+                  <h2>FILTERED PEOPLE LIST</h2>
+
+                  <fieldset class="tableBar">
+                     <div class="tbleMargin">
+                        <table id="resultTable" class="display">
+                              <thead>
+                                 <tr>
+                                    <th><B>NIC Number</B></th>
+                                    <th><B>Name</B></th>
+                                    <th><B>Address</B></th>
+                                    <th><B>Contact</B></th>
+                                    <!-- <th><B>View</B></th> -->
+                                 </tr>
+                              </thead>
+
+                              <tbody>
+                                 <?php 
+                                    foreach($_SESSION['personList'] as $person){ 
+                                          $pid = $person['personId'];
+                                 ?>
+                                 
+                                 <tr>
+                                    <td><B style="margin-left:30%;"><?php echo $person['nid']?></B></td>
+                                    <td><B style="margin-left:30%;"><?php echo $person['name']?></B></td>
+                                    <td><B style="margin-left:30%;"><?php echo $person['address']?></B></td>
+                                    <td><B style="margin-left:30%;"><?php echo $person['phone']?></B></td>                                    
+                                    <!-- <td><a href="/fadts/village/personDetailsModel?pid=<?php echo $pid ?>&view=criteriaResult" class="btn btn-primary" style="margin-left:20%">VIEW</a></td> -->
+                                    </form>
+                                 </tr>
+
+                                 <?php    
+                                    } 
+                                 ?>
+                              </tbody>
+                        </table>
+                     <div>
+
+                     <div class='button' style="margin-top:30px;">
+                        <a href="/fadts/ministry/createFundSaveModel" class="btn btn-primary" style="margin-left:20%">CONFIRM RECIPIENT LIST</a>
+                     </div>
+                  </fieldset>
+            </fieldset>
+         </form>
+      <?php } ?>   
    </div>
 </div>
 
@@ -135,6 +183,11 @@
    $(document).ready(function() {
       $('#incomeType').select2();
       $('#funds').select2();
+
+      $("#resultTable").DataTable({
+         dom: 'Bfrtip',
+         buttons: ['print', 'pdf']
+      });
    });
 </script>
 
