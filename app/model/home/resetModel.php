@@ -60,7 +60,6 @@ if(isset($_POST["resetsubmit"])){
                   header('Location:/fadts/home/forgot?error=reset_db_conn_err');
                   exit();  
                }else{
-
                   $sql = "UPDATE user SET password=? WHERE email=?";
                   $stmt = mysqli_stmt_init($con);
                   if(!mysqli_stmt_prepare($stmt,$sql)){
