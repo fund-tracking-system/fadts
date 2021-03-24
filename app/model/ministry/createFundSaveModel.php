@@ -83,7 +83,7 @@
         //unset predefined fund list in session variables
         unset($_SESSION['fundList']);
 
-        header("Location:/fadts/ministry/searchRecipientView");
+        header("Location:/fadts/ministry/createFundView");
         exit();
     }
 

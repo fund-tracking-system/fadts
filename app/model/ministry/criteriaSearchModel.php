@@ -3,105 +3,138 @@
 session_start();
 
 if(isset($_POST['submit'])){
+   require 'connection.php';  //link to mysql connection
 
-  require 'connection.php';      //link to mysql connection
+   $ageStart = $_POST['ageStart'];
+   $ageEnd = $_POST['ageEnd']; 
+   $disorder = $_POST['disorder'];
+   $civilStatus = $_POST['civilStatus'];
 
-  $ageStart = $_POST['ageStart'];
-  $ageEnd = $_POST['ageEnd']; 
-  $disorder = $_POST['disorder'];
-  $civilStatus = $_POST['civilStatus'];
+   if(isset($_POST['incomeType'])) $incomeType = $_POST['incomeType'];
+   else $incomeType = "";
 
-  if(isset($_POST['incomeType'])) $incomeType = $_POST['incomeType'];
-  else $incomeType = "";
+   $incomeStart = $_POST['incomeStart'];
+   $incomeEnd = $_POST['incomeEnd']; 
 
-  $incomeStart = $_POST['incomeStart'];
-  $incomeEnd = $_POST['incomeEnd']; 
+   if(isset($_POST['funds'])) $funds = $_POST['funds'];
+   else $funds="";
 
-  if(isset($_POST['funds'])) $funds = $_POST['funds'];
-  else $funds="";
+   $sql = queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds);
+   //echo $sql;
+   //exit();
 
-  $sql = queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds);
+   $stmt = mysqli_stmt_init($con);
 
-  $stmt = mysqli_stmt_init($con);
-
-  if(!mysqli_stmt_prepare($stmt, $sql)){
-    mysqli_close($con);
-    header("Location:/fadts/ministry/searchRecipientView?searcherror2=db_conn_err1");
-    exit();
-  }else{
-
-    if(mysqli_stmt_execute($stmt)){
-
-      $result = mysqli_stmt_get_result($stmt);
-      $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
-      $_SESSION['personList']=$result;
+   if(!mysqli_stmt_prepare($stmt, $sql)) {
       mysqli_close($con);
-      //header("Location:/fadts/ministry/criteriaResultView");
-      header("Location:/fadts/ministry/searchRecipientView");
+      header("Location:/fadts/ministry/searchRecipientView?searcherror2=db_conn_err1");
       exit();
-
-    }else{
-      mysqli_close($con);
-      header("Location:/fadts/ministry/searchRecipientView?searcherror2=db_conn_err2");
-      exit();
-    }
-  }
-
-}else{
-    header("Location:/fadts/fadts/ministry/searchRecipientView?error=direct_access_prohibited");
-    exit();
+   }
+   else {
+      if(mysqli_stmt_execute($stmt)) {
+         $result = mysqli_stmt_get_result($stmt);
+         $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+         $_SESSION['personList']=$result;
+         mysqli_close($con);
+         header("Location:/fadts/ministry/searchRecipientView");
+         exit();
+      }
+      else {
+         mysqli_close($con);
+         header("Location:/fadts/ministry/searchRecipientView?searcherror2=db_conn_err2");
+         exit();
+      }
+   }
 }
- 
+else {
+   header("Location:/fadts/fadts/ministry/searchRecipientView?error=direct_access_prohibited");
+   exit();
+} 
 
-function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds)
-{
-
+function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds) {
    $region=$_SESSION['region'];
+   $count=0; 
 
-   if(!empty($funds)){
+   if(!empty($funds)) {
       $fundsCondiion = setFunds($funds);
-      $query = "SELECT person.personId,nid,name,address,phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE ((region = $region)";
+      $query = "SELECT person.personId, nid, name, address, phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE (";
       
-      $query = $query." AND ".$fundsCondiion;
-
-   }else{
-      $query = "SELECT person.personId,nid,name,address,phone FROM person WHERE ((region = $region)";
+      $query = $query." ".$fundsCondiion;
+      $count++;
+   }
+   else {
+      $query = "SELECT person.personId, nid, name, address, phone FROM person WHERE (";
    }
 
-   if($ageStart!="" && $ageEnd!=""){
+   if($ageStart!="" && $ageEnd!="") {
       $ageCondition = setAge($ageStart, $ageEnd);
 
-      $query = $query." AND ".$ageCondition;
+      if ($count) {
+         $query = $query." AND ".$ageCondition;
+         $count++;
+      }
+      else {
+         $query = $query." ".$ageCondition;
+         $count++;
+      }      
    }
-   if($disorder!=""){
-      $disorderCondition = "(disordered = $disorder)";
 
-      $query = $query." AND ".$disorderCondition;
+   if($disorder!="") {
+      $disorderCondition = "(disordered = $disorder)";
+      
+      if ($count) {
+         $query = $query." AND ".$disorderCondition;
+         $count++;
+      }
+      else {
+         $query = $query." ".$disorderCondition;
+         $count++;
+      }  
    }
-   if($civilStatus!=""){
+
+   if($civilStatus!="") {
       $civilStatusCondition = "(civilStatus = $civilStatus)";
 
-      $query = $query." AND ".$civilStatusCondition;
+      if ($count) {
+         $query = $query." AND ".$civilStatusCondition;
+         $count++;
+      }
+      else {
+         $query = $query." ".$civilStatusCondition;
+         $count++;
+      } 
    }
-   if(!empty($incomeType)){
+
+   if(!empty($incomeType)) {
       $incomeTypeCondition = setIncomeType($incomeType);
 
-      $query = $query." AND ".$incomeTypeCondition;
+      if ($count) {
+         $query = $query." AND ".$incomeTypeCondition;
+         $count++;
+      }
+      else {
+         $query = $query." ".$incomeTypeCondition;
+         $count++;
+      } 
    }
-   if($incomeStart!="" && $incomeEnd!=""){
+
+   if($incomeStart!="" && $incomeEnd!="") {
       $incomeValueCondition = setIncomeValue($incomeStart, $incomeEnd);
 
-      $query = $query." AND ".$incomeValueCondition;
+      if ($count) {
+         $query = $query." AND ".$incomeValueCondition;
+      }
+      else {
+         $query = $query." ".$incomeValueCondition;
+      } 
    }
 
    $query = $query.")";  
-   return $query;
-   
+   return $query;   
 }
 
-function setAge($ageStart, $ageEnd){
-   
-   if($ageStart>$ageEnd){              //If user enters values like 60 to 30 
+function setAge($ageStart, $ageEnd) {   
+   if($ageStart>$ageEnd){  //If user enters values like 60 to 30 
       $ageEnd = $ageStart + $ageEnd;
       $ageStart = $ageEnd - $ageStart;
       $ageEnd = $ageEnd - $ageStart;
@@ -120,67 +153,62 @@ function setAge($ageStart, $ageEnd){
    return $ageCondition;
 }
 
-
-function setIncomeType($incomeType){
-   
+function setIncomeType($incomeType) {   
    $string = "(";
 
    $incomeType = new ArrayIterator($incomeType);
    $incomeType = new CachingIterator($incomeType);
 
-   foreach ($incomeType as $value){
-      
+   foreach ($incomeType as $value) {      
       $string = $string." job = '".$value."'";  
       if($incomeType->hasNext()) {
          $string = $string." OR ";
       }else{
          $string = $string.")";
       }
-  }
-  return $string;
-
+   }
+   return $string;
 }
 
-function setIncomeValue($incomeStart, $incomeEnd){
-
+function setIncomeValue($incomeStart, $incomeEnd) {
    $incomeValueCondition = "";
-   if($incomeStart>$incomeEnd){              //If user enters values like 60000 to 30000 
+
+   if($incomeStart>$incomeEnd) {  //If user enters values like 60000 to 30000 
       $incomeEnd = $incomeStart + $incomeEnd;
       $incomeStart = $incomeEnd - $incomeStart;
       $incomeEnd = $incomeEnd - $incomeStart;
    }
 
    //(monthlyIncome BETWEEN 4000 AND 60000)
-
-   if($incomeStart==""){
+   if($incomeStart=="") {
       $incomeValueCondition = "(monthlyIncome < $incomeEnd)";    
    }
-   else if($incomeEnd==""){
+   else if($incomeEnd=="") {
       $incomeValueCondition = "(monthlyIncome > $incomeStart)";
    }
-   else{
+   else {
       $incomeValueCondition = "(monthlyIncome BETWEEN $incomeStart AND $incomeEnd)";
    }
 
    return $incomeValueCondition;
 }
-function setFunds($funds){
 
+function setFunds($funds) {
    $string = "(";
 
    $funds = new ArrayIterator($funds);
    $funds = new CachingIterator($funds);
 
-   foreach ($funds as $value){
-      
-      $string = $string." predefinedFundId = ".$value;  
+   foreach ($funds as $value) {      
+      $string = $string." predefinedFundId = ".$value; 
       if($funds->hasNext()) {
          $string = $string." OR ";
-      }else{
+      }
+      else {
          $string = $string.")";
       }
-  }
-  return $string;
+   }
+   return $string;
 }
 
 
