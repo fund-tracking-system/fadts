@@ -7,27 +7,30 @@
 
     <div class="SearchByCriteriaform1">
 
-    <h3 class ="VOh1">UPDATE PEOPLE DATA</h3>
+    <h3 class ="VOh1">UPDATE PEOPLE DATA???</h3>
     <ul class="VOp1">
     <li>Initially the User has to enter correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
-    <img src="/fadts/app/images/picvo1_1.PNG" alt="vopic1_1" style="width:800px;height:200px;"><br><br>
+    <img src="/fadts/app/images/picvo1_1.jpg" alt="vopic1_1" style="width:800px;height:200px;"><br><br>
     <li>Then the User data with Full name and Birth Date will be displayed only and other fields are kept empty for Updating.The User can't
     change his Full Name and Birth Date.</li><br>
     <li>Now the User can change the details Address, Family Head, Monthly Income, Prolonged Disease/Disorder, Civil Status, Income type
      and Dead/Alive.</li><br>
      <img src="/fadts/app/images/picvo1_2.PNG" alt="vopic1_2" style="width:800px;height:400px;"><br><br>
     <li>After entering everything click on Confirm and Update the entered new data will be Updated.</li><br>
-    <img src="/fadts/app/images/picvo1_3.PNG" alt="vopic1_3" style="width:800px;height:100px;"><br>
+    <img src="/fadts/app/images/picvo1_3.jpg" alt="vopic1_3" style="width:800px;height:100px;"><br>
     </ul><br><br>
     
 
-    <h3 class ="VOh2">SEARCH PEOPLE DATA</h3>
+    <h3 class ="VOh2">SEARCH PEOPLE DATA???</h3>
     <ul class ="VOp2">
     <li>Here User can search the data using NIC or Search by Criteria.</li><br>
     <li>Initially User can Search the details by entering correct NIC number. If the correct NIC is entered and Search button is clicked
     the data will be displayed.</li><br>
+    <img src="/fadts/app/images/picvo2_1.jpg" alt="vopic2_1" style="width:800px;height:200px;"><br><br>
     <li>Otherwise the user can Search the data by criteria. User can filter the data by entering age limit, Prolonged Disease/Disorder,
-    Civil Status, Gross Income, Current Funds, Income type. After entering filter data click Search Here button the data will be displayed.</li>
+    Civil Status, Gross Income, Current Funds, Income type. After entering filter data click Search Here button the data will be displayed.</li><br>
+    <img src="/fadts/app/images/picvo2_2.PNG" alt="vopic2_2" style="width:800px;height:360px;"><br><br>
+    <img src="/fadts/app/images/picvo2_3.jpg" alt="vopic2_3" style="width:800px;height:180px;"><br><br>
     </ul><br><br>
 
     <h3 class="VOh3">VIEW DISASTER DETAILS</h3>
