@@ -54,37 +54,37 @@
       <?php if(isset($_SESSION['result'])){ 
                $funds=$_SESSION['result'];
                unset($_SESSION['result']);
+
                foreach($funds as $fund){   ?>      
-               <form method="post" action="/fadts/village/......" id="formAddOfficer">
-                     <fieldset class="BackgroundFS" style="margin-top:30px;">
+                  <form method="post" action="/fadts/village/fundReleaseModel" id="fundRelease">
+                        <fieldset class="BackgroundFS" style="margin-top:30px;">
+                           <fieldset class="searchBar"> 
+                           <div>
+                              <label class="inputLable"><b>Fund Name :</b></label>
+                              <input class="form-control InputOness" name="fname" disabled
+                              value="<?php echo $fund['name'];?>" ></input>
+                              
+                              <label class="inputLable" style="margin-left:560px;"><b>OTP :</b></label>
+                              <input class="form-control InputOnes" name="otp"></input>
+                              <button type="submit"  style="margin-left:890px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
 
-                        <fieldset class="searchBar"> 
+                           </div>
 
-                        <div>
-                           <label class="inputLable"><b>Fund Name</b></label>
-                           <input class="form-control InputOness" name="fname" value="govi setha" ></input>
+                           <div  class="form-row" style="margin-bottom:50px;margin-left:-650px;">
+                        
+                           <span class="inputLable LableTwo"style="margin-top:50px;margin-right:150px"><b>Amount(Rs) :</b></span>
+                           <input class="form-control InputTwo" name="amount" value="<?php echo $fund['amountPerPerson'];?>" disabled style="width:300px;"></input>
                            
-                           <label class="inputLable" style="margin-left:560px;"><b>OTP</b></label>
-                           <input class="form-control InputOnes"style="" name="otp" value=0 ></input>
-                           <button type="submit"  style="margin-left:900px;margin-top:-8px;"class="btn btn-primary">Request OTP</button>
+                           </div>         
 
-                        </div>
+                           <div class="Twobtn">
+                              <button type="submit" name="confirm" class="btn btn-primary" 
+                              >Confirm Recieving</button>
+                           </div>
 
-                        <div  class="form-row" style="margin-bottom:50px;margin-left:-650px;">
-                     
-                        <span class="inputLable LableTwo"style="margin-top:50px;margin-right:150px"><b>Amount (Rs):</b></span>
-                           <input class="form-control InputTwo" name="amount" value=1000000 style="width:300px;"></input>
-                        
-                        </div>
-                        
-
-                        <div class="Twobtn">
-                           <button type="submit" class="btn btn-primary">Confirm Recieving</button>
-                        </div>
-
+                        </fieldset>
                      </fieldset>
-                  </fieldset>
-               </form>
+                  </form>
                         
       <?php    }   
             }
