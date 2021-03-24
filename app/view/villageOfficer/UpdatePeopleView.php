@@ -71,11 +71,6 @@
                      value="<?php echo isset($result) ? $result['name']:"" ?>"></input>
                </div>
 
-               <div class="form-row">
-                  <label for="address" class="inputLable"><b>Address :</b></label>
-                  <input class="form-control Input" id="address" name="address" 
-                     value="<?php echo isset($result) ? $result['address']:"" ?>"></input>
-               </div>
 
                <div class="form-row">
                   <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
@@ -183,7 +178,15 @@
                   </select>
                </div>
 
-               <div class="Twobtn">
+
+               
+               <div class="form-row">
+                  <label for="address" class="inputLable"><b>Address :</b></label>
+                  <textarea class="form-control Input txtWidth" id="address" name="address" 
+                     value=""><?php echo isset($result) ? $result['address']:"" ?></textarea>
+               </div>
+
+               <div class="Twobtns">
                   <button type="submit" name="submit" class="btn btn-primary" 
                   <?php echo isset($result)? "":"disabled" ?> >Confirm and Update</button>
 

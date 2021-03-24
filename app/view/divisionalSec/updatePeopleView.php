@@ -193,7 +193,7 @@
 
                <div class="form-row">
                   <label for="name " class="inputLable"><b>Adrress :</b></label>
-                  <textarea class="form-control Input txtWidth  id="address" name="address"></textarea>
+                  <textarea class="form-control Input txtWidth"  id="address" name="address"><?php echo isset($result) ? $result['address']:"" ?></textarea>
                </div>
 
 
