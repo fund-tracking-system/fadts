@@ -33,7 +33,7 @@ if(isset($_POST['submit']) && isset($view)){
          switch($view){
             case "fundRelease":
                if($personRegion==$userRegion && $validRegion=="yes"){
-                  fundRelease($con,$personId,$view);
+                  fundRelease($con,$nic,$personId,$view);
                }else{
                   mysqli_close($con);
                   header("Location:/fadts/village/$view?searcherror=wrong_region");
@@ -96,7 +96,7 @@ else{
 
 
 
-function fundRelease($con,$personId,$view){
+function fundRelease($con,$nic,$personId,$view){
 
    $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId AND deliveryStatus = 0";
 
@@ -112,10 +112,10 @@ function fundRelease($con,$personId,$view){
       $result = mysqli_stmt_get_result($stmt);
 
       if($result){
-         $_SESSION['results'] =mysqli_fetch_all($result);
-
+         $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+         $_SESSION['result'] =$result;
          mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=succsess");
+         header("Location:/fadts/village/$view?searcherror=succsess&nic=$nic");
          exit();
       }else{
          mysqli_close($con);
