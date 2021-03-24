@@ -1,12 +1,14 @@
+
+<?php //if(isset($_SESSION['results'])) print_r($_SESSION['results']); exit(); ?>
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
 
+
 <div class="all_bacground_clor">
+    <div class="SearchByCriteriaform1 ">
 
-   <div class="SearchByCriteriaform1">
-
-      <form method="post" name="nicSearch" action="/fadts/village/nicSearchModel?view=fundRelease"
+    <form method="post" name="nicSearch" action="/fadts/village/nicSearchModel?view=fundRelease"
          id="fundReleaseSearch">
 
          <fieldset class="BackgroundFS">
@@ -36,7 +38,9 @@
 
                   <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
 
-                  <input class="form-control searchInput" id="nic" placeholder="Type NIC here" name="nic"></input>
+                  <input class="form-control searchInput" id="nic" placeholder="Type NIC here" name="nic" 
+                  value="<?php echo isset($_GET['nic'])? $_GET['nic']:""; ?>">
+                  </input>
 
                   <button style="position:center;" type="submit" name="submit"
                      class="btn btn-primary btnNav">Search</button>
@@ -47,60 +51,48 @@
          </fieldset>
 
       </form>
+      <?php if(isset($_SESSION['result'])){ 
+               $funds=$_SESSION['result'];
+               unset($_SESSION['result']);
+               foreach($funds as $fund){   ?>      
+               <form method="post" action="/fadts/village/......" id="formAddOfficer">
+                     <fieldset class="BackgroundFS" style="margin-top:30px;">
 
-      <form>
-         <fieldset class="BackgroundFS">
-            <?php if(isset($_SESSION['results'])){ ?>
-            
-            <fieldset class="tableBar">
-               <div class="tbleMargin">
-               <h3>Search results :</h3></br></br>
+                        <fieldset class="searchBar"> 
 
+                        <div>
+                           <label class="inputLable"><b>Fund Name</b></label>
+                           <input class="form-control InputOness" name="fname" value="govi setha" ></input>
+                           
+                           <label class="inputLable" style="margin-left:560px;"><b>OTP</b></label>
+                           <input class="form-control InputOnes"style="" name="otp" value=0 ></input>
+                           <button type="submit"  style="margin-left:900px;margin-top:-8px;"class="btn btn-primary">Request OTP</button>
 
+                        </div>
 
+                        <div  class="form-row" style="margin-bottom:50px;margin-left:-650px;">
+                     
+                        <span class="inputLable LableTwo"style="margin-top:50px;margin-right:150px"><b>Amount (Rs):</b></span>
+                           <input class="form-control InputTwo" name="amount" value=1000000 style="width:300px;"></input>
+                        
+                        </div>
+                        
 
-                  <table id="resultTable" class="display nowrap" style="table-layout:fixed">
-                     <thead>
-                        <tr>
-                           <th><B>Fund Name</B></th>
-                           <th><B>Amount</B></th>
-                           <th><B>Action</B></th>
-                        </tr>
-                     </thead>
+                        <div class="Twobtn">
+                           <button type="submit" class="btn btn-primary">Confirm Recieving</button>
+                        </div>
 
-                     <?php foreach($_SESSION['results'] as $fund){
-                     $entryId = $fund[0];
-                  ?>
-
-                     <tbody>
-                        <tr>
-                           <td><?php echo $fund[1] ?></td>
-                           <td><?php echo $fund[2] ?></td>
-                           <td><a class="btn btn-primary" style="background: #45B39D"
-                                 href="/fadts/divisional/fundReleaseModel?entryId=<?php echo $entryId ?>"><B>Release</B></a>
-                           </td>
-                        </tr>
-                     </tbody>
-
-                     <?php } 
-                        unset($_SESSION['results']);
-                  ?>
-
-                  </table>
-
-                  <?php } ?>
-            </fieldset>
-
-         </fieldset>
-         <!-- </div> -->
-      </form>
+                     </fieldset>
+                  </fieldset>
+               </form>
+                        
+      <?php    }   
+            }
+      ?>
    </div>
 </div>
 
-<script>
-$(document).ready(function() {
-   $("#resultTable").DataTable();
-});
-</script>
 
-<?php include VIEW.'includes/footer.php' ?>
+
+
+<?php include VIEW.'includes/footer.php'?>
