@@ -14,11 +14,11 @@
 
                 <fieldset class="searchBar">
                     <div class="form-row ">
-                        <label for="name" class="inputLable"><b>FUND NAME:</b></label>
-                        <input class="form-control Input" name='name' placeholder="Type fund name here" ></input>
+                        <label for="name" class="searchBarLable"><b>FUND NAME:</b></label>
+                        <input class="form-control searchInput" name='name' placeholder="Select fund name here" ></input>
                     </div>
 
-                    <button type="submit" class="btn btn-primary signlebtn">Search</button>                   
+                    <button type="submit" class="btn btn-primary btnNav"style="margin-top:-80px;" >Search</button>                   
                 </fieldset>
             </fieldset>
         </form>

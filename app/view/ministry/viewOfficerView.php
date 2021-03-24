@@ -5,23 +5,33 @@
     //next redirect URL
     $_SESSION['next_model'] = "Location:/fadts/ministry/updateOfficerSetRegionModel";
 ?>
-
+ 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
         <form method="post" action="/fadts/ministry/viewOfficerFindModel">
-            <fieldset class="BackgroundFS">            
+
+            <fieldset class="BackgroundFS">       
+                     
                 <h2>FIND OFFICER</h2>
 
                 <fieldset class="searchBar">
+
                     <div class="form-row ">
-                        <label for="nid" class="inputLable"><b>Officer NID:</b></label>
-                        <input class="form-control Input" name='nid' placeholder="NIC number here" ></input>
+
+                        <label for="nid" class="searchBarLable"><b>Officer NID:</b></label>
+                        <input class="form-control searchInput" name='nid' placeholder="Type NIC number here" ></input>
+
                     </div>
 
-                    <button type="submit" class="btn btn-primary signlebtn">Search</button>                   
+                    <button type="submit" class="btn btn-primary btnNav" style="margin-top:-80px;">Search</button>  
+
                 </fieldset>
             </fieldset>
+
         </form>
+
+
+    
 
         <form method="post" action="/fadts/ministry/updateOfficerModel">
             <fieldset class="BackgroundFS">
@@ -32,12 +42,12 @@
                 <?php } ?>
 
                 <?php if (isset($_SESSION['officer_id']) && $_SESSION['officer_id']!=-1) { ?>
-                    <h2>OFFICER DETAILS</h2>
+                     <h2>OFFICER DETAILS</h2>
 
                     <fieldset class="searchBar">   
                         <div class="form-row">
                             <label for="name" class="inputLable"><b>Name:</b></label>
-                            <input class="form-control Input" name="name" value="<?php echo $_SESSION['officer_name'] ?>" readonly></input>
+                            <input class="form-control Input" id="2" name="name" value="<?php echo $_SESSION['officer_name'] ?>" readonly></input>
                         </div>
 
                         <div class="form-row">
@@ -85,6 +95,7 @@
                 <?php } ?>
             </fieldset>
         </form>
+            
     </div>
 </div>
 

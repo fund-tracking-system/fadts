@@ -74,6 +74,6 @@
     $con->close();
     
     //redirecting to view
-    header("Location:/fadts/ministry/updateOfficerView"); 
+    header("Location:/fadts/ministry/updateOfficerView#2"); 
     exit(); 
 ?>

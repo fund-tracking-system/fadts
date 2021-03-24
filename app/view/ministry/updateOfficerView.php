@@ -14,11 +14,11 @@
 
                 <fieldset class="searchBar">
                     <div class="form-row ">
-                        <label for="nid" class="inputLable"><b>Officer NID:</b></label>
-                        <input class="form-control Input" name='nid' placeholder="NIC number here" ></input>
+                        <label for="nid" class="searchBarLable"><b>Officer NIC :</b></label>
+                        <input class="form-control searchInput" name='nid' placeholder="Type NIC number here" ></input>
                     </div>
 
-                    <button type="submit" class="btn btn-primary signlebtn">Search</button>                   
+                    <button type="submit" class="btn btn-primary btnNav"style="margin-top:-80px;" >Search</button>                   
                 </fieldset>
             </fieldset>
         </form>
@@ -76,7 +76,7 @@
                             </select>
                         </div>
 
-                        <div class="Twobtn">
+                        <div class="Twobtns">
                             <a href="/fadts/assignRegion/assignRegionView" class=' btn btn-primary '>Set Region</a>
                             <button type="submit" class=' btn btn-primary ' style="display: none;">Confirm</button>
                         </div>

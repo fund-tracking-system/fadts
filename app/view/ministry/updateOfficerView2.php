@@ -13,12 +13,14 @@
                 <h2>FIND OFFICER</h2>
 
                 <fieldset class="searchBar">
+
                     <div class="form-row ">
-                        <label for="nid" class="inputLable"><b>Officer NID:</b></label>
+                        <label for="nid" class="searchBarLable"><b>Officer NID:</b></label>
                         <input class="form-control Input" name='nid' placeholder="NIC number here"></input>
                     </div>
 
-                    <button type="submit" class="btn btn-primary signlebtn">Search</button>                   
+                    <button type="submit" class="btn btn-primary signlebtn">Search</button>  
+
                 </fieldset>
             </fieldset>
         </form>
