@@ -1,4 +1,3 @@
-
 <?php //if(isset($_SESSION['results'])) print_r($_SESSION['results']); exit(); ?>
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
@@ -6,9 +5,9 @@
 
 
 <div class="all_bacground_clor">
-    <div class="SearchByCriteriaform1 ">
+   <div class="SearchByCriteriaform1 ">
 
-    <form method="post" name="nicSearch" action="/fadts/village/nicSearchModel?view=fundRelease"
+      <form method="post" name="nicSearch" action="/fadts/village/nicSearchModel?view=fundRelease"
          id="fundReleaseSearch">
 
          <fieldset class="BackgroundFS">
@@ -38,8 +37,8 @@
 
                   <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
 
-                  <input class="form-control searchInput" id="nic" placeholder="Type NIC here" name="nic" 
-                  value="<?php echo isset($_GET['nic'])? $_GET['nic']:""; ?>">
+                  <input class="form-control searchInput" id="nic" placeholder="Type NIC here" name="nic"
+                     value="<?php echo isset($_GET['nic'])? $_GET['nic']:""; ?>">
                   </input>
 
                   <button style="position:center;" type="submit" name="submit"
@@ -55,37 +54,46 @@
                $funds=$_SESSION['result'];
                unset($_SESSION['result']);
 
-               foreach($funds as $fund){   ?>      
+               foreach($funds as $fund){   ?>
+
                   <form method="post" action="/fadts/village/fundReleaseModel" id="fundRelease">
-                        <fieldset class="BackgroundFS" style="margin-top:30px;">
-                           <fieldset class="searchBar"> 
+                     <fieldset class="BackgroundFS" style="margin-top:30px;">
+                        <fieldset class="searchBar">
+
                            <div>
                               <label class="inputLable"><b>Fund Name :</b></label>
                               <input class="form-control InputOness" name="fname" disabled
-                              value="<?php echo $fund['name'];?>" ></input>
-                              
-                              <label class="inputLable" style="margin-left:560px;"><b>OTP :</b></label>
-                              <input class="form-control InputOnes" name="otp"></input>
-                              <button type="submit"  style="margin-left:890px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
+                                 value="<?php echo $fund['name'];?>"></input>
+
+                              <label class="inputLable" style="margin-left:510px;" for="CivilStatus"><b>Phone Number :</b></label>
+                              <select class="form-control InputOnes"style="margin-left:650px;width:300px;" id="numbers" name="numbers">
+                                 <option value="" selected>Not select</option>
+                                 <option value="0">0712562583</option>
+                                 <option value="1">071</option>
+                              </select>
+
+                              </div>
+                              <br>
+
+                              <div style="margin-top: 50px;">
+                              <label class="inputLable"><b>Amount (Rs):</b></label>
+                              <input class="form-control InputOness " name="fname" disabled
+                              value="<?php echo $fund['amountPerPerson'];?>"></input>
+
+                              <label class="inputLable" style="margin-left:510px;" for="OTP"><b>OTP :</b></label>
+                              <input class="form-control InputOnes " style="width:120px;margin-left:650px;" name="otp"></input> 
+
+                              <button type="submit"  style="margin-left:830px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
 
                            </div>
-
-                           <div  class="form-row" style="margin-bottom:50px;margin-left:-650px;">
-                        
-                           <span class="inputLable LableTwo"style="margin-top:50px;margin-right:150px"><b>Amount(Rs) :</b></span>
-                           <input class="form-control InputTwo" name="amount" value="<?php echo $fund['amountPerPerson'];?>" disabled style="width:300px;"></input>
-                           
-                           </div>         
-
-                           <div class="Twobtn">
-                              <button type="submit" name="confirm" class="btn btn-primary" 
-                              >Confirm Recieving</button>
+                           <div class="Twobtns" style="margin-left:430px;margin-top:30px;margin-bottom:-8px;">
+                              <button type="submit" name="confirm" class="btn btn-primary">Confirm Recieving</button>
                            </div>
 
                         </fieldset>
                      </fieldset>
                   </form>
-                        
+
       <?php    }   
             }
       ?>
