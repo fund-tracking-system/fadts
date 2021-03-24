@@ -51,10 +51,9 @@ $myRegion=$_SESSION['region'];
   $result4=$con->query($sql4);
   $res4=$result4->fetch_all(MYSQLI_ASSOC);
   $_SESSION['fundList']=$res4;
+  
 
   
 header("Location:/fadts/village/fundDetails"); 
-
-
 
 ?>

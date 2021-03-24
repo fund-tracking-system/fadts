@@ -60,7 +60,7 @@
                                  
                                  ?></B></td>
                                 <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
-                                <td><a href="/fadts/village/funddetailModel?fundId=<?php echo $fund['fundId'] ?>"
+                                <td><a href="/fadts/village/fundDetailsModel?fundId=<?php echo $fund['fundId'] ?>"
                                         class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
                                 </td>
                             </tr>

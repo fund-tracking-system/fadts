@@ -69,7 +69,7 @@ class villageController extends Controller{
 
    
    public function addDisasterVictim(){
-      $this->view('villageOfficer/addDisasterVictimsViews'); 
+      $this->view('villageOfficer/addDisasterVictimsView'); 
       
       $this->view->render(); // This is how load the view
    }
@@ -100,8 +100,8 @@ class villageController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
-   public function funddetailModel(){
-      $this->model('villageOfficer/funddetailModel');
+   public function fundDetailsModel(){
+      $this->model('villageOfficer/fundDetailsModel');
 
       $this->model->load();
    }
@@ -120,16 +120,12 @@ class villageController extends Controller{
    }
 
 
-
-
-
-
-   public function    loadDisasterDetailsModel(){
+   public function loadDisasterDetailsModel(){
       $this->model('villageOfficer/loadDisasterDetailsModel');
 
       $this->model->load();
    }
-   public function    disasterDetailModel(){
+   public function disasterDetailModel(){
       $this->model('villageOfficer/disasterDetailModel');
 
       $this->model->load();
@@ -153,6 +149,13 @@ class villageController extends Controller{
    
    public function helpview(){
       $this->view('villageOfficer/helpView');
+      
+      $this->view->render();
+
+   }
+
+   public function releaseForm(){
+      $this->view('villageOfficer/releaseForm');
       
       $this->view->render();
 
