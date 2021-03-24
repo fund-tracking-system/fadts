@@ -3,40 +3,6 @@
 
 <div class="all_bacground_clor">
    <div class="SearchByCriteriaform1">
-      <!-- <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" name="singlePersonSearch" id="form">
-         <fieldset class="BackgroundFS">
-            <h2>SEARCH BY NIC</h2>
-
-            <fieldset class="searchBar">
-               <?php 
-                  // if(isset($_GET['searcherror'])){
-            
-                  //    $error = $_GET['searcherror'];
-                  //    if($error == "db_conn_err"){
-                  //       echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
-                  //    }
-                  //    if($error == "wrong_region"){
-                  //       echo '<div class="alert alert-danger" role="alert">You can\'t view other regions data!</div>';
-                  //    }
-                  //    if($error == "wrong_nid_or_dead"){
-                  //       echo '<div class="alert alert-danger" role="alert">This NIC is wrong or this person does not exist!</div>';
-                  //    }
-                  //    if($error == "no_records"){
-                  //       echo '<div class="alert alert-danger" role="alert">No records found!</div>';
-                  //    }        
-                  // }   
-               ?>
-
-               <div class="form-row ">
-                  <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
-                  <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
-                     name="nic"></input>
-                  <button type="submit" name="submit" class="btn btn-primary btnNav ">Search</button>
-               </div>
-            </fieldset>
-         </fieldset>
-      </form> -->
-
       <form method="post" action="/fadts/ministry/criteriaSearchModel" name="serchByCriteria" id="form">
          <fieldset class="BackgroundFS">
             <h2>FILTER PEOPLE BY CRITERIA</h2>
@@ -158,7 +124,6 @@
                                     <td><B style="margin-left:30%;"><?php echo $person['name']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $person['address']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $person['phone']?></B></td>                                    
-                                    <!-- <td><a href="/fadts/village/personDetailsModel?pid=<?php echo $pid ?>&view=criteriaResult" class="btn btn-primary" style="margin-left:20%">VIEW</a></td> -->
                                     </form>
                                  </tr>
 
