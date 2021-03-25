@@ -7,23 +7,28 @@
 
     <div class="SearchByCriteriaform1">
 
-    <h3 class="DSh1">ADD PEOPLE DATA</h3>
+    <h3 class="DSh1">ADD PEOPLE DATA???</h3>
     <ul class="DSp1">
     <li>Initially the User has to enter the details in the fields correctly by true data.</li><br>
+    <img src="/fadts/app/images/picds1_1.PNG" alt="dspic1_1" style="width:800px;height:390px;"><br><br>
     <li>After entering the data correctly User can confirm and submit it by pressing Confirm and submit button.</li><br>
+    <img src="/fadts/app/images/picds1_2.jpg" alt="dspic1_2" style="width:800px;height:180px;"><br><br>
     <li>After clicked the New data will be added to the Database.</li>
     </ul><br><br>
 
-    <h3 class="DSh2">UPDATE PEOPLE DATA</h3>
+    <h3 class="DSh2">UPDATE PEOPLE DATA???</h3>
     <ul class="DSp2">
     <li>Initially the User has to enter correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
+    <img src="/fadts/app/images/picds2_1.jpg" alt="dspic2_1" style="width:800px;height:180px;"><br><br>
     <li>Then the User data with Birth Date and Birth Certificate number will be displayed only, and other fields are kept empty for Updating. The User can't
     change his Birth Date and Birth Certificate number.</li><br>
     <li>Now the User can change the details in the fields except Birth Date and Birth Certificate number</li><br>
-    <li>After entering everything click on Confirm and Update. The entered new data will be Updated.</li>
+    <img src="/fadts/app/images/picds2_2.PNG" alt="dspic2_2" style="width:800px;height:420px;"><br><br>
+    <li>After entering everything click on Confirm and Update. The entered new data will be Updated.</li><br>
+    <img src="/fadts/app/images/picds2_3.jpg" alt="dspic2_3" style="width:800px;height:380px;"><br><br>
     </ul><br><br>
 
-    <h3 class="DSh3">SEARCH PEOPLE DATA</h3>
+    <h3 class="DSh3">SEARCH PEOPLE DATA???</h3>
     <ul class="DSp3">
     <li>Here User can search the data using NIC or Search by Criteria.</li><br>
     <li>Initially User can Search the details by entering correct NIC number. If the correct NIC is entered and Search button is clicked
