@@ -56,7 +56,10 @@
 
                foreach($funds as $fund){   ?>
 
-                  <form method="post" action="/fadts/village/fundReleaseModel?view=fundRelease" id="fundRelease">
+                  <form method="post" 
+                  action="/fadts/village/fundReleaseModel?view=fundRelease<?php echo '&entryId='.$fund['entryId'] ?>" 
+                  id="fundRelease">
+
                      <fieldset class="BackgroundFS" style="margin-top:30px;">
                         <fieldset class="searchBar">
 
@@ -69,7 +72,7 @@
 
                               <select class="form-control InputOnes"style="margin-left:680px;width:300px;" id="numbers" name="numbers">
                                  
-                                 <option value="<?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>">
+                                 <option selected value="<?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>">
                                  <?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>
                                  </option>
 
@@ -79,12 +82,12 @@
                                  </option>
 
                                  <option value="<?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>">
-                                 <?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>
+                                 <?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>(trustee)
                                  </option>
 
                                  <option value="<?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>"
                                  <?php echo isset($phones['phone2'])? "":"hidden"; ?>>
-                                 <?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>
+                                 <?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>(trustee)
                                  </option>
                               </select>
                            </div>
@@ -98,7 +101,7 @@
                               <label class="inputLable" style="margin-left:510px;" for="OTP"><b>OTP :</b></label>
                               <input class="form-control InputOnes " style="width:120px;margin-left:680px;" name="otp"></input> 
 
-                              <button type="submit"  style="margin-left:860px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
+                              <button type="submit" name="otpRequest" style="margin-left:860px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
 
                            </div>
                            <div class="Twobtns" style="margin-left:430px;margin-top:30px;margin-bottom:-8px;">

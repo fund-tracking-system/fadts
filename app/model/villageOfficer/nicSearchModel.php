@@ -30,14 +30,14 @@ if(isset($_POST['submit']) && isset($view)){
          $personId = $row['personId'];
          $validRegion = $row['validRegion'];
          $trustee = $row['trustee'];
-         $phone = $row['phone'];
-         $phone2 = $row['phone_two'];
+         $phones['phone1'] = $row['phone'];
+         $phones['phone2'] = $row['phone_two'];
 
 
          switch($view){
             case "fundRelease":
                if($personRegion==$userRegion && $validRegion=="yes"){
-                  fundRelease($con,$nic,$personId,$view,$phone,$phone2);
+                  fundRelease($con,$nic,$personId,$view,$trustee,$phones);
                }else{
                   mysqli_close($con);
                   header("Location:/fadts/village/$view?searcherror=wrong_region");
@@ -100,7 +100,7 @@ else{
 
 
 
-function fundRelease($con,$nic,$personId,$view,$phone,$phone2){
+function fundRelease($con,$nic,$personId,$view,$trustee,$phones){
 
    $sql = "SELECT phone,phone_two FROM person WHERE personId=? AND dead='no'";
    $stmt = mysqli_stmt_init($con);
@@ -117,17 +117,14 @@ function fundRelease($con,$nic,$personId,$view,$phone,$phone2){
 
       if($row = mysqli_fetch_assoc($result)){
 
-         $trustee_phone = $row['phone'];
-         $trustee_phone2 = $row['phone_two'];
-               
-         $phones = array("phone1"=>$phone, "phone2"=>$phone2, "trusteephone1"=>$trustee_phone, "trusteephone2"=>$trustee_phone2);
-
+         $phones['trusteephone1'] = $row['phone'];
+         $phones['trusteephone2'] = $row['phone_two'];
       }
-      else{
-         mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=wrong_nid_or_dead");
-         exit();
-      } 
+      // else{
+      //    mysqli_close($con);
+      //    header("Location:/fadts/village/$view?searcherror=wrong_nid_or_dead_trustee");
+      //    exit();
+      // } 
    }  
 
    $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId AND deliveryStatus = 0";

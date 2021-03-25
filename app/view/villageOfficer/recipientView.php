@@ -18,7 +18,7 @@
                             <tr>
                                 <th><B>Recipient </B></th>
                                 <th><B>Address</B></th>
-                                <th><B>Region</B></th>
+                                <!-- <th><B>Region</B></th> -->
                                 <th><B>Phone Number</B></th>
                                 <th><B>Dilivery Status</B></th>
                             </tr>
@@ -31,7 +31,7 @@
                                         value='<?php echo $fund['fundId']?>'><?php echo $fund['name']?></input>
                                 </td>
                                 <td style="margin-left:30%;"><?php echo $fund['address']?></td>
-                                <td style="margin-left:30%;"><?php echo $fund['regionName']?></td>
+                                <!-- <td style="margin-left:30%;"><?php echo $fund['regionName']?></td> -->
                                 <td style="margin-left:30%;"><?php echo $fund['mobile'] ?></td>
 
                                 <td style="margin-left:30%;"><?php 
