@@ -7,35 +7,44 @@
 
     <div class="SearchByCriteriaform1">
 
-    <h3 class="DSh1">ADD PEOPLE DATA</h3>
+    <h3 class="DSh1">ADD PEOPLE DATA???</h3>
     <ul class="DSp1">
     <li>Initially the User has to enter the details in the fields correctly by true data.</li><br>
+    <img src="/fadts/app/images/picds1_1.PNG" alt="dspic1_1" style="width:800px;height:390px;"><br><br>
     <li>After entering the data correctly User can confirm and submit it by pressing Confirm and submit button.</li><br>
+    <img src="/fadts/app/images/picds1_2.jpg" alt="dspic1_2" style="width:800px;height:180px;"><br><br>
     <li>After clicked the New data will be added to the Database.</li>
     </ul><br><br>
 
-    <h3 class="DSh2">UPDATE PEOPLE DATA</h3>
+    <h3 class="DSh2">UPDATE PEOPLE DATA???</h3>
     <ul class="DSp2">
     <li>Initially the User has to enter correct NIC number in the Search bar and click the Search button or Press Enter.</li><br>
+    <img src="/fadts/app/images/picds2_1.jpg" alt="dspic2_1" style="width:800px;height:180px;"><br><br>
     <li>Then the User data with Birth Date and Birth Certificate number will be displayed only, and other fields are kept empty for Updating. The User can't
     change his Birth Date and Birth Certificate number.</li><br>
     <li>Now the User can change the details in the fields except Birth Date and Birth Certificate number</li><br>
-    <li>After entering everything click on Confirm and Update. The entered new data will be Updated.</li>
+    <img src="/fadts/app/images/picds2_2.PNG" alt="dspic2_2" style="width:800px;height:420px;"><br><br>
+    <li>After entering everything click on Confirm and Update. The entered new data will be Updated.</li><br>
+    <img src="/fadts/app/images/picds2_3.jpg" alt="dspic2_3" style="width:800px;height:380px;"><br><br>
     </ul><br><br>
 
-    <h3 class="DSh3">SEARCH PEOPLE DATA</h3>
+    <h3 class="DSh3">SEARCH PEOPLE DATA???</h3>
     <ul class="DSp3">
     <li>Here User can search the data using NIC or Search by Criteria.</li><br>
     <li>Initially User can Search the details by entering correct NIC number. If the correct NIC is entered and Search button is clicked
     the data will be displayed.</li><br>
+    <img src="/fadts/app/images/picds3_1.jpg" alt="dspic3_1" style="width:800px;height:200px;"><br><br>
     <li>Otherwise the user can Search the data by criteria. User can filter the data by entering the data that has to be filtered
-    in the fields in the form. After entering the data click Search Here button, then the data will be displayed.</li>
+    in the fields in the form. After entering the data click Search Here button, then the data will be displayed.</li><br>
+    <img src="/fadts/app/images/picds3_2.PNG" alt="dspic3_2" style="width:800px;height:380px;"><br><br>
+    <img src="/fadts/app/images/picds3_3.jpg" alt="dspic3_3" style="width:800px;height:150px;"><br><br>
     </ul><br><br>
     
-    <h3 class="DSh4">VIEW FUND DETAILS</h3>
+    <h3 class="DSh4">VIEW FUND DETAILS???</h3>
     <ul class="DSp4"> 
     <li>When the User clicks on View Fund details and enter into the page. Then the User can view all the Fund details. User can filter the
     data by entering terms in the Search bar.</li><br>
+    <img src="/fadts/app/images/picds4_1.jpg" alt="dspic4_1" style="width:800px;height:380px;"><br><br>
     <li>When the User clicks the View button the detailed analysis like Fund amount, Fund per person, Fund published date, Analyse region, 
     Number of delivered person and Pending person of the particular fund will be displayed.</li><br>
     <li>When the User clicks the Recipient List button the Detailed information of Recipients of the particular Fund will be displayed.</li>
@@ -51,8 +60,10 @@
     <ul class="DSp6">
     <li>User clicks on Add New Disaster and enter into the page. Then the user can add a new disaster by entering the data in the fields
     corresponding to that new disaster. </li><br>
-    <li>When User clicks the Add disaster button After entering the data of the disaster the disaster details will be added to the
-    database</li>
+    <img src="/fadts/app/images/picds6_1.PNG" alt="dspic6_1" style="width:800px;height:410px;"><br><br>
+    <li>When User clicks the Add disaster button after entering the details of the disaster, it will be added to the
+    database</li><br>
+    <img src="/fadts/app/images/picds6_2.jpg" alt="dspic6_2" style="width:800px;height:200px;"><br><br>
     </ul><br><br>
 
     <h3 class="DSh7">VIEW DISASTER DETAILS</h3>
