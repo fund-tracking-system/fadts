@@ -4,7 +4,7 @@
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
 
-    <h2 ><?php echo  $_SESSION['SelectFundName'];?></h2>
+    <h2>Recipient List</h2>
 
     <fieldset class="tableBar">
 
@@ -12,7 +12,7 @@
 
 
 
-                    <h2 style="margin-top:20px;margin-bottom:30px;">Recipient List</h2>
+                    <!-- <h2 style="margin-top:20px;margin-bottom:30px;">Recipient List</h2> -->
                     <table id="resultTable" class="display nowrap">
                         <thead>
                             <tr>

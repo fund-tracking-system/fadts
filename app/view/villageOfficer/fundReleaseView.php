@@ -46,17 +46,17 @@
 
                </div>
             </fieldset>
-
          </fieldset>
-
       </form>
-      <?php if(isset($_SESSION['result'])){ 
+
+      <?php if(isset($_SESSION['result']) && isset($_SESSION['result'])){ 
                $funds=$_SESSION['result'];
-               unset($_SESSION['result']);
+               $phones=$_SESSION['phones'];
+               unset($_SESSION['result'],$_SESSION['phones']);
 
                foreach($funds as $fund){   ?>
 
-                  <form method="post" action="/fadts/village/fundReleaseModel" id="fundRelease">
+                  <form method="post" action="/fadts/village/fundReleaseModel?view=fundRelease" id="fundRelease">
                      <fieldset class="BackgroundFS" style="margin-top:30px;">
                         <fieldset class="searchBar">
 
@@ -66,13 +66,28 @@
                                  value="<?php echo $fund['name'];?>"></input>
 
                               <label class="inputLable" style="margin-left:510px;" for="CivilStatus"><b>Phone Number :</b></label>
-                              <select class="form-control InputOnes"style="margin-left:650px;width:300px;" id="numbers" name="numbers">
-                                 <option value="" selected>Not select</option>
-                                 <option value="0">0712562583</option>
-                                 <option value="1">071</option>
-                              </select>
 
-                              </div>
+                              <select class="form-control InputOnes"style="margin-left:680px;width:300px;" id="numbers" name="numbers">
+                                 
+                                 <option value="<?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>">
+                                 <?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>
+                                 </option>
+
+                                 <option value="<?php echo isset($phones['phone2'])? $phones['phone2']: ""; ?>" 
+                                 <?php echo isset($phones['phone2'])? "":"hidden"; ?> >
+                                 <?php echo isset($phones['phone2'])? $phones['phone2']: ""; ?>
+                                 </option>
+
+                                 <option value="<?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>">
+                                 <?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>
+                                 </option>
+
+                                 <option value="<?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>"
+                                 <?php echo isset($phones['phone2'])? "":"hidden"; ?>>
+                                 <?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>
+                                 </option>
+                              </select>
+                           </div>
                               <br>
 
                               <div style="margin-top: 50px;">
@@ -81,9 +96,9 @@
                               value="<?php echo $fund['amountPerPerson'];?>"></input>
 
                               <label class="inputLable" style="margin-left:510px;" for="OTP"><b>OTP :</b></label>
-                              <input class="form-control InputOnes " style="width:120px;margin-left:650px;" name="otp"></input> 
+                              <input class="form-control InputOnes " style="width:120px;margin-left:680px;" name="otp"></input> 
 
-                              <button type="submit"  style="margin-left:830px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
+                              <button type="submit"  style="margin-left:860px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
 
                            </div>
                            <div class="Twobtns" style="margin-left:430px;margin-top:30px;margin-bottom:-8px;">
