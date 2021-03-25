@@ -10,7 +10,7 @@ if(isset($_POST['submit']) && isset($view)){
    $userRegion = $_SESSION['region'];
    $nic = $_POST['nic'];
 
-   $sql = "SELECT personId,name,region,validRegion FROM person WHERE nid=? AND dead='no' ";
+   $sql = "SELECT personId,name,region,validRegion,phone,phone_two FROM person WHERE nid=? AND dead='no' ";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
