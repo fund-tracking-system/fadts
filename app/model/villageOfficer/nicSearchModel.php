@@ -113,6 +113,7 @@ function fundRelease($con,$nic,$personId,$view){
 
       if($result){
          $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+         var_dump($result);
          $_SESSION['result'] =$result;
          mysqli_close($con);
          header("Location:/fadts/village/$view?searcherror=succsess&nic=$nic");

@@ -103,54 +103,67 @@ foreach($resl as  $data){
    $month = date("m",strtotime($date));
    // echo $month;
    if($month ==1){
+
       $jan=$jan+$data['amountPerPerson'];
+
    }
-   if($month ==2){
+   else if($month ==2){
+
       $feb=$feb+$data['amountPerPerson'];
+
    }
-   if($month ==3){
+   else if($month ==3){
+
       $march=$march+$data['amountPerPerson'];
+
    }
-   if($month ==4){
+   else if($month ==4){
+
       $april=$april+$data['amountPerPerson'];
+
    }
-   if($month ==5){
+   else if($month ==5){
+
       $may=$may+$data['amountPerPerson'];
+
    }
-   if($month ==6){
+   else if($month ==6){
+
       $june=$june+$data['amountPerPerson'];
+
    }
-   if($month ==7){
+   else if($month ==7){
+
       $july=$july+$data['amountPerPerson'];
+
    }
-   if($month ==8){
+   else if($month ==8){
+
       $august=$august+$data['amountPerPerson'];
+
    }
-   if($month ==9){
+   else if($month ==9){
+
       $september=$september+$data['amountPerPerson'];
+
    }
-   if($month ==10){
+   else if($month ==10){
+
       $oct=$oct+$data['amountPerPerson'];
+
    }
-   if($month ==11){
+   else if($month ==11){
+
       $nove=$nove+$data['amountPerPerson'];
+
    }
-   if($month ==12){
+   else if($month ==12){
+
       $dec=$dec+$data['amountPerPerson'];
+
    }
+
 }
-$_SESSION['jan']=$jan;
-$_SESSION['feb']=$feb;
-$_SESSION['march']=$march;
-$_SESSION['may']=$may;
-$_SESSION['april']=$april;
-$_SESSION['june']=$june;
-$_SESSION['july']=$july;
-$_SESSION['august']=$august;
-$_SESSION['september']=$september;
-$_SESSION['october']=$oct;
-$_SESSION['november']=$nove;
-$_SESSION['december']=$dec;
 
 // var_dump($resl);
 
@@ -423,19 +436,20 @@ $_SESSION['olders']=$olders;
 
 
   $(function () {
+  
+var jan=<?php echo $jan?>;
+var feb=<?php echo $feb;?>;
+var march=<?php echo $march;?>;
+var april=<?php echo $april;?>;
+var may=<?php echo $may;?>;
+var june=<?php echo $june;?>;
+var july=<?php echo $july;?>;
+var august=<?php echo $august;?>;
+var september=<?php echo $september;?>;
+var october=<?php echo $oct;?>;
+var december=<?php echo $dec;?>;
+var november=<?php echo $nove;?>;
 
-   var jan=<?php echo $_SESSION['jan'];?>;
-   var feb=<?php echo $_SESSION['feb'];?>;
-   var march=<?php echo $_SESSION['march'];?>;
-   var april=<?php echo $_SESSION['april'];?>;
-   var may=<?php echo $_SESSION['may'];?>;
-   var june=<?php echo $_SESSION['june'];?>;
-   var july=<?php echo $_SESSION['july'];?>;
-   var august=<?php echo $_SESSION['august'];?>;
-   var september=<?php echo $_SESSION['september'];?>;
-   var october=<?php echo $_SESSION['october'];?>;
-   var december=<?php echo $_SESSION['december'];?>;
-   var november=<?php echo $_SESSION['november'];?>;
       // ChartJS
       var ctx = document.getElementById('Chart3').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
