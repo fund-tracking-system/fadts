@@ -50,13 +50,13 @@
     <li>When the User clicks the Recipient List button the Detailed information of Recipients of the particular Fund will be displayed.</li>
     </ul><br><br>
 
-    <h3 class="DSh5">ALTERNATE FUND RELEASE</h3>
+    <h3 class="DSh5">ALTERNATE FUND RELEASE???</h3>
     <ul class="DSp5">
     <li>User enter this page and type correct NIC number in the box and click Search button.</li><br>
     <li>Then the User can view the fund details if that person corresponding to that NIC is in this Alternate Recipient list.</li>
     </ul><br><br>
 
-    <h3 class="DSh6">ADD NEW DISASTER</h3>
+    <h3 class="DSh6">ADD NEW DISASTER???</h3>
     <ul class="DSp6">
     <li>User clicks on Add New Disaster and enter into the page. Then the user can add a new disaster by entering the data in the fields
     corresponding to that new disaster. </li><br>
@@ -66,10 +66,11 @@
     <img src="/fadts/app/images/picds6_2.jpg" alt="dspic6_2" style="width:800px;height:200px;"><br><br>
     </ul><br><br>
 
-    <h3 class="DSh7">VIEW DISASTER DETAILS</h3>
+    <h3 class="DSh7">VIEW DISASTER DETAILS???</h3>
     <ul class="DSp7">
-    <li>User clicks on View disaster details and enter into the page. Then the user can view the all Disaster details. User can filter the
-    data by entering terms in the Search bar.</li><br>
+    <li>User clicks on View disaster details and enter into the page. Then the user can view the Disaster details by 
+    clicking on view button. User can filter the data by entering terms in the Search bar.</li><br>
+    <img src="/fadts/app/images/picds7_1.jpg" alt="dspic7_1" style="width:800px;height:400px;"><br><br>
     <li>When the User clicks the View button the detailed analysis like Disaster Name, Disaster Type, Disaster Date, Disaster Creater, 
     Number of victims, Total damage and GN division of the particular disaster will be displayed.</li><br>
     <li>When the User clicks the Victim List button the Detailed information of Victims of the particular disaster will be displayed.</li>
