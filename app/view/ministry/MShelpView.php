@@ -7,21 +7,27 @@
 
     <div class="SearchByCriteriaform1">
 
-    <h3 class="MSh1">VIEW OFFICER</h3>
+    <h3 class="MSh1">VIEW OFFICER???</h3>
     <ul class="MSp1">
     <li class="help">Initially the User has to enter the NID of the Officer in the Search bar.</li><br>
-    <li>After entering the NID of the officer, When User click Search button the Details of the Officer will be displayed.</li>
+    <img src="/fadts/app/images/picms1_1.jpg" alt="mspic1_1" style="width:800px;height:200px;"><br><br>
+    <li>After entering the NID of the officer, When User click Search button the Details of the Officer will be displayed.</li><br>
+    <img src="/fadts/app/images/picms1_2.PNG" alt="mspic1_2" style="width:800px;height:400px;"><br><br>
     </ul><br><br>
 
-    <h3 class="MSh2">ADD OFFICER</h3>
+    <h3 class="MSh2">ADD OFFICER???</h3>
     <ul class="MSp2">
-    <li>Initially the User has to enter the page and correct data of the new officer will be filled by User.</li><br>
+    <li>Initially the User has to enter the page and correct data of the new officer has to be filled by User.</li><br>
     <li>Then the user has to click Next button after entering data.</li><br>
+    <img src="/fadts/app/images/picms2_1.jpg" alt="mspic2_1" style="width:800px;height:400px;"><br><br>
     <li>Then the User has to assign region for the Officer. The User can enter the Region or filter region according to the levels like 
-    Island, District, Province etc....</li>
+    Island, District, Province etc....</li><br>
+    <img src="/fadts/app/images/picms2_2.jpg" alt="mspic2_2" style="width:800px;height:280px;"><br><br>
+    <img src="/fadts/app/images/picms2_3.jpg" alt="mspic2_3" style="width:800px;height:260px;"><br><br>
+    <li>Then the User can select region from filtered results for assigning.</li>
     </ul><br><br>
      
-    <h3 class="MSh3">UPDATE OFFICER</h3>
+    <h3 class="MSh3">UPDATE OFFICER???</h3>
     <ul class="MSp3">
     <li>Initially the User has to enter the correct NID of the officer and Press Search button.</li><br>
     <li>Then the details of the Officer corresponding to the NID will be displayed.</li><br>
@@ -30,7 +36,7 @@
     <li>After entering the Region Press confirm button to Update new region to the Officer.</li>
     </ul><br><br>
     
-    <h3 class="MSh4">VIEW FUND DETAILS</h3>
+    <h3 class="MSh4">VIEW FUND DETAILS???</h3>
     <ul class="MSp4">
     <li>When the User clicks on View Fund details and enter into the page. Then the User can view all the Fund details. User can filter the
     data by entering terms in the Search bar.</li><br>
@@ -39,26 +45,26 @@
     <li>When the User clicks the Recipient List button the Detailed information of Recipients of the particular Fund will be displayed.</li>
     </ul><br><br>
 
-    <h3 class="MSh5">CREATE FUND</h3>
+    <h3 class="MSh5">CREATE FUND???</h3>
     <ul class="MSp5">
     <li>When the User clicks on Create fund and enter into the page, The user can add new fund by entering Fund name, Amount per person,
     and Region.</li><br>
     <li>After entering the dat in the fields click next button to assign region and Submit to save the Fund details in Database.</li>
     </ul><br><br>
 
-    <h3 class="MSh6">VIEW ELIGIBILITY</h3>
+    <h3 class="MSh6">VIEW ELIGIBILITY???</h3>
     <ul class="MSp6">
     <li>When the User clicks on View eligibility and enter into the page, The user has to enter the name of the fund.</li><br>
     <li>After entering the fund name, the User can view the details of the eligible people for the fund.</li>
     </ul><br><br>
   
-    <h3 class="MSh7">ADD TO ELIGIBILITY</h3>
+    <h3 class="MSh7">ADD TO ELIGIBILITY???</h3>
     <ul class="MSp7">
     <li>When the User clicks on Add to eligibility and enter into the page, The user has to Select a Predefined fund.</li><br>
     <li>After selecting predefined fund, the User can add eligible persons to the fund.</li>
     </ul><br><br>
   
-    <h3 class="MSh8">SEARCH PEOPLE DATA</h3>
+    <h3 class="MSh8">SEARCH PEOPLE DATA???</h3>
     <ul class="MSp8">
     <li>Here User can search the data using NIC or Search by Criteria.</li><br>
     <li>Initially User can Search the details by entering correct NIC number. If the correct NIC is entered and Search button is clicked
@@ -67,7 +73,7 @@
     in the fields in the form. After entering the data click Search Here button, then the people data will be displayed.</li>
     </ul><br><br>
 
-    <h3 class="MSh9">ADD NEW DISASTER</h3>
+    <h3 class="MSh9">ADD NEW DISASTER???</h3>
     <ul class="MSp9">
     <li>User clicks on Add New Disaster and enter into the page. Then the user can add a new disaster by entering the data in the fields
     corresponding to that new disaster. </li><br>
@@ -75,7 +81,7 @@
     database</li>
     </ul><br><br>
 
-    <h3 class="MSh10">VIEW DISASTER DETAILS</h3>
+    <h3 class="MSh10">VIEW DISASTER DETAILS???</h3>
     <ul class="MSp10">
     <li>User clicks on View disaster details and enter into the page. Then the user can view the all Disaster details. User can filter the
     data by entering terms in the Search bar.</li><br>
