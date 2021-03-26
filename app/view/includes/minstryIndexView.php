@@ -56,71 +56,202 @@ $oct=0;
 $nove=0;
 $dec=0;
 
+
+
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
+
 foreach($resl as  $data){
+
+
 $date=$data['deliveryTime'];
 $month = date("m",strtotime($date));
+
+
+$fundYear=date("y",strtotime($date));
+
+
+
+if(($year-1)==$fundYear){
+
+
+   if($month ==1){
+
+      $jan=$jan+$data['amountPerPerson'];
+   
+   }
+   else if($month ==2){
+   
+      $feb=$feb+$data['amountPerPerson'];
+   
+   }
+   else if($month ==3){
+   
+      $march=$march+$data['amountPerPerson'];
+   
+   }
+   else if($month ==4){
+   
+      $april=$april+$data['amountPerPerson'];
+   
+   }
+   else if($month ==5){
+   
+      $may=$may+$data['amountPerPerson'];
+   
+   }
+   else if($month ==6){
+   
+      $june=$june+$data['amountPerPerson'];
+   
+   }
+   else if($month ==7){
+   
+      $july=$july+$data['amountPerPerson'];
+   
+   }
+   else if($month ==8){
+   
+      $august=$august+$data['amountPerPerson'];
+   
+   }
+   else if($month ==9){
+   
+      $september=$september+$data['amountPerPerson'];
+   
+   }
+   else if($month ==10){
+   
+      $oct=$oct+$data['amountPerPerson'];
+   
+   }
+   else if($month ==11){
+   
+      $nove=$nove+$data['amountPerPerson'];
+   
+   }
+   else if($month ==12){
+   
+      $dec=$dec+$data['amountPerPerson'];
+   
+   }
+
+
+}
+
+
 // echo $month;
-if($month ==1){
-
-   $jan=$jan+$data['amountPerPerson'];
 
 }
-else if($month ==2){
 
-   $feb=$feb+$data['amountPerPerson'];
 
-}
-else if($month ==3){
+$sql5="SELECT person.personId,disaster.date FROM disaster INNER JOIN victim ON disaster.disasterId=victim.disasterId INNER JOIN person ON victim.personId=person.personId";
+$results=$con->query($sql5);
+$resl=$results->fetch_all(MYSQLI_ASSOC);
 
-   $march=$march+$data['amountPerPerson'];
+$vjan=0;
+$vfeb=0;
+$vmarch=0;
+$vapril=0;
+$vmay=0;
+$vjune=0;
+$vjuly=0;
+$vaugust=0;
+$vseptember=0;
+$voct=0;
+$vnove=0;
+$vdec=0;
 
-}
-else if($month ==4){
 
-   $april=$april+$data['amountPerPerson'];
 
-}
-else if($month ==5){
+   
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
 
-   $may=$may+$data['amountPerPerson'];
+      foreach($resl as  $data){
+         
+         $date=$data['date'];
+         $month = date("m",strtotime($date));
 
-}
-else if($month ==6){
 
-   $june=$june+$data['amountPerPerson'];
+         $disasterYear=date("y",strtotime($date));
 
-}
-else if($month ==7){
+         if(($year-1)==$disasterYear){
 
-   $july=$july+$data['amountPerPerson'];
 
-}
-else if($month ==8){
+            
+         }
 
-   $august=$august+$data['amountPerPerson'];
 
-}
-else if($month ==9){
+         if($month ==1){
 
-   $september=$september+$data['amountPerPerson'];
+            $vjan=$vjan+1;
+         
+         }
+         else if($month ==2){
+         
+            $vfeb=$vfeb+1;
+         
+         }
+         else if($month ==3){
+         
+            $vmarch=$vmarch+1;
+         
+         }
+         else if($month ==4){
+         
+            $vapril=$vapril+1;
+         
+         }
+         else if($month ==5){
+         
+            $vmay=$vmay+1;
+         
+         }
+         else if($month ==6){
+         
+            $vjune=$vjune+1;
+         
+         }
+         else if($month ==7){
+         
+            $vjuly=$vjuly+1;
+         
+         }
+         else if($month ==8){
+         
+            $vaugust=$vaugust+1;
+         
+         }
+         else if($month ==9){
+         
+            $vseptember=$vseptember+1;
+         
+         }
+         else if($month ==10){
+         
+            $voct=$voct+1;
+         
+         }
+         else if($month ==11){
+         
+            $vnove=$vnove+1;
+         
+         }
+         else if($month ==12){
+         
+            $vdec=$vdec+1;
+         
+         }
 
-}
-else if($month ==10){
 
-   $oct=$oct+$data['amountPerPerson'];
 
-}
-else if($month ==11){
 
-   $nove=$nove+$data['amountPerPerson'];
 
-}
-else if($month ==12){
+         
+      }
 
-   $dec=$dec+$data['amountPerPerson'];
 
-}
-}
 
 ?>
 
@@ -237,6 +368,26 @@ $(function () {
 
 $(function () {
    // ChartJS
+
+            
+         var jan=<?php echo $vjan?>;
+         var feb=<?php echo $vfeb;?>;
+         var march=<?php echo $vmarch;?>;
+         var april=<?php echo $vapril;?>;
+         var may=<?php echo $vmay;?>;
+         var june=<?php echo $vjune;?>;
+         var july=<?php echo $vjuly;?>;
+         var august=<?php echo $vaugust;?>;
+         var september=<?php echo $vseptember;?>;
+         var october=<?php echo $voct;?>;
+         var december=<?php echo $vdec;?>;
+         var november=<?php echo $vnove;?>;
+
+
+
+
+
+
    var ctx = document.getElementById('Chart2').getContext('2d');
    console.log(Chart.defaults.scale.ticks);
    Chart.defaults.scale.ticks.beginAtZero=true;
@@ -246,7 +397,7 @@ $(function () {
          labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
          datasets: [{
                label: 'Victims per Year',
-               data: [100,200,400,300,250,140,370,200,300,200],
+               data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                backgroundColor:'#4cd84c',
                hoverBackgroundColor:'rgb(4, 17, 41)',
                borderColor:'rgb(4, 17, 41)',
@@ -305,7 +456,7 @@ var november=<?php echo $nove;?>;
       data: {
          labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
          datasets: [{
-               label: 'deliveries Made',
+               label: 'Last Year Deliveries Made',
                data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                // backgroundColor:'#4cd84c',
                hoverBackgroundColor:'#00FF00',

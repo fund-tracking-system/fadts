@@ -98,64 +98,74 @@ $oct=0;
 $nove=0;
 $dec=0;
 
-foreach($resl as  $data){
-$date=$data['publishedTime'];
-$month = date("m",strtotime($date));
-// echo $month;
-if($month ==1){
-   $jan=$jan+$data['amountPerPerson'];
-}
-if($month ==2){
-   $feb=$feb+$data['amountPerPerson'];
-}
-if($month ==3){
-   $march=$march+$data['amountPerPerson'];
-}
-if($month ==4){
-   $april=$april+$data['amountPerPerson'];
-}
-if($month ==5){
-   $may=$may+$data['amountPerPerson'];
-}
-if($month ==6){
-   $june=$june+$data['amountPerPerson'];
-}
-if($month ==7){
-   $july=$july+$data['amountPerPerson'];
-}
-if($month ==8){
-   $august=$august+$data['amountPerPerson'];
-}
-if($month ==9){
-   $september=$september+$data['amountPerPerson'];
-}
-if($month ==10){
-   $oct=$oct+$data['amountPerPerson'];
-}
-if($month ==11){
-   $nove=$nove+$data['amountPerPerson'];
-}
-if($month ==12){
-   $dec=$dec+$data['amountPerPerson'];
-}
-}
-$_SESSION['jan']=$jan;
-$_SESSION['feb']=$feb;
-$_SESSION['march']=$march;
-$_SESSION['may']=$may;
-$_SESSION['april']=$april;
-$_SESSION['june']=$june;
-$_SESSION['july']=$july;
-$_SESSION['august']=$august;
-$_SESSION['september']=$september;
-$_SESSION['october']=$oct;
-$_SESSION['november']=$nove;
-$_SESSION['december']=$dec;
 
-// var_dump($resl);
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
 
 
 
+
+
+
+foreach($resl as  $data)
+{
+      $date=$data['publishedTime'];
+      $month = date("m",strtotime($date));
+
+
+
+
+      $date=$data['publishedTime'];
+      $month = date("m",strtotime($date));
+
+      $fundYear=date("y",strtotime($date));
+
+      if(($year-1)==$fundYear)
+      {
+
+
+         if($month ==1){
+            $jan=$jan+$data['amountPerPerson'];
+         }
+         if($month ==2){
+            $feb=$feb+$data['amountPerPerson'];
+         }
+         if($month ==3){
+            $march=$march+$data['amountPerPerson'];
+         }
+         if($month ==4){
+            $april=$april+$data['amountPerPerson'];
+         }
+         if($month ==5){
+            $may=$may+$data['amountPerPerson'];
+         }
+         if($month ==6){
+            $june=$june+$data['amountPerPerson'];
+         }
+         if($month ==7){
+            $july=$july+$data['amountPerPerson'];
+         }
+         if($month ==8){
+            $august=$august+$data['amountPerPerson'];
+         }
+         if($month ==9){
+            $september=$september+$data['amountPerPerson'];
+         }
+         if($month ==10){
+            $oct=$oct+$data['amountPerPerson'];
+         }
+         if($month ==11){
+            $nove=$nove+$data['amountPerPerson'];
+         }
+         if($month ==12){
+            $dec=$dec+$data['amountPerPerson'];
+         }
+         }
+
+
+
+
+      }
 ?>
 
 <div class="divisionDashboard">
@@ -331,7 +341,7 @@ $(function () {
       data: {
          labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
          datasets: [{
-               label: 'Fund distribution Progress',
+               label: 'Last Year Fund distribution Progress',
                data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                backgroundColor:'#95bcff',
                hoverBackgroundColor:'#00FF00',
@@ -348,7 +358,7 @@ $(function () {
                }]
          },
          maintainAspectRatio: false
-
+ 
       }
    }); 
    chart.canvas.parentNode.style.height = '100%';
