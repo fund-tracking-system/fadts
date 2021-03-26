@@ -98,70 +98,96 @@ $oct=0;
 $nove=0;
 $dec=0;
 
+
+
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
+
 foreach($resl as  $data){
+
+
+
    $date=$data['publishedTime'];
    $month = date("m",strtotime($date));
+
+   $fundYear=date("y",strtotime($date));
+   
+
+   if(($year-1)==$fundYear)
+   {
+
+      if($month ==1){
+
+         $jan=$jan+$data['amountPerPerson'];
+   
+      }
+      else if($month ==2){
+   
+         $feb=$feb+$data['amountPerPerson'];
+   
+      }
+      else if($month ==3){
+   
+         $march=$march+$data['amountPerPerson'];
+   
+      }
+      else if($month ==4){
+   
+         $april=$april+$data['amountPerPerson'];
+   
+      }
+      else if($month ==5){
+   
+         $may=$may+$data['amountPerPerson'];
+   
+      }
+      else if($month ==6){
+   
+         $june=$june+$data['amountPerPerson'];
+   
+      }
+      else if($month ==7){
+   
+         $july=$july+$data['amountPerPerson'];
+   
+      }
+      else if($month ==8){
+   
+         $august=$august+$data['amountPerPerson'];
+   
+      }
+      else if($month ==9){
+   
+         $september=$september+$data['amountPerPerson'];
+   
+      }
+      else if($month ==10){
+   
+         $oct=$oct+$data['amountPerPerson'];
+   
+      }
+      else if($month ==11){
+   
+         $nove=$nove+$data['amountPerPerson'];
+   
+      }
+      else if($month ==12){
+   
+         $dec=$dec+$data['amountPerPerson'];
+   
+      }
+
+
+   }
+
+
+
+   // exit();
+
+
+
    // echo $month;
-   if($month ==1){
-
-      $jan=$jan+$data['amountPerPerson'];
-
-   }
-   else if($month ==2){
-
-      $feb=$feb+$data['amountPerPerson'];
-
-   }
-   else if($month ==3){
-
-      $march=$march+$data['amountPerPerson'];
-
-   }
-   else if($month ==4){
-
-      $april=$april+$data['amountPerPerson'];
-
-   }
-   else if($month ==5){
-
-      $may=$may+$data['amountPerPerson'];
-
-   }
-   else if($month ==6){
-
-      $june=$june+$data['amountPerPerson'];
-
-   }
-   else if($month ==7){
-
-      $july=$july+$data['amountPerPerson'];
-
-   }
-   else if($month ==8){
-
-      $august=$august+$data['amountPerPerson'];
-
-   }
-   else if($month ==9){
-
-      $september=$september+$data['amountPerPerson'];
-
-   }
-   else if($month ==10){
-
-      $oct=$oct+$data['amountPerPerson'];
-
-   }
-   else if($month ==11){
-
-      $nove=$nove+$data['amountPerPerson'];
-
-   }
-   else if($month ==12){
-
-      $dec=$dec+$data['amountPerPerson'];
-
-   }
+   
 
 }
 
@@ -209,6 +235,7 @@ foreach($res1 as $mydash){
    $dateOfBirth=$mydash['birthDate'];
    $today=date("y-m-d");
    $diff=date_diff(date_create($dateOfBirth),date_create($today));
+    
    if($diff->format('%y')>=65){
       // echo "high";
       $olders++;
@@ -459,7 +486,7 @@ var november=<?php echo $nove;?>;
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Fund Distribution',
+                  label: 'Past Year Fund Distribution',
                   data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                   backgroundColor:'#668cff',
                   hoverBackgroundColor:'#698CD1',
