@@ -30,9 +30,14 @@
     <h3 class="MSh3">UPDATE OFFICER???</h3>
     <ul class="MSp3">
     <li>Initially the User has to enter the correct NID of the officer and Press Search button.</li><br>
+    <img src="/fadts/app/images/picms3_1.jpg" alt="mspic3_1" style="width:800px;height:200px;"><br><br>
     <li>Then the details of the Officer corresponding to the NID will be displayed.</li><br>
+    <img src="/fadts/app/images/picms3_2.PNG" alt="mspic3_2" style="width:800px;height:400px;"><br><br>
     <li>Now the User can change Region of the Officer only By clicking on the Set Region button.</li><br>
+    <img src="/fadts/app/images/picms3_3.jpg" alt="mspic3_3" style="width:800px;height:140px;"><br><br>
     <li>In Set region the User can enter the Region or filter region according to the levels.</li><br>
+    <img src="/fadts/app/images/picms2_2.jpg" alt="mspic3_4" style="width:800px;height:280px;"><br><br>
+    <img src="/fadts/app/images/picms2_3.jpg" alt="mspic3_5" style="width:800px;height:260px;"><br><br>
     <li>After entering the Region Press confirm button to Update new region to the Officer.</li>
     </ul><br><br>
     
@@ -40,6 +45,7 @@
     <ul class="MSp4">
     <li>When the User clicks on View Fund details and enter into the page. Then the User can view all the Fund details. User can filter the
     data by entering terms in the Search bar.</li><br>
+    <img src="/fadts/app/images/picms4_1.jpg" alt="mspic4_1" style="width:800px;height:370px;"><br><br>
     <li>When the User clicks the View button the detailed analysis like Fund amount, Fund per person, Fund published date, Analyse region, 
     Number of delivered person and Pending person of the particular fund will be displayed.</li><br>
     <li>When the User clicks the Recipient List button the Detailed information of Recipients of the particular Fund will be displayed.</li>
