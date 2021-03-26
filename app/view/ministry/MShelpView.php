@@ -10,15 +10,20 @@
     <h3 class="MSh1">VIEW OFFICER</h3>
     <ul class="MSp1">
     <li class="help">Initially the User has to enter the NID of the Officer in the Search bar.</li><br>
-    <li>After entering the NID of the officer, When User click Search button the Details of the Officer will be displayed.</li>
+    <img src="/fadts/app/images/picms1_1.jpg" alt="mspic1_1" style="width:800px;height:200px;"><br><br>
+    <li>After entering the NID of the officer, When User click Search button the Details of the Officer will be displayed.</li><br>
+    <img src="/fadts/app/images/picms1_2.PNG" alt="mspic1_2" style="width:800px;height:400px;"><br><br>
     </ul><br><br>
 
     <h3 class="MSh2">ADD OFFICER</h3>
     <ul class="MSp2">
-    <li>Initially the User has to enter the page and correct data of the new officer will be filled by User.</li><br>
+    <li>Initially the User has to enter the page and correct data of the new officer has to be filled by User.</li><br>
     <li>Then the user has to click Next button after entering data.</li><br>
+    <img src="/fadts/app/images/picms2_1.jpg" alt="mspic2_1" style="width:800px;height:400px;"><br><br>
     <li>Then the User has to assign region for the Officer. The User can enter the Region or filter region according to the levels like 
-    Island, District, Province etc....</li>
+    Island, District, Province etc....</li><br>
+    <img src="/fadts/app/images/picms2_2.jpg" alt="mspic2_2" style="width:800px;height:280px;"><br><br>
+    <img src="/fadts/app/images/picms2_3.jpg" alt="mspic2_3" style="width:800px;height:260px;"><br><br>
     </ul><br><br>
      
     <h3 class="MSh3">UPDATE OFFICER</h3>
