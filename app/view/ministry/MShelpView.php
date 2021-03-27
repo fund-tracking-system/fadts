@@ -83,21 +83,23 @@
     in the fields in the form. After entering the data click Search Here button, then the people data will be displayed.</li><br>
     <img src="/fadts/app/images/picms8_2.PNG" alt="mspic8_2" style="width:800px;height:370px;"><br><br>
     <img src="/fadts/app/images/picms8_3.jpg" alt="mspic8_3" style="width:800px;height:140px;"><br><br>
-
     </ul><br><br>
 
     <h3 class="MSh9">ADD NEW DISASTER???</h3>
     <ul class="MSp9">
     <li>User clicks on Add New Disaster and enter into the page. Then the user can add a new disaster by entering the data in the fields
     corresponding to that new disaster. </li><br>
-    <li>When User clicks the Add disaster button After entering the data of the disaster the disaster details will be added to the
-    database</li>
+    <img src="/fadts/app/images/picms9_1.PNG" alt="mspic9_1" style="width:800px;height:410px;"><br><br>
+    <li>When User clicks the Add disaster button, the disaster details will be added to the
+    database.</li><br>
+    <img src="/fadts/app/images/picms9_2.jpg" alt="mspic9_2" style="width:800px;height:220px;"><br><br>
     </ul><br><br>
 
     <h3 class="MSh10">VIEW DISASTER DETAILS???</h3>
     <ul class="MSp10">
     <li>User clicks on View disaster details and enter into the page. Then the user can view the all Disaster details. User can filter the
     data by entering terms in the Search bar.</li><br>
+    <img src="/fadts/app/images/picms10_1.jpg" alt="mspic10_1" style="width:800px;height:360px;"><br><br>
     <li>When the User clicks the View button the detailed analysis like Disaster Name, Disaster Type, Disaster Date, Disaster Creater, 
     Number of victims, Total damage and GN division of the particular disaster will be displayed.</li><br>
     <li>When the User clicks the Victim List button the Detailed information of Victims of the particular disaster will be displayed.</li>
