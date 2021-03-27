@@ -55,18 +55,21 @@
     <ul class="MSp5">
     <li>When the User clicks on Create fund and enter into the page, The user can add new fund by entering Fund name, Amount per person,
     and Region.</li><br>
-    <li>After entering the dat in the fields click next button to assign region and Submit to save the Fund details in Database.</li>
+    <li>After entering the data in the fields click next button to assign region and Submit to save the Fund details in Database.</li><br>
+    <img src="/fadts/app/images/picms5_1.jpg" alt="mspic5_1" style="width:800px;height:390px;"><br><br>
     </ul><br><br>
 
     <h3 class="MSh6">VIEW ELIGIBILITY???</h3>
     <ul class="MSp6">
     <li>When the User clicks on View eligibility and enter into the page, The user has to enter the name of the fund.</li><br>
+    <img src="/fadts/app/images/picms6_1.jpg" alt="mspic6_1" style="width:800px;height:200px;"><br><br>
     <li>After entering the fund name, the User can view the details of the eligible people for the fund.</li>
     </ul><br><br>
   
     <h3 class="MSh7">ADD TO ELIGIBILITY???</h3>
     <ul class="MSp7">
     <li>When the User clicks on Add to eligibility and enter into the page, The user has to Select a Predefined fund.</li><br>
+    <img src="/fadts/app/images/picms7_1.jpg" alt="mspic7_1" style="width:800px;height:200px;"><br><br>
     <li>After selecting predefined fund, the User can add eligible persons to the fund.</li>
     </ul><br><br>
   
@@ -75,8 +78,12 @@
     <li>Here User can search the data using NIC or Search by Criteria.</li><br>
     <li>Initially User can Search the details by entering correct NIC number. If the correct NIC is entered and Search button is clicked
     the data will be displayed.</li><br>
+    <img src="/fadts/app/images/picms8_1.jpg" alt="mspic8_1" style="width:800px;height:200px;"><br><br>
     <li>Otherwise the user can Search the data by criteria. User can filter the data by entering the data that has to be filtered
-    in the fields in the form. After entering the data click Search Here button, then the people data will be displayed.</li>
+    in the fields in the form. After entering the data click Search Here button, then the people data will be displayed.</li><br>
+    <img src="/fadts/app/images/picms8_2.PNG" alt="mspic8_2" style="width:800px;height:370px;"><br><br>
+    <img src="/fadts/app/images/picms8_3.jpg" alt="mspic8_3" style="width:800px;height:140px;"><br><br>
+
     </ul><br><br>
 
     <h3 class="MSh9">ADD NEW DISASTER???</h3>
