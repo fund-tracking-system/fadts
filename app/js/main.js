@@ -111,24 +111,24 @@ $(function(){
 
 
 
-
-//   $(function(){
-//     var $formAddDisaster = $("#formUpdateVillage");
-//     if($formAddDisaster.length){
-//         $formAddDisaster.validate({
-//             rules: {
-//                 nic: {
-//                     required: true,
-//                     nidvalidator:true
-//                 }
-//             },
-//             messages: {
-//                 nic:"This field is required"
+//update data-village officer
+  $(function(){
+    var $formAddDisaster = $("#formUpdateVillage");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
                 
-//             }
-//       });
-//     }
-//   });
+            }
+      });
+    }
+  });
 
 
   $(function(){
@@ -137,12 +137,19 @@ $(function(){
         $formAddDisaster.validate({
             rules: {
                 address:  "required",
-                monthlyIncome:  "required"
+                monthlyIncome:  {
+                    required: true,
+                    number: true
+                }
                
             },
             messages: {
                 address:"This field cannot be empty",
-                monthlyIncome:"This field cannot be empty"
+                monthlyIncome:{
+                    required:"This field cannot be empty",
+                    number:"Monthly Income should be valid type"
+
+                }
 
             }
       });
@@ -235,7 +242,7 @@ $(function(){
     }
   });
   
-//update people Data
+//search people Data
     $(function(){
     var $formUpdate = $("#formUpdatenid");
     if($formUpdate.length){
@@ -323,6 +330,28 @@ $(function(){
             });
             }
             });
+
+
+//alternate fund release
+
+
+            $(function(){
+                var $formUpdate = $("#fundReleaseSearch");
+                if($formUpdate.length){
+                    $formUpdate.validate({
+                        rules: {
+                            nic: {
+                                required: true,
+                                nidvalidator:true
+                            }
+                        },
+                        messages: {
+                            nic:"This field is required"
+                            
+                        }
+                });
+                }
+                });
 
 
 
@@ -430,6 +459,101 @@ $(function(){
       });
     }
   });
+
+
+
+  //search People Data-villageofficer
+
+  $(function(){
+    var $formSearch = $("#formSearchNidv");
+    if($formSearch.length){
+        $formSearch.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
+                
+            }
+    });
+    }
+    });
+
+//search people data by criteria
+
+    $(function(){
+        var $formUpdate = $("#formCriteriav");
+        if($formUpdate.length){
+            $formUpdate.validate({
+                rules: {
+                    ageStart: {
+                        number: true,
+                        minlength:0,
+                        maxlength:3
+                    },
+                    ageEnd:{
+                        number: true,
+                        minlength:0,
+                        maxlength:3
+
+                    },
+                    incomeStart:{
+                        number:true
+                    },
+                    incomeEnd:{
+                        number:true
+                    }
+                },
+                messages: {
+                    ageStart: {
+                        number: "Age should be number",
+                        minlength: "Please enter valid Age",
+                        maxlength: "Please enter valid Age"
+                       
+                    },
+                    ageEnd:{
+                        number: "Age should be number",
+                        minlength: "Please enter valid Age",
+                        maxlength: "Please enter valid Age"
+                    },
+                    incomeStart:{
+                        number:"Gross income should be number"
+                    },
+                    incomeEnd:{
+                        number:"Gross income should be number"
+                    }
+                    
+                }
+        });
+        }
+        });
+
+
+
+
+
+         //add victim-villageofficer
+
+  $(function(){
+    var $formSearch = $("#victimSearch");
+    if($formSearch.length){
+        $formSearch.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
+                
+            }
+    });
+    }
+    });
 
 
 
