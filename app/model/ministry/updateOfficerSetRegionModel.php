@@ -47,6 +47,6 @@
     $_SESSION['officer_role'] = $position;
     
     //redirecting to view
-    header("Location:/fadts/ministry/updateOfficerView2"); 
+    header("Location:/fadts/ministry/updateOfficerView"); 
     exit(); 
 ?>

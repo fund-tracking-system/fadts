@@ -4,22 +4,6 @@ class ministryController extends Controller{
 
 
 
-   //view officer section
-
-   public function viewOfficerView(){
-      $this->view('ministry/viewOfficerView');
-      
-      $this->view->render(); // This is how load the view
-   }
-
-   public function viewOfficerFindModel(){ 
-      $this->model('ministry/viewOfficerFindModel');
-      
-      $this->model->load(); // This is how load the model
-   }
-
-
-
    //add officer section
    
    public function addOfficerView(){
