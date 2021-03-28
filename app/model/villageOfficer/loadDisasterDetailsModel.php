@@ -13,10 +13,7 @@ session_start();
 
         $districRegion= $_SESSION['districtRegion'];               //save district region
 
-
-
-        
-        
+$divisionRegios=0;
 
         $provincialRegion= $_SESSION['provincialRegion'];      //save provincial region
 
