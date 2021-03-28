@@ -7,12 +7,12 @@
 
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="formSearchnid">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
                <div class="form-row ">
-                  <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
+                  <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
                   <input  class="form-control searchInput" id="NID-number" placeholder="Type Nice here"
                      name="NID"></input>
                   <button type="submit" class="btn btn-primary btnNav ">Search</button>
@@ -22,7 +22,7 @@
       </form>
 
 
-      <form method="post" id="form">
+      <form method="post" id="formCriteria">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
 

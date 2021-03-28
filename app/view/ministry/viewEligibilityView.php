@@ -8,7 +8,7 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method="post" action="/fadts/ministry/viewEligibilityFindModel">
+        <form method="post" action="/fadts/ministry/viewEligibilityFindModel" id="eligibility">
             <fieldset class="BackgroundFS">            
                 <h2>FIND PREDEFINED FUND</h2>
 
