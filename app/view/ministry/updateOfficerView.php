@@ -8,7 +8,7 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method="post" action="/fadts/ministry/updateOfficerFindModel">
+        <form method="post" action="/fadts/ministry/updateOfficerFindModel" id="updateOfficer">
             <fieldset class="BackgroundFS">            
                 <h2>FIND OFFICER</h2>
 

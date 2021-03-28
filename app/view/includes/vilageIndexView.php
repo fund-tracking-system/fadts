@@ -30,18 +30,22 @@ $_SESSION['highIncome']=0;
 
 
 
+
+
+   
+
 $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
 $result1=$con->query($sql1);
 $res1=$result1->fetch_all(MYSQLI_ASSOC);
 
 foreach($res1 as $data1){ 
 
-$_SESSION['divisional']=$data1['superRegion'];
+   $_SESSION['divisionalRegion']=$data1['superRegion'];
 
 
 }
 
-$divisional= $_SESSION['divisional'];                   //  save divisional region
+$divisional= $_SESSION['divisionalRegion'];                   //  save divisional region
 
 
 
@@ -53,12 +57,12 @@ $res2=$result2->fetch_all(MYSQLI_ASSOC);
 
 foreach($res2 as $data2){ 
 
-$_SESSION['distric']=$data2['superRegion']; //save distric region
+   $_SESSION['districtRegion']=$data2['superRegion']; //save distric region
 
 }
 
 
-$distric= $_SESSION['distric'];
+$distric= $_SESSION['districtRegion'];
 
 
 //select provincial  Region
@@ -69,12 +73,12 @@ $res2=$result2->fetch_all(MYSQLI_ASSOC);
 
 foreach($res2 as $data2){ 
 
-$_SESSION['provincial']=$data2['superRegion'];
+   $_SESSION['provincialRegion']=$data2['superRegion'];
 
 }
 
 
-$provincial= $_SESSION['provincial'];
+$provincial= $_SESSION['provincialRegion'];
 
 
 
