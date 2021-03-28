@@ -234,6 +234,96 @@ $(function(){
       });
     }
   });
+  
+//update people Data
+    $(function(){
+    var $formUpdate = $("#formUpdatenid");
+    if($formUpdate.length){
+        $formUpdate.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
+                
+            }
+    });
+    }
+    });
+
+
+    //search People Data
+
+    $(function(){
+        var $formUpdate = $("#formSearchnid");
+        if($formUpdate.length){
+            $formUpdate.validate({
+                rules: {
+                    NID: {
+                        required: true,
+                        nidvalidator:true
+                    }
+                },
+                messages: {
+                    nic:"This field is required"
+                    
+                }
+        });
+        }
+        });
+
+//search people data by criteria
+
+        $(function(){
+            var $formUpdate = $("#formCriteria");
+            if($formUpdate.length){
+                $formUpdate.validate({
+                    rules: {
+                        age1: {
+                            number: true,
+                            minlength:0,
+                            maxlength:3
+                        },
+                        age2:{
+                            number: true,
+                            minlength:0,
+                            maxlength:3
+
+                        },
+                        income1:{
+                            number:true
+                        },
+                        income2:{
+                            number:true
+                        }
+                    },
+                    messages: {
+                        age1: {
+                            number: "Age should be number",
+                            minlength: "Please enter valid Age",
+                            maxlength: "Please enter valid Age"
+                           
+                        },
+                        age2:{
+                            number: "Age should be number",
+                            minlength: "Please enter valid Age",
+                            maxlength: "Please enter valid Age"
+                        },
+                        income1:{
+                            number:"Gross income should be number"
+                        },
+                        income2:{
+                            number:"Gross income should be number"
+                        }
+                        
+                    }
+            });
+            }
+            });
+
 
 
 
