@@ -12,8 +12,30 @@ if(isset($_POST['submit'])){
    $civilStatus = $_POST['civilStatus'];
    $region = $_POST['region']; 
 
-   if(isset($_POST['incomeType'])) $incomeType = $_POST['incomeType'];
-   else $incomeType = "";
+   if(isset($_POST['incomeType'])) {
+      // $incomeType = $_POST['incomeType'];
+      if($_POST['incomeType']==1){
+         $incomeType="Goverment";
+      }
+      else if($_POST['incomeType']==2){
+         $incomeType="Private";
+      }
+      else if($_POST['incomeType']==3){
+         $incomeType="Retired";
+      }
+      else if($_POST['incomeType']==4){
+         $incomeType="Business ";
+      }
+      else if($_POST['incomeType']==5){
+         $incomeType="SelfEmployee";
+      }
+      else if($_POST['incomeType']==6){
+         $incomeType="Unemployed";
+      }
+   }
+   else{ 
+      $incomeType = "";
+   }
 
    $incomeStart = $_POST['incomeStart'];
    $incomeEnd = $_POST['incomeEnd']; 

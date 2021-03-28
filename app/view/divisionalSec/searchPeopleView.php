@@ -60,12 +60,13 @@
                   <label class="inputLable" for="job type" style="margin-right:21.5%;"><b>Income Type :</b></label>
                   <select class="js-example-responsive" multiple="multiple"
                      style="position:sticky;top:60px;overflow:scroll; padding-right:480px;  " id="job" name="incomeType[]">
-                     <option value="government">Government</option>
-                     <option value="private">Private</option>
-                     <option value="retired">Government pension</option>
-                     <option value="business_owner">Business owner</option>
-                     <option value="self_employeed">Self employeed</option>
-                     <option value="jobless">Jobless</option>
+                    <?php 
+                     foreach($_SESSION['incomeTypes'] as $incomeType){ ?>
+
+                     <option value="<?php echo $incomeType['id']?>"><?php echo $incomeType['type']?></option>
+
+                     <?php    } 
+                     unset($_SESSION['incomeTypes']); ?>
                   </select>
                </div>
 
@@ -132,11 +133,13 @@
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
                      style='position:sticky;top:60px;overflow:scroll; width:625px;' id="funds" name="funds[]">
-                     <option value="1">Samurdhi</option>
-                     <option value="2">Samurdhi Eligible List</option>
-                     <option value="3">Adults Fund</option>
-                     <option value="4">Mahapola</option>
-                     <option value="5">Other Gov Funds</option>
+                     <?php 
+                     foreach($_SESSION['fundList'] as $fund){ ?>
+
+                     <option value="<?php echo $fund['Id']?>"><?php echo $fund['name']?></option>
+
+                     <?php    } 
+                     unset($_SESSION['fundList']); ?>
                   </select>
                </div>
 
