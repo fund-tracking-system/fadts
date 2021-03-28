@@ -1,6 +1,6 @@
 <?php 
 session_start();
- 
+
 if(isset($_GET['view'])) $view = $_GET['view'];
 
 if(isset($_POST['submit']) && isset($view)){
