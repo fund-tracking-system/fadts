@@ -5,24 +5,7 @@
 <div class="all_bacground_clor">
    <div class="SearchByCriteriaform1">
 
-
-
-      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="formSearchnid">
-         <fieldset class="BackgroundFS">
-            <h2>SEARCH BY NIC</h2>
-            <fieldset class="searchBar">
-               <div class="form-row ">
-                  <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
-                  <input  class="form-control searchInput" id="NID-number" placeholder="Type Nice here"
-                     name="NID"></input>
-                  <button type="submit" class="btn btn-primary btnNav ">Search</button>
-               </div>
-            </fieldset>
-         </fieldset>
-      </form>
-
-
-      <form method="post" id="formCriteria">
+      <form method="post" id="formCriteria" action="/fadts/divisional/criteriaSearchModel">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
 
@@ -30,10 +13,23 @@
 
                <div style="margin-left:50px;">
                   <label class="inputLable"><b>Age:</b></label>
-                  <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
+                  <input class="form-control InputOne" name="ageStart"></input><span class="inputLable LableTwo"> <b>
                         to</b></span>
-                  <input class="form-control InputTwo" style="margin-left:810px;" name="age2"></input>
+                  <input class="form-control InputTwo" style="margin-left:810px;" name="ageEnd"></input>
                </div>
+
+               <div class="margn" style=margin-left:50px;>
+
+                  <label class="inputLable"><b>Gross Income:</b></label>
+                  <input class="form-control InputOne" name="incomeStart"></input><span class="inputLable LableTwo">
+                     <b> to</b></span>
+                  <input class="form-control InputTwo" style= "margin-left:810px;" name="incomeEnd"></input>
+
+               </div>
+
+
+
+
                <div class="form-row" style="margin-bottom:50px;margin-left:50px;">
                   <label for="region" class="inputLable" style="margin-right:275px;"><b>Region :</b></label>
 
@@ -63,7 +59,7 @@
                <div class="form-row" style="margin-left:50px;">
                   <label class="inputLable" for="job type" style="margin-right:21.5%;"><b>Income Type :</b></label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style="position:sticky;top:60px;overflow:scroll; padding-right:480px;  " id="job" name="job">
+                     style="position:sticky;top:60px;overflow:scroll; padding-right:480px;  " id="job" name="incomeType[]">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
                      <option value="retired">Government pension</option>
@@ -73,7 +69,7 @@
                   </select>
                </div>
 
-               <div style="  padding-top: 30px; margin-left:50px; ">
+               <!-- <div style="  padding-top: 30px; margin-left:50px; ">
                   <label class="inputLable"><b>Prolonged</br>
                   </label>
                   <label class="inputLable" style="margin-right:3.5%;">
@@ -87,18 +83,35 @@
                      <input type="radio" id="no-pro" name="prolonged" value="no">
                      <label for="no-pro" class="radioLbl2"></label><span><b>No</b></span>
                   </div>
+               </div> -->
+
+
+
+               <div class="form-row" style="margin-left:50px;margin-top:60px;">
+                  <label class="inputLable" for="disorder"><b> Disorder/Disease :</b></label>
+                  <select class="form-control Input" style="width:625px;margin-left:330px;margin-right:100px;" id="disorder" name="disorder">
+                     <option value="" selected>Not select</option>
+                     <option value="no">Without Disorder/Diease</option>
+                     <option value="yes">With Disorder/Diease</option>
+                  </select>
                </div>
 
+               <div class="form-row"style="margin-left:50px;">
+                  <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
+                  <select class="form-control Input" id="civilStatus"style="width:625px;margin-left:330px;margin-right:100px;" name="civilStatus">
+                     <option value="" selected>Not select</option>
+                     <option value="0">Unmarried</option>
+                     <option value="1">Married</option>
+                  </select>
+               </div>
 
-
-
-               <div style="  padding-top: 30px; " >
-                  </br>
+               <!-- <div style="  padding-top: 30px; " >
+                  </br> -->
 
 
  
 
-                  <label class="inputLable" style="margin-right:9%;margin-left:50px;"><b>
+                  <!-- <label class="inputLable" style="margin-right:9%;margin-left:50px;"><b>
                         Civil Status :</b></label>
 
                   <div class='radio1'style=margin-left:130px;>
@@ -109,23 +122,16 @@
                      <input type="radio" id="no-pro" name="prolonged" value="no">
                      <label for="no-pro" class="radioLbl2"></label><span><b>Unmarried</b></span>
                   </div>
-               </div>
+               </div> -->
 
-               <div class="margn" style=margin-left:50px;>
-
-                  <label class="inputLable"><b>Gross Income:</b></label>
-                  <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
-                     <b> to</b></span>
-                  <input class="form-control InputTwo" style= "margin-left:800px;" name="income2 "></input>
-
-               </div>
+               
 
 
                <div class='form-row'style="margin-left:50px;">
-                  <label class="inputLable" style="margin-right:20.5%;"><b>Current Funds :</br>
+                  <label class="inputLable" style="margin-right:19%;"><b>Current Funds :</br>
                   </label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style='position:sticky;top:60px;overflow:scroll; padding-right:470px;' id="funds" name="funds">
+                     style='position:sticky;top:60px;overflow:scroll; width:625px;' id="funds" name="funds[]">
                      <option value="1">Samurdhi</option>
                      <option value="2">Samurdhi Eligible List</option>
                      <option value="3">Adults Fund</option>
@@ -140,7 +146,7 @@
 
                <div class='Twobtns ' style="margin-top:60px;margin-bottom:30px; margin-left:600px;">
 
-                  <button type="submit" class=' btn btn-primary'>Search
+                  <button type="submit" name="submit" class=' btn btn-primary'>Search
                      Here</button>
                </div>
 

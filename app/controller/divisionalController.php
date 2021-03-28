@@ -116,6 +116,18 @@ class divisionalController extends Controller{
    }
 
 
+   public function criteriaSearchModel(){ 
+      $this->model('divisionalsec/criteriaSearchModel');
+
+      $this->model->load();
+      
+   }
+   
+   public function criteriaResultView(){
+      $this->view('divisionalSec/criteriaResultView');
+      
+      $this->view->render(); // This is how load the view
+   }
 
 
 

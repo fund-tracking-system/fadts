@@ -2,7 +2,7 @@
 
 class villageController extends Controller{
 
-   public function updatePeople(){
+   public function updatePeople(){ 
       $this->view('villageOfficer/updatePeopleView');
       
       $this->view->render(); // This is how load the view
