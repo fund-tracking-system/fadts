@@ -15,19 +15,28 @@ jQuery.validator.addMethod("nidvalidator", function(value, element) {
         return true;
     }
     else if(value.length ==10){
-        if(value.substr(9,1)!='v' ){
+        if(value.substr(9,1)!='v' && value.substr(9,1)!='V'){
             var errors = {};
             errors[element.name] = "Invalid NID";
             validator.showErrors(errors);
             return true; 
         }
-        else if(value.substr(9,1)!='V' ){
+        else if(isNaN(value.substr(0,9))){
+            var errors = {};
+            errors[element.name] = "Invalid NID";
+            validator.showErrors(errors);
+            return true; 
+        }     
+    }
+    else if(value.length==12){
+        if(isNaN(value.substr(0,12)))
+        {
             var errors = {};
             errors[element.name] = "Invalid NID";
             validator.showErrors(errors);
             return true; 
         }
-       
+
     }
     if (value.length==11) {
         var errors = {};
