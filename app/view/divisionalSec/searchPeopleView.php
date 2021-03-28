@@ -28,17 +28,42 @@
 
             <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
 
-               <div style=margin-left:50px;>
+               <div style="margin-left:50px;">
                   <label class="inputLable"><b>Age:</b></label>
                   <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
                         to</b></span>
                   <input class="form-control InputTwo" style="margin-left:810px;" name="age2"></input>
                </div>
+               <div class="form-row" style="margin-bottom:50px;margin-left:50px;">
+                  <label for="region" class="inputLable" style="margin-right:275px;"><b>Region :</b></label>
 
-               <div class="form-row" style=margin-left:50px;>
+                  <?php
+
+                  require 'connection.php'; 
+                  
+
+                  $region = $_SESSION['region'];
+                                 
+                  $rgn = "SELECT regionid,superRegion,name FROM region WHERE level=4 AND superRegion=$region";
+                  $rgnRes = $con->query($rgn) ;
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC); 
+                  
+                  ?>
+                  <select id='region' class='form-control Input' name='region' id='region'
+                     style='position:sticky;top:60px;overflow:scroll;  width:620px; '>
+                     <option value="<?php echo $_SESSION['region'] ?>" >Whole Divisional Regions </option>
+                     <?php 
+                              foreach($res as $data){ 
+                                echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
+                              }
+                           ?>
+               </div>
+               <div><input type="hidden"></input></div>
+
+               <div class="form-row" style="margin-left:50px;">
                   <label class="inputLable" for="job type" style="margin-right:21.5%;"><b>Income Type :</b></label>
                   <select class="js-example-responsive" multiple="multiple"
-                     style="position:sticky;top:60px;overflow:scroll; padding-right:470px;  " id="job" name="job">
+                     style="position:sticky;top:60px;overflow:scroll; padding-right:480px;  " id="job" name="job">
                      <option value="government">Government</option>
                      <option value="private">Private</option>
                      <option value="retired">Government pension</option>
@@ -63,11 +88,15 @@
                      <label for="no-pro" class="radioLbl2"></label><span><b>No</b></span>
                   </div>
                </div>
+
+
+
+
                <div style="  padding-top: 30px; " >
                   </br>
 
 
-
+ 
 
                   <label class="inputLable" style="margin-right:9%;margin-left:50px;"><b>
                         Civil Status :</b></label>
@@ -106,6 +135,9 @@
                </div>
 
 
+              
+
+
                <div class='Twobtns ' style="margin-top:60px;margin-bottom:30px; margin-left:600px;">
 
                   <button type="submit" class=' btn btn-primary'>Search
@@ -124,8 +156,10 @@
 $(document).ready(function() {
    $('#job').select2();
    $('#funds').select2();
+   $('#region').select2();
 });
 </script>
+
 
 
 <?php include VIEW.'includes/footer.php' ?>
