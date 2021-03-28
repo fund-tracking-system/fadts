@@ -8,7 +8,7 @@ jQuery.validator.addMethod("nidvalidator", function(value, element) {
     var validator = this;
     
 
-    if (value.length>12 || value.length <10) {
+    if (value.length>12 || value.length <10 || value.substr(0,1)=='0') {
         var errors = {};
         errors[element.name] = "Invalid NID";
         validator.showErrors(errors);
@@ -363,7 +363,7 @@ $(function(){
 
   
   
-  //addOfficer
+  //addOfficer-ministry
   $(function(){
     var $formAddOfficer = $("#formAddOfficer");
     if($formAddOfficer.length){
@@ -767,6 +767,101 @@ $(function(){
           });
         }
       });
+
+//ministry-viewOfficer
+      $(function(){
+        var $formSearch = $("#viewOfficer");
+        if($formSearch.length){
+            $formSearch.validate({
+                rules: {
+                    nid: {
+                        required: true,
+                        nidvalidator:true
+                    }
+                },
+                messages: {
+                    nic:"This field is required"
+                    
+                }
+        });
+        }
+        });
+
+
+//Ministry -updateOfficer
+        $(function(){
+            var $formSearch = $("#updateOfficer");
+            if($formSearch.length){
+                $formSearch.validate({
+                    rules: {
+                        nid: {
+                            required: true,
+                            nidvalidator:true
+                        }
+                    },
+                    messages: {
+                        nic:"This field is required"
+                        
+                    }
+            });
+            }
+            });
+
+//Ministry- create Fund
+            $(function(){
+                var $formFundCreate = $("#createFund");
+                if($formFundCreate.length){
+                    $formFundCreate.validate({
+                        rules: {
+                            name:{
+                                required: true,
+                                lettersonly:true,
+
+                            },
+                            amount:{
+                                required: true,
+                                number: true
+                            }
+                            
+                        },
+                        messages: {
+                           name:
+                           {
+                            required: "This field is required",
+                            lettersonly:"Please enter letters only", 
+                           },    
+                           amount: {
+                            required:"This field cannot be empty",
+                            number:"Amount should be valid type"
+
+                           }
+                            
+                        }
+                  });
+                }
+              });
+
+
+
+
+              $(function(){
+                var $formElgibility= $("#eligibility");
+                if($formElgibility.length){
+                    $formElgibility.validate({
+                        name: {
+                            required:true,
+    
+                        },
+                        name: {    
+                           required: "You Should Select region",
+                        }
+                  });
+                }
+              });
+
+
+
+    
 
 
 
