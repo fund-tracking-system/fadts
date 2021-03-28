@@ -1,37 +1,41 @@
 
 <?php
-$myRegion=$_SESSION['region'];
 
 
+   $myRegion=$_SESSION['region']; //get officer region
 
 
-
-//select district Region  
 
       $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
-      $result1=$con->query($sql1);
+      $result1=$con->query($sql1);                                                  // set distric region 
       $res1=$result1->fetch_all(MYSQLI_ASSOC);
 
-foreach($res1 as $data1){ 
-$_SESSION['districtRegion']=$data1['superRegion'];
+   foreach($res1 as $data1)
+      { 
 
-}
-$districtRegion= $_SESSION['districtRegion'];                   //  save district region
+         $_SESSION['districtRegion']=$data1['superRegion'];
 
+       }
 
-
-
-//select provincial  Region
-$sql2="SELECT superRegion  From region Where region.regionId= $districtRegion";
-$result2=$con->query($sql2);
-$res2=$result2->fetch_all(MYSQLI_ASSOC);
-foreach($res2 as $data2){ 
-$_SESSION['provincialRegion']=$data2['superRegion'];
-
-}
+      $districtRegion= $_SESSION['districtRegion'];                   //  save district region to session varible
 
 
-$provincialRegion= $_SESSION['provincialRegion'];
+
+
+      $sql2="SELECT superRegion  From region Where region.regionId= $districtRegion";   //select  provincial  region
+      $result2=$con->query($sql2);
+      $res2=$result2->fetch_all(MYSQLI_ASSOC);
+
+         
+   foreach($res2 as $data2)
+      { 
+         
+         $_SESSION['provincialRegion']=$data2['superRegion'];
+
+      }
+
+
+      $provincialRegion= $_SESSION['provincialRegion'];              // stor divisional region to session varible
 
 
 
@@ -231,24 +235,32 @@ $_SESSION['governmentCount']=$governmentCount;
 $_SESSION['JoblessCount']=$joblessCount;
 
 // for get age variations
-foreach($res1 as $mydash){
+foreach($res1 as $mydash)
+{
    $dateOfBirth=$mydash['birthDate'];
    $today=date("y-m-d");
    $diff=date_diff(date_create($dateOfBirth),date_create($today));
     
-   if($diff->format('%y')>=65){
+   if($diff->format('%y')>=65)
+   {
       // echo "high";
       $olders++;
    }
-   elseif ($diff->format('%y')>=25) {
+   
+   elseif ($diff->format('%y')>=25) 
+   {
       // echo "up in 25";
       $midagers++;
    }
-   elseif ($diff->format('%y')>=18) {
+
+   elseif ($diff->format('%y')>=18) 
+   {
       // echo "up in 18";
       $youngsters++;
    }
-   elseif ($diff->format('%y')>=0) {
+
+   elseif ($diff->format('%y')>=0) 
+   {
       // echo "student";
       $studentCount++;
    }
