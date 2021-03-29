@@ -7,7 +7,7 @@
 
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="form">
+      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="formSearch1">
       <fieldset class="BackgroundFS">
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
@@ -22,7 +22,7 @@
       </form>
 
 
-      <form method="post" id="form">
+      <form method="post" id="formSearch2">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
 

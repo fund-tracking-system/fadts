@@ -7,7 +7,7 @@
 
 
 
-        <form method="post" action="" id="form">
+        <form method="post" action="" id="formnid">
             <fieldset class="BackgroundFS">
                 <h2>Search By NID</h2>
                 <fieldset class="searchBar">
