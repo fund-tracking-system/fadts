@@ -165,30 +165,35 @@ $_SESSION['december']=$dec;
 // $sql41="SELECT person.personId from eligibility INNER JOIN predefinedfund ON eligibility.Id=predefinedfund.predefinedFundId INNER JOIN person ON person.personId=predefinedfund.personId WHERE person.region=$myRegion";
 $sql41="SELECT Id FROM predefinedfund Inner JOIN eligibility ON eligibility.predefinedFundId=predefinedfund.Id INNER JOIN  person ON person.personId=eligibility.personId WHERE person.personId=$myRegion";
 $results11=$con->query($sql41);
+<<<<<<< HEAD
 $resl1=$results11->fetch_all(MYSQLI_ASSOC);
-var_dump($resl1);
+// var_dump($resl1);
+=======
+//$resl1=$results11->fetch_all(MYSQLI_ASSOC);
+//var_dump($resl1);
+>>>>>>> 2892f46c6de40be7f444cf9d2cc0066f281a4b4c
 $samurdhi=0;
 $Samurdhi_Eligible_List=0;
 $adult=0;
 $mahapola=0;
 $Other_GovFunds=0;
-foreach($resl1 as $data){
-   if($data["Id"]==1){
-      $samurdhi++;
-   }
-   else if($data["Id"]==2){
-      $Samurdhi_Eligible_List++;
-   }
-   else if($data["Id"==3]){
-      $adult++;
-   }
-   else if($data["Id"]==4){
-      $mahapola++;
-   }
-   else if($data["Id"]==5){
-      $Other_GovFunds++;
-   }
-}
+// foreach($resl1 as $data){
+//    if($data["Id"]==1){
+//       $samurdhi++;
+//    }
+//    else if($data["Id"]==2){
+//       $Samurdhi_Eligible_List++;
+//    }
+//    else if($data["Id"==3]){
+//       $adult++;
+//    }
+//    else if($data["Id"]==4){
+//       $mahapola++;
+//    }
+//    else if($data["Id"]==5){
+//       $Other_GovFunds++;
+//    }
+// }
 ?>
 
 <div class="divisionDashboard">
@@ -223,7 +228,7 @@ foreach($resl1 as $data){
             $sql="SELECT title,start_event FROM events WHERE events.userid=$userid ";
             $res=$con->query($sql);
             $rgn=$res->fetch_all(MYSQLI_ASSOC); 
-            $event="You Have No Event";
+            $event="You Have No Upcoming Events";
             if($rgn==NULL){
                print ' <h6> ' . $event . ' </h6>';
             }
