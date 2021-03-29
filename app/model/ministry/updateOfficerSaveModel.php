@@ -5,6 +5,26 @@
         //database connection file calling
         require 'connectionOOP.php';
 
+        //retrieve old data to be stored in officerHistory table
+        //prepare and bind
+        $query = 'SELECT username, usernid, email, userrole, region, loginStatus FROM user WHERE userid=?';
+        $stmt = $con->prepare($query);
+        $stmt->bind_param("s", $id);
+        
+        //set officer id
+        $id = $_SESSION['officer_id'];
+
+        //execute prepared statement
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        //fetch query results
+        $data = $result->fetch_array(MYSQLI_ASSOC);
+        
+        //close statement
+        $stmt->close();
+
+        //update user table with new data
         //prepare and bind
         $query = 'UPDATE user SET username=?, usernid=?, email=?, userrole=?, region=?, loginStatus=? WHERE userid=?';
         $stmt = $con->prepare($query);
@@ -35,7 +55,6 @@
         $email = $_POST['email'];
         $region = $_SESSION['assign_region_id'];
         $loginStatus = $_POST['loginStatus'];
-        $id = $_SESSION['officer_id'];
 
         //execute prepared statement
         $stmt->execute();
@@ -59,6 +78,26 @@
             $stmt->close();
         }
 
+        //prepare and bind
+        $query = 'INSERT INTO officerhistory (editorId, officerId, nid, email, region, loginStatus, name, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+        $stmt = $con->prepare($query);
+        $stmt->bind_param("ssssssss", $editor, $id, $nid, $email, $region, $loginStatus, $name, $position);
+
+        //store results in session variables
+        $editor = $_SESSION['userid'];
+        $nid = $data['usernid']; 
+        $email = $data['email'];
+        $region = $data['region'];
+        $loginStatus = $data['loginStatus'];
+        $name = $data['username'];
+        $position = $data['userrole'];
+
+        //execute prepared statement
+        $stmt->execute();
+        
+        //close statement
+        $stmt->close();
+
         //close connection
         $con->close();
 
@@ -68,7 +107,6 @@
         unset($_SESSION['officer_nid']); 
         unset($_SESSION['officer_email']); 
         unset($_SESSION['officer_logStat']);
-        //unset($_SESSION['officer_password']); 
         unset($_SESSION['officer_role']);    
         unset($_SESSION['assign_region_id']); 
         unset($_SESSION['assign_region_name']);
