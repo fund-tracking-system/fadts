@@ -114,7 +114,7 @@
             datasets: [{
                   label: 'Victims per Year',
                   data: [100,200,400,300,250,140,370,200,300,200],
-                  // backgroundColor:'#4cd84c',
+                  backgroundColor:'rgb(205, 252, 228)',
                   hoverBackgroundColor:'#00FF00',
                   borderColor:'#00FF00',
                   borderWidth: 2
@@ -151,9 +151,9 @@
             datasets: [{
                   label: 'deliveries Made',
                   data: [100,200,400,300,250,140,370,200,300,200],
-                  backgroundColor:'#4cd84c',
-                  hoverBackgroundColor:'#00FF00',
-                  borderColor:'#00FF00',
+                  backgroundColor:'rgb(154, 220, 241)',
+                  hoverBackgroundColor:'rgb(114, 206, 236)',
+                  borderColor:'rgb(114, 206, 236)',
                   borderWidth: 2
             }]
          },

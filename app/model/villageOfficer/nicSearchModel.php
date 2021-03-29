@@ -146,6 +146,7 @@ function fundRelease($con,$nic,$personId,$view,$trustee,$phones){
 
       if($result){
          $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+         var_dump($result);
          $_SESSION['result'] =$result;
          $_SESSION['phones'] =$phones;
          mysqli_close($con);

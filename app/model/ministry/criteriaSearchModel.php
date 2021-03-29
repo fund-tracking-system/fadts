@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
    }
 }
 else {
-   header("Location:/fadts/fadts/ministry/searchRecipientView?error=direct_access_prohibited");
+   header("Location:/fadts/ministry/searchRecipientView?error=direct_access_prohibited");
    exit();
 } 
 

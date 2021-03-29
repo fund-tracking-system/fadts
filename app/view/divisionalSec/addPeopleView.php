@@ -99,7 +99,7 @@
                      style='position:sticky;top:60px;overflow:scroll;  width:544px; '>
                      <option value="" disabled selected>Select region</option>
                      <?php 
-                              foreach($res as $data){
+                              foreach($res as $data){ 
                                 echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
                               }
                            ?>

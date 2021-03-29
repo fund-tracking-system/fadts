@@ -1,38 +1,48 @@
 
 <?php
-$myRegion=$_SESSION['region'];
 
 
+   $myRegion=$_SESSION['region']; //get officer region
 
 
-
-//select district Region  
 
       $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
-      $result1=$con->query($sql1);
+      $result1=$con->query($sql1);                                                  // set distric region 
       $res1=$result1->fetch_all(MYSQLI_ASSOC);
 
-foreach($res1 as $data1){ 
-$_SESSION['districtRegion']=$data1['superRegion'];
+   foreach($res1 as $data1)
+      { 
 
-}
-$districtRegion= $_SESSION['districtRegion'];                   //  save district region
+         $_SESSION['districtRegion']=$data1['superRegion'];
 
+       }
 
-
-
-//select provincial  Region
-$sql2="SELECT superRegion  From region Where region.regionId= $districtRegion";
-$result2=$con->query($sql2);
-$res2=$result2->fetch_all(MYSQLI_ASSOC);
-foreach($res2 as $data2){ 
-$_SESSION['provincialRegion']=$data2['superRegion'];
-
-}
+      $districtRegion= $_SESSION['districtRegion'];                   //  save district region to session varible
 
 
-$provincialRegion= $_SESSION['provincialRegion'];
 
+
+      $sql2="SELECT superRegion  From region Where region.regionId= $districtRegion";   //select  provincial  region
+      $result2=$con->query($sql2);
+      $res2=$result2->fetch_all(MYSQLI_ASSOC);
+
+         
+   foreach($res2 as $data2)
+      { 
+         
+         $_SESSION['provincialRegion']=$data2['superRegion'];
+
+      }
+
+
+      $provincialRegion= $_SESSION['provincialRegion'];              // stor divisional region to session varible
+
+
+      
+      $sql12="SELECT id,type  From incometype";
+      $result12=$con->query($sql12);                                                  
+      $res12=$result12->fetch_all(MYSQLI_ASSOC);
+      $_SESSION['incomeTypes']=$res12;
 
 
 
@@ -98,59 +108,98 @@ $oct=0;
 $nove=0;
 $dec=0;
 
+
+
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
+
 foreach($resl as  $data){
+
+
+
    $date=$data['publishedTime'];
    $month = date("m",strtotime($date));
+
+   $fundYear=date("y",strtotime($date));
+   
+
+   if(($year-1)==$fundYear)
+   {
+
+      if($month ==1){
+
+         $jan=$jan+$data['amountPerPerson'];
+   
+      }
+      else if($month ==2){
+   
+         $feb=$feb+$data['amountPerPerson'];
+   
+      }
+      else if($month ==3){
+   
+         $march=$march+$data['amountPerPerson'];
+   
+      }
+      else if($month ==4){
+   
+         $april=$april+$data['amountPerPerson'];
+   
+      }
+      else if($month ==5){
+   
+         $may=$may+$data['amountPerPerson'];
+   
+      }
+      else if($month ==6){
+   
+         $june=$june+$data['amountPerPerson'];
+   
+      }
+      else if($month ==7){
+   
+         $july=$july+$data['amountPerPerson'];
+   
+      }
+      else if($month ==8){
+   
+         $august=$august+$data['amountPerPerson'];
+   
+      }
+      else if($month ==9){
+   
+         $september=$september+$data['amountPerPerson'];
+   
+      }
+      else if($month ==10){
+   
+         $oct=$oct+$data['amountPerPerson'];
+   
+      }
+      else if($month ==11){
+   
+         $nove=$nove+$data['amountPerPerson'];
+   
+      }
+      else if($month ==12){
+   
+         $dec=$dec+$data['amountPerPerson'];
+   
+      }
+
+
+   }
+
+
+
+   // exit();
+
+
+
    // echo $month;
-   if($month ==1){
-      $jan=$jan+$data['amountPerPerson'];
-   }
-   if($month ==2){
-      $feb=$feb+$data['amountPerPerson'];
-   }
-   if($month ==3){
-      $march=$march+$data['amountPerPerson'];
-   }
-   if($month ==4){
-      $april=$april+$data['amountPerPerson'];
-   }
-   if($month ==5){
-      $may=$may+$data['amountPerPerson'];
-   }
-   if($month ==6){
-      $june=$june+$data['amountPerPerson'];
-   }
-   if($month ==7){
-      $july=$july+$data['amountPerPerson'];
-   }
-   if($month ==8){
-      $august=$august+$data['amountPerPerson'];
-   }
-   if($month ==9){
-      $september=$september+$data['amountPerPerson'];
-   }
-   if($month ==10){
-      $oct=$oct+$data['amountPerPerson'];
-   }
-   if($month ==11){
-      $nove=$nove+$data['amountPerPerson'];
-   }
-   if($month ==12){
-      $dec=$dec+$data['amountPerPerson'];
-   }
+   
+
 }
-$_SESSION['jan']=$jan;
-$_SESSION['feb']=$feb;
-$_SESSION['march']=$march;
-$_SESSION['may']=$may;
-$_SESSION['april']=$april;
-$_SESSION['june']=$june;
-$_SESSION['july']=$july;
-$_SESSION['august']=$august;
-$_SESSION['september']=$september;
-$_SESSION['october']=$oct;
-$_SESSION['november']=$nove;
-$_SESSION['december']=$dec;
 
 // var_dump($resl);
 
@@ -192,23 +241,32 @@ $_SESSION['governmentCount']=$governmentCount;
 $_SESSION['JoblessCount']=$joblessCount;
 
 // for get age variations
-foreach($res1 as $mydash){
+foreach($res1 as $mydash)
+{
    $dateOfBirth=$mydash['birthDate'];
    $today=date("y-m-d");
    $diff=date_diff(date_create($dateOfBirth),date_create($today));
-   if($diff->format('%y')>=65){
+    
+   if($diff->format('%y')>=65)
+   {
       // echo "high";
       $olders++;
    }
-   elseif ($diff->format('%y')>=25) {
+   
+   elseif ($diff->format('%y')>=25) 
+   {
       // echo "up in 25";
       $midagers++;
    }
-   elseif ($diff->format('%y')>=18) {
+
+   elseif ($diff->format('%y')>=18) 
+   {
       // echo "up in 18";
       $youngsters++;
    }
-   elseif ($diff->format('%y')>=0) {
+
+   elseif ($diff->format('%y')>=0) 
+   {
       // echo "student";
       $studentCount++;
    }
@@ -423,19 +481,20 @@ $_SESSION['olders']=$olders;
 
 
   $(function () {
+  
+var jan=<?php echo $jan?>;
+var feb=<?php echo $feb;?>;
+var march=<?php echo $march;?>;
+var april=<?php echo $april;?>;
+var may=<?php echo $may;?>;
+var june=<?php echo $june;?>;
+var july=<?php echo $july;?>;
+var august=<?php echo $august;?>;
+var september=<?php echo $september;?>;
+var october=<?php echo $oct;?>;
+var december=<?php echo $dec;?>;
+var november=<?php echo $nove;?>;
 
-   var jan=<?php echo $_SESSION['jan'];?>;
-   var feb=<?php echo $_SESSION['feb'];?>;
-   var march=<?php echo $_SESSION['march'];?>;
-   var april=<?php echo $_SESSION['april'];?>;
-   var may=<?php echo $_SESSION['may'];?>;
-   var june=<?php echo $_SESSION['june'];?>;
-   var july=<?php echo $_SESSION['july'];?>;
-   var august=<?php echo $_SESSION['august'];?>;
-   var september=<?php echo $_SESSION['september'];?>;
-   var october=<?php echo $_SESSION['october'];?>;
-   var december=<?php echo $_SESSION['december'];?>;
-   var november=<?php echo $_SESSION['november'];?>;
       // ChartJS
       var ctx = document.getElementById('Chart3').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
@@ -445,7 +504,7 @@ $_SESSION['olders']=$olders;
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Fund Distribution',
+                  label: 'Past Year Fund Distribution',
                   data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                   backgroundColor:'#668cff',
                   hoverBackgroundColor:'#698CD1',

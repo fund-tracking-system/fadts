@@ -56,6 +56,6 @@
     unset($_SESSION['officer_loginStatus']);  
     
     //redirecting to view
-    header("Location:/fadts/ministry/addOfficerView"); 
+    header("Location:/fadts/ministry/addOfficerView?result=success"); 
     exit(); 
 ?>
