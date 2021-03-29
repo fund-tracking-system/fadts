@@ -12,26 +12,28 @@ if(isset($_POST['submit'])){
    $civilStatus = $_POST['civilStatus'];
    $region = $_POST['region']; 
 
+
+
    if(isset($_POST['incomeType'])) {
-      // $incomeType = $_POST['incomeType'];
-      if($_POST['incomeType']==1){
-         $incomeType="Goverment";
-      }
-      else if($_POST['incomeType']==2){
-         $incomeType="Private";
-      }
-      else if($_POST['incomeType']==3){
-         $incomeType="Retired";
-      }
-      else if($_POST['incomeType']==4){
-         $incomeType="Business ";
-      }
-      else if($_POST['incomeType']==5){
-         $incomeType="SelfEmployee";
-      }
-      else if($_POST['incomeType']==6){
-         $incomeType="Unemployed";
-      }
+      $incomeType = $_POST['incomeType'];
+      // if($_POST['incomeType']==1){
+      //    $incomeType="Goverment";
+      // }
+      // else if($_POST['incomeType']==2){
+      //    $incomeType="Private";
+      // }
+      // else if($_POST['incomeType']==3){
+      //    $incomeType="Retired";
+      // }
+      // else if($_POST['incomeType']==4){
+      //    $incomeType="Business";
+      // }
+      // else if($_POST['incomeType']==5){
+      //    $incomeType="SelfEmployee";
+      // }
+      // else if($_POST['incomeType']==6){
+      //    $incomeType="Unemployed";
+      // }
    }
    else{ 
       $incomeType = "";
@@ -46,8 +48,8 @@ if(isset($_POST['submit'])){
    else $funds="";
 
    $sql = queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds,$region);
-//    echo $sql;
-//    exit();
+   // echo $sql;
+   // exit();
 
    $stmt = mysqli_stmt_init($con);
    echo $sql;
@@ -86,13 +88,13 @@ function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType,
 
    if(!empty($funds)) {
       $fundsCondiion = setFunds($funds);
-      $query = "SELECT person.personId, nid, person.name, address, phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId INNER JOIN region ON person.region=region.regionId  WHERE (((person.region = $region) OR (region.superRegion=$region)) AND";
+      $query = "SELECT person.personId, nid, person.name, address, phone,region.name FROM person INNER JOIN eligibility ON person.personId = eligibility.personId INNER JOIN region ON person.region=region.regionId  WHERE (((person.region = $region) OR (region.superRegion=$region)) AND";
       
       $query = $query." ".$fundsCondiion;
       $count++;
    }
    else {
-      $query = "SELECT person.personId, nid, person.name, address, phone FROM person INNER JOIN region ON person.region=region.regionId  WHERE (((person.region = $region) OR (region.superRegion=$region)) ";
+      $query = "SELECT person.personId, nid, person.name, address, phone,region.name AS Rname FROM person INNER JOIN region ON person.region=region.regionId  WHERE (((person.region = $region) OR (region.superRegion=$region)) ";
    }
 
    
@@ -157,9 +159,34 @@ function setAge($ageStart,$ageEnd){
     $incomeType = new CachingIterator($incomeType);
  
     foreach ($incomeType as $value){
+
+      if($value==1){
+         $value="Goverment";
+      }
+      else if($value==2){
+         $value="Private";
+      }
+      else if($value==3){
+         $value="Retired";
+      }
+      else if($value==4){
+         $incomeType="Business";
+      }
+      else if($value==5){
+         $value="SelfEmployee";
+      }
+      else if($value==6){
+         $value="Unemployed";
+      }
+
+
        
        $string = $string." job = '".$value."'";  
        if($incomeType->hasNext()) {
+
+
+
+
           $string = $string." OR ";
        }else{
           $string = $string.")";
