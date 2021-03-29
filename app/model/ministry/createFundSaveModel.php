@@ -76,8 +76,9 @@
             $result = $conn->qry($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    $to = $row["phone"];
-                    $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
+                    $contact = $row["phone"];
+                    $contact = "94".substr($contact, -9);
+                    $api_instance->sendSMS($user_id, $api_key, $message, $contact, $sender_id);
                 }
             }
 
