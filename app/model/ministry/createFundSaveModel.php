@@ -38,11 +38,9 @@
         foreach($region as $regionId) { 
             if(!$stmt->execute()){
             //close statement
-            $stmt->close();    
-
+                $stmt->close(); 
             //close connection
-            $con->close();
-
+                $con->close();
             header("Location:/fadts/ministry/createFundView?error=db_conn_err");
             exit();
             }
@@ -52,22 +50,44 @@
         $stmt->close();
 
         //prepare and bind insert query into fund table
-        $query = 'INSERT INTO recipient (personId, fundId) VALUES (?, ?)';
-        $stmt = $con->prepare($query);
-        $stmt->bind_param("ss", $personId, $fundId);
+        
+
+        
+
+   require_once('notify/autoload.php');
+
+   $api_instance = new NotifyLk\Api\SmsApi();
+   $user_id = "13127"; 
+   $api_key = "qCaJfO73WWJfh9FHBXYd"; 
+   $message = "Congratulations!</br>You have been selected for a government fund.Please contact your village officer to claim the due fund amount.</br>Thank you."; 
+//    $to = $contact;
+   $sender_id = "NotifyDEMO";
+
 
         foreach($_SESSION['personList'] as $person){ 
+            
             $personId = $person['personId'];
+            $query = 'INSERT INTO recipient (personId, fundId) VALUES (?, ?)';
+            $stmt = $con->prepare($query);
+            $stmt->bind_param("ss", $personId, $fundId);
+
+
+            $qry="SELECT phone FROM person WHERE personId = $personId";
+            $result = $conn->qry($sql);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $to = $row["phone"];
+                    $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
+                }
+            }
 
             if(!$stmt->execute()){
-            //close statement
-            $stmt->close();    
-
-            //close connection
-            $con->close();
-
-            header("Location:/fadts/ministry/createFundView?error=db_conn_err");
-            exit();
+                //close statement
+                $stmt->close();    
+                //close connection
+                $con->close();
+                header("Location:/fadts/ministry/createFundView?error=db_conn_err");
+                exit();
             }
         }    
 
@@ -90,11 +110,10 @@
     else{
         //close statement
         $stmt->close();
-
         //close connection
         $con->close();
-
         header("Location:/fadts/ministry/createFundView?error=db_conn_err");
         exit();
     }
+
 ?>
