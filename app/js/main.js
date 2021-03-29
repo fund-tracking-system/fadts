@@ -264,7 +264,7 @@ $(function(){
                 },
                 address: "required",
                 b_date: {
-                    maxlength: 5,
+                    required: true,
                     date: true
                 },
                 bcertifi:{
@@ -309,7 +309,7 @@ $(function(){
                     date: "Date should be correct format"
                 },
                 bcertifi:{
-                    maxlength: "Birth cerificate number length should x x x x type",
+                    maxlength: "Birth cerificate number length should x x x x length",
                     minlength: "Please enter at most 5 characters",
                     number: "Birth cerificate number must have numbers",
                 },
