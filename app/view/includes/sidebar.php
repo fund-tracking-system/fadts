@@ -162,7 +162,7 @@ switch($controller){
       <span class="material-icons">person_add</span>Add Disaster Victims
    </a>
    <a href="/fadts/village/helpview" class="dashboard sidebar_link">
-      <span class="material-icons">help_center</span>Help
+      <span class="material-icons">help_center</span>Help 
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
       <span class="material-icons">exit_to_app</span>Logout
