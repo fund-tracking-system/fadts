@@ -3,7 +3,7 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method = "post" action = "/fadts/audit/eligibilityHistoryModel" id="form">
+        <form method = "post" action = "/fadts/audit/eligibilityHistoryModel" id="formeligibilityList">
             <fieldset class="BackgroundFS">
                 <h2>VIEW ELIGIBILITY HISTORY</h2>
                 

@@ -90,14 +90,11 @@ switch($controller){
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
-   <a href="/fadts/ministry/viewOfficerView" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person_search</span>View Officer
    </a>
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Officer
-   </a>
-   <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
-      <span class="material-icons">person</span>Update Officer
    </a>
    <a href="/fadts/ministry/loadFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
@@ -108,7 +105,7 @@ switch($controller){
    <a href="/fadts/ministry/viewEligibilityView" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Eligibility
    </a>
-   <a href="/fadts/ministry/viewAdddPeopleToFundElighibleList" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/addToEligibilityFundView" class="dashboard sidebar_link">
       <span class="material-icons">group_add</span>Add To Eligibility
    </a>   
    <a href="/fadts/ministry/searchPeople" class="dashboard sidebar_link">

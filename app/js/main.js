@@ -8,7 +8,7 @@ jQuery.validator.addMethod("nidvalidator", function(value, element) {
     var validator = this;
     
 
-    if (value.length>12 || value.length <10) {
+    if (value.length>12 || value.length <10 || value.substr(0,1)=='0') {
         var errors = {};
         errors[element.name] = "Invalid NID";
         validator.showErrors(errors);
@@ -84,51 +84,133 @@ $(function(){
     }
   });
 
+//ministry-view officer history
+  $(function(){
+    var $formAddDisaster = $("#formViewOfficerHistory");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                }
 
-//   $(function(){
-//     var $formAddDisaster = $("#formViewOfficerHistory");
-//     if($formAddDisaster.length){
-//         $formAddDisaster.validate({
-//             rules: {
-//                 nid: {
-//                     required: true,
-//                     // maxlength: 12,
-//                     // minlength:10,
-//                     nidvalidator:true
-//                 }
-//             },
-//             messages: {
-//                 nid: {
-//                     required: "This field is required",
-//                     // maxlength: "Please enter no more than 12 or 10 characters",
-//                     // minlength: "Please enter at most 10 or 12 characters"
-//                 }
+            }
+      });
+    }
+  });
 
-//             }
-//       });
-//     }
-//   });
+//ministry-form history records
+
+  $(function(){
+    var $formAddDisaster = $("#formHistory");
+    if($formAddDisaster.length){
+        $formAddDisaster.validate({
+            rules: {
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                }
+
+            }
+      });
+    }
+  });
 
 
 
+  //ministry-formeligibilityList
 
-//   $(function(){
-//     var $formAddDisaster = $("#formUpdateVillage");
-//     if($formAddDisaster.length){
-//         $formAddDisaster.validate({
-//             rules: {
-//                 nic: {
-//                     required: true,
-//                     nidvalidator:true
-//                 }
-//             },
-//             messages: {
-//                 nic:"This field is required"
+  $(function(){
+    var $formeligibilityList = $("#formeligibilityList");
+    if($formeligibilityList.length){
+        $formeligibilityList.validate({
+            rules: {
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                }
+
+            }
+      });
+    }
+  });
+
+
+
+   //ministry-form person history
+
+   $(function(){
+    var $formpersonHistory = $("#formpersonHistory");
+    if($formpersonHistory.length){
+        $formpersonHistory.validate({
+            rules: {
+                nid: {
+                    required: true,
+                    // maxlength: 12,
+                    // minlength:10,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nid: {
+                    required: "This field is required",
+                    // maxlength: "Please enter no more than 12 or 10 characters",
+                    // minlength: "Please enter at most 10 or 12 characters"
+                }
+
+            }
+      });
+    }
+  });
+
+
+
+//update data-village officer
+  $(function(){
+    var $formUpdateVillage = $("#formUpdateVillage");
+    if($formUpdateVillager.length){
+        $formUpdateVillage.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
                 
-//             }
-//       });
-//     }
-//   });
+            }
+      });
+    }
+  });
 
 
   $(function(){
@@ -137,12 +219,19 @@ $(function(){
         $formAddDisaster.validate({
             rules: {
                 address:  "required",
-                monthlyIncome:  "required"
+                monthlyIncome:  {
+                    required: true,
+                    number: true
+                }
                
             },
             messages: {
                 address:"This field cannot be empty",
-                monthlyIncome:"This field cannot be empty"
+                monthlyIncome:{
+                    required:"This field cannot be empty",
+                    number:"Monthly Income should be valid type"
+
+                }
 
             }
       });
@@ -175,8 +264,13 @@ $(function(){
                 },
                 address: "required",
                 b_date: {
-                    required: true,
+                    maxlength: 5,
                     date: true
+                },
+                bcertifi:{
+                    maxlength:5,
+                    minlength:4,
+                    number:true
                 },
                 jobType: "required",
                 headOfFamily:{
@@ -214,6 +308,11 @@ $(function(){
                     required: "This field is required",
                     date: "Date should be correct format"
                 },
+                bcertifi:{
+                    maxlength: "Birth cerificate number length should x x x x type",
+                    minlength: "Please enter at most 5 characters",
+                    number: "Birth cerificate number must have numbers",
+                },
                 jobType: "This field is required",
                 headOfFamily:{
                     required: "Enter family head NID",
@@ -234,6 +333,118 @@ $(function(){
       });
     }
   });
+  
+//search people Data
+    $(function(){
+    var $formUpdate = $("#formUpdatenid");
+    if($formUpdate.length){
+        $formUpdate.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
+                
+            }
+    });
+    }
+    });
+
+
+    //search People Data
+
+    $(function(){
+        var $formUpdate = $("#formSearchnid");
+        if($formUpdate.length){
+            $formUpdate.validate({
+                rules: {
+                    NID: {
+                        required: true,
+                        nidvalidator:true
+                    }
+                },
+                messages: {
+                    nic:"This field is required"
+                    
+                }
+        });
+        }
+        });
+
+//search people data by criteria
+
+        $(function(){
+            var $formUpdate = $("#formCriteria");
+            if($formUpdate.length){
+                $formUpdate.validate({
+                    rules: {
+                        age1: {
+                            number: true,
+                            minlength:0,
+                            maxlength:3
+                        },
+                        age2:{
+                            number: true,
+                            minlength:0,
+                            maxlength:3
+
+                        },
+                        income1:{
+                            number:true
+                        },
+                        income2:{
+                            number:true
+                        }
+                    },
+                    messages: {
+                        age1: {
+                            number: "Age should be number",
+                            minlength: "Please enter valid Age",
+                            maxlength: "Please enter valid Age"
+                           
+                        },
+                        age2:{
+                            number: "Age should be number",
+                            minlength: "Please enter valid Age",
+                            maxlength: "Please enter valid Age"
+                        },
+                        income1:{
+                            number:"Gross income should be number"
+                        },
+                        income2:{
+                            number:"Gross income should be number"
+                        }
+                        
+                    }
+            });
+            }
+            });
+
+
+//alternate fund release
+
+
+            $(function(){
+                var $formUpdate = $("#fundReleaseSearch");
+                if($formUpdate.length){
+                    $formUpdate.validate({
+                        rules: {
+                            nic: {
+                                required: true,
+                                nidvalidator:true
+                            }
+                        },
+                        messages: {
+                            nic:"This field is required"
+                            
+                        }
+                });
+                }
+                });
+
 
 
 
@@ -244,7 +455,7 @@ $(function(){
 
   
   
-  //addOfficer
+  //addOfficer-ministry
   $(function(){
     var $formAddOfficer = $("#formAddOfficer");
     if($formAddOfficer.length){
@@ -340,6 +551,101 @@ $(function(){
       });
     }
   });
+
+
+
+  //search People Data-villageofficer
+
+  $(function(){
+    var $formSearch = $("#formSearchNidv");
+    if($formSearch.length){
+        $formSearch.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
+                
+            }
+    });
+    }
+    });
+
+//search people data by criteria
+
+    $(function(){
+        var $formUpdate = $("#formCriteriav");
+        if($formUpdate.length){
+            $formUpdate.validate({
+                rules: {
+                    ageStart: {
+                        number: true,
+                        minlength:0,
+                        maxlength:3
+                    },
+                    ageEnd:{
+                        number: true,
+                        minlength:0,
+                        maxlength:3
+
+                    },
+                    incomeStart:{
+                        number:true
+                    },
+                    incomeEnd:{
+                        number:true
+                    }
+                },
+                messages: {
+                    ageStart: {
+                        number: "Age should be number",
+                        minlength: "Please enter valid Age",
+                        maxlength: "Please enter valid Age"
+                       
+                    },
+                    ageEnd:{
+                        number: "Age should be number",
+                        minlength: "Please enter valid Age",
+                        maxlength: "Please enter valid Age"
+                    },
+                    incomeStart:{
+                        number:"Gross income should be number"
+                    },
+                    incomeEnd:{
+                        number:"Gross income should be number"
+                    }
+                    
+                }
+        });
+        }
+        });
+
+
+
+
+
+         //add victim-villageofficer
+
+  $(function(){
+    var $formSearch = $("#victimSearch");
+    if($formSearch.length){
+        $formSearch.validate({
+            rules: {
+                nic: {
+                    required: true,
+                    nidvalidator:true
+                }
+            },
+            messages: {
+                nic:"This field is required"
+                
+            }
+    });
+    }
+    });
 
 
 
@@ -445,15 +751,40 @@ $(function(){
                 rules: {
                     nid: {
                         required: true,
-                        maxlength: 12,
-                        minlength:10
+                        // maxlength: 12,
+                        // minlength:10
+                        nidvalidator:true
                     }
                 },
                 messages: {
                     nid: {
                         required: "This field is required",
-                        maxlength: "Please enter a correct NID",
-                        minlength: "Please enter correct NID"
+                        // maxlength: "Please enter a correct NID",
+                        // minlength: "Please enter correct NID"
+                    },
+                }
+            });
+        }
+    }); 
+
+
+    $(function(){
+        var $formCriteria = $("#formnid");
+        if($formCriteria.length){
+            $formCriteria.validate({
+                rules: {
+                    NID: {
+                        required: true,
+                        // maxlength: 12,
+                        // minlength:10
+                        nidvalidator:true
+                    }
+                },
+                messages: {
+                    nid: {
+                        required: "This field is required",
+                        // maxlength: "Please enter a correct NID",
+                        // minlength: "Please enter correct NID"
                     },
                 }
             });
@@ -553,6 +884,174 @@ $(function(){
           });
         }
       });
+
+//ministry-viewOfficer
+      $(function(){
+        var $formSearch = $("#viewOfficer");
+        if($formSearch.length){
+            $formSearch.validate({
+                rules: {
+                    nid: {
+                        required: true,
+                        nidvalidator:true
+                    }
+                },
+                messages: {
+                    nic:"This field is required"
+                    
+                }
+        });
+        }
+        });
+
+
+//Ministry -updateOfficer
+        $(function(){
+            var $formSearch = $("#updateOfficer");
+            if($formSearch.length){
+                $formSearch.validate({
+                    rules: {
+                        nid: {
+                            required: true,
+                            nidvalidator:true
+                        }
+                    },
+                    messages: {
+                        nic:"This field is required"
+                        
+                    }
+            });
+            }
+            });
+
+//Ministry- create Fund
+            $(function(){
+                var $formFundCreate = $("#createFund");
+                if($formFundCreate.length){
+                    $formFundCreate.validate({
+                        rules: {
+                            name:{
+                                required: true,
+                                lettersonly:true,
+
+                            },
+                            amount:{
+                                required: true,
+                                number: true
+                            }
+                            
+                        },
+                        messages: {
+                           name:
+                           {
+                            required: "This field is required",
+                            lettersonly:"Please enter letters only", 
+                           },    
+                           amount: {
+                            required:"This field cannot be empty",
+                            number:"Amount should be valid type"
+
+                           }
+                            
+                        }
+                  });
+                }
+              });
+
+
+
+
+              $(function(){
+                var $formElgibility= $("#eligibility");
+                if($formElgibility.length){
+                    $formElgibility.validate({
+                        name: {
+                            required:true,
+    
+                        },
+                        name: {    
+                           required: "You Should Select region",
+                        }
+                  });
+                }
+              });
+
+
+//Ministry-search data
+
+              $(function(){
+                var $formSearch = $("#formSearch1");
+                if($formSearch.length){
+                    $formSearch.validate({
+                        rules: {
+                            NID: {
+                                required: true,
+                                nidvalidator:true
+                            }
+                        },
+                        messages: {
+                            nic:"This field is required"
+                            
+                        }
+                });
+                }
+                });
+
+
+
+
+
+                $(function(){
+                    var $formformSearch2 = $("#formSearch2");
+                    if($formformSearch2.length){
+                        $formformSearch2.validate({
+                            rules: {
+                                age1: {
+                                    number: true,
+                                    minlength:0,
+                                    maxlength:3
+                                },
+                                age2:{
+                                    number: true,
+                                    minlength:0,
+                                    maxlength:3
+        
+                                },
+                                income1:{
+                                    number:true
+                                },
+                                income2:{
+                                    number:true
+                                }
+                            },
+                            messages: {
+                                age1: {
+                                    number: "Age should be number",
+                                    minlength: "Please enter valid Age",
+                                    maxlength: "Please enter valid Age"
+                                   
+                                },
+                                age2:{
+                                    number: "Age should be number",
+                                    minlength: "Please enter valid Age",
+                                    maxlength: "Please enter valid Age"
+                                },
+                                income1:{
+                                    number:"Gross income should be number"
+                                },
+                                income2:{
+                                    number:"Gross income should be number"
+                                }
+                                
+                            }
+                    });
+                    }
+                    });
+            
+
+
+
+    
 
 
 

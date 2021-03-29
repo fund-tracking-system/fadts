@@ -1,68 +1,46 @@
 <?php include VIEW.'includes/header.php' ?>
 <?php include VIEW.'includes/sidebar.php' ?>
 
-<!-- <?php
-    //next redirect URL
-    $_SESSION['next_model'] = "Location:/fadts/ministry/updateOfficerSetRegionModel";
-?> -->
-
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method="post" action="/fadts/ministry/viewEligibilityFindModel">
-            <fieldset class="BackgroundFS">            
-                <h2>FIND PREDEFINED FUND</h2>
-
+        <form method="post" action="/fadts/ministry/viewEligibilityModel" id="form"> 
+            <fieldset class="BackgroundFS">
+                <h2 style="margin-bottom:50px;">SELECT PREDEFINED FUND</h2>
                 <fieldset class="searchBar">
                     <div class="form-row ">
-                        <label for="name" class="searchBarLable"><b>FUND NAME:</b></label>
-                        <input class="form-control searchInput" name='name' placeholder="Select fund name here" ></input>
-                    </div>
+                        <label for="select-PreFund" class="searchBarLable"><b>Pre Defined Fund:</b></label>
 
-                    <button type="submit" class="btn btn-primary btnNav"style="margin-top:-80px;" >Search</button>                   
+                        <?php
+                            require 'connection.php'; 
+                                            
+                            $qry="SELECT Id, name FROM predefinedfund";
+                            $qryRes=$con->query($qry) ;
+                            $res=$qryRes->fetch_all(MYSQLI_ASSOC);
+                        ?>
+
+                        <select class="form-control searchInput" name="select-PreFund" id="select-PreFund">
+                            <?php 
+                                foreach($res as $data){                     
+                                //echo "<option value='$data['Id']'>Samurdhi</option>";
+                                echo '<option value="'.$data['Id'].'">'.$data['name'].'</option>';                        
+                                }
+                            ?>
+                        </select>
+
+                        <button type="submit" name="fundSubmit" class="btn btn-primary btnNav">Select</button>
+                    </div>
                 </fieldset>
             </fieldset>
         </form>
 
-        <form method="post" action="/fadts/ministry/viewEligibilitySelectModel">
-            <fieldset class="BackgroundFS">
-                <?php if (isset($_SESSION['query_results']) && $_SESSION['query_results']==-1) { ?>
+        <form method="post" action="">
+            <fieldset class="BackgroundFS">         
+                <?php if (isset($_SESSION['eligibility_list']) && $_SESSION['eligibility_list']==-1 && isset($_SESSION['flag']) && $_SESSION['flag']%10==5) { ?>
                     <div class="form-row ">
-                        <input class="form-control Input" value="Record doesn't exist!" readonly></input>
+                        <input class="form-control Input" value="There are no Eligible people!" readonly></input>
                     </div>
-                <?php } ?>
-
-                <?php if (isset($_SESSION['query_results']) && $_SESSION['query_results']!=-1) { ?>
-                    <h2>FILTERED FUND LIST</h2>
-
-                    <div class="tbleMargin">
-                        <table class="display nowrap" name="table" id="resultTable">
-                            <tr>
-                                <th><b>Predefined Fund</b></th>
-                                <th><b>Select</b></th>
-                            </tr>
-                            <?php 
-                                //get results from session variables
-                                $data = $_SESSION['query_results'];
-
-                                foreach($data as $row) {
-                                    print " <tr> "; 
-                                        print ' <td> ' . $row['name'] . ' </td> '; 
-                                        print ' <td>
-                                                    <form method="post" action="/fadts/ministry/viewEligibilitySelectModel">
-                                                        <input type="hidden" name="predefinedfund" value="' . $row['Id'] . '">
-                                                        <button class="btn btn-primary" style="margin-left:40%;" type="submit">Select</button>
-                                                    </form>            
-                                                </td> ';
-                                    print " </tr> ";
-                                } 
-                            ?>
-                        </table>
-                    </div>
-                    
-                    <?php unset($_SESSION['query_results']); //unset results from session variables ?>
-                <?php } ?>
-
-                <?php if (isset($_SESSION['eligibility_list']) && $_SESSION['eligibility_list']!=-1) { ?>
+                <?php } ?>                                
+                <?php if (isset($_SESSION['eligibility_list']) && $_SESSION['eligibility_list']!=-1 && isset($_SESSION['flag']) && $_SESSION['flag']%10==5) { ?>
                     <h2>ELIGIBLE LIST</h2>
 
                     <div class="tbleMargin">
@@ -89,18 +67,28 @@
                         </table>
                     </div>
                     
-                    <?php unset($_SESSION['eligibility_list']); //unset results from session variables ?>
+                    <?php 
+                    //unset results from session variables
+                    unset($_SESSION['eligibility_list']); 
+                    
+                    //unset flag from session variables
+                    unset($_SESSION['flag']); 
+                    ?>
                 <?php } ?>
             </fieldset>
         </form>
     </div>
 </div>
 
-<!-- <script>
-function retain() {
-  var x = document.getElementById("myInput").value;
-  document.getElementById("demo").innerHTML = "You wrote: " + x;
-}
-</script> -->
+<script>
+$(document).ready(function() {
+    $("#resultTable").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+        'print','pdf'
+    ]
+    });
+});
+</script>
 
 <?php include VIEW.'includes/footer.php'?>

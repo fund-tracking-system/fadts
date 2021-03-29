@@ -28,7 +28,7 @@ h5 {
 h6{
     color: white;
     font-size: 15px;
-    padding-left: 10px;
+    padding-left: 16px;
 }
 
 .To {
@@ -1404,7 +1404,7 @@ textarea.form-control.is-valid {
 
 #calendardate {
     width: 50%;
-    height: 100%;
+    height: 300px;
     padding: 0px;
     margin: 0px;
     background-color: rgba(11, 207, 109, 0.664);
@@ -2049,8 +2049,8 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( rgb(18, 164, 212),#b0cbfa);
-    /*background: rgb(18, 164, 212);*/
+    /*background-image: linear-gradient( rgb(18, 164, 212),#b0cbfa);*/
+    background: rgb(114, 206, 236);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 4/5;
@@ -2060,8 +2060,8 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190));
-    /*background: rgb(4, 110, 57);*/
+    /* background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190)); */
+    background: rgb(205, 252, 228);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 5/6;
@@ -2071,8 +2071,9 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(119, 69, 11),#c6ce80);
-    /*background: rgb(69, 69, 70);*/
+    /* background-image: linear-gradient(  rgb(119, 69, 11),#c6ce80); */
+    background:  rgb(240, 185, 122);
+    /* background: rgb(69, 69, 70); */
     margin: 5px;
     grid-row: 2/3;
     grid-column: 4/5;
@@ -2082,8 +2083,8 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( #e4730a,#f1cf0d);
-    /*ackground:rgb(27, 233, 164);*/
+    /* background-image: linear-gradient( #e4730a,#f1cf0d); */
+    background:#ecea68;
     margin: 5px;
     grid-row: 2/3;
     grid-column: 5/6;
@@ -2093,8 +2094,8 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( #5D6D7E,#a2a3a3);
-    /*background: #2C3E50;*/
+    /* background-image: linear-gradient( #5D6D7E,#a2a3a3); */
+    background: #a2b1b1;
     margin: 5px;
     grid-row: 3/4;
     grid-column: 4/5;
@@ -2104,8 +2105,8 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient(  rgb(221, 40, 70),#eb7a7f);
-    /*background: rgb(20, 134, 241);*/
+    /* background-image: linear-gradient(  rgb(221, 40, 70),#eb7a7f); */
+    background: rgb(253, 123, 144);
     margin: 5px;
     grid-row: 3/4;
     grid-column: 5/6;
@@ -2115,8 +2116,8 @@ ul.tabs li.current {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background-image: linear-gradient( #f06067,#f397a1);
-    /*background: rgb(20, 134, 241);*/
+    /* background-image: linear-gradient( #f06067,#f397a1); */
+    background: rgb(248, 133, 142);
     margin: 5px;
     grid-row: 3/4;
     grid-column: 4/6;
@@ -2131,8 +2132,8 @@ ul.tabs li.current {
 .box8 {
     border-radius: 5px;
     text-align: center;
-    /*background: rgb(49, 185, 235);*/
-    background-image: linear-gradient(#3c79e6,#85aff7);
+    background: rgb(141, 211, 236);
+    /* background-image: linear-gradient(#3c79e6,#85aff7); */
     margin: 5px;
     grid-row: 4/5;
     grid-column: 4/6;
@@ -2154,13 +2155,13 @@ ul.tabs li.current {
 }
 
 .fontwhite{
-    color: #ffffff;
+    color: #FDFEFE;
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
 }
 
 .dashboard-title {
-    color: white;
+    color: #FDFEFE;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     margin: 5px;
@@ -2174,7 +2175,7 @@ ul.tabs li.current {
 
 
 #calendar_events{
-    height:290px;
+    height:300px;
     background: #2C3E50;
 }
 
@@ -2731,4 +2732,6 @@ ul.tabs li.current {
     width: 850px;
     padding: 20px;
     margin: 20px;
+    
+    
 }

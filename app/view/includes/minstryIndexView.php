@@ -6,31 +6,32 @@ $myRegion=$_SESSION['region'];
 $lowIncome=0;
 $midIncome=0;
 $highIncome=0;
-$_SESSION['lowIncome']=0;
-$_SESSION['midIncome']=0;
-$_SESSION['highIncome']=0;
+
 
    $sql1="SELECT * From person";
    $result1=$con->query($sql1);
    $res1=$result1->fetch_all(MYSQLI_ASSOC);
 
    foreach($res1 as $data){
+
       if($data['monthlyIncome']>=100000){
+
          $highIncome++;
+
       }
       elseif($data['monthlyIncome']>=30000){
+
          $midIncome++;
+
       }
       else{
+
          $lowIncome++;
+
       }
+
    }
-   $_SESSION['lowIncome']=$lowIncome;
-   $_SESSION['midIncome']=$midIncome;
-   $_SESSION['highIncome']=$highIncome;
-
-
-
+ 
 
 
 
@@ -55,68 +56,204 @@ $oct=0;
 $nove=0;
 $dec=0;
 
+
+
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
+
 foreach($resl as  $data){
+
+
 $date=$data['deliveryTime'];
 $month = date("m",strtotime($date));
+
+
+$fundYear=date("y",strtotime($date));
+
+
+
+if(($year-1)==$fundYear){
+
+
+   if($month ==1){
+
+      $jan=$jan+$data['amountPerPerson'];
+   
+   }
+   else if($month ==2){
+   
+      $feb=$feb+$data['amountPerPerson'];
+   
+   }
+   else if($month ==3){
+   
+      $march=$march+$data['amountPerPerson'];
+   
+   }
+   else if($month ==4){
+   
+      $april=$april+$data['amountPerPerson'];
+   
+   }
+   else if($month ==5){
+   
+      $may=$may+$data['amountPerPerson'];
+   
+   }
+   else if($month ==6){
+   
+      $june=$june+$data['amountPerPerson'];
+   
+   }
+   else if($month ==7){
+   
+      $july=$july+$data['amountPerPerson'];
+   
+   }
+   else if($month ==8){
+   
+      $august=$august+$data['amountPerPerson'];
+   
+   }
+   else if($month ==9){
+   
+      $september=$september+$data['amountPerPerson'];
+   
+   }
+   else if($month ==10){
+   
+      $oct=$oct+$data['amountPerPerson'];
+   
+   }
+   else if($month ==11){
+   
+      $nove=$nove+$data['amountPerPerson'];
+   
+   }
+   else if($month ==12){
+   
+      $dec=$dec+$data['amountPerPerson'];
+   
+   }
+
+
+}
+
+
 // echo $month;
-if($month ==1){
-   $jan=$jan+$data['amountPerPerson'];
+
 }
-if($month ==2){
-   $feb=$feb+$data['amountPerPerson'];
-}
-if($month ==3){
-   $march=$march+$data['amountPerPerson'];
-}
-if($month ==4){
-   $april=$april+$data['amountPerPerson'];
-}
-if($month ==5){
-   $may=$may+$data['amountPerPerson'];
-}
-if($month ==6){
-   $june=$june+$data['amountPerPerson'];
-}
-if($month ==7){
-   $july=$july+$data['amountPerPerson'];
-}
-if($month ==8){
-   $august=$august+$data['amountPerPerson'];
-}
-if($month ==9){
-   $september=$september+$data['amountPerPerson'];
-}
-if($month ==10){
-   $oct=$oct+$data['amountPerPerson'];
-}
-if($month ==11){
-   $nove=$nove+$data['amountPerPerson'];
-}
-if($month ==12){
-   $dec=$dec+$data['amountPerPerson'];
-}
-}
-$_SESSION['jan']=$jan;
-$_SESSION['feb']=$feb;
-$_SESSION['march']=$march;
-$_SESSION['may']=$may;
-$_SESSION['april']=$april;
-$_SESSION['june']=$june;
-$_SESSION['july']=$july;
-$_SESSION['august']=$august;
-$_SESSION['september']=$september;
-$_SESSION['october']=$oct;
-$_SESSION['november']=$nove;
-$_SESSION['december']=$dec;
+
+
+$sql5="SELECT person.personId,disaster.date FROM disaster INNER JOIN victim ON disaster.disasterId=victim.disasterId INNER JOIN person ON victim.personId=person.personId";
+$results=$con->query($sql5);
+$resl=$results->fetch_all(MYSQLI_ASSOC);
+
+$vjan=0;
+$vfeb=0;
+$vmarch=0;
+$vapril=0;
+$vmay=0;
+$vjune=0;
+$vjuly=0;
+$vaugust=0;
+$vseptember=0;
+$voct=0;
+$vnove=0;
+$vdec=0;
+
+
+
+   
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
+
+      foreach($resl as  $data){
+         
+         $date=$data['date'];
+         $month = date("m",strtotime($date));
+
+
+         $disasterYear=date("y",strtotime($date));
+
+         if(($year-1)==$disasterYear){
+
+
+            
+         }
+
+
+         if($month ==1){
+
+            $vjan=$vjan+1;
+         
+         }
+         else if($month ==2){
+         
+            $vfeb=$vfeb+1;
+         
+         }
+         else if($month ==3){
+         
+            $vmarch=$vmarch+1;
+         
+         }
+         else if($month ==4){
+         
+            $vapril=$vapril+1;
+         
+         }
+         else if($month ==5){
+         
+            $vmay=$vmay+1;
+         
+         }
+         else if($month ==6){
+         
+            $vjune=$vjune+1;
+         
+         }
+         else if($month ==7){
+         
+            $vjuly=$vjuly+1;
+         
+         }
+         else if($month ==8){
+         
+            $vaugust=$vaugust+1;
+         
+         }
+         else if($month ==9){
+         
+            $vseptember=$vseptember+1;
+         
+         }
+         else if($month ==10){
+         
+            $voct=$voct+1;
+         
+         }
+         else if($month ==11){
+         
+            $vnove=$vnove+1;
+         
+         }
+         else if($month ==12){
+         
+            $vdec=$vdec+1;
+         
+         }
 
 
 
 
 
+         
+      }
 
 
 
-   ?>
+?>
 
 
 
@@ -191,9 +328,9 @@ $( document ).ready(function() {
 $(function () {
 
 
-   var lowIncome=<?php  echo $_SESSION['lowIncome'];?>;
-   var highIncome=<?php echo $_SESSION['highIncome'];?>;
-   var midIncome=<?php echo $_SESSION['midIncome'];?>;
+   var lowIncome=<?php  echo $lowIncome;?>;
+   var highIncome=<?php echo $highIncome;?>;
+   var midIncome=<?php echo $midIncome;?>;
 
 
    var ctx = document.getElementById('Chart1').getContext('2d');
@@ -231,6 +368,26 @@ $(function () {
 
 $(function () {
    // ChartJS
+
+            
+         var jan=<?php echo $vjan?>;
+         var feb=<?php echo $vfeb;?>;
+         var march=<?php echo $vmarch;?>;
+         var april=<?php echo $vapril;?>;
+         var may=<?php echo $vmay;?>;
+         var june=<?php echo $vjune;?>;
+         var july=<?php echo $vjuly;?>;
+         var august=<?php echo $vaugust;?>;
+         var september=<?php echo $vseptember;?>;
+         var october=<?php echo $voct;?>;
+         var december=<?php echo $vdec;?>;
+         var november=<?php echo $vnove;?>;
+
+
+
+
+
+
    var ctx = document.getElementById('Chart2').getContext('2d');
    console.log(Chart.defaults.scale.ticks);
    Chart.defaults.scale.ticks.beginAtZero=true;
@@ -240,7 +397,7 @@ $(function () {
          labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
          datasets: [{
                label: 'Victims per Year',
-               data: [100,200,400,300,250,140,370,200,300,200],
+               data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                backgroundColor:'#4cd84c',
                hoverBackgroundColor:'rgb(4, 17, 41)',
                borderColor:'rgb(4, 17, 41)',
@@ -270,18 +427,18 @@ $(function () {
 
 
   
-var jan=<?php echo $_SESSION['jan'];?>;
-var feb=<?php echo $_SESSION['feb'];?>;
-var march=<?php echo $_SESSION['march'];?>;
-var april=<?php echo $_SESSION['april'];?>;
-var may=<?php echo $_SESSION['may'];?>;
-var june=<?php echo $_SESSION['june'];?>;
-var july=<?php echo $_SESSION['july'];?>;
-var august=<?php echo $_SESSION['august'];?>;
-var september=<?php echo $_SESSION['september'];?>;
-var october=<?php echo $_SESSION['october'];?>;
-var december=<?php echo $_SESSION['december'];?>;
-var november=<?php echo $_SESSION['november'];?>;
+var jan=<?php echo $jan?>;
+var feb=<?php echo $feb;?>;
+var march=<?php echo $march;?>;
+var april=<?php echo $april;?>;
+var may=<?php echo $may;?>;
+var june=<?php echo $june;?>;
+var july=<?php echo $july;?>;
+var august=<?php echo $august;?>;
+var september=<?php echo $september;?>;
+var october=<?php echo $oct;?>;
+var december=<?php echo $dec;?>;
+var november=<?php echo $nove;?>;
 
 
 
@@ -299,7 +456,7 @@ var november=<?php echo $_SESSION['november'];?>;
       data: {
          labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
          datasets: [{
-               label: 'deliveries Made',
+               label: 'Last Year Deliveries Made',
                data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                // backgroundColor:'#4cd84c',
                hoverBackgroundColor:'#00FF00',

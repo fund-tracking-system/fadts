@@ -28,6 +28,9 @@
                   }
                   if($error == "no_records"){
                      echo '<div class="alert alert-danger" role="alert">No records found!</div>';
+                  }
+                  if($error == "release_success"){
+                     echo '<div class="alert alert-success" role="alert">Fund Release Successfull!</div>';
                   }        
                }   
             ?> 

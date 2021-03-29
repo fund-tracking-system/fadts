@@ -3,7 +3,7 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method="post" action="/fadts/ministry/createFundModel" id="formAddOfficer">
+        <form method="post" action="/fadts/ministry/createFundModel" id="createFund">
             <fieldset class="BackgroundFS">
                 <h2> CREATE FUND </h2>
 
