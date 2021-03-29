@@ -3,7 +3,7 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method = "post" action = "/fadts/audit/personHistoryModel" id="form">
+        <form method = "post" action = "/fadts/audit/personHistoryModel" id="formpersonHistory">
             <fieldset class="BackgroundFS">
                 <h2>VIEW PERSON HISTORY</h2>
 

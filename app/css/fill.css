@@ -2061,7 +2061,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190)); */
-    background: rgb(69, 235, 152);
+    background: rgb(205, 252, 228);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 5/6;
@@ -2155,13 +2155,13 @@ ul.tabs li.current {
 }
 
 .fontwhite{
-    color: #ffffff;
+    color: #FDFEFE;
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
 }
 
 .dashboard-title {
-    color: white;
+    color: #FDFEFE;
     font-size: 15px;
     font-family: 'Montserrat', sans-serif;
     margin: 5px;
