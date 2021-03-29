@@ -1,3 +1,120 @@
+<?php 
+
+
+
+      
+$sql5="SELECT person.personId,disaster.date FROM disaster INNER JOIN victim ON disaster.disasterId=victim.disasterId INNER JOIN person ON victim.personId=person.personId";
+$results=$con->query($sql5);
+$resl=$results->fetch_all(MYSQLI_ASSOC);
+
+$vjan=0;
+$vfeb=0;
+$vmarch=0;
+$vapril=0;
+$vmay=0;
+$vjune=0;
+$vjuly=0;
+$vaugust=0;
+$vseptember=0;
+$voct=0;
+$vnove=0;
+$vdec=0;
+
+
+
+   
+$today=date("y-m-d");
+$year = date("y",strtotime($today));
+
+      foreach($resl as  $data){
+         
+         $date=$data['date'];
+         $month = date("m",strtotime($date));
+
+
+         $disasterYear=date("y",strtotime($date));
+
+         if(($year-1)==$disasterYear){
+
+
+            
+         }
+
+
+         if($month ==1){
+
+            $vjan=$vjan+1;
+         
+         }
+         else if($month ==2){
+         
+            $vfeb=$vfeb+1;
+         
+         }
+         else if($month ==3){
+         
+            $vmarch=$vmarch+1;
+         
+         }
+         else if($month ==4){
+         
+            $vapril=$vapril+1;
+         
+         }
+         else if($month ==5){
+         
+            $vmay=$vmay+1;
+         
+         }
+         else if($month ==6){
+         
+            $vjune=$vjune+1;
+         
+         }
+         else if($month ==7){
+         
+            $vjuly=$vjuly+1;
+         
+         }
+         else if($month ==8){
+         
+            $vaugust=$vaugust+1;
+         
+         }
+         else if($month ==9){
+         
+            $vseptember=$vseptember+1;
+         
+         }
+         else if($month ==10){
+         
+            $voct=$voct+1;
+         
+         }
+         else if($month ==11){
+         
+            $vnove=$vnove+1;
+         
+         }
+         else if($month ==12){
+         
+            $vdec=$vdec+1;
+         
+         }
+
+
+
+
+
+         
+      }
+
+
+
+?>
+
+
+
 
 
 <div class="divisionDashboard">
@@ -5,7 +122,7 @@
       <div class="box-1">
       <div class="nav_link"><B>CHANGES MADE</B></div>
 
-         <canvas id="Chart1"></canvas>
+         <canvas id="Chart1"></canvas> 
       </div>
       <div class="box-2">
       <!-- <div class="nav_link"><B>FUND DELIVERY ANALYSIS</B></div> -->
