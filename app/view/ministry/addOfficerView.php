@@ -7,6 +7,14 @@
             <fieldset class="BackgroundFS">
                 <h2> ADD OFFICER FORM </h2>
 
+                <?php 
+                    if(isset($_GET['result'])){
+                        if($_GET['result'] == "success"){
+                            echo '<div class="alert alert-success" color="green" role="alert">Officer details has been successfully added!</div>';
+                        }       
+                    }   
+                ?>
+
                 <fieldset class="searchBar">   
                     <div class="form-row">
                         <label for="name" class="inputLable"><b>Name:</b></label>

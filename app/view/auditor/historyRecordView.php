@@ -5,13 +5,13 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
-        <form method = "post" action = "/fadts/audit/officerHistoryModel" id="form">
+        <form method = "post" action = "/fadts/audit/officerHistoryModel" id="formHistory">
             <fieldset class="BackgroundFS">
                 <h2 style="margin-bottom:50px;">View Officer History</h2>
                 <fieldset class="searchBar">
                     <div class="form-row ">
                         <label for="NID-number" class="searchBarLable"><b>Officer NID:</b></label>
-                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 2 8 1 0 1 7 7 v" name = "nid"></input>
+                        <input class="form-control searchInput" id='NID-number' placeholder="9 7 8 6 6 0 4 1 0 v" name = "nid"></input>
                         <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
                     </div>
                 </fieldset> 

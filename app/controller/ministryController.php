@@ -4,45 +4,7 @@ class ministryController extends Controller{
 
 
 
-   //view officer section
-
-   public function viewOfficerView(){
-      $this->view('ministry/viewOfficerView');
-      
-      $this->view->render(); // This is how load the view
-   }
-
-   public function viewOfficerFindModel(){ 
-      $this->model('ministry/viewOfficerFindModel');
-      
-      $this->model->load(); // This is how load the model
-   }
-
-
-
-   //add officer section
-   
-   public function addOfficerView(){
-      $this->view('ministry/addOfficerView');
-      
-      $this->view->render(); // This is how load the view
-   }
-
-   public function addOfficerModel(){ 
-      $this->model('ministry/addOfficerModel');
-      
-      $this->model->load(); // This is how load the model
-   }
-
-   public function addOfficerSaveModel(){ 
-      $this->model('ministry/addOfficerSaveModel');
-      
-      $this->model->load(); // This is how load the model
-   }
-
-
-
-   //update officer section
+   //view & update officer section
 
    public function updateOfficerView(){
       $this->view('ministry/updateOfficerView');
@@ -76,22 +38,22 @@ class ministryController extends Controller{
 
 
 
-   //view eligibility section   
-
-   public function viewEligibilityView(){
-      $this->view('ministry/viewEligibilityView');
+   //add officer section
+   
+   public function addOfficerView(){
+      $this->view('ministry/addOfficerView');
       
       $this->view->render(); // This is how load the view
    }
 
-   public function viewEligibilityFindModel(){ 
-      $this->model('ministry/viewEligibilityFindModel');
+   public function addOfficerModel(){ 
+      $this->model('ministry/addOfficerModel');
       
       $this->model->load(); // This is how load the model
    }
 
-   public function viewEligibilitySelectModel(){ 
-      $this->model('ministry/viewEligibilitySelectModel');
+   public function addOfficerSaveModel(){ 
+      $this->model('ministry/addOfficerSaveModel');
       
       $this->model->load(); // This is how load the model
    }
@@ -130,21 +92,55 @@ class ministryController extends Controller{
       $this->model->load(); // This is how load the model
    }
 
-   
 
-   //--------------------------------------------------------------------------------------------------------------------------------------------
-   //end of my functions
-   //--------------------------------------------------------------------------------------------------------------------------------------------
+
+   //view eligibility section   
+
+   public function viewEligibilityView(){
+      $this->view('ministry/viewEligibilityView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function viewEligibilityModel(){ 
+      $this->model('ministry/viewEligibilityModel');
+      
+      $this->model->load(); // This is how load the model
+   }
 
 
 
    //add to eligibility section
 
-   public function viewAdddPeopleToFundElighibleList(){
-      $this->view('ministry/addPeopleToFundEligiblListView');
+   public function addToEligibilityFundView(){
+      $this->view('ministry/addToEligibilityFundView');
       
       $this->view->render(); // This is how load the view
    }
+
+   public function addToEligibilityPersonView(){
+      $this->view('ministry/addToEligibilityPersonView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function addToEligibilityFindModel(){ 
+      $this->model('ministry/addToEligibilityFindModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   public function addToEligibilitySaveModel(){ 
+      $this->model('ministry/addToEligibilitySaveModel');
+      
+      $this->model->load(); // This is how load the model
+   }
+
+   
+
+   //--------------------------------------------------------------------------------------------------------------------------------------------
+   //end of my functions
+   //--------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
