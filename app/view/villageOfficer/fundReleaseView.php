@@ -30,6 +30,9 @@
                   }
                   if($error == "no_records"){
                      echo '<div class="alert alert-danger" role="alert">No records found!</div>';
+                  }
+                  if($error == "release_success"){
+                     echo '<div class="alert alert-success" role="alert">Fund Release Successfull!</div>';
                   }        
                }   
             ?>
@@ -49,68 +52,89 @@
          </fieldset>
       </form>
 
-      <?php if(isset($_SESSION['result']) && isset($_SESSION['result'])){ 
-               $funds=$_SESSION['result'];
-               $phones=$_SESSION['phones'];
-               unset($_SESSION['result'],$_SESSION['phones']);
+      <?php 
+         if(isset($_SESSION['result']) && isset($_SESSION['result'])){ 
+            $funds=$_SESSION['result'];
+            $phones=$_SESSION['phones'];
+            $nic=$_GET['nic'];
+            unset($_SESSION['result'],$_SESSION['phones']);
 
-               foreach($funds as $fund){   ?>
+            foreach($funds as $fund){   ?>
 
-                  <form method="post" 
-                  action="/fadts/village/fundReleaseModel?view=fundRelease<?php echo '&entryId='.$fund['entryId'] ?>" 
-                  id="fundRelease">
+      <form method="post"
+         action="/fadts/village/fundReleaseModel?view=fundRelease<?php echo '&entryId='.$fund['entryId'].'&nic='.$nic ?>"
+         id="fundRelease">
 
-                     <fieldset class="BackgroundFS" style="margin-top:30px;">
-                        <fieldset class="searchBar">
+         <fieldset class="BackgroundFS" style="margin-top:30px;">
+            <fieldset class="searchBar">
 
-                           <div>
-                              <label class="inputLable"><b>Fund Name :</b></label>
-                              <input class="form-control InputOness" name="fname" disabled
-                                 value="<?php echo $fund['name'];?>"></input>
+               <?php 
+                  if(isset($_GET['otp'])&&isset($_GET['entryId'])){
+         
+                  $error = $_GET['otp'];
+                  $entryId =$_GET['entryId'];
+                  $error = $_GET['searcherror'];
+      
+                  if(($error == "otp_resend") && ($entryId==$fund['entryId'])){
+                     echo '<div class="alert alert-danger" role="alert">Somthing is wrong.Request OTP again!</div>';
+                  }
+                  if(($error == "otp_resend") && ($entryId==$fund['entryId'])){
+                     echo '<div class="alert alert-success" role="alert">Somthing is wrong.Request OTP again!</div>';
+                  }
+                        
+               }   
+            ?>
 
-                              <label class="inputLable" style="margin-left:510px;" for="CivilStatus"><b>Phone Number :</b></label>
+               <div>
+                  <label class="inputLable"><b>Fund Name :</b></label>
+                  <input class="form-control InputOness" name="fname" disabled
+                     value="<?php echo $fund['name'];?>"></input>
 
-                              <select class="form-control InputOnes"style="margin-left:680px;width:300px;" id="numbers" name="numbers">
-                                 
-                                 <option selected value="<?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>">
-                                 <?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>
-                                 </option>
+                  <label class="inputLable" style="margin-left:510px;" for="CivilStatus"><b>Phone Number :</b></label>
 
-                                 <option value="<?php echo isset($phones['phone2'])? $phones['phone2']: ""; ?>" 
-                                 <?php echo isset($phones['phone2'])? "":"hidden"; ?> >
-                                 <?php echo isset($phones['phone2'])? $phones['phone2']: ""; ?>
-                                 </option>
+                  <select class="form-control InputOnes" style="margin-left:680px;width:300px;" id="numbers"
+                     name="phone">
 
-                                 <option value="<?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>">
-                                 <?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>(trustee)
-                                 </option>
+                     <option selected value="<?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>">
+                        <?php echo isset($phones['phone1'])? $phones['phone1']: ""; ?>
+                     </option>
 
-                                 <option value="<?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>"
-                                 <?php echo isset($phones['phone2'])? "":"hidden"; ?>>
-                                 <?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>(trustee)
-                                 </option>
-                              </select>
-                           </div>
-                              <br>
+                     <option value="<?php echo isset($phones['phone2'])? $phones['phone2']: ""; ?>"
+                        <?php echo isset($phones['phone2'])? "":"hidden"; ?>>
+                        <?php echo isset($phones['phone2'])? $phones['phone2']: ""; ?>
+                     </option>
 
-                              <div style="margin-top: 50px;">
-                              <label class="inputLable"><b>Amount (Rs):</b></label>
-                              <input class="form-control InputOness " name="fname" disabled
-                              value="<?php echo $fund['amountPerPerson'];?>"></input>
+                     <option value="<?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>">
+                        <?php echo isset($phones['trusteephone1'])? $phones['trusteephone1']: ""; ?>(trustee)
+                     </option>
 
-                              <label class="inputLable" style="margin-left:510px;" for="OTP"><b>OTP :</b></label>
-                              <input class="form-control InputOnes " style="width:120px;margin-left:680px;" name="otp"></input> 
+                     <option value="<?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>"
+                        <?php echo isset($phones['phone2'])? "":"hidden"; ?>>
+                        <?php echo isset($phones['trusteephone2'])? $phones['trusteephone2']: ""; ?>(trustee)
+                     </option>
+                  </select>
+               </div>
+               <br>
 
-                              <button type="submit" name="otpRequest" style="margin-left:860px;margin-top:-8px;background:brown"class="btn btn-primary">Request OTP</button>
+               <div style="margin-top: 50px;">
+                  <label class="inputLable"><b>Amount (Rs):</b></label>
+                  <input class="form-control InputOness " name="fname" disabled
+                     value="<?php echo $fund['amountPerPerson'];?>"></input>
 
-                           </div>
-                           <div class="Twobtns" style="margin-left:430px;margin-top:30px;margin-bottom:-8px;">
-                              <button type="submit" name="confirm" class="btn btn-primary">Confirm Recieving</button>
-                           </div>
+                  <label class="inputLable" style="margin-left:510px;" for="OTP"><b>OTP :</b></label>
+                  <input class="form-control InputOnes " style="width:120px;margin-left:680px;" name="otp"></input>
 
-                        </fieldset>
-                     </fieldset>
-                  </form>
+                  <button type="submit" name="otpRequest" style="margin-left:860px;margin-top:-8px;background:brown"
+                     class="btn btn-primary">Request OTP</button>
+
+               </div>
+               <div class="Twobtns" style="margin-left:430px;margin-top:30px;margin-bottom:-8px;">
+                  <button type="submit" name="confirm" class="btn btn-primary">Confirm Recieving</button>
+               </div>
+
+            </fieldset>
+         </fieldset>
+      </form>
 
       <?php    }   
             }

@@ -1,5 +1,7 @@
 <?php 
 
+
+
 $myRegion=$_SESSION['region'];
 $lowIncome=0;
 $midIncome=0;
@@ -158,8 +160,35 @@ $_SESSION['december']=$dec;
 
 // var_dump($resl);
 
+      
 
-
+// $sql41="SELECT person.personId from eligibility INNER JOIN predefinedfund ON eligibility.Id=predefinedfund.predefinedFundId INNER JOIN person ON person.personId=predefinedfund.personId WHERE person.region=$myRegion";
+$sql41="SELECT Id FROM predefinedfund Inner JOIN eligibility ON eligibility.predefinedFundId=predefinedfund.Id INNER JOIN  person ON person.personId=eligibility.personId WHERE person.personId=$myRegion";
+$results11=$con->query($sql41);
+$resl1=$results11->fetch_all(MYSQLI_ASSOC);
+var_dump($resl1);
+$samurdhi=0;
+$Samurdhi_Eligible_List=0;
+$adult=0;
+$mahapola=0;
+$Other_GovFunds=0;
+foreach($resl1 as $data){
+   if($data["Id"]==1){
+      $samurdhi++;
+   }
+   else if($data["Id"]==2){
+      $Samurdhi_Eligible_List++;
+   }
+   else if($data["Id"==3]){
+      $adult++;
+   }
+   else if($data["Id"]==4){
+      $mahapola++;
+   }
+   else if($data["Id"]==5){
+      $Other_GovFunds++;
+   }
+}
 ?>
 
 <div class="divisionDashboard">
@@ -270,25 +299,38 @@ $(function () {
 });
 
 $(function () {
+
+   var samurdhi=<?php echo $samurdhi; ?>;
+   var Samurdhi_Eligible_List=<?php echo $Samurdhi_Eligible_List;?>;
+   var adult=<?php echo $adult;?>;
+   var mahapola=<?php echo $mahapola;?>;
+   var OtherGOV=<?php echo $Other_GovFunds;?>;
+   
+
+   
+
+
    var ctx = document.getElementById('Chart2').getContext('2d');
    var chart = new Chart(ctx, {
       type: 'doughnut',
       data: {
-         labels: ['Samuddi', 'Mahapola','Adult Fund','Not receiving Any Fund'],
+         labels: ['Samuddi','samurdhi eligible','Adult Fund', 'Mahapola','Other Government Fund'],
          datasets: [{
                label: '# fund release',
-               data: [20,5,25,10],
+               data: [samurdhi,Samurdhi_Eligible_List,adult,mahapola,OtherGOV],
                backgroundColor: [
                   '#16a085',
                   '#00FF00',
                   '#2980b9',
-                  ' red'
+                  ' red',
+                  ' brown'
                ],
                borderColor: [
                   '#16a085',
                   '#00FF00',
                   '#2980b9',
-                  'red'
+                  'red',
+                  'brown'
                ],
                borderWidth: 1
          }]

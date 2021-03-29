@@ -66,7 +66,7 @@
                      <option value="<?php echo $incomeType['id']?>"><?php echo $incomeType['type']?></option>
 
                      <?php    } 
-                     unset($_SESSION['incomeTypes']); ?>
+                ?>
                   </select>
                </div>
 
