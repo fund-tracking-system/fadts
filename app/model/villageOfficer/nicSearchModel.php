@@ -3,8 +3,8 @@ session_start();
 
 if(isset($_GET['view'])) $view = $_GET['view'];
 if(isset($_GET['nic'])) $nic = $_GET['nic'];
-echo $nic;
-exit;
+// echo $nic;
+// exit;
 if(isset($_GET['entryId'])) $entryId = $_GET['entryId'];
 
 

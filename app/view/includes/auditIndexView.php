@@ -109,13 +109,84 @@ $year = date("y",strtotime($today));
          
       }
 
+      
+$sql4="SELECT region.name,amountPerPerson,publishedTime from fund   inner join recipient ON recipient.fundId=fund.fundId inner join person ON person.personId=recipient.personId  inner join region ON person.region=region.regionId";
+$results=$con->query($sql4);
+$resl=$results->fetch_all(MYSQLI_ASSOC);
+// var_dump($resl);
+
+$jan=0;
+$feb=0;
+$march=0;
+$april=0;
+$may=0;
+$june=0;
+$july=0;
+$august=0;
+$september=0;
+$oct=0;
+$nove=0;
+$dec=0;
+
+foreach($resl as  $data){
+$date=$data['publishedTime'];
+$month = date("m",strtotime($date));
+// echo $month;
+if($month ==1){
+   $jan=$jan+$data['amountPerPerson'];
+}
+if($month ==2){
+   $feb=$feb+$data['amountPerPerson'];
+}
+if($month ==3){
+   $march=$march+$data['amountPerPerson'];
+}
+if($month ==4){
+   $april=$april+$data['amountPerPerson'];
+}
+if($month ==5){
+   $may=$may+$data['amountPerPerson'];
+}
+if($month ==6){
+   $june=$june+$data['amountPerPerson'];
+}
+if($month ==7){
+   $july=$july+$data['amountPerPerson'];
+}
+if($month ==8){
+   $august=$august+$data['amountPerPerson'];
+}
+if($month ==9){
+   $september=$september+$data['amountPerPerson'];
+}
+if($month ==10){
+   $oct=$oct+$data['amountPerPerson'];
+}
+if($month ==11){
+   $nove=$nove+$data['amountPerPerson'];
+}
+if($month ==12){
+   $dec=$dec+$data['amountPerPerson'];
+}
+}
+$_SESSION['jan']=$jan;
+$_SESSION['feb']=$feb;
+$_SESSION['march']=$march;
+$_SESSION['may']=$may;
+$_SESSION['april']=$april;
+$_SESSION['june']=$june;
+$_SESSION['july']=$july;
+$_SESSION['august']=$august;
+$_SESSION['september']=$september;
+$_SESSION['october']=$oct;
+$_SESSION['november']=$nove;
+$_SESSION['december']=$dec;
+
+
+
 
 
 ?>
-
-
-
-
 
 <div class="divisionDashboard">
    <div class="grid_box">
@@ -221,6 +292,22 @@ $year = date("y",strtotime($today));
 
   $(function () {
       // ChartJS
+       
+      var jan=<?php echo $vjan?>;
+         var feb=<?php echo $vfeb;?>;
+         var march=<?php echo $vmarch;?>;
+         var april=<?php echo $vapril;?>;
+         var may=<?php echo $vmay;?>;
+         var june=<?php echo $vjune;?>;
+         var july=<?php echo $vjuly;?>;
+         var august=<?php echo $vaugust;?>;
+         var september=<?php echo $vseptember;?>;
+         var october=<?php echo $voct;?>;
+         var december=<?php echo $vdec;?>;
+         var november=<?php echo $vnove;?>;
+
+
+
       var ctx = document.getElementById('Chart2').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
@@ -229,8 +316,8 @@ $year = date("y",strtotime($today));
          data: {
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
-                  label: 'Victims per Year',
-                  data: [100,200,400,300,250,140,370,200,300,200],
+                  label: 'Last Year Victims',
+                  data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                   backgroundColor:'rgb(205, 252, 228)',
                   hoverBackgroundColor:'#00FF00',
                   borderColor:'#00FF00',
@@ -257,7 +344,27 @@ $year = date("y",strtotime($today));
 
   
   $(function () {
+
+
+
+   var jan=<?php echo $_SESSION['jan'];?>;
+         var feb=<?php echo $_SESSION['feb'];?>;
+         var march=<?php echo $_SESSION['march'];?>;
+         var april=<?php echo $_SESSION['april'];?>;
+         var may=<?php echo $_SESSION['may'];?>;
+         var june=<?php echo $_SESSION['june'];?>;
+         var july=<?php echo $_SESSION['july'];?>;
+         var august=<?php echo $_SESSION['august'];?>;
+         var september=<?php echo $_SESSION['september'];?>;
+         var october=<?php echo $_SESSION['october'];?>;
+         var december=<?php echo $_SESSION['december'];?>;
+         var november=<?php echo $_SESSION['november'];?>;
+
       // ChartJS
+
+
+
+
       var ctx = document.getElementById('Chart3').getContext('2d');
       console.log(Chart.defaults.scale.ticks);
       Chart.defaults.scale.ticks.beginAtZero=true;
@@ -267,7 +374,7 @@ $year = date("y",strtotime($today));
             labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
             datasets: [{
                   label: 'deliveries Made',
-                  data: [100,200,400,300,250,140,370,200,300,200],
+                  data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                   backgroundColor:'rgb(154, 220, 241)',
                   hoverBackgroundColor:'rgb(114, 206, 236)',
                   borderColor:'rgb(114, 206, 236)',
