@@ -23,6 +23,14 @@
             </fieldset>
         </form>
 
+        <?php 
+            if(isset($_GET['result'])){
+                if($_GET['result'] == "success"){
+                    echo '<div class="alert alert-success" color="green" role="alert">Officer details has been successfully updated!</div>';
+                }       
+            }   
+        ?>
+
         <form method="post" action="/fadts/ministry/updateOfficerSaveModel">
             <fieldset class="BackgroundFS">
                 <?php if (isset($_SESSION['officer_id']) && $_SESSION['officer_id']==-1 && isset($_SESSION['flag']) && $_SESSION['flag']%10==1) { ?>

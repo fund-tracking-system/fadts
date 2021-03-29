@@ -76,7 +76,7 @@
         unset($_SESSION['assign_region_id']);  
         
         //redirecting to view
-        header("Location:/fadts/ministry/updateOfficerView"); 
+        header("Location:/fadts/ministry/updateOfficerView?result=success"); 
         exit(); 
     
     } 
