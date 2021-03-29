@@ -32,7 +32,7 @@
                      <option value="Tonado">Tonado </option>
                      <option value="Earthquake">Earthquake </option>
                      <option value="Drought">Drought</option>
-                  </select>
+                  </select> 
                </div>
 
 
