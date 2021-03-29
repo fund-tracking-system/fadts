@@ -223,7 +223,7 @@ foreach($resl1 as $data){
             $sql="SELECT title,start_event FROM events WHERE events.userid=$userid ";
             $res=$con->query($sql);
             $rgn=$res->fetch_all(MYSQLI_ASSOC); 
-            $event="You Have No Event";
+            $event="You Have No Upcoming Events";
             if($rgn==NULL){
                print ' <h6> ' . $event . ' </h6>';
             }
