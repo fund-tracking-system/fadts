@@ -102,14 +102,8 @@ class ministryController extends Controller{
       $this->view->render(); // This is how load the view
    }
 
-   public function viewEligibilityFindModel(){ 
-      $this->model('ministry/viewEligibilityFindModel');
-      
-      $this->model->load(); // This is how load the model
-   }
-
-   public function viewEligibilitySelectModel(){ 
-      $this->model('ministry/viewEligibilitySelectModel');
+   public function viewEligibilityModel(){ 
+      $this->model('ministry/viewEligibilityModel');
       
       $this->model->load(); // This is how load the model
    }
