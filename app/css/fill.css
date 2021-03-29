@@ -2050,7 +2050,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /*background-image: linear-gradient( rgb(18, 164, 212),#b0cbfa);*/
-    background: rgb(114, 206, 236);
+    background: rgb(130, 216, 245);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 4/5;
@@ -2061,7 +2061,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190)); */
-    background: rgb(205, 252, 228);
+    background: rgb(101, 248, 174);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 5/6;
@@ -2072,7 +2072,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient(  rgb(119, 69, 11),#c6ce80); */
-    background:  rgb(240, 185, 122);
+    background:  rgb(250, 183, 107);
     /* background: rgb(69, 69, 70); */
     margin: 5px;
     grid-row: 2/3;
@@ -2084,7 +2084,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient( #e4730a,#f1cf0d); */
-    background:#ecea68;
+    background:#f8f666;
     margin: 5px;
     grid-row: 2/3;
     grid-column: 5/6;
@@ -2095,7 +2095,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient( #5D6D7E,#a2a3a3); */
-    background: #a2b1b1;
+    background: rgb(245, 129, 148);
     margin: 5px;
     grid-row: 3/4;
     grid-column: 4/5;
@@ -2106,7 +2106,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient(  rgb(221, 40, 70),#eb7a7f); */
-    background: rgb(253, 123, 144);
+    background: #b6bdbd;
     margin: 5px;
     grid-row: 3/4;
     grid-column: 5/6;
@@ -2132,7 +2132,7 @@ ul.tabs li.current {
 .box8 {
     border-radius: 5px;
     text-align: center;
-    background: rgb(141, 211, 236);
+    background: #96e2f8;
     /* background-image: linear-gradient(#3c79e6,#85aff7); */
     margin: 5px;
     grid-row: 4/5;
@@ -2732,4 +2732,6 @@ ul.tabs li.current {
     width: 850px;
     padding: 20px;
     margin: 20px;
+    
+    
 }

@@ -49,7 +49,7 @@
     <li>Initially User can Search the details by entering correct NIC number. If the correct NIC is entered and Search button is clicked
     the data will be displayed.</li><br>
     <li>Otherwise the user can Search the data by criteria. User can filter the data by entering the data that has to be filtered
-    in the fields in the form. After entering the data click Search Here button, then the people data will be displayed.</li>
+    in the fields in the form. After entering the data click Search Here button, then the people data will be displayed in the system.</li>
     </ul><br><br>
 
     

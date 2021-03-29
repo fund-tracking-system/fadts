@@ -21,7 +21,7 @@
                                 <th><B>Region</B></th>
                                 <th><B>Phone Number</B></th>
                                 <th><B>Dilivery Status</B></th>
-                            </tr>
+                            </tr> 
                         </thead>
                         <tbody>
                         <?php foreach($_SESSION['selectFundDetails'] as $fund){                              

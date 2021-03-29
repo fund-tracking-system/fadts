@@ -21,7 +21,7 @@
                                 <th><B>Region</B></th>
                                 <th><B>Region Level</B></th>
                                 <th><B>Date</B></th>
-                                <th><B>View</B></th>
+                                <th><B>View</B></th> 
                             </tr>
                         </thead>
                         <tbody>

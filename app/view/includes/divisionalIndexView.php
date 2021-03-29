@@ -5,7 +5,7 @@
    $myRegion=$_SESSION['region']; //get officer region
 
 
-
+   
       $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
       $result1=$con->query($sql1);                                                  // set distric region 
       $res1=$result1->fetch_all(MYSQLI_ASSOC);
@@ -42,7 +42,7 @@
       $sql12="SELECT id,type  From incometype";
       $result12=$con->query($sql12);                                                  
       $res12=$result12->fetch_all(MYSQLI_ASSOC);
-      $_SESSION['incomeTypes']=$res12;
+     $_SESSION['incomeTypes']=$res12;
 
 
 

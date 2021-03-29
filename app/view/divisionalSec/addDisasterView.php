@@ -32,7 +32,7 @@
                      <option value="Tonado">Tonado </option>
                      <option value="Earthquake">Earthquake </option>
                      <option value="Drought">Drought</option>
-                  </select>
+                  </select> 
                </div>
 
 
@@ -56,9 +56,9 @@
 
                   require 'connection.php'; 
                                  
-                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
-                  $rgnRes=$con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 "; //create query
+                  $rgnRes=$con->query($rgn) ;     //get result
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);  //fetch data
                   
                   $_SESSION['region_result']=$res;  //for assign region  ?>
 

@@ -267,6 +267,11 @@ $(function(){
                     required: true,
                     date: true
                 },
+                bcertifi:{
+                    maxlength:5,
+                    minlength:4,
+                    number:true
+                },
                 jobType: "required",
                 headOfFamily:{
                     required:true,
@@ -302,6 +307,11 @@ $(function(){
                 b_date: {
                     required: "This field is required",
                     date: "Date should be correct format"
+                },
+                bcertifi:{
+                    maxlength: "Birth cerificate number length should x x x x length",
+                    minlength: "Please enter at most 5 characters",
+                    number: "Birth cerificate number must have numbers",
                 },
                 jobType: "This field is required",
                 headOfFamily:{
