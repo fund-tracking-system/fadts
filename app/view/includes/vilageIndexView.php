@@ -166,7 +166,7 @@ $_SESSION['december']=$dec;
 $sql41="SELECT Id FROM predefinedfund Inner JOIN eligibility ON eligibility.predefinedFundId=predefinedfund.Id INNER JOIN  person ON person.personId=eligibility.personId WHERE person.personId=$myRegion";
 $results11=$con->query($sql41);
 $resl1=$results11->fetch_all(MYSQLI_ASSOC);
-var_dump($resl1);
+// var_dump($resl1);
 $samurdhi=0;
 $Samurdhi_Eligible_List=0;
 $adult=0;

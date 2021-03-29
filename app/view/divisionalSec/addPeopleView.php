@@ -53,12 +53,13 @@
                <div class="form-row">
                   <label for="jobtype" class="inputLable"><b>Income Type :</b></label>
                   <select class="form-control Input" name="jobType" id="jobType">
-                     <option value="" disabled selected>Select job type</option>
-                     <option value="Goverment">Goverment</option>
-                     <option value="Private">Private</option>
-                     <option value="Retired">Government pension</option>
-                     <option value="SelfEmployee">SelfEmployee</option>
-                     <option value="Jobless">Jobless</option>
+                  <?php 
+                     foreach($_SESSION['incomeTypes'] as $incomeType){ ?>
+
+                     <option value="<?php echo $incomeType['type']?>"><?php echo $incomeType['type']?></option>
+
+                     <?php    } 
+                ?>
 
                   </select>
                </div>

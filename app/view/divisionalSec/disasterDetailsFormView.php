@@ -7,78 +7,46 @@
         <?php
             require 'connection.php'; 
             $myRegion=$_SESSION['region'];
-
-
-
-
-
-
-
-
-            //select district Region  
-
-                $sql1="SELECT superRegion  From region Where region.regionId=$myRegion";
-                $result1=$con->query($sql1);
-                $res1=$result1->fetch_all(MYSQLI_ASSOC);
-
-                foreach($res1 as $data1){ 
-                $_SESSION['districtRegion']=$data1['superRegion'];
-
-                }
-                $districtRegion= $_SESSION['districtRegion'];                   //  save district region
-
-
-//select provincial  Region
-
-
-                $sql2="SELECT superRegion  From region Where region.regionId= $districtRegion";
-                $result2=$con->query($sql2);
-                $res2=$result2->fetch_all(MYSQLI_ASSOC);
-                foreach($res2 as $data2){ 
-                $_SESSION['provincialRegion']=$data2['superRegion'];
-
-                }
-
-
-                $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
-
-                
-//echo$_SESSION['provincialRegion'];
-
-
-
-
-
-        $officer_region=$_SESSION['region'];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // echo $myRegion;
-            $myRegion; 
+            $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
+            $districtRegion= $_SESSION['districtRegion']; 
+ 
             
-            $sql="SELECT Distinct disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
+            $sql="SELECT  Distinct disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
             FROM disaster 
+            inner join victim ON 
+            victim.disasterId=disaster.disasterId
             INNER JOIN disasterregion 
             ON disaster.disasterId=disasterregion.disasterId 
             INNER JOIN region ON 
-            region.regionId=disasterregion.regionId 
-            inner join victim ON 
-            victim.disasterId=disaster.disasterId
-            WHERE region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1  ";
+            region.regionId=disasterregion.regionId
+            INNER JOIN person
+            ON person.personId=victim.personId 
             
+            WHERE (region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1)  ";
+          
+        //   $sql="SELECT disaster.disasterId, disaster.name,disaster.type,disaster.date 
+        //   FROM disaster 
+        //   INNER JOIN victim 
+        //   ON victim.disasterId=disaster.disasterId
+        //   Inner JOIN person ON person.personId=victim.personId
+        //   inner join disasterregion ON disasterregion.disasterId=disaster.disasterId 
+        // ";
+        //  $sql=  "SELECT disaster.disasterId, disaster.name, disaster.type, disaster.date
+        //         FROM disaster
+        //         INNER JOIN victim 
+        //         ON disaster.disasterId = victim.disasterId
+        //         WHERE disaster.disasterId 
+        //         IN (SELECT region.regionId 
+        //             FROM region 
+        //             INNER JOIN disasterregion 
+        //             ON disasterregion.regionId = region.regionId
+        //             WHERE region.superRegion = $myRegion 
+        //             OR disasterregion.regionId = $myRegion  
+        //             OR disasterregion.regionId = $districtRegion 
+        //             OR disasterregion.regionId = $provincialRegion
+        //             OR disasterregion.regionId = 1);";
+
+
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
             $_SESSION['disasterList']=$res;
@@ -95,6 +63,7 @@
                         <table id="resultTable" class="display" method="get";>
                             <thead>
                                 <tr>
+                                    <!-- <th><B>Disaster ID</B></th> -->
                                     <th><B>Disaster Type</B></th>
                                     <th><B>Disaster Region</B></th>
                                     <th><B>Disaster Name</B></th>
@@ -109,7 +78,8 @@
                          
                                  
                          ?>
-                                <tr> 
+                                <tr>
+                                 
                                     <td><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
                                     </td>
