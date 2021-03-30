@@ -64,7 +64,7 @@
                                     foreach($data as $row) {
                                         print " <tr> ";
                                             foreach ($row as $attribute=>$value) {
-                                                print " <td style='text-align:center'> $value </td> ";
+                                                print " <td style='text-align:center;font-size:11px;'> $value </td> ";
                                             } 
                                         print " </tr> ";
                                     } 

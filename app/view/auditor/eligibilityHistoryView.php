@@ -9,13 +9,13 @@
                 
                 <fieldset class="searchBar">
                     <div class="form-row ">
-                        <label for="nid" class="inputLable"><b>Person NID</b></label>
-                        <input class="form-control Input" name = "nid" placeholder="NIC number here"></input>
+                        <label for="nid" class="searchBarLable"><b>Person NID</b></label>
+                        <input class="form-control searchInput" name = "nid" placeholder="NIC number here"></input>
                     </div>
                         
                         <button type="submit" name = "submit" class="btn btn-primary btnNav">Search</button>
                 </fieldset> 
-            </fieldset>
+            </fieldset> 
         </form> 
         
         <fieldset class='BackgroundFS'>
