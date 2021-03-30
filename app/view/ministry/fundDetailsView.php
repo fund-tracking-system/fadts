@@ -29,9 +29,9 @@
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
                                 </td>
-                                <td><B style="margin-left:30%;"><?php echo $fund['name']?></B></td>
+                                <td style="margin-left:30%"><?php echo $fund['name']?></td>
                                 
-                                <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
+                                <td style="margin-left:30%;"><?php echo substr($fund['publishedTime'],10) ?></td>
                                 <td><a href="/fadts/ministry/selectFundDetailRegionView"
                                         class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
                                 </td>

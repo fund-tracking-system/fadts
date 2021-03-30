@@ -39,43 +39,41 @@
         <?php if (isset($_SESSION['query_results']) && isset($_SESSION['flag']) && $_SESSION['flag']==11) { ?>                  
             <form>                
                 <fieldset class='BackgroundFS'>
-                    <?php if (isset($_SESSION['query_results'])) { ?>
-                        <h2>HISTORY RECORDS</h2>
-                        
-                        <div class = 'tbleMargin'>
-                            <table class="display nowrap" name="table" id="resultTable">
-                                <thead>
-                                    <tr>
-                                        <th>Timestamp</th>
-                                        <th>Officer ID</th>
-                                        <th>Editor ID</th>
-                                        <th>NID</th>
-                                        <th>E-mail</th>
-                                        <th>Region</th>
-                                        <th>LogStat</th>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php 
-                                        //get results from session variables
-                                        $data = $_SESSION['query_results'];
+                    <h2>HISTORY RECORDS</h2>
+                    
+                    <div class = 'tbleMargin'>
+                        <table class="display nowrap" name="table" id="resultTable">
+                            <thead>
+                                <tr>
+                                    <th>Timestamp</th>
+                                    <th>Officer ID</th>
+                                    <th>Editor ID</th>
+                                    <th>NID</th>
+                                    <th>E-mail</th>
+                                    <th>Region</th>
+                                    <th>LogStat</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                    //get results from session variables
+                                    $data = $_SESSION['query_results'];
 
-                                        foreach($data as $row) {
-                                            print " <tr> ";
-                                                foreach ($row as $attribute=>$value) {
-                                                    print " <td style='text-align:center'> $value </td> ";
-                                                } 
-                                            print " </tr> ";
-                                        } 
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
+                                    foreach($data as $row) {
+                                        print " <tr> ";
+                                            foreach ($row as $attribute=>$value) {
+                                                print " <td style='text-align:center'> $value </td> ";
+                                            } 
+                                        print " </tr> ";
+                                    } 
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <?php unset($_SESSION['query_results']); //unset results from session variables ?>
-                    <?php } ?> 
+                    <?php unset($_SESSION['query_results']); //unset results from session variables ?>
                 </fieldset>
             </form>
         <?php } ?>   
@@ -88,15 +86,15 @@
 ?>
 
 <script>
-$(document).ready(function() {
-    $('#incomeType').select2();
-    $('#funds').select2();
+    $(document).ready(function() {
+        $('#incomeType').select2();
+        $('#funds').select2();
 
-    $("#resultTable").DataTable({
-        dom: 'Bfrtip',
-        buttons: ['print', 'pdf']
+        $("#resultTable").DataTable({
+            dom: 'Bfrtip',
+            buttons: ['print', 'pdf']
+        });
     });
-});
 </script>
 
 <?php include VIEW.'includes/footer.php' ?>                 

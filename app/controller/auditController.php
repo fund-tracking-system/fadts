@@ -15,7 +15,22 @@ class auditController extends Controller{
       $this->model->load(); 
    }
 
-   
+
+
+   //View person history functions
+   public function personHistoryView(){
+      $this->view('auditor/personHistoryView');
+      
+      $this->view->render(); // This is how load the view
+   }
+
+   public function personHistoryModel(){
+      $this->model('auditor/personHistoryModel');
+      
+      $this->model->load(); 
+   }
+
+
 
    public function indexModel(){ // load the model for index view of auditor
       $this->model('auditor/indexModel');
@@ -31,18 +46,6 @@ class auditController extends Controller{
 
    public function eligibilityHistoryModel(){
       $this->model('auditor/eligibilityHistoryModel');
-      
-      $this->model->load(); 
-   }
-
-   public function personHistoryView(){
-      $this->view('auditor/personHistoryView');
-      
-      $this->view->render(); // This is how load the view
-   }
-
-   public function personHistoryModel(){
-      $this->model('auditor/personHistoryModel');
       
       $this->model->load(); 
    }
