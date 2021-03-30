@@ -14,7 +14,7 @@ if((isset($_POST['submit']) && isset($view)) || (isset($nic) && isset($entryId))
    
    $userRegion = $_SESSION['region'];
    if(isset($_POST['nic'])) $nic = $_POST['nic'];
-  
+   
 
    $sql = "SELECT personId,name,region,validRegion,phone,phone_two,trustee FROM person WHERE nid=? AND dead='no'";
    $stmt = mysqli_stmt_init($con);
@@ -144,7 +144,7 @@ function fundRelease($con,$nic,$personId,$view,$trustee,$phones){
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
 
-      if($result){
+      if(mysqli_num_rows($result)>0){
          $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
          var_dump($result);
          $_SESSION['result'] =$result;

@@ -38,65 +38,99 @@
             $stmt->bind_param("ss", $fundId, $regionId); 
             if(!$stmt->execute()){
             //close statement
-            $stmt->close();    
-
+                $stmt->close(); 
             //close connection
-            $con->close();
-
-            header("Location:/fadts/ministry/createFundView?error=db_conn_err1");
+                $con->close();
+            header("Location:/fadts/ministry/createFundView?error=db_conn_err3");
             exit();
             }
         }
 
         //close statement
-        $stmt->close();
+        // $stmt->close();
 
         //prepare and bind insert query into fund table
         $personList = $_SESSION['personList'];
 
-        foreach($personList as $person){
 
+        foreach($personList as $person){ 
+            
             $personId = $person['personId'];
             $query = 'INSERT INTO recipient (personId, fundId) VALUES (?, ?)';
             $stmt = $con->prepare($query);
             $stmt->bind_param("ss", $personId, $fundId);
 
             if(!$stmt->execute()){
-            //close statement
-            $stmt->close();    
-
-            //close connection
-            $con->close();
-
-            header("Location:/fadts/ministry/createFundView?error=db_conn_err2");
-            exit();
+                //close statement
+                $stmt->close();    
+                //close connection
+                $con->close();
+                header("Location:/fadts/ministry/createFundView?error=db_conn_err2");
+                exit();
             }
-        }    
+
+            
+        }
+
+        $stmt->close();    
+        //close connection
+
+        // foreach($personList as $person){ 
+            
+        //     $personId = $person['personId'];
+        //     $qry="SELECT phone FROM person WHERE personId = $personId";
+        //     $result = $con->query($qry);
+        //     if ($result->num_rows > 0) {
+        //         while($row = $result->fetch_assoc()) {
+
+        //             $contact = $row["phone"];
+
+        //             require_once('notify/autoload.php');
+
+        //             $api_instance = new NotifyLk\Api\SmsApi();
+        //             $user_id = "13127"; 
+        //             $api_key = "qCaJfO73WWJfh9FHBXYd"; 
+        //             $message = "Congratulations!</br>You have been selected for a government fund.Please contact your village officer to claim the due fund amount.</br>Thank you."; 
+        //             $sender_id = "NotifyDEMO";
+        //             $to = "94".substr($contact, -9);
+        //             // print_r($contact);
+        //             // exit();
+        //             try {
+        //                 $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
+        //             }catch(Exception $e){
+        //                 echo 'Exception when calling SmsApi->sendSMS: ', $e->getMessage(), PHP_EOL;
+        //                 // header("Location:/fadts/village/fundRelease?otp=otp_resend&entryId=$entryId"); 
+        //                 exit();
+        //             }
+        //         }
+        //     }            
+
+        // }    
 
         //close connection
         $con->close();
 
         //unset person list from session variables
-        unset($_SESSION['personList']);
+        // unset($_SESSION['personList']);
 
         //unset income types in session variables
         unset($_SESSION['incomeTypes']);
 
         //unset predefined fund list in session variables
-        unset($_SESSION['fundList']);
+        // unset($_SESSION['fundList']);
 
-        header("Location:/fadts/ministry/createFundView");
+        header("Location:/fadts/ministry/sendApi");
+        // header("Location:/fadts/ministry/createFundView");
         exit();
     }
 
     else{
         //close statement
         $stmt->close();
-
         //close connection
         $con->close();
-
-        header("Location:/fadts/ministry/createFundView?error=db_conn_err3");
+        header("Location:/fadts/ministry/createFundView?error=db_conn_err1");
         exit();
     }
+
 ?>

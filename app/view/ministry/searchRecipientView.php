@@ -24,44 +24,46 @@
                      if($error == "no_records"){
                         echo '<div class="alert alert-danger" role="alert">No records found!</div>';
                      }        
-                  }    
+                  }     
                ?>
 
-               <div >
+               <div  style="margin-left:50px;">
                   <label class="inputLable"><b>Age:</b></label>
                   <input class="form-control InputOne" value=18 name="ageStart"></input>
                   <span class="inputLable LableTwo"><b>to</b></span>
                   <input class="form-control InputTwo" value=80 name="ageEnd"></input>
                </div>
 
-               <div class="form-row">
+               <div class="form-row" style="margin-left:50px;">
                   <label class="inputLable" for="disorder"><b>Prolonged Disorder/Disease:</b></label>
-                  <select class="form-control Input" id="disorder" name="disorder">
+                  <select class="form-control Input" style="width:605px;margin-right:10px;" id="disorder" name="disorder">
                      <option value="" selected>Not select</option>
                      <option value="no">Without Disorder/Diease</option>
                      <option value="yes">With Disorder/Diease</option>
                   </select>
                </div>
 
-               <div class="form-row">
+               <div class="form-row" style="margin-left:50px;">
                   <label class="inputLable" for="CivilStatus"><b>Civil Status:</b></label>
-                  <select class="form-control Input" id="civilStatus" name="civilStatus">
+                  <select class="form-control Input" id="civilStatus" style="width:605px;margin-right:10px;margin-left:250px;" name="civilStatus">
                      <option value="" selected>Not select</option>
                      <option value="0">Unmarried</option>
                      <option value="1">Married</option>
                   </select>
                </div>              
 
-               <div>
+               
+               <div style="margin-left:50px;">
                   <label class="inputLable"><b>Gross Income (Rs):</b></label>
                   <input class="form-control InputOne" name="incomeStart" value=0></input>
                   <span class="inputLable LableTwo"><b>to</b></span>
-                  <input class="form-control InputTwo" name="incomeEnd" value=1000000></input>
+                  <input class="form-control InputTwo"style="margin-left:810px;" name="incomeEnd" value=1000000></input>
                </div>
 
-               <div class='form-row'>
+
+               <div class='form-row' style="margin-left:50px;">
                   <label class="inputLable" style="margin-right:22%;"><b>Current Funds:</b></label>
-                  <select class="js-example-responsive" multiple="multiple" style='top:60px; overflow:scroll; padding-right:525px;' id="funds" name="funds[]">
+                  <select class="js-example-responsive" multiple="multiple" style='top:60px; overflow:scroll;width:620px; ' id="funds" name="funds[]">
                      <?php    foreach($_SESSION['fundList'] as $fund){
                      ?>
                                  <option value="<?php echo $fund['Id']?>">
@@ -74,9 +76,9 @@
                </div>
                <input hidden disabled></input>
 
-               <div class='form-row' style="margin-top:50px;">
-                  <label class="inputLable" for="incomeType" style="margin-right:20%; margin-bottom:6%"><b>Income Type(s):</b></label>
-                  <select class="js-example-responsive" multiple="multiple" style='top:60px; overflow:scroll; padding-right:525px;' id="incomeType" name="incomeType[]">
+               <div class='form-row' style="margin-top:50px;margin-left:50px;">
+                  <label class="inputLable" for="incomeType" style="margin-right:21%; margin-bottom:6%"><b>Income Type(s):</b></label>
+                  <select class="js-example-responsive" multiple="multiple" style='top:60px; overflow:scroll;width:620px; ' id="incomeType" name="incomeType[]">
                      <?php    foreach($_SESSION['incomeTypes'] as $incomeType){     ?>
                                  <option value="<?php echo $incomeType['id']?>">
                                     <?php echo $incomeType['type']?>
@@ -88,7 +90,7 @@
                </div>
                <input hidden disabled></input>
 
-               <div class='button' style="margin-top:30px;">
+               <div class="Twobtns">
                   <button type="submit" name="submit" class='btn btn-primary signlebtn'>Search Here</button>
                </div>
             </fieldset>
