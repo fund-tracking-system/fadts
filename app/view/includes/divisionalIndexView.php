@@ -17,7 +17,7 @@
 
        }
 
-     // $districtRegion= $_SESSION['districtRegion'];                   //  save district region to session varible
+      $districtRegion= $_SESSION['districtRegion'];                   //  save district region to session varible
 
 
 
