@@ -26,7 +26,7 @@
 
             if(isset($_GET['result'])){
                 if($_GET['result'] == "success"){
-                    echo '<div class="alert alert-success" color="green" role="alert">Person has been successfully added to the eligibility list!</div>';
+                    echo '<div class="alert alert-success" color="green" role="alert">Eligibility status of the person has been successfully modified!</div>';
                 }       
             }   
         ?>
@@ -85,8 +85,18 @@
                             <input class="form-control Input" name='region' value="<?php echo $_SESSION['person_region_name'] ?>" readonly></input>
                         </div>
 
-                        <div class="Twobtns">
-                            <button type="submit" class='btn btn-primary' name="confirm">Confirm</button>
+                        <div class="form-row">
+                            <label for="eligibility" class="inputLable"><b>Eligibility status:</b></label>
+                            <input class="form-control Input" name='eligibility' value="<?php echo $_SESSION['person_eligibility'] ?>" readonly></input>
+                        </div>
+
+                        <div class="Twobtns">                            
+                            <?php if ($_SESSION['person_eligibility']=='Unlisted') { ?>
+                                <button type="submit" class='btn btn-primary' name="add">Add to eligibility list</button>
+                            <?php } ?>
+                            <?php if ($_SESSION['person_eligibility']=='Listed') { ?>
+                                <button type="submit" class='btn btn-primary' name="remove">Remove from eligibility list</button>
+                            <?php } ?>
                         </div>
                     </fieldset>
                 <?php } ?>

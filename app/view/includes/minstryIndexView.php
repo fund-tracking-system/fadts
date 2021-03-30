@@ -176,12 +176,7 @@ $year = date("y",strtotime($today));
 
          $disasterYear=date("y",strtotime($date));
 
-         if(($year-1)==$disasterYear){
-
-
-            
-         }
-
+      if(($year-1)==$disasterYear){
 
          if($month ==1){
 
@@ -243,6 +238,9 @@ $year = date("y",strtotime($today));
             $vdec=$vdec+1;
          
          }
+            
+         }
+
 
 
 

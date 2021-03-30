@@ -18,6 +18,8 @@ if(isset($_POST['submit'])){
    $nid = $_POST['nid'];
    
 
+   
+
    $sql = "UPDATE person SET name=?,address=?,validRegion=?,region=?,trustee=?,phone=?,phone_two=?,civilStatus=?,job=? WHERE nid=?";
 
 

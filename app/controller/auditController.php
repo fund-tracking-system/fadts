@@ -1,13 +1,8 @@
 <?php 
 
 class auditController extends Controller{
-
-   public function indexModel(){ // load the model for index view of auditor
-      $this->model('auditor/indexModel');
-      
-      $this->model->load(); 
-   }
  
+   //View officer history functions
    public function officerHistoryView(){
       $this->view('auditor/officerHistoryView');
       
@@ -16,6 +11,14 @@ class auditController extends Controller{
    
    public function officerHistoryModel(){
       $this->model('auditor/officerHistoryModel');
+      
+      $this->model->load(); 
+   }
+
+   
+
+   public function indexModel(){ // load the model for index view of auditor
+      $this->model('auditor/indexModel');
       
       $this->model->load(); 
    }

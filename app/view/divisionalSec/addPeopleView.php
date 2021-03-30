@@ -47,7 +47,7 @@
                <div class="form-row">
                   <label for="birthNO" class="inputLable"><b>Birth Certificate
                         No :</b></label>
-                  <input class="form-control Input" id='b_certifi' name="bcertifi"></input>
+                  <input class="form-control Input" id='b_certifi' name="b_certifi"></input>
                </div>
 
                <div class="form-row">
