@@ -5,6 +5,8 @@ require_once('notify/autoload.php');
 
 
 //database connection file calling
+// require_once('notify/autoload.php');
+
 require 'connectionOOP.php';	
 
     $personList = $_SESSION['personList'];
@@ -25,8 +27,9 @@ require 'connectionOOP.php';
                     $api_key = "qCaJfO73WWJfh9FHBXYd"; 
                     $message = "Congratulations!</br>You have been selected for a government fund.Please contact your village officer to claim the due fund amount.</br>Thank you."; 
                     $sender_id = "NotifyDEMO";
+
                     $to = "94".substr($contact, -9);
-                    // print_r($contact);
+                    print_r($to);
                     // exit();
                     try {
                         $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
@@ -40,7 +43,8 @@ require 'connectionOOP.php';
 
         } 
 
-        require_once('notify/autoload.php');
+                header("Location:/fadts/ministry/createFundView");
+
 
         // $api_instance = new NotifyLk\Api\SmsApi();
         // $user_id = "13127"; 

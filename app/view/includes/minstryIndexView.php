@@ -38,7 +38,7 @@ $highIncome=0;
    
 
 
-$sql4="SELECT amountPerPerson,publishedTime,recipient.deliveryTime from fund   inner join recipient ON recipient.fundId=fund.fundId inner join person ON person.personId=recipient.personId where recipient.deliveryStatus=1";
+$sql4="SELECT amountPerPerson,publishedTime,recipient.deliveryTime from fund   inner join recipient ON recipient.fundId=fund.fundId inner join person ON person.personId=recipient.personId";
 $results=$con->query($sql4);
 $resl=$results->fetch_all(MYSQLI_ASSOC);
 // var_dump($resl);
@@ -64,7 +64,7 @@ $year = date("y",strtotime($today));
 foreach($resl as  $data){
 
 
-$date=$data['deliveryTime'];
+$date=$data['publishedTime'];
 $month = date("m",strtotime($date));
 
 
@@ -115,7 +115,7 @@ if(($year-1)==$fundYear){
       $august=$august+$data['amountPerPerson'];
    
    }
-   else if($month ==9){
+   else if($month==9){
    
       $september=$september+$data['amountPerPerson'];
    

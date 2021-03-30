@@ -75,37 +75,42 @@
         $stmt->close();    
         //close connection
 
-        // foreach($personList as $person){ 
+        require_once('notify/autoload.php');
+
+        $api_instance = new NotifyLk\Api\SmsApi();
+        $user_id = "13127"; 
+        $api_key = "qCaJfO73WWJfh9FHBXYd"; 
+        $message = "Congratulations You have been selected for a government fund.Please contact your village officer to claim the due fund amount.Thank you."; 
+    //    $message="you have been selected";
+        $sender_id = "NotifyDEMO";
+
+        foreach($personList as $person){ 
             
-        //     $personId = $person['personId'];
-        //     $qry="SELECT phone FROM person WHERE personId = $personId";
-        //     $result = $con->query($qry);
-        //     if ($result->num_rows > 0) {
-        //         while($row = $result->fetch_assoc()) {
+            $personId = $person['personId'];
+            $qry="SELECT phone FROM person WHERE personId = $personId";
+            $result = $con->query($qry);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
 
-        //             $contact = $row["phone"];
+                    $contact = $row["phone"];
 
-        //             require_once('notify/autoload.php');
 
-        //             $api_instance = new NotifyLk\Api\SmsApi();
-        //             $user_id = "13127"; 
-        //             $api_key = "qCaJfO73WWJfh9FHBXYd"; 
-        //             $message = "Congratulations!</br>You have been selected for a government fund.Please contact your village officer to claim the due fund amount.</br>Thank you."; 
-        //             $sender_id = "NotifyDEMO";
-        //             $to = "94".substr($contact, -9);
-        //             // print_r($contact);
-        //             // exit();
-        //             try {
-        //                 $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
-        //             }catch(Exception $e){
-        //                 echo 'Exception when calling SmsApi->sendSMS: ', $e->getMessage(), PHP_EOL;
-        //                 // header("Location:/fadts/village/fundRelease?otp=otp_resend&entryId=$entryId"); 
-        //                 exit();
-        //             }
-        //         }
-        //     }            
+                   
+                    // $to = "94".substr($contact, -9);
+                    $to="94768612036";
+                    // print_r($to);
+                    try {
+                        $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
+                echo $user_id." ".$api_key." ".$sender_id." ".$to ;      echo '<br>';
+                    }catch(Exception $e){
+                        echo 'Exception when calling SmsApi->sendSMS: ', $e->getMessage(), PHP_EOL;
+                        // header("Location:/fadts/village/fundRelease?otp=otp_resend&entryId=$entryId"); 
+                        exit();
+                    }
+                }
+            }            
 
-        // }    
+        }    
 
         //close connection
         $con->close();
@@ -119,7 +124,7 @@
         //unset predefined fund list in session variables
         // unset($_SESSION['fundList']);
 
-        header("Location:/fadts/ministry/sendApi");
+        //header("Location:/fadts/ministry/sendApi");
         // header("Location:/fadts/ministry/createFundView");
         exit();
     }
@@ -129,7 +134,7 @@
         $stmt->close();
         //close connection
         $con->close();
-        header("Location:/fadts/ministry/createFundView?error=db_conn_err1");
+        //header("Location:/fadts/ministry/createFundView?error=db_conn_err1");
         exit();
     }
 

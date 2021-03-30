@@ -21,7 +21,7 @@ $_SESSION['highIncome']=0;
       elseif($data['monthlyIncome']>=30000){
          $midIncome++;
       }
-      else{
+      else if($data['monthlyIncome']>=0){
          $lowIncome++;
       }
    }
@@ -163,20 +163,17 @@ $_SESSION['december']=$dec;
       
 
 // $sql41="SELECT person.personId from eligibility INNER JOIN predefinedfund ON eligibility.Id=predefinedfund.predefinedFundId INNER JOIN person ON person.personId=predefinedfund.personId WHERE person.region=$myRegion";
-$sql41="SELECT Id FROM predefinedfund Inner JOIN eligibility ON eligibility.predefinedFundId=predefinedfund.Id INNER JOIN  person ON person.personId=eligibility.personId WHERE person.personId=$myRegion";
+$sql41="SELECT Id FROM predefinedfund Inner JOIN eligibility ON eligibility.predefinedFundId=predefinedfund.Id INNER JOIN  person ON person.personId=eligibility.personId WHERE person.region=$myRegion";
 $results11=$con->query($sql41);
-<<<<<<< HEAD
-//$resl1=$results11->fetch_all(MYSQLI_ASSOC);
-//var_dump($resl1);
-=======
 $resl1=$results11->fetch_all(MYSQLI_ASSOC);
 // var_dump($resl1);
->>>>>>> 3f3d2b9b86aa292857de028181c9004918172d99
 $samurdhi=0;
 $Samurdhi_Eligible_List=0;
 $adult=0;
 $mahapola=0;
 $Other_GovFunds=0;
+
+
 foreach($resl1 as $data){
    if($data["Id"]==1){
       $samurdhi++;
@@ -184,7 +181,7 @@ foreach($resl1 as $data){
    else if($data["Id"]==2){
       $Samurdhi_Eligible_List++;
    }
-   else if($data["Id"==3]){
+   else if($data["Id"]==3){
       $adult++;
    }
    else if($data["Id"]==4){

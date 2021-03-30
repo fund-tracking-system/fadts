@@ -3,51 +3,37 @@
 
 <div class="all_bacground_clor">
 
-    <div class="SearchByCriteriaform1"> 
+    <div class="SearchByCriteriaform1">
         <?php
             require 'connection.php'; 
             $myRegion=$_SESSION['region'];
+
+
+
+
+
+
             $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
-            $districtRegion= $_SESSION['districtRegion']; 
- 
-            // echo $myRegion."</br>";
-            
-            // echo $provincialRegion."</br>";
-            // echo $districtRegion;
-            // exit();
+            $districtRegion= $_SESSION['districtRegion'];                   //  save district region
+    
 
+
+
+
+
+            // echo $myRegion;
+            $myRegion; 
             
-            $sql="SELECT   disaster.name,disaster.disasterId,victim.totalDamage,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
-            FROM  disasterregion 
-            INNER JOIN  disaster
-            ON disaster.disasterId=disasterregion.disasterId
+            $sql="SELECT Distinct disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
+            FROM disaster 
+            INNER JOIN disasterregion 
+            ON disaster.disasterId=disasterregion.disasterId 
             INNER JOIN region ON 
-            region.regionId=disasterregion.regionId
-            left join victim ON 
-            victim.disasterId=disaster.disasterId           
-            WHERE (region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1)  ";
-          
-        //   $sql="SELECT disaster.disasterId, disaster.name,disaster.type,disaster.date 
-        //   FROM disaster 
-        //   INNER JOIN victim 
-        //   ON victim.disasterId=disaster.disasterId
-        //   Inner JOIN person ON person.personId=victim.personId
-        //   inner join disasterregion ON disasterregion.disasterId=disaster.disasterId 
-        // ";
-        //  $sql=  "SELECT disaster.disasterId, disaster.name, disaster.type, disaster.date
-        //         FROM disaster
-        //         INNER JOIN victim 
-        //         ON disaster.disasterId = victim.disasterId
-        //         WHERE disasterregion.regionId = $myRegion  
-        //         OR disasterregion.regionId = $districtRegion 
-        //         OR disasterregion.regionId = $provincialRegion
-        //         OR disasterregion.regionId = 1 
-        //         OR disasterregion.regionId 
-        //         IN (SELECT region.regionId 
-        //             FROM region 
-        //             WHERE region.superRegion = $myRegion);";
-
-
+            region.regionId=disasterregion.regionId 
+            inner join victim ON 
+            victim.disasterId=disaster.disasterId
+            WHERE region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1  ";
+            
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
             $_SESSION['disasterList']=$res;
@@ -56,7 +42,7 @@
 
         <form>
             <fieldset class="BackgroundFS">
-                <h2>Disaster List </h2>
+                <h2>Disaster FUND </h2>
 
                 <fieldset class="tableBar">
                     <div class="tbleMargin">
@@ -64,7 +50,6 @@
                         <table id="resultTable" class="display" method="get";>
                             <thead>
                                 <tr>
-                                    <!-- <th><B>Disaster ID</B></th> -->
                                     <th><B>Disaster Type</B></th>
                                     <th><B>Disaster Region</B></th>
                                     <th><B>Disaster Name</B></th>
@@ -79,8 +64,7 @@
                          
                                  
                          ?>
-                                <tr>
-                                 
+                                <tr> 
                                     <td><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
                                     </td>
