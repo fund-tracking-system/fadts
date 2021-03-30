@@ -21,7 +21,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
 
             // get disaster details
                     $officer_region=$_SESSION['region'];
-                    $sql="SELECT disaster.name ,disaster.type,disaster.date 
+                    $sql="SELECT disaster.name ,disaster.type,disaster.date
                     FROM disaster 
                     WhERE disasterId=$disasterId" ;
                     $result=$con->query($sql);
@@ -61,6 +61,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                         $_SESSION['disasterName']=$data['name'];
                         $_SESSION['disasterType']=$data['type'];
                         $_SESSION['disasterDate']=$data['date'];
+
                     }
 
 

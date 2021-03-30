@@ -17,7 +17,7 @@
             // exit();
 
             
-            $sql="SELECT   disaster.name,disaster.disasterId,victim.totalDamage,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
+            $sql="SELECT  disaster.name,disaster.disasterId,victim.totalDamage,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
             FROM  disasterregion 
             INNER JOIN  disaster
             ON disaster.disasterId=disasterregion.disasterId

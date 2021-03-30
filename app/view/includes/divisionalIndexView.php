@@ -345,8 +345,10 @@ $_SESSION['olders']=$olders;
             <p id="calendar_year"></p>
          </div>
          <div id="calendar_events" >
+            <?php 
+            echo '<h3>' .$_SESSION['userrole']. '<h3>'; ?>
             <h3 class="colorEve">Your Events</h3>
-            <!-- <?php //echo $_SESSION['userrole']; ?> -->
+           
             <?php
 
                $userid=$_SESSION['userid'];
