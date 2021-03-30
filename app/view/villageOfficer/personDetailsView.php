@@ -48,11 +48,11 @@
                      value="<?php echo isset($personDetails) ? $personDetails['birthDate']:"" ?>" readonly></input>
                </div>
 
-               <div class="form-row">
+               <!-- <div class="form-row">
                   <label for="familyHead" class="inputLable"><b>Family Head :</b></label>
                   <input class="form-control Input" id="familyHead" name="familyHead"
-                     value="<?php echo isset($personDetails) ? $personDetails['birthDate']:"" ?>" readonly></input>
-               </div>
+                     value="<?php //echo isset($personDetails) ? $personDetails['birthDate']:"" ?>" readonly></input>
+               </div> -->
 
                <div class="form-row">
                   <label class="inputLable" for="disordered"><b>Prolonged Disorder/Disease :</b></label>
@@ -105,17 +105,6 @@
                               <td><B><?php echo $otherFund['deliveryStatus']=="1"?"Delivered":"Pending" ?></B></td>
                            </tr>
                            <?php } ?>
-                           <!-- <tr>
-                              <td><B>Corona Fund(May)</B></td>
-                              <td><B>5000.00</B></td>
-                              <td><B>Recieved</B></td>
-                           </tr>
-                           <tr>
-                              <td><B>Drought Fund(August)</B></td>
-                              <td><B>3500.00</B></td>
-                              <td><B>Pending</B></td>
-                           </tr> -->
-
                         </tbody>
                      </table>
                      <div>

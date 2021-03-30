@@ -28,6 +28,7 @@ if((isset($_POST['submit']) && isset($view)) || (isset($nic) && isset($entryId))
       mysqli_stmt_bind_param($stmt,"s",$nic);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
+      mysqli_stmt_close($stmt);
 
       if($row = mysqli_fetch_assoc($result)){
 

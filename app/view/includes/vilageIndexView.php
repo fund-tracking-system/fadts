@@ -165,8 +165,13 @@ $_SESSION['december']=$dec;
 // $sql41="SELECT person.personId from eligibility INNER JOIN predefinedfund ON eligibility.Id=predefinedfund.predefinedFundId INNER JOIN person ON person.personId=predefinedfund.personId WHERE person.region=$myRegion";
 $sql41="SELECT Id FROM predefinedfund Inner JOIN eligibility ON eligibility.predefinedFundId=predefinedfund.Id INNER JOIN  person ON person.personId=eligibility.personId WHERE person.personId=$myRegion";
 $results11=$con->query($sql41);
+<<<<<<< HEAD
+//$resl1=$results11->fetch_all(MYSQLI_ASSOC);
+//var_dump($resl1);
+=======
 $resl1=$results11->fetch_all(MYSQLI_ASSOC);
 // var_dump($resl1);
+>>>>>>> 3f3d2b9b86aa292857de028181c9004918172d99
 $samurdhi=0;
 $Samurdhi_Eligible_List=0;
 $adult=0;
