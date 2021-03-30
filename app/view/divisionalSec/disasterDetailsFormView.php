@@ -22,7 +22,11 @@
             INNER JOIN person
             ON person.personId=victim.personId 
             
-            WHERE (region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1)  ";
+            WHERE (region.superRegion=$myRegion 
+            or disasterregion.regionId=$myRegion 
+            or disasterregion.regionId=$provincialRegion 
+            or disasterregion.regionId=$districtRegion 
+            or disasterregion.regionId=1)  ";
           
         //   $sql="SELECT disaster.disasterId, disaster.name,disaster.type,disaster.date 
         //   FROM disaster 

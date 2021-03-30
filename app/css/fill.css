@@ -2061,7 +2061,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190)); */
-    background: rgb(101, 248, 174);
+    background: rgb(103, 248, 176);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 5/6;
