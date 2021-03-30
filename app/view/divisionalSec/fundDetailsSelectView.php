@@ -28,12 +28,12 @@
                         <?php foreach($_SESSION['fundList'] as $fund){                              
                          ?>
                             <tr>
-                                <td><input type="hidden" name="fundid" style="margin-left:30%;"
+                                <td style="margin-left:30%;text-align: left;"><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
                                 </td>
-                                <td><B style="margin-left:30%;"><?php echo $fund['name']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $fund['ren']?></B></td>
-                                <td><B style="margin-left:30%;"><?php 
+                                <td style="margin-left:30%;text-align: left;"><?php echo $fund['name']?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $fund['ren']?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php 
                                  if ( $fund['lvl']!=4 ){
                                      echo " Division Area";
 
@@ -45,10 +45,10 @@
 
                                  
                                  
-                                 ?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
-                                <td><a href="/fadts/divisional/funddetailModel?fundId=<?php echo $fund['fundId'] ?>"
-                                        class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                 ?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $fund['publishedTime'] ?></td>
+                                <td style="margin-left:30%;text-align: left;"><a href="/fadts/divisional/funddetailModel?fundId=<?php echo $fund['fundId'] ?>"
+                                        class="btn btn-primary" style="margin-left:20%;"><B>VIEW</B></a>
                                 </td>
                             </tr>
 

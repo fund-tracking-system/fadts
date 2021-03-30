@@ -28,10 +28,10 @@
                             <tbody>
                                 <?php foreach($_SESSION['disasterList'] as $disaster){ ?>
                                 <tr>
-                                    <td><B><input type="hidden" name="disasterId" style="margin-left:30%;"
+                                    <td style="margin-left:30%;text-align: left;"><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'> <?php echo $disaster['disasterId'] ?> <?php echo $disaster['type']?></input>
-                                    </B></td>
-                                    <td><B style="margin-left:30%;"><?php 
+                                    </td>
+                                    <td style="margin-left:30%;text-align: left;"><?php 
 
                                     if($disaster['lvl']==0){
                                          echo " Island Wide Disaster";
@@ -51,10 +51,10 @@
 
                                     
                                     
-                                    ?></B></td>
+                                    ?></td>
 
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['name']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['date'] ?></B></td>
                                     <td><a href="/fadts/village/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>"
                                             class="btn btn-primary" style="margin-left:20%;"><B>VIEW</B></a>
                                     </td>

@@ -7,7 +7,7 @@
 
         <form>
             <fieldset class="BackgroundFS">
-                <h2>SELECT FUND </h2>
+                <h2> FUND LIST </h2>
 
                 <fieldset class="tableBar">
                 <div class="tbleMargin">
@@ -31,9 +31,9 @@
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $fund['fundId']?>'><?php echo $fund['fundId']?></input>
                                 </td>
-                                <td><B style="margin-left:30%;"><?php echo $fund['name']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $fund['ren']?></B></td>
-                                <td><B style="margin-left:30%;"><?php 
+                                <td style="margin-left:30%;text-align: left;"><?php echo $fund['name']?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $fund['ren']?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php 
                                  if ( $fund['lvl']==0 ){
                                      echo " Island Wide Fund";
 
@@ -58,10 +58,10 @@
 
                                  
                                  
-                                 ?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $fund['publishedTime'] ?></B></td>
+                                 ?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $fund['publishedTime'] ?></td>
                                 <td><a href="/fadts/village/fundDetailsModel?fundId=<?php echo $fund['fundId'] ?>"
-                                        class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                        class="btn btn-primary" style="margin-left:10%;"><B>VIEW</B></a>
                                 </td>
                             </tr>
 

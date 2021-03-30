@@ -17,7 +17,6 @@
                             <thead>
                                 <tr>
                                     <th><B>Disaster Type</B></th>
-                                 
                                     <th><B>Disaster Name</B></th>
                                     <th><B>Date</B></th>
                                     <th><B>View</B></th>
@@ -27,9 +26,9 @@
                             <tbody> 
                                 <?php foreach($_SESSION['disasterList'] as $disaster){ ?>
                                 <tr>
-                                    <td><B><input type="hidden" name="disasterId" style="margin-left:30%;"
-                                            value='<?php echo $disaster['type']?>'> <?php echo $disaster['disasterId'] ?> <?php echo $disaster['type']?></input>
-                                    </B></td>
+                                    <td><input type="hidden" name="disasterId" style="margin-left:30%;"
+                                            value='<?php echo $disaster['type']?>'> <?php echo $disaster['disasterId']."-" ?> <?php echo $disaster['type']?></input>
+                                    </td>
 
                                     <!-- <td><B style="margin-left:30%;"><?php 
 
@@ -53,8 +52,8 @@
                                     
                                     ?></B></td> -->
 
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['name']?></td>
+                                    <td style="margin-left:30%;text-align: center;"><?php echo $disaster['date'] ?></td>
                                     <td><a href="/fadts/ministry/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'];?>"
                                             class="btn btn-primary" style="margin-left:20%;"><B>VIEW</B></a>
                                     </td>

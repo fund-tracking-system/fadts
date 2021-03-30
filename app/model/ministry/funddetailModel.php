@@ -6,11 +6,11 @@ require 'connection.php';
  
 
 
-if(isset($_GET['fundId'])||isset($_GET['regionId']))
+if(isset($_GET['fundId']))
 
         {
             
-
+ 
         $fundId = $_GET['fundId'];
 
         $_SESSION['funddetailsFundId']=  $fundId;

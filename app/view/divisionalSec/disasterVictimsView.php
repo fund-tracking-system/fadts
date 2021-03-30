@@ -34,14 +34,14 @@ require 'connection.php';
                         <?php foreach($_SESSION['victimadata'] as $victim){                              
                          ?>
                             <tr>
-                                <td><input type="hidden" name="fundid" style="margin-left:30%;"
+                                <td style="margin-left:30%;text-align: left;"><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $victim['name']?>'><?php echo $victim['name']?></input>
                                 </td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['address']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['regionName']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['mobile'] ?></B></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $victim['address']?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $victim['regionName']?></td>
+                                <td style="margin-left:30%;text-align: center;"><?php echo $victim['mobile'] ?></td>
 
-								<td><B style="margin-left:30%;"><?php echo $victim['totalDamage'] ?></B></td>
+								<td style="margin-left:30%;text-align: center;"><?php echo $victim['totalDamage'] ?></td>
 
                                
                             </tr>

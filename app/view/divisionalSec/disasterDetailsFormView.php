@@ -42,7 +42,7 @@
 
         <form>
             <fieldset class="BackgroundFS">
-                <h2>Disaster FUND </h2>
+                <h2>DISASTER LIST </h2>
 
                 <fieldset class="tableBar">
                     <div class="tbleMargin">
@@ -65,14 +65,14 @@
                                  
                          ?>
                                 <tr> 
-                                    <td><input type="hidden" name="disasterId" style="margin-left:30%;"
+                                    <td style="margin-left:30%;text-align: left;"><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
                                     </td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['ren']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['name']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['date'] ?></td>
                                     <td><a href="/fadts/divisional/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>&regionId=<?php echo $disaster['regionID']?>"
-                                            class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                            class="btn btn-primary" style="margin-left:10%;"><B>VIEW</B></a>
                                     </td>
                                 </tr>
 

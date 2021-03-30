@@ -4,7 +4,7 @@
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
 
-    <h2>Recipient List</h2>
+    <h2>RECIPIENT LIST </h2>
 
     <fieldset class="tableBar">
 
@@ -12,8 +12,10 @@
 
 
 
+
                     <!-- <h2 style="margin-top:20px;margin-bottom:30px;">Recipient List</h2> -->
                     <table id="resultTable" class="display nowrap">
+                    <h2><?php echo $_SESSION['SelectFundName']?></h2>
                         <thead>
                             <tr>
                                 <th><B>Recipient </B></th>
@@ -30,11 +32,11 @@
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $fund['fundId']?>'><?php echo $fund['name']?></input>
                                 </td>
-                                <td style="margin-left:30%;"><?php echo $fund['address']?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $fund['address']?></td>
                                 <!-- <td style="margin-left:30%;"><?php echo $fund['regionName']?></td> -->
-                                <td style="margin-left:30%;"><?php echo $fund['mobile'] ?></td>
+                                <td style="margin-left:30%;text-align: center;"><?php echo $fund['mobile'] ?></td>
 
-                                <td style="margin-left:30%;"><?php 
+                                <td style="margin-left:30%;text-align: center;"><?php 
                                  if ( $fund['deliveryStatus']==1 ){
                                      echo " Dilivered !";
 

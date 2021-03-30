@@ -31,12 +31,12 @@
                                     $pid = $person['personId'];
                                 ?>
                                  <tr>
-                                    <td style="margin-left:30%;text-align: left;"><B><?php echo $person['nid']?></B></input>
+                                    <td style="margin-left:30%;text-align: left;"><B><?php echo $person['nid']?>
                                     </td>
-                                    <td style="margin-left:30%;text-align: left;"><B><?php echo $person['name']?></B></td>
-                                    <td style="margin-left:30%;text-align: left;"><B><?php echo $person['address']?></B></td>
-                                    <td style="margin-left:30%;text-align: left;"><B><?php echo $person['Rname']?></B></td>
-                                    <td style="margin-left:30%;text-align: left;"><B><?php echo $person['phone']?></B></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $person['name']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $person['address']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $person['Rname']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $person['phone']?></td>
                                     
                                     <td><a href="/fadts/village/personDetailsModel?pid=<?php echo $pid ?>&view=criteriaResult" class="btn btn-primary" style="margin-left:20%">VIEW</a>
                                     </td>
