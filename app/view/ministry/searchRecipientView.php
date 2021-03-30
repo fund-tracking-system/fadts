@@ -70,7 +70,7 @@
                      <?php    } 
                               unset($_SESSION['fundList']); 
                      ?>
-                  </select>
+                  </select> 
                </div>
                <input hidden disabled></input>
 

@@ -8,17 +8,19 @@
 
 
     
-    $query='INSERT INTO person (name,nid,address,headOfFamily,phone, phone_two,birthDate,birthCertificateNo,civilStatus,trustee,job,region) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)';
+    $query='INSERT INTO person (name,nid,address,headOfFamily,phone, phone_two,birthDate,birthCertificateNo,civilStatus,trustee,job,region,editorId,division,district,province) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
     $stmt=$con->prepare($query);
-    $stmt->bind_param('ssssssssssss',$name,$nid,$address,$headOfFamily,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,      $civilStatus,$trustee,$jobType,$region);
+    $stmt->bind_param('ssssssssssssssss',$name,$nid,$address,$headOfFamily,$phoneNumber1, $phoneNumber2 , $b_date,$b_certifi,$civilStatus,$trustee,$jobType,$region,$userid,$division,$districtRegion,$provincialRegion);
 
 
-    $noti='INSERT INTO notification (type,nid)VALUES(?,?)';
-    $stmtNoti=$con->prepare($noti);
-    $stmtNoti->bind_param('ss',$type,$nid);
+    $division = $_SESSION['region'];
+    $districtRegion= $_SESSION['districtRegion']; 
+    $provincialRegion= $_SESSION['provincialRegion']; 
     
+    echo $districtRegion;
+    echo $provincialRegion;
 
-    $type=1;
+    $userid=$_SESSION['userid'];
     $name=$_SESSION['people_name'];
     $nid=$_SESSION['people_nid'];
     $headOfFamily=$_SESSION['people_headOfFamily'];
@@ -37,10 +39,6 @@
   
 
 
-    $stmtNoti->execute();
-    $stmtNoti->close();
-
-
     $stmt->execute();
     $stmt->close();
 
@@ -48,8 +46,8 @@
 
 
 
-      //redirecting to view
-    header("Location:/fadts/divisional/ViewAddPeople"); 
+    //   //redirecting to view
+    // header("Location:/fadts/divisional/ViewAddPeople"); 
     header("Location:/fadts/divisional/ViewAddPeopleProfile"); 
 
 

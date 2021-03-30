@@ -14,9 +14,10 @@
     $creator = $_SESSION['userid'];
     $amount = $_SESSION['fund_amount']; 
     $description = $_SESSION['fund_description'];
-    $criteria = 'bla bla bla';
+    $criteria = 'income types=Private';
     $region = $_SESSION['fund_region'];
 
+    //echo $name."<br>".$creator."<br>".$amount."<br>".$description."<br>".$criteria;
     //unset fund details in session variables
     unset($_SESSION['fund_name']);
     unset($_SESSION['fund_amount']);
@@ -28,14 +29,13 @@
         $fundId = $stmt->insert_id;
 
         //close statement
-        $stmt->close();
+        $stmt->close();                    
 
-        //prepare and bind insert query into fund table
-        $query = 'INSERT INTO fundregion (fundId, regionId) VALUES (?, ?)';
-        $stmt = $con->prepare($query);
-        $stmt->bind_param("ss", $fundId, $regionId);
+        foreach($region as $regionId) {
 
-        foreach($region as $regionId) { 
+            $query = 'INSERT INTO fundregion (fundId, regionId) VALUES (?, ?)';
+            $stmt = $con->prepare($query);
+            $stmt->bind_param("ss", $fundId, $regionId); 
             if(!$stmt->execute()){
             //close statement
             $stmt->close();    
@@ -43,7 +43,7 @@
             //close connection
             $con->close();
 
-            header("Location:/fadts/ministry/createFundView?error=db_conn_err");
+            header("Location:/fadts/ministry/createFundView?error=db_conn_err1");
             exit();
             }
         }
@@ -52,12 +52,14 @@
         $stmt->close();
 
         //prepare and bind insert query into fund table
-        $query = 'INSERT INTO recipient (personId, fundId) VALUES (?, ?)';
-        $stmt = $con->prepare($query);
-        $stmt->bind_param("ss", $personId, $fundId);
+        $personList = $_SESSION['personList'];
 
-        foreach($_SESSION['personList'] as $person){ 
+        foreach($personList as $person){
+
             $personId = $person['personId'];
+            $query = 'INSERT INTO recipient (personId, fundId) VALUES (?, ?)';
+            $stmt = $con->prepare($query);
+            $stmt->bind_param("ss", $personId, $fundId);
 
             if(!$stmt->execute()){
             //close statement
@@ -66,7 +68,7 @@
             //close connection
             $con->close();
 
-            header("Location:/fadts/ministry/createFundView?error=db_conn_err");
+            header("Location:/fadts/ministry/createFundView?error=db_conn_err2");
             exit();
             }
         }    
@@ -94,7 +96,7 @@
         //close connection
         $con->close();
 
-        header("Location:/fadts/ministry/createFundView?error=db_conn_err");
+        header("Location:/fadts/ministry/createFundView?error=db_conn_err3");
         exit();
     }
 ?>

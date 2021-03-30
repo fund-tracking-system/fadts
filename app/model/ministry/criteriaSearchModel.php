@@ -5,10 +5,14 @@ session_start();
 if(isset($_POST['submit'])){
    require 'connection.php';  //link to mysql connection
 
-   $ageStart = $_POST['ageStart'];
+   $ageStart = $_POST['ageStart']; 
    $ageEnd = $_POST['ageEnd']; 
    $disorder = $_POST['disorder'];
    $civilStatus = $_POST['civilStatus'];
+   $regions= $_SESSION['fund_region'];
+    
+   echo $regions[0];
+   
 
    if(isset($_POST['incomeType'])) $incomeType = $_POST['incomeType'];
    else $incomeType = "";
@@ -19,9 +23,16 @@ if(isset($_POST['submit'])){
    if(isset($_POST['funds'])) $funds = $_POST['funds'];
    else $funds="";
 
-   $sql = queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds);
-   //echo $sql;
-   //exit();
+   
+
+      $sql = queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds,$regions);
+      // echo $sql;
+      // exit();
+      
+
+//  SD (monthlyIncome BETWEEN 0 AND 1000000) AND(  (divisionregion=3 or provincial=3 or district=3 ) )
+
+   
 
    $stmt = mysqli_stmt_init($con);
 
@@ -51,16 +62,18 @@ else {
    exit();
 } 
 
-function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds) {
+function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType, $incomeStart, $incomeEnd, $funds,$region) {
    $region=$_SESSION['region'];
    $count=0; 
+   // echo $region;
+   // exit();
 
    if(!empty($funds)) {
       $fundsCondiion = setFunds($funds);
       $query = "SELECT person.personId, nid, name, address, phone FROM person INNER JOIN eligibility ON person.personId = eligibility.personId WHERE (";
       
       $query = $query." ".$fundsCondiion;
-      $count++;
+      // $count++;
    }
    else {
       $query = "SELECT person.personId, nid, name, address, phone FROM person WHERE (";
@@ -117,6 +130,22 @@ function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType,
          $count++;
       } 
    }
+   $regions= $_SESSION['fund_region'];
+   
+   if($regions[0]!=1){
+      $regionCondition=setRegion($regions);
+      if ($count) {
+         $query = $query." AND ".$regionCondition;
+         $count++;
+      }
+      else {
+         $query = $query." ".$regionCondition;
+         $count++;
+      } 
+   }
+   
+
+   
 
    if($incomeStart!="" && $incomeEnd!="") {
       $incomeValueCondition = setIncomeValue($incomeStart, $incomeEnd);
@@ -128,10 +157,41 @@ function queryGenerate($ageStart, $ageEnd, $disorder, $civilStatus, $incomeType,
          $query = $query." ".$incomeValueCondition;
       } 
    }
+   
+
+
 
    $query = $query.")";  
    return $query;   
 }
+
+
+//(  (divisionregion=3 or provincial=3 or district=3 )AND(divisionregion=6 or provincial=6 or district=6) )
+
+function setRegion($regions){
+   print_r ($regions);
+
+   $string = "(";
+
+   $regions = new ArrayIterator($regions);
+   $regions = new CachingIterator($regions);
+
+   foreach($regions as $region){
+      $string = $string."(division=$region OR province=$region OR district=$region )";
+      if($regions->hasNext()) {
+         $string = $string." OR ";
+      }
+      else {
+         $string = $string.")";
+      }
+   }
+
+   return $string;
+
+
+}
+
+
 
 function setAge($ageStart, $ageEnd) {   
    if($ageStart>$ageEnd){  //If user enters values like 60 to 30 

@@ -13,17 +13,22 @@ session_start();
 
         $districRegion= $_SESSION['districtRegion'];               //save district region
 
-$divisionRegios=0;
 
         $provincialRegion= $_SESSION['provincialRegion'];      //save provincial region
 
-        
+        echo $myRegion;
 
             //get region disasters
             
             $sql="SELECT DISTINCT victim.disasterId,disaster.disasterId,disaster.name,disaster.type,disaster.date,region.level as lvl,region.name as ren
-            FROM disaster INNER JOIN disasterregion ON disaster.disasterId=disasterregion.disasterId INNER JOIN region ON region.regionId=disasterregion.regionId INNER JOIN victim ON victim.disasterId=disaster.disasterId WHERE 
-            disasterregion.regionId= $divisionRegion OR disasterregion.regionId= $districRegion OR disasterregion.regionId=$provincialRegion OR disasterregion.regionId=1 OR disasterregion.regionId= $myRegion ";
+                  FROM disaster 
+                    INNER JOIN disasterregion 
+                    ON disaster.disasterId=disasterregion.disasterId 
+                    INNER JOIN region 
+                    ON region.regionId=disasterregion.regionId 
+                    INNER JOIN victim 
+                    ON victim.disasterId=disaster.disasterId 
+                    WHERE disasterregion.regionId= $divisionRegion OR disasterregion.regionId= $districRegion OR disasterregion.regionId=$provincialRegion OR disasterregion.regionId=1 OR disasterregion.regionId= $myRegion ";
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
 
@@ -32,6 +37,6 @@ $divisionRegios=0;
 
             var_dump($res);
 
-           header("Location:/fadts/village/viewDisasterDetails"); 
+        header("Location:/fadts/village/viewDisasterDetails"); 
 
         ?>

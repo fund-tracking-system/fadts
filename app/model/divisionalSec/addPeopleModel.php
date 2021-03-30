@@ -70,7 +70,7 @@
 
 
         //redirecting to assignRegion view
-         //header("Location:/fadts/divisional/assignRegionView");  
+         //header("Location:/fadts/divisional/assignRegionView");   
          
         unset ($duplicate);
 
