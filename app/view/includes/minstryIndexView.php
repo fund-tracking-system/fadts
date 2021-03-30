@@ -396,7 +396,7 @@ $(function () {
       data: {
          labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
          datasets: [{
-               label: 'Victims per Year',
+               label: 'Victims per Month',
                data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                backgroundColor:'#4cd84c',
                hoverBackgroundColor:'rgb(4, 17, 41)',
@@ -456,7 +456,7 @@ var november=<?php echo $nove;?>;
       data: {
          labels: ['January','February','March','April','May','June','July','August','September','Octomber','November','December'],
          datasets: [{
-               label: 'Last Year Deliveries Made',
+               label: 'Deliveries Made Last Year',
                data: [jan,feb,march,april,may,june,july,august,september,october,november,december],
                // backgroundColor:'#4cd84c',
                hoverBackgroundColor:'#00FF00',

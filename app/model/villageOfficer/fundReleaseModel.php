@@ -29,40 +29,11 @@ if(isset($_POST['otpRequest']) && isset($_GET['entryId']) && isset($_POST['phone
    $sender_id = "NotifyDEMO"; 
     
    try {
+
       $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
       $_SESSION['otp']=$otp;
       header("Location:/fadts/village/nicSearchModel?view=fundRelease&entryId=$entryId&nic=$nic"); 
       exit();
-      //require 'connection.php';
-
-      // $sql = "SELECT * FROM otprequest WHERE entryId=?";
-      // $stmt = mysqli_stmt_init($con);
-
-      // if(!mysqli_stmt_prepare($stmt,$sql)){
-      //    mysqli_close($con);
-      //    header("Location:/fadts/village/$view?searcherror=db_conn_err");
-      //    exit();
-      // }else{
-      //    mysqli_stmt_bind_param($stmt,"s",$entryId);
-      //    mysqli_stmt_execute($stmt);
-      //    header("Location:/fadts/village/fundRelease?entryId=$entryId&time=$sendedTime"); 
-      //    exit();
-      // }
-
-
-      // $sql = "INSERT INTO otprequest (otp,entryId) VALUES(?,?)";
-      // $stmt = mysqli_stmt_init($con);
-
-      // if(!mysqli_stmt_prepare($stmt,$sql)){
-      //    mysqli_close($con);
-      //    header("Location:/fadts/village/$view?searcherror=db_conn_err");
-      //    exit();
-      // }else{
-      //    mysqli_stmt_bind_param($stmt,"si",$otpHashed,$entryId);
-      //    mysqli_stmt_execute($stmt);
-      //    header("Location:/fadts/village/fundRelease?entryId=$entryId&time=$sendedTime"); 
-      //    exit();
-      // }
       
    }catch(Exception $e){
       // echo 'Exception when calling SmsApi->sendSMS: ', $e->getMessage(), PHP_EOL;
@@ -76,7 +47,7 @@ if(isset($_POST['otpRequest']) && isset($_GET['entryId']) && isset($_POST['phone
 
    $otp = $_POST['otp'];
    $entryId = $_GET['entryId'];
-      
+   $nic = $_GET['nic'];   
 
    if($otp==$_SESSION['otp']){
       require 'connection.php';
@@ -101,6 +72,9 @@ if(isset($_POST['otpRequest']) && isset($_GET['entryId']) && isset($_POST['phone
          }
       }
    }else{
+      // echo "fuck";
+      // exit;
+
       header("Location:/fadts/village/nicSearchModel?view=fundRelease&entryId=$entryId&nic=$nic"); 
       exit();
    }
