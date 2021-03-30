@@ -3,25 +3,28 @@
 
 <div class="all_bacground_clor">
 
-    <div class="SearchByCriteriaform1">
+    <div class="SearchByCriteriaform1"> 
         <?php
             require 'connection.php'; 
             $myRegion=$_SESSION['region'];
             $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
             $districtRegion= $_SESSION['districtRegion']; 
  
+            // echo $myRegion."</br>";
             
-            $sql="SELECT  Distinct disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
-            FROM disaster 
-            inner join victim ON 
-            victim.disasterId=disaster.disasterId
-            INNER JOIN disasterregion 
-            ON disaster.disasterId=disasterregion.disasterId 
+            // echo $provincialRegion."</br>";
+            // echo $districtRegion;
+            // exit();
+
+            
+            $sql="SELECT   disaster.name,disaster.disasterId,victim.totalDamage,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
+            FROM  disasterregion 
+            INNER JOIN  disaster
+            ON disaster.disasterId=disasterregion.disasterId
             INNER JOIN region ON 
             region.regionId=disasterregion.regionId
-            INNER JOIN person
-            ON person.personId=victim.personId 
-            
+            left join victim ON 
+            victim.disasterId=disaster.disasterId           
             WHERE (region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1)  ";
           
         //   $sql="SELECT disaster.disasterId, disaster.name,disaster.type,disaster.date 
@@ -35,16 +38,14 @@
         //         FROM disaster
         //         INNER JOIN victim 
         //         ON disaster.disasterId = victim.disasterId
-        //         WHERE disaster.disasterId 
+        //         WHERE disasterregion.regionId = $myRegion  
+        //         OR disasterregion.regionId = $districtRegion 
+        //         OR disasterregion.regionId = $provincialRegion
+        //         OR disasterregion.regionId = 1 
+        //         OR disasterregion.regionId 
         //         IN (SELECT region.regionId 
         //             FROM region 
-        //             INNER JOIN disasterregion 
-        //             ON disasterregion.regionId = region.regionId
-        //             WHERE region.superRegion = $myRegion 
-        //             OR disasterregion.regionId = $myRegion  
-        //             OR disasterregion.regionId = $districtRegion 
-        //             OR disasterregion.regionId = $provincialRegion
-        //             OR disasterregion.regionId = 1);";
+        //             WHERE region.superRegion = $myRegion);";
 
 
             $result=$con->query($sql);
@@ -55,7 +56,7 @@
 
         <form>
             <fieldset class="BackgroundFS">
-                <h2>Disaster FUND </h2>
+                <h2>Disaster List </h2>
 
                 <fieldset class="tableBar">
                     <div class="tbleMargin">

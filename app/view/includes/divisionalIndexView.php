@@ -214,21 +214,24 @@ $res1=$result1->fetch_all(MYSQLI_ASSOC);
 // job type get for diagram
 foreach($res1 as $mydash){
 
-   if($mydash['job']=="Private"){
+   if($mydash['job']=="Private firm"){
       $privateCount++;
    }
-   if($mydash['job']=="Goverment"){
+   if($mydash['job']=="Government firm"){
       $governmentCount++;
    }
-   if($mydash['job']=="Retired"){
+   if($mydash['job']=="Government pension"){
       $retireCount++;
    }
-   if($mydash['job']=="SelfEmployee"){
+   if($mydash['job']=="Self employed"){
       $selfEmployeeCount++;
    }
-   if($mydash['job']=="Jobless"){
+   if($mydash['job']=="Unemployed"){
       $joblessCount++;
    }
+   // if($mydash['job']=="Self employed"){
+   //    $Selfemployed++;
+   // }
 }
 $_SESSION['privateCount']=$privateCount;
 
@@ -239,6 +242,7 @@ $_SESSION['selfEmployeeCount']=$selfEmployeeCount;
 $_SESSION['governmentCount']=$governmentCount;
 
 $_SESSION['JoblessCount']=$joblessCount;
+   
 
 // for get age variations
 foreach($res1 as $mydash)

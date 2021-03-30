@@ -29,9 +29,6 @@ switch($controller){
    <a href="/fadts/audit/ViewSearchPeople" class="dashboard sidebar_link">
       <span class="material-icons">person_search</span>Search People Data
    </a>
-   <a href="/fadts/audit/viewHistoryRecord" class="dashboard sidebar_link">
-      <span class="material-icons">find_in_page</span>View History Records
-   </a>
    <a href="/fadts/audit/ADhelpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>

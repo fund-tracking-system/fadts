@@ -447,6 +447,28 @@ $(function(){
 
 
 
+                $(function(){
+                    var $formUpdate = $("#fundRelease");
+                    if($formUpdate.length){
+                        $formUpdate.validate({
+                            rules: {
+                                otp: {
+                                    minlength:6,
+                                    maxlength:6
+                                }
+                            },
+                            messages: {
+                                minlength:"Length should be 6",
+                                maxlength:"Length should be 6"
+                                
+                            }
+                    });
+                    }
+                    });
+    
+
+
+
 
   jQuery.validator.addMethod("lettersonly", function(value, element) {
     return this.optional(element) || /^[a-z\s]+$/i.test(value);

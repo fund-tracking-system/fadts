@@ -10,7 +10,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                     $disasterId = $_GET['disasterId'];
                     $regionID = $_GET['regionId'];
                     $victims=0;
-                    echo    $regionID;
+                   // echo    $regionID;
 
                     $provincialRegion= $_SESSION['provincialRegion']; 
                     $districtRegion= $_SESSION['districtRegion'];   
@@ -21,7 +21,9 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
 
             // get disaster details
                     $officer_region=$_SESSION['region'];
-                    $sql="SELECT disaster.name ,disaster.type,disaster.date FROM disaster WhERE disasterId=$disasterId" ;
+                    $sql="SELECT disaster.name ,disaster.type,disaster.date 
+                    FROM disaster 
+                    WhERE disasterId=$disasterId" ;
                     $result=$con->query($sql);
                     $res=$result->fetch_all(MYSQLI_ASSOC); 
                 //     $_SESSION['fundList']=$res;
@@ -31,7 +33,16 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
 
             //get disaster victims details
 
-                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (person.region=$regionID or region.regionId=$provincialRegion or region.regionId=$districtRegion or region.regionId=1) and (victim.disasterId= $disasterId)";
+                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName 
+                    From victim 
+                    INNER join person 
+                    ON victim.personId=person.personId 
+                    Inner join region 
+                    On person.region=region.regionId 
+                    Where (person.region=$regionID 
+                    or region.regionId=$provincialRegion 
+                    or region.regionId=$districtRegion 
+                    or region.regionId=1) and (victim.disasterId= $disasterId)";
                     $result2=$con->query($sql2);
                     $res2=$result2->fetch_all(MYSQLI_ASSOC);
                     $_SESSION['victimadata']=$res2;
@@ -43,7 +54,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                     echo '<br>';
                     echo '<br>';
 
-            //store disaster datas
+            //store disaster details
                     foreach($res as $data)
                     {
                         $_SESSION['disasterName']=$data['name'];
