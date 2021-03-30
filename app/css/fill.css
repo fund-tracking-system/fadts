@@ -2124,7 +2124,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient( #f06067,#f397a1); */
-    background: rgb(248, 109, 120);
+    background: rgb(252, 101, 114);
     margin: 5px;
     grid-row: 3/4;
     grid-column: 4/6;
@@ -2139,7 +2139,7 @@ ul.tabs li.current {
 .box8 {
     border-radius: 5px;
     text-align: center;
-    background: #80cde2;
+    background: #6bd6f3;
     /* background-image: linear-gradient(#3c79e6,#85aff7); */
     margin: 5px;
     grid-row: 4/5;
