@@ -6,6 +6,7 @@
         <form method="post" id="formDisasterDetails">
             <fieldset class="BackgroundFS">
                 <h2> Disaster details</h2>
+                <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
 
                 </br>
                 </br>
@@ -44,6 +45,7 @@
 
 
                 <button class='btn btn-primary location'>View Select Disaster</button>
+                </fieldset>
             </fieldset>
 
 

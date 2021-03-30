@@ -21,7 +21,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
 
             // get disaster details
                     $officer_region=$_SESSION['region'];
-                    $sql="SELECT disaster.name ,disaster.type,disaster.date 
+                    $sql="SELECT disaster.name ,disaster.type,disaster.date
                     FROM disaster 
                     WhERE disasterId=$disasterId" ;
                     $result=$con->query($sql);
@@ -33,7 +33,8 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
 
             //get disaster victims details
 
-                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName 
+                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,
+                    person.name as name,person.address as address, person.phone as mobile ,region.name as regionName 
                     From victim 
                     INNER join person 
                     ON victim.personId=person.personId 
@@ -60,6 +61,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                         $_SESSION['disasterName']=$data['name'];
                         $_SESSION['disasterType']=$data['type'];
                         $_SESSION['disasterDate']=$data['date'];
+
                     }
 
 
