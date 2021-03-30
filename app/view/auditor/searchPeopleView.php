@@ -26,19 +26,19 @@
             <fieldset class="BackgroundFS">
                 <h2>Search By Criteria</h2>
 
-
-                <div>
+                <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
+                <div style="margin-left:50px;">
                     <label class="inputLable"><b>Age:</b></label>
                     <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
                             to</b></span>
-                    <input class="form-control InputTwo" name="age2"></input>
+                    <input class="form-control InputTwo" style="margin-left:660px;" name="age2"></input>
                 </div>
 
-                 <div class='form-row'>
+                 <div class='form-row' style="margin-left:50px;">
                     <label class="inputLable"><b>Job Type</br></label>
                     <label class="inputLable"></b></label>
 
-                    <select class="form-control Input" onclick="showCheckboxes() ">
+                    <select class="form-control Input" style="margin-left:345px;" onclick="showCheckboxes() ">
                         <!-- <option>Select an option</option> select kree mnwada kyla pennanna onna methana -->
                     </select>
                     <!-- <div class="overSelect"></div> - -->
@@ -64,14 +64,14 @@
 
 
 
-                <div style="  padding-top: 30px; ">
+                <div style="margin-left:50px;">
                     <label class="inputLable"><b>Prolonged</br>
                     </label>
                     <label class="inputLable">
                         Disorders/Diseases:</b></label>
 
                     <div class='radio1'>
-                        <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
+                        <input type="radio" style="margin-left:165px;" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
                         <label for="have-pro" class="radioHaveLable"></label><span><b>Have</b></span>
                     </div>
                     <div class='radio2'>
@@ -82,22 +82,22 @@
 
 
 
-                <div class="margn">
+                <div class="margn" style="margin-left:50px;">
                     <div>
                         <label class="inputLable"><b>Gross
                                 Income:</b></label>
                         <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
                             <b> to</b></span>
-                        <input class="form-control InputTwo" name="income2 "></input>
+                        <input class="form-control InputTwo"style="margin-left:660px;" name="income2 "></input>
                     </div>
                 </div>
 
 
-                <div class='form-row'>
+                <div class='form-row' style="margin-left:50px;">
                     <label class="inputLable"><b>Current Funds :</br></label>
                     <label class="inputLable"></b></label>
 
-                    <select class="form-control Input" onclick="showCheckboxesTwo() ">
+                    <select class="form-control Input" style="margin-left:345px;" onclick="showCheckboxesTwo() ">
                           <!-- <option>Select Option</option>  Select krapuwa peenna hadanna oona methana -->
                     </select>
                     <!-- <div id="overSelect"></div>  -->
@@ -124,7 +124,7 @@
                     <button type="submit" class=' btn btn-primary signlebtn' >Search
                         Here</button>
                 </div>
-
+                </fieldset>
             </fieldset>
         </form>
     </div>
