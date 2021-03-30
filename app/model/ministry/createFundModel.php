@@ -22,6 +22,9 @@
     $_SESSION['fund_amount'] = $_POST['amount']; 
     $_SESSION['fund_description'] = $_POST['description'];
     $_SESSION['fund_region'] = $_POST['region'];
+    // print_r ($_SESSION['fund_region']);
+    // exit();
+    
 
     //fetch income types and store in session variables
     $result = $con->query('SELECT * FROM incometype');

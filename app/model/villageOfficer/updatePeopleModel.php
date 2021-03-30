@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
-      header("Location:/fadts/village/updatePeople?error=db_conn_err");
+      header("Location:/fadts/village/updatePeople?error=db_conn_err1");
       exit();     
    }
    else{
@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
       }
       else{
          mysqli_close($con);
-         header("Location:/fadts/village/updatePeople?error=db_conn_err");
+         header("Location:/fadts/village/updatePeople?error=db_conn_err2");
          exit();
       }     
    }
