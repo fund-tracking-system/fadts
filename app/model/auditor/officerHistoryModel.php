@@ -106,6 +106,9 @@
 
         //close connection
         $con->close();
+
+        //store flag in session variables
+        $_SESSION['flag'] = 11;
         
         //redirecting to view
         header("Location:/fadts/audit/officerHistoryView"); 

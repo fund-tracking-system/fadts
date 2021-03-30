@@ -36,7 +36,7 @@
             }   
         ?>
 
-        <?php if (isset($_SESSION['query_results'])) { ?>                  
+        <?php if (isset($_SESSION['query_results']) && isset($_SESSION['flag']) && $_SESSION['flag']==11) { ?>                  
             <form>                
                 <fieldset class='BackgroundFS'>
                     <?php if (isset($_SESSION['query_results'])) { ?>
@@ -81,6 +81,11 @@
         <?php } ?>   
     </div>
 </div>
+
+<?php
+    //unset session variables
+    unset($_SESSION['flag']); 
+?>
 
 <script>
 $(document).ready(function() {
