@@ -33,7 +33,8 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
 
             //get disaster victims details
 
-                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName 
+                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,
+                    person.name as name,person.address as address, person.phone as mobile ,region.name as regionName 
                     From victim 
                     INNER join person 
                     ON victim.personId=person.personId 

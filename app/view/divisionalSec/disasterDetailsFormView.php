@@ -25,7 +25,11 @@
             region.regionId=disasterregion.regionId
             left join victim ON 
             victim.disasterId=disaster.disasterId           
-            WHERE (region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1)  ";
+            WHERE (region.superRegion=$myRegion 
+            or disasterregion.regionId=$myRegion
+             or disasterregion.regionId=$provincialRegion 
+             or disasterregion.regionId=$districtRegion 
+             or disasterregion.regionId=1)  ";
           
         //   $sql="SELECT disaster.disasterId, disaster.name,disaster.type,disaster.date 
         //   FROM disaster 

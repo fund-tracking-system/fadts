@@ -17,7 +17,7 @@
 
        }
 
-      $districtRegion= $_SESSION['districtRegion'];                   //  save district region to session varible
+     // $districtRegion= $_SESSION['districtRegion'];                   //  save district region to session varible
 
 
 
@@ -35,7 +35,7 @@
       }
 
 
-      $provincialRegion= $_SESSION['provincialRegion'];              // stor divisional region to session varible
+      $provincialRegion= $_SESSION['provincialRegion'];              // store divisional region to session varible
 
 
       
