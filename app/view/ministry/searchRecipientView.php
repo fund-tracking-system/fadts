@@ -146,6 +146,7 @@
    </div>
 </div>
 
+
 <script>
    $(document).ready(function() {
       $('#incomeType').select2();

@@ -61,7 +61,7 @@ require 'connection.php';
 				<h3 class="fontwhite" ><?php echo $_SESSION['totalDamege']?></h3>
 			</div>
 			<div class="box8">
-				<!-- <h1>Affected Area</h1> -->
+				<!-- <h1>Affected Area</h1> --> 
 				<h1 class="fontwhite"><?php echo  $_SESSION['regionName']?>  </h1>
 			</div>
 		</div>

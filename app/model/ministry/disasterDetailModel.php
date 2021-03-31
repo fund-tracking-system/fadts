@@ -35,7 +35,7 @@ if(isset($_GET['disasterId']))
 
 
 
-                    $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (person.region=$officer_region or region.regionId=$provincialRegion or region.regionId=$districtRegion or region.regionId=1 or region.regionId=$divisionRegion) and (victim.disasterId= $disasterId)";
+                    // $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (person.region=$officer_region or region.regionId=$provincialRegion or region.regionId=$districtRegion or region.regionId=1 or region.regionId=$divisionRegion) and (victim.disasterId= $disasterId)";
                     $sql2="SELECT victim.disasterId, victim.personId, victim.totalDamage,person.name as name,person.address as address, person.phone as mobile ,region.name as regionName From victim INNER join person ON victim.personId=person.personId Inner join region On person.region=region.regionId Where (victim.disasterId= $disasterId)";
 
                     $result2=$con->query($sql2);

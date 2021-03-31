@@ -55,7 +55,7 @@ require 'connection.php';
             </div>
             <div class="box67">
             <h1 class="fontwhite">Delivered Amount
-                <?php echo "--------> ";?>
+                <?php echo "- ";?>
                 <?php echo $_SESSION['fundDelivered'] ?> Persons</h1><br>
                
 			</div>
@@ -64,7 +64,7 @@ require 'connection.php';
 				<!-- <h1>Affected Area</h1> -->
                 <h1 class="fontwhite">
                 Undelivered amount
-                <?php echo "-----> ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons
+                <?php echo "- ";?><?php echo $_SESSION['fundUndelivered'] ?> Persons
                 </h1>
                 
 			</div>

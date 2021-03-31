@@ -4,12 +4,13 @@
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1">
 
+    <h2 style="margin-bottom:30px;"> DISASTER VICTIMS LIST</h2>
 
     <fieldset class="tableBar" style="margin-top:20px;">
                 <div class="tbleMargin">
+                <h2> <?php echo $_SESSION['disasterName'];?></h2>
 
 
-                <h2 style="margin-bottom:30px;"> DISASTER VICTIMS LIST</h2>
 
 
                     <table id="resultTable" class="display nowrap">
@@ -29,11 +30,11 @@
                                 <td><input type="hidden" name="fundid" style="margin-left:30%;"
                                         value='<?php echo $victim['name']?>'><?php echo $victim['name']?></input>
                                 </td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['address']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['regionName']?></B></td>
-                                <td><B style="margin-left:30%;"><?php echo $victim['mobile'] ?></B></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $victim['address']?></td>
+                                <td style="margin-left:30%;text-align: left;"><?php echo $victim['regionName']?></td>
+                                <td style="margin-left:30%;text-align: center;"> <?php echo $victim['mobile'] ?></td>
 
-								<td><B style="margin-left:30%;"><?php echo $victim['totalDamage'] ?></B></td>
+								<td style="margin-left:30%;text-align: center;"><?php echo $victim['totalDamage'] ?></td>
 
                                
                             </tr>

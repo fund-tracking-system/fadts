@@ -107,7 +107,10 @@
 
                 <li><a href="/fadts/calender/calender" class="nav_link"><B>Calender</B></a></li>
 
-                <li><a href="/fadts/includes/userProfile" class="nav_link"><B>Profile</B></a></li>
+                <li><a href="/fadts/includes/userProfile" class="nav_link"><B><?php echo $_SESSION['username']; ?></B></a></li>
+                
+                <li><a href="" class=""><B><?php echo $_SESSION['userrole']; ?></B></a></li>
+
 
                 <li><a class="log_button" href="/fadts/home/index" class="nav_link"><B>LOGOUT</B></a>
                 </li>
