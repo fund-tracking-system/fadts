@@ -146,10 +146,10 @@
    </div>
 </div>
 
-<?php 
+<!-- <?php 
     //unset flag from session variables
     unset($_SESSION['flag']); 
-?>
+?> -->
 
 
 <script>
