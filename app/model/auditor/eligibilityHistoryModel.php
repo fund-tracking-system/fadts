@@ -75,7 +75,6 @@
         else $editor = "";
         
         //build query
-        $query = 'SELECT predefinedFundId, personId, editor, updateTime FROM eligibilityhistory WHERE personId = ?';
         $query =   "SELECT predefinedFundId, personId, editor, updateTime
                     FROM eligibilityhistory"; 
 
