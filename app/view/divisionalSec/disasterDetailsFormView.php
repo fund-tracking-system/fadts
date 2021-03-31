@@ -32,7 +32,11 @@
             region.regionId=disasterregion.regionId 
             inner join victim ON 
             victim.disasterId=disaster.disasterId
-            WHERE region.superRegion=$myRegion or disasterregion.regionId=$myRegion or disasterregion.regionId=$provincialRegion or disasterregion.regionId=$districtRegion or disasterregion.regionId=1  ";
+            WHERE region.superRegion=$myRegion 
+            or disasterregion.regionId=$myRegion
+             or disasterregion.regionId=$provincialRegion 
+             or disasterregion.regionId=$districtRegion 
+             or disasterregion.regionId=1  ";
             
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 

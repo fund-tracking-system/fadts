@@ -27,7 +27,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                     $result=$con->query($sql);
                     $res=$result->fetch_all(MYSQLI_ASSOC); 
                 //     $_SESSION['fundList']=$res;
-                    var_dump($res);
+//                    var_dump($res);
 
 
 
@@ -50,7 +50,7 @@ if(isset($_GET['disasterId'])||isset($_GET['regionId']) )
                     echo '<br>';
                     echo '<br>';
                     echo '<br>';
-                    var_dump($res2);
+             //       var_dump($res2);
                     echo '<br>';
                     echo '<br>';
                     echo '<br>';

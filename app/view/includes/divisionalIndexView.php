@@ -91,7 +91,15 @@ $olders=0;
 
 
 
-$sql4="SELECT region.name,amountPerPerson,publishedTime from fund   inner join recipient ON recipient.fundId=fund.fundId inner join person ON person.personId=recipient.personId  inner join region ON person.region=region.regionId where region.superRegion=$myRegion";
+$sql4="SELECT region.name,amountPerPerson,publishedTime 
+from fund   
+inner join recipient 
+ON recipient.fundId=fund.fundId 
+inner join person 
+ON person.personId=recipient.personId  
+inner join region 
+ON person.region=region.regionId 
+where region.superRegion=$myRegion";
 $results=$con->query($sql4);
 $resl=$results->fetch_all(MYSQLI_ASSOC);
 
@@ -111,6 +119,7 @@ $dec=0;
 
 
 $today=date("y-m-d");
+$today;
 $year = date("y",strtotime($today));
 
 foreach($resl as  $data){
@@ -206,7 +215,10 @@ foreach($resl as  $data){
 
 
 //select district Region  
-$sql1="SELECT * From person Inner join  region ON region.regionId=person.region Where region.superRegion=$myRegion";
+$sql1="SELECT * From person 
+Inner join  region 
+ON region.regionId=person.region
+Where region.superRegion=$myRegion";
 $result1=$con->query($sql1);
 $res1=$result1->fetch_all(MYSQLI_ASSOC);
 
@@ -346,8 +358,15 @@ $_SESSION['olders']=$olders;
          </div>
          <div id="calendar_events" >
             <?php 
-            echo '<h3>' .$_SESSION['userrole']. '<h3>'; ?>
-            <h3 class="colorEve">Your Events</h3>
+            $user=$_SESSION['userrole'];
+            $user1="Divisional Secretariat";
+            if($user=='divisionalsec')
+            {
+               echo '<h7>' .$user1. '<h7>';
+            }
+
+            //echo '<h3>' .$_SESSION['userrole']. '<h3>'; ?>
+            <h3 class="colorEve">Upcoming Events</h3>
            
             <?php
 
@@ -356,7 +375,7 @@ $_SESSION['olders']=$olders;
                $sql="SELECT title,start_event FROM events WHERE events.userid=$userid ";
                $res=$con->query($sql);
                $rgn=$res->fetch_all(MYSQLI_ASSOC); 
-               $event="You Have No Event";
+               $event="You Have No Events";
                if($rgn==NULL){
                   print ' <h6> ' . $event . ' </h6>';
                }
@@ -364,9 +383,16 @@ $_SESSION['olders']=$olders;
                   foreach ($rgn as $key ) {
                      $_SESSION['title']=$key['title'];
                      $_SESSION['start_event']=$key['start_event'];
-                     print ' <h6> ' . $key['start_event'] . ' </h6>';
-                     print ' <h6> ' . $key['title'] . ' </h6>';
-                     // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
+                     $today=date("y-m-d");
+                     if($today<$key['start_event']){
+                        print ' <h6> ' . $key['start_event'] . ' </h6>';
+                        print ' <h6> ' . $key['title'] . ' </h6>';
+                        // print" <h3 style='color: black;'>'.$_SESSION['title'].'</h3>";
+                     }
+                     else{
+                        print ' <h6> ' . $event . ' </h6>';
+                     }
+                    
                   } 
                  
 
