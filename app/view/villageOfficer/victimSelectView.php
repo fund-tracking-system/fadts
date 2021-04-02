@@ -7,7 +7,7 @@
          unset($_SESSION['results']);
       } 
       if(isset($_GET['disasterId'])){
-         $disasterId = $_GET['disasterId'];
+         $_SESSION['dId'] = $_GET['disasterId'];         
       }       
 ?>
 
@@ -16,7 +16,7 @@
    <div class="SearchByCriteriaform1">
 
       <form method="post" name="nicSearch" action="/fadts/village/nicSearchModel?view=victimSelect"
-         id="fundReleaseSearch">
+         id="victimSearch">
 
          <fieldset class="BackgroundFS">
 
@@ -84,7 +84,7 @@
                </div>
 
                <div><input name="personId" value="<?php echo $result['personId'] ?>" type="hidden"></input></div>
-               <div><input name="disasterId" value="<?php echo $result['disasterId'] ?>" type="hidden"></input></div>
+               <div><input name="disasterId" value="<?php echo $_SESSION['dId'] ?>" type="hidden"></input></div>
 
                <div class="form-row">
                   <label for="total-damage" class="inputLable" ><b>Total Damage (Rs.):</b></label>
@@ -101,8 +101,8 @@
                   <textarea class="form-control Input txtWidth" id="description" name="description">  </textarea>
                </div>
 
-               <div class="Twobtn">
-                  <button type="submit" name="submit" class="btn btn-primary" >Confirm and Add</button>
+               <div class="Twobtns">
+                  <button type="submit" name="submit" class="btn btn-primary">Confirm and Add</button>
                </div>
             
             </fieldset>

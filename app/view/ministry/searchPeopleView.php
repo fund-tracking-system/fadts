@@ -7,13 +7,13 @@
 
 
 
-      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="form">
-         <fieldset class="BackgroundFS">
+      <form method="post" action="/fadts/village/nicSearchModel?view=searchPeople" id="formSearch1">
+      <fieldset class="BackgroundFS">
             <h2>SEARCH BY NIC</h2>
             <fieldset class="searchBar">
                <div class="form-row ">
-                  <label for="NID-number" class="searchBarLable"><b>NIC Number:</b></label>
-                  <input style="margin-left:90px; width:450px;" class="form-control searchInput" id="NID-number"
+                  <label for="NID-number" class="searchBarLable"><b>NIC Number :</b></label>
+                  <input  class="form-control searchInput" id="NID-number" placeholder="Type Nice here"
                      name="NID"></input>
                   <button type="submit" class="btn btn-primary btnNav ">Search</button>
                </div>
@@ -22,87 +22,110 @@
       </form>
 
 
-      <form method="post" id="form">
+      <form method="post" id="formSearch2">
          <fieldset class="BackgroundFS">
             <h2>SEARCH BY CRITERIA</h2>
 
             <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
-               <div>
+            <?php 
+               if(isset($_GET['searcherror'])){
+         
+                  $error = $_GET['searcherror'];
+                  if($error == "db_conn_err"){
+                     echo '<div class="alert alert-danger" role="alert">Database connection error! Please try again</div>';
+                  }
+                  if($error == "wrong_region"){
+                     echo '<div class="alert alert-danger" role="alert">You can\'t view other regions data!</div>';
+                  }
+                  if($error == "wrong_nid_or_dead"){
+                     echo '<div class="alert alert-danger" role="alert">This NIC is wrong or this person does not exist!</div>';
+                  }
+                  if($error == "no_records"){
+                     echo '<div class="alert alert-danger" role="alert">No records found!</div>';
+                  }        
+               }    
+            ?>
+
+               <div  style="margin-left:50px;">
                   <label class="inputLable"><b>Age:</b></label>
-                  <input class="form-control InputOne" name="age1"></input><span class="inputLable LableTwo"> <b>
-                        to</b></span>
-                  <input class="form-control InputTwo" name="age2"></input>
+                  <input class="form-control InputOne" value=18 name="ageStart"></input>
+                  <span class="inputLable LableTwo"><b>to</b></span>
+                  <input class="form-control InputTwo"style="margin-left:810px;" value=80 name="ageEnd"></input>
                </div>
 
-               <div class="form-row">
-                  <label class="inputLable" for="job type" style="margin-right:12.1%;"><b>Income Type :</b></label>
-                  <select class="js-example-responsive" multiple="multiple"
-                     style="position:sticky;top:60px;overflow:scroll; padding-right:501px;  " id="job" name="job">
-                     <option value="government">Government</option>
-                     <option value="private">Private</option>
-                     <option value="retired">Retired</option>
-                     <option value="business_owner">Business owner</option>
-                     <option value="self_employeed">Self employeed</option>
-                     <option value="jobless">Jobless</option>
-                  </select>
-               </div>
-
-               <div style="  padding-top: 30px; ">
-                  <label class="inputLable"><b>Prolonged</br></label>
-                  <label class="inputLable" style="margin-right:3.5%;">Disorders/Diseases:</b></label>
-
-                  <div class='radio1'>
-                     <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
-                     <label for="have-pro" class="radioHaveLable"></label><span><b>Have</b></span>
-                  </div>
-                  <div class='radio2'>
-                     <input type="radio" id="no-pro" name="prolonged" value="no">
-                     <label for="no-pro" class="radioLbl2"></label><span><b>No</b></span>
-                  </div>
-               </div>
-               <div style="  padding-top: 30px; ">
-                  </br>
-
-                  <label class="inputLable" style="margin-right:9%;"><b>
-                        Civil Status :</b></label>
-
-                  <div class='radio1'>
-                     <input type="radio" id="have-pro" name="prolonged" value="have" class="radioHaveInput">
-                     <label for="have-pro" class="radioHaveLable"></label><span><b>Married</b></span>
-                  </div>
-                  <div class='radio2'>
-                     <input type="radio" id="no-pro" name="prolonged" value="no">
-                     <label for="no-pro" class="radioLbl2"></label><span><b>Unmarried</b></span>
-                  </div>
-               </div>
-
-               <div class="margn">
-
-                  <label class="inputLable"><b>Gross Income:</b></label>
-                  <input class="form-control InputOne" ame="income1"></input><span class="inputLable LableTwo">
-                     <b> to</b></span>
-                  <input class="form-control InputTwo" name="income2 "></input>
-
-               </div>
 
                
-               <div class='form-row'>
-                  <label class="inputLable" style="margin-right:11%;"><b>Current Funds :</br>
-                  </label>
-                  <select class="js-example-responsive" multiple="multiple"
-                     style='position:sticky;top:60px;overflow:scroll; padding-right:470px;' id="funds" name="funds">
-                     <option value="government">Samurdhi</option>
-                     <option value="private">Samurdhi Eligible List</option>
-                     <option value="retired">Adults Fund</option>
-                     <option value="business_owner">Mahapola</option>
-                     <option value="self_employeed">Other Gov Funds</option>
-                  </select>
+               <div style="margin-left:50px;">
+                  <label class="inputLable"><b>Gross Income (Rs):</b></label>
+                  <input class="form-control InputOne" name="incomeStart" value=0></input>
+                  <span class="inputLable LableTwo"><b>to</b></span>
+                  <input class="form-control InputTwo"style="margin-left:810px;" name="incomeEnd" value=1000000></input>
                </div>
 
 
-               <div class='button ' style="margin-top:30px;">
 
-                  <button type="submit" class=' btn btn-primary signlebtn'>Search
+               <div class="form-row" style="margin-left:50px;">
+                  <label class="inputLable" for="disorder"><b> Disorder/Disease :</b></label>
+                  <select class="form-control Input" style="width:605px;margin-right:10px;" id="disorder" name="disorder">
+                     <option value="" selected>Not select</option>
+                     <option value="no">Without Disorder/Diease</option>
+                     <option value="yes">With Disorder/Diease</option>
+                  </select>
+               </div>
+
+               <div class="form-row"style="margin-left:50px;">
+                  <label class="inputLable" for="CivilStatus"><b>Civil Status :</b></label>
+                  <select class="form-control Input" id="civilStatus"style="width:605px;margin-right:10px;margin-left:250px;" name="civilStatus">
+                     <option value="" selected>Not select</option>
+                     <option value="0">Unmarried</option>
+                     <option value="1">Married</option>
+                  </select>
+               </div>
+
+              
+ 
+
+               <div class='form-row'style="margin-left:50px;">
+                  <label class="inputLable" style="margin-right:21%;"><b>Current Funds :</br>
+                  </label>
+                  <select class="js-example-responsive" multiple="multiple"
+                     style='top:60px; overflow:scroll;width:600px; ' id="funds" name="funds[]">
+
+                     <?php 
+                     foreach($_SESSION['fundList'] as $fund){ ?>
+
+                     <option value="<?php echo $fund['Id']?>"><?php echo $fund['name']?></option>
+
+                     <?php    } 
+                     unset($_SESSION['fundList']); ?>
+
+                  </select>
+               </div>
+               <input hidden disabled></input>
+
+
+               <div class='form-row' style="margin-top:50px;margin-left:50px;">
+                  <label class="inputLable" for="incomeType" style="margin-right:19%; margin-bottom:6%"><b>Income Type / (s) :
+                  </label>
+                  <select class="js-example-responsive" multiple="multiple"
+                     style='top:60px; overflow:scroll;width:600px; ' id="incomeType" name="incomeType[]">
+
+                     <?php 
+                     foreach($_SESSION['incomeTypes'] as $incomeType){ ?>
+
+                     <option value="<?php echo $incomeType['id']?>"><?php echo $incomeType['type']?></option>
+
+                     <?php    } 
+                     unset($_SESSION['incomeTypes']); ?>
+
+                  </select>
+               </div>
+               <input hidden disabled></input>
+
+
+               <div class='Twobtns ' style="margin-top:30px;margin-bottom:30px; margin-left:590px;">
+
+                  <button type="submit" name="submit" class='btn btn-primary '>Search
                      Here</button>
                </div>
 

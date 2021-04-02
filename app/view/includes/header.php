@@ -31,10 +31,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>	 -->
 
-    <!-- <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
-   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script> -->
+   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+   <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/main.css">
     <link rel="stylesheet" type="text/css" href="/fadts/app/css/fill.css">
+
+   <!-- textarea text editor -->
+    <script src="https://cdn.tiny.cloud/1/mlextyq52qostbbcmfsxoy8483ratikid6t7l2ifwdkkfeyg/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -103,10 +106,11 @@
                 <li><a href="/fadts/includes/index" class="nav_link"><B>Home</B></a></li>
 
                 <li><a href="/fadts/calender/calender" class="nav_link"><B>Calender</B></a></li>
-               
-   
 
-                <li><a href="/fadts/includes/userProfile" class="nav_link"><B>Profile</B></a></li>
+                <li><a href="/fadts/includes/userProfile" class="nav_link"><B><?php echo $_SESSION['username']; ?></B></a></li>
+                
+                <li><a href="" class=""><B><?php echo $_SESSION['userrole']; ?></B></a></li>
+
 
                 <li><a class="log_button" href="/fadts/home/index" class="nav_link"><B>LOGOUT</B></a>
                 </li>

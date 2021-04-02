@@ -47,35 +47,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-panel-main">
-                            <div id="Basic-detail" class="tab-content current">
-                                <div class="bio-box">
-                                    
-                                    <div class="desc"><strong><?php echo $_SESSION['username']?> Golluwamula Opatha ganegoda Elpitye 5
-                                            family member and age 43
-                                            how many child areas he controll . like that we can data from
-                                            database<strong>
-                                    </div>
-                                </div>
-                                <div class="detail-box">
-                                    <p>Detail</p>
-                                    <ul class="ul-first">
-                                        <li>Birth date</li>
-                                        <li>City</li>
-                                        <li>Country</li>
-                                        <li>Contact No</li>
-                                    </ul>
-                                    <ul class="ul-second">
-                                        <li>07 October1997</li>
-                                        <li>Elpitye</li>
-                                        <li>Srilanka</li>
-                                        <li>0712562583</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-                        </div>
+                        
 
                     </div>
                     <div style="clear: both;"></div>

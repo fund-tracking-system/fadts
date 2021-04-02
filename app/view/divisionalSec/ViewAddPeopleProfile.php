@@ -59,12 +59,15 @@
                                 <li>Birth date--></li>
                                 <li>Civil Status--></li>
                                 <li>Birth CN--></li>
+                                <li>Address--></li>
 
                             </ul>
                             <ul class="ul-second"><B>
                                 <li><?php echo $_SESSION['people_b_date']?></li>
                                 <li><?php echo "0".$_SESSION['people_civilStatus']?></li>
                                 <li><?php echo "0".$_SESSION['people_b_certifi']?></B>
+                                <li><?php echo $_SESSION['people_address']?></li>
+
 
                             </ul>
                         </div>

@@ -7,14 +7,12 @@ if(isset($_POST['submit'])){
 
    require 'connection.php';   // database connection file calling
 
-   //include CONN."connection.php";
-
    $currentpwd = $_POST['currentpwd'];
-   $newpwd = $_POST['newpwd'];
-   $againpwd = $_POST['againpwd'];
+   $newpwd = $_POST['newpassword'];
+   $againpwd = $_POST['againpassword'];
 
 
-   $sql = "SELECT * FROM user WHERE password=? and email=?";
+   $sql = "SELECT * FROM user WHERE email=?";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -22,13 +20,13 @@ if(isset($_POST['submit'])){
       exit();     
    }
    else{
-      mysqli_stmt_bind_param($stmt,"ss",$currentpwd,$email);
+      mysqli_stmt_bind_param($stmt,"s",$email);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
 
       if($row = mysqli_fetch_assoc($result)){
 
-         if($currentpwd != $row['password']){
+         if(!password_verify($currentpwd, $row['password'])){
             header("Location:/fadts/includes/userProfile?error=wrong_crrpwd");
             exit();  
          }
@@ -39,7 +37,7 @@ if(isset($_POST['submit'])){
                exit();
             }
 
-            $sql = "UPDATE user SET password = ? WHERE password=? and email=?";
+            $sql = "UPDATE user SET password = ? WHERE email=?";
             $stmt = mysqli_stmt_init($con);
 
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -47,7 +45,9 @@ if(isset($_POST['submit'])){
                exit();     
             }
             else{
-               mysqli_stmt_bind_param($stmt,"sss",$newpwd,$currentpwd,$email);
+               $newpwdhashed = password_hash($newpwd,PASSWORD_DEFAULT);
+
+               mysqli_stmt_bind_param($stmt,"ss",$newpwdhashed,$email);
 
                if(mysqli_stmt_execute($stmt)){
                   header("Location:/fadts/includes/userProfile?error=success");

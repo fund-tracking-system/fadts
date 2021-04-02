@@ -64,18 +64,13 @@
                }   
             ?>
 
-
+ 
                <div class="form-row">
-                  <label for="name " class="inputLable"><b>Full Name :</b></label>
+                  <label for="name " class="inputLable"  ><b>Full Name :</b></label>
                   <input class="form-control Input" id="name" name="name" readonly
                      value="<?php echo isset($result) ? $result['name']:"" ?>"></input>
                </div>
 
-               <div class="form-row">
-                  <label for="address" class="inputLable"><b>Address :</b></label>
-                  <input class="form-control Input" id="address" name="address" 
-                     value="<?php echo isset($result) ? $result['address']:"" ?>"></input>
-               </div>
 
                <div class="form-row">
                   <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
@@ -84,7 +79,7 @@
                </div>
 
                <div class="form-row" style="margin-bottom:50px;">
-                    <label for="tnid" class="inputLable" style="margin-right:140px;"><b>Family Head :</b></label>
+                    <label for="tnid" class="inputLable" style="margin-right:240px;"><b>Family Head :</b></label>
 
                     <?php
                         require 'connection.php'; 
@@ -94,7 +89,7 @@
                         $ress=$rgnRess->fetch_all(MYSQLI_ASSOC);                           
                     ?>
                     <select  class='js-example-responsive' name='headOfFamily' id='headOfFamily'
-                            style="position:sticky; top:60px; overflow:scroll; width:530px;" >
+                            style="position:sticky; top:60px; overflow:scroll; width:550px;margin-left:900px;" >
 
                         <option value="<?php echo isset($result) ? $result['personId'] : ""?>" hidden selected><?php echo isset($result) ? $result['nid'] : ""?>
                         </option>
@@ -183,7 +178,15 @@
                   </select>
                </div>
 
-               <div class="Twobtn">
+
+               
+               <div class="form-row">
+                  <label for="address" class="inputLable"><b>Address :</b></label>
+                  <textarea class="form-control Input txtWidth" id="address" name="address" 
+                     value=""><?php echo isset($result) ? $result['address']:"" ?> </textarea>
+               </div>
+
+               <div class="Twobtns">
                   <button type="submit" name="submit" class="btn btn-primary" 
                   <?php echo isset($result)? "":"disabled" ?> >Confirm and Update</button>
 

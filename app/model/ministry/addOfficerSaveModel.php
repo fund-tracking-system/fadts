@@ -37,7 +37,7 @@
     }
 
     //default password is set initially
-    $password = "123456";
+    $password = password_hash("123456", PASSWORD_DEFAULT);
 
     //execute prepared statement
     $stmt->execute();
@@ -56,6 +56,6 @@
     unset($_SESSION['officer_loginStatus']);  
     
     //redirecting to view
-    header("Location:/fadts/ministry/addOfficerView"); 
+    header("Location:/fadts/ministry/addOfficerView?result=success"); 
     exit(); 
 ?>

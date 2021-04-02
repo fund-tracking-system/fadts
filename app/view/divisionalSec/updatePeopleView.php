@@ -14,7 +14,7 @@
    <div class="SearchByCriteriaform1">
 
 
-      <form method="post" action="/fadts/divisional/nicSearchModel?view=updatePeople" >
+      <form method="post" id="formUpdatenid" action="/fadts/divisional/nicSearchModel?view=updatePeople" >
          <fieldset class="BackgroundFS">
             <h2>UPDATE PEOPLE DATA</h2>
             <fieldset class="searchBar">
@@ -78,11 +78,8 @@
 
 
 
-               <div class="form-row">
-                  <label for="Address" class="inputLable"><b>Address :</b></label>
-                  <input class="form-control Input" id="address" name="address"
-                     value="<?php echo isset($result) ? $result['address']:"" ?>"></input>
-               </div>
+               
+               
 
 
                <div class="form-row">
@@ -129,7 +126,7 @@
                   $_SESSION['region_result']=$res;  //for assign region  ?>
 
                   <select id='region' class='form-control Input'  name='region' id='region'
-                     style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
+                  style='position:sticky;top:60px;overflow:scroll;  width:544px; '>
                      <option value="<?php echo isset($result) ? $result['region']:"" ?>" selected hidden>
                         <?php echo  isset($personRegion) ? $personRegion['name']:"" ?>
                      </option>
@@ -193,7 +190,14 @@
                   </select>
                </div>
 
-               <div class="Twobtn">
+
+               <div class="form-row">
+                  <label for="name " class="inputLable"><b>Adrress :</b></label>
+                  <textarea class="form-control Input txtWidth"  id="address" name="address"><?php echo isset($result) ? $result['address']:"" ?></textarea>
+               </div>
+
+
+               <div class="Twobtns">
                   <button type="submit" name="submit" class="btn btn-primary"
                   <?php echo isset($result)? "":"disabled" ?>>Confirm and Update</button>
 

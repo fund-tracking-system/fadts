@@ -3,9 +3,10 @@
 
 <div class="all_bacground_clor">
     <div class="SearchByCriteriaform1 ">
-        <form method="post" id="form">
+        <form method="post" id="formDisasterDetails">
             <fieldset class="BackgroundFS">
                 <h2> Disaster details</h2>
+                <fieldset class="searchBar" style=" padding:0%;padding-top:3%;">
 
                 </br>
                 </br>
@@ -13,7 +14,7 @@
                 <div class="form-row">
                     <label for="select-disaster" class="detailsLable"><b>Select
                             Disaster:</b></label>
-                    <select name="select-disaster" id="select-disaster" class="form-control inputDetails"
+                    <select name="select_disaster" id="select-disaster" class="form-control inputDetails"
                         name="disaster">
                         <option value="Flood" name="Flood">Flood</option>
                         <option value="LandSlide" name="LandSlide">Nayayema</option>
@@ -34,7 +35,7 @@
                 <div class="form-row">
                     <label for="select-region" class="detailsLable"><b>Select
                             Region:</b></label>
-                    <select name="select-region" id="select-region" class="form-control inputDetails" name="region">
+                    <select name="select-region" id="select-region" class="form-control inputDetails" name="select_region">
                         <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
@@ -44,6 +45,7 @@
 
 
                 <button class='btn btn-primary location'>View Select Disaster</button>
+                </fieldset>
             </fieldset>
 
 

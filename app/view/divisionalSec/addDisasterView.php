@@ -32,7 +32,7 @@
                      <option value="Tonado">Tonado </option>
                      <option value="Earthquake">Earthquake </option>
                      <option value="Drought">Drought</option>
-                  </select>
+                  </select> 
                </div>
 
 
@@ -52,23 +52,22 @@
                <div class="form-row" style="margin-bottom:50px;">
 
                   <label for="tnid" class="inputLable" style="margin-right:285px;"><b>Region :</b></label>
-                  <?php
+                  <?php 
 
                   require 'connection.php'; 
                                  
-                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 ";
-                  $rgnRes=$con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
+                  $rgn="SELECT level, regionid, superRegion,name  FROM region  WHERE level=4 "; //create query
+                  $rgnRes=$con->query($rgn) ;     //get result
+                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);  //fetch data
                   
                   $_SESSION['region_result']=$res;  //for assign region  ?>
 
-                  <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
+                  <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:540px;'>
                   <?php 
                   foreach($res as $data){
                      if($data['superRegion']==$_SESSION['region']){
                         // echo "<option value='$data['regionid']'>colombo</option>";
                         echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-
                      }
                   }
                   ?>
@@ -81,15 +80,20 @@
                
 
                <div class="form-row">
-                  <label for="description" class="inputLable"><b>Description:</b></label>
-                  <textarea class="form-control Input txtWidth " id="description" name="description">  </textarea>
+                  <label for="description" class="inputLable" ><b>Description:</b></label>
+                  <textarea class="form-control Input txtWidth "   id="description" name="description" >  </textarea>
+
                </div>
+
 
                <!-- <div class='button '> -->
 
-               <button type="submit" id="submit" name="submit" class='btn btn-primary signlebtn'>Add Disaster
-               </button>
+               <button type="submit" id="submit" name="submit" class='btn btn-primary signlebtn'>Add Disaster</button>
                <!-- </div> -->
+
+
+
+
 
 
             </fieldset>
@@ -106,5 +110,20 @@ $(document).ready(function() {
    $('#region').select2();
 });
 </script>
+
+<!-- text area -->
+<!-- <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+   });
+  </script> -->
+
+
+
+
+
+
 
 <?php include VIEW.'includes/footer.php' ?>

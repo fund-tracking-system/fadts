@@ -29,10 +29,7 @@ switch($controller){
    <a href="/fadts/audit/ViewSearchPeople" class="dashboard sidebar_link">
       <span class="material-icons">person_search</span>Search People Data
    </a>
-   <a href="/fadts/audit/viewHistoryRecord" class="dashboard sidebar_link">
-      <span class="material-icons">find_in_page</span>View History Records
-   </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/audit/ADhelpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
@@ -70,7 +67,7 @@ switch($controller){
    <a href="/fadts/divisional/ViewDisasterDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/divisional/DShelpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
@@ -90,19 +87,22 @@ switch($controller){
    <!-- <a href="#" class="dashboard sidebar_link">
       <span class="material-icons">home</span>Home
    </a> -->
+   <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
+      <span class="material-icons">person_search</span>View Officer
+   </a>
    <a href="/fadts/ministry/addOfficerView" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Officer
    </a>
-   <a href="/fadts/ministry/updateOfficerView" class="dashboard sidebar_link">
-      <span class="material-icons">person</span>Update Officer
-   </a>
-   <a href="/fadts/ministry/ViewCreateFund" class="dashboard sidebar_link">
-      <span class="material-icons">create_new_folder</span>Create Fund
-   </a>
-   <a href="/fadts/ministry/viewFund" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/loadFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
    </a>
-   <a href="/fadts/ministry/viewAdddPeopleToFundElighibleList" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/createFundView" class="dashboard sidebar_link">
+      <span class="material-icons">create_new_folder</span>Create Fund
+   </a>   
+   <a href="/fadts/ministry/viewEligibilityView" class="dashboard sidebar_link">
+      <span class="material-icons">menu_book</span>View Eligibility
+   </a>
+   <a href="/fadts/ministry/addToEligibilityFundView" class="dashboard sidebar_link">
       <span class="material-icons">group_add</span>Add To Eligibility
    </a>   
    <a href="/fadts/ministry/searchPeople" class="dashboard sidebar_link">
@@ -111,10 +111,10 @@ switch($controller){
    <a href="/fadts/ministry/addDisaster" class="dashboard sidebar_link">
       <span class="material-icons">create_new_folder</span>Add New Disaster
    </a>
-   <a href="/fadts/ministry/ViewDisasterDetails" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/loadDisasterDetailsModel" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
-   <a href="#" class="dashboard sidebar_link">
+   <a href="/fadts/ministry/MShelpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
@@ -140,13 +140,13 @@ switch($controller){
    <a href="/fadts/village/updatePeople" class="dashboard sidebar_link">
       <span class="material-icons">person</span>Update People Data
    </a>
-   <a href="/fadts/village/searchPeople" class="dashboard sidebar_link">
+   <a href="/fadts/village/searchViewLoadModel" class="dashboard sidebar_link">
       <span class="material-icons">person_search</span>Search People Data
    </a>
-   <a href="/fadts/village/viewDisasterDetails" class="dashboard sidebar_link">
+   <a href="/fadts/village/loadDisasterDetailsModel" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Disaster Details
    </a>
-   <a href="/fadts/village/fundDetails" class="dashboard sidebar_link">
+   <a href="/fadts/village/loadFundDetails" class="dashboard sidebar_link">
       <span class="material-icons">menu_book</span>View Fund Details
    </a>   
    <a href="/fadts/village/fundRelease" class="dashboard sidebar_link">
@@ -155,8 +155,8 @@ switch($controller){
    <a href="/fadts/village/addDisasterVictim" class="dashboard sidebar_link">
       <span class="material-icons">person_add</span>Add Disaster Victims
    </a>
-   <a href="#" class="dashboard sidebar_link">
-      <span class="material-icons">help_center</span>Help
+   <a href="/fadts/village/helpview" class="dashboard sidebar_link">
+      <span class="material-icons">help_center</span>Help 
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
       <span class="material-icons">exit_to_app</span>Logout

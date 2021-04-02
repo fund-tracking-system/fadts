@@ -36,10 +36,7 @@
                   <input class="form-control Input" id='nid' name="nid"></input>
                </div>
 
-               <div class="form-row">
-                  <label for="name " class="inputLable"><b>Adrress :</b></label>
-                  <input class="form-control Input" id="address" name="address"></input>
-               </div>
+               
 
                <div class="form-row">
                   <label for="birth-date" class="inputLable"><b>Birth Date :</b></label>
@@ -56,12 +53,13 @@
                <div class="form-row">
                   <label for="jobtype" class="inputLable"><b>Income Type :</b></label>
                   <select class="form-control Input" name="jobType" id="jobType">
-                     <option value="" disabled selected>Select job type</option>
-                     <option value="Goverment">Goverment</option>
-                     <option value="Private">Private</option>
-                     <option value="Retired">Government pension</option>
-                     <option value="SelfEmployee">SelfEmployee</option>
-                     <option value="Jobless">Jobless</option>
+                  <?php 
+                     foreach($_SESSION['incomeTypes'] as $incomeType){ ?>
+
+                     <option value="<?php echo $incomeType['type']?>"><?php echo $incomeType['type']?></option>
+
+                     <?php    } 
+                ?>
 
                   </select>
                </div>
@@ -102,7 +100,7 @@
                      style='position:sticky;top:60px;overflow:scroll;  width:544px; '>
                      <option value="" disabled selected>Select region</option>
                      <?php 
-                              foreach($res as $data){
+                              foreach($res as $data){ 
                                 echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
                               }
                            ?>
@@ -125,7 +123,17 @@
                   <input class="form-control Input" id='phonenumber2' name="phoneNumber2" type="number"></input>
                </div>
 
-               <div class="Twobtn">
+               <div class="form-row">
+                  <label for="name " class="inputLable"><b>Adrress :</b></label>
+                  <textarea class="form-control Input txtWidth  id="address" name="address"></textarea>
+               </div>
+
+
+
+
+
+
+               <div class="Twobtns">
                   <button type="submit" class="btn btn-primary">Confirm and Submit</button>
                </div>
 

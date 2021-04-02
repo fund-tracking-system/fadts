@@ -37,9 +37,8 @@
 
                             <tbody>
                                 <?php foreach($_SESSION['disasterList'] as $disaster){ ?>
-                                <tr>
-                                    <td><input type="hidden" name="disasterId" style="margin-left:30%;"
-                                            value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
+                                 <tr>
+                                    <td><B style="margin-left:30%;"><?php echo $disaster['type']?></B></input>
                                     </td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>

@@ -39,20 +39,19 @@
         <form>
             <fieldset class="BackgroundFS">
 
-                <fieldset class="userpro">
-                    <h2> Search Manually Defined Funds </h2>
-                    </br>
-                    </br>
+               <h2> Search Manually Defined Funds </h2>
+                   
+                    <fieldset class="searchBar">
 
 
-                    <div class="form-row">
+                    <div class="form-row"  style="margin-left:50px;">
                         <label for="FundName" class="inputLable"><b>Fund
                                 Name:</b></label>
                         <input class="form-control Input" id="fundName" name="fundName" required></input>
 
                     </div>
 
-                    <div class="form-row ">
+                    <div class="form-row "  style="margin-left:50px;">
                         <label for="fundType" class="inputLable"><b>Fund
                                 Type:</b></label>
                         <select class="form-control Input" name="Fund" id="Fund" name="fund">
@@ -62,7 +61,7 @@
                         </select>
                     </div>
 
-                    <div class="form-row">
+                    <div class="form-row"  style="margin-left:50px;">
                         <label for="date" class="inputLable"><b>Disaster
                                 Date:</b></label>
                         <input placeholder="YYYY/MM/DD" class="form-control Input" nameid='date' name="date"

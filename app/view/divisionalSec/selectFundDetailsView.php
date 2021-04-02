@@ -16,7 +16,10 @@
                         <h2 style="margin-bottom:30px;"> FUND DETAILS ANALISYS</h2>
 
                         
+
 				<h2><?php echo  $_SESSION['SelectFundName'];?></h2>
+
+                <h3><a href="/fadts/divisional/recipeintView">Reecipient List</a></h3>
 				
                        
 
@@ -161,6 +164,72 @@
 
 
 
+                <fieldset class="tableBar">
+                <div class="tbleMargin">
+
+
+                    <table id="resultTable" class="display nowrap">
+                        <thead>
+                            <tr>
+                                <th><B>Reecipient </B></th>
+                                <th><B>Address</B></th>
+                                <th><B>Region</B></th>
+                                <th><B>Phone Number</B></th>
+                                <th><B>Diliver Status</B></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach($_SESSION['selectFundDetails'] as $fund){                              
+                         ?>
+                            <tr>
+                                <!-- <td><input type="hidden" name="fundid" style="margin-left:30%;"
+                                        value='
+                                        <?php //echo $fund['fundId']?>'>
+                                        <?php// echo $fund['name']?>
+                                        </input>
+                                </td> -->
+                                <td><B style="margin-left:30%;"><?php echo $fund['address']?></B></td>
+                                <td><B style="margin-left:30%;"><?php echo $fund['regionName']?></B></td>
+                                <td><B style="margin-left:30%;"><?php echo $fund['mobile'] ?></B></td>
+
+                                <td><B style="margin-left:30%;"><?php 
+                                 if ( $fund['deliveryStatus']==1 ){
+                                     echo " dilivered";
+
+                                 }else{
+                                     echo "un delivered";
+
+                                    
+                                 }
+
+                                 
+                                 
+                                 ?></B></td>
+                               
+                            </tr>
+
+                            <?php    } 
+                        unset($_SESSION['results']);
+                  ?>
+
+                        </tbody>
+
+                    </table>
+                 <div>
+                 </fieldset>   
+
+
+
+
+
+
+
+
+
+
+
+
+
             </fieldset>
 
 
@@ -171,6 +240,11 @@
 
 
 
+<script>
+$(document).ready(function() {
+    $("#resultTable").DataTable();
+});
+</script>
 
 
 

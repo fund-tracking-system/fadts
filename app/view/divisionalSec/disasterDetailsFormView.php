@@ -7,16 +7,37 @@
         <?php
             require 'connection.php'; 
             $myRegion=$_SESSION['region'];
+
+
+
+
+
+
+            $provincialRegion= $_SESSION['provincialRegion'];               //save provincial region
+            $districtRegion= $_SESSION['districtRegion'];                   //  save district region
+    
+
+
+
+
+
             // echo $myRegion;
-            $myRegion;
+            $myRegion; 
             
-            $sql="SELECT disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
+            $sql="SELECT Distinct disaster.disasterId,disaster.name,disaster.type,disaster.date,region.regionId as regionID,region.name as ren
             FROM disaster 
             INNER JOIN disasterregion 
             ON disaster.disasterId=disasterregion.disasterId 
             INNER JOIN region ON 
             region.regionId=disasterregion.regionId 
-            WHERE region.superRegion=$myRegion or region.regionId=$myRegion or region.superRegion=Null";
+            inner join victim ON 
+            victim.disasterId=disaster.disasterId
+            WHERE region.superRegion=$myRegion 
+            or disasterregion.regionId=$myRegion
+             or disasterregion.regionId=$provincialRegion 
+             or disasterregion.regionId=$districtRegion 
+             or disasterregion.regionId=1  ";
+            
             $result=$con->query($sql);
             $res=$result->fetch_all(MYSQLI_ASSOC); 
             $_SESSION['disasterList']=$res;
@@ -25,7 +46,7 @@
 
         <form>
             <fieldset class="BackgroundFS">
-                <h2>Disaster FUND </h2>
+                <h2>DISASTER LIST </h2>
 
                 <fieldset class="tableBar">
                     <div class="tbleMargin">
@@ -48,21 +69,21 @@
                                  
                          ?>
                                 <tr> 
-                                    <td><input type="hidden" name="disasterId" style="margin-left:30%;"
+                                    <td style="margin-left:30%;text-align: left;"><input type="hidden" name="disasterId" style="margin-left:30%;"
                                             value='<?php echo $disaster['type']?>'><?php echo $disaster['type']?></input>
                                     </td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['ren']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['name']?></td>
+                                    <td style="margin-left:30%;text-align: left;"><?php echo $disaster['date'] ?></td>
                                     <td><a href="/fadts/divisional/disasterDetailModel?disasterId=<?php echo $disaster['disasterId'] ?>&regionId=<?php echo $disaster['regionID']?>"
-                                            class="btn btn-primary" style="margin-left:40%;"><B>VIEW</B></a>
+                                            class="btn btn-primary" style="margin-left:10%;"><B>VIEW</B></a>
                                     </td>
                                 </tr>
 
                                 <?php    } unset($_SESSION['results']); ?>
                             </tbody>
 
-
+ 
                         </table>
                         <div>
                 </fieldset>

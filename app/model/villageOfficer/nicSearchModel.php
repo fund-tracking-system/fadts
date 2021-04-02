@@ -1,16 +1,22 @@
 <?php 
 session_start();
 
-$view = $_GET['view'];
+if(isset($_GET['view'])) $view = $_GET['view'];
+if(isset($_GET['nic'])) $nic = $_GET['nic'];
+// echo $nic;
+// exit;
+if(isset($_GET['entryId'])) $entryId = $_GET['entryId'];
 
-if(isset($_POST['submit']) && isset($view)){
+
+if((isset($_POST['submit']) && isset($view)) || (isset($nic) && isset($entryId))){
 
    require 'connection.php';   // database connection file calling
-
+   
    $userRegion = $_SESSION['region'];
-   $nic = $_POST['nic'];
+   if(isset($_POST['nic'])) $nic = $_POST['nic'];
+   
 
-   $sql = "SELECT personId,name,region,validRegion FROM person WHERE nid=? AND dead='no' ";
+   $sql = "SELECT personId,name,region,validRegion,phone,phone_two,trustee FROM person WHERE nid=? AND dead='no'";
    $stmt = mysqli_stmt_init($con);
 
    if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -22,6 +28,7 @@ if(isset($_POST['submit']) && isset($view)){
       mysqli_stmt_bind_param($stmt,"s",$nic);
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
+      mysqli_stmt_close($stmt);
 
       if($row = mysqli_fetch_assoc($result)){
 
@@ -29,14 +36,21 @@ if(isset($_POST['submit']) && isset($view)){
          $personName = $row['name'];
          $personId = $row['personId'];
          $validRegion = $row['validRegion'];
+         $trustee = $row['trustee'];
+         $phones['phone1'] = $row['phone'];
+         $phones['phone2'] = $row['phone_two'];
+
 
          switch($view){
             case "fundRelease":
-               if($personRegion==$userRegion && $validRegion=="yes"){
-                  fundRelease($con,$personId,$view);
-               }else{
+               if($personRegion==$userRegion && $validRegion=="yes" && isset($entryId)){
+                  fundConfirm($con,$nic,$personId,$view,$trustee,$phones,$entryId);
+               }elseif($personRegion==$userRegion && $validRegion=="yes" ){
+                  fundRelease($con,$nic,$personId,$view,$trustee,$phones);
+               }
+               else{
                   mysqli_close($con);
-                  header("Location:/fadts/village/$view?searcherror=wrong_region");
+                  header("Location:/fadts/village/$view?searcherror=wrong_region1");
                   exit();
                }
                break;
@@ -53,7 +67,7 @@ if(isset($_POST['submit']) && isset($view)){
 
             case "victimSelect":
                if($personRegion==$userRegion && $validRegion=="yes"){ 
-                  
+                        
                   $result = array("personName"=>"$personName","personId"=>"$personId","nic"=>"$nic","disasterId"=>$_GET['disasterId']);
 
                   $_SESSION['results'] = $result;    
@@ -66,7 +80,7 @@ if(isset($_POST['submit']) && isset($view)){
                   exit();
                }
                break;
-            
+                  
             case "searchPeople":
                if($personRegion==$userRegion && $validRegion=="yes"){ 
                   personDetails($con,$personId,$view); 
@@ -76,8 +90,8 @@ if(isset($_POST['submit']) && isset($view)){
                   exit();
                }
                break;
-            
-         }
+         
+               }
       }
       else{
          mysqli_close($con);
@@ -96,7 +110,27 @@ else{
 
 
 
-function fundRelease($con,$personId,$view){
+function fundRelease($con,$nic,$personId,$view,$trustee,$phones){
+
+   $sql = "SELECT phone,phone_two FROM person WHERE personId=? AND dead='no'";
+   $stmt = mysqli_stmt_init($con);
+
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+      mysqli_close($con);
+      header("Location:/fadts/village/$view?searcherror=db_conn_err");
+      exit();     
+   }
+   else{
+      mysqli_stmt_bind_param($stmt,"s",$trustee);
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if($row = mysqli_fetch_assoc($result)){
+
+         $phones['trusteephone1'] = $row['phone'];
+         $phones['trusteephone2'] = $row['phone_two'];
+      }
+   }  
 
    $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.personId=$personId AND deliveryStatus = 0";
 
@@ -111,11 +145,13 @@ function fundRelease($con,$personId,$view){
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
 
-      if($result){
-         $_SESSION['results'] =mysqli_fetch_all($result);
-
+      if(mysqli_num_rows($result)>0){
+         $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+         var_dump($result);
+         $_SESSION['result'] =$result;
+         $_SESSION['phones'] =$phones;
          mysqli_close($con);
-         header("Location:/fadts/village/$view?searcherror=succsess");
+         header("Location:/fadts/village/$view?searcherror=succsess&nic=$nic");
          exit();
       }else{
          mysqli_close($con);
@@ -124,6 +160,56 @@ function fundRelease($con,$personId,$view){
       }
                      
    }  
+}
+
+function fundConfirm($con,$nic,$personId,$view,$trustee,$phones,$entryId){
+   $sql = "SELECT phone,phone_two FROM person WHERE personId=?";
+   $stmt = mysqli_stmt_init($con);
+
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+      mysqli_close($con);
+      header("Location:/fadts/village/$view?searcherror=db_conn_err");
+      exit();     
+   }
+   else{
+      mysqli_stmt_bind_param($stmt,"s",$trustee);
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if($row = mysqli_fetch_assoc($result)){
+
+         $phones['trusteephone1'] = $row['phone'];
+         $phones['trusteephone2'] = $row['phone_two'];
+      }
+   }  
+
+   $sql = "SELECT recipient.entryId,fund.name,fund.amountPerPerson FROM recipient INNER JOIN fund ON recipient.fundId = fund.fundId WHERE recipient.entryId=$entryId";
+
+                 
+   $stmt = mysqli_stmt_init($con);
+
+   if(!mysqli_stmt_prepare($stmt,$sql)){
+      mysqli_close($con);
+      header("Location:/fadts/village/$view?searcherror=db_conn_err");
+      exit();
+   }else{
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt);
+
+      if($result){
+         $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+         $_SESSION['result'] =$result;
+         $_SESSION['phones'] =$phones;
+         mysqli_close($con);
+         header("Location:/fadts/village/$view?searcherror=succsess&nic=$nic&entryId=$entryId");
+         exit();
+      }else{
+         mysqli_close($con);
+         header("Location:/fadts/village/$view?searcherror=no_records");
+         exit();
+      }
+                     
+   }
 }
 
 function updatePeople($con,$personId,$view){

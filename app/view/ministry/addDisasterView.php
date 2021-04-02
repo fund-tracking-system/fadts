@@ -3,24 +3,23 @@
 
 <div class="all_bacground_clor">
    <div class='SearchByCriteriaform1'>
-
       <form class="form" id="formAddDisaster" method="POST" action="/fadts/ministry/addDisasterModel">
-
          <fieldset class=" BackgroundFS">
             <h2> ADD NEW DISASTER</h2>
+            
             <fieldset class="searchBar">
-            <?php 
-               if(isset($_GET['error'])){
-         
-                  $error = $_GET['error'];
-                  if($error == "db_conn_err"){
-                     echo '<div class="alert alert-danger " role="alert">Database connection error! Please try again</div>';
-                  }
-                  if($error == "success"){
-                     echo '<div class="alert alert-success " role="alert">Disaster records successfully added!</div>';
-                  }       
-               }   
-            ?>
+               <?php 
+                  if(isset($_GET['error'])){
+            
+                     $error = $_GET['error'];
+                     if($error == "db_conn_err"){
+                        echo '<div class="alert alert-danger " role="alert">Database connection error! Please try again</div>';
+                     }
+                     if($error == "success"){
+                        echo '<div class="alert alert-success " role="alert">Disaster records successfully added!</div>';
+                     }       
+                  }   
+               ?>
 
                <div class="form-row ">
                   <label for="disaster" class="inputLable"><b>Disaster Type:</b></label>
@@ -35,10 +34,8 @@
                   </select>
                </div>
 
-
                <div class="form-row">
-                  <label for="disaster-name" class="inputLable" type="hidden"><b>Disaster
-                        Name:</b></label>
+                  <label for="disaster-name" class="inputLable" type="hidden"><b>Disaster Name:</b></label>
                   <input class="form-control Input" id="name" name="name"></input>
                </div>
 
@@ -48,37 +45,32 @@
                   <small></small>
                </div>
 
-
                <div class="form-row" style="margin-bottom:50px;">
+                  <label for="tnid" class="inputLable" style="margin-right:285px;"><b>Region :</b></label>
 
-                  <label for="tnid" class="inputLable" style="margin-right:185px;"><b>Region :</b></label>
                   <?php
-
-                  require 'connection.php'; 
-                                 
-                  $rgn="SELECT level, regionid, superRegion,name  FROM region WHERE level!=4 ";
-                  $rgnRes=$con->query($rgn) ;
-                  $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
-                  
-                  $_SESSION['region_result']=$res;  //for assign region  ?>
-
-                  <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:530px;'>
-                  <?php 
-                  foreach($res as $data){
-                    
-                        // echo "<option value='$data['regionid']'>colombo</option>";
-                        echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';
-
+                     require 'connection.php'; 
+                                    
+                     $rgn="SELECT level, regionid, superRegion,name FROM region WHERE level != 4";
+                     $rgnRes=$con->query($rgn) ;
+                     $res=$rgnRes->fetch_all(MYSQLI_ASSOC);
                      
-                  }
+                     $_SESSION['region_result']=$res;  //for assign region  
                   ?>
+
+                  <select id='region' class='form-control Input' multiple='multiple' name='region[]' id='region' style='position:sticky;top:60px;overflow:scroll;  width:540px;'>                  
+                     <?php 
+                        foreach($res as $data){                     
+                           //echo "<option value='$data['regionid']'>colombo</option>";
+                           echo '<option value="'.$data['regionid'].'">'.$data['name'].'</option>';                        
+                        }
+                     ?>
                   </select>
                </div>
 
-               <div class="form-row">
+               <div class="form-row"> 
                   <input type="hidden"></input>
-               </div>
-               
+               </div>               
 
                <div class="form-row">
                   <label for="description" class="inputLable"><b>Description:</b></label>
@@ -91,14 +83,10 @@
                </button>
                <!-- </div> -->
 
-
             </fieldset>
          </fieldset>
-
       </form>
-
    </div>
-
 </div>
 
 <script>

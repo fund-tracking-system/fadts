@@ -25,6 +25,19 @@ h5 {
     /* color: #011116; */
 }
 
+h7{
+    color: white;
+    font-size: 15px;
+    padding-left: 16px;
+}
+
+
+h6{
+    color: white;
+    font-size: 15px;
+    padding-left: 16px;
+}
+
 .To {
     margin-right: 170px;
 }
@@ -93,6 +106,13 @@ h5 {
     margin-bottom: -25px;
 }
 
+.searchBarLabel {
+    margin-left: 100px;
+    margin-top: 10px;
+    font-size: 16px;
+    margin-bottom: -25px;
+}
+
 .BackgroundFS {
     background-color: #fafcfd;
     border-bottom: 10px;
@@ -120,15 +140,23 @@ h5 {
     width: 150px;
     margin-top: -30px;
     margin-bottom: 50px;
+    text-align: right;
 }
 
 .Twobtn {
     margin-left: 500px;
+    margin-top:-140px;
+    margin-left:770px;
+}
+
+.Twobtns{
+    margin-left: 500px;
 }
 
 .inputLable.LableTwo {
-    margin-left: 640px;
+    margin-left: 570px;
     margin-top: -80px;
+    
 }
 .btn.siz{
   margin-left: 66%; 
@@ -148,6 +176,7 @@ h5 {
   margin-top:-30px; 
   margin-left:345px; 
   margin-bottom:-30px;
+  text-align: right;
 }
 
 .btn.btn-primary.btnNav{
@@ -184,12 +213,16 @@ h5 {
     margin-left: 185px;
     margin-bottom: 23px;
 }
+.inputLable{
+    margin-bottom: -15px;
+}
+
 
 .form-control.Input {
     margin-left: 350px;
     margin-bottom: 50px;
     margin-right: 150px;
-    margin-top: -4%;
+    margin-top: -2%;
 }
 
 .form-control.details {
@@ -223,6 +256,20 @@ h5 {
     margin-left: 345px;
     margin-bottom: -30px;
 }
+.form-control.InputOnes {
+    width: 150px;
+    margin-top: -30px;
+    margin-left: 345px;
+    margin-bottom: -30px;
+    margin-left:620px;margin-top:-30px;width:260px;
+}
+
+.form-control.InputOness {
+    width: 150px;
+    margin-top: -30px;
+    margin-left: 345px;
+    margin-bottom: -30px;
+    margin-left:160px;width:300px;}
 
 .btn.btn-primary.btnNav {
     margin-left: 75%;
@@ -466,7 +513,7 @@ label {
 }
 
 h2 {
-    text-align: center;
+    text-align:center;
     font-size: 33px;
     padding-top: 2%;
     color: black;
@@ -1371,7 +1418,7 @@ textarea.form-control.is-valid {
 
 #calendardate {
     width: 50%;
-    height: 100%;
+    height: 300px;
     padding: 0px;
     margin: 0px;
     background-color: rgba(11, 207, 109, 0.664);
@@ -2002,6 +2049,8 @@ ul.tabs li.current {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+
+
 .box1 {
     margin: 10px;
     background-color: white;
@@ -2011,73 +2060,106 @@ ul.tabs li.current {
 }
 
 .box2 {
-    
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background: rgb(18, 164, 212);
+    /*background-image: linear-gradient( rgb(18, 164, 212),#b0cbfa);*/
+    background: rgb(98, 211, 248);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 4/5;
 }
 
 .box3 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background: rgb(4, 110, 57);
+    /* background-image: linear-gradient(  rgb(4, 110, 57),rgb(164, 240, 190)); */
+    background: rgb(61, 240, 151);
     margin: 5px;
     grid-row: 1/2;
     grid-column: 5/6;
 }
 
 .box4 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background: rgb(69, 69, 70);
+    /* background-image: linear-gradient(  rgb(119, 69, 11),#c6ce80); */
+    background:  rgb(248, 172, 85);
+    /* background: rgb(69, 69, 70); */
     margin: 5px;
     grid-row: 2/3;
     grid-column: 4/5;
 }
 
 .box5 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background:rgb(27, 233, 164);
+    /* background-image: linear-gradient( #e4730a,#f1cf0d); */
+    background:#c0be3a;
     margin: 5px;
     grid-row: 2/3;
     grid-column: 5/6;
 }
 
 .box6 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background: rgb(131, 125, 212);
+    /* background-image: linear-gradient( #5D6D7E,#a2a3a3); */
+    background: rgb(250, 94, 120);
     margin: 5px;
     grid-row: 3/4;
     grid-column: 4/5;
 }
 
 .box7 {
+    border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
-    background: rgb(20, 134, 241);
+    /* background-image: linear-gradient(  rgb(221, 40, 70),#eb7a7f); */
+    background: #7e8383;
     margin: 5px;
     grid-row: 3/4;
     grid-column: 5/6;
 }
 
-.box8 {
+.box67{
+    border-radius: 5px;
     text-align: center;
-    background: rgb(49, 185, 235);
+    color: #E2F3FB;
+    /* background-image: linear-gradient( #f06067,#f397a1); */
+    background: rgb(252, 101, 114);
+    margin: 5px;
+    grid-row: 3/4;
+    grid-column: 4/6;
+    display: flex;
+	align-items: center;
+    justify-content: space-around;
+    
+}
+
+
+
+.box8 {
+    border-radius: 5px;
+    text-align: center;
+    background: #6bd6f3;
+    /* background-image: linear-gradient(#3c79e6,#85aff7); */
     margin: 5px;
     grid-row: 4/5;
     grid-column: 4/6;
     display: flex;
 	align-items: center;
-	justify-content: space-around;
+    justify-content: space-around;
+    
     
 }
 
 .box9 {
+    border-radius: 5px;
     text-align: center;
     background:white;
     margin: 5px;
@@ -2087,13 +2169,583 @@ ul.tabs li.current {
 }
 
 .fontwhite{
-    color: #E0E0E0;
-    font-family: cursive;
+    color: #FDFEFE;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
 }
 
 .dashboard-title {
-    color: white;
-    font-size: 25px;
-    font-family: cursive;
+    color: #FDFEFE;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
     margin: 5px;
+}
+
+
+.disasterDamageHeader{
+    font-size:25px ;
+    color: #0a2430;
+}
+
+
+#calendar_events{
+    height:300px;
+    background: #2C3E50;
+}
+
+.colorEve{
+    color: white;
+}
+
+.VOh1{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp1{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh2{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp2{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh3{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 350px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp3{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh4{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp4{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh5{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp5{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.VOh6{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.VOp6{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.DSh1{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.DSp1{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.DSh2{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.DSp2{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.DSh3{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.DSp3{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.DSh4{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.DSp4{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.DSh5{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 350px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.DSp5{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.DSh6{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.DSp6{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.DSh7{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 370px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.DSp7{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh1{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp1{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh2{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp2{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh3{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp3{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh4{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp4{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh5{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp5{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh6{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp6{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh7{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp7{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh8{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp8{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh9{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp9{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.MSh10{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 370px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.MSp10{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.ADh1{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 360px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.ADp1{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.ADh2{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 360px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.ADp2{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.ADh3{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.ADp3{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.ADh4{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 360px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.ADp4{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.ADh5{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.ADp5{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.ADh6{
+    color: rgb(9, 69, 80);
+    background-color: rgb(105, 231, 168);
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.ADp6{
+    color: rgb(39, 9, 9);
+    background-color: rgb(207, 238, 235);
+    border-radius: 10px;
+    width: 850px;
+    padding: 20px;
+    margin: 20px;
+    
+    
 }

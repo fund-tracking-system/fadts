@@ -40,6 +40,9 @@
                   if($error == "direct_access"){
                      echo '<div class="alert alert-danger" role="alert"">Direct access not allowed!</div>';
                   }
+                  if($error == "new_pwd_updated"){
+                     echo '<div class="alert alert-success" role="alert">Password added successfully!</div>';
+                  }
                }
             ?> 
 
