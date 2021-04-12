@@ -12,7 +12,8 @@ h3 {
     padding: 15px;
     font-weight: 25px;
 }
-h1{
+
+h1 {
     margin: 5px;
 }
 
@@ -25,7 +26,13 @@ h5 {
     /* color: #011116; */
 }
 
-h6{
+h7 {
+    color: white;
+    font-size: 15px;
+    padding-left: 16px;
+}
+
+h6 {
     color: white;
     font-size: 15px;
     padding-left: 16px;
@@ -67,16 +74,15 @@ h6{
 .tableBar {
     margin-right: 20px;
     margin-left: 20px;
-    background-color:#fdfdff;
+    background-color: #fdfdff;
     border-radius: 6px;
 }
 
 .tableBar2 {
-    margin-right:50px;
+    margin-right: 50px;
     margin-left: 220px;
-    background-color:#fdfdff;
+    background-color: #fdfdff;
     border-radius: 6px;
-
 }
 
 .tbleMargin {
@@ -87,8 +93,8 @@ h6{
     margin-top: 30px;
 }
 
-.tableMargin2 { 
-    margin:2px;
+.tableMargin2 {
+    margin: 2px;
     position: center;
 }
 
@@ -138,78 +144,86 @@ h6{
 
 .Twobtn {
     margin-left: 500px;
-    margin-top:-140px;
-    margin-left:770px;
+    margin-top: -140px;
+    margin-left: 770px;
 }
 
-.Twobtns{
+.Twobtns {
     margin-left: 500px;
 }
 
 .inputLable.LableTwo {
     margin-left: 570px;
     margin-top: -80px;
-    
-}
-.btn.siz{
-  margin-left: 66%; 
-  width:13%;
-}
-.form-control.Input.txtWidth{
-  min-height: 100px;;
-}
-.selectBox.input{
-  margin-left:350px;
-  margin-bottom:50px;
-  margin-right:250px; 
-  margin-top:-4%;
-}
-.form-control.InputOne{
-  width:150px; 
-  margin-top:-30px; 
-  margin-left:345px; 
-  margin-bottom:-30px;
-  text-align: right;
 }
 
-.btn.btn-primary.btnNav{
-  margin-left: 75%; 
-  margin-top:-55px; 
-  width:13%; 
-  height: 45px;
-  margin-bottom:20px;
+.btn.siz {
+    margin-left: 66%;
+    width: 13%;
 }
-.userpro{
-  margin:80px;
+
+.form-control.Input.txtWidth {
+    min-height: 100px;
+    ;
 }
-.radioHaveInput{
-  margin-left:20px
-  ;margin-bottom:18px;
+
+.selectBox.input {
+    margin-left: 350px;
+    margin-bottom: 50px;
+    margin-right: 250px;
+    margin-top: -4%;
 }
-.radioHaveLable{
-  margin-left:-130px;
-  margin-bottom:20px;
-  margin-right:150px;
+
+.form-control.InputOne {
+    width: 150px;
+    margin-top: -30px;
+    margin-left: 345px;
+    margin-bottom: -30px;
+    text-align: right;
 }
-.margn{
-  margin-top:50px;
+
+.btn.btn-primary.btnNav {
+    margin-left: 75%;
+    margin-top: -55px;
+    width: 13%;
+    height: 45px;
+    margin-bottom: 20px;
 }
-.form-control.InputPro{
-  margin-left:350px;
-  margin-bottom:50px;
-  margin-right:210px; 
-  margin-top:-5%;
-  
+
+.userpro {
+    margin: 80px;
+}
+
+.radioHaveInput {
+    margin-left: 20px;
+    margin-bottom: 18px;
+}
+
+.radioHaveLable {
+    margin-left: -130px;
+    margin-bottom: 20px;
+    margin-right: 150px;
+}
+
+.margn {
+    margin-top: 50px;
+}
+
+.form-control.InputPro {
+    margin-left: 350px;
+    margin-bottom: 50px;
+    margin-right: 210px;
+    margin-top: -5%;
 }
 
 .inputLableOne {
     margin-left: 185px;
     margin-bottom: 23px;
 }
-.inputLable{
+
+.inputLable {
     margin-bottom: -15px;
 }
-
 
 .form-control.Input {
     margin-left: 350px;
@@ -249,12 +263,15 @@ h6{
     margin-left: 345px;
     margin-bottom: -30px;
 }
+
 .form-control.InputOnes {
     width: 150px;
     margin-top: -30px;
     margin-left: 345px;
     margin-bottom: -30px;
-    margin-left:620px;margin-top:-30px;width:260px;
+    margin-left: 620px;
+    margin-top: -30px;
+    width: 260px;
 }
 
 .form-control.InputOness {
@@ -262,7 +279,9 @@ h6{
     margin-top: -30px;
     margin-left: 345px;
     margin-bottom: -30px;
-    margin-left:160px;width:300px;}
+    margin-left: 160px;
+    width: 300px;
+}
 
 .btn.btn-primary.btnNav {
     margin-left: 75%;
@@ -442,7 +461,6 @@ h6{
     margin-left: 30px;
 }
 
-
 .form-control.inputDetailsFunfInput {
     position: relative;
     margin-left: 30px;
@@ -506,7 +524,7 @@ label {
 }
 
 h2 {
-    text-align:center;
+    text-align: center;
     font-size: 33px;
     padding-top: 2%;
     color: black;
@@ -1116,6 +1134,7 @@ textarea.form-control.is-valid {
         width: 200px;
     }
 } */
+
 
 /* 
 @media only screen and (max-width: 600px) {
@@ -2035,21 +2054,17 @@ ul.tabs li.current {
 }
 
 .grid_box1 {
-    
     height: 84%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
-
-
 .box1 {
     margin: 10px;
     background-color: white;
     grid-row: 1/4;
     grid-column: 1/4;
-   
 }
 
 .box2 {
@@ -2079,7 +2094,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient(  rgb(119, 69, 11),#c6ce80); */
-    background:  rgb(248, 172, 85);
+    background: rgb(248, 172, 85);
     /* background: rgb(69, 69, 70); */
     margin: 5px;
     grid-row: 2/3;
@@ -2091,7 +2106,7 @@ ul.tabs li.current {
     text-align: center;
     color: #E2F3FB;
     /* background-image: linear-gradient( #e4730a,#f1cf0d); */
-    background:#c0be3a;
+    background: #c0be3a;
     margin: 5px;
     grid-row: 2/3;
     grid-column: 5/6;
@@ -2119,7 +2134,7 @@ ul.tabs li.current {
     grid-column: 5/6;
 }
 
-.box67{
+.box67 {
     border-radius: 5px;
     text-align: center;
     color: #E2F3FB;
@@ -2129,12 +2144,9 @@ ul.tabs li.current {
     grid-row: 3/4;
     grid-column: 4/6;
     display: flex;
-	align-items: center;
+    align-items: center;
     justify-content: space-around;
-    
 }
-
-
 
 .box8 {
     border-radius: 5px;
@@ -2145,23 +2157,20 @@ ul.tabs li.current {
     grid-row: 4/5;
     grid-column: 4/6;
     display: flex;
-	align-items: center;
+    align-items: center;
     justify-content: space-around;
-    
-    
 }
 
 .box9 {
     border-radius: 5px;
     text-align: center;
-    background:white;
+    background: white;
     margin: 5px;
     grid-row: 4/5;
     grid-column: 1/4;
-
 }
 
-.fontwhite{
+.fontwhite {
     color: #FDFEFE;
     font-family: 'Montserrat', sans-serif;
     font-size: 25px;
@@ -2174,23 +2183,21 @@ ul.tabs li.current {
     margin: 5px;
 }
 
-
-.disasterDamageHeader{
-    font-size:25px ;
+.disasterDamageHeader {
+    font-size: 25px;
     color: #0a2430;
 }
 
-
-#calendar_events{
-    height:300px;
+#calendar_events {
+    height: 300px;
     background: #2C3E50;
 }
 
-.colorEve{
+.colorEve {
     color: white;
 }
 
-.VOh1{
+.VOh1 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2200,7 +2207,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.VOp1{
+.VOp1 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2209,7 +2216,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.VOh2{
+.VOh2 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2219,7 +2226,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.VOp2{
+.VOp2 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2228,7 +2235,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.VOh3{
+.VOh3 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2238,7 +2245,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.VOp3{
+.VOp3 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2247,7 +2254,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.VOh4{
+.VOh4 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2257,7 +2264,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.VOp4{
+.VOp4 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2266,7 +2273,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.VOh5{
+.VOh5 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2276,7 +2283,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.VOp5{
+.VOp5 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2285,7 +2292,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.VOh6{
+.VOh6 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2295,7 +2302,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.VOp6{
+.VOp6 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2304,7 +2311,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.DSh1{
+.DSh1 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2314,7 +2321,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.DSp1{
+.DSp1 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2323,7 +2330,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.DSh2{
+.DSh2 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2333,7 +2340,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.DSp2{
+.DSp2 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2342,7 +2349,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.DSh3{
+.DSh3 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2352,7 +2359,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.DSp3{
+.DSp3 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2361,7 +2368,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.DSh4{
+.DSh4 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2371,7 +2378,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.DSp4{
+.DSp4 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2380,7 +2387,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.DSh5{
+.DSh5 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2390,7 +2397,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.DSp5{
+.DSp5 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2399,7 +2406,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.DSh6{
+.DSh6 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2409,7 +2416,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.DSp6{
+.DSp6 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2418,7 +2425,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.DSh7{
+.DSh7 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2428,7 +2435,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.DSp7{
+.DSp7 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2437,7 +2444,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh1{
+.MSh1 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2447,7 +2454,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp1{
+.MSp1 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2456,7 +2463,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh2{
+.MSh2 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2466,7 +2473,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp2{
+.MSp2 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2475,7 +2482,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh3{
+.MSh3 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2485,7 +2492,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp3{
+.MSp3 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2494,7 +2501,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh4{
+.MSh4 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2504,7 +2511,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp4{
+.MSp4 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2513,7 +2520,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh5{
+.MSh5 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2523,7 +2530,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp5{
+.MSp5 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2532,7 +2539,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh6{
+.MSh6 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2542,7 +2549,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp6{
+.MSp6 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2551,7 +2558,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh7{
+.MSh7 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2561,7 +2568,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp7{
+.MSp7 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2570,7 +2577,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh8{
+.MSh8 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2580,7 +2587,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp8{
+.MSp8 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2589,7 +2596,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh9{
+.MSh9 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2599,7 +2606,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp9{
+.MSp9 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2608,7 +2615,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.MSh10{
+.MSh10 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2618,7 +2625,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.MSp10{
+.MSp10 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2627,7 +2634,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.ADh1{
+.ADh1 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2637,7 +2644,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.ADp1{
+.ADp1 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2646,7 +2653,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.ADh2{
+.ADh2 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2656,7 +2663,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.ADp2{
+.ADp2 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2665,7 +2672,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.ADh3{
+.ADh3 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2675,7 +2682,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.ADp3{
+.ADp3 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2684,7 +2691,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.ADh4{
+.ADh4 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2694,7 +2701,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.ADp4{
+.ADp4 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2703,7 +2710,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.ADh5{
+.ADh5 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2713,7 +2720,7 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.ADp5{
+.ADp5 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
@@ -2722,7 +2729,7 @@ ul.tabs li.current {
     margin: 20px;
 }
 
-.ADh6{
+.ADh6 {
     color: rgb(9, 69, 80);
     background-color: rgb(105, 231, 168);
     border-radius: 25px;
@@ -2732,23 +2739,11 @@ ul.tabs li.current {
     text-align: center;
 }
 
-.ADp6{
+.ADp6 {
     color: rgb(39, 9, 9);
     background-color: rgb(207, 238, 235);
     border-radius: 10px;
     width: 850px;
     padding: 20px;
     margin: 20px;
-    
-    
-
-
-
-}
-
-
-h7{
-    color: white;
-    font-size: 15px;
-    padding-left: 16px;
 }
