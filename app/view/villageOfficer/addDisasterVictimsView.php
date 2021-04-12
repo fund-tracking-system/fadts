@@ -40,9 +40,9 @@
                                  <tr>
                                     <td><B style="margin-left:30%;"><?php echo $disaster['type']?></B></input>
                                     </td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['ren']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['name']?></B></td>
-                                    <td><B style="margin-left:30%;"><?php echo $disaster['date'] ?></B></td>
+                                    <td><B style=" "><?php echo $disaster['ren']?></B></td>
+                                    <td><B ><?php echo $disaster['name']?></B></td>
+                                    <td><B ><?php echo $disaster['date'] ?></B></td>
                                     <td><a href="/fadts/village/victimSelect?disasterId=<?php echo $disaster['disasterId'] ?>"
                                             class="btn btn-primary" style="margin-left:20%;"><B>ADD VICTIM</B></a>
                                     </td>

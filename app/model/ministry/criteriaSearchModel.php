@@ -5,8 +5,8 @@ session_start();
 if(isset($_POST['submit'])){
    require 'connection.php';  //link to mysql connection   
 
-    set flag
-    $_SESSION['flag'] = 14;
+   //  set flag
+   //  $_SESSION['flag'] = 14;
 
    $ageStart = $_POST['ageStart']; 
    $ageEnd = $_POST['ageEnd']; 

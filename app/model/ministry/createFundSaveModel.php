@@ -80,8 +80,7 @@
         $api_instance = new NotifyLk\Api\SmsApi();
         $user_id = "13127"; 
         $api_key = "qCaJfO73WWJfh9FHBXYd"; 
-        $message = "Congratulations You have been selected for a government fund.Please contact your village officer to claim the due fund amount.Thank you."; 
-    //    $message="you have been selected";
+        $message = "You have been selected for a government fund.Please contact your village officer to claim the due fund amount."; 
         $sender_id = "NotifyDEMO";
 
         foreach($personList as $person){ 
@@ -93,15 +92,11 @@
                 while($row = $result->fetch_assoc()) {
 
                     $contact = $row["phone"];
-
-
                    
-                    // $to = "94".substr($contact, -9);
-                    $to="94768612036";
-                    // print_r($to);
+                    $to = "94".substr($contact, -9);
                     try {
                         $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
-                echo $user_id." ".$api_key." ".$sender_id." ".$to ;      echo '<br>';
+               // echo $user_id." ".$api_key." ".$sender_id." ".$to ;      echo '<br>';
                     }catch(Exception $e){
                         echo 'Exception when calling SmsApi->sendSMS: ', $e->getMessage(), PHP_EOL;
                         // header("Location:/fadts/village/fundRelease?otp=otp_resend&entryId=$entryId"); 
@@ -122,10 +117,10 @@
         unset($_SESSION['incomeTypes']);
 
         //unset predefined fund list in session variables
-        // unset($_SESSION['fundList']);
+        unset($_SESSION['fundList']);
 
         //header("Location:/fadts/ministry/sendApi");
-        // header("Location:/fadts/ministry/createFundView");
+        header("Location:/fadts/ministry/createFundView");
         exit();
     }
 
@@ -134,7 +129,7 @@
         $stmt->close();
         //close connection
         $con->close();
-        //header("Location:/fadts/ministry/createFundView?error=db_conn_err1");
+        header("Location:/fadts/ministry/createFundView?error=db_conn_err1");
         exit();
     }
 

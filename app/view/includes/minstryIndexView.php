@@ -1,6 +1,14 @@
 
 <?php 
 
+
+
+$sql12="SELECT id,type  From incometype";
+$result12=$con->query($sql12);                                                  
+$res12=$result12->fetch_all(MYSQLI_ASSOC);
+$_SESSION['incomeTypes']=$res12;
+
+
          
 $myRegion=$_SESSION['region'];
 $lowIncome=0;

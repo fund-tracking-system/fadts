@@ -21,3 +21,4 @@ spl_autoload_register('spl_autoload',false);
 
 
 new Application();
+?>

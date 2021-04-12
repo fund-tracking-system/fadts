@@ -9,7 +9,7 @@ class Application{
    {
       $this->prepareURL(); 
 
-      if(file_exists(CONTROLLER . $this->controller . '.php')){
+      if(file_exists(CONTROLLER . $this->controller .'.php')){
 
          $this->controller = new $this->controller;
 
@@ -31,8 +31,10 @@ class Application{
       //             $url[1] is controller name
       //             $url[2] is methode name 
 
-      if(!empty($request)){        
+      if(!empty($request)){   
+
          $url = explode('/',$request);
+         
          $this->controller = isset($url[1]) ? $url[1].'Controller':'homeController';
          $this->action = isset($url[2]) ? $url[2]:'index';
          unset($url[0],$url[1],$url[2]);

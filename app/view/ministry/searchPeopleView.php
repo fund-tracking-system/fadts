@@ -141,6 +141,7 @@
 $(document).ready(function() {
    $('#job').select2();
    $('#funds').select2();
+   $('#incomeType').select2();
 });
 </script>
 

@@ -69,6 +69,9 @@ switch($controller){
    </a>
    <a href="/fadts/divisional/DShelpview" class="dashboard sidebar_link">
       <span class="material-icons">help_center</span>Help
+
+   <a href="/fadts/divisional/searchFund" class="dashboard sidebar_link">
+      <span class="material-icons">person_search</span>Search Fund Details
    </a>
    <a href="/fadts/home/index" class="dashboard sidebar_link">
       <span class="material-icons">exit_to_app</span>Logout

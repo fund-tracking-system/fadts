@@ -33,7 +33,7 @@ if(isset($_POST['otpRequest']) && isset($_GET['entryId']) && isset($_POST['phone
       $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
       echo $user_id." ".$api_key." ".$sender_id." ".$to ; 
       $_SESSION['otp']=$otp;
-     // header("Location:/fadts/village/nicSearchModel?view=fundRelease&entryId=$entryId&nic=$nic"); 
+      header("Location:/fadts/village/nicSearchModel?view=fundRelease&entryId=$entryId&nic=$nic"); 
       exit();
       
    }catch(Exception $e){

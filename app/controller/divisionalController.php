@@ -313,6 +313,29 @@ class divisionalController extends Controller{
       
       $this->view->render();
    }
+   public function searchFund(){ 
+      $this->view('divisionalsec/searchFund');
+    
+      
+      $this->view->render();
+   }
+
+   
+   public function searchFundModel(){ 
+      $this->model('divisionalsec/searchFundModel');
+
+      $this->model->load();
+      
+   }
+
+   public function ViewSearchFund(){ 
+      $this->view('divisionalsec/ViewSearchFund');
+    
+      
+      $this->view->render();
+   }
+
+   
 
 
 }

@@ -97,7 +97,7 @@
          </fieldset>
       </form>
 
-      <?php if (isset($_SESSION['personList']) && isset($_SESSION['flag']) && $_SESSION['flag'] == 14) { ?>                  
+      <?php if (isset($_SESSION['personList'])) { ?>                  
          <form>
             <fieldset class="BackgroundFS">
                   <h2>FILTERED PEOPLE LIST</h2>
@@ -145,12 +145,6 @@
       <?php } ?>   
    </div>
 </div>
-
-<?php 
-    //unset flag from session variables
-    unset($_SESSION['flag']); 
-?>
-
 
 <script>
    $(document).ready(function() {
