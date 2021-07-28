@@ -16,7 +16,7 @@ define('CSS',DIRECTORY_SEPARATOR.'fadts'.DIRECTORY_SEPARATOR.'app'.DIRECTORY_SEP
 
 $modules = [ROOT,APP,CORE,CONTROLLER,CONN,CSS];
 
-set_include_path(get_include_path().PATH_SEPARATOR.implode(PATH_SEPARATOR,$moduless));
+set_include_path(get_include_path().PATH_SEPARATOR.implode(PATH_SEPARATOR,$modules));
 spl_autoload_register('spl_autoload',false);
 
 
